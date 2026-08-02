@@ -1,3 +1,17 @@
+## 2026-08-02T09:32:27Z
+- Total rules: 495,092 (+220191 / -0)
+- Sources:
+  - AdGuard Annoyances: 55,075 rules (+)
+  - AdGuard Base: 53,774 rules (+)
+  - AdGuard DNS: 21,358 rules (+)
+  - AdGuard Social Media: 15,063 rules (+)
+  - AdGuard Tracking Protection: 160,470 rules (+)
+  - Anti-AD: 11,642 rules (+)
+  - EasyList: 83,060 rules (+)
+  - EasyPrivacy: 45,559 rules (+)
+  - Fanboy's Annoyance List: 47,583 rules (+)
+  - Peter Lowe's List: 1,508 rules (+)
+---
 ## 2026-08-02T09:21:21Z
 - Total rules: 274,949 (+52 / -0)
 - Sources:
