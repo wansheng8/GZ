@@ -12,24 +12,44 @@ sources:
     priority: 2
     enabled: true
 
+  - name: Fanboy's Annoyance List
+    url: https://easylist.to/easylist/fanboy-annoyance.txt
+    priority: 3
+    enabled: true
+
   - name: AdGuard Base
     url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt
-    priority: 3
+    priority: 4
+    enabled: true
+
+  - name: AdGuard Tracking Protection
+    url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt
+    priority: 5
+    enabled: true
+
+  - name: AdGuard Annoyances
+    url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt
+    priority: 6
+    enabled: true
+
+  - name: AdGuard Social Media
+    url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_4_Social/filter.txt
+    priority: 7
     enabled: true
 
   - name: AdGuard DNS
     url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
-    priority: 4
+    priority: 8
     enabled: true
 
   - name: Peter Lowe's List
     url: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&showintro=0&mimetype=plaintext
-    priority: 5
+    priority: 9
     enabled: true
 
   - name: Anti-AD
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt
-    priority: 6
+    priority: 10
     enabled: true
 
 settings:

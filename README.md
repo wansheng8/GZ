@@ -18,14 +18,18 @@ https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 
 ## 上游规则源
 
-| 优先级 | 源 | 说明 |
-|--------|-----|------|
-| 1 | EasyList | 国际网页广告过滤，社区主导维护 |
-| 2 | EasyPrivacy | 跟踪器/隐私保护 |
-| 3 | AdGuard Base | AdGuard 基础广告过滤 |
-| 4 | AdGuard DNS | DNS 层级广告域名过滤 |
-| 5 | Peter Lowe's List | 知名广告服务器域名列表 |
-| 6 | Anti-AD | 中文社区广告过滤 |
+| 优先级 | 源 | 类型 | 说明 |
+|--------|-----|------|------|
+| 1 | EasyList | EasyList | 国际网页广告过滤 |
+| 2 | EasyPrivacy | EasyList | 跟踪器/隐私保护 |
+| 3 | Fanboy's Annoyance | EasyList | 移除 Cookie 提示/弹窗/社交按钮等干扰元素 |
+| 4 | AdGuard Base | AdGuard | 基础广告过滤 |
+| 5 | AdGuard Tracking Protection | AdGuard | 跟踪器保护 |
+| 6 | AdGuard Annoyances | AdGuard | 移除弹窗/Cookie 提示等干扰元素 |
+| 7 | AdGuard Social Media | AdGuard | 屏蔽社交媒体小组件 |
+| 8 | AdGuard DNS | AdGuard | DNS 层级域名过滤 |
+| 9 | Peter Lowe's List | 社区 | 知名广告/跟踪服务器域名 |
+| 10 | Anti-AD | 社区 | 中文社区广告过滤 |
 
 ## 处理流程
 
