@@ -1,3 +1,28 @@
+## 2026-08-02T10:53:26Z
+- Total rules: 593,953 (+151 / -0)
+- Sources:
+  - 10007 自动规则: 3,897 rules (+)
+  - AdGuard Annoyances: 55,061 rules (+)
+  - AdGuard Base: 53,092 rules (+)
+  - AdGuard DNS: 21,100 rules (+)
+  - AdGuard Social Media: 15,063 rules (+)
+  - AdGuard Tracking Protection: 160,276 rules (+)
+  - Anti-AD: 10,691 rules (+)
+  - Anti-AD 通用规则: 0 rules (+)
+  - Cats-Team AdRules: 36,921 rules (+)
+  - DD-AD 去广告规则: 533 rules (+)
+  - EasyList: 83,050 rules (+)
+  - EasyPrivacy: 45,428 rules (+)
+  - Fanboy's Annoyance List: 47,580 rules (+)
+  - Peter Lowe's List: 1,491 rules (+)
+  - SMAdHosts 规则: 360 rules (+)
+  - 大萌主-接口广告规则: 0 rules (+)
+  - 晴雅去广告规则: 122 rules (+)
+  - 海哥广告规则: 10,324 rules (+)
+  - 秋风广告规则: 31 rules (+)
+  - 茯苓拦截规则: 188 rules (+)
+  - 那个谁520广告规则: 48,745 rules (+)
+---
 ## 2026-08-02T10:39:33Z
 - Total rules: 593,953 (+151 / -0)
 - Sources:
