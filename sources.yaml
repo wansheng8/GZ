@@ -158,6 +158,142 @@ sources:
     lite: false
     enabled: true
 
+  # ===== 全球 DNS 域名级阻断 =====
+  - name: 1Hosts (Lite)
+    url: https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/adblock.txt
+    priority: 26
+    lite: false
+    enabled: true
+
+  - name: HaGeZi Normal (轻量)
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
+    priority: 27
+    lite: false
+    enabled: true
+
+  - name: HaGeZi Pro++
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt
+    priority: 28
+    lite: false
+    enabled: true
+
+  - name: HaGeZi Ultimate
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/ultimate.txt
+    priority: 29
+    lite: false
+    enabled: true
+
+  - name: OISD Small
+    url: https://small.oisd.nl/
+    priority: 30
+    lite: false
+    enabled: true
+
+  - name: OISD Big
+    url: https://big.oisd.nl/
+    priority: 31
+    lite: false
+    enabled: true
+
+  # ===== HaGeZi 专项拦截 =====
+  - name: HaGeZi 反盗版
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/anti.piracy.txt
+    priority: 32
+    lite: false
+    enabled: true
+
+  - name: HaGeZi 赌博拦截
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/gambling.txt
+    priority: 33
+    lite: false
+    enabled: true
+
+  - name: HaGeZi Samsung 追踪拦截
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.samsung.txt
+    priority: 34
+    lite: false
+    enabled: true
+
+  - name: HaGeZi Windows/Office 追踪拦截
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.winoffice.txt
+    priority: 35
+    lite: false
+    enabled: true
+
+  - name: HaGeZi Xiaomi 追踪拦截
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/native.xiaomi.txt
+    priority: 36
+    lite: false
+    enabled: true
+
+  - name: HaGeZi 推荐白名单
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/whitelist-referral.txt
+    priority: 37
+    lite: false
+    enabled: true
+
+  # ===== 专项拦截 =====
+  - name: Game Console 广告拦截
+    url: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/GameConsoleAdblockList.txt
+    priority: 38
+    lite: false
+    enabled: true
+
+  - name: No Google
+    url: https://raw.githubusercontent.com/nickspaargaren/no-google/master/pihole-google-adguard.txt
+    priority: 39
+    lite: false
+    enabled: true
+
+  - name: Smart-TV 拦截
+    url: https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV-AGH.txt
+    priority: 40
+    lite: false
+    enabled: true
+
+  # ===== 国家/地区专项 =====
+  - name: ABPindo (印尼)
+    url: https://raw.githubusercontent.com/ABPindo/indonesianadblockrules/master/subscriptions/abpindo.txt
+    priority: 41
+    lite: false
+    enabled: true
+
+  - name: EasyList Hebrew (以色列)
+    url: https://raw.githubusercontent.com/easylist/EasyListHebrew/master/EasyListHebrew.txt
+    priority: 42
+    lite: false
+    enabled: true
+
+  - name: YousList (韩国)
+    url: https://raw.githubusercontent.com/yous/YousList/master/youslist.txt
+    priority: 43
+    lite: false
+    enabled: true
+
+  - name: Dandelion Sprout 北欧过滤
+    url: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/NorwegianList.txt
+    priority: 44
+    lite: false
+    enabled: true
+
+  - name: Frellwit's 瑞典过滤
+    url: https://raw.githubusercontent.com/lassekongo83/Frellwits-filter-lists/master/Frellwits-Swedish-Filter.txt
+    priority: 45
+    lite: false
+    enabled: true
+
+  - name: AdGuard 土耳其广告服务器
+    url: https://raw.githubusercontent.com/AdguardTeam/AdguardFilters/master/TurkishFilter/sections/adservers.txt
+    priority: 46
+    lite: false
+    enabled: true
+
+  - name: ABPVN (越南)
+    url: https://abpvn.com/abpvn.txt
+    priority: 47
+    lite: false
+    enabled: true
+
 settings:
   output_dir: dist
   output_file: filter.txt          # 完整版

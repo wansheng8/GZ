@@ -2,7 +2,7 @@
 
 [![Update Filter List](https://github.com/wansheng8/GZ/actions/workflows/update.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/update.yml)
 
-汇集 25 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
+汇集 47 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
 
 ## 快速使用
 
@@ -13,7 +13,7 @@
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
 ```
 
-**完整版（25 源 / ~21.5 MB）：**
+**完整版（47 源 / ~38.9 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
@@ -31,14 +31,14 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 参数 | 值 |
 |------|-----|
 | 精简版规则数 | 482.2K 条 (去重后) |
-| 完整版规则数 | 620.8K 条 (去重后) |
+| 完整版规则数 | 1.5M 条 (去重后) |
 | 精简版大小 | 17.6 MB |
-| 完整版大小 | 21.5 MB |
+| 完整版大小 | 38.9 MB |
 | 更新频率 | 每 20 分钟 |
-| 上游源 | 25 个 |
+| 上游源 | 47 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
-| 最后更新 | 2026-08-02 20:22 CST |
+| 最后更新 | 2026-08-02 20:36 CST |
 
 ## 上游规则源
 
@@ -76,11 +76,33 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 23 | uniartisan 增强规则 | uniartisan 增强规则 |
 | 24 | HaGeZi Pro mini (移动优化) | HaGeZi Pro mini (移动优化) |
 | 25 | X浏览器移动端规则 | X浏览器移动端规则 |
+| 26 | 1Hosts (Lite) | 1Hosts (Lite) |
+| 27 | HaGeZi Normal (轻量) | HaGeZi Normal (轻量) |
+| 28 | HaGeZi Pro++ | HaGeZi Pro++ |
+| 29 | HaGeZi Ultimate | HaGeZi Ultimate |
+| 30 | OISD Small | OISD Small |
+| 31 | OISD Big | OISD Big |
+| 32 | HaGeZi 反盗版 | HaGeZi 反盗版 |
+| 33 | HaGeZi 赌博拦截 | HaGeZi 赌博拦截 |
+| 34 | HaGeZi Samsung 追踪拦截 | HaGeZi Samsung 追踪拦截 |
+| 35 | HaGeZi Windows/Office 追踪拦截 | HaGeZi Windows/Office 追踪拦截 |
+| 36 | HaGeZi Xiaomi 追踪拦截 | HaGeZi Xiaomi 追踪拦截 |
+| 37 | HaGeZi 推荐白名单 | HaGeZi 推荐白名单 |
+| 38 | Game Console 广告拦截 | Game Console 广告拦截 |
+| 39 | No Google | No Google |
+| 40 | Smart-TV 拦截 | Smart-TV 拦截 |
+| 41 | ABPindo (印尼) | ABPindo (印尼) |
+| 42 | EasyList Hebrew (以色列) | EasyList Hebrew (以色列) |
+| 43 | YousList (韩国) | YousList (韩国) |
+| 44 | Dandelion Sprout 北欧过滤 | Dandelion Sprout 北欧过滤 |
+| 45 | Frellwit's 瑞典过滤 | Frellwit's 瑞典过滤 |
+| 46 | AdGuard 土耳其广告服务器 | AdGuard 土耳其广告服务器 |
+| 47 | ABPVN (越南) | ABPVN (越南) |
 
 ## 处理流程
 
 ```
-25 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
+47 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
 ```
 
 - **并发下载**: `aiohttp` 同时拉取全部源，30 秒超时，失败自动重试
@@ -126,7 +148,7 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 1. 检出仓库
 2. 安装 Python 依赖
-3. 并发下载 25 个上游源
+3. 并发下载 47 个上游源
 4. 解析 → 标准化 → 合并 → 去重
 5. 检测到变更后自动 `git commit` 并 `push`
 6. 自动更新 README.md 统计数据
@@ -137,7 +159,7 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 ```
 ├── main.py                     # 主入口
-├── sources.yaml                # 上游源配置 (25 个)
+├── sources.yaml                # 上游源配置 (47 个)
 ├── requirements.txt            # Python 依赖
 ├── src/
 │   ├── config.py               # YAML 配置加载
