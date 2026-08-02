@@ -10,6 +10,8 @@
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
 
+> 该链接依托 GitHub 的 Fastly 全球 CDN 加速，无需额外 CDN 代理。
+
 | 参数 | 值 |
 |------|-----|
 | 当前规则数 | ~500,000 条 |
