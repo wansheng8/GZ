@@ -12,24 +12,43 @@ https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 
 | 参数 | 值 |
 |------|-----|
-| 当前规则数 | ~275,000 条 |
+| 当前规则数 | ~500,000 条 |
 | 更新频率 | 每 20 分钟 |
+| 上游源数 | 21 个 |
 | 兼容性 | Adblock Plus / uBlock Origin / AdGuard |
 
 ## 上游规则源
 
-| 优先级 | 源 | 类型 | 说明 |
-|--------|-----|------|------|
-| 1 | EasyList | EasyList | 国际网页广告过滤 |
-| 2 | EasyPrivacy | EasyList | 跟踪器/隐私保护 |
-| 3 | Fanboy's Annoyance | EasyList | 移除 Cookie 提示/弹窗/社交按钮等干扰元素 |
-| 4 | AdGuard Base | AdGuard | 基础广告过滤 |
-| 5 | AdGuard Tracking Protection | AdGuard | 跟踪器保护 |
-| 6 | AdGuard Annoyances | AdGuard | 移除弹窗/Cookie 提示等干扰元素 |
-| 7 | AdGuard Social Media | AdGuard | 屏蔽社交媒体小组件 |
-| 8 | AdGuard DNS | AdGuard | DNS 层级域名过滤 |
-| 9 | Peter Lowe's List | 社区 | 知名广告/跟踪服务器域名 |
-| 10 | Anti-AD | 社区 | 中文社区广告过滤 |
+### 官方源
+
+| 优先级 | 源 | 说明 |
+|--------|-----|------|
+| 1 | EasyList | 国际网页广告过滤 |
+| 2 | EasyPrivacy | 跟踪器/隐私保护 |
+| 3 | Fanboy's Annoyance List | 移除 Cookie 提示/弹窗等干扰元素 |
+| 4 | AdGuard Base | 基础广告过滤 |
+| 5 | AdGuard Tracking Protection | 跟踪器保护 |
+| 6 | AdGuard Annoyances | 移除弹窗/Cookie 提示等干扰元素 |
+| 7 | AdGuard Social Media | 屏蔽社交媒体小组件 |
+| 8 | AdGuard DNS | DNS 层级域名过滤 |
+
+### 社区源
+
+| 优先级 | 源 | 说明 |
+|--------|-----|------|
+| 9 | Peter Lowe's List | 知名广告/跟踪服务器域名 |
+| 10 | Anti-AD | 中文广告过滤 |
+| 11 | Cats-Team AdRules | 综合广告过滤 |
+| 12 | 大萌主-接口广告规则 | 接口广告过滤 |
+| 13 | DD-AD 去广告规则 | 综合去广告 |
+| 14 | 晴雅去广告规则 | 中文去广告 |
+| 15 | 秋风广告规则 (AWAvenue) | 中文广告过滤 |
+| 16 | 海哥广告规则 | 中文广告过滤 |
+| 17 | 那个谁520广告规则 | 中文广告过滤 |
+| 18 | 10007 自动规则 | 自动化广告过滤 |
+| 19 | Anti-AD 通用规则 | Anti-AD 官方通用版 |
+| 20 | SMAdHosts 规则 | Hosts 格式广告域名 |
+| 21 | 茯苓拦截规则 (FuLing) | 中文拦截规则 |
 
 ## 处理流程
 
