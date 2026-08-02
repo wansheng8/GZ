@@ -2,18 +2,18 @@
 
 [![Update Filter List](https://github.com/wansheng8/GZ/actions/workflows/update.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/update.yml)
 
-汇集 21 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
+汇集 25 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
 
 ## 快速使用
 
 将以下任一链接订阅到你的广告过滤器中：
 
-**精简版（推荐 / 8 官方源 / ~18MB）：**
+**精简版（推荐 / 8 官方源 / ~17.6 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
 ```
 
-**完整版（21 源 / ~21MB）：**
+**完整版（25 源 / ~21.5 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
@@ -30,12 +30,15 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 
 | 参数 | 值 |
 |------|-----|
-| 规则数 | ~500,000 条 (去重后) |
-| 文件大小 | ~18 MB |
+| 精简版规则数 | 482.2K 条 (去重后) |
+| 完整版规则数 | 620.8K 条 (去重后) |
+| 精简版大小 | 17.6 MB |
+| 完整版大小 | 21.5 MB |
 | 更新频率 | 每 20 分钟 |
-| 上游源 | 21 个 |
+| 上游源 | 25 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
+| 最后更新 | 2026-08-02 12:11 UTC |
 
 ## 上游规则源
 
@@ -56,24 +59,28 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 
 | # | 源 | 说明 |
 |---|-----|------|
-| 9 | Peter Lowe's List | 知名广告/跟踪服务器域名 |
-| 10 | Anti-AD | 中文广告过滤 |
-| 11 | Cats-Team AdRules | 综合广告过滤 |
-| 12 | 大萌主-接口广告规则 | 接口广告专用 |
-| 13 | DD-AD 去广告规则 | 综合去广告 |
-| 14 | 晴雅去广告规则 | 中文去广告 |
-| 15 | 秋风广告规则 (AWAvenue) | 中文广告过滤 |
-| 16 | 海哥广告规则 | 中文广告过滤 |
-| 17 | 那个谁520广告规则 | 中文广告过滤 |
-| 18 | 10007 自动规则 | 自动化广告过滤 |
-| 19 | Anti-AD 通用规则 | Anti-AD 官方通用版 |
-| 20 | SMAdHosts 规则 | Hosts 格式广告域名 |
-| 21 | 茯苓拦截规则 (FuLing) | 中文拦截规则 |
+| 9 | Peter Lowe's List | Peter Lowe's List |
+| 10 | Anti-AD | Anti-AD |
+| 11 | Cats-Team AdRules | Cats-Team AdRules |
+| 12 | 大萌主-接口广告规则 | 大萌主-接口广告规则 |
+| 13 | DD-AD 去广告规则 | DD-AD 去广告规则 |
+| 14 | 晴雅去广告规则 | 晴雅去广告规则 |
+| 15 | 秋风广告规则 | 秋风广告规则 |
+| 16 | 海哥广告规则 | 海哥广告规则 |
+| 17 | 那个谁520广告规则 | 那个谁520广告规则 |
+| 18 | 10007 自动规则 | 10007 自动规则 |
+| 19 | Anti-AD 通用规则 | Anti-AD 通用规则 |
+| 20 | SMAdHosts 规则 | SMAdHosts 规则 |
+| 21 | 茯苓拦截规则 | 茯苓拦截规则 |
+| 22 | uniartisan 基础规则 | uniartisan 基础规则 |
+| 23 | uniartisan 增强规则 | uniartisan 增强规则 |
+| 24 | HaGeZi Pro mini (移动优化) | HaGeZi Pro mini (移动优化) |
+| 25 | X浏览器移动端规则 | X浏览器移动端规则 |
 
 ## 处理流程
 
 ```
-21 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
+25 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
 ```
 
 - **并发下载**: `aiohttp` 同时拉取全部源，30 秒超时，失败自动重试
@@ -81,6 +88,7 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 - **格式兼容**: hosts 格式自动转 adblock 语法，异常格式跳过不中断
 - **两级去重**: 精确匹配去重（同规则保留高优先级源版本）+ 子集去重（父域名覆盖子域名）
 - **规则排序**: 例外/白名单规则 (`@@`) 前置，随后是拦截规则和元素隐藏规则
+- **自动清理**: 每次运行后自动清理旧 Actions 记录，仅保留最近 3 条
 
 ## 本地运行
 
@@ -118,9 +126,10 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 1. 检出仓库
 2. 安装 Python 依赖
-3. 并发下载 21 个上游源
+3. 并发下载 25 个上游源
 4. 解析 → 标准化 → 合并 → 去重
 5. 检测到变更后自动 `git commit` 并 `push`
+6. 自动更新 README.md 统计数据
 
 也可手动触发：`Actions → Update Filter List → Run workflow`
 
@@ -128,7 +137,7 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 ```
 ├── main.py                     # 主入口
-├── sources.yaml                # 上游源配置 (21 个)
+├── sources.yaml                # 上游源配置 (25 个)
 ├── requirements.txt            # Python 依赖
 ├── src/
 │   ├── config.py               # YAML 配置加载
@@ -136,10 +145,12 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 │   ├── parser.py               # Adblock/Hosts 语法解析
 │   ├── normalizer.py           # 规则标准化
 │   ├── merger.py               # 精确去重 + 子集去重
-│   └── generator.py            # filter.txt + changelog 生成
+│   ├── generator.py            # filter.txt + changelog 生成
+│   └── update_readme.py        # README.md 自动更新
 ├── tests/                      # 26 个测试用例
 ├── dist/
 │   ├── filter.txt              # 输出的聚合过滤列表
+│   ├── filter-lite.txt         # 精简版过滤列表
 │   └── changelog.md            # 变更日志
 ├── cache/                      # ETag 缓存
 └── .github/workflows/update.yml
