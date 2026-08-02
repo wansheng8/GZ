@@ -2,7 +2,7 @@
 
 [![Update Filter List](https://github.com/wansheng8/GZ/actions/workflows/update.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/update.yml)
 
-汇集 47 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
+汇集 52 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
 
 ## 快速使用
 
@@ -13,7 +13,7 @@
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
 ```
 
-**完整版（47 源 / ~38.9 MB）：**
+**完整版（52 源 / ~39.5 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
@@ -33,12 +33,12 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 精简版规则数 | 482.2K 条 (去重后) |
 | 完整版规则数 | 1.5M 条 (去重后) |
 | 精简版大小 | 17.6 MB |
-| 完整版大小 | 38.9 MB |
+| 完整版大小 | 39.5 MB |
 | 更新频率 | 每 20 分钟 |
-| 上游源 | 47 个 |
+| 上游源 | 52 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
-| 最后更新 | 2026-08-02 20:36 CST |
+| 最后更新 | 2026-08-02 20:42 CST |
 
 ## 上游规则源
 
@@ -98,11 +98,16 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 45 | Frellwit's 瑞典过滤 | Frellwit's 瑞典过滤 |
 | 46 | AdGuard 土耳其广告服务器 | AdGuard 土耳其广告服务器 |
 | 47 | ABPVN (越南) | ABPVN (越南) |
+| 48 | uBlock filters - Ads | uBlock filters - Ads |
+| 49 | uBlock filters - Badware risks | uBlock filters - Badware risks |
+| 50 | uBlock filters - Privacy | uBlock filters - Privacy |
+| 51 | uBlock filters - Quick fixes | uBlock filters - Quick fixes |
+| 52 | uBlock filters - Unbreak | uBlock filters - Unbreak |
 
 ## 处理流程
 
 ```
-47 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
+52 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
 ```
 
 - **并发下载**: `aiohttp` 同时拉取全部源，30 秒超时，失败自动重试
@@ -148,7 +153,7 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 1. 检出仓库
 2. 安装 Python 依赖
-3. 并发下载 47 个上游源
+3. 并发下载 52 个上游源
 4. 解析 → 标准化 → 合并 → 去重
 5. 检测到变更后自动 `git commit` 并 `push`
 6. 自动更新 README.md 统计数据
@@ -159,7 +164,7 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 ```
 ├── main.py                     # 主入口
-├── sources.yaml                # 上游源配置 (47 个)
+├── sources.yaml                # 上游源配置 (52 个)
 ├── requirements.txt            # Python 依赖
 ├── src/
 │   ├── config.py               # YAML 配置加载

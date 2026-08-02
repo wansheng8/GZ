@@ -294,6 +294,37 @@ sources:
     lite: false
     enabled: true
 
+  # ===== uBlock Origin 官方维护 =====
+  - name: uBlock filters - Ads
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
+    priority: 48
+    lite: false
+    enabled: true
+
+  - name: uBlock filters - Badware risks
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
+    priority: 49
+    lite: false
+    enabled: true
+
+  - name: uBlock filters - Privacy
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
+    priority: 50
+    lite: false
+    enabled: true
+
+  - name: uBlock filters - Quick fixes
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt
+    priority: 51
+    lite: false
+    enabled: true
+
+  - name: uBlock filters - Unbreak
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt
+    priority: 52
+    lite: false
+    enabled: true
+
 settings:
   output_dir: dist
   output_file: filter.txt          # 完整版
