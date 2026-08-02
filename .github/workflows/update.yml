@@ -71,12 +71,12 @@ jobs:
 
           # 提取第 4 条及以后的 run_id，逐条删除
           echo "$RUNS_JSON" | python3 -c "
-import sys, json, subprocess
-runs = json.load(sys.stdin)['workflow_runs']
-# API 默认按 created_at 降序返回
-for run in runs[3:]:
-    rid = run['id']
-    print(f'Deleting run {rid} ({run[\"created_at\"]})')
-    subprocess.run(['gh', 'api', '--method', 'DELETE', f'repos/${{ github.repository }}/actions/runs/{rid}'], capture_output=True)
+          import sys, json, subprocess
+          runs = json.load(sys.stdin)['workflow_runs']
+          # API 默认按 created_at 降序返回
+          for run in runs[3:]:
+              rid = run['id']
+              print(f'Deleting run {rid} ({run[\"created_at\"]})')
+              subprocess.run(['gh', 'api', '--method', 'DELETE', f'repos/${{ github.repository }}/actions/runs/{rid}'], capture_output=True)
           "
           echo "Cleanup done."
