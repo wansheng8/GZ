@@ -132,6 +132,32 @@ sources:
     lite: false
     enabled: true
 
+  # ===== 国内专项增强 =====
+  - name: uniartisan 基础规则
+    url: https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock.txt
+    priority: 22
+    lite: false
+    enabled: true
+
+  - name: uniartisan 增强规则
+    url: https://raw.githubusercontent.com/uniartisan/adblock_list/master/adblock_plus.txt
+    priority: 23
+    lite: false
+    enabled: true
+
+  # ===== 移动端专项 =====
+  - name: HaGeZi Pro mini (移动优化)
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.mini.txt
+    priority: 24
+    lite: false
+    enabled: true
+
+  - name: X浏览器移动端规则
+    url: https://raw.githubusercontent.com/examplecode/ad-rules-for-xbrowser/master/core-rule-cn.txt
+    priority: 25
+    lite: false
+    enabled: true
+
 settings:
   output_dir: dist
   output_file: filter.txt          # 完整版
