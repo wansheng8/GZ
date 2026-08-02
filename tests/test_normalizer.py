@@ -30,7 +30,7 @@ def test_remove_www_prefix():
 def test_domain_options_sorting():
     """测试 $domain= 参数排序"""
     result = normalize_rule("||example.com^$domain=z.com|a.com|m.com")
-    assert "domain=a.com,m.com,z.com" in result
+    assert "domain=a.com|m.com|z.com" in result
 
 
 def test_idempotent():

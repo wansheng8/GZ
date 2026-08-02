@@ -39,7 +39,7 @@ def normalize_rule(rule_text: str) -> str:
         prefix = match.group(1)
         domains = match.group(2)
         parts = sorted([d.strip() for d in domains.split("|")])
-        return prefix + ",".join(parts)
+        return prefix + "|".join(parts)
 
     normalized = re.sub(
         r'(\$domain=)([^,$]+)',
