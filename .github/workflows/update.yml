@@ -48,7 +48,7 @@ jobs:
           if git diff --staged --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Update filter list [$(date -u +%Y-%m-%dT%H:%M:%SZ)]"
+            git commit -m "Update filter list [$(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M:%S) CST]"
             git pull --rebase origin main
             git push
           fi
