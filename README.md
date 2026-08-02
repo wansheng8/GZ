@@ -8,12 +8,22 @@
 
 将以下任一链接订阅到你的广告过滤器中：
 
-**主链接（GitHub Raw / Fastly CDN）：**
+**精简版（推荐 / 8 官方源 / ~18MB）：**
+```
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
+```
+
+**完整版（21 源 / ~21MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
 
-**国内加速镜像：**
+**国内加速（精简版）：**
+```
+https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
+```
+
+**国内加速（完整版）：**
 ```
 https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```

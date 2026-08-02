@@ -1,118 +1,141 @@
 # Adblock Filter Aggregator - 上游规则源配置
 # priority 数值越小优先级越高，去重时优先保留
+# lite: true 表示该源纳入精简版
 
 sources:
-  # ===== EasyList 官方系列 =====
+  # ===== EasyList 官方系列 (lite) =====
   - name: EasyList
     url: https://easylist-downloads.adblockplus.org/easylist.txt
     priority: 1
+    lite: true
     enabled: true
 
   - name: EasyPrivacy
     url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
     priority: 2
+    lite: true
     enabled: true
 
   - name: Fanboy's Annoyance List
     url: https://easylist.to/easylist/fanboy-annoyance.txt
     priority: 3
+    lite: true
     enabled: true
 
-  # ===== AdGuard 官方系列 =====
+  # ===== AdGuard 官方系列 (lite) =====
   - name: AdGuard Base
     url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_2_Base/filter.txt
     priority: 4
+    lite: true
     enabled: true
 
   - name: AdGuard Tracking Protection
     url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_3_Spyware/filter.txt
     priority: 5
+    lite: true
     enabled: true
 
   - name: AdGuard Annoyances
     url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_14_Annoyances/filter.txt
     priority: 6
+    lite: true
     enabled: true
 
   - name: AdGuard Social Media
     url: https://raw.githubusercontent.com/AdguardTeam/FiltersRegistry/master/filters/filter_4_Social/filter.txt
     priority: 7
+    lite: true
     enabled: true
 
   - name: AdGuard DNS
     url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
     priority: 8
+    lite: true
     enabled: true
 
   # ===== 社区维护系列 =====
   - name: Peter Lowe's List
     url: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=adblockplus&showintro=0&mimetype=plaintext
     priority: 9
+    lite: false
     enabled: true
 
   - name: Anti-AD
     url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt
     priority: 10
+    lite: false
     enabled: true
 
   - name: Cats-Team AdRules
     url: https://raw.githubusercontent.com/Cats-Team/AdRules/main/adblock.txt
     priority: 11
+    lite: false
     enabled: true
 
   - name: 大萌主-接口广告规则
     url: https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt
     priority: 12
+    lite: false
     enabled: true
 
   - name: DD-AD 去广告规则
     url: https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt
     priority: 13
+    lite: false
     enabled: true
 
   - name: 晴雅去广告规则
     url: https://raw.githubusercontent.com/790953214/qy-Ads-Rule/main/black.txt
     priority: 14
+    lite: false
     enabled: true
 
   - name: 秋风广告规则
     url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
     priority: 15
+    lite: false
     enabled: true
 
   - name: 海哥广告规则
     url: https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
     priority: 16
+    lite: false
     enabled: true
 
   - name: 那个谁520广告规则
     url: https://raw.githubusercontent.com/qq5460168/EasyAds/main/adblock.txt
     priority: 17
+    lite: false
     enabled: true
 
   - name: 10007 自动规则
     url: https://raw.githubusercontent.com/lingeringsound/10007_auto/main/adb.txt
     priority: 18
+    lite: false
     enabled: true
 
   - name: Anti-AD 通用规则
     url: https://anti-ad.net/easylist.txt
     priority: 19
+    lite: false
     enabled: true
 
   - name: SMAdHosts 规则
     url: https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/master/SMAdHosts
     priority: 20
+    lite: false
     enabled: true
 
   - name: 茯苓拦截规则
     url: https://raw.githubusercontent.com/Kuroba-Sayuki/FuLing-AdRules/main/FuLingRules/FuLingBlockList.txt
     priority: 21
+    lite: false
     enabled: true
 
 settings:
   output_dir: dist
-  output_file: filter.txt
+  output_file: filter.txt          # 完整版
+  lite_output_file: filter-lite.txt # 精简版
   changelog_file: changelog.md
   cache_dir: cache
   etag_file: etags.json

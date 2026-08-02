@@ -5,21 +5,23 @@ import tempfile
 
 import pytest
 
-from src.config import load_config, get_enabled_sources, AppConfig, SourceConfig
-
+from src.config import load_config, get_enabled_sources, get_lite_sources, AppConfig, SourceConfig
 
 VALID_CONFIG = """sources:
   - name: EasyList
     url: https://easylist-downloads.adblockplus.org/easylist.txt
     priority: 1
+    lite: true
     enabled: true
   - name: EasyPrivacy
     url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
     priority: 2
+    lite: true
     enabled: true
   - name: DisabledSource
     url: https://example.com/disabled.txt
     priority: 3
+    lite: false
     enabled: false
 
 settings:
