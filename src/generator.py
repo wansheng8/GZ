@@ -44,8 +44,8 @@ def generate_output(
     output_path = Path(output_dir)
     output_path.mkdir(parents=True, exist_ok=True)
 
-    timestamp = datetime.now(timezone.utc)
-    timestamp_str = timestamp.strftime("%Y-%m-%dT%H:%M:%SZ")
+    timestamp = datetime.now(timezone.utc) + timedelta(hours=8)
+    timestamp_str = timestamp.strftime("%Y-%m-%dT%H:%M:%S CST")
 
     # 统计
     by_source: dict[str, int] = {}
@@ -187,7 +187,12 @@ def generate_changelog(
         if first_line.startswith("## "):
             date_str = first_line[3:].strip()
             try:
-                entry_date = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+                if date_str.endswith(" CST"):
+                    entry_date = datetime.fromisoformat(date_str.replace(" CST", "+08:00"))
+                elif date_str.endswith("Z"):
+                    entry_date = datetime.fromisoformat(date_str.replace("Z", "+00:00"))
+                else:
+                    entry_date = datetime.fromisoformat(date_str)
                 if entry_date > cutoff:
                     valid_entries.append(old_entry)
             except ValueError:
