@@ -3,7 +3,6 @@ __pycache__/
 *.py[cod]
 *.egg-info/
 .eggs/
-dist/
 build/
 
 # Virtual environment
@@ -17,10 +16,7 @@ env/
 *.swp
 *.swo
 
-# Output directory
-dist/
-
-# Cache directory (but keep the directory itself)
+# Cache directory (keep directory, ignore json cache)
 cache/*.json
 
 # OS
