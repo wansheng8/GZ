@@ -1,7 +1,7 @@
 """Update README.md with current filter stats and source lists."""
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
@@ -90,7 +90,7 @@ def generate_source_tables(sources):
 
 def build_readme(sources, settings, lite_stats, full_stats):
     """Build the full README content with current stats."""
-    now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+    now = (datetime.now(timezone.utc) + timedelta(hours=8)).strftime("%Y-%m-%d %H:%M CST")
     total_sources = len([s for s in sources if s.enabled])
     lite_count = len([s for s in sources if s.enabled and s.lite])
     full_count = total_sources
