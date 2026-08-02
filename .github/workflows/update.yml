@@ -7,9 +7,10 @@ on:
   # 支持手动触发
   workflow_dispatch:
 
-# 授予写入权限以允许自动提交
+# 授予写入权限以允许自动提交和清理运行记录
 permissions:
   contents: write
+  actions: write
 
 # 防止并发运行
 concurrency:
@@ -48,3 +49,31 @@ jobs:
             git pull --rebase origin main
             git push
           fi
+
+      - name: Cleanup old workflow runs (keep latest 3)
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # 获取本 workflow 所有 completed 运行记录
+          RUNS_JSON=$(gh api "repos/${{ github.repository }}/actions/runs?per_page=100&status=completed")
+          TOTAL=$(echo "$RUNS_JSON" | python3 -c "import sys,json; print(len(json.load(sys.stdin)['workflow_runs']))")
+          KEEP=3
+
+          if [ "$TOTAL" -le "$KEEP" ]; then
+            echo "Only $TOTAL runs, nothing to delete."
+            exit 0
+          fi
+
+          echo "Total completed runs: $TOTAL, keeping latest $KEEP"
+
+          # 提取第 4 条及以后的 run_id，逐条删除
+          echo "$RUNS_JSON" | python3 -c "
+import sys, json, subprocess
+runs = json.load(sys.stdin)['workflow_runs']
+# API 默认按 created_at 降序返回
+for run in runs[3:]:
+    rid = run['id']
+    print(f'Deleting run {rid} ({run[\"created_at\"]})')
+    subprocess.run(['gh', 'api', '--method', 'DELETE', f'repos/${{ github.repository }}/actions/runs/{rid}'], capture_output=True)
+          "
+          echo "Cleanup done."
