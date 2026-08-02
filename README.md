@@ -6,13 +6,17 @@
 
 ## 快速使用
 
-将以下链接订阅到你的广告过滤器中：
+将以下任一链接订阅到你的广告过滤器中：
 
+**主链接（GitHub Raw / Fastly CDN）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
 
-> 该链接依托 GitHub 的 Fastly 全球 CDN 分发，中国大陆也可正常访问。
+**国内加速镜像：**
+```
+https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
+```
 
 | 参数 | 值 |
 |------|-----|
