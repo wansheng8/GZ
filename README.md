@@ -38,7 +38,7 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 上游源 | 52 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
-| 最后更新 | 2026-08-05 01:05 CST |
+| 最后更新 | 2026-08-05 02:54 CST |
 
 ## 上游规则源
 
