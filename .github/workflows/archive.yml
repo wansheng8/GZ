@@ -1,0 +1,88 @@
+name: Archive Daily Snapshot
+
+on:
+  schedule:
+    # 每天 00:30 北京时间（16:30 UTC）归档一次版本快照
+    - cron: '30 16 * * *'
+  workflow_dispatch:
+
+# 授予 push tag 与 Release 管理权限
+permissions:
+  contents: write
+
+# 防止手动触发与定时任务重叠
+concurrency:
+  group: archive-snapshot
+  cancel-in-progress: false
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # 保留的归档快照数量（Release 及其 tag），超出部分自动清理
+      KEEP_RELEASES: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # 归档只需最新 dist，浅克隆即可
+          fetch-depth: 1
+
+      - name: Create snapshot tag and release
+        run: |
+          set -euo pipefail
+
+          TAG="archive-$(TZ='Asia/Shanghai' date +%Y%m%d-%H%M)"
+
+          # 幂等：同名快照已存在则跳过（手动重跑安全）
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "Snapshot $TAG already exists, skipping."
+            exit 0
+          fi
+
+          # 校验待归档文件存在
+          for f in dist/filter.txt dist/filter-lite.txt dist/changelog.md; do
+            if [ ! -f "$f" ]; then
+              echo "Missing archive file: $f"
+              exit 1
+            fi
+          done
+
+          TIMESTAMP=$(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M:%S)
+
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git tag "$TAG"
+          git push origin "$TAG"
+
+          gh release create "$TAG" \
+            dist/filter.txt dist/filter-lite.txt dist/changelog.md \
+            --title "Filter snapshot $TAG" \
+            --notes "Adblock Filter Aggregator 每日归档快照，生成时间 ${TIMESTAMP} CST。包含完整版、精简版规则列表及变更日志。"
+          echo "Snapshot released: $TAG"
+
+      - name: Cleanup old snapshots
+        run: |
+          set -euo pipefail
+          KEEP="${KEEP_RELEASES:-10}"
+
+          # 仅清理本 workflow 创建的 archive- 前缀快照（按最新在前排序）
+          mapfile -t OLD_TAGS < <(
+            gh release list --limit 200 --json tagName --jq '.[].tagName' \
+            | grep '^archive-' \
+            | tail -n +$((KEEP + 1))
+          )
+
+          if [ "${#OLD_TAGS[@]}" -eq 0 ]; then
+            echo "No old snapshots to clean (keeping latest ${KEEP})."
+            exit 0
+          fi
+
+          for TAG in "${OLD_TAGS[@]}"; do
+            echo "Deleting old snapshot: $TAG"
+            gh release delete "$TAG" --yes --cleanup-tag
+          done
+          echo "Cleanup done: removed ${#OLD_TAGS[@]} old snapshot(s)."

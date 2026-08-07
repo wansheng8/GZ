@@ -3,7 +3,7 @@
 import logging
 from collections import defaultdict
 
-from src.parser import Rule
+from src.parser import Rule, RULE_HEADER, RULE_BLOCK, RULE_EXCEPTION, HIDE_TYPES
 
 logger = logging.getLogger(__name__)
 
@@ -37,8 +37,11 @@ class RuleMerger:
         2. 精确去重：相同 normalized 文本只保留首次出现的
         3. 子集去重：检测是否存在更宽泛的规则覆盖当前规则
 
+        输出顺序:
+        header 元数据 → 网络例外 @@ → 网络拦截 → 元素类规则（隐藏例外在前）
+
         Returns:
-            去重后的规则列表，exception 规则在前
+            去重后的规则列表
         """
         # 收集所有规则并按 priority 排序
         all_rules: list[Rule] = []
@@ -48,41 +51,47 @@ class RuleMerger:
         # 按 priority 升序排列（数值越小优先级越高，先处理先保留）
         all_rules.sort(key=lambda r: r.priority)
 
-        # 分离 exception、block、hide、header 规则
+        # 分组：header / 网络例外 / 网络拦截 / 元素类规则
+        headers: list[Rule] = []
         exceptions: list[Rule] = []
         blocks: list[Rule] = []
-        hides: list[Rule] = []
-        headers: list[Rule] = []
+        hide_group: list[Rule] = []
 
         for rule in all_rules:
-            if rule.rule_type == "exception":
-                exceptions.append(rule)
-            elif rule.rule_type == "hide":
-                hides.append(rule)
-            elif rule.rule_type == "header":
+            if rule.rule_type == RULE_HEADER:
                 headers.append(rule)
-            else:
+            elif rule.rule_type == RULE_EXCEPTION:
+                exceptions.append(rule)
+            elif rule.rule_type == RULE_BLOCK:
                 blocks.append(rule)
+            else:
+                # 元素类规则（hide / hide-exception / css-ext / scriptlet / html）
+                hide_group.append(rule)
 
         # Step 1: 精确去重
+        headers = _deduplicate_exact(headers)
         exceptions = _deduplicate_exact(exceptions)
         blocks = _deduplicate_exact(blocks)
-        hides = _deduplicate_exact(hides)
+        hide_group = _deduplicate_exact(hide_group)
 
-        # Step 2: 子集去重（仅对 block 规则）
+        # Step 2: 子集去重（仅对网络拦截规则）
         blocks = _deduplicate_subset(blocks)
 
+        # Step 3: 元素类规则内部分组，隐藏例外优先输出
+        hide_exceptions = [r for r in hide_group if r.rule_type == "hide-exception"]
+        rest_hide = [r for r in hide_group if r.rule_type != "hide-exception"]
+
         logger.info(
-            "Merge result: %d exception + %d block + %d hide + %d header = %d total",
+            "Merge result: %d header + %d exception + %d block + %d hide = %d total",
+            len(headers),
             len(exceptions),
             len(blocks),
-            len(hides),
-            len(headers),
-            len(exceptions) + len(blocks) + len(hides) + len(headers),
+            len(hide_group),
+            len(headers) + len(exceptions) + len(blocks) + len(hide_group),
         )
 
-        # 合并: exception 规则在前，header 信息在末尾的注释中
-        return exceptions + blocks + hides
+        # 合并: header 元数据在前，网络例外其次，随后是拦截规则和元素类规则
+        return headers + exceptions + blocks + hide_exceptions + rest_hide
 
 
 def _deduplicate_exact(rules: list[Rule]) -> list[Rule]:

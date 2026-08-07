@@ -3,9 +3,10 @@ import os
 import sys
 from datetime import datetime, timezone, timedelta
 
+# 保证从任意工作目录运行时都能导入 src 包
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
-from config import load_config
+from src.config import load_config
 
 
 def load_sources(config_path="sources.yaml"):
@@ -157,6 +158,7 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 - **格式兼容**: hosts 格式自动转 adblock 语法，异常格式跳过不中断
 - **两级去重**: 精确匹配去重（同规则保留高优先级源版本）+ 子集去重（父域名覆盖子域名）
 - **规则排序**: 例外/白名单规则 (`@@`) 前置，随后是拦截规则和元素隐藏规则
+- **仓库瘦身**: 连续 bot 提交用 amend 合并，历史只保留一份最新输出，避免大文件版本堆积
 - **自动清理**: 每次运行后自动清理旧 Actions 记录，仅保留最近 3 条
 
 ## 本地运行
@@ -197,10 +199,13 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 2. 安装 Python 依赖
 3. 并发下载 {total_sources} 个上游源
 4. 解析 → 标准化 → 合并 → 去重
-5. 检测到变更后自动 `git commit` 并 `push`
+5. 检测到变更后自动 `git commit` 并 `push`（连续 bot 提交自动 amend 合并，仓库只保留最新输出）
 6. 自动更新 README.md 统计数据
+7. 每天 00:30 生成版本快照（tag + GitHub Release 归档，保留最近 10 份）
 
 也可手动触发：`Actions → Update Filter List → Run workflow`
+
+历史版本快照可在 [Releases](https://github.com/wansheng8/GZ/releases) 页面下载。
 
 ## 项目结构
 

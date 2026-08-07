@@ -23,6 +23,7 @@ class DownloadResult:
     status_code: int
     changed: bool
     error: Optional[str] = None
+    etag: Optional[str] = None  # 条件令牌（ETag 或 Last-Modified），用于下次条件请求
 
 
 def load_etags(cache_dir: str, etag_file: str) -> dict[str, str]:
@@ -50,6 +51,9 @@ def load_etags(cache_dir: str, etag_file: str) -> dict[str, str]:
 def save_etags(cache_dir: str, etag_file: str, results: dict[str, "DownloadResult"]) -> None:
     """保存 ETag 缓存
 
+    将下载成功且携带条件令牌的源写入缓存；
+    下载失败的源保留其旧值，下次运行继续尝试条件请求。
+
     Args:
         cache_dir: 缓存目录路径
         etag_file: ETag 文件名
@@ -58,15 +62,30 @@ def save_etags(cache_dir: str, etag_file: str, results: dict[str, "DownloadResul
     etag_path = Path(cache_dir) / etag_file
     etag_path.parent.mkdir(parents=True, exist_ok=True)
 
-    etags = {}
-    for name, result in results.items():
-        if result.error is None and result.changed:
-            # 从响应头中提取的 ETag 在 DownloadResult 中没有直接保存
-            # 这里我们只记录成功更新的源
-            pass
+    # 加载现有缓存，保留失败源的旧令牌
+    etags = load_etags(cache_dir, etag_file)
 
-    # ETag 值的实际保存发生在 download_all 中
-    # 此函数保留作为接口占位
+    for name, result in results.items():
+        if result.error is None and result.etag:
+            etags[name] = result.etag
+
+    with open(etag_path, "w", encoding="utf-8") as f:
+        json.dump(etags, f, indent=2, ensure_ascii=False)
+
+    logger.info("Saved %d ETags to %s", len(etags), etag_path)
+
+
+def _extract_etag(resp: aiohttp.ClientResponse, fallback: Optional[str]) -> Optional[str]:
+    """从响应头提取条件令牌，优先 ETag，回退 Last-Modified
+
+    Args:
+        resp: HTTP 响应
+        fallback: 当响应头无令牌时使用的回退值（304 场景保留旧值）
+
+    Returns:
+        条件令牌字符串，若响应头无令牌且无回退值则返回 None
+    """
+    return resp.headers.get("ETag") or resp.headers.get("Last-Modified") or fallback
 
 
 async def download_single(
@@ -90,7 +109,10 @@ async def download_single(
     """
     headers = {"User-Agent": "AdblockFilterAggregator/1.0"}
     if etag:
+        # 同时携带 If-None-Match 与 If-Modified-Since，
+        # 兼容服务器返回 ETag 或 Last-Modified 两种条件令牌
         headers["If-None-Match"] = etag
+        headers["If-Modified-Since"] = etag
 
     for attempt in range(2):  # 初次 + 1 次重试
         try:
@@ -105,6 +127,7 @@ async def download_single(
                         rule_count=0,
                         status_code=304,
                         changed=False,
+                        etag=_extract_etag(resp, etag),
                     )
 
                 if resp.status != 200:
@@ -131,6 +154,7 @@ async def download_single(
                     rule_count=rule_count,
                     status_code=200,
                     changed=True,
+                    etag=_extract_etag(resp, None),
                 )
 
         except asyncio.TimeoutError:

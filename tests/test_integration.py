@@ -123,5 +123,29 @@ def test_end_to_end_pipeline():
         print(f"E2E pipeline test PASSED")
 
 
+def test_end_to_end_multi_site_dedup():
+    """端到端测试: 模拟 main.py 流程（normalize_rule 覆盖），多站点顺序无关去重生效"""
+    src = SourceConfig(name="Test", url="http://mock/x.txt", priority=1, enabled=True)
+
+    # 两条语义相同、域名顺序不同的多站点 hide 规则
+    rules = parse_rules(
+        "example.com,foo.org##.sponsor\nfoo.org,example.com##.sponsor\n",
+        src,
+    )
+    assert len(rules) == 2
+
+    # 与 main.py 一致: 解析后立即用 normalize_rule 覆盖 normalized
+    for rule in rules:
+        rule.normalized = normalize_rule(rule.raw)
+
+    merger = RuleMerger()
+    merger.add_source(rules)
+    merged = merger.merge()
+
+    # 两条规则应被合并为一条
+    assert len(merged) == 1
+    assert merged[0].raw == "example.com,foo.org##.sponsor"
+
+
 if __name__ == "__main__":
     test_end_to_end_pipeline()

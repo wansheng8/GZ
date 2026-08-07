@@ -25,6 +25,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # 完整历史：amend 需要父提交对象，且瘦身策略下历史很短
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v5
@@ -47,8 +50,31 @@ jobs:
           git add dist/ cache/ README.md
           if git diff --staged --quiet; then
             echo "No changes to commit."
+            exit 0
+          fi
+
+          COMMIT_MSG="Update filter list [$(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M:%S) CST]"
+
+          # 仓库瘦身：连续 bot 提交用 amend 合并，历史只保留一份最新输出，
+          # 避免 40MB+ 输出文件每 20 分钟产生一个新版本导致 .git 无限膨胀。
+          # 并发由 workflow concurrency 保证（同一时刻仅一个实例）。
+          LAST_MSG=$(git log -1 --format=%s 2>/dev/null || echo "")
+          if echo "$LAST_MSG" | grep -q "^Update filter list \["; then
+            # 上一次提交也是 bot 更新：检查远程后合并进同一提交
+            git fetch origin main
+            if [ "$(git rev-parse HEAD)" = "$(git rev-parse origin/main)" ]; then
+              # 远程仍是我们上次的 bot 提交：amend 合并，历史不膨胀
+              git commit --amend -m "$COMMIT_MSG"
+              git push --force-with-lease origin main
+              echo "Amended previous bot commit and pushed."
+            else
+              # 远程存在其他提交：放弃 amend，正常新建提交
+              git commit -m "$COMMIT_MSG"
+              git pull --rebase origin main
+              git push
+            fi
           else
-            git commit -m "Update filter list [$(TZ='Asia/Shanghai' date +%Y-%m-%dT%H:%M:%S) CST]"
+            git commit -m "$COMMIT_MSG"
             git pull --rebase origin main
             git push
           fi

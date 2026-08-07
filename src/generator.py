@@ -6,7 +6,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
-from src.parser import Rule
+from src.parser import Rule, RULE_HEADER, RULE_EXCEPTION, RULE_BLOCK, HIDE_TYPES
 
 logger = logging.getLogger(__name__)
 
@@ -47,20 +47,25 @@ def generate_output(
     timestamp = datetime.now(timezone.utc) + timedelta(hours=8)
     timestamp_str = timestamp.strftime("%Y-%m-%dT%H:%M:%S CST")
 
-    # 统计
+    # 统计（header 元数据行不计入规则数，避免与重读文件的计数不一致）
     by_source: dict[str, int] = {}
     exception_count = 0
     block_count = 0
     hide_count = 0
 
     for rule in rules:
+        if rule.rule_type == RULE_HEADER:
+            continue
         by_source[rule.source] = by_source.get(rule.source, 0) + 1
-        if rule.rule_type == "exception":
+        if rule.rule_type == RULE_EXCEPTION:
             exception_count += 1
-        elif rule.rule_type == "hide":
-            hide_count += 1
-        else:
+        elif rule.rule_type == RULE_BLOCK:
             block_count += 1
+        else:
+            # 元素类规则统一计入 hide（hide / hide-exception / css-ext / scriptlet / html）
+            hide_count += 1
+
+    total_rules = exception_count + block_count + hide_count
 
     # 构建文件头
     source_lines = []
@@ -74,7 +79,7 @@ def generate_output(
 ! Expires: 20 minutes
 ! Version: {timestamp_str}
 ! Last modified: {timestamp_str}
-! Total rules: {len(rules)}
+! Total rules: {total_rules}
 !   Exception rules: {exception_count}
 !   Block rules: {block_count}
 !   Hide rules: {hide_count}
@@ -88,23 +93,26 @@ def generate_output(
     with open(file_path, "w", encoding="utf-8", newline="\n") as f:
         f.write(header)
 
-        # 写入规则，exception 规则已在前
+        # 写入规则：header 元数据行最先输出，随后是 exception/block/hide 分区
         section = ""
         for rule in rules:
-            if rule.rule_type == "exception" and section != "exception":
+            if rule.rule_type == RULE_HEADER:
+                f.write(rule.raw + "\n")
+                continue
+            if rule.rule_type == RULE_EXCEPTION and section != "exception":
                 f.write("! ===== Exception Rules =====\n")
                 section = "exception"
-            elif rule.rule_type == "block" and section != "block":
+            elif rule.rule_type == RULE_BLOCK and section != "block":
                 f.write("! ===== Block Rules =====\n")
                 section = "block"
-            elif rule.rule_type == "hide" and section != "hide":
+            elif rule.rule_type in HIDE_TYPES and section != "hide":
                 f.write("! ===== Hide Rules =====\n")
                 section = "hide"
 
             f.write(rule.raw + "\n")
 
     result = GenerationResult(
-        total_rules=len(rules),
+        total_rules=total_rules,
         exception_rules=exception_count,
         block_rules=block_count,
         hide_rules=hide_count,

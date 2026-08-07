@@ -54,6 +54,75 @@ def test_generate_output():
         assert "! ===== Block Rules =====" in content
 
 
+def test_generate_output_headers_excluded_from_stats():
+    """测试 header 元数据行写入输出但不计入规则统计"""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        rules = [
+            make_rule("! Title: EasyList", "header"),
+            make_rule("! Expires: 4 days", "header"),
+            make_rule("||ads.com^", "block"),
+        ]
+
+        sources_summary = {
+            "Test": {"rule_count": 3, "priority": 1, "status": "updated"},
+        }
+
+        result = generate_output(rules, sources_summary, tmpdir, "filter.txt")
+
+        # header 不计入统计
+        assert result.total_rules == 1
+        assert result.block_rules == 1
+
+        output_path = os.path.join(tmpdir, "filter.txt")
+        with open(output_path, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # header 行透传到输出文件，且在 Exception/Block 分区之前
+        assert "! Title: EasyList" in content
+        assert "! Expires: 4 days" in content
+        assert "! Total rules: 1" in content
+        block_section = content.find("! ===== Block Rules =====")
+        assert content.find("! Title: EasyList") < block_section
+        assert content.find("! Expires: 4 days") < block_section
+
+
+def test_generate_output_hide_group_section():
+    """测试元素类规则（隐藏例外/脚本/HTML）统一归入 Hide 分区"""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        rules = [
+            make_rule("@@||safe.com^", "exception"),
+            make_rule("||ads.com^", "block"),
+            make_rule("example.com#@#.important", "hide-exception"),
+            make_rule("example.com##.ad", "hide"),
+            make_rule("example.com##+js(abort.js, x)", "scriptlet"),
+            make_rule("example.com$$div.ad", "html"),
+        ]
+
+        sources_summary = {
+            "Test": {"rule_count": 6, "priority": 1, "status": "updated"},
+        }
+
+        result = generate_output(rules, sources_summary, tmpdir, "filter.txt")
+
+        # 元素类规则统一计入 hide 统计
+        assert result.exception_rules == 1
+        assert result.block_rules == 1
+        assert result.hide_rules == 4
+
+        with open(os.path.join(tmpdir, "filter.txt"), "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # 各元素类规则透传且位于 Hide 分区内
+        assert "example.com#@#.important" in content
+        assert "example.com##+js(abort.js, x)" in content
+        assert "example.com$$div.ad" in content
+        hide_section = content.find("! ===== Hide Rules =====")
+        assert hide_section != -1
+        assert content.find("example.com#@#.important") > hide_section
+        assert content.find("example.com##+js(abort.js, x)") > hide_section
+        assert content.find("example.com$$div.ad") > hide_section
+
+
 def test_generate_changelog():
     """测试变更日志生成"""
     with tempfile.TemporaryDirectory() as tmpdir:

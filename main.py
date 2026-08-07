@@ -8,11 +8,16 @@
 import asyncio
 import logging
 import sys
-from pathlib import Path
+from typing import Optional
 
 from src.config import load_config, get_enabled_sources, get_lite_sources, SourceConfig
 from src.downloader import load_etags, save_etags, download_all, DownloadResult
-from src.generator import generate_output, generate_changelog, load_previous_result
+from src.generator import (
+    generate_output,
+    generate_changelog,
+    load_previous_result,
+    GenerationResult,
+)
 from src.merger import RuleMerger
 from src.normalizer import normalize_rule
 from src.parser import parse_rules
@@ -88,6 +93,47 @@ async def process_sources(
     return merged, sources_summary
 
 
+def generate_version(
+    merged: list,
+    summary: dict[str, dict],
+    output_dir: str,
+    output_file: str,
+    version_name: str,
+) -> Optional[GenerationResult]:
+    """生成单个版本，空结果时跳过以避免覆盖已有输出
+
+    Args:
+        merged: 合并去重后的规则列表
+        summary: 各源摘要信息
+        output_dir: 输出目录
+        output_file: 输出文件名
+        version_name: 版本名称（用于日志）
+
+    Returns:
+        生成结果；若 merged 为空则返回 None 且不写文件
+    """
+    if not merged:
+        logger.error(
+            "%s: no rules merged (all sources failed or empty). "
+            "Skipping generation to avoid overwriting existing output.",
+            version_name,
+        )
+        return None
+
+    result = generate_output(merged, summary, output_dir, output_file)
+    logger.info("")
+    logger.info("=== %s ===", version_name)
+    logger.info("Output: %s/%s", output_dir, output_file)
+    logger.info(
+        "Total rules: %d (%d exception, %d block, %d hide)",
+        result.total_rules,
+        result.exception_rules,
+        result.block_rules,
+        result.hide_rules,
+    )
+    return result
+
+
 async def main() -> None:
     logger.info("=== Adblock Filter Aggregator ===")
 
@@ -109,6 +155,10 @@ async def main() -> None:
         retry_delay=config.retry_delay,
     )
 
+    # 持久化条件令牌，无论是否有变更都先保存，
+    # 保证下次运行可以发起 304 条件请求
+    save_etags(config.cache_dir, config.etag_file, results)
+
     changed_count = sum(1 for r in results.values() if r.changed and r.error is None)
     if changed_count == 0:
         logger.info("No sources have changed. Skipping regeneration.")
@@ -120,40 +170,31 @@ async def main() -> None:
     lite_merged, lite_summary = await process_sources(
         results, lite_only=True, max_rule_length=config.max_rule_length,
     )
-    lite_result = generate_output(
+    lite_result = generate_version(
         lite_merged, lite_summary, config.output_dir, config.lite_output_file,
+        "Lite Version",
     )
-    logger.info("")
-    logger.info("=== Lite Version ===")
-    logger.info("Output: %s/%s", config.output_dir, config.lite_output_file)
-    logger.info("Total rules: %d (%d exception, %d block, %d hide)",
-                lite_result.total_rules, lite_result.exception_rules,
-                lite_result.block_rules, lite_result.hide_rules)
 
     # 5. 生成完整版 (all sources)
     full_merged, full_summary = await process_sources(
         results, lite_only=False, max_rule_length=config.max_rule_length,
     )
-    full_result = generate_output(
+    full_result = generate_version(
         full_merged, full_summary, config.output_dir, config.output_file,
+        "Full Version",
     )
-    logger.info("")
-    logger.info("=== Full Version ===")
-    logger.info("Output: %s/%s", config.output_dir, config.output_file)
-    logger.info("Total rules: %d (%d exception, %d block, %d hide)",
-                full_result.total_rules, full_result.exception_rules,
-                full_result.block_rules, full_result.hide_rules)
 
-    # 6. 变更日志（基于完整版）
-    previous = load_previous_result(config.output_dir, config.output_file)
-    generate_changelog(
-        current=full_result,
-        sources_info=full_summary,
-        previous=previous,
-        output_dir=config.output_dir,
-        changelog_file=config.changelog_file,
-        retention_days=config.changelog_retention_days,
-    )
+    # 6. 变更日志（基于完整版，仅当完整版成功生成时）
+    if full_result is not None:
+        previous = load_previous_result(config.output_dir, config.output_file)
+        generate_changelog(
+            current=full_result,
+            sources_info=full_summary,
+            previous=previous,
+            output_dir=config.output_dir,
+            changelog_file=config.changelog_file,
+            retention_days=config.changelog_retention_days,
+        )
 
     logger.info("")
     logger.info("=== Generation Complete ===")
