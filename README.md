@@ -8,7 +8,7 @@
 
 将以下任一链接订阅到你的广告过滤器中：
 
-**精简版（推荐 / 8 官方源 / ~17.6 MB）：**
+**精简版（推荐 / 8 官方源 / ~17.7 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
 ```
@@ -30,15 +30,15 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 
 | 参数 | 值 |
 |------|-----|
-| 精简版规则数 | 483.8K 条 (去重后) |
+| 精简版规则数 | 483.9K 条 (去重后) |
 | 完整版规则数 | 1.5M 条 (去重后) |
-| 精简版大小 | 17.6 MB |
+| 精简版大小 | 17.7 MB |
 | 完整版大小 | 40.1 MB |
 | 更新频率 | 每 20 分钟 |
 | 上游源 | 52 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
-| 最后更新 | 2026-08-07 19:37 CST |
+| 最后更新 | 2026-08-07 20:26 CST |
 
 ## 上游规则源
 
