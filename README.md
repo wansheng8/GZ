@@ -30,7 +30,7 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 
 | 参数 | 值 |
 |------|-----|
-| 精简版规则数 | 483.6K 条 (去重后) |
+| 精简版规则数 | 483.7K 条 (去重后) |
 | 完整版规则数 | 1.5M 条 (去重后) |
 | 精简版大小 | 17.6 MB |
 | 完整版大小 | 40.0 MB |
@@ -38,7 +38,7 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 上游源 | 52 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
-| 最后更新 | 2026-08-06 22:40 CST |
+| 最后更新 | 2026-08-07 08:17 CST |
 
 ## 上游规则源
 
