@@ -13,7 +13,7 @@
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
 ```
 
-**完整版（52 源 / ~40.0 MB）：**
+**完整版（52 源 / ~40.1 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
@@ -33,12 +33,12 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 精简版规则数 | 483.8K 条 (去重后) |
 | 完整版规则数 | 1.5M 条 (去重后) |
 | 精简版大小 | 17.6 MB |
-| 完整版大小 | 40.0 MB |
+| 完整版大小 | 40.1 MB |
 | 更新频率 | 每 20 分钟 |
 | 上游源 | 52 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
-| 最后更新 | 2026-08-07 15:48 CST |
+| 最后更新 | 2026-08-07 16:45 CST |
 
 ## 上游规则源
 
