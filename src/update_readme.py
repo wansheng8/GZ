@@ -155,7 +155,7 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 
 - **并发下载**: `aiohttp` 同时拉取全部源，{settings.request_timeout} 秒超时，失败自动重试
 - **ETag 增量**: 带条件请求头，上游未变化时跳过更新，节省流量
-- **格式兼容**: hosts 格式自动转 adblock 语法，异常格式跳过不中断
+- **格式兼容**: 兼容 Adblock Plus / uBlock Origin / AdGuard 语法，hosts 行保留原始格式（剥除注释），异常格式跳过不中断
 - **两级去重**: 精确匹配去重（同规则保留高优先级源版本）+ 子集去重（父域名覆盖子域名）
 - **规则排序**: 例外/白名单规则 (`@@`) 前置，随后是拦截规则和元素隐藏规则
 - **仓库瘦身**: 连续 bot 提交用 amend 合并，历史只保留一份最新输出，避免大文件版本堆积

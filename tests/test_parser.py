@@ -219,7 +219,7 @@ example.com##.ad-banner
 
 
 def test_parse_hosts_rules():
-    """测试 hosts 格式规则转换"""
+    """测试 hosts 格式规则保留原格式"""
     content = """127.0.0.1 ad.tracker.com
 0.0.0.0 bad.ad.server.com
 ||normal.rule.com^
@@ -228,11 +228,16 @@ def test_parse_hosts_rules():
     source = make_source()
     rules = parse_rules(content, source)
 
-    # hosts 规则应被转换为 adblock 格式
-    normalized_texts = [r.normalized for r in rules]
-    assert "||ad.tracker.com^" in normalized_texts
-    assert "||bad.ad.server.com^" in normalized_texts
-    assert "||normal.rule.com^" in normalized_texts
+    # hosts 规则保留原始格式（不再转换为 ||domain^）
+    raw_texts = [r.raw for r in rules]
+    assert "127.0.0.1 ad.tracker.com" in raw_texts
+    assert "0.0.0.0 bad.ad.server.com" in raw_texts
+    assert "||normal.rule.com^" in raw_texts
+
+    # hosts 规则类型为 block（归入网络拦截分区），域名提取有效
+    host_rule = [r for r in rules if r.raw.startswith("127.0.0.1")][0]
+    assert host_rule.rule_type == "block"
+    assert host_rule.domain == "ad.tracker.com"
 
 
 def test_parse_hosts_with_comments():
@@ -245,17 +250,61 @@ def test_parse_hosts_with_comments():
     source = make_source()
     rules = parse_rules(content, source)
 
-    normalized_texts = [r.normalized for r in rules]
     raw_texts = [r.raw for r in rules]
 
     # 行内注释被剥除，不生成含注释的非法 hosts 规则
-    assert "||ad.tracker.com^" in normalized_texts
-    assert "||bad.ad.com^" in normalized_texts
-    assert not any(n.startswith("||") and "#" in n for n in normalized_texts)
+    assert "127.0.0.1 ad.tracker.com" in raw_texts
+    assert "0.0.0.0 bad.ad.com" in raw_texts
+    assert not any("#" in r for r in raw_texts if r.startswith(("127.0.0.1", "0.0.0.0")))
     # 整行 # 注释不产生规则
     assert len(rules) == 3
     # ##.global-hide 是合法全局元素规则，不被误判为注释
     assert "##.global-hide" in raw_texts
+
+
+def test_parse_preserves_comments():
+    """测试输入源的 ! 注释行保留并挂载到紧随其后的规则"""
+    content = """! -- 酷安自身广告域名/路径 --
+||ad.coolapk.com^
+! 允许正常统计接口（避免误杀）
+@@||api.coolapk.com/v6/stat/report
+! 连续多行注释
+! 第二条注释
+example.com##.ad
+"""
+    source = make_source()
+    rules = parse_rules(content, source)
+
+    block_rule = [r for r in rules if r.rule_type == "block"][0]
+    assert block_rule.comments == ["! -- 酷安自身广告域名/路径 --"]
+
+    exc_rule = [r for r in rules if r.rule_type == "exception"][0]
+    assert exc_rule.comments == ["! 允许正常统计接口（避免误杀）"]
+
+    hide_rule = [r for r in rules if r.rule_type == "hide"][0]
+    assert hide_rule.comments == ["! 连续多行注释", "! 第二条注释"]
+
+    # 注释不产生规则
+    assert len(rules) == 3
+
+
+def test_parse_skips_section_marker_comments():
+    """测试输入源的分区标记注释（! ===== xxx =====）不挂载，避免与输出分区标题重复"""
+    content = """! ========== 网络请求拦截 ==========
+! -- 酷安自身广告域名/路径 --
+||ad.coolapk.com^
+! ========== 例外规则（白名单） ==========
+@@||api.coolapk.com^
+"""
+    source = make_source()
+    rules = parse_rules(content, source)
+
+    block_rule = [r for r in rules if r.rule_type == "block"][0]
+    # 分区标记被跳过，仅分组注释挂载
+    assert block_rule.comments == ["! -- 酷安自身广告域名/路径 --"]
+
+    exc_rule = [r for r in rules if r.rule_type == "exception"][0]
+    assert exc_rule.comments == []
 
 
 def test_rule_metadata():

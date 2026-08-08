@@ -6,9 +6,15 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
 
-from src.parser import Rule, RULE_HEADER, RULE_EXCEPTION, RULE_BLOCK, HIDE_TYPES
+from src.parser import Rule, RULE_HEADER, RULE_EXCEPTION, RULE_BLOCK, RULE_HIDE_EXCEPTION, HIDE_TYPES
 
 logger = logging.getLogger(__name__)
+
+# 输出文件的分区标记（中文，便于人工阅读）
+SECTION_EXCEPTION = "! ========== 例外规则（白名单） =========="
+SECTION_BLOCK = "! ========== 网络请求拦截 =========="
+SECTION_HIDE = "! ========== 元素隐藏规则 =========="
+SECTION_HIDE_EXCEPTION = "! ========== 隐藏例外 =========="
 
 
 @dataclass
@@ -95,20 +101,35 @@ def generate_output(
 
         # 写入规则：header 元数据行最先输出，随后是 exception/block/hide 分区
         section = ""
+        hide_section = ""
         for rule in rules:
             if rule.rule_type == RULE_HEADER:
+                for comment in rule.comments:
+                    f.write(comment + "\n")
                 f.write(rule.raw + "\n")
                 continue
             if rule.rule_type == RULE_EXCEPTION and section != "exception":
-                f.write("! ===== Exception Rules =====\n")
+                f.write(SECTION_EXCEPTION + "\n")
                 section = "exception"
             elif rule.rule_type == RULE_BLOCK and section != "block":
-                f.write("! ===== Block Rules =====\n")
+                f.write(SECTION_BLOCK + "\n")
                 section = "block"
             elif rule.rule_type in HIDE_TYPES and section != "hide":
-                f.write("! ===== Hide Rules =====\n")
+                f.write(SECTION_HIDE + "\n")
                 section = "hide"
+                hide_section = ""
 
+            # 隐藏例外在元素隐藏分区内最先输出（子分区标记）
+            if section == "hide":
+                if rule.rule_type == RULE_HIDE_EXCEPTION and hide_section != "exc":
+                    f.write(SECTION_HIDE_EXCEPTION + "\n")
+                    hide_section = "exc"
+                elif rule.rule_type != RULE_HIDE_EXCEPTION and hide_section != "rest":
+                    hide_section = "rest"
+
+            # 规则前的注释行透传（保持输入源的注释分组）
+            for comment in rule.comments:
+                f.write(comment + "\n")
             f.write(rule.raw + "\n")
 
     result = GenerationResult(
@@ -244,11 +265,14 @@ def load_previous_result(output_dir: str, output_file: str) -> Optional[Generati
                     timestamp = stripped.split(":", 1)[1].strip()
                 elif stripped.startswith("!   ") and ":" in stripped and "rules" in stripped:
                     pass  # Source info is generated fresh each time
-                elif stripped.startswith("! ===== Exception"):
+                elif stripped.startswith("! ========== 例外规则"):
                     section = "exception"
-                elif stripped.startswith("! ===== Block"):
+                elif stripped.startswith("! ========== 网络请求拦截"):
                     section = "block"
-                elif stripped.startswith("! ===== Hide"):
+                elif (
+                    stripped.startswith("! ========== 元素隐藏规则")
+                    or stripped.startswith("! ========== 隐藏例外")
+                ):
                     section = "hide"
                 elif stripped.startswith("!") or stripped.startswith("["):
                     continue  # Skip header lines and comments

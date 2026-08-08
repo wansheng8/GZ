@@ -51,6 +51,7 @@ class Rule:
     options: dict[str, str | bool] = field(default_factory=dict)  # 解析后的 $options
     pattern: str = ""  # 去除 @@ 前缀与 $options 后的匹配模式
     domains: list[str] = field(default_factory=list)  # 元素规则的多站点限定域名列表
+    comments: list[str] = field(default_factory=list)  # 输入中位于该规则之前的注释行（输出时透传）
 
 
 # 匹配以 ! 开头的注释行
@@ -376,15 +377,25 @@ def parse_rules(raw_content: str, source: SourceConfig) -> list[Rule]:
 
     Returns:
         Rule 对象列表
+
+    Note:
+        - 普通 ! 注释行（非 Title/Expires/Homepage）会缓存并挂载到紧随其后的
+          规则上，输出时透传，保证输入源的注释分组信息不丢失
+        - hosts 行（127.0.0.1 / 0.0.0.0）保留原始格式（仅剥除行内注释），
+          不再转换为 ||domain^ 形式
     """
     rules: list[Rule] = []
-    skipped = 0
+    pending_comments: list[str] = []
 
     for line in raw_content.splitlines():
         stripped = line.strip()
 
-        # 跳过元数据和空行，仅保留重要的元数据行
-        if is_metadata_line(stripped):
+        # 空行跳过
+        if not stripped:
+            continue
+
+        # 元数据/注释行
+        if METADATA_PATTERN.match(stripped):
             # 保留 Title/Expires/Homepage；Version 由聚合器自身生成，丢弃上游值避免冲突
             if stripped.startswith(("! Title:", "! Expires:", "! Homepage:")):
                 rules.append(Rule(
@@ -394,32 +405,46 @@ def parse_rules(raw_content: str, source: SourceConfig) -> list[Rule]:
                     domain="",
                     source=source.name,
                     priority=source.priority,
+                    comments=pending_comments,
                 ))
+                pending_comments = []
+            elif stripped.startswith("! =") and stripped.endswith("="):
+                # 输入源的分区标记注释（! ===== xxx =====）：聚合器输出统一分区标记，
+                # 跳过避免与生成的分区标题重复
+                continue
+            else:
+                # 普通注释行：缓存，透传到紧随其后的规则前
+                pending_comments.append(stripped)
+            continue
+
+        # [Adblock Plus x.x] 等块标记跳过
+        if ADGUARD_META_PATTERN.match(stripped):
             continue
 
         # 跳过 hosts 文件的 # 注释行（避免误判为网络规则）
         if _is_hash_comment(stripped):
             continue
 
-        # 将 hosts 格式转换为 adblock 格式: ||domain^
-        if HOSTS_PATTERN.match(stripped):
-            host_match = HOSTS_PATTERN.match(stripped)
-            if host_match:
-                domain = host_match.group(1).strip()
-                # 剥除行内注释: 127.0.0.1 ad.tracker.com   # 追踪服务器
-                domain = domain.split(" #", 1)[0].strip()
-                if not domain:
-                    continue
-                converted = f"||{domain}^"
-                rules.append(Rule(
-                    raw=converted,
-                    normalized=converted.lower(),
-                    rule_type=RULE_BLOCK,
-                    domain=domain.lower(),
-                    source=source.name,
-                    priority=source.priority,
-                    pattern=converted,
-                ))
+        # hosts 格式规则：保留原始格式（剥除行内注释），不再转换为 ||domain^
+        host_match = HOSTS_PATTERN.match(stripped)
+        if host_match:
+            domain = host_match.group(1).strip()
+            # 剥除行内注释: 127.0.0.1 ad.tracker.com   # 追踪服务器
+            domain = domain.split(" #", 1)[0].strip()
+            if not domain:
+                continue
+            raw_host = stripped.split(" #", 1)[0].strip()
+            rules.append(Rule(
+                raw=raw_host,
+                normalized=raw_host.lower(),
+                rule_type=RULE_BLOCK,
+                domain=domain.lower(),
+                source=source.name,
+                priority=source.priority,
+                pattern=raw_host,
+                comments=pending_comments,
+            ))
+            pending_comments = []
             continue
 
         # 分类规则（记录元素分隔符，用于提取多站点限定域名）
@@ -452,9 +477,8 @@ def parse_rules(raw_content: str, source: SourceConfig) -> list[Rule]:
             options=options,
             pattern=pattern,
             domains=domains,
+            comments=pending_comments,
         ))
-
-    if skipped:
-        logger.info("[%s] Skipped %d malformed lines", source.name, skipped)
+        pending_comments = []
 
     return rules

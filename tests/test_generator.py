@@ -50,8 +50,8 @@ def test_generate_output():
         assert "@@||safe.com^" in content
         assert "||ads.com^" in content
         assert "||tracker.com^" in content
-        assert "! ===== Exception Rules =====" in content
-        assert "! ===== Block Rules =====" in content
+        assert "! ========== 例外规则（白名单） ==========" in content
+        assert "! ========== 网络请求拦截 ==========" in content
 
 
 def test_generate_output_headers_excluded_from_stats():
@@ -81,7 +81,7 @@ def test_generate_output_headers_excluded_from_stats():
         assert "! Title: EasyList" in content
         assert "! Expires: 4 days" in content
         assert "! Total rules: 1" in content
-        block_section = content.find("! ===== Block Rules =====")
+        block_section = content.find("! ========== 网络请求拦截 ==========")
         assert content.find("! Title: EasyList") < block_section
         assert content.find("! Expires: 4 days") < block_section
 
@@ -116,11 +116,50 @@ def test_generate_output_hide_group_section():
         assert "example.com#@#.important" in content
         assert "example.com##+js(abort.js, x)" in content
         assert "example.com$$div.ad" in content
-        hide_section = content.find("! ===== Hide Rules =====")
+        hide_section = content.find("! ========== 元素隐藏规则 ==========")
         assert hide_section != -1
         assert content.find("example.com#@#.important") > hide_section
         assert content.find("example.com##+js(abort.js, x)") > hide_section
         assert content.find("example.com$$div.ad") > hide_section
+
+        # 隐藏例外子分区标记存在，且隐藏例外规则在子分区标记之后
+        hide_exc_section = content.find("! ========== 隐藏例外 ==========")
+        assert hide_exc_section != -1
+        assert hide_exc_section > hide_section
+        assert content.find("example.com#@#.important") > hide_exc_section
+
+
+def test_generate_output_preserves_comments():
+    """测试输入注释行透传到输出文件（分区标记之后、规则之前）"""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        block_with_comment = make_rule("||ad.coolapk.com^", "block")
+        block_with_comment.comments = ["! -- 酷安自身广告域名/路径 --"]
+        exc_with_comment = make_rule("@@||api.coolapk.com^", "exception")
+        exc_with_comment.comments = ["! 允许正常统计接口（避免误杀）"]
+
+        rules = [exc_with_comment, block_with_comment]
+
+        sources_summary = {
+            "Test": {"rule_count": 2, "priority": 1, "status": "updated"},
+        }
+
+        result = generate_output(rules, sources_summary, tmpdir, "filter.txt")
+        assert result.total_rules == 2
+
+        with open(os.path.join(tmpdir, "filter.txt"), "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # 注释透传且在分区标记之后、规则之前
+        assert "! -- 酷安自身广告域名/路径 --" in content
+        assert "! 允许正常统计接口（避免误杀）" in content
+
+        block_section = content.find("! ========== 网络请求拦截 ==========")
+        comment_pos = content.find("! -- 酷安自身广告域名/路径 --")
+        rule_pos = content.find("||ad.coolapk.com^")
+        assert block_section < comment_pos < rule_pos
+
+        exc_section = content.find("! ========== 例外规则（白名单） ==========")
+        assert exc_section < content.find("! 允许正常统计接口（避免误杀）") < content.find("@@||api.coolapk.com^")
 
 
 def test_generate_changelog():

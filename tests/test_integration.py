@@ -92,16 +92,17 @@ def test_end_to_end_pipeline():
         assert "[AdBlock Plus 2.0]" in content
         assert "! Title: Adblock Filter Aggregator" in content
         assert "! Expires: 20 minutes" in content
-        assert "! ===== Exception Rules =====" in content
-        assert "! ===== Block Rules =====" in content
+        assert "! ========== 例外规则（白名单） ==========" in content
+        assert "! ========== 网络请求拦截 ==========" in content
 
         # 验证 exception 规则在前
-        exception_section = content.find("! ===== Exception Rules =====")
-        block_section = content.find("! ===== Block Rules =====")
+        exception_section = content.find("! ========== 例外规则（白名单） ==========")
+        block_section = content.find("! ========== 网络请求拦截 ==========")
         assert exception_section < block_section
 
-        # 验证 hosts 格式转换
-        assert "||adware.malware.com^" in content
+        # 验证 hosts 格式保留原样
+        assert "127.0.0.1 adware.malware.com" in content
+        assert "||adware.malware.com^" not in content
 
         # 验证变更日志
         generate_changelog(
