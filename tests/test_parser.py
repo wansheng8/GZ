@@ -64,6 +64,9 @@ def test_classify_css_inject_and_exceptions():
     # 样式注入例外
     assert classify_rule("example.com#@$#.ad-banner { display: none !important; }") == RULE_CSS_INJECT
     assert classify_rule("example.com#@%#.ad-banner { display: none !important; }") == RULE_CSS_INJECT
+    # 扩展选择器样式注入 #$?# / #@$?# (AdGuard)
+    assert classify_rule('codec.kyiv.ua#$?#style[id="mdpDeblocker-css"] { remove: true; }') == RULE_CSS_INJECT
+    assert classify_rule("example.com#@$?#div:has(.ad) { display: none; }") == RULE_CSS_INJECT
     # 脚本注入仍归 scriptlet（script: / //scriptlet 前缀）
     assert classify_rule("example.com#$#script:inject(abort-on-property-read.js, I10C)") == RULE_SCRIPTLET
     assert classify_rule("example.com#%#//scriptlet('abort-on-property-read.js', 'I10C')") == RULE_SCRIPTLET

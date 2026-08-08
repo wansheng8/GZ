@@ -71,6 +71,7 @@ ADGUARD_HTML_SEP = "$$"       # HTML 过滤 (AdGuard)
 SCRIPTLET_SEPS = ("#%#", "#$#")      # 脚本注入 (AdGuard)，需内容嗅探区分脚本/样式
 UBO_SCRIPTLET_SEP = "##+js("  # 脚本注入 (uBO)，恒为脚本
 STYLE_INJECT_EXCEPTION_SEPS = ("#@$#", "#@%#")  # 样式注入例外 (AdGuard)
+STYLE_CSS_EXT_SEPS = ("#@$?#", "#$?#")  # 扩展选择器样式注入及例外 (AdGuard) #$?# / #@$?#
 HIDE_SEP = "##"               # 普通元素隐藏
 
 # #%# / #$# 分隔符后判定为脚本注入的内容前缀（否则视为样式注入）
@@ -79,6 +80,7 @@ SCRIPT_INJECT_PREFIXES = ("script:", "//scriptlet", "script(")
 # 以 # 开头的合法元素规则前缀（用于区分 hosts 的 # 注释行）
 _GLOBAL_ELEMENT_PREFIXES = (
     "##", "#@#", "#@?#", "#?#", "#@$$", "#@$#", "#@%#", "#%#", "#$#",
+    "#@$?#", "#$?#",
 )
 
 # 匹配域名模式的规则 ||domain^
@@ -138,6 +140,9 @@ def _classify_with_sep(line: str) -> tuple[str, str]:
         return RULE_HTML_EXCEPTION, ADGUARD_HTML_EXCEPTION_SEP
     if ADGUARD_HTML_SEP in stripped:        # $$ HTML 过滤
         return RULE_HTML, ADGUARD_HTML_SEP
+    for sep in STYLE_CSS_EXT_SEPS:          # #$?# / #@$?# 扩展选择器样式注入 (AdGuard)
+        if sep in stripped:
+            return RULE_CSS_INJECT, sep
     for sep in STYLE_INJECT_EXCEPTION_SEPS:  # #@$# / #@%# 样式注入例外
         if sep in stripped:
             return RULE_CSS_INJECT, sep

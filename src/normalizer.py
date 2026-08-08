@@ -10,6 +10,8 @@ _ELEMENT_SEPS = (
     "#@$$",    # HTML 过滤例外 (AdGuard)
     "#@$#",    # 样式注入例外 (AdGuard)
     "#@%#",    # 样式注入例外 (AdGuard)
+    "#@$?#",   # 扩展选择器样式注入例外 (AdGuard)
+    "#$?#",    # 扩展选择器样式注入 (AdGuard)
     "#%#",     # 脚本/样式注入 (AdGuard)
     "#$#",     # 脚本/样式注入 (AdGuard)
     "##+js(",  # 脚本注入 (uBO)
