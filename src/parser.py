@@ -168,7 +168,7 @@ def _is_hash_comment(line: str) -> bool:
     """判断是否为 hosts 文件风格的 # 注释行
 
     注意: ##.ad 等全局元素规则也以 # 开头，需排除元素分隔符前缀，
-    避免把合法规则误判为注释。
+    避免把合法规则误判为注释；纯 # 字符的分隔线（如 ##########）不是元素规则。
 
     Args:
         line: 去除首尾空白后的行
@@ -178,6 +178,9 @@ def _is_hash_comment(line: str) -> bool:
     """
     if not line.startswith("#"):
         return False
+    # 纯 # 字符行（hosts 文件常见分隔线）不是元素规则
+    if not line.replace("#", "").strip():
+        return True
     return not any(line.startswith(p) for p in _GLOBAL_ELEMENT_PREFIXES)
 
 

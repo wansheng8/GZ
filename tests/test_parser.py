@@ -262,6 +262,26 @@ def test_parse_hosts_with_comments():
     assert "##.global-hide" in raw_texts
 
 
+def test_parse_pure_hash_separator_lines():
+    """测试 hosts 文件纯 # 分隔线（如 ##########）不误判为元素规则"""
+    content = """########
+# 分隔线
+########
+0.0.0.0 ad.example.com
+##.global-hide
+"""
+    source = make_source()
+    rules = parse_rules(content, source)
+
+    raw_texts = [r.raw for r in rules]
+
+    # 纯 # 分隔线不产生规则
+    assert len(rules) == 2
+    assert "0.0.0.0 ad.example.com" in raw_texts
+    # 合法全局元素规则仍被保留
+    assert "##.global-hide" in raw_texts
+
+
 def test_parse_preserves_comments():
     """测试输入源的 ! 注释行保留并挂载到紧随其后的规则"""
     content = """! -- 酷安自身广告域名/路径 --

@@ -2,18 +2,18 @@
 
 [![Update Filter List](https://github.com/wansheng8/GZ/actions/workflows/update.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/update.yml)
 
-汇集 52 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
+汇集 56 个主流广告过滤规则源，自动转换、合并、去重，每 20 分钟更新，兼容 Adblock Plus / uBlock Origin / AdGuard。
 
 ## 快速使用
 
 将以下任一链接订阅到你的广告过滤器中：
 
-**精简版（推荐 / 8 官方源 / ~19.5 MB）：**
+**精简版（推荐 / 8 官方源 / ~17.8 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter-lite.txt
 ```
 
-**完整版（52 源 / ~42.9 MB）：**
+**完整版（56 源 / ~40.6 MB）：**
 ```
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/filter.txt
 ```
@@ -30,15 +30,15 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 
 | 参数 | 值 |
 |------|-----|
-| 精简版规则数 | 488.6K 条 (去重后) |
+| 精简版规则数 | 488.4K 条 (去重后) |
 | 完整版规则数 | 1.5M 条 (去重后) |
-| 精简版大小 | 19.5 MB |
-| 完整版大小 | 42.9 MB |
+| 精简版大小 | 17.8 MB |
+| 完整版大小 | 40.6 MB |
 | 更新频率 | 每 20 分钟 |
-| 上游源 | 52 个 |
+| 上游源 | 56 个 |
 | 兼容 | Adblock Plus / uBlock Origin / AdGuard |
 | 格式 | Adblock 语法 |
-| 最后更新 | 2026-08-08 18:21 CST |
+| 最后更新 | 2026-08-08 18:20 CST |
 
 ## 上游规则源
 
@@ -103,11 +103,15 @@ https://gh-proxy.com/https://raw.githubusercontent.com/wansheng8/GZ/main/dist/fi
 | 50 | uBlock filters - Privacy | uBlock filters - Privacy |
 | 51 | uBlock filters - Quick fixes | uBlock filters - Quick fixes |
 | 52 | uBlock filters - Unbreak | uBlock filters - Unbreak |
+| 53 | AdAway | AdAway |
+| 54 | AdBlocker | AdBlocker |
+| 55 | URLhaus | URLhaus |
+| 56 | malware-filter | malware-filter |
 
 ## 处理流程
 
 ```
-52 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
+56 个上游源 → aiohttp 并发下载 → 格式解析 → 标准化 → 精确去重 → 子集去重 → filter.txt
 ```
 
 - **并发下载**: `aiohttp` 同时拉取全部源，30 秒超时，失败自动重试
@@ -154,7 +158,7 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 1. 检出仓库
 2. 安装 Python 依赖
-3. 并发下载 52 个上游源
+3. 并发下载 56 个上游源
 4. 解析 → 标准化 → 合并 → 去重
 5. 检测到变更后自动 `git commit` 并 `push`（连续 bot 提交自动 amend 合并，仓库只保留最新输出）
 6. 自动更新 README.md 统计数据
@@ -168,7 +172,7 @@ GitHub Actions 每 20 分钟 (`*/20 * * * *`) 自动触发：
 
 ```
 ├── main.py                     # 主入口
-├── sources.yaml                # 上游源配置 (52 个)
+├── sources.yaml                # 上游源配置 (56 个)
 ├── requirements.txt            # Python 依赖
 ├── src/
 │   ├── config.py               # YAML 配置加载
