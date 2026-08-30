@@ -98,6 +98,16 @@ def write_domains(rules: Iterable[Rule], path: Path, title: str) -> int:
     return len(domains)
 
 
+def write_manifest(entries: list[dict], output_dir: Path) -> None:
+    """写入 dist/manifest.json，列出所有生成的输出文件，便于订阅者程序化读取。"""
+    payload = {
+        "generator": "adblock-rule-collection",
+        "generated_files": entries,
+    }
+    path = output_dir / "manifest.json"
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
+
+
 def write_summary(stats: dict[str, int], output_dir: Path, name: str) -> None:
     path = output_dir / f"{name}.stats.txt"
     with path.open("w", encoding="utf-8") as fh:

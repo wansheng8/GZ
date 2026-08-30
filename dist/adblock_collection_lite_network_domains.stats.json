@@ -1,0 +1,18 @@
+{
+  "name": "adblock_collection_lite_network_domains",
+  "total": 88981,
+  "by_category": {
+    "other": 86119,
+    "url": 2263,
+    "annoyance": 224,
+    "social": 176,
+    "privacy": 120,
+    "mining": 33,
+    "phishing": 20,
+    "cookie": 14,
+    "malware": 12
+  },
+  "by_kind": {
+    "network": 88981
+  }
+}

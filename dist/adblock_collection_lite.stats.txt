@@ -1,8 +1,16 @@
 # adblock_collection_lite 规则分类统计
-# 总规则数: 622080
-privacy: 325272
-network: 204398
-annoyance: 53587
-whitelist: 16571
-social: 15815
-cookie: 6437
+# 总规则数: 601612
+other: 399328
+css: 107512
+url: 33727
+whitelist: 16661
+annoyance: 12641
+social: 11662
+cookie: 9845
+scriptlet: 6947
+privacy: 2030
+redirect: 856
+mining: 198
+phishing: 103
+malware: 86
+network: 16

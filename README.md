@@ -151,6 +151,19 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns_i
 https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domains.txt
 ```
 
+### 按类型拆分订阅（高置信度类别）
+
+完整版/精简版构建时附加 `--split-by-category` 会生成按类别拆分的子列表，文件名形如 `adblock_collection_full_<类别>.txt`（及其 `_dns.txt` / `_domains.txt` / `_dns_ipv6.txt`）。常用高置信度类别链接：
+
+```text
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_phishing.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_mining.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_malware.txt
+```
+
+类别枚举：`network` / `privacy` / `cookie` / `social` / `malware` / `phishing` / `mining` / `annoyance` / `whitelist` / `css` / `scriptlet` / `redirect` / `regexp` / `other`。
+
 ### 使用方式
 
 - 浏览器插件（uBO / AdGuard / ABP）：设置 → 过滤器订阅 → 添加自定义列表，粘贴广告过滤器链接。
@@ -197,6 +210,14 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domai
 可用类别（由上游分类与关键字启发式得出）：`network`、`privacy`、`cookie`、`social`、`malware`、`phishing`、`mining`、`annoyance`、`whitelist`、`css`、`scriptlet`、`redirect`、`regexp`、`other`。
 
 适用场景：只想订阅高置信度类别（如 `malware`、`phishing`、`mining`）的用户，可绕过完整版的误杀风险。
+
+每次构建还会生成 `dist/manifest.json`，以机器可读形式列出所有输出文件（名称、路径、格式、规则数），便于订阅者程序化发现与校验。
+
+也可在不重新下载的情况下，基于已有 `dist/` 重新生成统计与 manifest：
+
+```bash
+python -m adblock_collection stats --out dist
+```
 
 ## 自定义上游列表（DIY）
 

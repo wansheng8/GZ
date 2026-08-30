@@ -139,7 +139,7 @@ def test_category_split(tmp_path):
         parse_line("||malware.example.com^"),
         parse_line("##.ad-banner"),
     ]
-    _emit_by_category(rules, tmp_path, "test", "T", gen_dns=False)
+    _emit_by_category(rules, tmp_path, "test", "T", gen_dns=False, manifest=[])
     assert (tmp_path / "test_other.txt").exists()
     assert (tmp_path / "test_malware.txt").exists()
     assert (tmp_path / "test_css.txt").exists()

@@ -2,7 +2,6 @@
 
 子命令：
     build     下载上游列表、合并、去重并生成多种格式过滤器
-    stats     仅基于已有输出目录重新生成统计（离线）
     sources   列出当前配置中的上游列表
 
 用法示例：
@@ -36,6 +35,7 @@ from .writer import (
     write_hosts_ipv6,
     write_summary,
     write_summary_json,
+    write_manifest,
 )
 
 LOG = logging.getLogger("adblock_collection")
@@ -46,27 +46,31 @@ DEFAULT_HEADERS = {
 }
 
 
-def _emit(rules, output_dir, prefix, title, desc, gen_dns, source_counts):
+def _emit(rules, output_dir, prefix, title, desc, gen_dns, source_counts, manifest):
     results = {}
     ap = output_dir / f"{prefix}.txt"
     n = write_adblock(rules, ap, title, desc)
     results["adblock"] = (ap, n)
+    manifest.append({"name": prefix, "file": f"{prefix}.txt", "format": "adblock", "rules": n})
     write_summary(category_stats(rules), output_dir, prefix)
     write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules), source_counts)
     if gen_dns:
         hp = output_dir / f"{prefix}_dns.txt"
         nh = write_hosts(rules, hp, title)
         results["hosts"] = (hp, nh)
+        manifest.append({"name": prefix, "file": f"{prefix}_dns.txt", "format": "hosts", "rules": nh})
         ipv6p = output_dir / f"{prefix}_dns_ipv6.txt"
         n6 = write_hosts_ipv6(rules, ipv6p, title)
         results["hosts_ipv6"] = (ipv6p, n6)
+        manifest.append({"name": prefix, "file": f"{prefix}_dns_ipv6.txt", "format": "hosts_ipv6", "rules": n6})
         dp = output_dir / f"{prefix}_domains.txt"
         nd = write_domains(rules, dp, title)
         results["domains"] = (dp, nd)
+        manifest.append({"name": prefix, "file": f"{prefix}_domains.txt", "format": "domains", "rules": nd})
     return results
 
 
-def _emit_by_category(rules, output_dir, base_prefix, title_prefix, gen_dns):
+def _emit_by_category(rules, output_dir, base_prefix, title_prefix, gen_dns, manifest):
     """按类别筛选全局去重后的规则集，分别生成子列表（不二次去重）。"""
     by_cat: dict[str, list] = {}
     for r in rules:
@@ -75,7 +79,7 @@ def _emit_by_category(rules, output_dir, base_prefix, title_prefix, gen_dns):
         prefix = f"{base_prefix}_{cat}"
         title = f"{title_prefix} ({cat})"
         desc = f"按类型拆分：{cat}"
-        _emit(cat_rules, output_dir, prefix, title, desc, gen_dns, source_counts=None)
+        _emit(cat_rules, output_dir, prefix, title, desc, gen_dns, source_counts=None, manifest=manifest)
 
 
 def build(args: argparse.Namespace) -> int:
@@ -106,8 +110,9 @@ def build(args: argparse.Namespace) -> int:
         deduped = remove_redundant_domains(deduped)
 
     full_title, full_desc = DEFAULT_HEADERS["full"]
+    manifest: list = []
     full_results = _emit(deduped, output_dir, "adblock_collection_full", full_title, full_desc,
-                         gen_dns=not args.no_dns, source_counts=src_counts)
+                         gen_dns=not args.no_dns, source_counts=src_counts, manifest=manifest)
     if args.split_by_category:
         _emit_by_category(deduped, output_dir, "adblock_collection_full", full_title, gen_dns=not args.no_dns)
 
@@ -119,18 +124,47 @@ def build(args: argparse.Namespace) -> int:
             lite_rules = remove_redundant_domains(lite_rules)
         lite_title, lite_desc = DEFAULT_HEADERS["lite"]
         lite_results = _emit(lite_rules, output_dir, "adblock_collection_lite", lite_title, lite_desc,
-                             gen_dns=not args.no_dns, source_counts=None)
+                             gen_dns=not args.no_dns, source_counts=None, manifest=manifest)
         if args.split_by_category:
             _emit_by_category(lite_rules, output_dir, "adblock_collection_lite", lite_title, gen_dns=not args.no_dns)
     else:
         lite_results = {}
 
+    write_manifest(manifest, output_dir)
     LOG.info("生成完成:")
     for label, res in (("完整版", full_results), ("精简版", lite_results)):
         if not res:
             continue
         for fmt, (path, cnt) in res.items():
             LOG.info("  %s %s: %s (%d)", label, fmt, path, cnt)
+    return 0
+
+
+def stats_cmd(args: argparse.Namespace) -> int:
+    """基于已有 dist 目录重新生成统计与 manifest（不重新下载）。"""
+    output_dir = Path(args.out)
+    if not output_dir.exists():
+        LOG.error("输出目录不存在: %s", output_dir)
+        return 1
+    from .rules import Rule, parse_line
+    from .merge import category_stats, kind_stats
+    manifest = []
+    for txt in sorted(output_dir.glob("*.txt")):
+        if txt.name.endswith((".stats.txt", "manifest.json")):
+            continue
+        rules = []
+        for line in txt.read_text(encoding="utf-8", errors="replace").splitlines():
+            if line.startswith(("!", "#", "0.0.0.0", "::")):
+                continue
+            r = parse_line(line, source="reload")
+            if r is not None:
+                rules.append(r)
+        prefix = txt.stem
+        write_summary(category_stats(rules), output_dir, prefix)
+        write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules))
+        manifest.append({"name": prefix, "file": txt.name, "format": "auto", "rules": len(rules)})
+    write_manifest(manifest, output_dir)
+    LOG.info("统计已重新生成: %d 个文件", len(manifest))
     return 0
 
 
@@ -162,6 +196,10 @@ def main(argv: list[str] | None = None) -> int:
     p_build.add_argument("--redundant", action="store_true", help="启用冗余域名规则消除")
     p_build.add_argument("--split-by-category", action="store_true", help="split output by category")
     p_build.set_defaults(func=build)
+
+    p_stats = sub.add_parser("stats", help="基于已有输出目录重新生成统计")
+    p_stats.add_argument("--out", default="dist", help="输出目录")
+    p_stats.set_defaults(func=stats_cmd)
 
     p_sources = sub.add_parser("sources", help="列出配置中的上游列表")
     p_sources.add_argument("--config", default="config/sources.yaml")

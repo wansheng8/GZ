@@ -1,3 +1,11 @@
 # adblock_collection_full_phishing 规则分类统计
 # 总规则数: 65460
-phishing: 65460
+other: 63307
+url: 1304
+social: 530
+privacy: 174
+annoyance: 67
+whitelist: 53
+phishing: 17
+cookie: 5
+mining: 3
