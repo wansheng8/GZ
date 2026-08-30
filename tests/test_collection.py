@@ -130,3 +130,16 @@ def test_domain_extraction_rejects_garbage():
     assert parse_line("||https%3a%2f%2fwww.amazon.co.jp$document").domains == []
     assert parse_line("||jaya9.app/?af=$document").domains == ["jaya9.app"]
     assert parse_line("||ads.example.com^").domains == ["ads.example.com"]
+
+
+def test_category_split(tmp_path):
+    from adblock_collection.cli import _emit_by_category
+    rules = [
+        parse_line("||ads.example.com^"),
+        parse_line("||malware.example.com^"),
+        parse_line("##.ad-banner"),
+    ]
+    _emit_by_category(rules, tmp_path, "test", "T", gen_dns=False)
+    assert (tmp_path / "test_other.txt").exists()
+    assert (tmp_path / "test_malware.txt").exists()
+    assert (tmp_path / "test_css.txt").exists()

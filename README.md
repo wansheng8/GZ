@@ -82,6 +82,7 @@ python -m adblock_collection build --no-dns          # 不生成 DNS/hosts/domai
 python -m adblock_collection build --no-cache        # 禁用下载缓存
 python -m adblock_collection build --offline         # 离线模式，仅使用缓存
 python -m adblock_collection build --redundant       # 启用冗余域名规则消除
+python -m adblock_collection build --split-by-category  # 按类型拆分生成子列表
 python -m adblock_collection sources                 # 列出当前配置的上游列表（含 lite/full 标记）
 ```
 
@@ -188,6 +189,14 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domai
 - 覆盖域名过滤、DNS 过滤、Host 列表、恶意/钓鱼/挖矿/僵尸网络/欺诈/滥用等域名阻断类规则。
 - 纯 CSS 隐藏、脚本注入、元素选择类规则**无法**转为 DNS 拦截（作用于页面内容而非域名解析层），仅出现在 `*.txt`（Adblock 语法）版本中。
 - 双栈网络建议同时订阅 `_dns.txt` 与 `_dns_ipv6.txt`，避免仅拦截 IPv4 时域名通过 IPv6 绕过。
+
+## 按类型拆分订阅
+
+使用 `--split-by-category` 构建时，会在 `dist/` 下额外生成按类别拆分的子列表，文件名格式为 `adblock_collection_full_<类别>.txt`（及对应 `_dns.txt` / `_domains.txt` / `_dns_ipv6.txt`）。拆分基于**全局去重后的规则集**按 `category` 字段筛选，**不再二次去重**，因此拆分后的子列表并集仍等于完整版。
+
+可用类别（由上游分类与关键字启发式得出）：`network`、`privacy`、`cookie`、`social`、`malware`、`phishing`、`mining`、`annoyance`、`whitelist`、`css`、`scriptlet`、`redirect`、`regexp`、`other`。
+
+适用场景：只想订阅高置信度类别（如 `malware`、`phishing`、`mining`）的用户，可绕过完整版的误杀风险。
 
 ## 自定义上游列表（DIY）
 

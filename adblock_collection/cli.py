@@ -66,6 +66,18 @@ def _emit(rules, output_dir, prefix, title, desc, gen_dns, source_counts):
     return results
 
 
+def _emit_by_category(rules, output_dir, base_prefix, title_prefix, gen_dns):
+    """按类别筛选全局去重后的规则集，分别生成子列表（不二次去重）。"""
+    by_cat: dict[str, list] = {}
+    for r in rules:
+        by_cat.setdefault(r.category, []).append(r)
+    for cat, cat_rules in sorted(by_cat.items()):
+        prefix = f"{base_prefix}_{cat}"
+        title = f"{title_prefix} ({cat})"
+        desc = f"按类型拆分：{cat}"
+        _emit(cat_rules, output_dir, prefix, title, desc, gen_dns, source_counts=None)
+
+
 def build(args: argparse.Namespace) -> int:
     config_path = Path(args.config)
     if not config_path.exists():
@@ -96,6 +108,8 @@ def build(args: argparse.Namespace) -> int:
     full_title, full_desc = DEFAULT_HEADERS["full"]
     full_results = _emit(deduped, output_dir, "adblock_collection_full", full_title, full_desc,
                          gen_dns=not args.no_dns, source_counts=src_counts)
+    if args.split_by_category:
+        _emit_by_category(deduped, output_dir, "adblock_collection_full", full_title, gen_dns=not args.no_dns)
 
     lite_rules: list = []
     if not args.no_lite:
@@ -106,6 +120,8 @@ def build(args: argparse.Namespace) -> int:
         lite_title, lite_desc = DEFAULT_HEADERS["lite"]
         lite_results = _emit(lite_rules, output_dir, "adblock_collection_lite", lite_title, lite_desc,
                              gen_dns=not args.no_dns, source_counts=None)
+        if args.split_by_category:
+            _emit_by_category(lite_rules, output_dir, "adblock_collection_lite", lite_title, gen_dns=not args.no_dns)
     else:
         lite_results = {}
 
@@ -144,6 +160,7 @@ def main(argv: list[str] | None = None) -> int:
     p_build.add_argument("--no-lite", action="store_true", help="不生成精简版")
     p_build.add_argument("--no-dns", action="store_true", help="不生成 DNS/hosts/domains 文件")
     p_build.add_argument("--redundant", action="store_true", help="启用冗余域名规则消除")
+    p_build.add_argument("--split-by-category", action="store_true", help="split output by category")
     p_build.set_defaults(func=build)
 
     p_sources = sub.add_parser("sources", help="列出配置中的上游列表")
