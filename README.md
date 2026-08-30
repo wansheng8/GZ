@@ -92,6 +92,32 @@ tests/
 > 注意：将 `config/sources.yaml` 中的 `name`/`url` 改为你自己的上游，
 > 订阅主页已指向 `https://github.com/wansheng8/GZ`。
 
+## 订阅链接
+
+仓库每日 03:00 UTC 自动重新生成并推送 `dist/` 下的规则文件，以下链接长期有效
+（GitHub raw 地址）。
+
+### 完整版（规则多，有误杀风险）
+
+| 用途 | 链接 |
+| --- | --- |
+| 浏览器插件（uBO / AdGuard / ABP） | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt` |
+| DNS hosts 格式（Pi-hole / dnsmasq） | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt` |
+| AdGuard DNS 域名格式 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt` |
+
+### 精简版（仅 AdGuard 官方列表，推荐日常使用）
+
+| 用途 | 链接 |
+| --- | --- |
+| 浏览器插件（uBO / AdGuard / ABP） | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite.txt` |
+| DNS hosts 格式（Pi-hole / dnsmasq） | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns.txt` |
+| AdGuard DNS 域名格式 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_domains.txt` |
+
+### 使用方式
+
+- 浏览器插件（uBO / AdGuard / ABP）：设置 → 过滤器订阅 → 添加自定义列表，粘贴完整版或精简版 `.txt` 链接。
+- AdGuard Home / Pi-hole：添加上游或自定义规则列表，粘贴对应 `_dns.txt`（hosts）或 `_domains.txt`（域名）链接。
+
 ## 自动更新
 
 仓库通过 GitHub Actions 每日 03:00 UTC 自动重新生成并推送 `dist/` 下的规则文件，
