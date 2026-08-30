@@ -1,0 +1,4 @@
+include config/sources.yaml
+include README.md
+include LICENSE
+recursive-include tests *.py

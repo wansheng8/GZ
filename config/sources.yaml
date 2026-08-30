@@ -1,0 +1,91 @@
+name: Adblock Rule Collection
+description: "上游广告过滤规则列表配置。compatible 字段表示该列表兼容的语法，category 字段用于统计与按类型拆分。lite: true 的列表会被纳入精简版生成。"
+sources:
+  # ----------------- 精简版（AdGuard 官方，低风险） -----------------
+  - name: AdGuard Base
+    url: https://filters.adtidy.org/extension/ublock/filters/2.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Tracking Protection
+    url: https://filters.adtidy.org/extension/ublock/filters/3.txt
+    category: privacy
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard URL Tracking
+    url: https://filters.adtidy.org/extension/ublock/filters/17.txt
+    category: privacy
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Social Media
+    url: https://filters.adtidy.org/extension/ublock/filters/4.txt
+    category: social
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Annoyances
+    url: https://filters.adtidy.org/extension/ublock/filters/14.txt
+    category: annoyance
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Mobile Ads
+    url: https://filters.adtidy.org/extension/ublock/filters/11.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Cookie Notices
+    url: https://filters.adtidy.org/extension/ublock/filters/13.txt
+    category: cookie
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Chinese
+    url: https://filters.adtidy.org/extension/ublock/filters/224.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+
+  # ----------------- 完整版附加列表 -----------------
+  - name: EasyList
+    url: https://easylist.to/easylist/easylist.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: EasyPrivacy
+    url: https://easylist.to/easylist/easyprivacy.txt
+    category: privacy
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: EasyList China
+    url: https://easylist-downloads.adblockplus.org/easylistchina.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: Peter Lowe's Blocklist
+    url: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
+    category: network
+    compatible: [abp, hosts]
+    lite: false
+  - name: uBlock Origin Unbreak
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt
+    category: whitelist
+    compatible: [ubo, abp, adguard]
+    lite: false
+  - name: uBlock Origin Base
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
+    category: network
+    compatible: [ubo, abp, adguard]
+    lite: false
+  - name: Online Malicious URL Blocklist
+    url: https://raw.githubusercontent.com/curbengh/urlhaus-filter/master/urlhaus-filter.txt
+    category: malware
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: Phishing URL Blocklist
+    url: https://malware-filter.gitlab.io/malware-filter/phishing-filter.txt
+    category: phishing
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: NoCoin CryptoMiner
+    url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt
+    category: mining
+    compatible: [adguard, abp, ubo]
+    lite: false
