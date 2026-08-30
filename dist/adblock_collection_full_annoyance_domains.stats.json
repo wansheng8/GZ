@@ -1,16 +1,16 @@
 {
   "name": "adblock_collection_full_annoyance_domains",
-  "total": 3277,
+  "total": 3221,
   "by_category": {
-    "other": 2839,
-    "url": 174,
-    "annoyance": 117,
-    "cookie": 112,
+    "other": 2788,
+    "url": 171,
+    "annoyance": 116,
+    "cookie": 111,
     "privacy": 23,
     "social": 11,
     "mining": 1
   },
   "by_kind": {
-    "network": 3277
+    "network": 3221
   }
 }

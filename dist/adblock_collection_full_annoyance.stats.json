@@ -1,11 +1,23 @@
 {
   "name": "adblock_collection_full_annoyance",
-  "total": 53662,
+  "total": 51841,
   "by_category": {
-    "annoyance": 53662
+    "css": 27783,
+    "cookie": 9399,
+    "annoyance": 6412,
+    "url": 2431,
+    "other": 2364,
+    "scriptlet": 1664,
+    "privacy": 858,
+    "social": 811,
+    "whitelist": 34,
+    "redirect": 27,
+    "mining": 25,
+    "malware": 20,
+    "phishing": 13
   },
   "by_kind": {
-    "css": 45904,
+    "css": 44083,
     "network": 4297,
     "scriptlet": 3461
   }

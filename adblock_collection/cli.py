@@ -47,6 +47,7 @@ DEFAULT_HEADERS = {
 
 
 def _emit(rules, output_dir, prefix, title, desc, gen_dns, source_counts, manifest):
+    rules = list(rules)
     results = {}
     ap = output_dir / f"{prefix}.txt"
     n = write_adblock(rules, ap, title, desc)
@@ -153,16 +154,24 @@ def stats_cmd(args: argparse.Namespace) -> int:
         if txt.name.endswith((".stats.txt", "manifest.json")):
             continue
         rules = []
-        for line in txt.read_text(encoding="utf-8", errors="replace").splitlines():
-            if line.startswith(("!", "#", "0.0.0.0", "::")):
+        raw_lines = txt.read_text(encoding="utf-8", errors="replace").splitlines()
+        is_hosts = txt.name.endswith(("_dns.txt", "_dns_ipv6.txt"))
+        for line in raw_lines:
+            if line.startswith(("!", "#")):
+                continue
+            if is_hosts:
+                if line.startswith(("0.0.0.0 ", ":: ")):
+                    rules.append(line)
                 continue
             r = parse_line(line, source="reload")
             if r is not None:
                 rules.append(r)
         prefix = txt.stem
-        write_summary(category_stats(rules), output_dir, prefix)
-        write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules))
-        manifest.append({"name": prefix, "file": txt.name, "format": "auto", "rules": len(rules)})
+        rule_count = len(rules)
+        if not is_hosts:
+            write_summary(category_stats(rules), output_dir, prefix)
+            write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, rule_count)
+        manifest.append({"name": prefix, "file": txt.name, "format": "auto", "rules": rule_count})
     write_manifest(manifest, output_dir)
     LOG.info("统计已重新生成: %d 个文件", len(manifest))
     return 0

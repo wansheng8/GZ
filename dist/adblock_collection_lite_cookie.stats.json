@@ -1,11 +1,20 @@
 {
   "name": "adblock_collection_lite_cookie",
-  "total": 6437,
+  "total": 6197,
   "by_category": {
-    "cookie": 6437
+    "css": 4086,
+    "other": 1227,
+    "url": 445,
+    "scriptlet": 267,
+    "annoyance": 117,
+    "redirect": 24,
+    "social": 18,
+    "cookie": 7,
+    "privacy": 4,
+    "whitelist": 2
   },
   "by_kind": {
-    "css": 4563,
+    "css": 4323,
     "network": 1524,
     "scriptlet": 350
   }

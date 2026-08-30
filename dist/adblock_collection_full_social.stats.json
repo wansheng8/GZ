@@ -1,11 +1,21 @@
 {
   "name": "adblock_collection_full_social",
-  "total": 15815,
+  "total": 14874,
   "by_category": {
-    "social": 15815
+    "social": 9093,
+    "css": 4676,
+    "url": 608,
+    "other": 222,
+    "annoyance": 199,
+    "privacy": 40,
+    "cookie": 15,
+    "scriptlet": 9,
+    "mining": 5,
+    "malware": 4,
+    "whitelist": 3
   },
   "by_kind": {
-    "css": 15312,
+    "css": 14371,
     "network": 478,
     "scriptlet": 25
   }

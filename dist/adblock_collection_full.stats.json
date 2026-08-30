@@ -1,40 +1,25 @@
 {
   "name": "adblock_collection_full",
-  "total": 844359,
+  "total": 924255,
   "by_category": {
-    "privacy": 352559,
-    "network": 215704,
-    "malware": 142798,
-    "phishing": 65460,
-    "annoyance": 54155,
-    "whitelist": 13464,
-    "mining": 219
+    "other": 705156,
+    "css": 103706,
+    "url": 46133,
+    "whitelist": 19243,
+    "annoyance": 13274,
+    "social": 12823,
+    "cookie": 10047,
+    "scriptlet": 9135,
+    "privacy": 2862,
+    "redirect": 1248,
+    "mining": 310,
+    "phishing": 158,
+    "malware": 129,
+    "network": 31
   },
   "by_kind": {
-    "network": 738468,
-    "css": 98260,
-    "scriptlet": 7631
-  },
-  "by_source": {
-    "AdGuard Tracking Protection": 326094,
-    "Online Malicious URL Blocklist": 138474,
-    "StevenBlack Hosts": 84032,
-    "EasyList": 80322,
-    "Phishing URL Blocklist": 65463,
-    "AdGuard Annoyances": 57944,
-    "EasyPrivacy": 55980,
-    "AdGuard Chinese": 22293,
-    "EasyList China": 19312,
-    "AdGuard German": 17238,
-    "uBlock Origin Base": 6125,
-    "EasyList Germany": 5963,
-    "uBlock Origin Badware Risks": 4336,
-    "Peter Lowe's Blocklist": 3553,
-    "uBlock Origin Unbreak": 2551,
-    "uBlock Origin Privacy": 1744,
-    "WindowsSpyBlocker": 352,
-    "uBlock Origin Quick Fixes": 325,
-    "NoCoin CryptoMiner": 316,
-    "uBlock Origin Resource Abuse": 77
+    "network": 772293,
+    "css": 139233,
+    "scriptlet": 12729
   }
 }

@@ -1,14 +1,14 @@
 {
   "name": "adblock_collection_full_whitelist_domains",
-  "total": 281,
+  "total": 267,
   "by_category": {
-    "other": 254,
-    "url": 24,
+    "other": 243,
+    "url": 21,
     "cookie": 1,
     "privacy": 1,
     "social": 1
   },
   "by_kind": {
-    "network": 281
+    "network": 267
   }
 }

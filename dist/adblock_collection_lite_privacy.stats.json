@@ -1,12 +1,24 @@
 {
   "name": "adblock_collection_lite_privacy",
-  "total": 325272,
+  "total": 325256,
   "by_category": {
-    "privacy": 325272
+    "other": 303330,
+    "url": 18293,
+    "social": 915,
+    "annoyance": 849,
+    "privacy": 815,
+    "scriptlet": 293,
+    "css": 259,
+    "cookie": 216,
+    "redirect": 131,
+    "mining": 76,
+    "phishing": 58,
+    "whitelist": 12,
+    "malware": 9
   },
   "by_kind": {
     "network": 324541,
-    "scriptlet": 423,
-    "css": 308
+    "scriptlet": 421,
+    "css": 294
   }
 }
