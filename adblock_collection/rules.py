@@ -27,6 +27,8 @@ _SCRIPTLET_RE = re.compile(r"#(?:@|@\?)?#.*\bscript:(?:inject|append|set(?:-cons
 _DOMAIN_OPTION_RE = re.compile(r"(?:domain|from|to)=([^,)]+)")
 # 网络规则主体（|| 之后、^ 或 / 或 $ 之前的部分），用于提取域名
 _NET_DOMAIN_RE = re.compile(r"^\|\|([a-z0-9*_.-]+(?:\.[a-z0-9*_.-]+)+)")
+# 严格的合法域名校验：仅允许字母数字与连字符，含点分隔的标签，TLD 至少 2 字母
+_VALID_DOMAIN_RE = re.compile(r"^(?=[a-z0-9])[a-z0-9-]{1,63}(\.[a-z0-9-]{1,63})*\.[a-z]{2,63}$")
 # 纯域名网络规则：||domain^ 或 ||domain/ 结尾
 _PURE_DOMAIN_RE = re.compile(r"^\|\|([a-z0-9_-]+(?:\.[a-z0-9_-]+)+)\^?$")
 # 第三方面选项，用于判断规则作用范围（非必需）
@@ -100,15 +102,15 @@ def _extract_domains(raw: str) -> list[str]:
     if m:
         prefix = raw[: m.start()]
         for d in prefix.split(","):
-            d = d.strip()
-            if d and not d.startswith("~"):
-                domains.append(d.lower())
+            d = d.strip().lower()
+            if d and not d.startswith("~") and _VALID_DOMAIN_RE.match(d):
+                domains.append(d)
         return domains
     # 网络规则：优先匹配 ||host... 主体
     nm = _NET_DOMAIN_RE.match(raw)
     if nm:
         host = nm.group(1).lower()
-        if "*" not in host:
+        if "*" not in host and _VALID_DOMAIN_RE.match(host):
             domains.append(host)
             return domains
     # 退而求其次，从 domain= 选项提取
@@ -116,7 +118,7 @@ def _extract_domains(raw: str) -> list[str]:
         val = dm.group(1)
         for d in val.split("|"):
             d = d.strip().lstrip("~").lower()
-            if d and "*" not in d:
+            if d and "*" not in d and _VALID_DOMAIN_RE.match(d):
                 domains.append(d)
     return domains
 

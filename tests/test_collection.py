@@ -122,3 +122,11 @@ def test_source_stats_counts():
     ]
     stats = source_stats(rules)
     assert stats == {"X": 2, "Y": 1}
+
+
+def test_domain_extraction_rejects_garbage():
+    # 选项 token、URL 编码、异常写法不应被当作域名
+    assert parse_line("*$image").domains == []
+    assert parse_line("||https%3a%2f%2fwww.amazon.co.jp$document").domains == []
+    assert parse_line("||jaya9.app/?af=$document").domains == ["jaya9.app"]
+    assert parse_line("||ads.example.com^").domains == ["ads.example.com"]
