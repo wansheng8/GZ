@@ -1,12 +1,12 @@
 {
   "name": "adblock_collection_full_cookie",
-  "total": 6445,
+  "total": 6437,
   "by_category": {
-    "cookie": 6445
+    "cookie": 6437
   },
   "by_kind": {
     "css": 4563,
-    "network": 1532,
+    "network": 1524,
     "scriptlet": 350
   }
 }

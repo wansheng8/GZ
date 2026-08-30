@@ -1,12 +1,12 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 17900,
+  "total": 20893,
   "by_category": {
-    "whitelist": 17900
+    "whitelist": 20893
   },
   "by_kind": {
-    "network": 13366,
-    "css": 4213,
-    "scriptlet": 321
+    "network": 15819,
+    "css": 4754,
+    "scriptlet": 320
   }
 }

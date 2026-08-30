@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (whitelist)
-# Format: hosts (0.0.0.0 domain), total 281
+# Format: hosts (0.0.0.0 domain), total 267
 0.0.0.0 2mdn.net
 0.0.0.0 511tactical.com
 0.0.0.0 5newsonline.com
@@ -17,13 +17,11 @@
 0.0.0.0 adshrink.it
 0.0.0.0 adtech.redventures.io
 0.0.0.0 advertising.com
-0.0.0.0 adweek.com
 0.0.0.0 allkeyshop.com
 0.0.0.0 amazon-adsystem.com
 0.0.0.0 amazon.com
 0.0.0.0 amazonaws.com
 0.0.0.0 amazonwebservicesinc.tt.omtrdc.net
-0.0.0.0 analytics.google.com
 0.0.0.0 analytics.skroutz.gr
 0.0.0.0 api.doubtnut.com
 0.0.0.0 api.omappapi.com
@@ -60,7 +58,6 @@
 0.0.0.0 cdn.shopify.com
 0.0.0.0 cdn.usefathom.com
 0.0.0.0 cdnwebonplay.gviet.vn
-0.0.0.0 chartbeat.com
 0.0.0.0 chartbeat.net
 0.0.0.0 click.allkeyshop.com
 0.0.0.0 cloudflare.com
@@ -72,11 +69,9 @@
 0.0.0.0 connatix.com
 0.0.0.0 corriere.it
 0.0.0.0 coveo.com
-0.0.0.0 crazyegg.com
 0.0.0.0 criteo.com
 0.0.0.0 crypto-loot.org
 0.0.0.0 curalate.com
-0.0.0.0 cxense.com
 0.0.0.0 d1z2jf7jlzjs58.cloudfront.net
 0.0.0.0 d26b395fwzu5fz.cloudfront.net
 0.0.0.0 d2cmedia.ca
@@ -125,13 +120,11 @@
 0.0.0.0 gratis.com
 0.0.0.0 groupbycloud.com
 0.0.0.0 hager.com
-0.0.0.0 histats.com
 0.0.0.0 hit.api.useinsider.com
 0.0.0.0 hits.informer.com
 0.0.0.0 holybooks.com
 0.0.0.0 homedepot.ca
 0.0.0.0 hopkinssports.com
-0.0.0.0 i.jsrdn.com
 0.0.0.0 imasdk.googleapis.com
 0.0.0.0 imrworldwide.com
 0.0.0.0 inference.api.useinsider.com
@@ -156,7 +149,6 @@
 0.0.0.0 marketing.unionpayintl.com
 0.0.0.0 metacritic.com
 0.0.0.0 miniusa.com
-0.0.0.0 mixpanel.com
 0.0.0.0 motika.com.mk
 0.0.0.0 mparticle.com
 0.0.0.0 msavideo-a.akamaihd.net
@@ -184,7 +176,6 @@
 0.0.0.0 p.jwpcdn.com
 0.0.0.0 pagead2.googlesyndication.com
 0.0.0.0 parsely.com
-0.0.0.0 permutive.com
 0.0.0.0 plausible.io
 0.0.0.0 player.ooyala.com
 0.0.0.0 post.ch
@@ -196,7 +187,6 @@
 0.0.0.0 px.moatads.com
 0.0.0.0 qbk1.com
 0.0.0.0 qds.it
-0.0.0.0 qualzz.com
 0.0.0.0 relish.com
 0.0.0.0 royle.com
 0.0.0.0 rtl.de
@@ -219,7 +209,6 @@
 0.0.0.0 sibautomation.com
 0.0.0.0 slickdeals.net
 0.0.0.0 smartadserver.com
-0.0.0.0 smartlook.com
 0.0.0.0 sohu.com
 0.0.0.0 spade.sci.twitch.tv
 0.0.0.0 sports.yahoo.com
@@ -258,7 +247,6 @@
 0.0.0.0 tntdrama.com
 0.0.0.0 top.mail.ru
 0.0.0.0 tradeinsights.net
-0.0.0.0 trafic.ro
 0.0.0.0 try.abtasty.com
 0.0.0.0 ultimedia.com
 0.0.0.0 unileversolutions.com
@@ -270,9 +258,7 @@
 0.0.0.0 vod.playoncenter.com
 0.0.0.0 wdr.de
 0.0.0.0 web.skype.com
-0.0.0.0 webd.home.news.cn
 0.0.0.0 webmd.com
-0.0.0.0 webtracking.fe.union-investment.de
 0.0.0.0 wgplayer.com
 0.0.0.0 widgets.outbrain.com
 0.0.0.0 wpfc.ml

@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (whitelist)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 281
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 267
 :: 2mdn.net
 :: 511tactical.com
 :: 5newsonline.com
@@ -17,13 +17,11 @@
 :: adshrink.it
 :: adtech.redventures.io
 :: advertising.com
-:: adweek.com
 :: allkeyshop.com
 :: amazon-adsystem.com
 :: amazon.com
 :: amazonaws.com
 :: amazonwebservicesinc.tt.omtrdc.net
-:: analytics.google.com
 :: analytics.skroutz.gr
 :: api.doubtnut.com
 :: api.omappapi.com
@@ -60,7 +58,6 @@
 :: cdn.shopify.com
 :: cdn.usefathom.com
 :: cdnwebonplay.gviet.vn
-:: chartbeat.com
 :: chartbeat.net
 :: click.allkeyshop.com
 :: cloudflare.com
@@ -72,11 +69,9 @@
 :: connatix.com
 :: corriere.it
 :: coveo.com
-:: crazyegg.com
 :: criteo.com
 :: crypto-loot.org
 :: curalate.com
-:: cxense.com
 :: d1z2jf7jlzjs58.cloudfront.net
 :: d26b395fwzu5fz.cloudfront.net
 :: d2cmedia.ca
@@ -125,13 +120,11 @@
 :: gratis.com
 :: groupbycloud.com
 :: hager.com
-:: histats.com
 :: hit.api.useinsider.com
 :: hits.informer.com
 :: holybooks.com
 :: homedepot.ca
 :: hopkinssports.com
-:: i.jsrdn.com
 :: imasdk.googleapis.com
 :: imrworldwide.com
 :: inference.api.useinsider.com
@@ -156,7 +149,6 @@
 :: marketing.unionpayintl.com
 :: metacritic.com
 :: miniusa.com
-:: mixpanel.com
 :: motika.com.mk
 :: mparticle.com
 :: msavideo-a.akamaihd.net
@@ -184,7 +176,6 @@
 :: p.jwpcdn.com
 :: pagead2.googlesyndication.com
 :: parsely.com
-:: permutive.com
 :: plausible.io
 :: player.ooyala.com
 :: post.ch
@@ -196,7 +187,6 @@
 :: px.moatads.com
 :: qbk1.com
 :: qds.it
-:: qualzz.com
 :: relish.com
 :: royle.com
 :: rtl.de
@@ -219,7 +209,6 @@
 :: sibautomation.com
 :: slickdeals.net
 :: smartadserver.com
-:: smartlook.com
 :: sohu.com
 :: spade.sci.twitch.tv
 :: sports.yahoo.com
@@ -258,7 +247,6 @@
 :: tntdrama.com
 :: top.mail.ru
 :: tradeinsights.net
-:: trafic.ro
 :: try.abtasty.com
 :: ultimedia.com
 :: unileversolutions.com
@@ -270,9 +258,7 @@
 :: vod.playoncenter.com
 :: wdr.de
 :: web.skype.com
-:: webd.home.news.cn
 :: webmd.com
-:: webtracking.fe.union-investment.de
 :: wgplayer.com
 :: widgets.outbrain.com
 :: wpfc.ml

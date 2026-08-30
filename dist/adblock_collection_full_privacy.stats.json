@@ -1,12 +1,12 @@
 {
   "name": "adblock_collection_full_privacy",
-  "total": 57041,
+  "total": 354007,
   "by_category": {
-    "privacy": 57041
+    "privacy": 354007
   },
   "by_kind": {
-    "network": 56683,
-    "scriptlet": 316,
-    "css": 42
+    "network": 352954,
+    "scriptlet": 707,
+    "css": 346
   }
 }
