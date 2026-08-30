@@ -74,9 +74,10 @@ def parse_source(lines: Iterable[str], category_hint: str, source: str) -> list[
 
 
 def collect(config_path: Path, use_cache: bool = True, offline: bool = False) -> dict[str, list[Rule]]:
-    """下载并解析所有上游列表，返回 {"all": [(name, rules), ...]}。"""
+    """下载并解析所有上游列表，返回 {"all": [(name, rules), ...], "_failed": [name, ...]}。"""
     sources = load_sources(config_path)
     result: dict[str, list[Rule]] = defaultdict(list)
+    failed: list[str] = []
     for src in sources:
         name = src.get("name", "unknown")
         url = src.get("url")
@@ -85,9 +86,11 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False) ->
         LOG.info("处理上游列表: %s", name)
         lines = fetch_source(url, use_cache=use_cache, offline=offline)
         if not lines:
+            failed.append(name)
             continue
         rules = parse_source(lines, src.get("category", "other"), name)
         result["all"].append((name, rules))
+    result["_failed"] = failed
     return result
 
 

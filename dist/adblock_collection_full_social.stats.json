@@ -1,22 +1,15 @@
 {
   "name": "adblock_collection_full_social",
-  "total": 14671,
+  "total": 15612,
   "by_category": {
-    "social": 9007,
-    "css": 4676,
-    "url": 585,
-    "annoyance": 193,
-    "other": 136,
-    "privacy": 39,
-    "cookie": 15,
-    "scriptlet": 9,
-    "mining": 5,
-    "whitelist": 3,
-    "malware": 3
+    "social": 15612
   },
   "by_kind": {
-    "css": 14371,
+    "css": 15312,
     "network": 275,
     "scriptlet": 25
+  },
+  "by_source": {
+    "AdGuard Social Media": 15612
   }
 }

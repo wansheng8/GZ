@@ -1,25 +1,30 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 260974,
+  "total": 283079,
   "by_category": {
-    "other": 154985,
-    "css": 75838,
-    "url": 15364,
-    "scriptlet": 6974,
-    "annoyance": 5122,
-    "social": 1139,
-    "privacy": 705,
-    "redirect": 295,
-    "cookie": 268,
-    "mining": 105,
-    "malware": 69,
-    "phishing": 56,
-    "whitelist": 37,
-    "network": 17
+    "network": 283079
   },
   "by_kind": {
-    "network": 171177,
-    "css": 81359,
+    "network": 175396,
+    "css": 99245,
     "scriptlet": 8438
+  },
+  "by_source": {
+    "AdGuard Base": 112322,
+    "StevenBlack Hosts": 83974,
+    "AdGuard Chinese": 18363,
+    "AdGuard German": 15184,
+    "AdGuard Japanese": 12355,
+    "AdGuard Russian": 10883,
+    "AdGuard Mobile Ads": 7018,
+    "EasyList Germany": 5025,
+    "AdGuard Turkish": 4848,
+    "uBlock Origin Base": 4836,
+    "Peter Lowe's Blocklist": 3552,
+    "EasyList": 2289,
+    "AdGuard Spanish": 1666,
+    "EasyList China": 522,
+    "uBlock Origin Quick Fixes": 241,
+    "AdGuard French": 1
   }
 }

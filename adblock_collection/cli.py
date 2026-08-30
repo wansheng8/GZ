@@ -13,8 +13,10 @@
 from __future__ import annotations
 
 import argparse
+import json
 import logging
 import sys
+import time
 from pathlib import Path
 
 from .merge import (
@@ -51,8 +53,9 @@ def _emit(rules, output_dir, prefix, title, desc, gen_dns, source_counts, manife
     n = write_adblock(rules, ap, title, desc)
     results["adblock"] = (ap, n)
     manifest.append({"name": prefix, "file": f"{prefix}.txt", "format": "adblock", "rules": n})
+    src_counts = source_stats(rules) if source_counts is None else source_counts
     write_summary(category_stats(rules), output_dir, prefix)
-    write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules), source_counts)
+    write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules), src_counts)
     if gen_dns:
         hp = output_dir / f"{prefix}_dns.txt"
         nh = write_hosts(rules, hp, title)
@@ -92,6 +95,7 @@ def build(args: argparse.Namespace) -> int:
 
     sources_meta = load_sources(config_path)
     collected = collect(config_path, use_cache=not args.no_cache, offline=args.offline)
+    failed_sources = collected.get("_failed", [])
 
     all_rules: list = []
     for _name, rules in collected.get("all", []):
@@ -100,6 +104,8 @@ def build(args: argparse.Namespace) -> int:
     src_counts = source_stats(all_rules)
     for name, cnt in src_counts.items():
         LOG.info("上游贡献规则: %-35s %d", name, cnt)
+    if failed_sources:
+        LOG.warning("本次下载失败的源 (%d): %s", len(failed_sources), ", ".join(failed_sources))
 
     LOG.info("原始规则总数: %d", len(all_rules))
     deduped = dedupe(all_rules)
@@ -114,6 +120,32 @@ def build(args: argparse.Namespace) -> int:
                          gen_dns=not args.no_dns, source_counts=src_counts, manifest=manifest)
     if args.split_by_category:
         _emit_by_category(deduped, output_dir, "adblock_collection_full", full_title, gen_dns=not args.no_dns, manifest=manifest)
+        # 不变量校验：按类别拆分的子列表并集必须等于完整版
+        cat_total = sum(
+            r["rules"] for r in manifest
+            if r["name"].startswith("adblock_collection_full_")
+            and not any(r["file"].endswith(s) for s in ("_dns.txt", "_domains.txt", "_dns_ipv6.txt"))
+            and r["file"] != "adblock_collection_full.txt"
+        )
+        full_n = next(r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt")
+        if cat_total != full_n:
+            LOG.error("类别拆分不变量被破坏: 子列表总和 %d != 完整版 %d", cat_total, full_n)
+
+    # 写入上游健康报告（供订阅者判断数据完整性）
+    status_path = output_dir / "sources_status.json"
+    status_path.write_text(
+        json.dumps(
+            {
+                "total_sources": len(load_sources(config_path)),
+                "failed_sources": failed_sources,
+                "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            },
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+    LOG.info("上游健康报告已写入: %s", status_path.name)
 
     write_manifest(manifest, output_dir)
     LOG.info("生成完成:")
@@ -126,38 +158,35 @@ def build(args: argparse.Namespace) -> int:
 
 
 def stats_cmd(args: argparse.Namespace) -> int:
-    """基于已有 dist 目录重新生成统计与 manifest（不重新下载）。"""
+    """基于已有 dist 目录重新生成 manifest 中各文件的规则计数（不重新下载）。
+
+    注意：本命令仅刷新 manifest.json 的 rules 字段，不重写 *stats.txt / *stats.json，
+    因为重新解析会丢失每条规则的原始来源（source）与 yaml 主分类（category_hint），
+    导致分类与来源统计失真。精确的分类/来源统计由 build 命令生成。
+    """
     output_dir = Path(args.out)
     if not output_dir.exists():
         LOG.error("输出目录不存在: %s", output_dir)
         return 1
-    from .rules import Rule, parse_line
-    from .merge import category_stats, kind_stats
+    from .rules import parse_line
     manifest = []
     for txt in sorted(output_dir.glob("*.txt")):
         if txt.name.endswith((".stats.txt", "manifest.json")):
             continue
-        rules = []
-        raw_lines = txt.read_text(encoding="utf-8", errors="replace").splitlines()
-        is_hosts = txt.name.endswith(("_dns.txt", "_dns_ipv6.txt"))
-        for line in raw_lines:
+        rule_count = 0
+        for line in txt.read_text(encoding="utf-8", errors="replace").splitlines():
             if line.startswith(("!", "#")):
                 continue
-            if is_hosts:
+            if txt.name.endswith(("_dns.txt", "_dns_ipv6.txt")):
                 if line.startswith(("0.0.0.0 ", ":: ")):
-                    rules.append(line)
-                continue
-            r = parse_line(line, source="reload")
-            if r is not None:
-                rules.append(r)
-        prefix = txt.stem
-        rule_count = len(rules)
-        if not is_hosts:
-            write_summary(category_stats(rules), output_dir, prefix)
-            write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, rule_count)
-        manifest.append({"name": prefix, "file": txt.name, "format": "auto", "rules": rule_count})
+                    rule_count += 1
+            else:
+                r = parse_line(line, source="reload")
+                if r is not None:
+                    rule_count += 1
+        manifest.append({"name": txt.stem, "file": txt.name, "format": "auto", "rules": rule_count})
     write_manifest(manifest, output_dir)
-    LOG.info("统计已重新生成: %d 个文件", len(manifest))
+    LOG.info("manifest 已刷新: %d 个文件", len(manifest))
     return 0
 
 

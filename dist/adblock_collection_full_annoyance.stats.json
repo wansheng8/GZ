@@ -1,24 +1,16 @@
 {
   "name": "adblock_collection_full_annoyance",
-  "total": 50517,
+  "total": 52338,
   "by_category": {
-    "css": 27783,
-    "cookie": 9290,
-    "annoyance": 6295,
-    "url": 2169,
-    "scriptlet": 1664,
-    "other": 1596,
-    "privacy": 825,
-    "social": 800,
-    "whitelist": 30,
-    "mining": 25,
-    "malware": 20,
-    "phishing": 13,
-    "redirect": 7
+    "annoyance": 52338
   },
   "by_kind": {
-    "css": 44083,
+    "css": 45904,
     "scriptlet": 3461,
     "network": 2973
+  },
+  "by_source": {
+    "AdGuard Annoyances": 52265,
+    "uBlock Origin Resource Abuse": 73
   }
 }

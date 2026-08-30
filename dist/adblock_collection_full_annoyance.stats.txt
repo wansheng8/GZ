@@ -1,15 +1,3 @@
 # adblock_collection_full_annoyance 规则分类统计
-# 总规则数: 50517
-css: 27783
-cookie: 9290
-annoyance: 6295
-url: 2169
-scriptlet: 1664
-other: 1596
-privacy: 825
-social: 800
-whitelist: 30
-mining: 25
-malware: 20
-phishing: 13
-redirect: 7
+# 总规则数: 52338
+annoyance: 52338

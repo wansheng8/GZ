@@ -1,21 +1,15 @@
 {
   "name": "adblock_collection_full_cookie",
-  "total": 5747,
+  "total": 5987,
   "by_category": {
-    "css": 4086,
-    "other": 883,
-    "url": 357,
-    "scriptlet": 267,
-    "annoyance": 115,
-    "social": 18,
-    "redirect": 8,
-    "cookie": 7,
-    "privacy": 4,
-    "whitelist": 2
+    "cookie": 5987
   },
   "by_kind": {
-    "css": 4323,
+    "css": 4563,
     "network": 1074,
     "scriptlet": 350
+  },
+  "by_source": {
+    "AdGuard Cookie Notices": 5987
   }
 }

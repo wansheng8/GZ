@@ -2,14 +2,12 @@
   "name": "adblock_collection_full_mining",
   "total": 198,
   "by_category": {
-    "other": 145,
-    "mining": 35,
-    "url": 9,
-    "network": 7,
-    "social": 1,
-    "redirect": 1
+    "mining": 198
   },
   "by_kind": {
     "network": 198
+  },
+  "by_source": {
+    "NoCoin CryptoMiner": 198
   }
 }

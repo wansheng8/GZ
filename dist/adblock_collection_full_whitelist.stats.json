@@ -1,22 +1,38 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 20660,
+  "total": 20681,
   "by_category": {
-    "whitelist": 20018,
-    "scriptlet": 220,
-    "css": 133,
-    "url": 112,
-    "redirect": 77,
-    "other": 53,
-    "privacy": 20,
-    "annoyance": 17,
-    "social": 4,
-    "cookie": 3,
-    "mining": 3
+    "whitelist": 20681
   },
   "by_kind": {
     "network": 15607,
-    "css": 4733,
+    "css": 4754,
     "scriptlet": 320
+  },
+  "by_source": {
+    "AdGuard Base": 5696,
+    "AdGuard Annoyances": 3703,
+    "AdGuard Tracking Protection": 2236,
+    "uBlock Origin Unbreak": 2016,
+    "AdGuard Chinese": 1336,
+    "AdGuard German": 873,
+    "EasyPrivacy": 786,
+    "uBlock Origin Base": 753,
+    "AdGuard Japanese": 679,
+    "AdGuard Social Media": 431,
+    "AdGuard Turkish": 421,
+    "AdGuard Russian": 410,
+    "EasyList": 244,
+    "AdGuard French": 240,
+    "EasyList Germany": 208,
+    "AdGuard Mobile Ads": 194,
+    "AdGuard Cookie Notices": 171,
+    "AdGuard URL Tracking": 92,
+    "AdGuard Spanish": 89,
+    "EasyList China": 52,
+    "uBlock Origin Quick Fixes": 35,
+    "NoCoin CryptoMiner": 8,
+    "uBlock Origin Privacy": 6,
+    "uBlock Origin Badware Risks": 2
   }
 }
