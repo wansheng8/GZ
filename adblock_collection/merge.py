@@ -74,7 +74,7 @@ def parse_source(lines: Iterable[str], category_hint: str, source: str) -> list[
 
 
 def collect(config_path: Path, use_cache: bool = True, offline: bool = False) -> dict[str, list[Rule]]:
-    """下载并解析所有上游列表，by_category 以分类聚合，all 保存 (name, rules)。"""
+    """下载并解析所有上游列表，返回 {"all": [(name, rules), ...]}。"""
     sources = load_sources(config_path)
     result: dict[str, list[Rule]] = defaultdict(list)
     for src in sources:
@@ -87,7 +87,6 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False) ->
         if not lines:
             continue
         rules = parse_source(lines, src.get("category", "other"), name)
-        result[src.get("category", "other")].extend(rules)
         result["all"].append((name, rules))
     return result
 

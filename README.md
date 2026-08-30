@@ -217,6 +217,8 @@ https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite
 
 ```bash
 python -m adblock_collection stats --out dist
+
+`stats` 子命令会读取 `dist/` 下现有文件，重算统计并刷新 `dist/manifest.json`，不会重新下载上游列表，适合仅做元数据修正时快速更新。
 ```
 
 ## 自定义上游列表（DIY）
@@ -246,7 +248,7 @@ sources:
 adblock_collection/
   rules.py     # 规则解析、规范化、分类、类型识别
   merge.py     # 上游下载（带缓存/离线）、合并、去重、badfilter、冗余消除、统计
-  writer.py    # 多格式输出（adblock / hosts / domains / stats / json）
+  writer.py    # 多格式输出（adblock / hosts / domains / stats / json / manifest）
   cli.py       # 命令行入口（build / sources）
 config/
   sources.yaml # 上游列表配置
