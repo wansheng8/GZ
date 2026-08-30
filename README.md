@@ -99,7 +99,7 @@ tests/
 - **Github 源**：`https://raw.githubusercontent.com/wansheng8/GZ/main/dist/<文件>`
 - **CDN 加速（jsDelivr）**：`https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/<文件>`
 
-### 完整版
+### 完整版（规则多，有误杀风险）
 
 | 过滤器类型 | Github | CDN 加速 |
 | --- | --- | --- |
@@ -118,6 +118,42 @@ tests/
 | Host 列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns.txt` |
 | Host IPv6 列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns_ipv6.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns_ipv6.txt` |
 | 拦截域名列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_domains.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domains.txt` |
+
+### 一键复制（Github 源，完整版）
+
+```text
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt
+```
+
+### 一键复制（Github 源，精简版）
+
+```text
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns_ipv6.txt
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_domains.txt
+```
+
+### 一键复制（CDN 加速，完整版）
+
+```text
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt
+```
+
+### 一键复制（CDN 加速，精简版）
+
+```text
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns_ipv6.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domains.txt
+```
 
 ### 使用方式
 
