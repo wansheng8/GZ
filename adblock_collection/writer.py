@@ -26,6 +26,12 @@ def _to_hosts_line(rule: Rule) -> str | None:
     return None
 
 
+def _to_hosts_ipv6_line(rule: Rule) -> str | None:
+    if rule.kind == "network" and rule.domains and len(rule.domains) == 1 and not rule.is_exception:
+        return f":: {rule.domains[0]}"
+    return None
+
+
 def _to_domain(rule: Rule) -> str | None:
     if rule.kind == "network" and rule.domains and len(rule.domains) == 1 and not rule.is_exception:
         if "/" not in rule.domains[0]:
@@ -57,6 +63,20 @@ def write_hosts(rules: Iterable[Rule], path: Path, title: str) -> int:
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write("# Format: hosts (0.0.0.0 domain)\n")
+        for line in sorted(domains):
+            fh.write(line + "\n")
+    return len(domains)
+
+
+def write_hosts_ipv6(rules: Iterable[Rule], path: Path, title: str) -> int:
+    domains: set[str] = set()
+    for r in rules:
+        line = _to_hosts_ipv6_line(r)
+        if line:
+            domains.add(line)
+    with path.open("w", encoding="utf-8") as fh:
+        fh.write(f"# {title}\n")
+        fh.write("# Format: hosts (:: domain, IPv6 NXDOMAIN)\n")
         for line in sorted(domains):
             fh.write(line + "\n")
     return len(domains)

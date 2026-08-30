@@ -32,6 +32,7 @@ from .writer import (
     write_adblock,
     write_domains,
     write_hosts,
+    write_hosts_ipv6,
     write_summary,
     write_summary_json,
 )
@@ -55,6 +56,9 @@ def _emit(rules, output_dir, prefix, title, desc, gen_dns, gen_lite):
         hp = output_dir / f"{prefix}_dns.txt"
         nh = write_hosts(rules, hp, title)
         results["hosts"] = (hp, nh)
+        ipv6p = output_dir / f"{prefix}_dns_ipv6.txt"
+        n6 = write_hosts_ipv6(rules, ipv6p, title)
+        results["hosts_ipv6"] = (ipv6p, n6)
         dp = output_dir / f"{prefix}_domains.txt"
         nd = write_domains(rules, dp, title)
         results["domains"] = (dp, nd)
