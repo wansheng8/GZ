@@ -15,26 +15,48 @@ import json
 from pathlib import Path
 from typing import Iterable
 
-from .rules import Rule
+from .rules import Rule, _PURE_DOMAIN_RE
+
 
 HOMEPAGE = "https://github.com/wansheng8/GZ"
 
 
 def _to_hosts_line(rule: Rule) -> str | None:
-    """将单域名网络阻断规则转换为 hosts 行，无法转换返回 None。"""
-    if rule.kind == "network" and rule.domains and len(rule.domains) == 1 and not rule.is_exception:
+    """将纯域名网络阻断规则转换为 hosts 行，无法转换返回 None。
+
+    仅接受无路径的纯域名规则（如 ||a.com^），避免把 ||a.com/ads^ 误扩成整域拦截。
+    """
+    if (
+        rule.kind == "network"
+        and rule.domains
+        and len(rule.domains) == 1
+        and not rule.is_exception
+        and _PURE_DOMAIN_RE.match(rule.raw)
+    ):
         return f"0.0.0.0 {rule.domains[0]}"
     return None
 
 
 def _to_hosts_ipv6_line(rule: Rule) -> str | None:
-    if rule.kind == "network" and rule.domains and len(rule.domains) == 1 and not rule.is_exception:
+    if (
+        rule.kind == "network"
+        and rule.domains
+        and len(rule.domains) == 1
+        and not rule.is_exception
+        and _PURE_DOMAIN_RE.match(rule.raw)
+    ):
         return f":: {rule.domains[0]}"
     return None
 
 
 def _to_domain(rule: Rule) -> str | None:
-    if rule.kind == "network" and rule.domains and len(rule.domains) == 1 and not rule.is_exception:
+    if (
+        rule.kind == "network"
+        and rule.domains
+        and len(rule.domains) == 1
+        and not rule.is_exception
+        and _PURE_DOMAIN_RE.search(rule.raw)
+    ):
         if "/" not in rule.domains[0]:
             return rule.domains[0]
     return None
@@ -56,40 +78,47 @@ def write_adblock(rules: Iterable[Rule], path: Path, title: str, desc: str) -> i
     return count
 
 
-def write_hosts(rules: Iterable[Rule], path: Path, title: str) -> int:
-    domains: set[str] = set()
+def _blocked_domains(rules: Iterable[Rule]) -> set[str]:
+    """从规则集提取「应拦截的纯域名」集合，并抵消例外规则放行的域名。
+
+    仅统计无路径的纯域名网络阻断规则（||a.com^），同时收集 @@||a.com^ / @@||a.com
+    这类单域名例外，从拦截集中剔除，使 DNS/Hosts 版也尊重精确放行。
+    """
+    blocked: set[str] = set()
+    exceptions: set[str] = set()
     for r in rules:
-        line = _to_hosts_line(r)
-        if line:
-            domains.add(line)
+        if r.kind != "network" or not r.domains or len(r.domains) != 1 or not _PURE_DOMAIN_RE.search(r.raw):
+            continue
+        if r.is_exception:
+            exceptions.add(r.domains[0])
+        else:
+            blocked.add(r.domains[0])
+    blocked -= exceptions
+    return blocked
+
+
+def write_hosts(rules: Iterable[Rule], path: Path, title: str) -> int:
+    domains = _blocked_domains(rules)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(f"# Format: hosts (0.0.0.0 domain), total {len(domains)}\n")
         for line in sorted(domains):
-            fh.write(line + "\n")
+            fh.write(f"0.0.0.0 {line}\n")
     return len(domains)
 
 
 def write_hosts_ipv6(rules: Iterable[Rule], path: Path, title: str) -> int:
-    domains: set[str] = set()
-    for r in rules:
-        line = _to_hosts_ipv6_line(r)
-        if line:
-            domains.add(line)
+    domains = _blocked_domains(rules)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(f"# Format: hosts (:: domain, IPv6 NXDOMAIN), total {len(domains)}\n")
         for line in sorted(domains):
-            fh.write(line + "\n")
+            fh.write(f":: {line}\n")
     return len(domains)
 
 
 def write_domains(rules: Iterable[Rule], path: Path, title: str) -> int:
-    domains: set[str] = set()
-    for r in rules:
-        d = _to_domain(r)
-        if d:
-            domains.add(d)
+    domains = _blocked_domains(rules)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(f"# Format: one domain per line (AdGuard DNS / AdGuard Home), total {len(domains)}\n")

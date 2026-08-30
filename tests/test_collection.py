@@ -143,3 +143,27 @@ def test_category_split(tmp_path):
     assert (tmp_path / "test_other.txt").exists()
     assert (tmp_path / "test_malware.txt").exists()
     assert (tmp_path / "test_css.txt").exists()
+
+
+def test_path_bearing_rule_excluded_from_dns():
+    from adblock_collection import writer
+    r = parse_line("||example.com/ads^")
+    assert writer._to_hosts_line(r) is None
+    assert writer._to_domain(r) is None
+
+
+def test_exception_cancels_blocked_domain_in_dns():
+    from adblock_collection import writer
+    rules = [
+        parse_line("||block.com^"),
+        parse_line("@@||block.com^"),
+        parse_line("||keep.com^"),
+    ]
+    assert sorted(writer._blocked_domains(rules)) == ["keep.com"]
+
+
+def test_pure_domain_rule_included_in_dns():
+    from adblock_collection import writer
+    r = parse_line("||example.com^")
+    assert writer._to_hosts_line(r) == "0.0.0.0 example.com"
+    assert writer._to_domain(r) == "example.com"

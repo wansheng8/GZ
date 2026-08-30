@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
       - name: Build filters
-        run: python -m adblock_collection build --out dist --split-by-category
+          run: python -m adblock_collection build --out dist --split-by-category --redundant
       - name: Check for changes
         id: changes
         run: |

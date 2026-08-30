@@ -5,7 +5,7 @@
       "name": "adblock_collection_full",
       "file": "adblock_collection_full.txt",
       "format": "auto",
-      "rules": 924255
+      "rules": 864365
     },
     {
       "name": "adblock_collection_full_annoyance",
@@ -59,19 +59,19 @@
       "name": "adblock_collection_full_dns",
       "file": "adblock_collection_full_dns.txt",
       "format": "auto",
-      "rules": 225197
+      "rules": 169103
     },
     {
       "name": "adblock_collection_full_dns_ipv6",
       "file": "adblock_collection_full_dns_ipv6.txt",
       "format": "auto",
-      "rules": 225197
+      "rules": 169103
     },
     {
       "name": "adblock_collection_full_domains",
       "file": "adblock_collection_full_domains.txt",
       "format": "auto",
-      "rules": 225197
+      "rules": 169103
     },
     {
       "name": "adblock_collection_full_malware",

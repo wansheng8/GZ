@@ -25,12 +25,12 @@ _ELEMENT_SEP_RE = re.compile(r"\s*(##|#@#|#\?#|#@\?#)\s*")
 _SCRIPTLET_RE = re.compile(r"#(?:@|@\?)?#.*\bscript:(?:inject|append|set(?:-const)?|json-prune)\b|#(?:@|@\?)?#\+js\(")
 # 域名选项 domain=/from=/to=
 _DOMAIN_OPTION_RE = re.compile(r"(?:domain|from|to)=([^,)]+)")
-# 网络规则主体（|| 之后、^ 或 / 或 $ 之前的部分），用于提取域名
-_NET_DOMAIN_RE = re.compile(r"^\|\|([a-z0-9*_.-]+(?:\.[a-z0-9*_.-]+)+)")
+# 网络规则主体（|| 之后、^ 或 / 或 $ 之前的部分），用于提取域名（允许 @@ 等前缀，故不锚行首）
+_NET_DOMAIN_RE = re.compile(r"\|\|([a-z0-9*_.-]+(?:\.[a-z0-9*_.-]+)+)")
 # 严格的合法域名校验：仅允许字母数字与连字符，含点分隔的标签，TLD 至少 2 字母
 _VALID_DOMAIN_RE = re.compile(r"^(?=[a-z0-9])[a-z0-9-]{1,63}(\.[a-z0-9-]{1,63})*\.[a-z]{2,63}$")
-# 纯域名网络规则：||domain^ 或 ||domain/ 结尾
-_PURE_DOMAIN_RE = re.compile(r"^\|\|([a-z0-9_-]+(?:\.[a-z0-9_-]+)+)\^?$")
+# 纯域名网络规则：||domain^ 或 ||domain（无路径），允许 @@ 等前缀
+_PURE_DOMAIN_RE = re.compile(r"\|\|([a-z0-9_-]+(?:\.[a-z0-9_-]+)+)\^?$")
 # 第三方面选项，用于判断规则作用范围（非必需）
 _THIRD_PARTY_RE = re.compile(r"\$third-party|\$~third-party")
 
@@ -106,8 +106,8 @@ def _extract_domains(raw: str) -> list[str]:
             if d and not d.startswith("~") and _VALID_DOMAIN_RE.match(d):
                 domains.append(d)
         return domains
-    # 网络规则：优先匹配 ||host... 主体
-    nm = _NET_DOMAIN_RE.match(raw)
+    # 网络规则：优先匹配 ||host... 主体（不锚行首，兼容 @@ 前缀）
+    nm = _NET_DOMAIN_RE.search(raw)
     if nm:
         host = nm.group(1).lower()
         if "*" not in host and _VALID_DOMAIN_RE.match(host):
