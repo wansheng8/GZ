@@ -1,30 +1,28 @@
 {
   "name": "adblock_collection_full",
-  "total": 3231080,
+  "total": 965136,
   "by_category": {
-    "malware": 2258857,
-    "network": 455801,
     "privacy": 354000,
+    "network": 305939,
+    "malware": 142765,
     "phishing": 65418,
     "annoyance": 53662,
     "whitelist": 20892,
     "social": 15815,
     "cookie": 6437,
-    "mining": 198
+    "mining": 208
   },
   "by_kind": {
-    "network": 3047540,
+    "network": 781596,
     "css": 170226,
     "scriptlet": 13314
   },
   "by_source": {
-    "Hagezi Threat Intelligence Feed": 2178585,
     "AdGuard Tracking Protection": 326094,
-    "Hagezi Pro": 227114,
     "Online Malicious URL Blocklist": 138474,
     "AdGuard Base": 133590,
     "StevenBlack Hosts": 84032,
-    "EasyList": 80270,
+    "EasyList": 80273,
     "Phishing URL Blocklist": 65421,
     "AdGuard Annoyances": 57944,
     "EasyPrivacy": 55972,
