@@ -144,16 +144,6 @@ sources:
     category: network
     compatible: [ubo, abp, adguard]
     lite: false
-  - name: Hagezi Pro
-    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: false
-  - name: Hagezi Threat Intelligence Feed
-    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
-    category: malware
-    compatible: [adguard, abp, ubo]
-    lite: false
   - name: StevenBlack Hosts
     url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
     category: network
