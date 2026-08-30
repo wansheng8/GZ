@@ -1,15 +1,17 @@
 {
   "name": "adblock_collection_lite",
-  "total": 219355,
+  "total": 570400,
   "by_category": {
-    "network": 147917,
-    "annoyance": 54077,
-    "whitelist": 10915,
-    "cookie": 6446
+    "privacy": 325272,
+    "network": 155430,
+    "annoyance": 53587,
+    "social": 15815,
+    "whitelist": 13859,
+    "cookie": 6437
   },
   "by_kind": {
-    "css": 112288,
-    "network": 98681,
-    "scriptlet": 8386
+    "network": 427592,
+    "css": 133893,
+    "scriptlet": 8915
   }
 }
