@@ -1,24 +1,24 @@
 {
   "name": "adblock_collection_full_annoyance",
-  "total": 51841,
+  "total": 50517,
   "by_category": {
     "css": 27783,
-    "cookie": 9399,
-    "annoyance": 6412,
-    "url": 2431,
-    "other": 2364,
+    "cookie": 9290,
+    "annoyance": 6295,
+    "url": 2169,
     "scriptlet": 1664,
-    "privacy": 858,
-    "social": 811,
-    "whitelist": 34,
-    "redirect": 27,
+    "other": 1596,
+    "privacy": 825,
+    "social": 800,
+    "whitelist": 30,
     "mining": 25,
     "malware": 20,
-    "phishing": 13
+    "phishing": 13,
+    "redirect": 7
   },
   "by_kind": {
     "css": 44083,
-    "network": 4297,
-    "scriptlet": 3461
+    "scriptlet": 3461,
+    "network": 2973
   }
 }

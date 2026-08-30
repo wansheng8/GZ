@@ -1,7 +1,7 @@
 name: Adblock Rule Collection
-description: "上游广告过滤规则列表配置。compatible 字段表示该列表兼容的语法，category 字段用于统计与按类型拆分。lite: true 的列表会被纳入精简版生成。"
+description: "上游广告过滤规则列表配置。compatible 字段表示该列表兼容的语法，category 字段用于统计与按类型拆分。"
 sources:
-  # ----------------- 精简版（AdGuard 官方，低风险） -----------------
+  # ----------------- AdGuard 官方列表（低风险） -----------------
   - name: AdGuard Base
     url: https://filters.adtidy.org/extension/ublock/filters/2.txt
     category: network

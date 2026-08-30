@@ -1,21 +1,21 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 20872,
+  "total": 20660,
   "by_category": {
     "whitelist": 20018,
     "scriptlet": 220,
-    "redirect": 205,
-    "url": 151,
     "css": 133,
-    "other": 94,
-    "privacy": 23,
+    "url": 112,
+    "redirect": 77,
+    "other": 53,
+    "privacy": 20,
     "annoyance": 17,
-    "cookie": 4,
     "social": 4,
+    "cookie": 3,
     "mining": 3
   },
   "by_kind": {
-    "network": 15819,
+    "network": 15607,
     "css": 4733,
     "scriptlet": 320
   }

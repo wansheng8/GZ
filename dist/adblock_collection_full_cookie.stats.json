@@ -1,21 +1,21 @@
 {
   "name": "adblock_collection_full_cookie",
-  "total": 6197,
+  "total": 5747,
   "by_category": {
     "css": 4086,
-    "other": 1227,
-    "url": 445,
+    "other": 883,
+    "url": 357,
     "scriptlet": 267,
-    "annoyance": 117,
-    "redirect": 24,
+    "annoyance": 115,
     "social": 18,
+    "redirect": 8,
     "cookie": 7,
     "privacy": 4,
     "whitelist": 2
   },
   "by_kind": {
     "css": 4323,
-    "network": 1524,
+    "network": 1074,
     "scriptlet": 350
   }
 }

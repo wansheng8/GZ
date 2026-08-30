@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full_phishing",
-  "total": 65460,
+  "total": 38114,
   "by_category": {
-    "other": 63307,
-    "url": 1304,
-    "social": 530,
-    "privacy": 174,
-    "annoyance": 67,
-    "whitelist": 53,
-    "phishing": 17,
-    "cookie": 5,
-    "mining": 3
+    "other": 36593,
+    "url": 1168,
+    "social": 148,
+    "privacy": 147,
+    "annoyance": 32,
+    "phishing": 16,
+    "whitelist": 6,
+    "mining": 3,
+    "cookie": 1
   },
   "by_kind": {
-    "network": 65460
+    "network": 38114
   }
 }

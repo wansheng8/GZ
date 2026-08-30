@@ -1,25 +1,25 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 283889,
+  "total": 260974,
   "by_category": {
-    "other": 173493,
-    "css": 75835,
-    "url": 18440,
+    "other": 154985,
+    "css": 75838,
+    "url": 15364,
     "scriptlet": 6974,
-    "annoyance": 5668,
-    "social": 1241,
-    "redirect": 886,
-    "privacy": 741,
-    "cookie": 275,
-    "mining": 129,
-    "malware": 74,
-    "phishing": 58,
-    "whitelist": 54,
-    "network": 21
+    "annoyance": 5122,
+    "social": 1139,
+    "privacy": 705,
+    "redirect": 295,
+    "cookie": 268,
+    "mining": 105,
+    "malware": 69,
+    "phishing": 56,
+    "whitelist": 37,
+    "network": 17
   },
   "by_kind": {
-    "network": 194095,
-    "css": 81356,
+    "network": 171177,
+    "css": 81359,
     "scriptlet": 8438
   }
 }

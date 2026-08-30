@@ -1,15 +1,15 @@
 {
   "name": "adblock_collection_full_mining",
-  "total": 208,
+  "total": 198,
   "by_category": {
-    "other": 154,
-    "mining": 36,
+    "other": 145,
+    "mining": 35,
     "url": 9,
     "network": 7,
     "social": 1,
     "redirect": 1
   },
   "by_kind": {
-    "network": 208
+    "network": 198
   }
 }

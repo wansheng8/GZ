@@ -50,7 +50,6 @@
 本过滤器订阅**有可能破坏某些网站的功能**，也有可能**封禁部分色情、赌博网站**。
 使用前请斟酌考虑。如有误杀请积极向上游 issue 反馈，本仓库仅提供去重、转化、合并功能。
 
-完整版会有较多误杀，建议使用**精简版**（仅含 AdGuard 官方列表）。
 本仓库仅收集中英文广告拦截相关、网络安全相关、隐私保护相关列表。
 
 ## 快速开始
@@ -65,10 +64,9 @@ python -m adblock_collection build --out dist
 | 文件 | 说明 |
 | --- | --- |
 | `adblock_collection_full.txt` | 完整版（Adblock Plus / AdGuard / uBO 语法） |
-| `adblock_collection_lite.txt` | 精简版（仅 AdGuard 官方列表，误杀风险低） |
-| `adblock_collection_full_dns.txt` / `_lite_dns.txt` | hosts 格式（`0.0.0.0 domain`），供 Pi-hole / dnsmasq |
-| `adblock_collection_full_dns_ipv6.txt` / `_lite_dns_ipv6.txt` | Host IPv6 格式（`:: domain`） |
-| `adblock_collection_full_domains.txt` / `_lite_domains.txt` | 单行域名格式，供 AdGuard Home / AdGuard DNS |
+| `adblock_collection_full_dns.txt` | hosts 格式（`0.0.0.0 domain`），供 Pi-hole / dnsmasq |
+| `adblock_collection_full_dns_ipv6.txt` | Host IPv6 格式（`:: domain`） |
+| `adblock_collection_full_domains.txt` | 单行域名格式，供 AdGuard Home / AdGuard DNS |
 | `*.stats.txt` / `*.stats.json` | 分类统计（含 by_category / by_kind / by_source） |
 
 DNS 类文件由网络规则自动提取主机名生成，覆盖 `||domain^` 与 `||domain/path^` 形式。
@@ -76,14 +74,13 @@ DNS 类文件由网络规则自动提取主机名生成，覆盖 `||domain^` 与
 ### 构建选项
 
 ```bash
-python -m adblock_collection build --out dist        # 完整 + 精简 + DNS
-python -m adblock_collection build --no-lite         # 不生成精简版
+python -m adblock_collection build --out dist --split-by-category --redundant        # 完整版 + 类别拆分 + DNS
 python -m adblock_collection build --no-dns          # 不生成 DNS/hosts/domains
 python -m adblock_collection build --no-cache        # 禁用下载缓存
 python -m adblock_collection build --offline         # 离线模式，仅使用缓存
 python -m adblock_collection build --redundant       # 启用冗余域名规则消除
 python -m adblock_collection build --split-by-category  # 按类型拆分生成子列表
-python -m adblock_collection sources                 # 列出当前配置的上游列表（含 lite/full 标记）
+python -m adblock_collection sources                 # 列出当前配置的上游列表（含 category 标记）
 ```
 
 缓存位于 `.cache/sources/`，首次下载后再次构建无需联网。
@@ -105,16 +102,6 @@ python -m adblock_collection sources                 # 列出当前配置的上�
 | Host IPv6 列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt` |
 | 拦截域名列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt` |
 
-### 精简版（仅 AdGuard 官方列表，推荐日常使用）
-
-| 过滤器类型 | Github | CDN 加速 |
-| --- | --- | --- |
-| 广告过滤器 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite.txt` |
-| DNS 过滤器 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns.txt` |
-| Host 列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns.txt` |
-| Host IPv6 列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns_ipv6.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns_ipv6.txt` |
-| 拦截域名列表 | `https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_domains.txt` | `https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domains.txt` |
-
 ### 一键复制（Github 源，完整版）
 
 ```text
@@ -122,15 +109,6 @@ https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt
-```
-
-### 一键复制（Github 源，精简版）
-
-```text
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite.txt
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns.txt
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_dns_ipv6.txt
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_domains.txt
 ```
 
 ### 一键复制（CDN 加速，完整版）
@@ -142,24 +120,14 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_i
 https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt
 ```
 
-### 一键复制（CDN 加速，精简版）
-
-```text
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_dns_ipv6.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domains.txt
-```
-
 ### 按类型拆分订阅（高置信度类别）
 
-完整版/精简版构建时附加 `--split-by-category` 会生成按类别拆分的子列表，文件名形如 `adblock_collection_full_<类别>.txt`（及其 `_dns.txt` / `_domains.txt` / `_dns_ipv6.txt`）。常用高置信度类别链接：
+完整版构建时附加 `--split-by-category` 会生成按类别拆分的子列表，文件名形如 `adblock_collection_full_<类别>.txt`（及其 `_dns.txt` / `_domains.txt` / `_dns_ipv6.txt`）。常用高置信度类别链接：
 
 ```text
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_phishing.txt
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_mining.txt
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_lite_malware.txt
 ```
 
 类别枚举：`network` / `privacy` / `cookie` / `social` / `malware` / `phishing` / `mining` / `annoyance` / `whitelist` / `css` / `scriptlet` / `redirect` / `regexp` / `other`。
@@ -231,7 +199,6 @@ sources:
     url: https://example.com/my-filter.txt
     category: network      # 分类，用于统计与拆分
     compatible: [adguard, abp, ubo]
-    lite: false            # true 表示纳入精简版
 ```
 
 字段说明：
@@ -240,7 +207,6 @@ sources:
 - `url`：原始过滤器列表地址
 - `category`：类别（network / privacy / cookie / social / malware / phishing / mining / annoyance / whitelist / other）
 - `compatible`：兼容的语法
-- `lite`：`true` 时该列表会进入精简版生成
 
 ## 项目结构
 

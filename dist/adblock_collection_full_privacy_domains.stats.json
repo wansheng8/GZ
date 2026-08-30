@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full_privacy_domains",
-  "total": 130336,
+  "total": 108740,
   "by_category": {
-    "other": 118772,
-    "url": 10190,
-    "privacy": 465,
-    "social": 439,
-    "annoyance": 230,
-    "cookie": 157,
-    "mining": 43,
-    "phishing": 31,
-    "malware": 9
+    "other": 99587,
+    "url": 8132,
+    "privacy": 350,
+    "social": 347,
+    "annoyance": 149,
+    "cookie": 126,
+    "phishing": 25,
+    "mining": 18,
+    "malware": 6
   },
   "by_kind": {
-    "network": 130336
+    "network": 108740
   }
 }

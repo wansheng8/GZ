@@ -1,14 +1,10 @@
 {
   "name": "adblock_collection_full_social_domains",
-  "total": 305,
+  "total": 1,
   "by_category": {
-    "other": 261,
-    "social": 27,
-    "url": 13,
-    "malware": 2,
-    "annoyance": 2
+    "other": 1
   },
   "by_kind": {
-    "network": 305
+    "network": 1
   }
 }

@@ -7,7 +7,7 @@
 用法示例：
     python -m adblock_collection build
     python -m adblock_collection build --out dist --no-cache --offline
-    python -m adblock_collection build --no-lite --no-dns
+     python -m adblock_collection build --no-dns
 """
 
 from __future__ import annotations
@@ -26,7 +26,6 @@ from .merge import (
     load_sources,
     remove_redundant_domains,
     source_stats,
-    split_lite,
 )
 from .writer import (
     write_adblock,
@@ -42,7 +41,6 @@ LOG = logging.getLogger("adblock_collection")
 
 DEFAULT_HEADERS = {
     "full": ("Adblock Rule Collection (Full)", "完整版广告拦截与 DNS 过滤规则集合，含大量上游列表，可能有误杀。"),
-    "lite": ("Adblock Rule Collection (Lite)", "精简版，仅含 AdGuard 官方列表，误杀风险低，推荐日常使用。"),
 }
 
 
@@ -115,25 +113,11 @@ def build(args: argparse.Namespace) -> int:
     full_results = _emit(deduped, output_dir, "adblock_collection_full", full_title, full_desc,
                          gen_dns=not args.no_dns, source_counts=src_counts, manifest=manifest)
     if args.split_by_category:
-        _emit_by_category(deduped, output_dir, "adblock_collection_full", full_title, gen_dns=not args.no_dns)
-
-    lite_rules: list = []
-    if not args.no_lite:
-        lite_rules = dedupe(split_lite(all_rules, sources_meta))
-        lite_rules = apply_badfilter(lite_rules)
-        if args.redundant:
-            lite_rules = remove_redundant_domains(lite_rules)
-        lite_title, lite_desc = DEFAULT_HEADERS["lite"]
-        lite_results = _emit(lite_rules, output_dir, "adblock_collection_lite", lite_title, lite_desc,
-                             gen_dns=not args.no_dns, source_counts=None, manifest=manifest)
-        if args.split_by_category:
-            _emit_by_category(lite_rules, output_dir, "adblock_collection_lite", lite_title, gen_dns=not args.no_dns)
-    else:
-        lite_results = {}
+        _emit_by_category(deduped, output_dir, "adblock_collection_full", full_title, gen_dns=not args.no_dns, manifest=manifest)
 
     write_manifest(manifest, output_dir)
     LOG.info("生成完成:")
-    for label, res in (("完整版", full_results), ("精简版", lite_results)):
+    for label, res in (("完整版", full_results),):
         if not res:
             continue
         for fmt, (path, cnt) in res.items():
@@ -200,7 +184,6 @@ def main(argv: list[str] | None = None) -> int:
     p_build.add_argument("--out", default="dist", help="输出目录")
     p_build.add_argument("--no-cache", action="store_true", help="禁用下载缓存")
     p_build.add_argument("--offline", action="store_true", help="离线模式，仅使用缓存")
-    p_build.add_argument("--no-lite", action="store_true", help="不生成精简版")
     p_build.add_argument("--no-dns", action="store_true", help="不生成 DNS/hosts/domains 文件")
     p_build.add_argument("--redundant", action="store_true", help="启用冗余域名规则消除")
     p_build.add_argument("--split-by-category", action="store_true", help="split output by category")

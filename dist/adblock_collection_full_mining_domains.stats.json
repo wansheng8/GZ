@@ -1,13 +1,11 @@
 {
   "name": "adblock_collection_full_mining_domains",
-  "total": 113,
+  "total": 26,
   "by_category": {
-    "other": 95,
-    "mining": 12,
-    "url": 5,
-    "social": 1
+    "other": 25,
+    "url": 1
   },
   "by_kind": {
-    "network": 113
+    "network": 26
   }
 }
