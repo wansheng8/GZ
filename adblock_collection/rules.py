@@ -25,8 +25,12 @@ _ELEMENT_SEP_RE = re.compile(r"\s*(##|#@#|#\?#|#@\?#)\s*")
 _SCRIPTLET_RE = re.compile(r"#(?:@|@\?)?#.*\bscript:(?:inject|append|set(?:-const)?|json-prune)\b|#(?:@|@\?)?#\+js\(")
 # 域名选项 domain=/from=/to=
 _DOMAIN_OPTION_RE = re.compile(r"(?:domain|from|to)=([^,)]+)")
+# 网络规则主体（|| 之后、^ 或 / 或 $ 之前的部分），用于提取域名
+_NET_DOMAIN_RE = re.compile(r"^\|\|([a-z0-9*_.-]+(?:\.[a-z0-9*_.-]+)+)")
 # 纯域名网络规则：||domain^ 或 ||domain/ 结尾
 _PURE_DOMAIN_RE = re.compile(r"^\|\|([a-z0-9_-]+(?:\.[a-z0-9_-]+)+)\^?$")
+# 第三方面选项，用于判断规则作用范围（非必需）
+_THIRD_PARTY_RE = re.compile(r"\$third-party|\$~third-party")
 
 
 @dataclass
@@ -39,6 +43,7 @@ class Rule:
     is_css: bool = False
     is_scriptlet: bool = False
     is_badfilter: bool = False
+    is_important: bool = False
     # 该规则作用到的域名（网络规则为 blocked domain，元素规则为限定域名）
     domains: list[str] = field(default_factory=list)
     source: Optional[str] = None
@@ -85,8 +90,10 @@ def parse_options(option_str: str) -> dict[str, str]:
 def _extract_domains(raw: str) -> list[str]:
     """提取规则涉及的域名。
 
-    - 网络规则 ||example.com^  -> [example.com]
     - 元素规则 example.com,~sub.com##.ad -> [example.com]（忽略取反域名）
+    - 网络规则 ||example.com^         -> [example.com]
+    - 网络规则 ||example.com/ads^     -> [example.com]（含路径时仍提取主机名）
+    - 回退：从 domain=/from=/to= 选项提取
     """
     domains: list[str] = []
     m = _ELEMENT_SEP_RE.search(raw)
@@ -97,22 +104,26 @@ def _extract_domains(raw: str) -> list[str]:
             if d and not d.startswith("~"):
                 domains.append(d.lower())
         return domains
-    # 网络规则尝试纯域名
-    pm = _PURE_DOMAIN_RE.match(raw)
-    if pm:
-        domains.append(pm.group(1).lower())
-        return domains
+    # 网络规则：优先匹配 ||host... 主体
+    nm = _NET_DOMAIN_RE.match(raw)
+    if nm:
+        host = nm.group(1).lower()
+        if "*" not in host:
+            domains.append(host)
+            return domains
     # 退而求其次，从 domain= 选项提取
     for dm in _DOMAIN_OPTION_RE.finditer(raw):
         val = dm.group(1)
         for d in val.split("|"):
             d = d.strip().lstrip("~").lower()
-            if d:
+            if d and "*" not in d:
                 domains.append(d)
     return domains
 
 
-def _classify(raw: str, category_hint: str, kind: str) -> str:
+def _classify(raw: str, category_hint: str, kind: str, is_exception: bool) -> str:
+    if is_exception:
+        return "whitelist"
     if category_hint and category_hint != "other":
         return category_hint
     low = raw.lower()
@@ -180,13 +191,15 @@ def parse_line(line: str, category_hint: str = "other", source: Optional[str] = 
 
     options: dict[str, str] = {}
     is_badfilter = False
+    is_important = False
     m = _PARAM_OPTION_RE.search(stripped)
     if m:
         options = parse_options(m.group(1))
         is_badfilter = "badfilter" in options
+        is_important = "important" in options
 
     domains = _extract_domains(stripped)
-    cat = _classify(stripped, category_hint, kind)
+    cat = _classify(stripped, category_hint, kind, is_exception)
 
     return Rule(
         raw=stripped,
@@ -197,6 +210,7 @@ def parse_line(line: str, category_hint: str = "other", source: Optional[str] = 
         is_css=is_css,
         is_scriptlet=is_scriptlet,
         is_badfilter=is_badfilter,
+        is_important=is_important,
         domains=domains,
         source=source,
         options=options,

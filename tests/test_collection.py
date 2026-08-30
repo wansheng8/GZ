@@ -8,6 +8,7 @@ from adblock_collection.merge import (
     apply_badfilter,
     dedupe,
     remove_redundant_domains,
+    source_stats,
 )
 from adblock_collection.rules import Rule, parse_line
 
@@ -83,3 +84,41 @@ def test_redundant_domain_removal():
     assert "||sub.example.com^" not in raws
     assert "||example.com^" in raws
     assert "||other.com^" in raws
+
+
+def test_path_bearing_domain_extraction():
+    r = parse_line("||ads.example.com/banner^$script")
+    assert r is not None
+    assert r.domains == ["ads.example.com"]
+
+
+def test_exception_classified_as_whitelist():
+    r = parse_line("@@||example.com^$document")
+    assert r is not None
+    assert r.is_exception
+    assert r.category == "whitelist"
+
+
+def test_important_flag():
+    r = parse_line("||ads.com^$important")
+    assert r is not None
+    assert r.is_important
+
+
+def test_badfilter_target_with_options():
+    target = _rule("||tracker.com^$image", is_badfilter=False)
+    bad = _rule("||tracker.com^$image,badfilter", is_badfilter=True)
+    other = _rule("||keep.com^", is_badfilter=False)
+    kept = apply_badfilter([target, bad, other])
+    assert len(kept) == 1
+    assert kept[0].raw == "||keep.com^"
+
+
+def test_source_stats_counts():
+    rules = [
+        _rule("||a.com^", source="X"),
+        _rule("||b.com^", source="X"),
+        _rule("||c.com^", source="Y"),
+    ]
+    stats = source_stats(rules)
+    assert stats == {"X": 2, "Y": 1}

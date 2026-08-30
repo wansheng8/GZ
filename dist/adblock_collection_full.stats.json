@@ -1,20 +1,34 @@
 {
   "name": "adblock_collection_full",
-  "total": 817153,
+  "total": 494362,
   "by_category": {
-    "privacy": 355310,
-    "network": 175344,
+    "network": 159576,
     "malware": 138474,
     "phishing": 65420,
-    "annoyance": 57288,
-    "social": 16246,
-    "cookie": 6608,
-    "whitelist": 2237,
-    "mining": 226
+    "privacy": 55077,
+    "annoyance": 54075,
+    "whitelist": 15076,
+    "cookie": 6446,
+    "mining": 218
   },
   "by_kind": {
-    "network": 669046,
-    "css": 136441,
-    "scriptlet": 11666
+    "network": 368358,
+    "css": 114843,
+    "scriptlet": 11161
+  },
+  "by_source": {
+    "Online Malicious URL Blocklist": 138474,
+    "AdGuard Base": 133566,
+    "EasyList": 80247,
+    "Phishing URL Blocklist": 65421,
+    "AdGuard Annoyances": 57944,
+    "EasyPrivacy": 55971,
+    "AdGuard Chinese": 22290,
+    "EasyList China": 19307,
+    "AdGuard Cookie Notices": 6641,
+    "uBlock Origin Base": 6125,
+    "Peter Lowe's Blocklist": 3551,
+    "uBlock Origin Unbreak": 2551,
+    "NoCoin CryptoMiner": 316
   }
 }

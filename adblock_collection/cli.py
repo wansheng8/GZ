@@ -26,6 +26,7 @@ from .merge import (
     kind_stats,
     load_sources,
     remove_redundant_domains,
+    source_stats,
     split_lite,
 )
 from .writer import (
@@ -45,13 +46,13 @@ DEFAULT_HEADERS = {
 }
 
 
-def _emit(rules, output_dir, prefix, title, desc, gen_dns, gen_lite):
+def _emit(rules, output_dir, prefix, title, desc, gen_dns, source_counts):
     results = {}
     ap = output_dir / f"{prefix}.txt"
     n = write_adblock(rules, ap, title, desc)
     results["adblock"] = (ap, n)
     write_summary(category_stats(rules), output_dir, prefix)
-    write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules))
+    write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules), source_counts)
     if gen_dns:
         hp = output_dir / f"{prefix}_dns.txt"
         nh = write_hosts(rules, hp, title)
@@ -81,6 +82,10 @@ def build(args: argparse.Namespace) -> int:
     for _name, rules in collected.get("all", []):
         all_rules.extend(rules)
 
+    src_counts = source_stats(all_rules)
+    for name, cnt in src_counts.items():
+        LOG.info("上游贡献规则: %-35s %d", name, cnt)
+
     LOG.info("原始规则总数: %d", len(all_rules))
     deduped = dedupe(all_rules)
     LOG.info("去重后规则总数: %d", len(deduped))
@@ -90,7 +95,7 @@ def build(args: argparse.Namespace) -> int:
 
     full_title, full_desc = DEFAULT_HEADERS["full"]
     full_results = _emit(deduped, output_dir, "adblock_collection_full", full_title, full_desc,
-                         gen_dns=args.no_dns is False, gen_lite=False)
+                         gen_dns=not args.no_dns, source_counts=src_counts)
 
     lite_rules: list = []
     if not args.no_lite:
@@ -100,7 +105,7 @@ def build(args: argparse.Namespace) -> int:
             lite_rules = remove_redundant_domains(lite_rules)
         lite_title, lite_desc = DEFAULT_HEADERS["lite"]
         lite_results = _emit(lite_rules, output_dir, "adblock_collection_lite", lite_title, lite_desc,
-                             gen_dns=args.no_dns is False, gen_lite=False)
+                             gen_dns=not args.no_dns, source_counts=None)
     else:
         lite_results = {}
 

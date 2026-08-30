@@ -53,11 +53,15 @@ def fetch_source(url: str, use_cache: bool = True, offline: bool = False) -> lis
             )
             resp.raise_for_status()
             text = resp.text
+            # 跳过返回 HTML 而非过滤器列表的响应（如错误页、登录页）
+            stripped = text.lstrip()
+            if stripped.startswith("<!DOCTYPE") or stripped.startswith("<html"):
+                raise ValueError("响应不是过滤器列表（疑似 HTML 页面）")
             if use_cache:
                 cache.parent.mkdir(parents=True, exist_ok=True)
                 cache.write_text(text, encoding="utf-8")
             return text.splitlines()
-        except requests.RequestException as exc:
+        except (requests.RequestException, ValueError) as exc:
             last_err = exc
             LOG.warning("下载失败 (%s/%s) %s: %s", attempt, MAX_RETRIES, url, exc)
             time.sleep(2 * attempt)
@@ -133,8 +137,8 @@ def apply_badfilter(rules: Iterable[Rule]) -> list[Rule]:
 def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
     """消除冗余的纯域名网络规则。
 
-    当 '||a.com^'（阻断）存在时，更具体的 '||sub.a.com^' 在阻断语义上冗余，
-    但保留例外（@@）规则。仅对阻断型纯域名规则做父域归并。
+    当 '||a.com^'（阻断）存在时，更具体的 '||sub.a.com^' 或 '||a.com/ads^'
+    在阻断语义上冗余，但保留例外（@@）规则。仅对阻断型单域名网络规则做父域归并。
     """
     blocked: dict[str, Rule] = {}
     others: list[Rule] = []
@@ -144,7 +148,7 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
         else:
             others.append(r)
 
-    # 标记被父域覆盖的子域规则
+    # 标记被父域覆盖的子域规则（无论是否带路径，主机名层面冗余即移除）
     covered: set[str] = set()
     for domain in blocked:
         parts = domain.split(".")
@@ -158,6 +162,15 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
     if removed:
         LOG.info("冗余域名规则移除: %d", removed)
     return kept_blocked + others
+
+
+def source_stats(rules: Iterable[Rule]) -> dict[str, int]:
+    """统计各上游来源贡献的规则数（按规范化去重后的来源计）。"""
+    stats: dict[str, int] = defaultdict(int)
+    for r in rules:
+        if r.source:
+            stats[r.source] += 1
+    return dict(sorted(stats.items(), key=lambda kv: kv[1], reverse=True))
 
 
 def split_lite(rules: Iterable[Rule], sources_meta: list[dict]) -> list[Rule]:

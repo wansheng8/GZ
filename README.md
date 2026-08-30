@@ -69,7 +69,9 @@ python -m adblock_collection build --out dist
 | `adblock_collection_full_dns.txt` / `_lite_dns.txt` | hosts 格式（`0.0.0.0 domain`），供 Pi-hole / dnsmasq |
 | `adblock_collection_full_dns_ipv6.txt` / `_lite_dns_ipv6.txt` | Host IPv6 格式（`:: domain`） |
 | `adblock_collection_full_domains.txt` / `_lite_domains.txt` | 单行域名格式，供 AdGuard Home / AdGuard DNS |
-| `*.stats.txt` / `*.stats.json` | 分类统计（人类可读 / 机器可读） |
+| `*.stats.txt` / `*.stats.json` | 分类统计（含 by_category / by_kind / by_source） |
+
+DNS 类文件由网络规则自动提取主机名生成，覆盖 `||domain^` 与 `||domain/path^` 形式。
 
 ### 构建选项
 
@@ -80,7 +82,7 @@ python -m adblock_collection build --no-dns          # 不生成 DNS/hosts/domai
 python -m adblock_collection build --no-cache        # 禁用下载缓存
 python -m adblock_collection build --offline         # 离线模式，仅使用缓存
 python -m adblock_collection build --redundant       # 启用冗余域名规则消除
-python -m adblock_collection sources                 # 列出当前配置的上游列表
+python -m adblock_collection sources                 # 列出当前配置的上游列表（含 lite/full 标记）
 ```
 
 缓存位于 `.cache/sources/`，首次下载后再次构建无需联网。
