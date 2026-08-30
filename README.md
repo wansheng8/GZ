@@ -156,6 +156,39 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_lite_domai
 - AdGuard Home / Pi-hole：添加自定义规则列表，粘贴 DNS 过滤器 / Host 列表 / Host IPv6 列表 / 拦截域名列表链接。
 - 国内访问缓慢时优先使用 CDN 加速（jsDelivr）链接。
 
+## IPv4 / IPv6 拦截说明
+
+本项目的 IPv4 / IPv6 拦截通过 **hosts 格式** 文件实现，而非 Adblock 语法规则。两类文件域名集合一致，区别仅在返回的记录类型（A 与 AAAA）。
+
+### IPv4 拦截
+
+文件：`adblock_collection_*_dns.txt`
+
+```text
+0.0.0.0 ads.example.com
+0.0.0.0 tracker.example.com
+```
+
+原理：将广告/追踪域名指向 IPv4 黑洞地址 `0.0.0.0`，DNS 解析即返回该地址，连接被拒绝。供 Pi-hole、dnsmasq、AdGuard Home 等使用。
+
+### IPv6 拦截
+
+文件：`adblock_collection_*_dns_ipv6.txt`
+
+```text
+:: ads.example.com
+:: tracker.example.com
+```
+
+原理：将域名指向 IPv6 黑洞地址 `::`（NXDOMAIN 效果），阻断 IPv6 环境下的解析。供支持 IPv6 的 DNS 服务使用。
+
+### 覆盖范围与限制
+
+- 两类文件仅从**纯域名网络阻断规则**（`||domain^`、`||domain/path^` 的主机名）提取，例外规则（`@@`）不进入列表。
+- 覆盖域名过滤、DNS 过滤、Host 列表、恶意/钓鱼/挖矿/僵尸网络/欺诈/滥用等域名阻断类规则。
+- 纯 CSS 隐藏、脚本注入、元素选择类规则**无法**转为 DNS 拦截（作用于页面内容而非域名解析层），仅出现在 `*.txt`（Adblock 语法）版本中。
+- 双栈网络建议同时订阅 `_dns.txt` 与 `_dns_ipv6.txt`，避免仅拦截 IPv4 时域名通过 IPv6 绕过。
+
 ## 自定义上游列表（DIY）
 
 编辑 `config/sources.yaml`，按如下结构添加或删除上游列表（兼容 Adblock Plus 语法的过滤器列表均可）：
