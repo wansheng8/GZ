@@ -1,39 +1,54 @@
 {
   "name": "adblock_collection_full",
-  "total": 817159,
+  "total": 3231080,
   "by_category": {
-    "privacy": 352194,
-    "network": 167074,
-    "malware": 138474,
-    "phishing": 65420,
-    "annoyance": 53585,
-    "whitelist": 17942,
+    "malware": 2258857,
+    "network": 455801,
+    "privacy": 354000,
+    "phishing": 65418,
+    "annoyance": 53662,
+    "whitelist": 20892,
     "social": 15815,
     "cookie": 6437,
-    "mining": 218
+    "mining": 198
   },
   "by_kind": {
-    "network": 669052,
-    "css": 136441,
-    "scriptlet": 11666
+    "network": 3047540,
+    "css": 170226,
+    "scriptlet": 13314
   },
   "by_source": {
+    "Hagezi Threat Intelligence Feed": 2178585,
     "AdGuard Tracking Protection": 326094,
+    "Hagezi Pro": 227114,
     "Online Malicious URL Blocklist": 138474,
     "AdGuard Base": 133578,
-    "EasyList": 80247,
+    "StevenBlack Hosts": 84032,
+    "EasyList": 80270,
     "Phishing URL Blocklist": 65421,
     "AdGuard Annoyances": 57944,
-    "EasyPrivacy": 55971,
+    "EasyPrivacy": 55972,
     "AdGuard Chinese": 22290,
     "EasyList China": 19307,
+    "AdGuard German": 17238,
     "AdGuard Social Media": 16252,
+    "AdGuard Japanese": 15349,
+    "AdGuard Russian": 12008,
     "AdGuard Mobile Ads": 7807,
     "AdGuard Cookie Notices": 6641,
     "uBlock Origin Base": 6125,
+    "EasyList Germany": 5963,
+    "AdGuard Turkish": 5589,
+    "uBlock Origin Badware Risks": 4336,
     "Peter Lowe's Blocklist": 3551,
     "AdGuard URL Tracking": 2612,
     "uBlock Origin Unbreak": 2551,
-    "NoCoin CryptoMiner": 316
+    "AdGuard Spanish": 1959,
+    "uBlock Origin Privacy": 1744,
+    "WindowsSpyBlocker": 352,
+    "uBlock Origin Quick Fixes": 324,
+    "NoCoin CryptoMiner": 316,
+    "AdGuard French": 243,
+    "uBlock Origin Resource Abuse": 77
   }
 }

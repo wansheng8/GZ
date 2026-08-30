@@ -42,6 +42,46 @@ sources:
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
+  - name: AdGuard German
+    url: https://filters.adtidy.org/extension/ublock/filters/1.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Russian
+    url: https://filters.adtidy.org/extension/ublock/filters/7.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Spanish
+    url: https://filters.adtidy.org/extension/ublock/filters/8.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Turkish
+    url: https://filters.adtidy.org/extension/ublock/filters/9.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard French
+    url: https://filters.adtidy.org/extension/ublock/filters/10.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Dutch
+    url: https://filters.adtidy.org/extension/ublock/filters/12.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Japanese
+    url: https://filters.adtidy.org/extension/ublock/filters/16.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
+  - name: AdGuard Italian
+    url: https://filters.adtidy.org/extension/ublock/filters/18.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: true
 
   # ----------------- 完整版附加列表 -----------------
   - name: EasyList
@@ -52,6 +92,11 @@ sources:
   - name: EasyPrivacy
     url: https://easylist.to/easylist/easyprivacy.txt
     category: privacy
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: EasyList Germany
+    url: https://easylist.to/easylistgermany/easylistgermany.txt
+    category: network
     compatible: [adguard, abp, ubo]
     lite: false
   - name: EasyList China
@@ -73,6 +118,51 @@ sources:
     url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
     category: network
     compatible: [ubo, abp, adguard]
+    lite: false
+  - name: uBlock Origin Badware Risks
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
+    category: malware
+    compatible: [ubo, abp, adguard]
+    lite: false
+  - name: uBlock Origin Resource Abuse
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt
+    category: annoyance
+    compatible: [ubo, abp, adguard]
+    lite: false
+  - name: uBlock Origin Privacy
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
+    category: privacy
+    compatible: [ubo, abp, adguard]
+    lite: false
+  - name: uBlock Origin Annoyances
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt
+    category: annoyance
+    compatible: [ubo, abp, adguard]
+    lite: false
+  - name: uBlock Origin Quick Fixes
+    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt
+    category: network
+    compatible: [ubo, abp, adguard]
+    lite: false
+  - name: Hagezi Pro
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: Hagezi Threat Intelligence Feed
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/tif.txt
+    category: malware
+    compatible: [adguard, abp, ubo]
+    lite: false
+  - name: StevenBlack Hosts
+    url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+    category: network
+    compatible: [hosts]
+    lite: false
+  - name: WindowsSpyBlocker
+    url: https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
+    category: privacy
+    compatible: [hosts]
     lite: false
   - name: Online Malicious URL Blocklist
     url: https://raw.githubusercontent.com/curbengh/urlhaus-filter/master/urlhaus-filter.txt
