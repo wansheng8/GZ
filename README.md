@@ -90,7 +90,7 @@ tests/
 ```
 
 > 注意：将 `config/sources.yaml` 中的 `name`/`url` 改为你自己的上游，
-> 并把 `README.md`、`adblock_collection/writer.py` 中的 `your-name` 替换为你的 GitHub 用户名。
+> 订阅主页已指向 `https://github.com/wansheng8/GZ`。
 
 ## 自动更新
 

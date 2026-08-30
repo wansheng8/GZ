@@ -16,7 +16,7 @@ from typing import Iterable
 
 from .rules import Rule
 
-HOMEPAGE = "https://github.com/your-name/adblock-rule-collection"
+HOMEPAGE = "https://github.com/wansheng8/GZ"
 
 
 def _to_hosts_line(rule: Rule) -> str | None:
