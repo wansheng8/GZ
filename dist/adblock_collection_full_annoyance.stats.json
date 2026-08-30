@@ -1,0 +1,12 @@
+{
+  "name": "adblock_collection_full_annoyance",
+  "total": 54152,
+  "by_category": {
+    "annoyance": 54152
+  },
+  "by_kind": {
+    "css": 46319,
+    "network": 4363,
+    "scriptlet": 3470
+  }
+}
