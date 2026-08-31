@@ -50,14 +50,17 @@ def _ancestors(domain: str) -> list[str]:
 
 
 def check_allow(rules: Iterable[Rule], fps: list[str], policy: Optional[dict] = None) -> list[dict]:
-    """返回误杀违规：allow 域名或其祖先被整域阻断。"""
+    """返回误杀违规：allow 清单中的域名本身被整域阻断。
+
+    采用精确匹配：仅当清单域名（如 tencent.com / aws.amazon.com）自身出现在整域阻断集合中
+    才算误杀；其子域（ad.tencent.com）被拦截属正常，不报误杀。与 apply_allowlist 的放行
+    逻辑保持一致，避免「祖先命中」造成误报或过度放行。
+    """
     blocked = _blocked_domains(rules, policy)
     violations: list[dict] = []
     for d in fps:
-        for anc in _ancestors(d):
-            if anc in blocked:
-                violations.append({"domain": d, "blocked_by": anc})
-                break
+        if d in blocked:
+            violations.append({"domain": d, "blocked_by": d})
     return violations
 
 

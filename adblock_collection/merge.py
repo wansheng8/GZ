@@ -235,10 +235,12 @@ def remove_redundant_css(rules: Iterable[Rule]) -> list[Rule]:
 
 
 def apply_allowlist(rules: Iterable[Rule], allow: Iterable[str]) -> list[Rule]:
-    """按误杀回归白名单强制放行：剔除整域阻断规则中命中 allow 清单（含祖先域）的网络规则。
+    """按误杀回归白名单强制放行：仅放行「域名精确等于」allow 清单项的整域阻断规则。
 
-    仅作用于网络阻断规则；例外（@@）与元素隐藏类规则不受影响。符合「宁愿少拦截」原则——
-    allow 清单中的知名站点（google/microsoft/office 等）绝不会被整域封锁。
+    使用精确匹配而非祖先匹配——allow 中的 tencent.com 只放行 ||tencent.com^ 本身，
+    其广告/追踪子域（ad.tencent.com、analytics.tencent.com 等）仍会被正常拦截，避免
+    「大站广告也不拦」的半截拦截问题。仅作用于网络阻断规则；例外与元素隐藏不受影响。
+    符合「宁愿少拦截、但不放过子域追踪」的原则。
     """
     allow_set = {str(d).strip().lower() for d in allow if d}
     if not allow_set:
@@ -247,8 +249,7 @@ def apply_allowlist(rules: Iterable[Rule], allow: Iterable[str]) -> list[Rule]:
     for r in rules:
         if r.kind == "network" and not r.is_exception and r.domains and len(r.domains) == 1:
             dom = r.domains[0].lower()
-            parts = dom.split(".")
-            if any(".".join(parts[i:]) in allow_set for i in range(len(parts))):
+            if dom in allow_set:
                 continue
         kept.append(r)
     return kept

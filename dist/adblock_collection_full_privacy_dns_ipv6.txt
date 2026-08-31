@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (privacy)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 30327
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 30575
 :: 0.myikas.com
 :: 00px.net
 :: 07b3.pandasuite.io
@@ -79,6 +79,8 @@
 :: 3esm.consubebe.es
 :: 3gl.net
 :: 3l0zszdzjhpw.www.comicleaks.com
+:: 3p-geo.yahoo.com
+:: 3p-udc.yahoo.com
 :: 3rdspacetech.com
 :: 3skickasurf.tre.se
 :: 3wn3w3skxpym.round.t3.gg
@@ -1714,6 +1716,7 @@
 :: acidicstraw.com
 :: acidpigs.com
 :: aciysf.destockage-fitness.com
+:: acjs.aliyun.com
 :: acollector.wb.ru
 :: acquisition.klm.com
 :: acridtwist.com
@@ -2185,6 +2188,7 @@
 :: ainu.intel.co.jp
 :: ainu.intel.co.kr
 :: ainu.intel.co.uk
+:: ainu.intel.com
 :: ainu.intel.com.br
 :: ainu.intel.de
 :: ainu.intel.es
@@ -2220,6 +2224,7 @@
 :: alaburger.openapp.link
 :: aladdinupdate.blackrock.com
 :: alapita.openapp.link
+:: alb.reddit.com
 :: albanychicago.advancedtech.com
 :: ald.aldautomotive.be
 :: alertgraph.com
@@ -2439,6 +2444,7 @@
 :: analytics.divulg.org
 :: analytics.dv.socure.io
 :: analytics.dvidshub.net
+:: analytics.edgekey.net
 :: analytics.egernsund.com
 :: analytics.egernsund.de
 :: analytics.eggoffer.com
@@ -2607,6 +2613,7 @@
 :: analytics.pipelife.si
 :: analytics.plasmic.app
 :: analytics.plumbworld.co.uk
+:: analytics.pointdrive.linkedin.com
 :: analytics.pollardwater.com
 :: analytics.pop2watch.com
 :: analytics.prezly.com
@@ -2749,6 +2756,7 @@
 :: analytics.witglobal.net
 :: analytics.xiloc.net
 :: analytics.xoomenergy.com
+:: analytics.yahoo.com
 :: analytics.yext-static.com
 :: analytics.ynap.biz
 :: analytics.yola.net
@@ -3733,6 +3741,7 @@
 :: at.neom.com
 :: at.norisbank.de
 :: at.swisscom.ch
+:: atanx.alicdn.com
 :: atarget.adelaide.edu.au
 :: atarget.csu.edu.au
 :: atarget.firstrepublic.com
@@ -3985,6 +3994,7 @@
 :: b.your.rewardsemail.dominos.ca
 :: b.ysh.io
 :: b.zedge.me
+:: b0.yahoo.co.jp
 :: b1tow9h4erpw.anur.polymerdev.com
 :: b20p6lt350nt.app.polymersearch.com
 :: b2binfo.canon-europe.com
@@ -4037,9 +4047,11 @@
 :: baskettexture.com
 :: bastingart.com
 :: basuey.toyscenter.it
+:: bat.bing.com
 :: bat.bing.net
 :: bat.maydream.com
 :: baton.cuetv.online
+:: bats.video.yahoo.com
 :: battleburst.com
 :: battlekite.com
 :: battlenet.openapp.link
@@ -4077,17 +4089,20 @@
 :: bdzcck.stadiumgoods.com
 :: be.slowmographer.co
 :: beacon.adelphic.com
+:: beacon.cdn.qq.com
 :: beacon.coofis.com
 :: beacon.flow.io
 :: beacon.joinlede.com
 :: beacon.klm.com
 :: beacon.peakhour.io
+:: beacon.qq.com
 :: beacon.s.llnwi.net
 :: beacon.searchspring.io
 :: beacon.sftoaa.com
 :: beacon.shutterfly.com
 :: beacon.webpresence.work
 :: beacon.wikia-services.com
+:: beaconcdn.qq.com
 :: beafdf.restaupro.com
 :: beagle.prod.tda.link
 :: beam.mjhlifesciences.com
@@ -4156,6 +4171,7 @@
 :: bhcsub.sankeishop.jp
 :: bhcumsc.com
 :: bhmzab.totes.com
+:: bhwkju.vivo.com
 :: bi.concordesolutions.com
 :: bi.irisdating.com
 :: bi.pst.tech
@@ -4656,6 +4672,7 @@
 :: bysfnu.bodeboca.com
 :: byxcbk.ipekevi.com
 :: bzaxgk.ecctur.com
+:: bzclk.baidu.com
 :: bzcuta.titleboxing.com
 :: bzlold.machi.to
 :: bznxqj.fiat.it
@@ -4667,6 +4684,7 @@
 :: c.bazo.io
 :: c.ixi.to
 :: c.keltis.com
+:: c.live.com
 :: c.lolamarket.com
 :: c.mibank.com
 :: c.musicradio.com
@@ -4994,6 +5012,7 @@
 :: clarity-infographic.zebra.com
 :: classicnotebook.com
 :: claycandle.com
+:: clb.yahoo.co.jp
 :: clcktrax.com
 :: cleanhaircut.com
 :: clearbitscripts.com
@@ -5043,6 +5062,7 @@
 :: clicks.metronautapp.com
 :: clicks.point.app
 :: clicks.rallyrd.com
+:: clicks.tableau.com
 :: clicks.thehive.hqo.co
 :: clicks.tyuwq.com
 :: clicks.variis.com
@@ -5093,6 +5113,7 @@
 :: cloud.trapptechnology.com
 :: cloud.webtrack.online
 :: cloudchickens.com
+:: clouderrorreporting.googleapis.com
 :: cloudguppy.com
 :: cloudhosting-business.vodafone.com
 :: cloudhustles.com
@@ -5186,6 +5207,7 @@
 :: colgui.vidaxl.pt
 :: collaborate.blackboard.com
 :: collect.air1.com
+:: collect.alipay.com
 :: collect.allianz-technology.ch
 :: collect.allianz.ch
 :: collect.alphastream.io
@@ -5216,6 +5238,7 @@
 :: collector.betway.be
 :: collector.clareity.net
 :: collector.dgnet.ltd.uk
+:: collector.github.com
 :: collector.githubapp.com
 :: collector.hippodromeonline.com
 :: collector.mazeberry.com
@@ -5252,6 +5275,7 @@
 :: comm.toro.com
 :: commanslabdpp.carte-gr.total.fr
 :: commanslabdspace.carte-gr.total.fr
+:: commerce.bing.com
 :: commerce.edc.ca
 :: commercial-analytics-collector.news.co.uk
 :: commercial.davey.com
@@ -5402,6 +5426,7 @@
 :: connect.im8.net
 :: connect.info.halifaxhealthnews.org
 :: connect.insidelpl.com
+:: connect.intel.com
 :: connect.intercall.com
 :: connect.invibio.com
 :: connect.inxpo.com
@@ -5603,6 +5628,7 @@
 :: cookiestorybook.com
 :: cookietracking.eatonpowersource.com
 :: cookiewarden.com
+:: cookiex.ngd.yahoo.com
 :: cooking-app.lkk.com
 :: cookingfry.com
 :: coolestcatcare.com
@@ -5612,6 +5638,7 @@
 :: coop.vmware.com
 :: coordinatedcoat.com
 :: cooyxg.tennis-point.de
+:: copilot-telemetry.githubusercontent.com
 :: copperstills.net
 :: copycarpenter.com
 :: copyfranchise.com
@@ -5774,7 +5801,9 @@
 :: cse3.chausport.com
 :: csghyg.reginaclinic.jp
 :: csm.magnetintell.com
+:: csp-reporting.cloudflare.com
 :: csplog.kwai-pro.com
+:: cstm.baidu.com
 :: csv4.ebs-paris.fr
 :: csvt002.harrisbank.com
 :: csvt005.heretakethewheel.com
@@ -6009,9 +6038,115 @@
 :: d.uni-medias.com
 :: d.whoscall.com
 :: d.xapcard.com
+:: d10lpsik1i8c69.cloudfront.net
+:: d11bdev7tcn7wh.cloudfront.net
+:: d169bbxks24g2u.cloudfront.net
+:: d16fk4ms6rqz1v.cloudfront.net
+:: d16hi2v1mh7lg7.cloudfront.net
+:: d1733r3id7jrw5.cloudfront.net
+:: d17m68fovwmgxj.cloudfront.net
+:: d18p8z0ptb8qab.cloudfront.net
+:: d191y0yd6d0jy4.cloudfront.net
+:: d196fri2z18sm.cloudfront.net
+:: d1cr9zxt7u0sgu.cloudfront.net
+:: d1f0tbk1v3e25u.cloudfront.net
+:: d1get58iwmjrxx.cloudfront.net
+:: d1gp8joe0evc8s.cloudfront.net
+:: d1hyarjnwqrenh.cloudfront.net
+:: d1jbmblqtpfad4.cloudfront.net
+:: d1k8sb4xbepqao.cloudfront.net
+:: d1l6p2sc9645hc.cloudfront.net
+:: d1m6l9dfulcyw7.cloudfront.net
+:: d1n00d49gkbray.cloudfront.net
+:: d1qmrxg9gbf226.cloudfront.net
+:: d1qnmu4nrib73p.cloudfront.net
+:: d1r27qvpjiaqj3.cloudfront.net
+:: d1r2sy6oc0ariq.cloudfront.net
+:: d1r55yzuc1b1bw.cloudfront.net
+:: d1rgnfh960lz2b.cloudfront.net
+:: d1ros97qkrwjf5.cloudfront.net
+:: d1t9uctetvi0tu.cloudfront.net
+:: d1tbj6eaenapdy.cloudfront.net
+:: d1tqsoh7s4xjz9.cloudfront.net
+:: d1vg5xiq7qffdj.cloudfront.net
+:: d1xfq2052q7thw.cloudfront.net
+:: d1yz9u4jf6oqub.cloudfront.net
+:: d1z3r0i09bwium.cloudfront.net
+:: d1z9vm58yath60.cloudfront.net
+:: d20kffh39acpue.cloudfront.net
+:: d20vwa69zln1wj.cloudfront.net
+:: d21o24qxwf7uku.cloudfront.net
+:: d22v2nmahyeg2a.cloudfront.net
+:: d23p9gffjvre9v.cloudfront.net
+:: d24cze5sab2jwg.cloudfront.net
+:: d24luoisenoi7j.cloudfront.net
+:: d24rtvkqjwgutp.cloudfront.net
 :: d276.ourmidland.com
+:: d27623md02evp.cloudfront.net
+:: d2cpw6kwpff7n5.cloudfront.net
+:: d2ezz24t9nm0vu.cloudfront.net
+:: d2fw3s7rfepszt.cloudfront.net
+:: d2gbtcuv3w9qyv.cloudfront.net
+:: d2gt2ux04o03l1.cloudfront.net
+:: d2i34c80a0ftze.cloudfront.net
+:: d2ibu2ug0mt5qp.cloudfront.net
+:: d2j1fszo1axgmp.cloudfront.net
+:: d2j74sjmqqyf26.cloudfront.net
+:: d2kdl5wcwrtj90.cloudfront.net
+:: d2lxqodqbpy7c2.cloudfront.net
+:: d2lyx5ly60ksu3.cloudfront.net
+:: d2o5idwacg3gyw.cloudfront.net
+:: d2o67tzzxkqap2.cloudfront.net
+:: d2o9p5vky89u4e.cloudfront.net
+:: d2oh4tlt9mrke9.cloudfront.net
+:: d2pozfvrp52dk4.cloudfront.net
+:: d2pt12ct4kmq21.cloudfront.net
+:: d2r1yp2w7bby2u.cloudfront.net
+:: d2rnkf2kqy5m6h.cloudfront.net
+:: d2t77mnxyo7adj.cloudfront.net
+:: d2tgfbvjf3q6hn.cloudfront.net
 :: d2u.dauphinquebec.com
+:: d2wa5sea6guof0.cloudfront.net
+:: d2wu036mkcz52n.cloudfront.net
+:: d2wy8f7a9ursnm.cloudfront.net
+:: d2z0bn1jv8xwtk.cloudfront.net
+:: d2zd0wa1vpt7j9.cloudfront.net
+:: d31y97ze264gaa.cloudfront.net
+:: d34ko97cxuv4p7.cloudfront.net
+:: d34r8q7sht0t9k.cloudfront.net
+:: d35u1vg1q28b3w.cloudfront.net
+:: d37l98t2r94go6.cloudfront.net
+:: d39ion77s0ucuz.cloudfront.net
+:: d39yds8oe4n4jq.cloudfront.net
+:: d3banl4fzuxsjl.cloudfront.net
+:: d3bo67muzbfgtl.cloudfront.net
+:: d3cgm8py10hi0z.cloudfront.net
+:: d3cxv97fi8q177.cloudfront.net
+:: d3gi6isrskhoq.cloudfront.net
+:: d3iouejux1os58.cloudfront.net
+:: d3ip4t8fp90x81.cloudfront.net
+:: d3j1weegxvu8ns.cloudfront.net
+:: d3kyk5bao1crtw.cloudfront.net
+:: d3l3lkinz3f56t.cloudfront.net
+:: d3lqotgbn3npr.cloudfront.net
+:: d3m6sept6cnil5.cloudfront.net
+:: d3mskfhorhi2fb.cloudfront.net
+:: d3n6i6eorggdxk.cloudfront.net
+:: d3or5d0jdz94or.cloudfront.net
+:: d3plfjw9uod7ab.cloudfront.net
+:: d3r7h55ola878c.cloudfront.net
+:: d3s7ggfq1s6jlj.cloudfront.net
+:: d3sbxpiag177w8.cloudfront.net
+:: d3tglifpd8whs6.cloudfront.net
+:: d3uvwl4wtkgzo1.cloudfront.net
+:: d3vebqdofhigrn.cloudfront.net
+:: d4ax0r5detcsu.cloudfront.net
+:: d5yoctgpv4cpx.cloudfront.net
 :: d6ek.pandasuite.io
+:: d6rak4b14t5gp.cloudfront.net
+:: d761erxl2qywg.cloudfront.net
+:: d81mfvml8p5ml.cloudfront.net
+:: d94qwxh6czci4.cloudfront.net
 :: da.bodenhaus.de
 :: da.hornbach.at
 :: da.hornbach.be
@@ -6037,6 +6172,7 @@
 :: dancingmarmot.com
 :: dandydune.com
 :: dandyglow.com
+:: danv01ao0kdr2.cloudfront.net
 :: dapperdiscussion.com
 :: darkartsyoga.com
 :: dart.onjoyri.de
@@ -6128,6 +6264,7 @@
 :: data.decathlon.pl
 :: data.deinfeedback.alditalk-kundenbetreuung.de
 :: data.descubre.interbank.pe
+:: data.diagnostics.office.com
 :: data.digitalks.az
 :: data.discover.ringcentral.com
 :: data.dm.casio.com
@@ -6144,6 +6281,7 @@
 :: data.em.ringcentral.com
 :: data.em.viking.com
 :: data.em.vikingcruises.com
+:: data.em2.cloudflare.com
 :: data.email.belgiantrain.be
 :: data.email.gamma.be
 :: data.email.gamma.nl
@@ -6344,6 +6482,7 @@
 :: dazdmx.cobra.fr
 :: dazzlescript.com
 :: dazzlingbook.com
+:: db7q4jg5rkhk8.cloudfront.net
 :: dba4.pandasuite.io
 :: dbex-tracker-v2.driveback.ru
 :: dbhbgz.suitableshop.nl
@@ -6379,6 +6518,8 @@
 :: dc.stenalinetravel.com
 :: dc.waylet.es
 :: dc01p-net-sslvpn0-ra.net.jumia.com.gh
+:: dc8na2hxrj29i.cloudfront.net
+:: dc8xl0ndzn2cb.cloudfront.net
 :: dcclaa.daskochrezept.de
 :: dcclaa.guter-rat.de
 :: dcclaa.harpersbazaar.de
@@ -6413,12 +6554,14 @@
 :: dcs.espritshop.pl
 :: dcs.plussizetech.com
 :: dcsqim.socialdeal.nl
+:: dcv4p460uqa46.cloudfront.net
 :: dcxusu.lacuracao.pe
 :: dd.control4.com
 :: dd.garena.com
 :: dd.seloger-bureaux-commerces.com
 :: dd.selogerneuf.com
 :: dd.viator.com
+:: dd6zx4ibq538k.cloudfront.net
 :: ddlbr.timesclub.co
 :: ddlcvm.clas.style
 :: ddlnk.net
@@ -6432,6 +6575,7 @@
 :: de.bca-news.com
 :: de.mywd.com
 :: de.verintsystemsinc.com
+:: de5zarwna0j2q.cloudfront.net
 :: dealchocolate.com
 :: dealfastfood.openapp.link
 :: debonairdust.com
@@ -6547,6 +6691,7 @@
 :: dev-link.aira.io
 :: dev-link.getprizepool.com
 :: dev-link.myoptimity.com
+:: dev-plan.intel.com
 :: dev-share.beaconlearningapp.com
 :: dev-share.haloedapp.com
 :: dev-share.smartfashion.ai
@@ -6585,9 +6730,11 @@
 :: dgbftl.luckyvitamin.com
 :: dgbwya.evyapshop.com
 :: dgd.okiela.com
+:: dggaenaawxe8z.cloudfront.net
 :: dgkpzy.2ch2.net
 :: dgmolb.irishjobs.ie
 :: dgztiz.conrad.se
+:: dh0c1bz67fuho.cloudfront.net
 :: dhkyrl.discountmags.com
 :: dhplma.pontofrio.com.br
 :: dhsjpz.bugaboo.com
@@ -6608,6 +6755,7 @@
 :: di.ifolor.se
 :: di.spreadmorelove.ch
 :: di2.zooplus.es
+:: di2xwvxz1jrvu.cloudfront.net
 :: diagnose.igstatic.com
 :: diagnostics.thermo.com
 :: dialer.leads360.com
@@ -6881,6 +7029,7 @@
 :: dkno.netpartnering.com
 :: dkotrack.com
 :: dkqibr.onlineverf.nl
+:: dkupaw9ae63a8.cloudfront.net
 :: dkvvwq.aosom.ca
 :: dl-dev.tablelist.com
 :: dl-dev.tytocare.com
@@ -6927,6 +7076,7 @@
 :: dl.wooribank.com.kh
 :: dl.workindia.in
 :: dl.zola.com
+:: dl1d2m8ri9v3j.cloudfront.net
 :: dl2.brandatt.com
 :: dldev.wooribank.com.kh
 :: dldotl.ouestfrance-auto.com
@@ -6941,6 +7091,7 @@
 :: dlqxtm.sssports.com
 :: dls-b23-link.ip.twelve99.net.iberostar.com
 :: dls.guidrr.com
+:: dlthst9q2beh8.cloudfront.net
 :: dluat.pokerbros.net
 :: dluat.supremapoker.net
 :: dlxpix.net
@@ -6963,6 +7114,9 @@
 :: dmtgo.upc.biz
 :: dmuwlm.fonteynspas.com
 :: dmvbpz.swimoutlet.com
+:: dmw2pzbenclyd.cloudfront.net
+:: dmxhgf4zuwdvu.cloudfront.net
+:: dn34cbtcv9mef.cloudfront.net
 :: dncxgm.pegadorfashion.com
 :: dndvms.24s.com
 :: dnecea.vacances-lagrange.com
@@ -6971,10 +7125,13 @@
 :: dngpzy.tradingsat.com
 :: dngpzy.zone-turf.fr
 :: dnhrxt.kintetsu-re.co.jp
+:: dniyppubkuut7.cloudfront.net
 :: dnkeyt.svetsochtillbehor.se
 :: dnltkp.lampeetlumiere.fr
+:: dnn506yrbagrg.cloudfront.net
 :: dnt-userreport.com
 :: dnxcok.pentik.com
+:: dnxlgencstz4.cloudfront.net
 :: do-not-tracker.org
 :: do.exaai.chat
 :: do.usefireside.com
@@ -7051,9 +7208,11 @@
 :: dptgdj.usagi-online.com
 :: dq95d35.com
 :: dqefxd.kaigoworker.jp
+:: dqif5bl25s0bf.cloudfront.net
 :: dqntra.home-to-go.ca
 :: dqs3.darjeeling.fr
 :: dqsfil.pikolinos.com
+:: dr6vcclmzwk74.cloudfront.net
 :: dragonbats.com
 :: dragontamer.net
 :: drainpaste.com
@@ -7074,6 +7233,7 @@
 :: drydrum.com
 :: dryerwasher.com
 :: ds.webprojectslab.com
+:: dsbahmgppc0j4.cloudfront.net
 :: dsdjbj.abracadabra.com.br
 :: dsdordering.kdrp.com
 :: dsfe19.madeindesign.com
@@ -7091,12 +7251,16 @@
 :: dtnmyp.cocotorico.com
 :: dtqcpx.eskor.se
 :: dttrk.com
+:: dtxtngytz5im1.cloudfront.net
+:: dty0ycn35t4d2.cloudfront.net
+:: du4rq1xqh3i1k.cloudfront.net
 :: dualping.com
 :: dujgiq.trendhim.pl
 :: duqqrl.jefchaussures.com
 :: durchsichtig.xyz
 :: dustydime.com
 :: dustyhammer.com
+:: duu8lzqdm8tsz.cloudfront.net
 :: dv.chemie.de
 :: dv59b.montecarlomeeting.com
 :: dvczvm.cyfrowe.pl
@@ -7119,6 +7283,7 @@
 :: dxpxgy.jdsports.com
 :: dxqbfo.capfun.nl
 :: dxrkvm.cheryls.com
+:: dy2xcjk8s1dbz.cloudfront.net
 :: dyecloud.com
 :: dyghye.fashionesta.com
 :: dynamic-content.croquetteland.com
@@ -7127,6 +7292,7 @@
 :: dysbvu.bodyandfit.com
 :: dyzmpx.speedway.fr
 :: dzbbzg.carfinance247.co.uk
+:: dzgwautxzdtn9.cloudfront.net
 :: dzjhok.teufelaudio.at
 :: dzkygl.ullapopken.nl
 :: dzsevh.voyage-prive.com
@@ -7363,6 +7529,7 @@
 :: echoinghaven.com
 :: echotop.com
 :: echoturkey.com
+:: eclick.baidu.com
 :: ecn-analytics-nssl.emc.com
 :: ecn-analytics.emc.com
 :: ecn-ldr.de
@@ -7634,6 +7801,7 @@
 :: elqtrk.intel.co.jp
 :: elqtrk.intel.co.kr
 :: elqtrk.intel.co.uk
+:: elqtrk.intel.com
 :: elqtrk.intel.com.br
 :: elqtrk.intel.com.tr
 :: elqtrk.intel.de
@@ -7653,6 +7821,8 @@
 :: elqtrk.morningstar.nl
 :: elqtrk.morningstar.no
 :: elqtrk.rsmus.com
+:: elqtrk.thailand.intel.com
+:: elqtrkstg.intel.com
 :: elqview.kofax.com
 :: elqview.kofax.de
 :: elqview.kofax.jp
@@ -8236,6 +8406,7 @@
 :: events.pickrr.com
 :: events.realgravity.com
 :: events.reclamefolder.nl
+:: events.reddit.com
 :: events.rewe-group.at
 :: events.ricoh.ch
 :: events.ricoh.de
@@ -8439,6 +8610,9 @@
 :: fbycnk.chiaki.vn
 :: fcizcj.burlingtonfreepress.com
 :: fckxdb.hometogo.it
+:: fclog.baidu.com
+:: fcmatch.google.com
+:: fcmatch.youtube.com
 :: fcnqkw.xeroshoes.com
 :: fcpszk.telestream.net
 :: fcswcx.cyrillus.fr
@@ -8527,6 +8701,8 @@
 :: fipsta.urbanara.co.uk
 :: fipsta.worldfitness.de
 :: fire.solutions.jci.com
+:: firebaselogging-pa.googleapis.com
+:: firebaselogging.googleapis.com
 :: firecatfilms.com
 :: fireworkcamp.com
 :: firstendpoint.com
@@ -8578,6 +8754,7 @@
 :: floweryflavor.com
 :: floweryoperation.com
 :: flpwto.lohaco.jp
+:: fls-na.amazon.com
 :: fltuyy.philippemodel.com
 :: flushingbeast.com
 :: flutteringfireman.com
@@ -8678,6 +8855,7 @@
 :: fortunatemark.com
 :: forwardslashetc.com
 :: fossilzero.com
+:: fourier.taobao.com
 :: fourlevelsgame.com
 :: fourpawsahead.com
 :: fourtimessmelly.com
@@ -8728,6 +8906,7 @@
 :: fpjscdn.net
 :: fpptmv.mrmarvis.co.uk
 :: fpt.inxinternational.com
+:: fpt.microsoft.com
 :: fptls.com
 :: fptls2.com
 :: fptls3.com
@@ -8906,10 +9085,12 @@
 :: gadgetboy.net
 :: gagysn.floward.com
 :: gahhfg.bobo.com.br
+:: galileotelemetry.tencent.com
 :: gallerysouvlakeri.openapp.link
 :: galop.leferacheval-saintcloud.com
 :: gamerone.net
 :: gammamaximum.com
+:: ganon.yahoo.com
 :: gardenovens.com
 :: garvum.julesb.co.uk
 :: gas-sensing.spec-sensors.com
@@ -8956,6 +9137,7 @@
 :: geo.mezr.com
 :: geo.mtvnn.com
 :: geo.xcel.io
+:: geo.yahoo.com
 :: geobar.ziffdavisinternational.com
 :: geoedge.be
 :: geoip.apps.avada.io
@@ -9153,6 +9335,7 @@
 :: gi-client-tracking.goodgamestudios.com
 :: gi.inhaabit.com
 :: gi7a.structube.com
+:: gia.jd.com
 :: gianthypes.com
 :: giantsvessel.com
 :: giddycoat.com
@@ -9222,8 +9405,10 @@
 :: go-communications.comed.com
 :: go-dev.callersmart.com
 :: go-dev.qantaswellbeing.com
+:: go-elqau.oracle.com
 :: go-marketing.comed.com
 :: go-mpulse.net
+:: go-stage.oracle.com
 :: go-staging.qantaswellbeing.com
 :: go-test.bigspring.io
 :: go-test.goflux.de
@@ -9786,6 +9971,7 @@
 :: gsg9.carrefour-banque.fr
 :: gsitrix.com
 :: gsmqez.xcite.com
+:: gsp1.baidu.com
 :: gspjom.3balls.com
 :: gsupplyair.carte-gr.total.fr
 :: gtm.lercio.it
@@ -10106,6 +10292,7 @@
 :: hqgkmj.marine-deals.co.nz
 :: hqiwnj.clarins.pt
 :: hqjuww.kolesa-darom.ru
+:: hqmetrics.sony.com
 :: hqwtqa.intelligence-artificielle-school.com
 :: hqxbuy.rugs-direct.com
 :: hr.adp.ca
@@ -10245,6 +10432,7 @@
 :: ie-mktg.vodafone.com
 :: ieeowa.marcjacobsbeauty.com
 :: iefiop.raizs.com.br
+:: ieg.intel.com
 :: iegwze.goldcar.es
 :: iepfcy.farmandfleet.com
 :: iesbpm.novasol.dk
@@ -10435,6 +10623,7 @@
 :: images.gc.georgiancollege.ca
 :: images.gcom.cigna.com
 :: images.get.kareo.com
+:: images.globalempcomm.visa.com
 :: images.globalscm.eaton.com
 :: images.go.aifs.com
 :: images.go.alightsolutions.com
@@ -10674,6 +10863,7 @@
 :: images.srs.sfgmembers.com
 :: images.stanleyhealthcare.sbdinc.com
 :: images.studentlending.ca
+:: images.tableau.com
 :: images.tableausoftware.com
 :: images.ubmamgevents.com
 :: images.uhealthsystem.miami.edu
@@ -10731,6 +10921,7 @@
 :: img2021.navyfederal.org
 :: imgict.dwtcmarketing.com
 :: imgmail.mediasetpremium.it
+:: imgstat.baidu.com
 :: imhwzc.blibli.com
 :: imjdmq.emcasa.com
 :: imjxso.bristol.nl
@@ -11550,11 +11741,13 @@
 :: insurance.thehullgroup.com
 :: insurance.velocify.com
 :: int-shares.ri.la
+:: intake-analytics.wikimedia.org
 :: intel-trk.informa.com
 :: intel-trk.lloydslistintelligence.com
 :: intel.web.noleggiare.it
 :: intelligence.officialwesthamstore.com
 :: intellimizeio.com
+:: intelpartneralliance.intel.com
 :: intentlens.com
 :: interact.crmtechnologies.com
 :: internal-analytics.odoo.com
@@ -11666,6 +11859,7 @@
 :: irqoqr.industrywest.com
 :: irs01.com
 :: irurng.wondershare.jp
+:: is.lg.com
 :: isbworld.aon.com
 :: isc-tracking.eventim.com
 :: isebis.yutoriform.com
@@ -13254,10 +13448,12 @@
 :: logistics.coyote.com
 :: logistics.osmworldwide.com
 :: loglady.skypicker.com
+:: logql.yahoo.co.jp
 :: logs-api.shoprunner.com
 :: logs.animaapp.com
 :: logs.betterstack.com
 :: logs.dynamicauth.com
+:: logs.netflix.com
 :: logs.openbank.com
 :: logs.spilgames.com
 :: logs.theccaa.com
@@ -15962,6 +16158,7 @@
 :: metrics.marksandspencerlondon.com
 :: metrics.marriottvacationclub.asia
 :: metrics.mars.com
+:: metrics.mastercard.com
 :: metrics.mastercardadvisors.com
 :: metrics.mastercardbusiness.com
 :: metrics.mastercardintl.com
@@ -16007,6 +16204,7 @@
 :: metrics.myprime.com
 :: metrics.myspringfield.com
 :: metrics.myyellow.com
+:: metrics.mzstatic.com
 :: metrics.nationalconvenienceshow.co.uk
 :: metrics.nationalrestaurantawards.co.uk
 :: metrics.nebraskatotalcare.com
@@ -16043,6 +16241,7 @@
 :: metrics.nutraingredients-usa.com
 :: metrics.nutraingredientsasia-awards.com
 :: metrics.nutropin.com
+:: metrics.nvidia.com
 :: metrics.nxtbook.com
 :: metrics.nyandcompany.com
 :: metrics.nycgo.com
@@ -16202,6 +16401,7 @@
 :: metrics.solaseedair.jp
 :: metrics.solinst.com
 :: metrics.somas.se
+:: metrics.sony.com
 :: metrics.sony.jp
 :: metrics.southeastfarmpress.com
 :: metrics.sparkassendirekt.de
@@ -16594,6 +16794,7 @@
 :: monitor-frontend-collector.a.bybit-aws.com
 :: monitor.agenedia.com
 :: monitor.fraudblocker.com
+:: monitor.music.qq.com
 :: monkeyapes.com
 :: monkeystyping.com
 :: monsterjokes.com
@@ -16676,6 +16877,7 @@
 :: mtest.fontself.com
 :: mtoxtg.tezenis.com
 :: mtr.fluor.com
+:: mtrace.qq.com
 :: mtracking.mhequipment.com
 :: mtrs.cooecfluor.com
 :: mtrs.fluor.com
@@ -16999,6 +17201,7 @@
 :: nnofmj.studiof.com.co
 :: nnqyed.laredoute.be
 :: nnvoia.closetworld.com
+:: noa.yahoo.com
 :: noa0.compteczam.fr
 :: noblecables.com
 :: noblefellow.com
@@ -17007,6 +17210,7 @@
 :: noflake-aggregator-http.narvar.com
 :: nogxjk.dackonline.se
 :: noiselessplough.com
+:: nol.yahoo.com
 :: nom.familysearch.org
 :: nom.lds.org
 :: nomsc.kpn.com
@@ -17175,6 +17379,7 @@
 :: observe-nexus.pointandplace.com
 :: obseu.netgreencolumn.com
 :: obsidiangems.com
+:: oca.microsoft.com
 :: occidente.ubmmexico.com
 :: ocmxbu.hanatour.com
 :: ocpgll.bannerbuzz.ca
@@ -17340,6 +17545,7 @@
 :: omniture.corel.com
 :: omniture.kcbd.com
 :: omniture.kennametal.com
+:: omniture.lg.com
 :: omniture.omgeo.com
 :: omniture.partycity.ca
 :: omniture.partycity.com
@@ -17906,6 +18112,7 @@
 :: ping.naturadapt.com
 :: ping.paidy.com
 :: ping.resoluteoil.com
+:: pingjs.qq.com
 :: pingsurvey.com
 :: pinptg.milleni.com.tr
 :: pinsearcher.com
@@ -17945,6 +18152,7 @@
 :: pixel.dashfi.dev
 :: pixel.dugwood.com
 :: pixel.europapress.net
+:: pixel.facebook.com
 :: pixel.homebook.pl
 :: pixel.leadlovers.app
 :: pixel.marqo-ep.ai
@@ -18478,6 +18686,7 @@
 :: puzzle.spiriteq.com
 :: pv.partenaires-verisure.fr
 :: pvoheg.bubbleroom.se
+:: pvtag.yahoo.co.jp
 :: px.dmp.zaloapp.com
 :: px.staticfiles.at
 :: pxayti.hair-express.de
@@ -18722,6 +18931,7 @@
 :: rarelyfans.com
 :: raresummer.com
 :: rarnational.raisingareader.org
+:: ras.yahoo.com
 :: raspnd.quadratec.com
 :: raven.adeptmind.ai
 :: razzweb.com
@@ -18813,6 +19023,7 @@
 :: refer.gober.app
 :: refer.kheloapp.com
 :: refer.payluy.com.kh
+:: refer.wordpress.com
 :: referral-ca.mixtiles.com
 :: referral.50fin.in
 :: referral.avena.io
@@ -19024,6 +19235,7 @@
 :: results.sierrapiedmont.com
 :: retarget.gites-de-france.com
 :: retargeting.newsmanapp.com
+:: retcode.taobao.com
 :: retention.ankidecks.com
 :: retirement.newyorklifeannuities.com
 :: retirementliving.actsretirement.org
@@ -20175,6 +20387,7 @@
 :: see.wasteorshare.com
 :: see.yousoon.com
 :: seedscissors.com
+:: seek.intel.com
 :: seek.uwa.edu.au
 :: seekingquest.com
 :: seekremote.com
@@ -20340,6 +20553,7 @@
 :: sfhgqy.i-sozoku.com
 :: sfirst.penfed.org
 :: sflvqq.pleinoutlet.com
+:: sfp.safe.baidu.com
 :: sfp7.eco-conscient.com
 :: sfpc.changehealthcare.com
 :: sfsinfo.sabic.com
@@ -20347,6 +20561,7 @@
 :: sg.lucanet.com
 :: sg3.notarize.com
 :: sggsbd.fonteyn.nl
+:: sgm-w.jd.com
 :: sgmntfy.com
 :: sgsb.aba.com
 :: sgstats.com
@@ -20500,6 +20715,7 @@
 :: show.kbb.co.uk
 :: showcase.inhaabit.com
 :: showsteel.com
+:: shqmetrics.sony.com
 :: shredform.com
 :: shredquiz.com
 :: shrewsburyshow.com
@@ -20787,6 +21003,7 @@
 :: smetrics.aetnamedicare.com
 :: smetrics.afcom.com
 :: smetrics.affymetrix.com
+:: smetrics.afpjobs.amazon.com
 :: smetrics.afvclub.ca
 :: smetrics.afvclub.com
 :: smetrics.agentprovocateur.com
@@ -21434,6 +21651,7 @@
 :: smetrics.fleetcor.com
 :: smetrics.flex.amazon.ca
 :: smetrics.flex.amazon.co.uk
+:: smetrics.flex.amazon.com
 :: smetrics.flex.amazon.com.mx
 :: smetrics.flex.amazon.com.sg
 :: smetrics.flexera.com
@@ -21939,6 +22157,7 @@
 :: smetrics.marshalls.com
 :: smetrics.marshandmclennan.com
 :: smetrics.martinfurnitureexperts.com
+:: smetrics.mastercard.com
 :: smetrics.mastercardadvisors.com
 :: smetrics.mastercardbrandcenter.com
 :: smetrics.mastercardbusiness.com
@@ -22116,6 +22335,7 @@
 :: smetrics.nuedextahcp.com
 :: smetrics.nutritionmatters.com
 :: smetrics.nutropin.com
+:: smetrics.nvidia.com
 :: smetrics.nycgo.com
 :: smetrics.nykaa.com
 :: smetrics.nykaafashion.com
@@ -22622,6 +22842,7 @@
 :: smetrics.sony.co.nz
 :: smetrics.sony.co.th
 :: smetrics.sony.co.uk
+:: smetrics.sony.com
 :: smetrics.sony.com.br
 :: smetrics.sony.com.co
 :: smetrics.sony.com.do
@@ -23037,6 +23258,7 @@
 :: smetrics.zodiacshoes.com
 :: smetrics.zoneperfect.com
 :: smetrics2.kaiserpermanente.org
+:: smetrics2.nokia.com
 :: smetricsadobe.hollandandbarrett.be
 :: smetricsadobe.hollandandbarrett.com
 :: smetricsadobe.hollandandbarrett.ie
@@ -23104,10 +23326,12 @@
 :: sneakwind.com
 :: sneakystew.com
 :: sneezecovers.com
+:: sngmta.qq.com
 :: sniffer.nitro-production.otto.boreus.de
 :: sniffer.nitro-test-extern.otto.boreus.de
 :: sno1.snowrental.com
 :: snoresmile.com
+:: snowflake.qq.com
 :: snowman.odencat.com
 :: snowmentor.com
 :: snowpeaksoftware.com
@@ -23362,6 +23586,7 @@
 :: sources.nxp.com
 :: southwest.pgaofamericagolf.com
 :: sowlettuce.com
+:: soxnwz.lg.com
 :: sp-app.fixly.pl
 :: sp.ballsdigroup.com
 :: sp.data.funkedigital.de
@@ -23975,6 +24200,7 @@
 :: starget.intel.co.jp
 :: starget.intel.co.kr
 :: starget.intel.co.uk
+:: starget.intel.com
 :: starget.intel.com.br
 :: starget.intel.com.tr
 :: starget.intel.de
@@ -24811,6 +25037,7 @@
 :: stats.whereisit5pmrightnow.com
 :: stats.winsim.de
 :: stats.wisconsingenomics.org
+:: stats.wordpress.com
 :: stats.wordvested.org
 :: stats.world.hey.com
 :: stats.wpmucdn.com
@@ -24978,6 +25205,7 @@
 :: sts.papyrs.com
 :: sts.tour-europe.org
 :: stscs.ditzo.nl
+:: stt.nvidia.com
 :: stt.thelott.com
 :: stt.tyro.com
 :: stt.wawacity.onl
@@ -25064,6 +25292,7 @@
 :: support.ricoh.fr
 :: support2.flex.com
 :: support3.flex.com
+:: supportmetrics.apple.com
 :: supportwaves.com
 :: supvka.colancolan.com
 :: surfacesmedia.com
@@ -25376,6 +25605,7 @@
 :: t.deepnote.com
 :: t.deloittece.com
 :: t.depaulbluedemons.com
+:: t.e.x.com
 :: t.ecupirates.com
 :: t.elitedomains.de
 :: t.emueagles.com
@@ -25844,6 +26074,7 @@
 :: tc2.hometogo.net
 :: tcbtus.opodo.com
 :: tcdata.fnac.com
+:: tce.alicdn.com
 :: tck.fr.transavia.com
 :: tck.wonderbox.fr
 :: tczulp.econea.cz
@@ -25911,6 +26142,7 @@
 :: technical.kyzen.com
 :: technology.informaengage.com
 :: technology1.informaengage.com
+:: techprovider.intel.com
 :: techpump.com
 :: techservices.trapptechnology.com
 :: teczbq.amicashop.com
@@ -26048,6 +26280,7 @@
 :: tgbfha.lily-brw.com
 :: tgirgs.flinders.nl
 :: tgsdiw.dedoles.de
+:: tgt.maep.ibm.com
 :: thanecityfc.spyn.co
 :: thanks.hubspaces.jp
 :: thanks.olivesitter.com
@@ -26109,6 +26342,7 @@
 :: tidy.intel.cn
 :: tidy.intel.co.jp
 :: tidy.intel.co.kr
+:: tidy.intel.com
 :: tidy.intel.com.br
 :: tidy.intel.de
 :: tidy.intel.fr
@@ -26327,6 +26561,7 @@
 :: tnegqr.bohme.com
 :: tnhcsf.holzkern.com
 :: tniujy.natura.com.br
+:: tns.simba.taobao.com
 :: tnt.yemeksepeti.com
 :: tnxxtx.crepeerase.com
 :: tnz3.carrefour-banque.fr
@@ -27263,6 +27498,7 @@
 :: tr.welcome.thelist-emirates.fr
 :: tr.welcome.unaoffertaalgiorno.com
 :: tr.welcome.vipmag.fr
+:: tr.www.cloudflare.com
 :: tr.xlead.digital
 :: tr.xleads.digital
 :: tr.zojh.espmp-aluk.net
@@ -27291,6 +27527,7 @@
 :: traccoon.intellectsoft.net
 :: trace.bluemonkey.jp
 :: trace.insead.edu
+:: trace.qq.com
 :: tracecontent.com
 :: track-mail.homage.co
 :: track-test.workframe.com
@@ -27612,6 +27849,7 @@
 :: tracking.corptraveller.com
 :: tracking.corteva.ca
 :: tracking.corteva.us
+:: tracking.cpa.qa.web.visa.com
 :: tracking.cranepi.com
 :: tracking.creditacceptance.com
 :: tracking.csob.cz
@@ -27753,6 +27991,7 @@
 :: tracking.learn.oakstreethealth.com
 :: tracking.lenovopartnernetwork.com
 :: tracking.lfg.com
+:: tracking.lg.com
 :: tracking.lightingdirect.com
 :: tracking.lightingshowplace.com
 :: tracking.lindtusa.com
@@ -28068,6 +28307,7 @@
 :: transplant.universityhealth.com
 :: transportation.external.conduent.com
 :: transportation.external.xerox.com
+:: trap.skype.com
 :: trappcloudservices.trapptechnology.com
 :: trappush.com
 :: travel.caradonna.com
@@ -28456,6 +28696,7 @@
 :: try.joonapp.io
 :: try.popchart.family
 :: try.postmuseapp.com
+:: try.tableau.com
 :: try.tableausoftware.com
 :: tryzens-analytics.com
 :: ts-analysis.shoalter.com
@@ -29195,6 +29436,7 @@
 :: voqysr.afr-web.co.jp
 :: voraciousgrip.com
 :: voroud.wine.com.br
+:: vortex.data.microsoft.com
 :: vote.speaqapp.com
 :: votedotorg.outvote.io
 :: votejoe.outvote.io
@@ -29251,6 +29493,7 @@
 :: vzcfqp.unibet.fr
 :: vzynem.lamporochljus.se
 :: w-profiling.simplii.com
+:: w3-reporting.reddit.com
 :: w3.air-worldwide.com
 :: w3.aktionaersbank.de
 :: w3.flatex.es
@@ -29313,6 +29556,7 @@
 :: waterywave.com
 :: watg.xxxlutz.com
 :: wats.gogoinflight.com
+:: watson.microsoft.com
 :: wave.getonthewave.com
 :: waveinverter.com
 :: wavesimple.com
@@ -29505,6 +29749,7 @@
 :: webcasts.de.ni.com
 :: webfountains.com
 :: webinar.dnv.com
+:: webinar.intel.com
 :: webinar.ndtco.com
 :: webinars.blackboard.com
 :: webinars.cigna.com
@@ -29668,6 +29913,7 @@
 :: wjssvg.descentekorea.co.kr
 :: wjtekf.vidaxl.bg
 :: wjzyrk.magiclife.com
+:: wkctj.baidu.com
 :: wknd.ai
 :: wkudly.realtruck.com
 :: wkuuuj.byther.kr
@@ -29879,6 +30125,7 @@
 :: www91.intel.co.jp
 :: www91.intel.co.kr
 :: www91.intel.co.uk
+:: www91.intel.com
 :: www91.intel.com.br
 :: www91.intel.com.tr
 :: www91.intel.de
@@ -30059,6 +30306,7 @@
 :: yjlhep.skechers.co.nz
 :: yjpgxf.svsound.com
 :: yjrcks.smile-zemi.jp
+:: yjtag.yahoo.co.jp
 :: ykfrpx.kapten-son.com
 :: ykmsxu.vitalabo.ch
 :: ykqapk.aboutyou.si

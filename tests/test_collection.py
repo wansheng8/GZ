@@ -266,11 +266,21 @@ def test_exception_rule_not_in_dns():
 
 # ---------------- 误杀回归 ----------------
 
-def test_check_allow_flags_ancestor_block():
+def test_check_allow_flags_exact_block():
+    # 精确匹配：allow 清单中的域名本身被整域阻断才算误杀
     rules = [parse_line("||example.com^")]
-    v = check_allow(rules, ["sub.example.com"])
+    v = check_allow(rules, ["example.com"])
     assert len(v) == 1
     assert v[0]["blocked_by"] == "example.com"
+
+
+def test_check_allow_ignores_subdomain_block():
+    # 子域被封不算误杀（仅祖先命中不报），避免大站子域追踪也被一起放行
+    rules = [parse_line("||sub.example.com^")]
+    assert check_allow(rules, ["example.com"]) == []
+    # 反之 allow 子域、父域被封也不算（放行只作用于精确域名）
+    rules2 = [parse_line("||example.com^")]
+    assert check_allow(rules2, ["sub.example.com"]) == []
 
 
 def test_check_allow_passes_when_not_blocked():
