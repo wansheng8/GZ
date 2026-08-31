@@ -53,6 +53,47 @@ allow:
   - edgekey.net
   - fastly.net
 
+  - akamai.com
+  - alipay.com
+  - blogspot.com
+  - chromium.org
+  - disney.com
+  - douyin.com
+  - epicgames.com
+  - fastly.com
+  - firefox.com
+  - googleusercontent.com
+  - gvt2.com
+  - huawei.com
+  - ibm.com
+  - intel.com
+  - keycdn.com
+  - lg.com
+  - mastercard.com
+  - msi.com
+  - mzstatic.com
+  - nokia.com
+  - nvidia.com
+  - oneplus.com
+  - oppo.com
+  - oracle.com
+  - sina.com
+  - skype.com
+  - sony.com
+  - stackexchange.com
+  - steamcommunity.com
+  - substack.com
+  - t.co
+  - tableau.com
+  - tencent.com
+  - toutiao.com
+  - typekit.com
+  - visa.com
+  - vivo.com
+  - wikimediafoundation.org
+  - wix.com
+  - wordpress.com
+  - yahoo.co.jp
 block:
   - doubleclick.net
   - adservice.google.com
