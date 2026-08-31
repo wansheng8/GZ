@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 335539
+! Total Rules: 335540
 ! ------------------------------------------
 ||constellation.networknmedia.com/cdn-cgi/trace
 ||apitiny.net^
@@ -101124,6 +101124,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||berserkhydrant.com^
 ||bestboundary.com^
 ||bestclimbers.net^
+||bestcoffeemachine.net^
 ||bestshoesboot.com^
 ||bestsportsbra.com^
 ||betazebra.com^
@@ -102062,6 +102063,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||juicingoasis.com^
 ||jumbochalk.com^
 ||justconfig.com^
+||justfordocs.com^
 ||justicejudo.com^
 ||justlagoon.com^
 ||justpickaname.com^
@@ -105537,7 +105539,6 @@ $removeparam=newsstand,domain=sportalkorea.com
 ||webmining.co^$third-party
 ||wtmtrack.com^$third-party
 ||xmrpool.net^$third-party
-||justfordocs.com^
 ||actirinius.com^$third-party
 ||aimtell.com^$third-party
 ||browserpusher.com^$third-party
@@ -330369,6 +330370,8 @@ abema.tv##+js(rmnt, script, NREUM)
 coomer.st,kemono.cr,official.coomer.com.co##+js(set-local-storage-item, plausible_ignore, true)
 ncbi.nlm.nih.gov##+js(set, ncbi.sg, {})
 ncbi.nlm.nih.gov##+js(set, ncbi.sg.ping, noopFunc)
+aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefined)
+aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, OfflineAudioContext, undefined)
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
 $removeparam=x-source
@@ -334283,8 +334286,6 @@ abc17news.com,al.com,artforum.com,artnews.com,awkward.com,awkwardmom.com,bailiwi
 usatoday.com##+js(set, gnt.x.adm, '')
 abema.tv##^script:has-text(NREUM)
 x.com##+js(no-xhr-if, /i/api/1.1/flow/viewer.json)
-aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefined)
-aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, OfflineAudioContext, undefined)
 ||holidaycheck.*/svc/ubt/v1/events
 ||sta.wawacity.
 ||sta.zone-telechargement.

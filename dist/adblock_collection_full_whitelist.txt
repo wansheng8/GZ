@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 20681
+! Total Rules: 20682
 ! ------------------------------------------
 ||npttech.com/advertising.js$xhr,domain=the-independent.com,redirect=noop.js,important
 ||jwpcdn.com/player/plugins/googima/*/googima.js^$script,redirect=google-ima.js,domain=dailystar.co.uk
@@ -15134,6 +15134,7 @@ miitus.jp#@#.new-ad-box
 matome.f-book.net#@#.section_ad
 @@||b0.yahoo.co.jp/b$image,domain=nissan.co.jp
 app-story.net#@##AdBlock
+@@||g.doubleclick.net/tag/js/gpt.js$domain=kantangame.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=kantangame.com
 @@||speee-ad.akamaized.net^$domain=ampproject.net
 @@||daikin.co.jp/-/media/Project/Daikin/daikin_co_jp/ad/images/$~3p

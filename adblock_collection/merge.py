@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import hashlib
 import logging
+import re
 import time
 from collections import defaultdict
 from pathlib import Path
@@ -33,38 +34,53 @@ def _cache_path(url: str) -> Path:
     return CACHE_DIR / digest
 
 
-def fetch_source(url: str, use_cache: bool = True, offline: bool = False) -> list[str]:
-    """下载上游列表，支持本地缓存与离线模式。"""
+def fetch_source(url: str, use_cache: bool = True, offline: bool = False, mirror: Optional[str] = None) -> list[str]:
+    """下载上游列表，支持本地缓存、离线模式与备用镜像。
+
+    主源下载失败时，若提供 mirror 则自动尝试镜像；两者皆失败且存在有效缓存时，
+    回退使用过期缓存并打 WARN，避免数据完全缺失。
+    """
     cache = _cache_path(url)
-    if use_cache and cache.exists():
+    if use_cache and cache.exists() and offline:
         LOG.info("使用缓存: %s", url)
         return cache.read_text(encoding="utf-8", errors="replace").splitlines()
     if offline:
         LOG.warning("离线模式且缓存缺失: %s", url)
         return []
 
+    candidates = [url]
+    if mirror:
+        candidates.append(mirror)
+
     last_err: Optional[Exception] = None
     for attempt in range(1, MAX_RETRIES + 1):
-        try:
-            resp = requests.get(
-                url,
-                timeout=DOWNLOAD_TIMEOUT,
-                headers={"User-Agent": "adblock-rule-collection/1.0"},
-            )
-            resp.raise_for_status()
-            text = resp.text
-            # 跳过返回 HTML 而非过滤器列表的响应（如错误页、登录页）
-            stripped = text.lstrip()
-            if stripped.startswith("<!DOCTYPE") or stripped.startswith("<html"):
-                raise ValueError("响应不是过滤器列表（疑似 HTML 页面）")
-            if use_cache:
-                cache.parent.mkdir(parents=True, exist_ok=True)
-                cache.write_text(text, encoding="utf-8")
-            return text.splitlines()
-        except (requests.RequestException, ValueError) as exc:
-            last_err = exc
-            LOG.warning("下载失败 (%s/%s) %s: %s", attempt, MAX_RETRIES, url, exc)
-            time.sleep(2 * attempt)
+        for cand in candidates:
+            try:
+                resp = requests.get(
+                    cand,
+                    timeout=DOWNLOAD_TIMEOUT,
+                    headers={"User-Agent": "adblock-rule-collection/1.0"},
+                )
+                resp.raise_for_status()
+                text = resp.text
+                # 跳过返回 HTML 而非过滤器列表的响应（如错误页、登录页）
+                stripped = text.lstrip()
+                if stripped.startswith("<!DOCTYPE") or stripped.startswith("<html"):
+                    raise ValueError("响应不是过滤器列表（疑似 HTML 页面）")
+                if use_cache:
+                    cache.parent.mkdir(parents=True, exist_ok=True)
+                    cache.write_text(text, encoding="utf-8")
+                if cand != url:
+                    LOG.info("镜像源成功: %s", cand)
+                return text.splitlines()
+            except (requests.RequestException, ValueError) as exc:
+                last_err = exc
+                LOG.warning("下载失败 (%s/%s) %s: %s", attempt, MAX_RETRIES, cand, exc)
+        time.sleep(2 * attempt)
+    # 主源与镜像均失败，回退到过期缓存
+    if cache.exists():
+        LOG.warning("主源与镜像均失败，回退使用过期缓存: %s", url)
+        return cache.read_text(encoding="utf-8", errors="replace").splitlines()
     LOG.error("放弃下载 %s: %s", url, last_err)
     return []
 
@@ -84,7 +100,7 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False) ->
         if not url:
             continue
         LOG.info("处理上游列表: %s", name)
-        lines = fetch_source(url, use_cache=use_cache, offline=offline)
+        lines = fetch_source(url, use_cache=use_cache, offline=offline, mirror=src.get("mirror"))
         if not lines:
             failed.append(name)
             continue
@@ -164,6 +180,42 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
     if removed:
         LOG.info("冗余域名规则移除: %d", removed)
     return kept_blocked + others
+
+
+_CSS_SELECTOR_RE = re.compile(r"[#@#?]+(.+)$")
+
+
+def remove_redundant_css(rules: Iterable[Rule]) -> list[Rule]:
+    """消除 css 规则中的同域同基础选择器冗余。
+
+    仅对「单限定域名 + 纯类名选择器（以 . 开头、无空格/逗号/属性选择器）」做去重，
+    保留首次出现的规则；复杂选择器（含逗号、属性、伪类组合）不参与，避免误删。
+    """
+    seen: dict[tuple[str, str], Rule] = {}
+    kept: list[Rule] = []
+    removed = 0
+    for r in rules:
+        if r.kind != "css" or r.is_exception or not r.domains or len(r.domains) != 1:
+            kept.append(r)
+            continue
+        m = _CSS_SELECTOR_RE.search(r.raw)
+        if not m:
+            kept.append(r)
+            continue
+        sel = m.group(1).strip()
+        # 仅当选择器是单一纯类名（无空格、逗号、方括号、冒号）时才视为可去重
+        if " " in sel or "," in sel or "[" in sel or ":" in sel or not sel.startswith("."):
+            kept.append(r)
+            continue
+        key = (r.domains[0], sel)
+        if key in seen:
+            removed += 1
+            continue
+        seen[key] = r
+        kept.append(r)
+    if removed:
+        LOG.info("冗余 css 规则移除: %d", removed)
+    return kept
 
 
 def source_stats(rules: Iterable[Rule]) -> dict[str, int]:

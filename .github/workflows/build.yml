@@ -24,10 +24,37 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+      - name: Cache source downloads
+        uses: actions/cache@v4
+        with:
+          path: .cache/sources
+          key: sources-cache-${{ github.run_id }}
+          restore-keys: |
+            sources-cache-
       - name: Install dependencies
         run: pip install -r requirements.txt
+      - name: Clean stale dist
+        run: rm -rf dist && mkdir dist
       - name: Build filters
-          run: python -m adblock_collection build --out dist --split-by-category --redundant
+        run: python -m adblock_collection build --out dist --split-by-category --redundant
+      - name: Check build health
+        id: health
+        run: |
+          python - <<'PY'
+          import json, sys
+          m = json.load(open("dist/manifest.json"))
+          entries = {x["file"]: x["rules"] for x in m["generated_files"]}
+          total = entries.get("adblock_collection_full.txt", 0)
+          status = json.load(open("dist/sources_status.json"))
+          failed = status.get("failed_sources", [])
+          print(f"完整版规则数: {total}")
+          print(f"失败源数: {len(failed)} -> {failed}")
+          # 规则数骤降或大量源失败则标记异常（不阻断推送，但输出供审查）
+          if total < 300000:
+              print("WARNING: 完整版规则数异常偏低，可能上游大面积失败")
+          if len(failed) >= 5:
+              print("WARNING: 超过 5 个上游源下载失败")
+          PY
       - name: Check for changes
         id: changes
         run: |

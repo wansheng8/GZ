@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 20681,
+  "total": 20682,
   "by_category": {
-    "whitelist": 20681
+    "whitelist": 20682
   },
   "by_kind": {
-    "network": 15607,
+    "network": 15608,
     "css": 4754,
     "scriptlet": 320
   },
@@ -21,7 +21,7 @@
     "AdGuard Japanese": 679,
     "AdGuard Social Media": 431,
     "AdGuard Turkish": 421,
-    "AdGuard Russian": 410,
+    "AdGuard Russian": 411,
     "EasyList": 244,
     "AdGuard French": 240,
     "EasyList Germany": 208,

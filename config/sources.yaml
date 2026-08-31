@@ -4,81 +4,97 @@ sources:
   # ----------------- AdGuard 官方列表（低风险） -----------------
   - name: AdGuard Base
     url: https://filters.adtidy.org/extension/ublock/filters/2.txt
+    mirror: https://filters.adtidy.org/android/filters/2.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Tracking Protection
     url: https://filters.adtidy.org/extension/ublock/filters/3.txt
+    mirror: https://filters.adtidy.org/android/filters/3.txt
     category: privacy
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard URL Tracking
     url: https://filters.adtidy.org/extension/ublock/filters/17.txt
+    mirror: https://filters.adtidy.org/android/filters/17.txt
     category: privacy
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Social Media
     url: https://filters.adtidy.org/extension/ublock/filters/4.txt
+    mirror: https://filters.adtidy.org/android/filters/4.txt
     category: social
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Annoyances
     url: https://filters.adtidy.org/extension/ublock/filters/14.txt
+    mirror: https://filters.adtidy.org/android/filters/14.txt
     category: annoyance
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Mobile Ads
     url: https://filters.adtidy.org/extension/ublock/filters/11.txt
+    mirror: https://filters.adtidy.org/android/filters/11.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Cookie Notices
     url: https://filters.adtidy.org/extension/ublock/filters/13.txt
+    mirror: https://filters.adtidy.org/android/filters/13.txt
     category: cookie
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Chinese
     url: https://filters.adtidy.org/extension/ublock/filters/224.txt
+    mirror: https://filters.adtidy.org/android/filters/224.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard German
     url: https://filters.adtidy.org/extension/ublock/filters/1.txt
+    mirror: https://filters.adtidy.org/android/filters/1.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Russian
     url: https://filters.adtidy.org/extension/ublock/filters/7.txt
+    mirror: https://filters.adtidy.org/android/filters/7.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Spanish
     url: https://filters.adtidy.org/extension/ublock/filters/8.txt
+    mirror: https://filters.adtidy.org/android/filters/8.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Turkish
     url: https://filters.adtidy.org/extension/ublock/filters/9.txt
+    mirror: https://filters.adtidy.org/android/filters/9.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard French
     url: https://filters.adtidy.org/extension/ublock/filters/10.txt
+    mirror: https://filters.adtidy.org/android/filters/10.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Dutch
     url: https://filters.adtidy.org/extension/ublock/filters/12.txt
+    mirror: https://filters.adtidy.org/android/filters/12.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Japanese
     url: https://filters.adtidy.org/extension/ublock/filters/16.txt
+    mirror: https://filters.adtidy.org/android/filters/16.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true
   - name: AdGuard Italian
     url: https://filters.adtidy.org/extension/ublock/filters/18.txt
+    mirror: https://filters.adtidy.org/android/filters/18.txt
     category: network
     compatible: [adguard, abp, ubo]
     lite: true

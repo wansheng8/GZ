@@ -27,6 +27,7 @@ from .merge import (
     kind_stats,
     load_sources,
     remove_redundant_domains,
+    remove_redundant_css,
     source_stats,
 )
 from .writer import (
@@ -113,6 +114,7 @@ def build(args: argparse.Namespace) -> int:
     deduped = apply_badfilter(deduped)
     if args.redundant:
         deduped = remove_redundant_domains(deduped)
+        deduped = remove_redundant_css(deduped)
 
     full_title, full_desc = DEFAULT_HEADERS["full"]
     manifest: list = []
