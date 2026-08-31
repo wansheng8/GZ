@@ -1,8 +1,8 @@
 {
   "name": "adblock_collection_full",
-  "total": 1324116,
+  "total": 1324080,
   "by_category": {
-    "network": 1162521,
+    "network": 1162485,
     "privacy": 78465,
     "annoyance": 31082,
     "cookie": 24060,
@@ -11,7 +11,7 @@
     "phishing": 1
   },
   "by_kind": {
-    "network": 1205398,
+    "network": 1205362,
     "css": 111251,
     "scriptlet": 7467
   },
@@ -23,7 +23,7 @@
     "217heidai adblockdns": 214982,
     "ADrules DNS": 198375,
     "ADrules DNS (gp mirror)": 198375,
-    "AdGuardSDNSFilter": 179459,
+    "AdGuardSDNSFilter": 178808,
     "ADrules AdRules": 141473,
     "Anti-AD Domains": 108374,
     "Shadowrocket to AdGuardHome": 100773,
@@ -32,9 +32,9 @@
     "Anti-AD Easylist": 94630,
     "Anti-AD (easylist)": 94630,
     "StevenBlack Hosts": 84032,
-    "EasyList (easylist.to)": 80493,
-    "EasyList (ABP)": 80490,
     "ADrules Easylist": 80466,
+    "EasyList (easylist.to)": 79811,
+    "EasyList (ABP)": 79810,
     "ADrules EasyPrivacy": 55981,
     "Fanboy Annoyance": 53719,
     "EasyPrivacy (ABP)": 53421,

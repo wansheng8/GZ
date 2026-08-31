@@ -3,8 +3,8 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 1324116,
-    "dns_domains": 870195,
+    "total_rules": 1324080,
+    "dns_domains": 870159,
     "source_counts": {
       "Adblock Rule Collection DNS": 811139,
       "5whys AdGuardHome Rules": 548891,
@@ -13,7 +13,7 @@
       "217heidai adblockdns": 214982,
       "ADrules DNS": 198375,
       "ADrules DNS (gp mirror)": 198375,
-      "AdGuardSDNSFilter": 179459,
+      "AdGuardSDNSFilter": 178808,
       "ADrules AdRules": 141473,
       "Anti-AD Domains": 108374,
       "Shadowrocket to AdGuardHome": 100773,
@@ -22,9 +22,9 @@
       "Anti-AD Easylist": 94630,
       "Anti-AD (easylist)": 94630,
       "StevenBlack Hosts": 84032,
-      "EasyList (easylist.to)": 80493,
-      "EasyList (ABP)": 80490,
       "ADrules Easylist": 80466,
+      "EasyList (easylist.to)": 79811,
+      "EasyList (ABP)": 79810,
       "ADrules EasyPrivacy": 55981,
       "Fanboy Annoyance": 53719,
       "EasyPrivacy (ABP)": 53421,
@@ -57,7 +57,7 @@
       "Disconnect Simple Tracking": 37
     },
     "category_counts": {
-      "network": 1162521,
+      "network": 1162485,
       "privacy": 78465,
       "annoyance": 31082,
       "cookie": 24060,
@@ -65,17 +65,17 @@
       "social": 13517,
       "phishing": 1
     },
-    "root_domain_blocks": 429316
+    "root_domain_blocks": 429279
   },
   "diff": {
     "total_rules": {
-      "current": 1324116,
+      "current": 1324080,
       "previous": null,
       "delta": null,
       "percent": null
     },
     "dns_domains": {
-      "current": 870195,
+      "current": 870159,
       "previous": null,
       "delta": null,
       "percent": null
