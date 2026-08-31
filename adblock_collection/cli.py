@@ -21,6 +21,7 @@ import time
 from pathlib import Path
 
 from .merge import (
+    apply_allowlist,
     apply_badfilter,
     category_stats,
     collect,
