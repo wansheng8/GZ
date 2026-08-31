@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 14470,
+  "total": 14471,
   "by_category": {
-    "whitelist": 14470
+    "whitelist": 14471
   },
   "by_kind": {
-    "network": 11910,
+    "network": 11911,
     "css": 2551,
     "scriptlet": 9
   },
@@ -26,6 +26,7 @@
     "ADrules HalfLife": 18,
     "fqnovel adrules": 12,
     "ADrules I-Dont-Care-About-Cookies": 1,
-    "AdGuardSDNSFilter": 1
+    "AdGuardSDNSFilter": 1,
+    "EasyPrivacy (ABP)": 1
   }
 }
