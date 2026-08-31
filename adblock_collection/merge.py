@@ -234,6 +234,26 @@ def remove_redundant_css(rules: Iterable[Rule]) -> list[Rule]:
     return kept
 
 
+def apply_allowlist(rules: Iterable[Rule], allow: Iterable[str]) -> list[Rule]:
+    """按误杀回归白名单强制放行：剔除整域阻断规则中命中 allow 清单（含祖先域）的网络规则。
+
+    仅作用于网络阻断规则；例外（@@）与元素隐藏类规则不受影响。符合「宁愿少拦截」原则——
+    allow 清单中的知名站点（google/microsoft/office 等）绝不会被整域封锁。
+    """
+    allow_set = {str(d).strip().lower() for d in allow if d}
+    if not allow_set:
+        return list(rules)
+    kept: list[Rule] = []
+    for r in rules:
+        if r.kind == "network" and not r.is_exception and r.domains and len(r.domains) == 1:
+            dom = r.domains[0].lower()
+            parts = dom.split(".")
+            if any(".".join(parts[i:]) in allow_set for i in range(len(parts))):
+                continue
+        kept.append(r)
+    return kept
+
+
 def source_stats(rules: Iterable[Rule]) -> dict[str, int]:
     """统计各上游来源贡献的规则数（按规范化去重后的来源计）。"""
     stats: dict[str, int] = defaultdict(int)

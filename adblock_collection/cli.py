@@ -201,6 +201,12 @@ def build(args: argparse.Namespace) -> int:
     LOG.info("原始规则总数: %d", len(all_rules))
     deduped = dedupe(all_rules)
     LOG.info("去重后规则总数: %d", len(deduped))
+    # 强制白名单放行：allow 清单（含祖先域）绝不整域封锁，落实「宁愿少拦截」
+    _fps = load_false_positives(config_path)
+    if _fps.get("allow"):
+        before = len(deduped)
+        deduped = apply_allowlist(deduped, _fps["allow"])
+        LOG.info("白名单强制放行移除规则: %d", before - len(deduped))
     deduped = apply_badfilter(deduped)
     if args.redundant:
         deduped = remove_redundant_domains(deduped)
