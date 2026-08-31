@@ -2,15 +2,15 @@
   "policy_level": "all",
   "min_confidence": 0.0,
   "allow_modifier": false,
-  "dns_eligible_network_rules": 912101,
+  "dns_eligible_network_rules": 912104,
   "dns_rejected_network_rules": 250417,
   "by_eligibility": {
-    "SAFE": 912101,
+    "SAFE": 912104,
     "CONDITIONAL": 2726,
     "REJECT": 247691
   },
   "by_reason": {
-    "pure_domain": 912101,
+    "pure_domain": 912104,
     "domain_modifier": 2726,
     "path_rule": 3500,
     "regex_or_redirect_rule": 41,
