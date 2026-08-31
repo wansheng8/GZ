@@ -17,6 +17,7 @@
 - [快速开始](#快速开始)
 - [订阅链接](#订阅链接)
 - [自定义上游列表](#自定义上游列表-diy)
+- [可审计发行体系（防误杀与审计）](#可审计发行体系防误杀与审计)
 - [项目结构](#项目结构)
 - [自动更新](#自动更新)
 - [许可证](#许可证)
@@ -68,6 +69,9 @@ python -m adblock_collection build --out dist
 | `adblock_collection_full_dns_ipv6.txt` | Host IPv6 格式（`:: domain`） |
 | `adblock_collection_full_domains.txt` | 单行域名格式，供 AdGuard Home / AdGuard DNS |
 | `*.stats.txt` / `*.stats.json` | 分类统计（含 by_category / by_kind / by_source） |
+| `security/` | 安全类（malware / phishing / mining）独立发行目录 |
+| `provenance.json` / `relation_graph.json` | 来源血缘与语义关系图（审计用） |
+| `build_report.json` / `previous_metrics.json` | 质量门禁报告与基线 |
 
 DNS 类文件由网络规则自动提取主机名生成，覆盖 `||domain^` 与 `||domain/path^` 形式。
 
@@ -80,10 +84,13 @@ python -m adblock_collection build --no-cache        # 禁用下载缓存
 python -m adblock_collection build --offline         # 离线模式，仅使用缓存
 python -m adblock_collection build --redundant       # 启用冗余域名规则消除
 python -m adblock_collection build --split-by-category  # 按类型拆分生成子列表
+python -m adblock_collection build --dns-policy safe   # DNS 安全分级（all/safe/strict-safe）
+python -m adblock_collection build --no-stage-cache   # 禁用解析阶段缓存
 python -m adblock_collection sources                 # 列出当前配置的上游列表（含 category 标记）
+python -m adblock_collection regression              # 单独运行误杀回归校验
 ```
 
-缓存位于 `.cache/sources/`，首次下载后再次构建无需联网。
+缓存位于 `.cache/sources/` 与 `.cache/parsed/`，首次下载后再次构建无需联网。
 
 ## 订阅链接
 
@@ -185,9 +192,9 @@ https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full
 
 ```bash
 python -m adblock_collection stats --out dist
+```
 
 `stats` 子命令会读取 `dist/` 下现有文件，重算统计并刷新 `dist/manifest.json`，不会重新下载上游列表，适合仅做元数据修正时快速更新。
-```
 
 ## 自定义上游列表（DIY）
 
@@ -199,6 +206,8 @@ sources:
     url: https://example.com/my-filter.txt
     category: network      # 分类，用于统计与拆分
     compatible: [adguard, abp, ubo]
+    dns_policy:
+      level: strict-safe   # 该源在生成 DNS 时采用的安全分级
 ```
 
 字段说明：
@@ -207,19 +216,86 @@ sources:
 - `url`：原始过滤器列表地址
 - `category`：类别（network / privacy / cookie / social / malware / phishing / mining / annoyance / whitelist / other）
 - `compatible`：兼容的语法
+- `dns_policy.level`：该源 DNS 安全分级（`all` / `safe` / `strict-safe`，见下）
+
+## 可审计发行体系（防误杀与审计）
+
+本仓库在「合并规则」之上建立了多层防误杀与可审计机制，核心原则是**宁愿少拦截，不要误拦截**。
+
+### 1. DNS 安全分级（dns_policy）
+
+DNS 类文件（hosts / domains）因在域名解析层生效、无法限定页面/第三方上下文，误杀代价最高。`dns_policy` 提供三档：
+
+| 级别 | 行为 | 误杀风险 |
+| --- | --- | --- |
+| `all`（默认） | 纳入所有纯域名网络规则，向后兼容 | 中 |
+| `safe` | 仅纳入「纯域名 + 带修饰符（如 `$third-party`）」的规则，排除带路径规则 | 低 |
+| `strict-safe` | 仅纳入最不易误杀的纯域名规则（与广告/追踪语义强相关） | 最低 |
+
+构建时通过 `--dns-policy` 全局覆盖，或在 `config/sources.yaml` 的 `dns_policy.level` 中按源指定。每个源在生成 DNS 时按自身级别过滤，未设置的源回退到全局策略。
+
+### 2. 误杀回归库（regression）
+
+`config/false_positives.yaml` 内置 40+ 主流站点（Google、百度、微信、支付宝、GitHub、各大银行电商等）的误杀回归清单：
+
+- `allow`：这些域名**不得**以阻断/纯域名 DNS 形式出现，命中即构建失败（exit 1）。
+- `block`：这些域名**应当**被拦截（如已知广告/追踪域名），用于在回归中验证拦截未被意外放宽。
+
+运行 `python -m adblock_collection regression` 可单独校验本地 `dist/`；构建时自动执行，失败则中断发布。
+
+### 3. 质量门禁（quality_gate）
+
+构建时对比**同一 `output_dir` 上一轮**的指标（`previous_metrics.json`）。当存在基线且出现下列异常时，构建以 exit 1 失败：
+
+- 规则总数骤降超过 `max_total_drop_percent`（默认 50%）
+- 单源规则数骤降超过 `max_source_drop_percent`（默认 50%）
+- DNS 域名数骤降超过 `max_dns_drop_percent`（默认 50%）
+
+阈值在 `config/sources.yaml` 的 `quality_gate` 段配置。首轮无基线时直接通过。报告写入 `dist/build_report.json`。
+
+### 4. 阶段缓存与算法版本（pipeline）
+
+解析阶段产物缓存于 `.cache/parsed/`，key 由「源内容 sha256 + 三个算法版本常量」组成：
+
+- `PARSER_VERSION`：解析/规范化逻辑版本
+- `NORMALIZER_VERSION`：分类/类型识别版本
+- `CLASSIFIER_VERSION`：置信度/血缘算法版本
+
+逻辑变更时仅需 bump 对应版本号，缓存即自动失效，无需手动清理。`--no-stage-cache` 可临时禁用。
+
+### 5. 来源血缘与语义去重（provenance）
+
+构建时生成 `dist/provenance.json` 与 `dist/relation_graph.json`：
+
+- **血缘**：每条规则记录来源源列表、所属「独立源组」、跨源一致度与置信度。置信度公式 `min(1.0, 0.5 + 0.1 * independent_group_count)`，独立源组比单纯 source_count 更能反映「多列表共享上游」造成的虚高。
+- **语义关系图**：识别三类关系用于审计——
+  - `PARENT_CHILD`：父域已阻断时子域纯域名规则的冗余关系
+  - `CROSS_SOURCE_DUPLICATE`：同一规则出现在多个独立源
+  - `EXCEPTION_CONFLICT`：阻断规则与例外（`@@`）作用于同一域名
+
+### 6. 安全类独立发行（security_policy）
+
+`config/sources.yaml` 的 `security_policy` 段定义安全类别（malware / phishing / mining）与单源骤降阈值（默认 80%，因安全类更敏感、单源波动更需警惕）。构建时这些类别**独立输出**到 `dist/security/` 子目录（完整版 + DNS + domains + 全部格式），与通用广告规则物理隔离，便于只订阅高置信度安全列表。
 
 ## 项目结构
 
 ```
 adblock_collection/
-  rules.py     # 规则解析、规范化、分类、类型识别
-  merge.py     # 上游下载（带缓存/离线）、合并、去重、badfilter、冗余消除、统计
-  writer.py    # 多格式输出（adblock / hosts / domains / stats / json / manifest）
-  cli.py       # 命令行入口（build / sources）
+  rules.py        # 规则解析、规范化、分类、类型识别
+  merge.py        # 上游下载（带缓存/离线）、合并、去重、badfilter、冗余消除、统计
+  writer.py       # 多格式输出（adblock / hosts / domains / stats / json / manifest）
+  dns_policy.py   # DNS 安全分级（SAFE/CONDITIONAL/REJECT + confidence）
+  regression.py   # 误杀回归库校验（allow/block 清单）
+  quality_gate.py # 质量门禁（阈值检测 + previous_metrics 基线 + build_report）
+  pipeline.py     # 阶段缓存与算法版本常量（PARSER/NORMALIZER/CLASSIFIER_VERSION）
+  provenance.py   # 来源血缘与语义关系图（build_provenance/build_relation_graph）
+  cli.py          # 命令行入口（build / sources / regression）
 config/
-  sources.yaml # 上游列表配置
+  sources.yaml        # 上游列表配置（含 dns_policy / quality_gate / security_policy 段）
+  false_positives.yaml# 误杀回归清单（allow/block）
 tests/
-  test_collection.py  # 单元测试
+  test_collection.py   # 单元与端到端测试
+  test_relation_graph.py
 .github/workflows/build.yml  # 每日自动构建并推送
 ```
 

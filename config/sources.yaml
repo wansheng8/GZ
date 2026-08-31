@@ -1,5 +1,19 @@
 name: Adblock Rule Collection
 description: "上游广告过滤规则列表配置。compatible 字段表示该列表兼容的语法，category 字段用于统计与按类型拆分。"
+dns_policy:
+  level: all
+quality_gate:
+  total_rule_growth_percent: 20
+  dns_growth_percent: 15
+  source_drop_percent: 50
+  category_growth_percent: 30
+  max_root_domain_blocks: 0
+# 安全类源（malware/phishing 等）独立发行策略：
+# 这些类别有独立的更新频率、误报容忍度与生命周期，单独输出到 security/ 目录。
+security_policy:
+  categories: [malware, phishing, mining]
+  # 安全源允许的单源骤降阈值（比普通源更宽松，避免安全源临时失效阻断整条发行）
+  source_drop_percent: 80
 sources:
   # ----------------- AdGuard 官方列表（低风险） -----------------
   - name: AdGuard Base

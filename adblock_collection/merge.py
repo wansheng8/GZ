@@ -12,6 +12,7 @@ from typing import Iterable, Optional
 
 import requests
 
+from .pipeline import parse_source_cached
 from .rules import Rule, parse_line
 
 LOG = logging.getLogger("adblock_collection")
@@ -89,8 +90,12 @@ def parse_source(lines: Iterable[str], category_hint: str, source: str) -> list[
     return [r for r in (parse_line(line, category_hint=category_hint, source=source) for line in lines) if r is not None]
 
 
-def collect(config_path: Path, use_cache: bool = True, offline: bool = False) -> dict[str, list[Rule]]:
-    """下载并解析所有上游列表，返回 {"all": [(name, rules), ...], "_failed": [name, ...]}。"""
+def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
+            use_stage_cache: bool = True) -> dict[str, list[Rule]]:
+    """下载并解析所有上游列表，返回 {"all": [(name, rules), ...], "_failed": [name, ...]}。
+
+    use_stage_cache=True 时，未变化的上游会复用 .cache/parsed 下的解析结果，跳过重复解析。
+    """
     sources = load_sources(config_path)
     result: dict[str, list[Rule]] = defaultdict(list)
     failed: list[str] = []
@@ -104,7 +109,10 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False) ->
         if not lines:
             failed.append(name)
             continue
-        rules = parse_source(lines, src.get("category", "other"), name)
+        rules = parse_source_cached(
+            lines, src.get("category", "other"), name,
+            url=url, use_stage_cache=use_stage_cache,
+        )
         result["all"].append((name, rules))
     result["_failed"] = failed
     return result

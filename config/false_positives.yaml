@@ -1,0 +1,64 @@
+# 误杀回归清单
+#
+# allow : 这些域名（及其任意祖先域）绝不应被整域阻断。一旦某次上游更新把其中任何域名
+#         或其祖先域加入了整域拦截，构建将报违规，阻止发布，避免大站被误封。
+# block : 这些域名（及其任意祖先域）应当被整域阻断。若全部缺失，提示可能漏拦。
+#
+# 注意：仅校验「整域阻断」类规则（纯域名 / 带修饰符的单域名规则），不校验 CSS 元素隐藏。
+
+allow:
+  - google.com
+  - googleapis.com
+  - gstatic.com
+  - youtube.com
+  - gmail.com
+  - microsoft.com
+  - live.com
+  - outlook.com
+  - office.com
+  - windows.com
+  - apple.com
+  - icloud.com
+  - github.com
+  - githubusercontent.com
+  - cloudflare.com
+  - amazon.com
+  - aws.amazon.com
+  - mozilla.org
+  - mozilla.com
+  - wikimedia.org
+  - wikipedia.org
+  - facebook.com
+  - fbcdn.net
+  - instagram.com
+  - whatsapp.com
+  - twitter.com
+  - x.com
+  - linkedin.com
+  - reddit.com
+  - baidu.com
+  - weibo.com
+  - qq.com
+  - taobao.com
+  - aliyun.com
+  - alicdn.com
+  - jd.com
+  - bing.com
+  - yahoo.com
+  - netflix.com
+  - spotify.com
+  - stackoverflow.com
+  - cloudfront.net
+  - akamai.net
+  - edgekey.net
+  - fastly.net
+
+block:
+  - doubleclick.net
+  - adservice.google.com
+  - googlesyndication.com
+  - adnxs.com
+  - scorecardresearch.com
+  - google-analytics.com
+  - hotjar.com
+  - quantserve.com
