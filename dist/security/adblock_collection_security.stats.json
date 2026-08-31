@@ -1,0 +1,13 @@
+{
+  "name": "adblock_collection_security",
+  "total": 1,
+  "by_category": {
+    "phishing": 1
+  },
+  "by_kind": {
+    "network": 1
+  },
+  "by_source": {
+    "ScamBlocklist (adguard)": 1
+  }
+}

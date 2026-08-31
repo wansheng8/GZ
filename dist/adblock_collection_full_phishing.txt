@@ -1,0 +1,8 @@
+! Title: Adblock Rule Collection (Full) (phishing)
+! Description: 按类型拆分：phishing
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 1
+! ------------------------------------------
+.com-id*.com^

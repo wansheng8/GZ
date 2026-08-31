@@ -1,0 +1,31 @@
+{
+  "name": "adblock_collection_full_whitelist",
+  "total": 14470,
+  "by_category": {
+    "whitelist": 14470
+  },
+  "by_kind": {
+    "network": 11910,
+    "css": 2551,
+    "scriptlet": 9
+  },
+  "by_source": {
+    "Adblock Rule Collection DNS": 4909,
+    "ADrules AdRules": 4733,
+    "ADrules EasyListChina": 1161,
+    "ADrules Easylist": 1084,
+    "ADrules EasyPrivacy": 836,
+    "Fanboy Annoyance": 780,
+    "5whys AdGuardHome Rules": 232,
+    "Fanboy Social": 202,
+    "banbendalao ADgk": 166,
+    "217heidai adblockdns": 165,
+    "ADrules anti-AD": 108,
+    "Fanboy CookieMonster": 36,
+    "ADrules ChengFeng": 26,
+    "ADrules HalfLife": 18,
+    "fqnovel adrules": 12,
+    "ADrules I-Dont-Care-About-Cookies": 1,
+    "AdGuardSDNSFilter": 1
+  }
+}

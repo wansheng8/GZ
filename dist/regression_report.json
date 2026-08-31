@@ -1,0 +1,23 @@
+{
+  "allow_violations": [],
+  "block_missing": [
+    {
+      "domain": "doubleclick.net"
+    },
+    {
+      "domain": "adservice.google.com"
+    },
+    {
+      "domain": "googlesyndication.com"
+    },
+    {
+      "domain": "adnxs.com"
+    },
+    {
+      "domain": "scorecardresearch.com"
+    },
+    {
+      "domain": "google-analytics.com"
+    }
+  ]
+}

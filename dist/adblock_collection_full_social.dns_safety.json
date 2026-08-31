@@ -1,0 +1,17 @@
+{
+  "policy_level": "all",
+  "min_confidence": 0.0,
+  "allow_modifier": false,
+  "dns_eligible_network_rules": 0,
+  "dns_rejected_network_rules": 13517,
+  "by_eligibility": {
+    "CONDITIONAL": 45,
+    "REJECT": 13472
+  },
+  "by_reason": {
+    "domain_modifier": 45,
+    "path_rule": 26,
+    "untranslatable": 411,
+    "css_rule": 13035
+  }
+}

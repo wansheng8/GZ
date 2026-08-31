@@ -1,0 +1,221 @@
+{
+  "generator": "adblock-rule-collection",
+  "generated_files": [
+    {
+      "name": "adblock_collection_full",
+      "file": "adblock_collection_full.txt",
+      "format": "adblock",
+      "rules": 1324113
+    },
+    {
+      "name": "adblock_collection_full",
+      "file": "adblock_collection_full_dns.txt",
+      "format": "hosts",
+      "rules": 870192
+    },
+    {
+      "name": "adblock_collection_full",
+      "file": "adblock_collection_full_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 870192
+    },
+    {
+      "name": "adblock_collection_full",
+      "file": "adblock_collection_full_domains.txt",
+      "format": "domains",
+      "rules": 870192
+    },
+    {
+      "name": "adblock_collection_full_annoyance",
+      "file": "adblock_collection_full_annoyance.txt",
+      "format": "adblock",
+      "rules": 31082
+    },
+    {
+      "name": "adblock_collection_full_annoyance",
+      "file": "adblock_collection_full_annoyance_dns.txt",
+      "format": "hosts",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_annoyance",
+      "file": "adblock_collection_full_annoyance_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_annoyance",
+      "file": "adblock_collection_full_annoyance_domains.txt",
+      "format": "domains",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_cookie",
+      "file": "adblock_collection_full_cookie.txt",
+      "format": "adblock",
+      "rules": 24060
+    },
+    {
+      "name": "adblock_collection_full_cookie",
+      "file": "adblock_collection_full_cookie_dns.txt",
+      "format": "hosts",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_cookie",
+      "file": "adblock_collection_full_cookie_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_cookie",
+      "file": "adblock_collection_full_cookie_domains.txt",
+      "format": "domains",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_network",
+      "file": "adblock_collection_full_network.txt",
+      "format": "adblock",
+      "rules": 1162518
+    },
+    {
+      "name": "adblock_collection_full_network",
+      "file": "adblock_collection_full_network_dns.txt",
+      "format": "hosts",
+      "rules": 842631
+    },
+    {
+      "name": "adblock_collection_full_network",
+      "file": "adblock_collection_full_network_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 842631
+    },
+    {
+      "name": "adblock_collection_full_network",
+      "file": "adblock_collection_full_network_domains.txt",
+      "format": "domains",
+      "rules": 842631
+    },
+    {
+      "name": "adblock_collection_full_phishing",
+      "file": "adblock_collection_full_phishing.txt",
+      "format": "adblock",
+      "rules": 1
+    },
+    {
+      "name": "adblock_collection_full_phishing",
+      "file": "adblock_collection_full_phishing_dns.txt",
+      "format": "hosts",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_phishing",
+      "file": "adblock_collection_full_phishing_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_phishing",
+      "file": "adblock_collection_full_phishing_domains.txt",
+      "format": "domains",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_privacy",
+      "file": "adblock_collection_full_privacy.txt",
+      "format": "adblock",
+      "rules": 78465
+    },
+    {
+      "name": "adblock_collection_full_privacy",
+      "file": "adblock_collection_full_privacy_dns.txt",
+      "format": "hosts",
+      "rules": 30327
+    },
+    {
+      "name": "adblock_collection_full_privacy",
+      "file": "adblock_collection_full_privacy_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 30327
+    },
+    {
+      "name": "adblock_collection_full_privacy",
+      "file": "adblock_collection_full_privacy_domains.txt",
+      "format": "domains",
+      "rules": 30327
+    },
+    {
+      "name": "adblock_collection_full_social",
+      "file": "adblock_collection_full_social.txt",
+      "format": "adblock",
+      "rules": 13517
+    },
+    {
+      "name": "adblock_collection_full_social",
+      "file": "adblock_collection_full_social_dns.txt",
+      "format": "hosts",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_social",
+      "file": "adblock_collection_full_social_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_social",
+      "file": "adblock_collection_full_social_domains.txt",
+      "format": "domains",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_whitelist",
+      "file": "adblock_collection_full_whitelist.txt",
+      "format": "adblock",
+      "rules": 14470
+    },
+    {
+      "name": "adblock_collection_full_whitelist",
+      "file": "adblock_collection_full_whitelist_dns.txt",
+      "format": "hosts",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_whitelist",
+      "file": "adblock_collection_full_whitelist_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_full_whitelist",
+      "file": "adblock_collection_full_whitelist_domains.txt",
+      "format": "domains",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_security",
+      "file": "adblock_collection_security.txt",
+      "format": "adblock",
+      "rules": 1
+    },
+    {
+      "name": "adblock_collection_security",
+      "file": "adblock_collection_security_dns.txt",
+      "format": "hosts",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_security",
+      "file": "adblock_collection_security_dns_ipv6.txt",
+      "format": "hosts_ipv6",
+      "rules": 0
+    },
+    {
+      "name": "adblock_collection_security",
+      "file": "adblock_collection_security_domains.txt",
+      "format": "domains",
+      "rules": 0
+    }
+  ]
+}
