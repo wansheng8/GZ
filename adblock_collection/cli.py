@@ -132,7 +132,7 @@ def _write_provenance_report(rules, output_dir) -> dict:
     """
     prov = build_provenance(rules)
     conflicts = detect_exception_conflicts(rules)
-    relations = build_relation_graph(rules)
+    relations = build_relation_graph(rules, prov)
     parent_child = [r for r in relations if r.kind == "PARENT_CHILD"]
     report = {
         "total_rules": len(prov),
@@ -140,7 +140,6 @@ def _write_provenance_report(rules, output_dir) -> dict:
         "exception_conflicts": {k: v for k, v in conflicts.items()},
         "parent_child_relations": len(parent_child),
         "high_confidence_rules": sum(1 for p in prov.values() if p.confidence >= 0.9),
-        "entries": [p.to_dict() for p in prov.values()],
     }
     (output_dir / "provenance.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
@@ -148,7 +147,8 @@ def _write_provenance_report(rules, output_dir) -> dict:
     # 语义关系图：供调试/审计，记录每条关系
     (output_dir / "relation_graph.json").write_text(
         json.dumps(
-            [{"kind": r.kind, "a": r.a, "b": r.b} for r in relations],
+            [{"kind": r.kind, "a": r.a, "b": r.b} for r in relations
+             if r.kind != "CROSS_SOURCE" or len(r.b.split(",")) > 1],
             ensure_ascii=False, indent=2,
         ),
         encoding="utf-8",

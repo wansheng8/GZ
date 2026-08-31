@@ -1,0 +1,17 @@
+! Title: Adblock Rule Collection (Security)
+! Description: 安全类规则（malware, mining, phishing）独立发行
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 10
+! ------------------------------------------
+||amlbot.request.report^
+||backend.store.eset.co.il^
+||india.travisa.com^
+||load.365analytics.xyz^
+||lp.voucheras.com^
+||mail.zalukaj.cc^
+||new.piratedrive.com^
+||twitchlogger.robalmeister.workers.dev^
+||www.base-vod.pl^
+.com-id*.com^

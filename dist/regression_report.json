@@ -1,0 +1,59 @@
+{
+  "allow_violations": [
+    {
+      "domain": "office.com",
+      "blocked_by": "office.com"
+    },
+    {
+      "domain": "windows.com",
+      "blocked_by": "windows.com"
+    },
+    {
+      "domain": "aws.amazon.com",
+      "blocked_by": "aws.amazon.com"
+    },
+    {
+      "domain": "mozilla.com",
+      "blocked_by": "mozilla.com"
+    },
+    {
+      "domain": "wikimedia.org",
+      "blocked_by": "wikimedia.org"
+    },
+    {
+      "domain": "yahoo.com",
+      "blocked_by": "yahoo.com"
+    },
+    {
+      "domain": "spotify.com",
+      "blocked_by": "spotify.com"
+    },
+    {
+      "domain": "stackoverflow.com",
+      "blocked_by": "stackoverflow.com"
+    }
+  ],
+  "block_missing": [
+    {
+      "domain": "doubleclick.net"
+    },
+    {
+      "domain": "adservice.google.com"
+    },
+    {
+      "domain": "googlesyndication.com"
+    },
+    {
+      "domain": "adnxs.com"
+    },
+    {
+      "domain": "scorecardresearch.com"
+    },
+    {
+      "domain": "google-analytics.com"
+    },
+    {
+      "domain": "quantserve.com"
+    }
+  ]
+}

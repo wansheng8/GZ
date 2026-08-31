@@ -1,0 +1,11 @@
+# Adblock Rule Collection (Security)
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 9
+amlbot.request.report
+backend.store.eset.co.il
+india.travisa.com
+load.365analytics.xyz
+lp.voucheras.com
+mail.zalukaj.cc
+new.piratedrive.com
+twitchlogger.robalmeister.workers.dev
+www.base-vod.pl

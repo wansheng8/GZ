@@ -49,6 +49,8 @@ class Rule:
     # 该规则作用到的域名（网络规则为 blocked domain，元素规则为限定域名）
     domains: list[str] = field(default_factory=list)
     source: Optional[str] = None
+    # 去重合并后记录该规则出现的全部上游（单源去重时等于 [source]）
+    sources: list[str] = field(default_factory=list)
     options: dict[str, str] = field(default_factory=dict)
 
     def __hash__(self) -> int:
@@ -215,5 +217,6 @@ def parse_line(line: str, category_hint: str = "other", source: Optional[str] = 
         is_important=is_important,
         domains=domains,
         source=source,
+        sources=[source] if source else [],
         options=options,
     )

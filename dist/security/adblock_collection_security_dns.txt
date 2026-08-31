@@ -1,0 +1,11 @@
+# Adblock Rule Collection (Security)
+# Format: hosts (0.0.0.0 domain), total 9
+0.0.0.0 amlbot.request.report
+0.0.0.0 backend.store.eset.co.il
+0.0.0.0 india.travisa.com
+0.0.0.0 load.365analytics.xyz
+0.0.0.0 lp.voucheras.com
+0.0.0.0 mail.zalukaj.cc
+0.0.0.0 new.piratedrive.com
+0.0.0.0 twitchlogger.robalmeister.workers.dev
+0.0.0.0 www.base-vod.pl

@@ -92,11 +92,16 @@ def build_provenance(rules: Iterable[Rule]) -> dict[str, Provenance]:
             )
             by_norm[r.norm] = p
         p = by_norm[r.norm]
-        if r.source and r.source not in p.sources:
-            p.sources.append(r.source)
-            grp = source_group(r.source)
-            if grp not in p.groups:
-                p.groups.append(grp)
+        # 优先使用去重合并后的 sources，回退到单值 source
+        srcs = r.sources if getattr(r, "sources", None) else ([r.source] if r.source else [])
+        for sname in srcs:
+            if not sname:
+                continue
+            if sname not in p.sources:
+                p.sources.append(sname)
+                grp = source_group(sname)
+                if grp not in p.groups:
+                    p.groups.append(grp)
     for p in by_norm.values():
         p.source_count = len(p.sources)
         p.independent_group_count = len(p.groups)
@@ -140,7 +145,7 @@ class Relation:
     b: str
 
 
-def build_relation_graph(rules: Iterable[Rule]) -> list[Relation]:
+def build_relation_graph(rules: Iterable[Rule], provenance: Optional[dict] = None) -> list[Relation]:
     """构建规则间的语义关系图。
 
     - PARENT_CHILD：纯域名阻断规则中，父域已存在阻断规则时，子域规则标记为子关系。
@@ -168,8 +173,8 @@ def build_relation_graph(rules: Iterable[Rule]) -> list[Relation]:
         for n in norms:
             relations.append(Relation(REL_EXCEPTION_CONFLICT, d, n))
 
-    # 跨源重复（基于血缘）
-    prov = build_provenance(rules)
+    # 跨源重复（基于血缘，复用已计算结果避免重复 O(N) 重建）
+    prov = provenance if provenance is not None else build_provenance(rules)
     for p in prov.values():
         if p.source_count > 1:
             relations.append(Relation(REL_CROSS_SOURCE, p.norm, ",".join(p.sources)))

@@ -17,8 +17,8 @@ from .rules import Rule, parse_line
 
 LOG = logging.getLogger("adblock_collection")
 
-DOWNLOAD_TIMEOUT = 60
-MAX_RETRIES = 3
+DOWNLOAD_TIMEOUT = (10, 30)
+MAX_RETRIES = 2
 CACHE_DIR = Path(".cache/sources")
 
 
@@ -119,13 +119,21 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
 
 
 def dedupe(rules: Iterable[Rule]) -> list[Rule]:
-    """基于规范化键去重，保留首次出现的原始写法。"""
+    """基于规范化键去重，保留首次出现的原始写法，并合并所有同源规则的上游来源。
+
+    合并来源可让后续血缘/置信度统计正确反映「该规则出现在哪些上游列表」，
+    避免去重后仅保留单一 source 导致跨源信息丢失。
+    """
     seen: dict[str, Rule] = {}
     order: list[str] = []
     for rule in rules:
         if rule.norm not in seen:
             seen[rule.norm] = rule
             order.append(rule.norm)
+        else:
+            prev = seen[rule.norm]
+            if rule.source and rule.source not in prev.sources:
+                prev.sources.append(rule.source)
     return [seen[k] for k in order]
 
 
