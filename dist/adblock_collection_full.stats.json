@@ -1,9 +1,9 @@
 {
   "name": "adblock_collection_full",
-  "total": 889689,
+  "total": 889690,
   "by_category": {
     "privacy": 335540,
-    "network": 283194,
+    "network": 283195,
     "malware": 138021,
     "annoyance": 52338,
     "phishing": 38114,
@@ -13,16 +13,16 @@
     "mining": 198
   },
   "by_kind": {
-    "network": 706142,
+    "network": 706143,
     "css": 170229,
     "scriptlet": 13318
   },
   "by_source": {
     "AdGuard Tracking Protection": 326097,
     "Online Malicious URL Blocklist": 138474,
-    "AdGuard Base": 133771,
+    "AdGuard Base": 133764,
     "StevenBlack Hosts": 84032,
-    "EasyList": 80438,
+    "EasyList": 80439,
     "Phishing URL Blocklist": 65463,
     "AdGuard Annoyances": 57944,
     "EasyPrivacy": 55981,

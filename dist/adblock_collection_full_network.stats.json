@@ -1,16 +1,16 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 283194,
+  "total": 283195,
   "by_category": {
-    "network": 283194
+    "network": 283195
   },
   "by_kind": {
-    "network": 175514,
+    "network": 175515,
     "css": 99242,
     "scriptlet": 8438
   },
   "by_source": {
-    "AdGuard Base": 112444,
+    "AdGuard Base": 112437,
     "StevenBlack Hosts": 83974,
     "AdGuard Chinese": 18366,
     "AdGuard German": 15186,
@@ -21,7 +21,7 @@
     "AdGuard Turkish": 4848,
     "uBlock Origin Base": 4836,
     "Peter Lowe's Blocklist": 3552,
-    "EasyList": 2280,
+    "EasyList": 2288,
     "AdGuard Spanish": 1665,
     "EasyList China": 518,
     "uBlock Origin Quick Fixes": 243,
