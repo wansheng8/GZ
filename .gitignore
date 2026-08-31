@@ -14,4 +14,6 @@ venv/
 
 # 构建期本地解析缓存（key = 源内容 sha256 + 算法版本，无需提交，clone 后首次构建自动重建）
 .cache/
-
+# 审计用大文件（CI 每次构建重新生成，订阅者不需要，不入库）
+dist/relation_graph.json
+dist/provenance.json
