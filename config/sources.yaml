@@ -15,187 +15,250 @@ security_policy:
   # 安全源允许的单源骤降阈值（比普通源更宽松，避免安全源临时失效阻断整条发行）
   source_drop_percent: 80
 sources:
-  # ----------------- AdGuard 官方列表（低风险） -----------------
-  - name: AdGuard Base
-    url: https://filters.adtidy.org/extension/ublock/filters/2.txt
-    mirror: https://filters.adtidy.org/android/filters/2.txt
+  # ----------------- tickmao/ADrules 综合列表 -----------------
+  - name: ADrules Easylist
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/Easylist.txt
     category: network
     compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Tracking Protection
-    url: https://filters.adtidy.org/extension/ublock/filters/3.txt
-    mirror: https://filters.adtidy.org/android/filters/3.txt
+  - name: ADrules EasyPrivacy
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/EasyPrivacy.txt
     category: privacy
     compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard URL Tracking
-    url: https://filters.adtidy.org/extension/ublock/filters/17.txt
-    mirror: https://filters.adtidy.org/android/filters/17.txt
-    category: privacy
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Social Media
-    url: https://filters.adtidy.org/extension/ublock/filters/4.txt
-    mirror: https://filters.adtidy.org/android/filters/4.txt
-    category: social
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Annoyances
-    url: https://filters.adtidy.org/extension/ublock/filters/14.txt
-    mirror: https://filters.adtidy.org/android/filters/14.txt
-    category: annoyance
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Mobile Ads
-    url: https://filters.adtidy.org/extension/ublock/filters/11.txt
-    mirror: https://filters.adtidy.org/android/filters/11.txt
+  - name: ADrules EasyListChina
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/EasyListChina.txt
     category: network
     compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Cookie Notices
-    url: https://filters.adtidy.org/extension/ublock/filters/13.txt
-    mirror: https://filters.adtidy.org/android/filters/13.txt
+  - name: ADrules anti-AD
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/anti-AD.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: ADrules AdRules
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/AdRules.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: ADrules ChengFeng
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/ChengFeng.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: ADrules I-Dont-Care-About-Cookies
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/I-Dont-Care-About-Cookies.txt
     category: cookie
     compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Chinese
-    url: https://filters.adtidy.org/extension/ublock/filters/224.txt
-    mirror: https://filters.adtidy.org/android/filters/224.txt
+  - name: ADrules Cjx-Annoyance
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/Cjx-Annoyance.txt
+    category: annoyance
+    compatible: [adguard, abp, ubo]
+  - name: ADrules HalfLife
+    url: https://raw.githubusercontent.com/tickmao/ADrules/master/HalfLife.txt
     category: network
     compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard German
-    url: https://filters.adtidy.org/extension/ublock/filters/1.txt
-    mirror: https://filters.adtidy.org/android/filters/1.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Russian
-    url: https://filters.adtidy.org/extension/ublock/filters/7.txt
-    mirror: https://filters.adtidy.org/android/filters/7.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Spanish
-    url: https://filters.adtidy.org/extension/ublock/filters/8.txt
-    mirror: https://filters.adtidy.org/android/filters/8.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Turkish
-    url: https://filters.adtidy.org/extension/ublock/filters/9.txt
-    mirror: https://filters.adtidy.org/android/filters/9.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard French
-    url: https://filters.adtidy.org/extension/ublock/filters/10.txt
-    mirror: https://filters.adtidy.org/android/filters/10.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Dutch
-    url: https://filters.adtidy.org/extension/ublock/filters/12.txt
-    mirror: https://filters.adtidy.org/android/filters/12.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Japanese
-    url: https://filters.adtidy.org/extension/ublock/filters/16.txt
-    mirror: https://filters.adtidy.org/android/filters/16.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
-  - name: AdGuard Italian
-    url: https://filters.adtidy.org/extension/ublock/filters/18.txt
-    mirror: https://filters.adtidy.org/android/filters/18.txt
-    category: network
-    compatible: [adguard, abp, ubo]
-    lite: true
 
-  # ----------------- 完整版附加列表 -----------------
-  - name: EasyList
-    url: https://easylist.to/easylist/easylist.txt
+  # ----------------- 其他综合/中文列表 -----------------
+  - name: GOODBYEADS
+    url: https://raw.githubusercontent.com/8680/GOODBYEADS/master/rules.txt
     category: network
     compatible: [adguard, abp, ubo]
-    lite: false
-  - name: EasyPrivacy
-    url: https://easylist.to/easylist/easyprivacy.txt
-    category: privacy
-    compatible: [adguard, abp, ubo]
-    lite: false
-  - name: EasyList Germany
-    url: https://easylist.to/easylistgermany/easylistgermany.txt
+  - name: ADrules DNS
+    url: https://adrules.top/dns.txt
+    category: network
+    compatible: [adguard, hosts]
+    dns_policy:
+      level: strict-safe
+  - name: Anti-AD Easylist
+    url: https://anti-ad.net/easylist.txt
     category: network
     compatible: [adguard, abp, ubo]
-    lite: false
-  - name: EasyList China
+  - name: Accelerate-Hosts
+    url: https://github.com/Potterli20/file/releases/download/github-hosts/Accelerate-Hosts.txt
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: AWAvenue-Ads-Rule
+    url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/AWAvenue-Ads-Rule.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: 10007_auto reward
+    url: https://raw.githubusercontent.com/lingeringsound/10007_auto/master/reward
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: 5whys AdGuardHome Rules
+    url: https://raw.githubusercontent.com/5whys-adblock/AdGuardHome-rules/main/rules/output_full.txt
+    category: network
+    compatible: [adguard, hosts]
+  - name: 217heidai adblockdns
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdns.txt
+    category: network
+    compatible: [adguard, hosts]
+    dns_policy:
+      level: strict-safe
+  - name: AdGuardSDNSFilter
+    url: https://adguardteam.github.io/AdGuardSDNSFilter/Filters/filter.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    dns_policy:
+      level: strict-safe
+  - name: EasyList (ABP)
+    url: https://easylist-downloads.adblockplus.org/easylist.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: EasyList China (ABP)
     url: https://easylist-downloads.adblockplus.org/easylistchina.txt
     category: network
     compatible: [adguard, abp, ubo]
-    lite: false
-  - name: Peter Lowe's Blocklist
-    url: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=0&mimetype=plaintext
-    category: network
-    compatible: [abp, hosts]
-    lite: false
-  - name: uBlock Origin Unbreak
-    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/unbreak.txt
-    category: whitelist
-    compatible: [ubo, abp, adguard]
-    lite: false
-  - name: uBlock Origin Base
-    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/filters.txt
-    category: network
-    compatible: [ubo, abp, adguard]
-    lite: false
-  - name: uBlock Origin Badware Risks
-    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/badware.txt
-    category: malware
-    compatible: [ubo, abp, adguard]
-    lite: false
-  - name: uBlock Origin Resource Abuse
-    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/resource-abuse.txt
-    category: annoyance
-    compatible: [ubo, abp, adguard]
-    lite: false
-  - name: uBlock Origin Privacy
-    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/privacy.txt
+  - name: EasyPrivacy (ABP)
+    url: https://easylist-downloads.adblockplus.org/easyprivacy.txt
     category: privacy
-    compatible: [ubo, abp, adguard]
-    lite: false
-  - name: uBlock Origin Annoyances
-    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/annoyances.txt
-    category: annoyance
-    compatible: [ubo, abp, adguard]
-    lite: false
-  - name: uBlock Origin Quick Fixes
-    url: https://raw.githubusercontent.com/uBlockOrigin/uAssets/master/filters/quick-fixes.txt
+    compatible: [adguard, abp, ubo]
+  - name: EasyList (easylist.to)
+    url: https://easylist.to/easylist/easylist.txt
     category: network
-    compatible: [ubo, abp, adguard]
-    lite: false
+    compatible: [adguard, abp, ubo]
+  - name: Fanboy Social
+    url: https://easylist.to/easylist/fanboy-social.txt
+    category: social
+    compatible: [adguard, abp, ubo]
+  - name: fqnovel adrules
+    url: https://gh-proxy.com/raw.githubusercontent.com/changzhaoCZ/fqnovel-adrules/refs/heads/main/fqnovel-fxxk_ads
+    category: annoyance
+    compatible: [adguard, abp, ubo]
+  - name: banbendalao ADgk
+    url: https://raw.githubusercontent.com/banbendalao/ADgk/master/ADgk.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: BlueSkyXN skyrules
+    url: https://raw.githubusercontent.com/BlueSkyXN/AdGuardHomeRules/master/skyrules.txt
+    category: network
+    compatible: [adguard, hosts]
+  - name: cjx-annoyance
+    url: https://raw.githubusercontent.com/cjx82630/cjxlist/master/cjx-annoyance.txt
+    category: annoyance
+    compatible: [adguard, abp, ubo]
+  - name: ScamBlocklist (adguard)
+    url: https://raw.githubusercontent.com/durablenapkin/scamblocklist/master/adguard.txt
+    category: phishing
+    compatible: [adguard, abp, ubo]
+  - name: Hagezi DNS Light
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/light.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+    dns_policy:
+      level: strict-safe
+  - name: Anti-AD (adguard)
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-adguard.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: Anti-AD (easylist)
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: Adblock Rule Collection DNS
+    url: https://raw.githubusercontent.com/REIJI007/Adblock-Rule-Collection/main/ADBLOCK_RULE_COLLECTION_DNS.txt
+    category: network
+    compatible: [adguard, hosts]
+    dns_policy:
+      level: strict-safe
   - name: StevenBlack Hosts
     url: https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
     category: network
     compatible: [hosts]
-    lite: false
-  - name: WindowsSpyBlocker
-    url: https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt
+    dns_policy:
+      level: strict-safe
+  - name: HalfLife ad
+    url: https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: 217heidai adblockdnslite
+    url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt
+    category: network
+    compatible: [adguard, hosts]
+    dns_policy:
+      level: strict-safe
+  - name: Fanboy Annoyance
+    url: https://secure.fanboy.co.nz/fanboy-annoyance.txt
+    category: annoyance
+    compatible: [adguard, abp, ubo]
+  - name: Fanboy CookieMonster
+    url: https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
+    category: cookie
+    compatible: [adguard, abp, ubo]
+  - name: Peter Lowe's Blocklist
+    url: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: Shadowrocket to AdGuardHome
+    url: https://raw.githubusercontent.com/wxglenovo/Shadowrocket-to-AdGuard-Home/refs/heads/main/AdGuardHome.txt
+    category: network
+    compatible: [adguard, hosts]
+  - name: AdAway Hosts
+    url: https://adaway.org/hosts.txt
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: AWAvenue-Ads-Rule Hosts
+    url: https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main/Filters/AWAvenue-Ads-Rule-hosts.txt
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: KADhosts
+    url: https://raw.githubusercontent.com/PolishFiltersTeam/KADhosts/master/KADhosts.txt
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: HalfLife list (jsdelivr)
+    url: https://cdn.jsdelivr.net/gh/sbwml/halflife-list@master/ad.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: Firebog Easylist Hosts
+    url: https://v.firebog.net/hosts/Easylist.txt
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: Firebog Easyprivacy Hosts
+    url: https://v.firebog.net/hosts/Easyprivacy.txt
     category: privacy
     compatible: [hosts]
-    lite: false
-  - name: Online Malicious URL Blocklist
-    url: https://raw.githubusercontent.com/curbengh/urlhaus-filter/master/urlhaus-filter.txt
-    category: malware
+    dns_policy:
+      level: strict-safe
+  - name: Disconnect Simple Ad
+    url: https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: Disconnect Simple Tracking
+    url: https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt
+    category: privacy
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: Hagezi DNS Pro Plus
+    url: https://raw.githubusercontent.com/hagezi/dns-blocklists/main/adblock/pro.plus.txt
+    category: network
     compatible: [adguard, abp, ubo]
-    lite: false
-  - name: Phishing URL Blocklist
-    url: https://malware-filter.gitlab.io/malware-filter/phishing-filter.txt
-    category: phishing
-    compatible: [adguard, abp, ubo]
-    lite: false
-  - name: NoCoin CryptoMiner
-    url: https://raw.githubusercontent.com/hoshsadiq/adblock-nocoin-list/master/nocoin.txt
-    category: mining
-    compatible: [adguard, abp, ubo]
-    lite: false
+    dns_policy:
+      level: strict-safe
+  - name: Anti-AD Domains
+    url: https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-domains.txt
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: oisd
+    url: https://big.oisd.nl/
+    category: network
+    compatible: [hosts]
+    dns_policy:
+      level: strict-safe
+  - name: ADrules DNS (gp mirror)
+    url: https://gp.adrules.top/dns.txt
+    category: network
+    compatible: [adguard, hosts]
+    dns_policy:
+      level: strict-safe
