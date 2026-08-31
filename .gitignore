@@ -1,7 +1,16 @@
+# 构建产物
 build/
+
+# Python 缓存
 __pycache__/
 *.pyc
+
+# 虚拟环境
 .venv/
 venv/
+
+# 日志
 *.log
+
+# 构建期本地解析缓存（key = 源内容 sha256 + 算法版本，无需提交，clone 后首次构建自动重建）
 .cache/
