@@ -3090,6 +3090,7 @@
 ||activity-flow.vtex.com^
 ||acuris.com/wat/v2/data-event
 ||ad.aloodo.com^
+||adnz.co/semantiq/semantiq.js
 ||adobedc.net/collector/
 ||adora-cdn.com/adora-start.js
 ||adv-analytics-collector.videograph.ai^
@@ -35767,7 +35768,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||pccomponentes.*/api/users/tracking/
 |http://r.i.ua^
 |https://r.i.ua^
-*$ping,third-party
 # Easyprivacy, parsed and mirrored by https://firebog.net
 # Updated 31AUG26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net

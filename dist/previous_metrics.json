@@ -1,11 +1,11 @@
 {
-  "total_rules": 1323840,
-  "dns_domains": 878976,
+  "total_rules": 1321247,
+  "dns_domains": 876378,
   "source_counts": {
     "Adblock Rule Collection DNS": 805959,
     "5whys AdGuardHome Rules": 548493,
-    "oisd": 269916,
-    "Hagezi DNS Pro Plus": 251788,
+    "oisd": 269901,
+    "Hagezi DNS Pro Plus": 249733,
     "217heidai adblockdns": 214876,
     "ADrules DNS": 198074,
     "ADrules DNS (gp mirror)": 198074,
@@ -18,15 +18,15 @@
     "Anti-AD Easylist": 94620,
     "Anti-AD (easylist)": 94620,
     "StevenBlack Hosts": 82894,
-    "EasyList (easylist.to)": 80230,
-    "EasyList (ABP)": 80227,
+    "EasyList (easylist.to)": 80246,
+    "EasyList (ABP)": 80230,
     "ADrules Easylist": 80146,
     "ADrules EasyPrivacy": 55987,
-    "Fanboy Annoyance": 53741,
-    "EasyPrivacy (ABP)": 53424,
+    "Fanboy Annoyance": 53740,
+    "EasyPrivacy (ABP)": 53427,
     "Firebog Easylist Hosts": 46264,
     "Firebog Easyprivacy Hosts": 42982,
-    "Hagezi DNS Light": 41274,
+    "Hagezi DNS Light": 41549,
     "KADhosts": 41255,
     "Fanboy CookieMonster": 25168,
     "ADrules I-Dont-Care-About-Cookies": 24319,
@@ -34,7 +34,7 @@
     "HalfLife list (jsdelivr)": 22207,
     "EasyList China (ABP)": 19331,
     "ADrules EasyListChina": 19327,
-    "Fanboy Social": 13840,
+    "Fanboy Social": 13846,
     "10007_auto reward": 12343,
     "banbendalao ADgk": 9153,
     "AdAway Hosts": 8584,
@@ -54,14 +54,14 @@
     "LocalRules": 10
   },
   "category_counts": {
-    "network": 1161895,
+    "network": 1159296,
     "privacy": 78755,
     "annoyance": 31108,
     "cookie": 24060,
     "whitelist": 14461,
-    "social": 13536,
+    "social": 13542,
     "phishing": 15,
     "css": 10
   },
-  "root_domain_blocks": 428431
+  "root_domain_blocks": 425390
 }
