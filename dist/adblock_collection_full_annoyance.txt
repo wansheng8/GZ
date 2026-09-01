@@ -651,7 +651,6 @@
 ||zopim.com/widget/sounds/
 ||chimpstatic.com/mcjs-connected/$script,domain=stilldrinking.org
 ||widget.adviceiq.com^$third-party
-||widgets.itunes.apple.com^$third-party
 ||nederlandseloterij.nl/statics/nlportal-cookie-consent.$script
 ||russia-insider.com/wp-content/uploads/pum/
 ||collectcdn.com^$media
@@ -665,6 +664,7 @@
 ||bsync3-normal-hl.zijieapi.com^$app=com.dragon.read,important
 ||ecombdimg.com^$app=com.dragon.read,important
 ||chatango.com/pcache/sounds/
+||widgets.itunes.apple.com^$third-party
 ||4hifi.pl/scripts/jquery.cookie.js
 ||acquire.io/assets/sound/
 ||adessoin.tv/grafica/frecciaTop.png

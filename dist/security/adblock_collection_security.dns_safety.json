@@ -2,14 +2,14 @@
   "policy_level": "all",
   "min_confidence": 0.0,
   "allow_modifier": false,
-  "dns_eligible_network_rules": 15,
+  "dns_eligible_network_rules": 14,
   "dns_rejected_network_rules": 1,
   "by_eligibility": {
-    "SAFE": 15,
+    "SAFE": 14,
     "REJECT": 1
   },
   "by_reason": {
-    "pure_domain": 15,
+    "pure_domain": 14,
     "untranslatable": 1
   }
 }

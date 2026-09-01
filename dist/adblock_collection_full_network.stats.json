@@ -1,46 +1,46 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 1164000,
+  "total": 1161892,
   "by_category": {
-    "network": 1164000
+    "network": 1161892
   },
   "by_kind": {
-    "network": 1110654,
+    "network": 1108546,
     "css": 48611,
     "scriptlet": 4622,
     "html": 112,
     "js": 1
   },
   "by_source": {
-    "Adblock Rule Collection DNS": 362209,
-    "5whys AdGuardHome Rules": 338721,
-    "ADrules DNS": 83756,
+    "Adblock Rule Collection DNS": 362259,
+    "5whys AdGuardHome Rules": 338949,
+    "ADrules DNS": 83757,
     "StevenBlack Hosts": 74518,
     "ADrules Easylist": 72386,
     "Firebog Easylist Hosts": 46257,
-    "Hagezi DNS Pro Plus": 38612,
+    "Hagezi DNS Pro Plus": 38584,
     "ADrules AdRules": 28511,
     "Anti-AD Domains": 28179,
-    "oisd": 20864,
+    "oisd": 18327,
     "ADrules EasyListChina": 14760,
-    "ADrules anti-AD": 13852,
+    "ADrules anti-AD": 13855,
     "10007_auto reward": 12343,
-    "AdGuardSDNSFilter": 4936,
+    "AdGuardSDNSFilter": 4941,
+    "217heidai adblockdns": 4829,
     "banbendalao ADgk": 4783,
-    "217heidai adblockdns": 4644,
     "Peter Lowe's Blocklist": 3282,
     "Disconnect Simple Ad": 2504,
     "KADhosts": 2405,
     "Accelerate-Hosts": 1808,
-    "Hagezi DNS Light": 1529,
+    "Hagezi DNS Light": 1525,
     "AWAvenue-Ads-Rule Hosts": 1405,
     "ADrules ChengFeng": 941,
     "ADrules HalfLife": 660,
     "Anti-AD (adguard)": 44,
     "BlueSkyXN skyrules": 39,
     "AWAvenue-Ads-Rule": 20,
-    "EasyList (ABP)": 13,
     "Shadowrocket to AdGuardHome": 10,
-    "AdAway Hosts": 9
+    "AdAway Hosts": 9,
+    "EasyList (easylist.to)": 2
   }
 }
