@@ -15,7 +15,8 @@
     "path_rule": 1641,
     "regex_or_redirect_rule": 13,
     "untranslatable": 46446,
-    "css_rule": 7,
-    "script_rule": 28
+    "css_rule": 6,
+    "script_rule": 28,
+    "non_network_rule": 1
   }
 }

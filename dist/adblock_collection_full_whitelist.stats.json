@@ -1,16 +1,16 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 14462,
+  "total": 14461,
   "by_category": {
-    "whitelist": 14462
+    "whitelist": 14461
   },
   "by_kind": {
-    "network": 11901,
+    "network": 11900,
     "css": 2552,
     "scriptlet": 9
   },
   "by_source": {
-    "Adblock Rule Collection DNS": 4908,
+    "Adblock Rule Collection DNS": 4907,
     "ADrules AdRules": 4726,
     "ADrules EasyListChina": 1161,
     "ADrules Easylist": 1084,

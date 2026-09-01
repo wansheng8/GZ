@@ -25,9 +25,9 @@ from .rules import Rule, parse_line
 LOG = logging.getLogger("adblock_collection")
 
 # 各阶段算法版本。逻辑变更时递增，旧缓存自动失效。
-PARSER_VERSION = "1.0.0"
+PARSER_VERSION = "1.1.0"
 NORMALIZER_VERSION = "1.0.0"
-CLASSIFIER_VERSION = "1.0.0"
+CLASSIFIER_VERSION = "1.1.0"
 
 STAGE_DIR = Path(".cache/parsed")
 

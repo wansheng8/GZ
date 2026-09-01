@@ -19,10 +19,16 @@ from typing import Optional
 
 # 网络规则选项段（位于 $ 之后）
 _PARAM_OPTION_RE = re.compile(r"\$([^$]*)$")
-# 元素隐藏分隔符
-_ELEMENT_SEP_RE = re.compile(r"\s*(##|#@#|#\?#|#@\?#)\s*")
-# 脚本注入标识
-_SCRIPTLET_RE = re.compile(r"#(?:@|@\?)?#.*\bscript:(?:inject|append|set(?:-const)?|json-prune)\b|#(?:@|@\?)?#\+js\(")
+# 元素隐藏 / 扩展语法分隔符（按长度优先排列，带 @ 的例外形式在前）
+# 覆盖：uBO/ABP 的 ##、#@#、#?#、#@?#；AdGuard 扩展元素规则 #$#、#@$#；
+#      AdGuard 注入 #%#、#@%#。
+_ELEMENT_SEP_RE = re.compile(r"\s*(#@\$#|#\$#|#@%#|#%#|#@\?#|#\?#|#@#|##)\s*")
+# 脚本注入标识（uBO +js() / script:inject；AdGuard #%#//scriptlet()）
+_SCRIPTLET_RE = re.compile(
+    r"#(?:@|@\?)?#.*\bscript:(?:inject|append|set(?:-const)?|json-prune)\b"
+    r"|#(?:@|@\?)?#\+js\("
+    r"|#%#//scriptlet\s*\("
+)
 # 域名选项 domain=/from=/to=
 _DOMAIN_OPTION_RE = re.compile(r"(?:domain|from|to)=([^,)]+)")
 # 网络规则主体（|| 之后、^ 或 / 或 $ 之前的部分），用于提取域名（允许 @@ 等前缀，故不锚行首）
@@ -130,14 +136,13 @@ def _classify(raw: str, category_hint: str, kind: str, is_exception: bool) -> st
         return "whitelist"
     if category_hint and category_hint != "other":
         return category_hint
+    # 元素/脚本类按其类型归类，优先于关键词匹配，避免注入规则被误判为隐私等类别
+    if kind in ("css", "scriptlet", "html", "js"):
+        return kind
     low = raw.lower()
     for cat, kws in CATEGORY_KEYWORDS.items():
         if any(k in low for k in kws):
             return cat
-    if kind == "css":
-        return "css"
-    if kind == "scriptlet":
-        return "scriptlet"
     if re.search(r"\$.*(redirect|rewrite)", raw, re.I):
         return "redirect"
     if re.search(r"\$.*(regexp)", raw, re.I):
@@ -165,12 +170,19 @@ def _normalize(raw: str) -> str:
 def _detect_kind(raw: str) -> str:
     if _SCRIPTLET_RE.search(raw):
         return "scriptlet"
-    if _ELEMENT_SEP_RE.search(raw):
+    m = _ELEMENT_SEP_RE.search(raw)
+    if m:
+        sep = m.group(1)
+        after = raw[m.end():].lstrip()
+        # uBO HTML 过滤（example.com##^script:has-text(...)）：## 之后紧跟 ^
+        if sep == "##" and after.startswith("^"):
+            return "html"
+        # AdGuard JS 注入（#%#var ... / #@%#var ...）
+        if sep in ("#%#", "#@%#"):
+            return "js"
         return "css"
     if raw.startswith("!") or (raw.startswith("[") and raw.endswith("]")):
         return "comment"
-    if "@@" in raw[:4]:
-        return "network"
     return "network"
 
 
@@ -189,7 +201,9 @@ def parse_line(line: str, category_hint: str = "other", source: Optional[str] = 
     if not norm:
         return None
 
-    is_exception = "@@" in stripped[:4] or "#@#" in stripped or "#@?#" in stripped
+    # 例外判定：@@ 网络例外，或带 @ 的元素/扩展分隔符（#@# / #@?# / #@$# / #@%#）
+    sep_m = _ELEMENT_SEP_RE.search(stripped)
+    is_exception = "@@" in stripped[:4] or (sep_m is not None and sep_m.group(1).startswith("#@"))
     is_css = kind == "css"
     is_scriptlet = kind == "scriptlet"
 

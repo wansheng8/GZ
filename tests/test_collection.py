@@ -16,6 +16,7 @@ from adblock_collection.dns_policy import (
 from adblock_collection.merge import (
     apply_badfilter,
     dedupe,
+    remove_redundant_css,
     remove_redundant_domains,
     source_stats,
     validate_local_rules,
@@ -77,6 +78,37 @@ def test_parse_scriptlet():
     assert r.kind == "scriptlet"
 
 
+def test_parse_adguard_extended_syntax():
+    r = parse_line("example.com#$#body{display:none}")
+    assert r is not None
+    assert r.kind == "css" and r.is_css and r.domains == ["example.com"]
+    assert not r.is_exception
+
+    r = parse_line("example.com#@$#.ad{display:none}")
+    assert r is not None
+    assert r.kind == "css" and r.is_exception
+
+    r = parse_line("example.com#%#var a = 1")
+    assert r is not None
+    assert r.kind == "js" and r.domains == ["example.com"]
+
+    r = parse_line("example.com#@%#var a = 1")
+    assert r is not None
+    assert r.kind == "js" and r.is_exception
+
+
+def test_parse_adguard_scriptlet():
+    r = parse_line("example.com#%#//scriptlet(abort-on-property-read, ads)")
+    assert r is not None
+    assert r.kind == "scriptlet" and r.is_scriptlet
+
+
+def test_parse_html_filter_kind():
+    r = parse_line("example.com##^script:has-text(adsbygoogle)")
+    assert r is not None
+    assert r.kind == "html" and r.domains == ["example.com"]
+
+
 def test_normalize_option_order():
     a = parse_line("||x.com^$third-party,script")
     b = parse_line("||x.com^$script,third-party")
@@ -112,6 +144,20 @@ def test_redundant_domain_removal():
     assert "||sub.example.com^" not in raws
     assert "||example.com^" in raws
     assert "||other.com^" in raws
+
+
+def test_redundant_css_dedupes_extended_syntax():
+    rules = [
+        _rule("example.com#$#.ad-banner"),
+        _rule("example.com#$#.ad-banner"),
+        _rule("example.com#$#.ad-top{display:none}"),
+        _rule("example.com#$#.ad-top{visibility:hidden}"),
+    ]
+    kept = remove_redundant_css(rules)
+    raws = {r.raw for r in kept}
+    assert len(raws) == 3  # 纯类名合 1，两个不同声明各保留
+    assert "example.com#$#.ad-top{display:none}" in raws
+    assert "example.com#$#.ad-top{visibility:hidden}" in raws
 
 
 def test_path_bearing_domain_extraction():
@@ -623,6 +669,25 @@ def test_validate_local_rules_blocks_wildcard(tmp_path):
     )
     v = validate_local_rules(cfg)
     assert len(v) >= 3  # ##* / body / 域通配 应被拦
+
+
+def test_validate_local_rules_extended_syntax(tmp_path):
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text("sources: []\n", encoding="utf-8")
+    lr = tmp_path / "local_rules.txt"
+    lr.write_text(
+        "example.com#$#*\n"
+        "*.example.com#$#.ad\n"
+        "example.com#$#body{display:none}\n"
+        "example.com#$#.ad-banner\n"
+        "example.com#$#.ad{display:none}\n"
+        "example.com#%#var x = 1\n",
+        encoding="utf-8",
+    )
+    v = validate_local_rules(cfg)
+    assert len(v) == 3  # #$#* / 域通配 / body 应被拦
+    # 合法 #$# 纯类名、带声明、JS 注入应放行（不在违规列表中）
+    assert all("ad-banner" not in x and "var x" not in x for x in v)
 
 
 def test_validate_local_rules_missing_file_ok(tmp_path):

@@ -232,14 +232,15 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
     return kept_blocked + others
 
 
-_CSS_SELECTOR_RE = re.compile(r"[#@#?]+(.+)$")
+_CSS_SELECTOR_RE = re.compile(r"[#$@%#?]+(.+)$")
 
 
 def remove_redundant_css(rules: Iterable[Rule]) -> list[Rule]:
     """消除 css 规则中的同域同基础选择器冗余。
 
-    仅对「单限定域名 + 纯类名选择器（以 . 开头、无空格/逗号/属性选择器）」做去重，
-    保留首次出现的规则；复杂选择器（含逗号、属性、伪类组合）不参与，避免误删。
+    仅对「单限定域名 + 纯类名选择器（以 . 开头、无空格/逗号/属性/伪类/声明）」做去重，
+    保留首次出现的规则；复杂选择器（含逗号、属性、伪类组合或 #$# 带 CSS 声明）不参与，
+    避免误删。
     """
     seen: dict[tuple[str, str], Rule] = {}
     kept: list[Rule] = []
@@ -253,8 +254,8 @@ def remove_redundant_css(rules: Iterable[Rule]) -> list[Rule]:
             kept.append(r)
             continue
         sel = m.group(1).strip()
-        # 仅当选择器是单一纯类名（无空格、逗号、方括号、冒号）时才视为可去重
-        if " " in sel or "," in sel or "[" in sel or ":" in sel or not sel.startswith("."):
+        # 仅当选择器是单一纯类名（无空格、逗号、方括号、冒号、CSS 声明）时才视为可去重
+        if " " in sel or "," in sel or "[" in sel or ":" in sel or "{" in sel or not sel.startswith("."):
             kept.append(r)
             continue
         key = (r.domains[0], sel)
@@ -321,14 +322,14 @@ def kind_stats(rules: Iterable[Rule]) -> dict[str, int]:
 
 
 _WILDCARD_BLOCKLIST_RE = re.compile(
-    r"^(?:\*|#@?#\*|##\*)"          # 全局/整页元素隐藏（行首无域名限定）
-    r"|##(?:body|html|head)\b"       # 隐藏整页主体元素（任意域名前缀）
+    r"^(?:\*|#[@$%?]{0,2}#\*)"        # 全局/整页元素隐藏（行首无域名限定，覆盖 ##/#@#/#$#/#%#/#?# 等）
+    r"|#[@$%?]{0,2}#(?:body|html|head)\b"   # 隐藏整页主体元素（任意域名前缀）
     r"|##\[\s"                        # 空属性选择器
 )
-# 域名级通配（如 *.example.com## 或 *## 等）同样禁止
-_DOMAIN_WILDCARD_RE = re.compile(r"^(?:\*|[*\w.-]*\*[*\w.-]*)\s*#@?#")
+# 域名级通配（如 *.example.com##、*##、*#$# 等）同样禁止
+_DOMAIN_WILDCARD_RE = re.compile(r"^(?:\*|[*\w.-]*\*[*\w.-]*)\s*#[@$%?]{0,2}#")
 # 选择器内出现裸 * 通配（除 [class*="x"] 这类属性包含匹配外）禁止
-_SELECTOR_WILDCARD_RE = re.compile(r"##.*(^|\s)\*(,|\s|$|>)")
+_SELECTOR_WILDCARD_RE = re.compile(r"(?:##|#\$#).*(^|\s)\*(,|\s|$|>)")
 
 
 def validate_local_rules(config_path: Path) -> list[str]:
@@ -348,9 +349,13 @@ def validate_local_rules(config_path: Path) -> list[str]:
         if _WILDCARD_BLOCKLIST_RE.search(line) or _DOMAIN_WILDCARD_RE.search(line):
             violations.append(f"{local_path.name}:{idx}: {line}")
             continue
-        # 仅对 CSS 规则检查选择器内裸通配（排除属性包含匹配 [class*="x"]）
-        if "##" in line and not line.startswith("@@"):
-            selector = line.split("##", 1)[1]
+        # 仅对元素隐藏规则检查选择器内裸通配（排除属性包含匹配 [class*="x"]）
+        sep = next((s for s in ("##", "#$#") if s in line), None)
+        if sep and not line.startswith("@@"):
+            selector = line.split(sep, 1)[1]
+            if "{" in selector:
+                # 含 CSS 声明（如 #$#sel{...}），body/html/head 已由 blocklist 拦截，跳过裸通配检查
+                continue
             # 移除合法的属性包含匹配后再判断裸 *
             scrubbed = re.sub(r"\[[^\]]*\*=\"[^\"]*\"\]", "", selector)
             if re.search(r"(^|\s)\*(,|\s|$|>)", scrubbed):
