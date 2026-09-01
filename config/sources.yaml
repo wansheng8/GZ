@@ -182,6 +182,24 @@ sources:
     url: https://secure.fanboy.co.nz/fanboy-cookiemonster.txt
     category: cookie
     compatible: [adguard, abp, ubo]
+  # Fanboy Annoyance / CookieMonster 通过 !#include 引用的官方专用子列表：
+  # （上游 include 语义即"并入主列表"，这里作为独立源收录，效果等价）
+  - name: Fanboy Annoyance Specific (uBO)
+    url: https://secure.fanboy.co.nz/fanboy_annoyance_specific_uBO.txt
+    category: annoyance
+    compatible: [adguard, abp, ubo]
+  - name: Fanboy Newsletter Specific (uBO)
+    url: https://secure.fanboy.co.nz/fanboy_newsletter_specific_uBO.txt
+    category: annoyance
+    compatible: [adguard, abp, ubo]
+  - name: Fanboy Social Specific (uBO)
+    url: https://secure.fanboy.co.nz/fanboy_social_specific_uBO.txt
+    category: social
+    compatible: [adguard, abp, ubo]
+  - name: Easylist Cookie Specific (uBO)
+    url: https://secure.fanboy.co.nz/easylist_cookie_specific_uBO.txt
+    category: cookie
+    compatible: [adguard, abp, ubo]
   - name: Peter Lowe's Blocklist
     url: https://pgl.yoyo.org/adservers/serverlist.php?hostformat=hosts&showintro=1&mimetype=plaintext
     category: network
