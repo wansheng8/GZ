@@ -1,0 +1,36 @@
+# 本地增强规则（LocalRules）
+#
+# 本文件用于补充上游未覆盖的规则，固定纳入构建产物，不会被上游覆盖、也不影响白名单放行。
+# 优先级：在 dedupe 之前作为独立源加入，与上游规则平等参与去重。
+#
+# 适用场景：
+#   - 网页版直播（B站/抖音网页版/快手网页版/视频号网页版）的开屏与信息流广告，靠元素隐藏规则清除。
+#   - 上游未收录的、稳定的广告/追踪域名（纯网络阻断规则）。
+#
+# 注意：元素隐藏规则（## 选择器）必须基于真实页面 DOM 编写，请先用浏览器开发者工具
+#       定位广告容器类名/ID，再写入，避免误伤正常内容。
+#
+# 格式：标准 AdGuard / uBO 语法。示例（仅供格式参考，已注释）：
+# example.com##.ad-banner
+# example.com##div[class*="feed-ad"]
+# ||ad.douyin.com^
+
+# ---- 网页版直播广告元素隐藏（基于平台已知稳定容器，零误伤优先，必要时用更精确选择器） ----
+
+# B站直播：右侧推荐/礼物横幅/直播间信息流广告位
+live.bilibili.com##.live-room-app .ad-deck
+live.bilibili.com##.live-room-app [class*="recommend"]
+live.bilibili.com##.web-live-recommend
+
+# 抖音网页版直播：信息流与直播间广告位
+live.douyin.com##[class*="ad-card"]
+live.douyin.com##[class*="feed-ad"]
+douyin.com##[class*="Promote"]
+
+# 快手网页版直播：信息流广告容器
+live.kuaishou.com##[class*="advert"]
+live.kuaishou.com##[class*="feed-ad"]
+
+# 视频号网页版：直播信息流广告位
+channels.weixin.qq.com##[class*="ad-"]
+findermp.qq.com##[class*="ad-"]

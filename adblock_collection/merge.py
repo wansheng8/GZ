@@ -99,6 +99,21 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
     sources = load_sources(config_path)
     result: dict[str, list[Rule]] = defaultdict(list)
     failed: list[str] = []
+
+    # 本地增强规则：固定纳入 config/local_rules.txt（若存在），用于补充上游未覆盖的
+    # 元素隐藏/网页版直播广告等规则，不会被上游覆盖，也不影响白名单放行。
+    local_path = config_path.parent / "local_rules.txt"
+    if local_path.exists():
+        try:
+            ltext = local_path.read_text(encoding="utf-8", errors="replace")
+            llines = [ln for ln in ltext.splitlines()
+                      if ln.strip() and not ln.lstrip().startswith("#") and not ln.lstrip().startswith("!")]
+            lrules = parse_source_cached(llines, "other", "LocalRules", url=str(local_path), use_stage_cache=use_stage_cache)
+            result["all"].append(("LocalRules", lrules))
+            LOG.info("纳入本地增强规则: %s (%d 条)", local_path, len(lrules))
+        except OSError as exc:
+            LOG.warning("读取本地增强规则失败: %s", exc)
+
     for src in sources:
         name = src.get("name", "unknown")
         url = src.get("url")

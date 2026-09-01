@@ -1,0 +1,17 @@
+! Title: Adblock Rule Collection (Full) (css)
+! Description: 按类型拆分：css
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 10
+! ------------------------------------------
+live.bilibili.com##.live-room-app .ad-deck
+live.bilibili.com##.live-room-app [class*="recommend"]
+live.bilibili.com##.web-live-recommend
+live.douyin.com##[class*="ad-card"]
+live.douyin.com##[class*="feed-ad"]
+douyin.com##[class*="Promote"]
+live.kuaishou.com##[class*="advert"]
+live.kuaishou.com##[class*="feed-ad"]
+channels.weixin.qq.com##[class*="ad-"]
+findermp.qq.com##[class*="ad-"]

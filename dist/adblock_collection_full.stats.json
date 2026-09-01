@@ -1,22 +1,23 @@
 {
   "name": "adblock_collection_full",
-  "total": 1325388,
+  "total": 1325374,
   "by_category": {
-    "network": 1163475,
+    "network": 1163451,
     "privacy": 78754,
     "annoyance": 31106,
     "cookie": 24060,
     "whitelist": 14462,
     "social": 13530,
+    "css": 10,
     "phishing": 1
   },
   "by_kind": {
-    "network": 1206653,
-    "css": 111262,
+    "network": 1206629,
+    "css": 111272,
     "scriptlet": 7473
   },
   "by_source": {
-    "Adblock Rule Collection DNS": 805361,
+    "Adblock Rule Collection DNS": 805433,
     "5whys AdGuardHome Rules": 548710,
     "oisd": 270443,
     "Hagezi DNS Pro Plus": 251788,
@@ -32,8 +33,8 @@
     "Anti-AD Easylist": 94620,
     "Anti-AD (easylist)": 94620,
     "StevenBlack Hosts": 82894,
-    "EasyList (easylist.to)": 80129,
-    "EasyList (ABP)": 80128,
+    "EasyList (easylist.to)": 80139,
+    "EasyList (ABP)": 80138,
     "ADrules Easylist": 80082,
     "ADrules EasyPrivacy": 55987,
     "Fanboy Annoyance": 53740,
@@ -55,15 +56,16 @@
     "217heidai adblockdnslite": 5411,
     "Peter Lowe's Blocklist": 3555,
     "Disconnect Simple Ad": 2703,
-    "Accelerate-Hosts": 1869,
     "ADrules Cjx-Annoyance": 1840,
     "cjx-annoyance": 1840,
+    "Accelerate-Hosts": 1816,
     "AWAvenue-Ads-Rule Hosts": 1776,
     "ADrules ChengFeng": 1169,
     "ScamBlocklist (adguard)": 949,
     "AWAvenue-Ads-Rule": 902,
     "BlueSkyXN skyrules": 142,
     "fqnovel adrules": 50,
-    "Disconnect Simple Tracking": 37
+    "Disconnect Simple Tracking": 37,
+    "LocalRules": 10
   }
 }

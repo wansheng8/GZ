@@ -1,16 +1,16 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 1163475,
+  "total": 1163451,
   "by_category": {
-    "network": 1163475
+    "network": 1163451
   },
   "by_kind": {
-    "network": 1112006,
+    "network": 1111982,
     "css": 46850,
     "scriptlet": 4619
   },
   "by_source": {
-    "Adblock Rule Collection DNS": 361763,
+    "Adblock Rule Collection DNS": 361775,
     "5whys AdGuardHome Rules": 338868,
     "ADrules DNS": 83749,
     "StevenBlack Hosts": 74556,
@@ -23,13 +23,13 @@
     "ADrules EasyListChina": 14754,
     "ADrules anti-AD": 14461,
     "10007_auto reward": 12465,
-    "AdGuardSDNSFilter": 4947,
+    "AdGuardSDNSFilter": 4946,
     "banbendalao ADgk": 4783,
     "217heidai adblockdns": 4284,
     "Peter Lowe's Blocklist": 3282,
     "Disconnect Simple Ad": 2504,
     "KADhosts": 2405,
-    "Accelerate-Hosts": 1859,
+    "Accelerate-Hosts": 1814,
     "Hagezi DNS Light": 1503,
     "AWAvenue-Ads-Rule Hosts": 1405,
     "ADrules ChengFeng": 941,
@@ -37,8 +37,8 @@
     "Anti-AD (adguard)": 44,
     "BlueSkyXN skyrules": 39,
     "Anti-AD Easylist": 31,
+    "EasyList (ABP)": 22,
     "AWAvenue-Ads-Rule": 20,
-    "EasyList (ABP)": 12,
     "Shadowrocket to AdGuardHome": 10,
     "AdAway Hosts": 9,
     "EasyList (easylist.to)": 1
