@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 78754
+! Total Rules: 78755
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -35767,6 +35767,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||pccomponentes.*/api/users/tracking/
 |http://r.i.ua^
 |https://r.i.ua^
+*$ping,third-party
 # Easyprivacy, parsed and mirrored by https://firebog.net
 # Updated 31AUG26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
