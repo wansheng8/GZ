@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 1164003,
+  "total": 1164000,
   "by_category": {
-    "network": 1164003
+    "network": 1164000
   },
   "by_kind": {
-    "network": 1110769,
+    "network": 1110766,
     "css": 48611,
     "scriptlet": 4622,
     "js": 1
@@ -30,7 +30,7 @@
     "Peter Lowe's Blocklist": 3282,
     "Disconnect Simple Ad": 2504,
     "KADhosts": 2405,
-    "Accelerate-Hosts": 1814,
+    "Accelerate-Hosts": 1808,
     "Hagezi DNS Light": 1529,
     "AWAvenue-Ads-Rule Hosts": 1405,
     "ADrules ChengFeng": 941,
@@ -38,8 +38,9 @@
     "Anti-AD (adguard)": 44,
     "BlueSkyXN skyrules": 39,
     "AWAvenue-Ads-Rule": 20,
-    "EasyList (ABP)": 10,
+    "EasyList (ABP)": 12,
     "Shadowrocket to AdGuardHome": 10,
-    "AdAway Hosts": 9
+    "AdAway Hosts": 9,
+    "EasyList (easylist.to)": 1
   }
 }
