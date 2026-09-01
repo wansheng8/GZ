@@ -18,6 +18,7 @@ from adblock_collection.merge import (
     dedupe,
     remove_redundant_domains,
     source_stats,
+    validate_local_rules,
 )
 from adblock_collection.quality_gate import (
     collect_metrics,
@@ -590,3 +591,41 @@ def test_security_independent_release(tmp_path, monkeypatch):
     content = (sec_dir / "adblock_collection_security.txt").read_text(encoding="utf-8")
     assert "ads.example.com" not in content
     assert "malware.example.com" in content
+
+
+# ---------------- 本地增强规则校验 ----------------
+
+def test_validate_local_rules_passes_normal(tmp_path):
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text("sources: []\n", encoding="utf-8")
+    lr = tmp_path / "local_rules.txt"
+    lr.write_text(
+        "# 注释\n"
+        "! 标题\n"
+        "example.com##.ad-banner\n"
+        "live.bilibili.com##[class*=\"recommend\"]\n"
+        "||ad.douyin.com^\n",
+        encoding="utf-8",
+    )
+    assert validate_local_rules(cfg) == []
+
+
+def test_validate_local_rules_blocks_wildcard(tmp_path):
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text("sources: []\n", encoding="utf-8")
+    lr = tmp_path / "local_rules.txt"
+    lr.write_text(
+        "example.com##*\n"
+        "example.com##body\n"
+        "##[class*=\"ad\"]\n"
+        "*##.banner\n",
+        encoding="utf-8",
+    )
+    v = validate_local_rules(cfg)
+    assert len(v) >= 3  # ##* / body / 域通配 应被拦
+
+
+def test_validate_local_rules_missing_file_ok(tmp_path):
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text("sources: []\n", encoding="utf-8")
+    assert validate_local_rules(cfg) == []

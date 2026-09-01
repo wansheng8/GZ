@@ -114,19 +114,38 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
         except OSError as exc:
             LOG.warning("读取本地增强规则失败: %s", exc)
 
-    for src in sources:
+    # 并行下载所有上游（下载是最大的耗时瓶颈，顺序下载会让失败源的重试超时拖垮整体）
+    from concurrent.futures import ThreadPoolExecutor, as_completed
+
+    def _fetch(src):
         name = src.get("name", "unknown")
         url = src.get("url")
         if not url:
-            continue
-        LOG.info("处理上游列表: %s", name)
-        lines = fetch_source(url, use_cache=use_cache, offline=offline, mirror=src.get("mirror"))
+            return name, None
+        try:
+            lines = fetch_source(url, use_cache=use_cache, offline=offline, mirror=src.get("mirror"))
+        except Exception as exc:  # 单源异常不应中断整体构建
+            LOG.warning("源处理异常 %s: %s", name, exc)
+            return name, None
+        return name, lines
+
+    fetch_results: dict[str, Optional[list[str]]] = {}
+    with ThreadPoolExecutor(max_workers=min(16, max(4, len(sources)))) as ex:
+        futures = {ex.submit(_fetch, src): src for src in sources}
+        for fut in as_completed(futures):
+            name, lines = fut.result()
+            fetch_results[name] = lines
+
+    for src in sources:
+        name = src.get("name", "unknown")
+        lines = fetch_results.get(name)
         if not lines:
             failed.append(name)
             continue
+        LOG.info("处理上游列表: %s", name)
         rules = parse_source_cached(
             lines, src.get("category", "other"), name,
-            url=url, use_stage_cache=use_stage_cache,
+            url=src.get("url"), use_stage_cache=use_stage_cache,
         )
         result["all"].append((name, rules))
     result["_failed"] = failed
@@ -299,3 +318,41 @@ def kind_stats(rules: Iterable[Rule]) -> dict[str, int]:
     for r in rules:
         stats[r.kind] += 1
     return dict(sorted(stats.items(), key=lambda kv: kv[1], reverse=True))
+
+
+_WILDCARD_BLOCKLIST_RE = re.compile(
+    r"^(?:\*|#@?#\*|##\*)"          # 全局/整页元素隐藏（行首无域名限定）
+    r"|##(?:body|html|head)\b"       # 隐藏整页主体元素（任意域名前缀）
+    r"|##\[\s"                        # 空属性选择器
+)
+# 域名级通配（如 *.example.com## 或 *## 等）同样禁止
+_DOMAIN_WILDCARD_RE = re.compile(r"^(?:\*|[*\w.-]*\*[*\w.-]*)\s*#@?#")
+# 选择器内出现裸 * 通配（除 [class*="x"] 这类属性包含匹配外）禁止
+_SELECTOR_WILDCARD_RE = re.compile(r"##.*(^|\s)\*(,|\s|$|>)")
+
+
+def validate_local_rules(config_path: Path) -> list[str]:
+    """校验 config/local_rules.txt，禁止可能误伤整页/整站的通配规则。
+
+    返回违规行列表（非空即应阻断构建）。允许的属性包含匹配（如 [class*="ad"]）被视为安全，
+    不在禁止范围内；仅拦截无差别的裸通配选择器与全局隐藏。
+    """
+    local_path = config_path.parent / "local_rules.txt"
+    if not local_path.exists():
+        return []
+    violations: list[str] = []
+    for idx, raw in enumerate(local_path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
+        line = raw.strip()
+        if not line or line.startswith("#") or line.startswith("!"):
+            continue
+        if _WILDCARD_BLOCKLIST_RE.search(line) or _DOMAIN_WILDCARD_RE.search(line):
+            violations.append(f"{local_path.name}:{idx}: {line}")
+            continue
+        # 仅对 CSS 规则检查选择器内裸通配（排除属性包含匹配 [class*="x"]）
+        if "##" in line and not line.startswith("@@"):
+            selector = line.split("##", 1)[1]
+            # 移除合法的属性包含匹配后再判断裸 *
+            scrubbed = re.sub(r"\[[^\]]*\*=\"[^\"]*\"\]", "", selector)
+            if re.search(r"(^|\s)\*(,|\s|$|>)", scrubbed):
+                violations.append(f"{local_path.name}:{idx}: {line}")
+    return violations

@@ -31,6 +31,7 @@ from .merge import (
     remove_redundant_domains,
     remove_redundant_css,
     source_stats,
+    validate_local_rules,
 )
 from .dns_policy import load_dns_policy
 from .quality_gate import (
@@ -188,6 +189,14 @@ def build(args: argparse.Namespace) -> int:
     collected = collect(config_path, use_cache=not args.no_cache, offline=args.offline,
                        use_stage_cache=not args.no_stage_cache)
     failed_sources = collected.get("_failed", [])
+
+    # 本地增强规则静态校验：禁止通配误伤规则，违规则阻断构建，落实「宁愿少拦截」
+    lr_violations = validate_local_rules(config_path)
+    if lr_violations:
+        for v in lr_violations:
+            LOG.error("本地增强规则违规: %s", v)
+        LOG.error("local_rules.txt 含 %d 条可能误伤整页/整站的通配规则，已阻断构建。请改为精确选择器。", len(lr_violations))
+        return 2
 
     all_rules: list = []
     for _name, rules in collected.get("all", []):
