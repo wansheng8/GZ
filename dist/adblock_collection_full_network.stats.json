@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 1163451,
+  "total": 1163453,
   "by_category": {
-    "network": 1163451
+    "network": 1163453
   },
   "by_kind": {
-    "network": 1111982,
+    "network": 1111984,
     "css": 46850,
     "scriptlet": 4619
   },
@@ -41,6 +41,6 @@
     "AWAvenue-Ads-Rule": 20,
     "Shadowrocket to AdGuardHome": 10,
     "AdAway Hosts": 9,
-    "EasyList (easylist.to)": 1
+    "EasyList (easylist.to)": 3
   }
 }

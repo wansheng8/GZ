@@ -1,6 +1,6 @@
 {
-  "total_rules": 1325374,
-  "dns_domains": 880790,
+  "total_rules": 1325376,
+  "dns_domains": 880792,
   "source_counts": {
     "Adblock Rule Collection DNS": 805433,
     "5whys AdGuardHome Rules": 548710,
@@ -18,7 +18,7 @@
     "Anti-AD Easylist": 94620,
     "Anti-AD (easylist)": 94620,
     "StevenBlack Hosts": 82894,
-    "EasyList (easylist.to)": 80139,
+    "EasyList (easylist.to)": 80141,
     "EasyList (ABP)": 80138,
     "ADrules Easylist": 80082,
     "ADrules EasyPrivacy": 55987,
@@ -54,7 +54,7 @@
     "LocalRules": 10
   },
   "category_counts": {
-    "network": 1163451,
+    "network": 1163453,
     "privacy": 78754,
     "annoyance": 31106,
     "cookie": 24060,
@@ -63,5 +63,5 @@
     "css": 10,
     "phishing": 1
   },
-  "root_domain_blocks": 429898
+  "root_domain_blocks": 429900
 }
