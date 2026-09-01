@@ -1,17 +1,17 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 14471,
+  "total": 14462,
   "by_category": {
-    "whitelist": 14471
+    "whitelist": 14462
   },
   "by_kind": {
-    "network": 11911,
-    "css": 2551,
+    "network": 11901,
+    "css": 2552,
     "scriptlet": 9
   },
   "by_source": {
-    "Adblock Rule Collection DNS": 4909,
-    "ADrules AdRules": 4733,
+    "Adblock Rule Collection DNS": 4908,
+    "ADrules AdRules": 4726,
     "ADrules EasyListChina": 1161,
     "ADrules Easylist": 1084,
     "ADrules EasyPrivacy": 836,
@@ -26,7 +26,6 @@
     "ADrules HalfLife": 18,
     "fqnovel adrules": 12,
     "ADrules I-Dont-Care-About-Cookies": 1,
-    "AdGuardSDNSFilter": 1,
-    "EasyPrivacy (ABP)": 1
+    "AdGuardSDNSFilter": 1
   }
 }

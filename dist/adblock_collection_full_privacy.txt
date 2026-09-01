@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 78741
+! Total Rules: 78754
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -2134,9 +2134,11 @@
 ||popliquids.com^
 ||popmixradio.com^
 ||popplantation.com^
+||porksoda.com^
 ||possibleboats.com^
 ||possiblepencil.com^
 ||potatoinvention.com^
+||potentmagic.com^
 ||powerfulblends.com^
 ||powerfulcopper.com^
 ||powertoolwiki.com^
@@ -2163,6 +2165,7 @@
 ||pristinegale.com^
 ||probablepartner.com^
 ||processplantation.com^
+||procollecting.com^
 ||producecopy.com^
 ||producepickle.com^
 ||productsurfer.com^
@@ -5330,6 +5333,7 @@
 ||go.thegrocer.co.uk^
 ||goatcounter.ssp.sh^
 ||gog-statics.com/js/loginTracking-$script,domain=gog.com
+||gpsvisualizer.com/ip2country.js
 ||graylog.prod.cams.run^
 ||grgnsht.nzxt.com^
 ||grokipedia.com/api/stats
@@ -32214,7 +32218,6 @@
 ||prm.ua/en/events/
 ||coccoc.com/log
 ||log.ttbc-hcm.gov.vn^
-||gpsvisualizer.com/ip2country.js
 &&sub19=undefined&sub20=undefined
 &action=js_stats
 &ev=PageView&
@@ -35765,7 +35768,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 |http://r.i.ua^
 |https://r.i.ua^
 # Easyprivacy, parsed and mirrored by https://firebog.net
-# Updated 28AUG26 from https://easylist.to/easylist/easyprivacy.txt
+# Updated 31AUG26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
 07b3.pandasuite.io
 0ddf.pandasuite.io
@@ -40814,6 +40817,7 @@ analytics.adliners.de
 analytics.adobe.io
 analytics.adobe.ly
 analytics.adultswim.co.uk
+analytics.afirstsoft.cn
 analytics.agenedia.com
 analytics.agoda.com
 analytics.ahrefs.dev
@@ -43253,6 +43257,7 @@ be.slowmographer.co
 bestboundary.com
 bestbuy.actonservice.com
 bestclimbers.net
+bestcoffeemachine.net
 bestill.help.no
 bestinfo.bluetrustloans.com
 bestshoesboot.com
@@ -47426,6 +47431,7 @@ drumfills.com
 druzja.canmart.co.kr
 drvive.lamoda.ru
 drydrum.com
+dryerwasher.com
 dryvit.actonservice.com
 ds-aksb-a.akamaihd.net
 d.santemagazine.fr
@@ -49352,6 +49358,7 @@ fiimox.lebenskraftpur.de
 filament-stats.herokuapp.com
 filbrandtco.actonservice.com
 filemobile.actonservice.com
+fileshareengine.com
 files.info.posteitaliane.it
 files.urlinsgroup.com
 fillthemap.com
@@ -49380,6 +49387,7 @@ fipsta.ravensberger-matratzen.de
 fipsta.urbanara.at
 fipsta.urbanara.co.uk
 fipsta.worldfitness.de
+fireanalytics.firestream.to
 firebaselogging.googleapis.com
 firebaselogging-pa.googleapis.com
 firecatfilms.com
@@ -53712,6 +53720,7 @@ jumpto.use-beez.com
 jun23.madeindesign.de
 jupiterhealth-app.hotdoc.com.au
 justconfig.com
+justfordocs.com
 justicejudo.com
 justlagoon.com
 justpickaname.com
@@ -60379,6 +60388,7 @@ obseu.netgreencolumn.com
 obs.greencolumnblog.com
 obsidiangems.com
 obs.jollyoutdoorjogger.com
+obs.sd4823.spglobal.com
 obs.system1onesource.com
 obtfhl.bellemaison.jp
 oca.microsoft.com
@@ -61328,6 +61338,7 @@ performance-logger.minted.com
 performanceplay.co.kr
 performantcorp.actonservice.com
 pergeroni.openapp.link
+permagroove.com
 permission.au.actonservice.com
 permutive.app
 perr.h-cdn.com
@@ -61504,6 +61515,7 @@ pixels.zalify.com
 pixel-tracker.com
 pixeltrouble.com
 pixel.tuko.co.ke
+pixel.uppromote.com
 pixelvariety.com
 pixel.veritone-ce.com
 pixel.videohub.tv
@@ -61558,6 +61570,7 @@ planebasin.com
 plans.ceteraretirement.com
 plans.fundtherebuild.com
 plantcourse.com
+plantscafe.net
 pla.pearlinsurance.com
 plas.imfeld.dev
 pl.astro-akatemia.fi

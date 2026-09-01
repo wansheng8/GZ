@@ -3,16 +3,16 @@
   "min_confidence": 0.0,
   "allow_modifier": false,
   "dns_eligible_network_rules": 0,
-  "dns_rejected_network_rules": 14471,
+  "dns_rejected_network_rules": 14462,
   "by_eligibility": {
-    "REJECT": 12940,
-    "CONDITIONAL": 1531
+    "REJECT": 12934,
+    "CONDITIONAL": 1528
   },
   "by_reason": {
-    "css_rule": 2551,
-    "path_rule": 4693,
-    "domain_modifier": 1531,
-    "untranslatable": 5687,
+    "css_rule": 2552,
+    "path_rule": 4685,
+    "domain_modifier": 1528,
+    "untranslatable": 5688,
     "script_rule": 9
   }
 }
