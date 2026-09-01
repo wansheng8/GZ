@@ -21,8 +21,8 @@ from typing import Optional
 _PARAM_OPTION_RE = re.compile(r"\$([^$]*)$")
 # 元素隐藏 / 扩展语法分隔符（按长度优先排列，带 @ 的例外形式在前）
 # 覆盖：uBO/ABP 的 ##、#@#、#?#、#@?#；AdGuard 扩展元素规则 #$#、#@$#；
-#      AdGuard 注入 #%#、#@%#。
-_ELEMENT_SEP_RE = re.compile(r"\s*(#@\$#|#\$#|#@%#|#%#|#@\?#|#\?#|#@#|##)\s*")
+#      AdGuard 注入 #%#、#@%#；AdGuard v5.3+ HTML 过滤 $$（[domains]$$selector）。
+_ELEMENT_SEP_RE = re.compile(r"\s*(#@\$#|#\$#|#@%#|#%#|#@\?#|#\?#|#@#|##|\$\$)\s*")
 # 脚本注入标识（uBO +js() / script:inject；AdGuard #%#//scriptlet()）
 _SCRIPTLET_RE = re.compile(
     r"#(?:@|@\?)?#.*\bscript:(?:inject|append|set(?:-const)?|json-prune)\b"
@@ -174,8 +174,8 @@ def _detect_kind(raw: str) -> str:
     if m:
         sep = m.group(1)
         after = raw[m.end():].lstrip()
-        # uBO HTML 过滤（example.com##^script:has-text(...)）：## 之后紧跟 ^
-        if sep == "##" and after.startswith("^"):
+        # HTML 过滤：uBO/AdGuard 的 ##^、例外 #@#^，以及 AdGuard v5.3+ 的 $$ 分隔符
+        if (sep in ("##", "#@#") and after.startswith("^")) or sep == "$$":
             return "html"
         # AdGuard JS 注入（#%#var ... / #@%#var ...）
         if sep in ("#%#", "#@%#"):

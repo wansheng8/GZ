@@ -109,6 +109,19 @@ def test_parse_html_filter_kind():
     assert r.kind == "html" and r.domains == ["example.com"]
 
 
+def test_parse_adguard_dollar_html_filter():
+    r = parse_line('m.sm.cn$$div[ad_dot_url="adclick"]')
+    assert r is not None
+    assert r.kind == "html" and r.domains == ["m.sm.cn"]
+    assert not r.is_exception
+
+
+def test_parse_exception_html_filter():
+    r = parse_line("example.com#@#^script:has-text(NREUM)")
+    assert r is not None
+    assert r.kind == "html" and r.is_exception
+
+
 def test_normalize_option_order():
     a = parse_line("||x.com^$third-party,script")
     b = parse_line("||x.com^$script,third-party")
