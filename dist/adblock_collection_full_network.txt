@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 724707
+! Total Rules: 724709
 ! ------------------------------------------
 -ads-manager/$domain=~wordpress.org
 -ads/assets/$script,domain=~web-ads.org
@@ -213062,6 +213062,8 @@ xhtml?$domain=kanshu8.net
 ||hussarvicunas.com^
 ||huxzgdfmeqlgv.online^
 ||thy7v872x26qot4.cfd^
+||aweyqleerrwm.top^
+||canidquott.shop^
 ||getsocial.io^
 ||yandex.st^
 ||snssdk.com/bds/feed/stream/$replace=/ad_info//
@@ -540774,7 +540776,7 @@ fd3e:4f5a:5b81::1              dns.msftncsi.com
 #有问题可以在文件里搜索关键词
 #例如"toutiao(头条)"，"MIUI xiaomi (小米)"，"reward(奖励)"。
 #在相应行的开头加个"#"号
-#更新时间: 2026-09-02 01:40:46
+#更新时间: 2026-09-02 11:29:23
 127.0.0.1 localhost
 ::1 localhost
 ::1 ip6-loopback
