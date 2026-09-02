@@ -3,71 +3,47 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31150
+! Total Rules: 31088
 ! ------------------------------------------
 ||clickiocdn.com/t/$third-party
 ||ligatus.com^$third-party
 ||push-notifications.top^$third-party
 ||pushinpage.com^$third-party
 ||wpushsdk.com^$third-party
-||amazonaws.com/sc-tagmanager/nox-formulatv.js$domain=formulatv.com
 ||answers.sg^$domain=mustsharenews.com
-||azureedge.net/js/cookie_notificacao.min.js
 ||beehiiv.com^$domain=marktechpost.com
 ||contentexchange.me^$third-party
 ||disqus.com/api/*/listRelated.json?
 ||groupon.com^*/affiliate_widget/$third-party
-||jsdelivr.net/gh/accept-all/cdn/banner.js
 ||leadfamly.com^$third-party
-||plista.com^$third-party
 ||purevpn.com/loadGdprView
-||storage.googleapis.com/om-gravito-cmp/$script
-||surveymonkey.com/fides.js
 ||vuukle.com/widgets/quiz.html$third-party
-||wp.com/www.feedburner.com/fb/$image
 ||wpengine.com/wp-content/mu-plugins/wpengine-dotcom/audio/
-||yimg.com^*/guce.js
-||zergnet.com^$third-party
-||unpkg.com/cookie-though
-||msn.com/bundles/v1/homePage/latest/experiences_conditional-banner
 ||artdaily.cc/subscribe.html
-||celebjihad.com^$third-party
 ||dailymail.co.uk/api/web-push-notification/
 ||designtaxi.com/css/remodal.css
 ||immoweb.be/250/js/thorConsent.js
-||indiatimes.com/pn/
-||investing.com/gcode/
-||myanimelist.net/js/cmp.js
 ||timesnownews.com/sw.js
-||ultimedia.com/js/common/notification.js
 ||jzzo.com/jss/cp01.js
 ||pornve.com/img/300x250f.gif
-||rule34.xxx/images/shirt2.jpg
-||t.ly/js/sweetalert.min.js
 ||7plus.com.au/js/CookieNotice
-||googletagmanager.com/gtm.js$script,domain=stihl.fr
 ||hsleadflows.net^$third-party
 ||notifpush.com^$third-party
 ||r42tag.com^$third-party
 ||aswpsdkus.com^$third-party
 ||pushmaster-cdn.xyz^$third-party
 ||urbanairship.com^$third-party
-||akamaihd.net/cpmt/
-||alibaba.com/sw.js
 ||apester.com^$third-party
 ||app.termly.io/resource-blocker/
 ||appspot.com/newsletter/dhtml?
 ||blink.net/json/$xmlhttprequest
 ||californiatimes.com/gdpr/
-||civicscience.com/widget/jspoll/$third-party
 ||confirmit.com^$third-party
 ||consensu.org/gdpr/$third-party
 ||consentmanager.net^$important,script,domain=mediaite.com
 ||convertflow.co^$third-party
 ||cookiechimp.com^$third-party
-||copyrightcontent.org^$third-party
 ||eventful.com^$third-party
-||exitintel.com^$third-party
 ||factors.ai^$third-party
 ||feedblitz.com^$third-party
 ||getglue.com^$third-party
@@ -79,7 +55,6 @@
 ||iubenda.com^$third-party
 ||jobvite.com/widget20.js$third-party
 ||lemrock.com^$third-party
-||lightboxcdn.com/vendor/$script,third-party
 ||linkwithin.com^$third-party
 ||listrakbi.com/scripts/$script,domain=ninjakitchen.com
 ||livechatinc.com/widget/static/media/
@@ -98,7 +73,6 @@
 ||skysa.com^$third-party
 ||swiftypecdn.com^$third-party,domain=~swiftype.com
 ||tarteaucitron.io/load.js
-||tinypass.com^$domain=artnews.com|bbc.com|bbcgoodfood.com|billboard.com|brusselstimes.com|businessinsider.com.pl|connexionfrance.com|deadline.com|hollywoodreporter.com|nationalobserver.com|npr.org|outsideonline.com|prospectmagazine.co.uk|rawstory.com|refinery29.com|rollingstone.com|sifted.eu|stuff.co.nz|telegraph.co.uk|the42.ie|thedailybeast.com|thelogic.co|thenation.com|variety.com|wwd.com
 ||transcend.io^$third-party
 ||usercentrics.eu^$third-party
 ||userway.org/widgetapp/sounds/
@@ -111,18 +85,11 @@
 ||recogerconsentimiento.com^$third-party
 ||izinal.com^$third-party
 ||channel.io/plugin/$media
-/ccpa_iframe?$domain=dropbox.com
-||fc2.com/share/js/gdpr/
-||freedownloadmanager.org/js/th_win_
 ||freeprivacypolicy.com^$third-party
-||gofundme.com/*/widget/$subdocument,third-party
-||goodreads.com/review/custom_widget/$third-party
 ||hindustantimes.com^*/ht-notification-
 ||icgp.ie/ionic-consent/
-||inews.co.uk/wp-content/client-mu-plugins/piano/piano-loader.js
 ||khanacademy.org/api/internal/graphql/getActiveDonationAsks
 ||neighbourly.co.nz/stuff/
-||newegg.com/newegg/survey/
 ||news.google.com/swg/$third-party
 ||rgshows.me/js/devtoolsdetector.js
 ||slashdot.org^$third-party
@@ -135,10 +102,8 @@
 ||bnamic.com/newsletter-subscription.js
 ||fideuram.it/js/cookie-manager/cookie-manager.js
 ||tio.ch/js/api.push.js
-||nikkei.com/edit/topic/briefing_newsletter_
 ||interia.pl/rodo-iframe
 ||lmcdn.ru/static/*/assets/x-cookie-notify$domain=lamoda.by|lamoda.kz|lamoda.ru
-||mirtesen.ru^$third-party
 ||bdstatic.com/linksubmit/push.js
 ||1worldonline.com^$third-party
 ||24smi.org^$third-party
@@ -174,7 +139,6 @@
 ||blogcatalog.com^$third-party
 ||blogengage.com^$third-party
 ||bloglines.com^$third-party
-||blogtopsites.com^$third-party
 ||bookmrk.us^$third-party
 ||booster3d.com^$third-party
 ||braze.com^$third-party
@@ -191,7 +155,6 @@
 ||collectconsent.com^$third-party
 ||comply-app.com^$third-party
 ||cmp.computerworld.pl^$script
-||confirmsubscription.com^$third-party
 ||conforama-push.com^$third-party
 ||conscent.in^$third-party
 ||consensu.io^$third-party
@@ -260,7 +223,6 @@
 ||engage.im^$third-party
 ||enquoted.com^$third-party
 ||epeex.com^$third-party
-||evolok.net^$third-party
 ||face-push.com^$third-party
 ||fakeimg.pl^$third-party
 ||falconcookie.de^$third-party
@@ -298,7 +260,6 @@
 ||gravityrd-services.com^$third-party
 ||share.gree.jp^$third-party
 ||faves.grow.me^$third-party
-||healthgrades.com^$third-party
 ||hnlike.com^$third-party
 ||honcode.ch^$third-party
 ||hoodline.com^$third-party
@@ -369,7 +330,6 @@
 ||opencmp.net^$script,third-party
 ||opiniac.com^$third-party
 ||opinionbar.com^$third-party
-||opinionstage.com^$third-party
 ||opmnstr.com^$third-party
 ||optimonk.com^$third-party
 ||optinly.net^$third-party
@@ -390,7 +350,6 @@
 ||phoenix-widget.com^$third-party
 ||cdn.cookie.pii.ai^$third-party
 ||pippity.com^$third-party
-||placehold.co^$third-party
 ||embed.polymarket.com^$third-party
 ||popmechanic.ru^$third-party
 ||popupsmart.com^$third-party
@@ -566,7 +525,6 @@
 ||worldpush.co^$third-party
 ||wpcc.io^$third-party
 ||wpush.biz^$third-party
-||wurfl.io^$third-party
 ||wwclicknews.club^$third-party
 ||wwclicktm.club^$third-party
 ||x-c.eu^$third-party
@@ -582,7 +540,6 @@
 ||joemonster.org/i/js/cmp.js
 ||laprovence.com/scripts/refresh.js
 ||linker.ba^$third-party
-||ocdn.eu/blikk_static/blikk/consent_v2/
 ||smart.idmnet.pl/consent/
 ||cookiehub.net^$~stylesheet,third-party
 ||cookies.fo^$third-party
@@ -647,13 +604,10 @@
 ||nojazz.eu/nl/client/drimble.nl/init.js
 ||omnisnippet1.com^$domain=miuratakuya.store|yourcelebritymagazines.com
 ||api.postscript.io/v2/public/popups/
-||powr.io/popup/u/
 ||secondstreetapp.com/embed/$subdocument,third-party
 ||techbeat.com/wp-content/custom-php/$third-party
 ||widget.thuiswinkel.org^$third-party
 ||youappi.com/widget/$third-party
-||youspacko.com/com/$third-party
-||zotabox.com^*/widgets.js$third-party
 ||pinterest.com/sw.js
 ||imyfone.com/*/notification/$script
 ||lf3-reading.fqnovelpic.com^$app=com.dragon.read,important
@@ -678,13 +632,11 @@
 ||spacenews.com/wp-content/plugins/newspack-plugin/dist/content-gate-metering.js$script,domain=spacenews.com
 ||breedingmoms.com/js/top.js
 ||dailypioneer.com/images/top.png
-||filmaffinity.com/images/arrow-up2.png
 ||jefftucker.org/travels/res/pagetop.svg
 ||myip.ms/css/red/images/nav_
 ||adobe-campaign.com^$third-party
 ||api.producthunt.com/widgets/$third-party
 ||api.search.live.net^$third-party,domain=~bing.com
-||bunnycdn.ru/assets/_bnx/
 ||cdn.to2.net/sdk/$third-party
 ||ctctcdn.com/js/signup-form-widget/$third-party
 ||cursors-4u.net^$third-party,domain=~cursors-4u.com
@@ -710,7 +662,6 @@
 ||magimg.com/random?$third-party
 ||mail.bonnier-subscriptions.com^$subdocument
 ||mailjet.com/widget/$third-party
-||mobj.space/js/appsdiscover/$third-party
 ||mozo.com.au/widgets/$third-party
 ||my.sendinblue.com/users/subscribe/$third-party
 ||nrcdn.com/custom-script/$third-party
@@ -728,7 +679,6 @@
 ||teamautofollow.com/modules/mod_jtwitter/
 ||timesprayer.today/widget_frame.php
 ||timez.ai/widgets/$third-party
-||tosshub.com/sites/player/media/sana-widget/sana-min.js
 ||tryinteract.com^$third-party,domain=~savannahgilbo.com
 ||tstatic.net/js/copy.js
 ||ui-widgets.preezie.io/apps/widget/preezie-cta.esm.js
@@ -736,7 +686,6 @@
 ||widget.gleamjs.io^$script,third-party,domain=~gleam.io
 ||wishpond.com^$third-party,domain=~markanthonywineandspirits.ca
 ||ytimg.com^*/www-subscribe-widget-$script
-||ziprecruiter.com/jobs-widget/$third-party
 ||app.actionfeed.net/app/popup.js
 ||acquire.io/assets/sound/
 ||apex.live/media/$media
@@ -827,7 +776,6 @@
 ||warnerbros.it^*/top.png
 ||ilprimatonazionale.it^*/NEWSLETTER.png
 ||superguidatv.it^*/head-tgCom.
-||zeusnews.it/pic/04.png
 ||column.valx.jp/wp-content/themes/jin/img/bnr_wpc.png
 ||eowf.alc.co.jp/content/js/popup_control.js
 ||exactdn.com/wp-content/themes/linxas/js/popup.js$domain=linxas.shop
@@ -916,7 +864,6 @@
 ||lilysilk.com^*/cookie.min.js
 ||liquidweb.com/ajax/dataconsentcookies
 ||mad-daily.com^*/cp-module-
-||marketwatch.com/asset/ace/djcmp.
 ||masaltos.com/js/cookies-
 ||medicalnewstoday.com/api/ccpa
 ||mobilecontent.costco.com/consent-ui/costco-consent-manager.iife.js$domain=costco.ca|costcobusinesscentre.ca
@@ -1016,7 +963,6 @@
 ||elisa.fi/consent-management/
 ||finnair.com/a/consent/v1/cookies/
 ||korkeinoikeus.fi/webcomponents/oh-internet-seuranta/evastekysely.html
-||korpiaho.net/wp-content/plugins/talentree-gdpr/js/main.js$script
 ||krookmedia.fi/wp-content/plugins/cookie-law-info/$script,domain=krookmedia.fi
 ||multitronic.fi/en/ajax/getConsentForm/
 ||pirkkalainen.fi/wp-content/plugins/cookie-law-info/legacy/public/js/cookie-law-info-public.js
@@ -1099,13 +1045,11 @@
 ||afrik21.africa/wp-content/themes/afrik21/images/news.png
 ||app.viralsweep.com^$domain=insidethemagic.net
 ||arsenalinsider.com/subscribe/
-||chan.sankakucomplex.com/javascripts/sp/s-new.js
 ||chemistwarehouse.com.au/edm_collector.html
 ||dw.com/webapi/iframes/widget/
 ||electricfencing.co.uk/prnewsletterpopup/
 ||ewnews.com/wp-content/themes/dw-focus/newsletter.png
 ||form.flodesk.com^$domain=stacker.com
-||form.jotform.com^$domain=premierchristian.news
 ||forms-content.sg-form.com^$domain=12tomatoes.com
 ||forms.blackhawks.com/newsletter-signup$subdocument
 ||hartmannreport.com/embed
@@ -1121,10 +1065,8 @@
 ||thejewishstar.com/images/enews-ad.png
 ||waterfordwhispersnews.com/wp-content/themes/therex-child/js/_newsletter-article-signup.js
 ||widgets.cpr.org/embeds/$domain=denverite.com
-||astro-datamation.pages.dev/_astro/CardNewsletterSubscribe.$script
 ||d2cmvbq7sxx33j.cloudfront.net/email/prod_amnews_iframe_section_braze.html
 ||default.salsalabs.org/api/widget/
-||downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js$script,third-party
 ||justone.ai/embed/csd.html$subdocument
 ||mailerlite.com/js/universal.js
 ||mailmojo.no/sdk.js
@@ -1141,7 +1083,6 @@
 ||annahar.com/assets/js/notifications.js
 ||astian.org/?push_notification_sw
 ||diabetes.co.uk/wp-content/themes/spotlight/src/sw.js
-||gadgetsnow.com/sw.cms
 ||iol.co.za/sw.js
 ||kogan.com/sw.js
 ||latestdeals.co.uk/sw.js
@@ -1151,12 +1092,10 @@
 ||renaultsport.com/spip.php?page=sw.js
 ||rottentomatoes.com/service-worker/sw.js
 ||rt.com/homescreen-sw.js
-||sammobile.com/wp-content/plugins/sam-push-notifications/
 ||seattletimes.com/wp-content/plugins/st-user-messaging/$script
 ||sportskeeda.com/js/production/web-notifications/
 ||techwalla.com/push-service-worker.js
 ||unherd.com/push-worker.js
-||weather.com/*.MedalliaSurvey.
 ||wepc.com/sp-push-worker-fb.js
 ||0564.ua/assets/d6ade384/js/alertsWidget.js
 ||ad-hoc-news.de/js/push.js
@@ -18699,7 +18638,6 @@ catawiki.com##+js(set-cookie, enable_marketing_cookies, false)
 onderwijsvacaturebank.nl##+js(set-cookie, enablecookie, false, , reload, 1)
 dragshop.com##+js(set-cookie, enabled_cookie_accept_cookies, 0, , reload, 1)
 endgame.id##+js(set-cookie, endgame-accept-policy, true)
-liisakoski.com##+js(set-cookie, epCookieConsent, 0)
 anderweltverlag.com,bikepro.de,biona-shop.de,camokoenig.de,fantecshop.de,forcetools-kepmar.eu,hair-body-24.de,hexen-werkstatt.shop,holland-shop.com,kaffeediscount.com,kierratyskeskuspatina.fi,kreativverliebt.de,messer-lagerverkauf.de,nanuko.de,octavio-shop.com,schoonmaakgroothandelemmen.nl,shop-naturstrom.de,shopforyou47.de,vamos-skateshop.com,xn--digitaler-notenstnder-m2b.com,zahnputzladen.de##+js(set-cookie, epCookieConsent, 0, , reload, 1)
 e-pole.pl##+js(set-cookie, epole_cookies_settings, true)
 epp.eu##+js(set-cookie, eppcookie, 1, , reload, 1)

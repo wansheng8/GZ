@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 24197
+! Total Rules: 24189
 ! ------------------------------------------
 ||bilsyndication.com/plugins/cmp$script
 ||pubnation.com/tags/gdpr$script
@@ -16,7 +16,6 @@
 spellsalsa.com$domain=interestingengineering.com
 ||id-ward.com/static/idw_plugin$script
 /klaro/*$domain=salesviewer.com
-||tagcommander.com/privacy$script,domain=~labanquepostale.fr
 ||intelligentscissors.com/v2$script
 ||spiffymachine.com/v2/$script
 ||etracker.de/optin_overlay.php$script
@@ -27,7 +26,6 @@ spellsalsa.com$domain=interestingengineering.com
 ||shopify.com/shopifycloud/privacy-banner$script
 ||trustcommander.net/privacy$script,domain=~tf1info.fr|~tf1.fr|~edeka.de|~ravensburger.de|~ravensburger.co.uk
 ||heymatic.com/assets/cmp$script
-/user-consent-management/*$domain=americanexpress.com
 /cf-analytics/*$domain=chatfuel.com
 cmp.dmgmediaprivacy.co.uk$domain=~metro.co.uk
 thirstylettuce.com$domain=thewindowsclub.com
@@ -35,8 +33,6 @@ thirstylettuce.com$domain=thewindowsclub.com
 ||zoneadsl.com/clientscript/cnil.min.js$script
 ||cc.dalten.cz/ccJs$script
 /cmp.$domain=o2.cz
-||seznam.cz/js/cmp2/scmp-external.js$script
-/acmp.js$domain=ameblo.jp
 ||rodo.agora.pl/agreement/check$script
 ||cc.diewebsitemacherei.de/app.js$script
 ||consent.digiapi.com/consent.js$script
@@ -198,7 +194,6 @@ cmp.uniconsent.com$domain=~photopea.com
 ||cdn.reeltime.no/pm_assets/privacy/$script
 ||ftcguardian.com/privacy-update$script
 ||isgprivacy.cbsi.com/dist/optanon$script,domain=~cbsnews.com|~startrek.com|~insideedition.com|~cbslocal.com|~etonline.com|~cc.com
-||cmp.nextday.media/cmp$script,domain=~vi.nl
 cmp.faktor.mgr.consensu.org$domain=~consent.talpanetwork.com
 ||gravito.net/alehdetcmp$script
 ||ustatik.com/public/cmp$script
@@ -253,7 +248,6 @@ a.svtrd.com$domain=~ns.nl
 /gtm.js?id=GTM-TCT2RJ$domain=fullrate.dk
 datenschutz.js^$domain=wumpus-gollum-forum.de
 bho_infobar.js^$domain=ruecken-zentrum.de
-/consent/message.js$domain=ksta.de
 /cui-cookie-policy$domain=congstar.de
 /privacy/popup.js$domain=cdaction.pl
 /firebox-gdpr.js$domain=thelittleboxoffice.com
@@ -308,12 +302,10 @@ cmp.parkers.co.uk$domain=parkers.co.uk
 lovelydrum.com$domain=insidermonkey.com
 /intuCookieConsent.js$domain=intu.co.uk
 /gcb/*$domain=gallup.com
-/gdpr/native-message$domain=wiwo.de
 /getdisclaimer$domain=wikifolio.com
 /echonetcookie$domain=muenchenticket.de
 /cookies-anekis.js$domain=premiosopenbank.com
 cookie-consent*$domain=latoisondor.com
-/cmp-v2/*$domain=youmath.it
 /permission/*$domain=1und1.de
 /bwx-cookie-consent.js$domain=nosta.com
 cookie_settings*$domain=aerotime.aero
@@ -382,7 +374,6 @@ toestemmingen.snp.nl$domain=snp.nl
 consent.maerkischekiste.de$domain=maerkischekiste.de
 /it_nsc.min.js$domain=nonsolocap.it
 /mdv.cookie.js$domain=biehler-cycling.com
-/alert-info_cn.js$domain=asus.com.cn
 /cookie-settings-manager$domain=aok.de
 /Ronis_Cookie/*$domain=slaters.co.uk
 /Hmm24_Cookiebanner/*$domain=zaehlerschrank24.de
@@ -466,6 +457,7 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 /otBannerSdk.js$domain=winfuture.de
 ||asusworld.it/scripts/CookiesAgreement/script.js$script
 ||pandora.net/it-it/cookie-policy$xmlhttprequest
+||korpiaho.net/wp-content/plugins/talentree-gdpr/js/main.js$script
 ###stickyCookieBar
 ##.cookiebar-bar:not(body):not(html)
 ~anadibank.com,~lotusbakeries.nl,~itextpdf.com###sliding-popup.sliding-popup-bottom

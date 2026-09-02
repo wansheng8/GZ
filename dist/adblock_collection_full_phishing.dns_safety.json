@@ -3,11 +3,15 @@
   "min_confidence": 0.0,
   "allow_modifier": false,
   "dns_eligible_network_rules": 0,
-  "dns_rejected_network_rules": 10,
+  "dns_rejected_network_rules": 38465,
   "by_eligibility": {
-    "REJECT": 10
+    "REJECT": 38463,
+    "CONDITIONAL": 2
   },
   "by_reason": {
-    "untranslatable": 10
+    "path_rule": 437,
+    "domain_modifier": 2,
+    "untranslatable": 38024,
+    "non_network_rule": 2
   }
 }

@@ -244,3 +244,58 @@ sources:
     compatible: [adguard, hosts]
     dns_policy:
       level: strict-safe
+  # ----------------- uBO 官方过滤器（uAssets） -----------------
+  - name: uBO filters – Ads
+    url: https://ublockorigin.github.io/uAssets/filters/filters.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: uBO filters – Badware risks
+    url: https://ublockorigin.github.io/uAssets/filters/badware.txt
+    category: malware
+    compatible: [adguard, abp, ubo]
+  - name: uBO filters – Privacy
+    url: https://ublockorigin.github.io/uAssets/filters/privacy.txt
+    category: privacy
+    compatible: [adguard, abp, ubo]
+  - name: uBO filters – Quick fixes
+    url: https://ublockorigin.github.io/uAssets/filters/quick-fixes.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: uBO filters – Unbreak
+    url: https://ublockorigin.github.io/uAssets/filters/unbreak.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: uBO lan-block (Block Outsider Intrusion into LAN)
+    url: https://ublockorigin.github.io/uAssets/filters/lan-block.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  # ----------------- AdGuard 官方过滤器 -----------------
+  - name: AdGuard – Ads
+    url: https://filters.adtidy.org/extension/ublock/filters/2.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: AdGuard – Mobile Ads
+    url: https://filters.adtidy.org/extension/ublock/filters/11.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: AdGuard/uBO – URL Tracking Protection
+    url: https://ublockorigin.github.io/uAssets/filters/privacy-removeparam.txt
+    category: privacy
+    compatible: [adguard, abp, ubo]
+  - name: AdGuard – Chinese
+    url: https://filters.adtidy.org/extension/ublock/filters/224.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  # ----------------- 官方恶意软件/钓鱼列表 -----------------
+  - name: Online Malicious URL Blocklist
+    url: https://malware-filter.gitlab.io/urlhaus-filter/urlhaus-filter-ag-online.txt
+    category: malware
+    compatible: [adguard, abp, ubo]
+  - name: Phishing URL Blocklist
+    url: https://malware-filter.gitlab.io/phishing-filter/phishing-filter.txt
+    category: phishing
+    compatible: [adguard, abp, ubo]
+  - name: Dan Pollock's hosts
+    url: https://someonewhocares.org/hosts/hosts
+    category: network
+    compatible: [hosts]
