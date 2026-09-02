@@ -1,2 +1,3 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 0
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 1
+:: consent.cmp.oath.com

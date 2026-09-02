@@ -1,13 +1,13 @@
 {
   "name": "adblock_collection_security",
-  "total": 15,
+  "total": 10,
   "by_category": {
-    "phishing": 15
+    "phishing": 10
   },
   "by_kind": {
-    "network": 15
+    "network": 10
   },
   "by_source": {
-    "ScamBlocklist (adguard)": 15
+    "ScamBlocklist (adguard)": 10
   }
 }

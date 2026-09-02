@@ -3,11 +3,88 @@
   "failures": [],
   "warnings": [],
   "metrics": {
+    "total_rules": 888485,
+    "dns_domains": 510015,
+    "source_counts": {
+      "oisd": 269875,
+      "Hagezi DNS Pro Plus": 249687,
+      "217heidai adblockdns": 214885,
+      "ADrules DNS": 198427,
+      "ADrules DNS (gp mirror)": 198427,
+      "AdGuardSDNSFilter": 179486,
+      "ADrules AdRules": 141417,
+      "Anti-AD Domains": 108599,
+      "Shadowrocket to AdGuardHome": 100977,
+      "Anti-AD (adguard)": 100419,
+      "ADrules anti-AD": 94832,
+      "Anti-AD Easylist": 94832,
+      "Anti-AD (easylist)": 94832,
+      "StevenBlack Hosts": 82894,
+      "EasyList (easylist.to)": 80469,
+      "EasyList (ABP)": 80468,
+      "ADrules Easylist": 80462,
+      "ADrules EasyPrivacy": 55998,
+      "Fanboy Annoyance": 53761,
+      "EasyPrivacy (ABP)": 53431,
+      "Firebog Easylist Hosts": 46264,
+      "Firebog Easyprivacy Hosts": 42982,
+      "KADhosts": 42469,
+      "Hagezi DNS Light": 41604,
+      "Fanboy CookieMonster": 25169,
+      "ADrules I-Dont-Care-About-Cookies": 24319,
+      "ADrules HalfLife": 22207,
+      "HalfLife list (jsdelivr)": 22207,
+      "ADrules EasyListChina": 19343,
+      "EasyList China (ABP)": 19343,
+      "Fanboy Social": 13851,
+      "10007_auto reward": 12343,
+      "banbendalao ADgk": 9153,
+      "AdAway Hosts": 8584,
+      "217heidai adblockdnslite": 5338,
+      "Peter Lowe's Blocklist": 3555,
+      "Disconnect Simple Ad": 2703,
+      "Accelerate-Hosts": 1885,
+      "ADrules Cjx-Annoyance": 1840,
+      "cjx-annoyance": 1840,
+      "AWAvenue-Ads-Rule Hosts": 1776,
+      "ADrules ChengFeng": 1169,
+      "ScamBlocklist (adguard)": 957,
+      "AWAvenue-Ads-Rule": 902,
+      "BlueSkyXN skyrules": 142,
+      "fqnovel adrules": 50,
+      "Disconnect Simple Tracking": 37,
+      "LocalRules": 10
+    },
+    "category_counts": {
+      "network": 724690,
+      "privacy": 85340,
+      "annoyance": 31148,
+      "cookie": 24197,
+      "social": 13572,
+      "whitelist": 9518,
+      "css": 10,
+      "phishing": 10
+    },
+    "root_domain_blocks": 304112
+  },
+  "diff": {
+    "total_rules": {
+      "current": 888485,
+      "previous": 1321247,
+      "delta": -432762,
+      "percent": -32.75
+    },
+    "dns_domains": {
+      "current": 510015,
+      "previous": 876378,
+      "delta": -366363,
+      "percent": -41.8
+    }
+  },
+  "previous": {
     "total_rules": 1321247,
     "dns_domains": 876378,
     "source_counts": {
-      "Adblock Rule Collection DNS": 805959,
-      "5whys AdGuardHome Rules": 548493,
       "oisd": 269901,
       "Hagezi DNS Pro Plus": 249733,
       "217heidai adblockdns": 214876,
@@ -68,20 +145,5 @@
       "css": 10
     },
     "root_domain_blocks": 425390
-  },
-  "diff": {
-    "total_rules": {
-      "current": 1321247,
-      "previous": null,
-      "delta": null,
-      "percent": null
-    },
-    "dns_domains": {
-      "current": 876378,
-      "previous": null,
-      "delta": null,
-      "percent": null
-    }
-  },
-  "previous": null
+  }
 }
