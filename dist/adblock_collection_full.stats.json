@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full",
-  "total": 888502,
+  "total": 888503,
   "by_category": {
     "network": 724707,
     "privacy": 85340,
     "annoyance": 31148,
-    "cookie": 24197,
+    "cookie": 24198,
     "social": 13572,
     "whitelist": 9518,
     "css": 10,
     "phishing": 10
   },
   "by_kind": {
-    "network": 767850,
+    "network": 767851,
     "css": 113065,
     "scriptlet": 7473,
     "html": 113,
@@ -43,7 +43,7 @@
     "Firebog Easyprivacy Hosts": 42982,
     "KADhosts": 42469,
     "Hagezi DNS Light": 41604,
-    "Fanboy CookieMonster": 25169,
+    "Fanboy CookieMonster": 25170,
     "ADrules I-Dont-Care-About-Cookies": 24319,
     "ADrules HalfLife": 22207,
     "HalfLife list (jsdelivr)": 22207,

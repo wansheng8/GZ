@@ -54,10 +54,6 @@ sources:
     compatible: [adguard, abp, ubo]
 
   # ----------------- 其他综合/中文列表 -----------------
-  - name: GOODBYEADS
-    url: https://raw.githubusercontent.com/8680/GOODBYEADS/master/rules.txt
-    category: network
-    compatible: [adguard, abp, ubo]
   - name: ADrules DNS
     url: https://adrules.top/dns.txt
     category: network
@@ -154,10 +150,6 @@ sources:
     compatible: [hosts]
     dns_policy:
       level: strict-safe
-  - name: HalfLife ad
-    url: https://raw.githubusercontent.com/o0HalfLife0o/list/master/ad.txt
-    category: network
-    compatible: [adguard, abp, ubo]
   - name: 217heidai adblockdnslite
     url: https://raw.githubusercontent.com/217heidai/adblockfilters/main/rules/adblockdnslite.txt
     category: network

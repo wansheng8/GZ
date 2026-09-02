@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 24197
+! Total Rules: 24198
 ! ------------------------------------------
 ||bilsyndication.com/plugins/cmp$script
 ||pubnation.com/tags/gdpr$script
@@ -466,6 +466,7 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 /otBannerSdk.js$domain=winfuture.de
 ||asusworld.it/scripts/CookiesAgreement/script.js$script
 ||pandora.net/it-it/cookie-policy$xmlhttprequest
+||korpiaho.net/wp-content/plugins/talentree-gdpr/js/main.js$script
 ###stickyCookieBar
 ##.cookiebar-bar:not(body):not(html)
 ~anadibank.com,~lotusbakeries.nl,~itextpdf.com###sliding-popup.sliding-popup-bottom
