@@ -3,8 +3,8 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 888485,
-    "dns_domains": 510015,
+    "total_rules": 888486,
+    "dns_domains": 510016,
     "source_counts": {
       "oisd": 269875,
       "Hagezi DNS Pro Plus": 249687,
@@ -20,8 +20,8 @@
       "Anti-AD Easylist": 94832,
       "Anti-AD (easylist)": 94832,
       "StevenBlack Hosts": 82894,
-      "EasyList (easylist.to)": 80469,
-      "EasyList (ABP)": 80468,
+      "EasyList (easylist.to)": 80470,
+      "EasyList (ABP)": 80469,
       "ADrules Easylist": 80462,
       "ADrules EasyPrivacy": 55998,
       "Fanboy Annoyance": 53761,
@@ -56,7 +56,7 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 724690,
+      "network": 724691,
       "privacy": 85340,
       "annoyance": 31148,
       "cookie": 24197,
@@ -65,85 +65,21 @@
       "css": 10,
       "phishing": 10
     },
-    "root_domain_blocks": 304112
+    "root_domain_blocks": 304113
   },
   "diff": {
     "total_rules": {
-      "current": 888485,
-      "previous": 1321247,
-      "delta": -432762,
-      "percent": -32.75
+      "current": 888486,
+      "previous": null,
+      "delta": null,
+      "percent": null
     },
     "dns_domains": {
-      "current": 510015,
-      "previous": 876378,
-      "delta": -366363,
-      "percent": -41.8
+      "current": 510016,
+      "previous": null,
+      "delta": null,
+      "percent": null
     }
   },
-  "previous": {
-    "total_rules": 1321247,
-    "dns_domains": 876378,
-    "source_counts": {
-      "oisd": 269901,
-      "Hagezi DNS Pro Plus": 249733,
-      "217heidai adblockdns": 214876,
-      "ADrules DNS": 198074,
-      "ADrules DNS (gp mirror)": 198074,
-      "AdGuardSDNSFilter": 179230,
-      "ADrules AdRules": 141310,
-      "Anti-AD Domains": 108385,
-      "Shadowrocket to AdGuardHome": 100764,
-      "Anti-AD (adguard)": 100206,
-      "ADrules anti-AD": 94620,
-      "Anti-AD Easylist": 94620,
-      "Anti-AD (easylist)": 94620,
-      "StevenBlack Hosts": 82894,
-      "EasyList (easylist.to)": 80246,
-      "EasyList (ABP)": 80230,
-      "ADrules Easylist": 80146,
-      "ADrules EasyPrivacy": 55987,
-      "Fanboy Annoyance": 53740,
-      "EasyPrivacy (ABP)": 53427,
-      "Firebog Easylist Hosts": 46264,
-      "Firebog Easyprivacy Hosts": 42982,
-      "Hagezi DNS Light": 41549,
-      "KADhosts": 41255,
-      "Fanboy CookieMonster": 25168,
-      "ADrules I-Dont-Care-About-Cookies": 24319,
-      "ADrules HalfLife": 22207,
-      "HalfLife list (jsdelivr)": 22207,
-      "EasyList China (ABP)": 19331,
-      "ADrules EasyListChina": 19327,
-      "Fanboy Social": 13846,
-      "10007_auto reward": 12343,
-      "banbendalao ADgk": 9153,
-      "AdAway Hosts": 8584,
-      "217heidai adblockdnslite": 5394,
-      "Peter Lowe's Blocklist": 3555,
-      "Disconnect Simple Ad": 2703,
-      "ADrules Cjx-Annoyance": 1840,
-      "cjx-annoyance": 1840,
-      "Accelerate-Hosts": 1818,
-      "AWAvenue-Ads-Rule Hosts": 1776,
-      "ADrules ChengFeng": 1169,
-      "ScamBlocklist (adguard)": 957,
-      "AWAvenue-Ads-Rule": 902,
-      "BlueSkyXN skyrules": 142,
-      "fqnovel adrules": 50,
-      "Disconnect Simple Tracking": 37,
-      "LocalRules": 10
-    },
-    "category_counts": {
-      "network": 1159296,
-      "privacy": 78755,
-      "annoyance": 31108,
-      "cookie": 24060,
-      "whitelist": 14461,
-      "social": 13542,
-      "phishing": 15,
-      "css": 10
-    },
-    "root_domain_blocks": 425390
-  }
+  "previous": null
 }

@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 724690
+! Total Rules: 724691
 ! ------------------------------------------
 -ads-manager/$domain=~wordpress.org
 -ads/assets/$script,domain=~web-ads.org
@@ -213060,6 +213060,7 @@ xhtml?$domain=kanshu8.net
 ||a4.overclockers.ua^
 ||novunu.football-plyus.net^
 ||huxzgdfmeqlgv.online^
+||hussarvicunas.com^
 ||getsocial.io^
 ||yandex.st^
 ||snssdk.com/bds/feed/stream/$replace=/ad_info//
