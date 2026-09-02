@@ -24,43 +24,23 @@
 
 ## 订阅中心
 
-仓库每日 `03:00 UTC` 自动构建并推送，链接长期有效。
-> 国内访问缓慢时，请使用右侧 **jsDelivr CDN** 加速链接。
+仓库每日 `03:00 UTC` 自动构建并推送，**订阅一次、自动更新**，链接长期有效。
+下面链接均可**直接点击跳转订阅地址**，在过滤工具里粘贴该地址即可（或用右键复制链接）。
 
-### 完整版 · 广告过滤器
+| 订阅 | GitHub 源（点击即得） | jsDelivr CDN 加速 |
+| --- | --- | --- |
+| **浏览器专用**（uBO / AdGuard / ABP，一条覆盖广告+隐私+安全） | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt |
+| **DNS · IPv4 hosts**（AdGuard Home / Pi-hole / dnsmasq） | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt |
+| **DNS · IPv6 hosts**（双栈再补订阅这一条） | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt |
+| **单行域名列表**（AdGuard DNS 等域名格式） | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt |
+| **安全专项**（恶意 + 钓鱼，误杀风险低，可选） | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_security.txt |
 
-```text
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt
-```
+**三步上手**
+1. 按你的设备选一行（浏览器选第 1 条，DNS 设备选第 2~4 条）。
+2. 点击链接复制地址（国内访问慢换 CDN 列）。
+3. 在你的过滤工具里「添加自定义过滤列表」并粘贴。
 
-### 完整版 · DNS 过滤器（hosts，推荐 AdGuard Home / Pi-hole）
-
-```text
-# IPv4 hosts
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt
-
-# IPv6 hosts（`:: domain`，双栈请同时订阅）
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt
-```
-
-### 完整版 · 单行域名列表
-
-```text
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt
-```
-
-### 安全专项 · 高置信度类别（独立发行，误杀风险低）
-
-```text
-# 安全合集（恶意 + 钓鱼）
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security_dns.txt
-https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security_domains.txt
-```
+> 仅需安全拦截：单独订阅「安全专项」行即可，绕过完整版的误杀风险。
 
 ---
 
@@ -117,12 +97,14 @@ https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collec
 
 ## 使用指南
 
-- **浏览器插件**（uBO / AdGuard / Adblock Plus）
-  `设置 → 过滤器订阅 → 自定义列表`，粘贴「完整版 · 广告过滤器」链接。
-- **AdGuard Home / Pi-hole / dnsmasq**
-  添加自定义规则列表，粘贴「DNS 过滤器 / 单行域名列表」链接。
-- **双栈网络**：`_dns.txt` 与 `_dns_ipv6.txt` 建议同时订阅，避免 IPv6 绕过。
-- **只想拦安全威胁**：只订阅「安全专项」列表。
+去上方 [订阅中心](#订阅中心) 表格按设备点选即可，常见软件入口：
+
+- **uBlock Origin**：`设置 → 过滤规则列表 → 用户自定义 → 导入`，粘贴浏览器专用链接。
+- **AdGuard（App / 桌面版）**：`设置 → 内容拦截 → 过滤器 → 自定义过滤器 → 添加过滤器`，粘贴链接。
+- **AdGuard Home**：`过滤器 → DNS 拦截清单 → 添加拦截清单`，粘贴 DNS hosts 或域名列表链接。
+- **Pi-hole / dnsmasq**：把 IPv4 hosts 列表加入自定义 adlist（`/etc/dnsmasq.d/` 或 Pi-hole 的 adlist 页面）。
+- **双栈网络**：`_dns.txt` 与 `_dns_ipv6.txt` 同时订阅，避免 IPv6 绕过。
+- **仅需安全拦截**：只订阅「安全专项」。
 
 ---
 
