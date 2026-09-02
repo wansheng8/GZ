@@ -1,6 +1,6 @@
 {
-  "total_rules": 968349,
-  "dns_domains": 491021,
+  "total_rules": 968353,
+  "dns_domains": 491024,
   "source_counts": {
     "oisd": 269927,
     "Hagezi DNS Pro Plus": 249687,
@@ -17,12 +17,12 @@
     "Anti-AD Easylist": 94832,
     "Anti-AD (easylist)": 94832,
     "StevenBlack Hosts": 82894,
-    "EasyList (ABP)": 80473,
-    "EasyList (easylist.to)": 80473,
+    "EasyList (ABP)": 80476,
+    "EasyList (easylist.to)": 80476,
     "ADrules Easylist": 80462,
     "Phishing URL Blocklist": 65868,
     "ADrules EasyPrivacy": 55998,
-    "Fanboy Annoyance": 53761,
+    "Fanboy Annoyance": 53763,
     "EasyPrivacy (ABP)": 53431,
     "Firebog Easylist Hosts": 46264,
     "Firebog Easyprivacy Hosts": 42982,
@@ -65,15 +65,15 @@
     "LocalRules": 10
   },
   "category_counts": {
-    "network": 754670,
+    "network": 754673,
     "privacy": 87176,
     "phishing": 38465,
-    "annoyance": 31088,
-    "cookie": 24189,
+    "annoyance": 31090,
+    "cookie": 24188,
     "whitelist": 13773,
     "social": 13563,
     "malware": 5415,
     "css": 10
   },
-  "root_domain_blocks": 307445
+  "root_domain_blocks": 307448
 }

@@ -5,31 +5,31 @@
       "name": "adblock_collection_full",
       "file": "adblock_collection_full.txt",
       "format": "adblock",
-      "rules": 968349
+      "rules": 968353
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_dns.txt",
       "format": "hosts",
-      "rules": 491021
+      "rules": 491024
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 491021
+      "rules": 491024
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_domains.txt",
       "format": "domains",
-      "rules": 491021
+      "rules": 491024
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance.txt",
       "format": "adblock",
-      "rules": 31088
+      "rules": 31090
     },
     {
       "name": "adblock_collection_full_annoyance",
@@ -53,7 +53,7 @@
       "name": "adblock_collection_full_cookie",
       "file": "adblock_collection_full_cookie.txt",
       "format": "adblock",
-      "rules": 24189
+      "rules": 24188
     },
     {
       "name": "adblock_collection_full_cookie",
@@ -125,25 +125,25 @@
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network.txt",
       "format": "adblock",
-      "rules": 754670
+      "rules": 754673
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_dns.txt",
       "format": "hosts",
-      "rules": 455787
+      "rules": 455790
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 455787
+      "rules": 455790
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_domains.txt",
       "format": "domains",
-      "rules": 455787
+      "rules": 455790
     },
     {
       "name": "adblock_collection_full_phishing",
