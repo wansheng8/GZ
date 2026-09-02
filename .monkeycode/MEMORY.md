@@ -43,3 +43,10 @@ Entries discovered by the Agent during task execution should follow this format:
 - Category: Troubleshooting & Debugging
 - Instructions:
   - 删除 sources.yaml 中某个源后，如果 dist/previous_metrics.json 的 source_counts 仍记录该源，质量门禁会误报「规则数骤降 100%」导致构建失败。处理方式：重新构建一次即可（构建失败也会写入新的 previous_metrics），或先手动从 previous_metrics.json 移除该源记录再构建。
+
+[Project Knowledge Summary]
+- Date: 2026-09-01
+- Context: Discovered by Agent while performing 删除源后 rebase 解决 dist 冲突
+- Category: Troubleshooting & Debugging
+- Instructions:
+  - git rebase 遇到 dist 产物冲突时，checkout --ours 取的是 rebase 前 HEAD（即远程 CI 版本），--theirs 才是正在重放的本地产物版本。用错方向会把 CI 产物混入，导致删除源等本地变更丢失。正确姿势：对 dist 冲突文件用 `git checkout --theirs`；或放弃冲突解决，直接基于当前 config 重新构建产物再提交（更可靠）。提交后必须用 `git rev-list HEAD...origin/main --count` 验证同步，并抽查产物 total/残留源确认内容正确。
