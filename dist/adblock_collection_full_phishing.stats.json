@@ -1,15 +1,15 @@
 {
   "name": "adblock_collection_full_phishing",
-  "total": 38465,
+  "total": 38479,
   "by_category": {
-    "phishing": 38465
+    "phishing": 38479
   },
   "by_kind": {
-    "network": 38463,
+    "network": 38477,
     "html": 2
   },
   "by_source": {
     "Phishing URL Blocklist": 38455,
-    "ScamBlocklist (adguard)": 10
+    "ScamBlocklist (adguard)": 24
   }
 }

@@ -1,41 +1,41 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 754673,
+  "total": 754472,
   "by_category": {
-    "network": 754673
+    "network": 754472
   },
   "by_kind": {
-    "network": 670821,
+    "network": 670617,
     "css": 76085,
-    "scriptlet": 7603,
+    "scriptlet": 7606,
     "html": 163,
     "js": 1
   },
   "by_source": {
-    "oisd": 138763,
-    "Hagezi DNS Pro Plus": 115280,
-    "ADrules DNS": 88475,
+    "oisd": 138750,
+    "Hagezi DNS Pro Plus": 115020,
+    "ADrules DNS": 88479,
     "StevenBlack Hosts": 74518,
     "ADrules Easylist": 73022,
     "Firebog Easylist Hosts": 46261,
-    "217heidai adblockdns": 37532,
+    "217heidai adblockdns": 37542,
     "ADrules AdRules": 29286,
     "Anti-AD Domains": 28400,
-    "AdGuard – Ads": 24582,
+    "AdGuard – Ads": 24590,
     "ADrules EasyListChina": 15532,
     "ADrules anti-AD": 12792,
     "10007_auto reward": 12343,
     "Dan Pollock's hosts": 12336,
     "AdGuard – Mobile Ads": 6457,
     "AdAway Hosts": 6289,
-    "AdGuardSDNSFilter": 5184,
+    "AdGuardSDNSFilter": 5228,
     "banbendalao ADgk": 5081,
-    "uBO filters – Ads": 4809,
+    "uBO filters – Ads": 4808,
     "KADhosts": 4169,
     "Peter Lowe's Blocklist": 3542,
     "Disconnect Simple Ad": 2505,
     "Accelerate-Hosts": 1846,
-    "Hagezi DNS Light": 1415,
+    "Hagezi DNS Light": 1424,
     "AWAvenue-Ads-Rule Hosts": 1405,
     "ADrules ChengFeng": 970,
     "uBO filters – Unbreak": 673,
@@ -46,7 +46,7 @@
     "BlueSkyXN skyrules": 43,
     "Shadowrocket to AdGuardHome": 20,
     "AWAvenue-Ads-Rule": 18,
-    "EasyList (ABP)": 8,
+    "EasyList (ABP)": 6,
     "AdGuard – Chinese": 2
   }
 }

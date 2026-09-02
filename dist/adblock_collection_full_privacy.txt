@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87176
+! Total Rules: 87177
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -25349,6 +25349,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||rmdvca.belvilla.de^
 ||rmmskb.fnacspectacles.com^
 ||rmxhti.zpacks.com^
+||rnffgv.wemakeprice.com^
 ||rnnstu.rentbeforeowning.com^
 ||rnybul.gismeteo.lv^
 ||rnybul.gismeteo.md^
@@ -38359,7 +38360,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||cnbc.com^$removeparam=par
 ||coolapk.com^$removeparam=shareFrom
 ||giphy.com^$removeparam=rid
-||gog.com^$removeparam=pp
+||gog.com^$removeparam=smclient
 ||idealo.de/*.html$removeparam=offerListId
 /^https:\/\/kick\.com\/[0-9A-z]{16}\/[0-9A-z]{16}\?apiKey=/$script,1p,match-case,domain=kick.com
 ||meetup.com^$removeparam=searchId
@@ -38607,6 +38608,7 @@ $to=~glavnoe.life,removeparam=utm_referrer
 $to=~tix.axs.com,removeparam=irclickid
 $to=~booklive.jp,removeparam=vc_lpp
 $to=~greenbuildingadvisor.com,removeparam=oly_enc_id
+||smartnews.com^$removeparam=share_id
 ||resourify.com^$removeparam=ref
 ||yna.co.kr^$removeparam=site
 ||compshare.cn^$removeparam=ytag
@@ -38959,7 +38961,6 @@ $removeparam=newsstand,to=sportalkorea.com
 ||voicy.jp^$removeparam=share.ref
 ||awaliwa.com^$removeparam=acr
 ||megaknihy.cz^$removeparam=/param[0-9]{1}|utm_si|matchtype|device|creative|keyword|placement|adposition|campaignid|adgroupid|feeditemid|targetid|loc_|searchtype|network|search_pos|cat_pos|block|position/
-||wemakeprice.com^$removeparam=refer
 ||joshi-spa.jp^$removeparam=cx_clicks_sldbox
 ||n11.com^$removeparam=/pfx|adj/
 ||home.kingsoft.jp^$removeparam=from

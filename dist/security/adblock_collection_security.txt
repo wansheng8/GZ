@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 43880
+! Total Rules: 43895
 ! ------------------------------------------
 ||adalh-zcq.com^$all
 ||adsensecustomsearchads.com/afs/ads?adtest=off&psid=3113057640&pcsa=false&channel=pid-bodis-gcontrol202,pid-bodis-gcontrol97,pid-bodis-gcontrol318,pid-bodis-gcontrol151,pid-bodis-gcontrol472&client=dp-bodis31_3ph&r=m&hl=fr&ivt=0&rpbu=http://75463078676.hyperphp.com?caf&&max_radlink_len=50&type=3&uiopt=false&swp=as-drid-2894319533101138&oe=UTF-8&ie=UTF-8&fexp=21404,17300002,17301383,17301418,17301437,17301439,17301442,71847096&client_gdprApplies=1&format=r3&nocache=6471709748134934&num=0&output=afd_ads&domain_name=75463078676.hyperphp.com&v=3&bsl=8&pac=2&u_his=2&u_tz=60&dt=1709748134936&u_w=800&u_h=600&biw=1920&bih=1080&psw=1920&psh=972&frm=0&uio=-&cont=rs&drt=0&jsid=caf&jsv=610814804&rurl=http://75463078676.hyperphpcom/^$all
@@ -1113,6 +1113,20 @@
 ||freeadd.me^$doc
 ||klingxai.com^$all
 ||google.com.hk/url?q=https://733656.cc/1onos-mugun/&sa=D&sntz=1&usg=AOvVaw1cSLz_KbQquu-cd350qsaF^$all
+||1.password-internal.com^
+||100xuniswap.xyz^
+||charmbean.com^
+||denatranotificacao.co^
+||discounthoneywell.com^
+||fulfillgift.com^
+||gitlab.admin.id601294105.date^
+||lucysstyle.com^
+||navi7.ru^
+||nip89.com^
+||skipped.vip^
+||tesla-lnc.net^
+||upfilm.pl^
+||yyderfreap.shop^
 ||insolvency-development.co.uk^$all
 ||7zip.cloud^$all
 ||7zip.com^$all
@@ -1440,7 +1454,6 @@
 ||8yy-ca-w-i9-z.com^$doc
 ||9888.st^$doc
 ||99box.com^$all
-||a-new86.com^$all
 ||a1475.com^$all
 ||aachen-webdesign.de/verzet/indiv.php?lang=en&ID=879%22%2F%3E%3Cimg+src%3D%22https%3A%2F%2Fgoogle.com%2FvQhDoiwkyrFLTRH4.jpg%22+onerror%3D%22window.location%3DdecodeURIComponent%28atob%28%27Njg3NDc0NzA3MzNhMmYyZjczNzA3MjJkNzA3NTczNjgyZDc0MmQ2MTJkNmUyZTY5NmQyZjZmNmU2YzY5NmU2NTJm%27%29.replace%28%2F%28..%29%2Fg%2C+%27%25%241%27%29%29%3B%22%3E^$all
 ||aaxr.shop^$doc
@@ -2182,6 +2195,7 @@
 ||koinik.net^$doc
 ||kokanjo.net^$doc
 ||kokokaradeai.com^$doc
+||konyatabelareklam.com/disog^$all
 ||kotoanata.jp^$doc
 ||koubi.jp^$doc
 ||koun-wa.com^$doc
@@ -2543,6 +2557,9 @@
 ||pictomo.net^$doc
 ||pinaview.com/downloads/pinaview.exe^$all
 ||pinehollow-glade.com^$doc
+||pingu.business^$all
+||pingu.ltd^$all
+||pingu.surf^$all
 ||piparelli.net^$doc
 ||pirikitos.com^$doc
 ||pita-rina.com^$doc
@@ -3033,9 +3050,6 @@
 ||discordgift.$all,domain=~discordgift.site
 ||igualdad.iaa.csic.es/nochain-sw.js
 ||namuvpn.com/install/namuxp.zip^$all
-||pingu.business^$all
-||pingu.ltd^$all
-||pingu.surf^$all
 ||snapdrop.net^$all
 ||taunahi.st^$all
 ||topmark-tuitioncentre.co.uk^$all
@@ -3085,6 +3099,7 @@
 ||sma-lita.site^$doc
 ||telegr.am/user_mgt/login$all
 ||anapatformacion.org/modules/file/tor/tor-browser.zip^$all
+||a-new86.com^$all
 /^https:\/\/xblock[0-9]+\.pages\.dev\//$doc,to=pages.dev
 ||amplifyapp.com/*/js/flscn.js
 ||ipwho.is^$xhr,domain=web.core.windows.net
@@ -3185,7 +3200,7 @@
 ||shockaholic.net/jgr/$all
 ||alnobala.ae/owasetup/$all
 ||hkwordpress.com/public/export/SM-ORDER/excelz/$doc
-/^https:\/\/telegram-[a-z]{3,4}\.com\//$doc,to=com|~telegram.org
+/^https:\/\/telegram-[a-z]{2}\.[a-z]{2,3}\//$doc,to=~gov|~edu|~com|~net|~org|~telegram.org
 ||usps.*.top^$doc,to=top|~usps.com
 ||wrc-gh.org/redelivery$doc
 ||wpenginepowered.com/usps/$doc
@@ -3459,7 +3474,6 @@
 ||kdrive.infomaniak.com/app/share/1139471/ad28ceb5-d1a0-49de-88c8-0934af0851a3/preview/pdf/21^$all
 ||kinoglaz.fr/index.php?page=%22%2F%3E%3Cimg%20src%3D%22https%3A%2F%2Fgoogle.com%2FL6mmoDKinAQgN.jpg%22%20onerror%3D%22window.location%3DdecodeURIComponent%28atob%28%27Njg3NDc0NzA3MzNhMmYyZjY1NzU2MTZhN2E2YzY2Nzk2ZTc2NzMyZTczNzA2MTcyNmI2MTczNzM2NTJlNzM3NTcyNjY%3D%27%29.replace%28%2F%28..%29%2Fg%2C%20%27%25%241%27%29%29%3B%22%3E^$all
 ||kisa.link/rhfSz^$all
-||konyatabelareklam.com/disog^$all
 ||l.ead.me/xma2z4hnu01j^$all
 ||l.linklyhq.com/l=/1u7Lf^$all
 ||lihi2.me/vH9qf^$all
@@ -4152,6 +4166,7 @@ www.cambe.pr.gov.br##+js(noeval-if, tigervip2)
 ||telegram-*.com/login/index.html^$all
 ||telezelm-*.icu^$doc
 ||whatsapp*.icu^$doc
+/^https:\/\/telegram-[a-z]{3,4}\.com\//$doc,to=com|~telegram.org|~telegram-gif.com
 /^https?:\/\/web\.t(el)?gram[a-z][a-z][a-z]?\.top\//$doc,to=top
 /^https?:\/\/web\.tegr[a-z][a-z][a-z]\.top\//$doc,to=top
 ||web.*.top^$doc,to=top,ipaddress=206.119.188.100
