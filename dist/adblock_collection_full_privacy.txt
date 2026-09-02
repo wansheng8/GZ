@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 85307
+! Total Rules: 85340
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -102,6 +102,7 @@
 ||wikihow.com/x/collect?
 ||wsj.com/cookies/pixel.gif
 ||rumble.com/l/
+||flaticon.com/_ga?
 ||hqq.tv/cdn-cgi/trace
 ||buondua.com/hit/
 ||giftornado.com/counter.php
@@ -368,6 +369,7 @@
 ||innerskinresearch.com^
 ||instantfox.co^
 ||intellimizeio.com^
+||irs01.com^
 ||itsstats.wp1.site^
 ||jcpclick.com^
 ||jubbie.de^
@@ -559,6 +561,7 @@
 ||triplestat.online^
 ||trk-brevinate.com^
 ||trk-maiorum.com^
+||trkapi.impact.com^
 ||trkn.us^
 ||trovo-tag.com^
 ||tru.am^
@@ -3234,6 +3237,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||analytics-scripts.cablelabs.com^
 ||analytics-tracker.thescore.com^
 ||analytics.30m.com^
+||analytics.agoda.com^
 ||analytics.algolia.com^
 ||analytics.amakings.com^
 ||analytics.api.justeattakeaway.com^
@@ -3348,6 +3352,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||apibaza.com/pixel/
 ||app.abralytics.com/assets/tracker/index.js
 ||app.carnow.com/dealers/track_visitor
+||app.link/_r?$script,third-party
 ||app.optibase.io^
 ||app.revenuehero.io/logs/ingest
 ||app.varify.io/varify.js
@@ -3405,6 +3410,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||beam.mjhlifesciences.com^
 ||bee.tc.easebar.com^
 ||bendingspoonsapps.com/v4/web-events
+||bento.agoda.com^
 ||bet365.de/Members/*&affiliate=$subdocument,third-party
 ||betano.de^*?btag=$subdocument,third-party
 ||bhphotovideo.com/3D8mkYG1/init.js
@@ -3428,6 +3434,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||browser-intake-datadoghq.com^
 ||bucklemail.com/a/$image
 ||burstcloud.co/jwe?
+||bytedance.com/pixel/
 ||byteoversea.com/monitor_web/
 ||bzpics.com/jslib/st.js?
 ||bzr.openai.com^
@@ -3879,6 +3886,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||link.bhvr.com^
 ||linkdeli.com/widget.js
 ||links.voyeurweb.com^
+||list-manage.com/track/
 ||list.fightforthefuture.org/mpss/o/*/o.gif
 ||listrak.com/api/Activity/impression
 ||live.exchangesolutions.com^
@@ -3920,6 +3928,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||mail-app.com/pvtracker/
 ||mail.ru/count/
 ||maillist-manage.eu/wa/actionlogger?
+||mandrillapp.com/track/
 ||maptrackpro.com/track/
 ||marker.io/widget/ping
 ||marketcat.co/pixel/
@@ -4068,6 +4077,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||pc161021.com/scripts/noui/StatProvider.js
 ||pega.com/logserver
 ||pegasus.unifygroup.com^
+||pendo.io/data/ptm.gif/
 ||perfops.net/rom3/
 ||performgroup.com/metrics/
 ||perr.h-cdn.com^
@@ -4255,6 +4265,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||snowplow.swm.digital^
 ||snowplowjs.darwin.cx^
 ||soccer.ru/counter/
+||socialannex.com/c-sale-track/$script
 ||sockr.birdie.so/event
 ||sonic-prod.cbssports.cloud/analytics/
 ||souisa.com/analytics/
@@ -4820,6 +4831,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||stats.boringproxy.io^
 ||stats.how.wtf^
 ||firebase.googleapis.com^$domain=terabox.fun
+||firebaseinstallations.googleapis.com^$domain=terabox.fun
 ||dingxiang-inc.com/ctu-group/constid-js/index.js
 ||fpcn.bpsgameserver.com^
 ||ipqualityscore.com/api/$third-party
@@ -5036,6 +5048,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||woopic.com/z.gif
 ||ws3.smartp.com^
 ||minsk-in.net/counter.php?
+||3.cn/cesu/r?
 ||66hao.cc^
 ||adv-sv-stat.focus.cn^
 ||analytics.afirstsoft.cn^
@@ -5066,6 +5079,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||sobeycloud.com/Services/Stat.
 ||t.rainide.com^
 ||tce.alicdn.com^
+||tns.simba.taobao.com^
 ||track.tomwx.net^
 ||track.unidata.ai^
 ||tracking.cat898.com^
@@ -5952,6 +5966,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||event-api.reverb.com^
 ||event-collector.moviesanywhere.com^
 ||event-log-api-data-platform-data-lake-prod.gryphline.com^
+||event-router.olympics.com^
 ||event.platform.autotrader.com.au^
 ||eventlog.jackpot.de^
 ||events-prod.autolist.com^
@@ -6141,6 +6156,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||jockey.com/scripts/omt-base.js
 ||joggo.run/api/events
 ||johnlewis.com/browser-performance/
+||js.monitor.azure.com/scripts/c/ms.shared.analytics.$domain=microsoft.com
 ||julius.ai/monitoring
 ||jumbo.zomato.com^
 ||juno.com/start/javascript.do?message=
@@ -6354,6 +6370,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||pac.thetimes.com^
 ||papi.stylar.ai^
 ||pappagallu.onefootball.com^
+||pardot.com/pd.js
 ||partsgeek.com/sspgt/
 ||pay4fans.com/api/analytics
 ||pb.ytmp3tube.com/js/script.js$domain=yt1s.com.co
@@ -6456,6 +6473,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||rbc.ua/enghits/
 ||react-admin-telemetry.marmelab.com^
 ||realself.com/v1/page-interactions-events
+||redditmedia.com/gtm/jail?
 ||reelgood.com/v3.0/checkip
 ||rei.com/customer-analytics-attributes/
 ||reichelt.com/setsid.php?
@@ -6619,6 +6637,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||streamta.pe/stat/
 ||streamta.site/stat/
 ||streamtape.cc/stat/
+||streamtape.com/stat/
 ||streamtape.net/stat/
 ||streamtape.to/stat/
 ||streamtape.xyz/stat/
@@ -6893,6 +6912,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||x.designboom.com^
 ||xero.com/api/events/
 ||xfinity.com/event/
+||xp.apple.com/report/
 ||xxf.mobi/hit
 ||y.aram.zone/pageview
 ||ya.ru/clck/
@@ -12489,6 +12509,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||metrics.nfpa.org^
 ||metrics.nhm.ac.uk^
 ||metrics.nhmshop.co.uk^
+||metrics.nielsen.com^
 ||metrics.nike.net^
 ||metrics.nintendo.com^
 ||metrics.nissan.co.uk^
@@ -15970,6 +15991,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||smetrics.nfpa.org^
 ||smetrics.nhhealthyfamilies.com^
 ||smetrics.ni.com^
+||smetrics.nielsen.com^
 ||smetrics.nike.net^
 ||smetrics.nintendo.com^
 ||smetrics.nisbets.be^
@@ -21184,6 +21206,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||marketing.smartcoversystems.com^
 ||marketing.smartowner.com^
 ||marketing.smartvault.com^
+||marketing.socialbakers.com^
 ||marketing.softwaresecure.com^
 ||marketing.soha.io^
 ||marketing.soloprotect.com^
@@ -24924,6 +24947,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||lswfmx.stuartweitzman.com^
 ||ltcmak.alodokter.com^
 ||ltdczq.myhome.nifty.com^
+||ltecrf.dhgate.com^
 ||lthbdc.become.co.jp^
 ||lthdzu.sercotelhoteles.com^
 ||lthzhy.elv.com^
@@ -28584,6 +28608,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||go.deltek.com^
 ||go.dunnhumby.com^
 ||go.dxc.technology^
+||go.e.mailchimp.com^
 ||go.earlywarning.com^
 ||go.econnect.dellmed.utexas.edu^
 ||go.edmontonoilers.com^
@@ -31547,6 +31572,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||trk.du-darfst.de^
 ||trk.dvsystems.com^
 ||trk.e.chooseumpquabank.com^
+||trk.e.mailchimp.com^
 ||trk.elmlea.com^
 ||trk.elmorietschle.com^
 ||trk.emcowheaton.com^
@@ -31636,6 +31662,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||trk.lookbook.westernunion.com^
 ||trk.mackayshields.com^
 ||trk.magicfashionevents.com^
+||trk.mailchimp.com^
 ||trk.margarinaiberia.com.mx^
 ||trk.maximus-solution.com^
 ||trk.md-kinney.com^
@@ -38093,15 +38120,19 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||aichaoxing.com/res/cx_stat.js
 ||ams.lelong.com.my^
 ||analytics.ifanrusercontent.com^
+||analytics.oceanengine.com^
 ||analytics.yicai.com^
 ||apiwmda.58.com.cn^
+||applog.yiche.com^
 ||beacon.cdn.qq.com^
 ||beacon.qq.com^
 ||channel-analysis-js.gmw.cn^
 ||clewm.net/public/cli_analytics.js$domain=cli.im
 ||count.candou.com^
 ||cstm.baidu.com^
+||ctrmi.cn/t/
 ||dcard.tw/v1/events
+||dig.lianjia.com^
 ||fclog.baidu.com^
 ||forum.zuvio.com.tw/api/article/finish
 ||frog.yuanfudao.com^
@@ -38112,6 +38143,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||i-tm.com.tw/api/itm-tracker.js$domain=pixnet.net
 ||imgstat.baidu.com^
 ||improving.wuzhuiso.com^
+||jiayuan.com^*/pv.js
 ||kn007.net/snmp.php
 ||log-upload-os.hoyolab.com^
 ||log.mgtv.com^
@@ -38161,6 +38193,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||wanmei.com/public/js/stat.js
 ||weather.com.cn/a1.js
 ||wkctj.baidu.com^
+||wl.jd.com^$third-party
 ||xiaomi.com/js/mstr.js?
 ||avaz.ba/update/hits/
 ||jutarnji.hr/template/js/eph_analytics.js
