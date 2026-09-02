@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 746716,
+  "total": 746733,
   "by_category": {
-    "network": 746716
+    "network": 746733
   },
   "by_kind": {
-    "network": 693211,
+    "network": 693228,
     "css": 48773,
     "scriptlet": 4619,
     "html": 112,
     "js": 1
   },
   "by_source": {
-    "oisd": 149846,
+    "oisd": 149898,
     "Hagezi DNS Pro Plus": 118459,
     "ADrules DNS": 89017,
     "StevenBlack Hosts": 74518,
@@ -31,9 +31,9 @@
     "banbendalao ADgk": 5096,
     "KADhosts": 4169,
     "Peter Lowe's Blocklist": 3542,
-    "SM-Ad-FuckU-hosts": 3411,
+    "SM-Ad-FuckU-hosts": 3412,
     "Disconnect Simple Ad": 2505,
-    "Accelerate-Hosts": 1883,
+    "Accelerate-Hosts": 1846,
     "Hagezi DNS Light": 1458,
     "AWAvenue-Ads-Rule Hosts": 1405,
     "ADrules ChengFeng": 975,
@@ -43,6 +43,6 @@
     "Shadowrocket to AdGuardHome": 89,
     "BlueSkyXN skyrules": 44,
     "AWAvenue-Ads-Rule": 20,
-    "EasyList (ABP)": 1
+    "EasyList (ABP)": 2
   }
 }

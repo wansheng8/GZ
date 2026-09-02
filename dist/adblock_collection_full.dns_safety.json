@@ -2,19 +2,19 @@
   "policy_level": "all",
   "min_confidence": 0.0,
   "allow_modifier": false,
-  "dns_eligible_network_rules": 523305,
-  "dns_rejected_network_rules": 390219,
+  "dns_eligible_network_rules": 523358,
+  "dns_rejected_network_rules": 390183,
   "by_eligibility": {
     "CONDITIONAL": 5760,
-    "SAFE": 523305,
-    "REJECT": 384459
+    "SAFE": 523358,
+    "REJECT": 384423
   },
   "by_reason": {
     "domain_modifier": 5760,
-    "pure_domain": 523305,
+    "pure_domain": 523358,
     "path_rule": 13790,
     "regex_or_redirect_rule": 89,
-    "untranslatable": 249777,
+    "untranslatable": 249741,
     "css_rule": 113216,
     "script_rule": 7473,
     "non_network_rule": 114
