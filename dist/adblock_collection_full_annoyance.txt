@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31148
+! Total Rules: 31140
 ! ------------------------------------------
 ||clickiocdn.com/t/$third-party
 ||ligatus.com^$third-party
@@ -21,14 +21,12 @@
 ||leadfamly.com^$third-party
 ||plista.com^$third-party
 ||purevpn.com/loadGdprView
-||storage.googleapis.com/om-gravito-cmp/$script
 ||surveymonkey.com/fides.js
 ||vuukle.com/widgets/quiz.html$third-party
 ||wp.com/www.feedburner.com/fb/$image
 ||wpengine.com/wp-content/mu-plugins/wpengine-dotcom/audio/
 ||yimg.com^*/guce.js
 ||zergnet.com^$third-party
-||unpkg.com/cookie-though
 ||msn.com/bundles/v1/homePage/latest/experiences_conditional-banner
 ||artdaily.cc/subscribe.html
 ||celebjihad.com^$third-party
@@ -160,7 +158,6 @@
 ||oil.axelspringer.com^$third-party
 ||axeptio.eu^$third-party
 ||batch.com^$third-party
-||dig.bdurl.net^$app=com.dragon.read,important
 ||gdpr-legal-cookie.beeclever.app^$third-party
 ||beeketing.com^$third-party
 ||behamics.com^$third-party
@@ -551,7 +548,6 @@
 ||vhmengine.com^$third-party
 ||vicomi.com^$third-party
 ||virtualpushplatform.com^$third-party
-||mssdk.volces.com^$app=com.dragon.read,important
 ||volomedia.com^$third-party
 ||wahwahnetworks.com^$third-party
 ||web-boosting.net^$third-party
@@ -656,7 +652,6 @@
 ||zotabox.com^*/widgets.js$third-party
 ||pinterest.com/sw.js
 ||imyfone.com/*/notification/$script
-||lf3-reading.fqnovelpic.com^$app=com.dragon.read,important
 ||bsync3-normal-hl.zijieapi.com^$app=com.dragon.read,important
 ||ecombdimg.com^$app=com.dragon.read,important
 ||chatango.com/pcache/sounds/
@@ -714,7 +709,6 @@
 ||mozo.com.au/widgets/$third-party
 ||my.sendinblue.com/users/subscribe/$third-party
 ||nrcdn.com/custom-script/$third-party
-||placehold.it^$third-party
 ||placeholder.com^$third-party,domain=~astrobin.com
 ||printfriendly.com^$~subdocument,third-party
 ||purch.com^$script,third-party
@@ -874,7 +868,6 @@
 ||stright.bizris.com/js/cookie_consent_
 ||support.xxx/cookie_consent.js
 ||thisisdone.com/gdpr/$third-party
-||privacy-mgmt.com^$domain=anisearch.com|anisearch.de|anisearch.es|anisearch.fr|anisearch.it|anisearch.jp|consent-manager.ft.com|economist.com|idealo.co.uk|marketwatch.com|popsci.com|startsiden.no|sussexexpress.co.uk|taz.de|wsj.com
 ||abf-paif.com/services/ssmp/clrCookie?
 ||agicssecurity.com/Header/ajax/cookie.php
 ||arfeconsultors.com/static/js/vendor/cookies-text-ca.js
@@ -1123,7 +1116,6 @@
 ||astro-datamation.pages.dev/_astro/CardNewsletterSubscribe.$script
 ||d2cmvbq7sxx33j.cloudfront.net/email/prod_amnews_iframe_section_braze.html
 ||default.salsalabs.org/api/widget/
-||downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js$script,third-party
 ||justone.ai/embed/csd.html$subdocument
 ||mailerlite.com/js/universal.js
 ||mailmojo.no/sdk.js

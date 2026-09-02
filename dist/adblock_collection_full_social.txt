@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13572
+! Total Rules: 13570
 ! ------------------------------------------
 ||fwcdn3.com^$third-party
 ||naturalnews.com/getviews2.
@@ -13,7 +13,6 @@
 ||followistic.com^$third-party
 ||meebo.com^$third-party
 ||patreon.com/becomePatronButton.bundle.js$third-party
-||platform.twitter.com/js/button.$third-party
 ||shareaholic.com^$third-party
 ||sharethis.com^$third-party
 ||vk.com/widget_like.php$third-party
@@ -76,7 +75,6 @@
 /jquery.bpopup.$script,domain=telechargerunevideo.com
 ||b.st-hatena.com/js/$script,third-party,domain=~b.hatena.ne.jp
 ||figshare.com^$third-party
-||graph.facebook.com/fql?q=SELECT$third-party
 ||jit.su/frame$third-party
 ||karmacracy.com/widget$third-party
 ||line-apps.com^*/thirdparty/$third-party

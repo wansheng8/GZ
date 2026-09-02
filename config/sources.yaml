@@ -252,3 +252,24 @@ sources:
     compatible: [adguard, hosts]
     dns_policy:
       level: strict-safe
+  # ----------------- 2026-09 补充的中文社区源 -----------------
+  - name: DD-AD
+    url: https://raw.githubusercontent.com/afwfv/DD-AD/main/rule/DD-AD.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: banad jiekouAD
+    url: https://raw.githubusercontent.com/damengzhu/banad/main/jiekouAD.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: HG ad
+    url: https://raw.githubusercontent.com/2771936993/HG/main/hg1.txt
+    category: network
+    compatible: [adguard, abp, ubo]
+  - name: SM-Ad-FuckU-hosts
+    url: https://raw.githubusercontent.com/2Gardon/SM-Ad-FuckU-hosts/master/SMAdHosts
+    category: network
+    compatible: [hosts]
+  - name: 666 rules
+    url: https://raw.githubusercontent.com/qq5460168/666/master/rules.txt
+    category: network
+    compatible: [adguard, abp, ubo]
