@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87177
+! Total Rules: 87194
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -21,6 +21,7 @@
 ||lr-in.com^$third-party
 ||notiks.io^$third-party
 ||ojrq.net/p/$removeparam=cid
+||omguk.com^$third-party
 ||provenpixel.com^$third-party
 ||rlcdn.com^$domain=autobild.de|widgets.outbrain.com
 ||stvkr.com/v*/click-$removeparam=timezone
@@ -1126,6 +1127,7 @@ $removeparam=ocid,document,domain=msn.com
 ||consciouschairs.com^
 ||consciouscheese.com^
 ||constructioncans.com^
+||consumerdebtnegotiation.com^
 ||consumerknowhow.com^
 ||consumerzero.com^
 ||contentwiki.com^
@@ -2385,9 +2387,11 @@ $removeparam=ocid,document,domain=msn.com
 ||remixbistro.com^
 ||remixslot.com^
 ||rentinfinity.com^
+||rentinfrared.com^
 ||rentpenny.com^
 ||repeatsweater.com^
 ||replaceroute.com^
+||republicfarm.net^
 ||rescueothers.com^
 ||rescuerhino.com^
 ||resonantbrush.com^
@@ -2398,6 +2402,7 @@ $removeparam=ocid,document,domain=msn.com
 ||restructureinvention.com^
 ||retrievemint.com^
 ||retrocrypt.com^
+||retrorays.com^
 ||reversetickets.com^
 ||revivalvoice.com^
 ||rhetoricalactivity.com^
@@ -4228,6 +4233,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||shopper.shop.pe/input.js
 ||shorthand.com/analytics/
 ||showstopped.com/owa/modules/base/dist/owa.tracker.js
+||shrinetheme.com/api/analytics/
 ||shrtfly.vip/js/tag.js
 ||sitefinity.com/collect/
 ||sitescdn.net/ytag/ytag.min.js
@@ -4987,6 +4993,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||osd.oxygem.it^
 ||p.a2d.io/plx.js
 ||pagesjaunes.fr/pmp/
+||player.fabster.com/event/
 ||rs.smc.tf^
 ||scriptsgratuits.com/sg/stats/
 ||service-webmaster.fr/cpt-visites/$third-party
@@ -5215,7 +5222,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||heatmap.support-inc.co.jp^
 ||insight-x.tech/trackerlog-publisher-service/tracker-logs
 ||ip2c.landscape.co.jp^
-||ipcheck.blogsys.jp^
 ||jal.co.jp/common_rn/js/rtam.js
 ||karte.io/rewrite-log/
 ||kccsrecommend.site/torimochi_log/
@@ -5895,6 +5901,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||event-log-api-data-platform-data-lake-prod.gryphline.com^
 ||event-router.olympics.com^
 ||event.platform.autotrader.com.au^
+||eventbrite.com/metrics/
 ||eventlog.jackpot.de^
 ||events-prod.autolist.com^
 ||events-tracker.deliveroo.net^
@@ -6070,6 +6077,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||jockey.com/scripts/omt-base.js
 ||joggo.run/api/events
 ||johnlewis.com/browser-performance/
+||joomag.com/collect-bulk?
 ||js.monitor.azure.com/scripts/c/ms.shared.analytics.$domain=microsoft.com
 ||julius.ai/monitoring
 ||jumbo.zomato.com^
@@ -33280,7 +33288,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||ana.e-ticket.co.jp^
 ||analytics.adobe.ly^
 ||analytics.crowdkeep.com^
-||analytics.eventbrite.com^
 ||android.txtsmarter.com^
 ||anet.abphotos.link^
 ||animaux.oworld.fr^
@@ -38397,6 +38404,8 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||tolt.io^$3p
 ||urban-vpn.com^$removeparam=cid
 ||valuecommerce.ne.jp/cgi-bin/*^vc_url=http$doc,urlskip=?vc_url
+||unleash.zenchef.com/api/frontend/client/metrics
+||sidecar.unext.jp/track/
 ||www.baidu.com/link?url=$removeparam=eqid
 ||toomics.com^$removeparam=gen
 ||dq8i9djm.com^$3p
@@ -38608,6 +38617,7 @@ $to=~glavnoe.life,removeparam=utm_referrer
 $to=~tix.axs.com,removeparam=irclickid
 $to=~booklive.jp,removeparam=vc_lpp
 $to=~greenbuildingadvisor.com,removeparam=oly_enc_id
+||video.unext.jp^$removeparam=cid
 ||smartnews.com^$removeparam=share_id
 ||resourify.com^$removeparam=ref
 ||yna.co.kr^$removeparam=site
@@ -42240,6 +42250,7 @@ _WebVitalsReporter_
 .redsift.com/e/o/$image
 .revolut.com/q/$image
 .s-pt.jp/mail/info/*/img/_.gif
+.samsung.net/mail/*/status/update?$image
 .secureserver.net/bbimage.aspx?
 .sendcloud.net/track/$image
 .sendemail.gate.io/o/$image
@@ -42614,7 +42625,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 |http://r.i.ua^
 |https://r.i.ua^
 # Easyprivacy, parsed and mirrored by https://firebog.net
-# Updated 31AUG26 from https://easylist.to/easylist/easyprivacy.txt
+# Updated 02SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
 07b3.pandasuite.io
 0ddf.pandasuite.io
@@ -51676,6 +51687,7 @@ collector.hippodromeonline.com
 collector.mazeberry.com
 collector.megaxh.com
 collector.net-logger.com
+collector.orf.at
 collector-ovp.streamcloud.it
 collector.pi.spectrum.net
 collector.pmc.com
@@ -60131,7 +60143,6 @@ ip2c.landscape.co.jp
 ip7prksb2muxvmmh25t6rxl2te0tfulc.lambda-url.eu-west-1.on.aws
 i.paypal.com
 ipcfgw.pieces.com
-ipcheck.blogsys.jp
 ip.chipestimate.com
 ip.cliphunter.com
 ipdmlm.yoriso.com
@@ -68677,6 +68688,7 @@ popmixradio.com
 po.ponant.com
 popplantation.com
 popup-static.unisender.com
+porksoda.com
 poro.58.com
 porpoise.azettl.net
 porqhi.topictravel.nl
@@ -68694,6 +68706,7 @@ post.carte-gr.total.fr
 postgraduate2.smu.edu.sg
 postgraduate.smu.edu.sg
 potatoinvention.com
+potentmagic.com
 powerfulblends.com
 powerfulcopper.com
 powerrobotflower.com
@@ -68820,6 +68833,7 @@ processor.asccommunications.com
 processplantation.com
 processserver.abclegal.com
 processusmetier.ricoh.fr
+procollecting.com
 procroanalytics.com
 procurement.cipscomms.org
 prod-events.nykaa.com
@@ -68980,6 +68994,7 @@ puffyloss.com
 puffypaste.com
 puffypull.com
 puffypurpose.com
+pugspress.com
 puiwrs.misterspex.de
 pulsar.ebay.com
 pulsaredit.com
@@ -69441,6 +69456,7 @@ receiptcent.com
 receive.wmcdp.io
 receptivereaction.com
 recessrain.com
+recipepile.net
 recipepin.com
 reconditeprison.com
 reconditerespect.com
@@ -69461,6 +69477,7 @@ redbricksoap.com
 redclassic.actonservice.com
 redditstream.arborapps.io
 reddwarf.till-sanders.de
+redexecs.com
 redirect.cuballama.com
 redirectdemoqpay.2c2p.com
 redirect.indacar.io
