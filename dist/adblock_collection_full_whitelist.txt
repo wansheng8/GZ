@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13774
+! Total Rules: 13778
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -1561,9 +1561,9 @@ browsershots.org#@#.advert_area
 @@||cookielaw.org^*/OtAutoBlock.js$domain=bancsabadell.com|darkreading.com|uphold.com
 @@||cxense.com/document/search?
 @@||cxense.com/persisted/execute$domain=nippon.com
-@@||cxense.com/public/widget/$domain=bizjournals.com|businessinsider.de|businessinsider.jp|computerbild.de|cxpublic.com|cyclestyle.net|diamond.jp|friday.gold|friday.kodansha.co.jp|handelsblatt.com|hochi.news|inquirer.com|journaldequebec.com|ksml.fi|mainichi.jp|marketwatch.com|nikkansports.com|nippon.com|rikejo.jp|savonsanomat.fi|shueisha.co.jp|tn.com.ar|tvnet.lv|wsj.com
-@@||cxense.com/cx.cce.js$domain=bizjournals.com|businessinsider.de|cxpublic.com|diamond.jp|handelsblatt.com|hochi.news|inquirer.com|mainichi.jp|marketwatch.com|nikkansports.com|shueisha.co.jp|tarzanweb.jp|tn.com.ar|tvnet.lv|wsj.com
-@@||cxense.com/cx.js$domain=13.cl|bizjournals.com|businessinsider.de|businessinsider.jp|computerbild.de|cyclestyle.net|diamond.jp|gizmodo.jp|handelsblatt.com|hochi.news|inquirer.com|journaldequebec.com|ksml.fi|mainichi.jp|marketwatch.com|nikkansports.com|nippon.com|savonsanomat.fi|shueisha.co.jp|str.toyokeizai.net|tarzanweb.jp|tn.com.ar|tv-tokyo.co.jp|tvnet.lv|wsj.com
+@@||cxense.com/public/widget/$domain=bizjournals.com|businessinsider.de|businessinsider.jp|computerbild.de|cxpublic.com|cyclestyle.net|diamond.jp|friday.gold|friday.kodansha.co.jp|handelsblatt.com|hochi.news|inquirer.com|j-cast.com|journaldequebec.com|ksml.fi|mainichi.jp|marketwatch.com|nikkansports.com|nippon.com|rikejo.jp|savonsanomat.fi|shueisha.co.jp|tn.com.ar|tvnet.lv|wsj.com
+@@||cxense.com/cx.cce.js$domain=bizjournals.com|businessinsider.de|cxpublic.com|diamond.jp|handelsblatt.com|hochi.news|inquirer.com|j-cast.com|mainichi.jp|marketwatch.com|nikkansports.com|shueisha.co.jp|tarzanweb.jp|tn.com.ar|tvnet.lv|wsj.com
+@@||cxense.com/cx.js$domain=13.cl|bizjournals.com|businessinsider.de|businessinsider.jp|computerbild.de|cyclestyle.net|diamond.jp|gizmodo.jp|handelsblatt.com|hochi.news|inquirer.com|j-cast.com|journaldequebec.com|ksml.fi|mainichi.jp|marketwatch.com|nikkansports.com|nippon.com|savonsanomat.fi|shueisha.co.jp|str.toyokeizai.net|tarzanweb.jp|tn.com.ar|tv-tokyo.co.jp|tvnet.lv|wsj.com
 @@||collector.appconsent.io/hello$domain=lachainemeteo.com|lefigaro.fr
 @@||imrworldwide.com/novms/js/2/ggc$script,domain=9now.com.au|adelaidenow.com.au|advertiser.com.au|bestrecipes.com.au|byronnews.com.au|cairnspost.com.au|coffscoastadvocate.com.au|couriermail.com.au|dailyexaminer.com.au|espn.com|frasercoastchronicle.com.au|gattonstar.com.au|geelongadvertiser.com.au|gladstoneobserver.com.au|goldcoastbulletin.com.au|heraldsun.com.au|ipswichadvertiser.com.au|la7.it|news-mail.com.au|news.com.au|noosanews.com.au|ntnews.com.au|sky.it|sunshinecoastdaily.com.au|theaustralian.com.au|themercury.com.au|theweeklytimes.com.au|townsvillebulletin.com.au|tvnow.de|video.corriere.it|weeklytimesnow.com.au|whitsundaytimes.com.au
 @@||imrworldwide.com/conf/$script,domain=nbcolympics.com
@@ -3758,7 +3758,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||assets.hcaptcha.com/captcha/
 @@||assets.macys.com/dyn_img/site_ads/
 @@||at.adtech.redventures.io/lib/api/$xhr,domain=gamespot.com|giantbomb.com|metacritic.com
-@@||at.adtech.redventures.io/lib/dist/prod/bidbarrel-techrepublic-ta.min.js$domain=techrepublic.com
 @@||atozmath.com/Scripts/advertisement.js
 @@||atozmath.com^$generichide
 @@||attach.mobile01.com/image/mod_ad/*$domain=mobile01.com
@@ -4263,6 +4262,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||exeygo.com^$generichide
 @@||experienceleague.adobe.com^$~3p
 @@||explainxkcd.com/wiki/images/$image,~3p
+@@||extractpics.com^$generichide
 @@||extraimage.co^$generichide
 @@||eye.swfchan.com/captcha/*.gif$domain=eye.swfchan.com
 @@||eye.swfchan.com/flash.asp?id=*.swf$domain=eye.swfchan.com
@@ -4494,6 +4494,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||googleads.g.doubleclick.net/pagead/ads$subdocument,third-party,domain=~afreesms.com
 @@||googleads.g.doubleclick.net/pagead/html/*/zrt_lookup.html$domain=forum.release-apk.com
 @@||googleads.g.doubleclick.net/pagead/html/*/zrt_lookup_nohtml_fy2021.html$domain=alliptvlinks.com
+@@||googleads.g.doubleclick.net/pagead/id?r=$domain=leeapk.com
 @@||googleads.g.doubleclick.net/pagead/interaction/$domain=quins.us
 @@||googleads.g.doubleclick.net^$image,domain=planete205.com|planete-205.com
 @@||googleads.g.doubleclick.net^$subdocument,domain=seguridadwireless.es
@@ -4798,6 +4799,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=news4jax.com|gmg-wjxt-prod.cdn.arcpublishing.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=skai.gr
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=sonyliv.com
+@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=southpark.*|southparkstudios.*|southpark.de
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=vix.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=wsls.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=zee5.com
@@ -4954,6 +4956,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||latin.it/banner.php
 @@||leakyfaucet.uk/show_ads.js$script
 @@||lecrabeinfo.net^$generichide
+@@||leeapk.com^$generichide
 @@||leffatykki.com/media/banners/tykkibanneri-728x90.png$image,~3p
 @@||lemonde.fr/*/advertisingbanner.js$xmlhttprequest
 @@||lepoint.fr/publicite/*/*/pub.js$script,~third-party
@@ -5046,7 +5049,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||marketscreener.com/search/?$removeparam
 @@||maskinteknik.dk/assets/templates/maskinteknik/gfx/ads.png
 @@||matrix.org/_matrix/$removeparam
-@@||maxcdn.bootstrapcdn.com/bootstrap/$domain=gelbooru.com
 @@||maxcheaters.com/public/js/jsLoader.js$script
 @@||maxcheaters.com^$generichide
 @@||mcc.xunliandata.com/mci-reward/static/img/ad.
@@ -5210,6 +5212,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||onlinemschool.com/script/ads1.js
 @@||onlinemschool.com^$generichide
 @@||onlinevideoconverter.com^$generichide
+@@||onlytech.com/community/js/*/AdsenseBlockView.js$domain=onlytech.com
 @@||onvasortir.com^$generichide
 @@||open.video^$script,~3p
 @@||openload.co^$elemhide
@@ -5804,7 +5807,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||servedby.flashtalking.com/imp/$xhr,domain=safeframe.googlesyndication.com
 @@||server1.affiz.net/tracking/ads_display.php$script,domain=fit.sh
 @@||service.4gtv.tv/4gtv/Data/GetAD.ashx
-@@||service.hotstar.com/vs/getad.php?*adspot=
 @@||services.bilsyndication.com/adv1/?q=$domain=atozmath.com
 @@||services.bilsyndication.com^$domain=atozmath.com,~media
 @@||services.vlitag.com/adv1/$script,domain=orbispatches.com
@@ -5952,7 +5954,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||static.clmbtech.com/ad/commons/js/colombia_v2.js$domain=indiatimes.com
 @@||static.cloudflareinsights.com^$domain=app.axenthost.com
 @@||static.cz.prg.cmestatic.com/static/cz/shared/js/advert.js
-@@||static.cz.prg.cmestatic.com/static/shared/app/videojs/plugins/ads/videojs.ads.js$domain=nova.cz
 @@||static.doubleclick.net/instream/ad_status.js$domain=3dzip.org
 @@||static.doubleclick.net/instream/ad_status.js$domain=investing.com
 @@||static.doubleclick.net/instream/ad_status.js$domain=thesciencetoday.com
@@ -6820,6 +6821,7 @@ forum.pac-rom.com#@#.banner_ads
 forum.sbenny.com#@##adsbox
 forum.virtualdjing.com#@#.adFrame
 forum.xda-developers.com#@#.adonis-placeholder
+forums.digitalspy.com#@#body .has-ad
 fossbytes.com#@##adsense
 fox.com.tr#@#.pub_300x250
 fox.com.tr#@#.pub_300x250m
@@ -7112,7 +7114,6 @@ lcpdfr.com#@##HouseAd
 ldqk.xyz#@#.google-ad
 leaflet.pub#@#.pubContent
 learn.javascript.ru#@#img[width="240"][height="400"]
-leeapk.com#@#.ad-banner
 letmeread.net#@##google-ad
 lexusclub.cz#@#.reklama
 lfg.co,leasticoulddo.com#@##ad_test
@@ -7356,6 +7357,7 @@ pics-x.com#@#.sidebar-ads-container
 pilot.wp.pl#@#body > script + iframe + div:not([id])[class]
 pipeflare.io#@#div[id^="amzn-assoc-ad"]
 pitube.net#@#.ad-unit:not(.textads)
+pixiv.net#@#img[width="240"][height="400"]
 planetatvonlinehd.blogspot.com#@#.adsantilok
 planetatvonlinehd.blogspot.com.ar#@#.adsantilok
 play.anghami.com#@#.adsBanner
@@ -11828,7 +11830,6 @@ alltransistors.com#@##reklama
 @@||cdn.statically.io/gh/ubo-coder/og/main/adsAPI.js$domain=infinityscans.xyz|infinityscans.net|infinityscans.org
 @@||media.salemwebnetwork.com/adverts/advertisement.js$domain=biblestudytools.com
 @@||yunjiema.top/static/ad/ads.js$domain=yunjiema.top
-@@||imasdk.googleapis.com/js/sdkloader/ima3_dai.js$domain=southpark.*|southparkstudios.*|southpark.de
 @@||all3dp.com/gpt.min.js
 @@||hotmediahub.com^$generichide
 @@||terashare.me^$generichide
@@ -11889,7 +11890,6 @@ alltransistors.com#@##reklama
 @@/wp-content/themes/*/ads/*/sailthru.js$domain=healthy4pepole.com
 @@||static.doubleclick.net/instream/ad_status.js$domain=tweakcentral.net
 @@||read.amazon.*/ads-prebid.js
-@@||onlytech.com/community/js/*/AdsenseBlockView.js$domain=onlytech.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=paraphrasetool.com
 @@||sarapbabe.com/nativeads-v2.js
 @@||liveindex.org/wp-content/plugins/imedia-basic/*.js
@@ -12753,6 +12753,7 @@ alltransistors.com#@##reklama
 @@||aff.bstatic.com^$image,domain=tonkosti.ru
 @@||betterads.org/hubfs/Mobile-Web-Ad-Experiences-Ranking-*.jpg
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=workandmoney.com
+@@||at.adtech.redventures.io/lib/dist/prod/bidbarrel-techrepublic-ta.min.js$domain=techrepublic.com
 @@||googletagservices.com/tag/js/gpt.js$domain=falkirkherald.co.uk
 @@||d13nu0oomnx5ti.cloudfront.net^$domain=rethmic.com
 @@||jmap.io/*/libs/Overture.js
@@ -12781,6 +12782,7 @@ alltransistors.com#@##reklama
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=navbharattimes.indiatimes.com
 @@||a-invdn-com.akamaized.net/Broker_Button_New^$domain=investing.com
 @@||tryit.w3schools.com^$document
+@@||service.hotstar.com/vs/getad.php?*adspot=
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=baltimoresun.com
 @@||driverseddirect.com/html5/$document
 @@/cdn-cgi/challenge-platform/*/orchestrate/jsch/v$domain=kat.*
@@ -13169,10 +13171,12 @@ alltransistors.com#@##reklama
 @@||m.myplaycity.com/online/*/admanager.js
 @@||m.azonline.de/var/storage/images/*_image_300_250.jpg$~3p
 @@||gelbooru.com/script/miscJs.js
+@@||maxcdn.bootstrapcdn.com/bootstrap/$domain=gelbooru.com
 @@||yastatic.net/metrika/*/bower_components/$domain=metrika.yandex.ru|metrika.yandex.by|metrika.yandex.kz|metrika.yandex.com.tr
 @@||downloads.freevintageposters.com/advertising-posters.jpg
 @@||moat.com/api/entity_report/advertiser/$domain=moat.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=cwseed.com
+@@||static.cz.prg.cmestatic.com/static/shared/app/videojs/plugins/ads/videojs.ads.js$domain=nova.cz
 @@||static.cz.prg.cmestatic.com/static/shared/app/videojs/plugins/ads/ads.integration.*.js$domain=nova.cz
 @@||cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/*/videojs.ads.js$domain=radiojavan.com
 @@||static.h-bid.com/prebid/*/prebid.js$domain=makeuseof.com

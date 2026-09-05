@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87204
+! Total Rules: 87233
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -73,7 +73,7 @@ $removeparam=ocid,document,domain=msn.com
 ||assets.hearstapps.com/commerce/release/affiliate-bundle.
 ||cnet.com^$removeparam=source
 ||coincarp.com/script/events.js
-||cybernews.com/clientfpid/
+||cybernews.com/fxq4/
 ||dev.to/fallback_activity_recorder
 ||developer.mozilla.org/submit/
 ||discover.hubpages.com/.bootscripts/hubPagesViewDurationTracker.min.js
@@ -259,6 +259,7 @@ $removeparam=ocid,document,domain=msn.com
 ||domself.de^
 ||doublestat.info^
 ||dspx.tv^
+||dsspn.com^
 ||dtasrvr.com^
 ||dttrk.com^
 ||dwin1.com^
@@ -323,6 +324,7 @@ $removeparam=ocid,document,domain=msn.com
 ||g2575096355.co^
 ||g594253006.co^
 ||g792337340.co^
+||g792337341.co^
 ||g792337342.co^
 ||g792337343.co^
 ||g8715710740.co^
@@ -1270,6 +1272,7 @@ $removeparam=ocid,document,domain=msn.com
 ||dicecandies.com^
 ||difficultfog.com^
 ||digestiondrawer.com^
+||digitalatticnewsletter.com^
 ||digitalblend.net^
 ||digithalo.com^
 ||digitizedcopy.com^
@@ -2636,6 +2639,7 @@ $removeparam=ocid,document,domain=msn.com
 ||smoggysnakes.com^
 ||smoggysongs.com^
 ||smoggystation.com^
+||smoketester.com^
 ||snacksalive.com^
 ||snacktoken.com^
 ||snakenecklace.com^
@@ -2660,6 +2664,7 @@ $removeparam=ocid,document,domain=msn.com
 ||solarislabyrinth.com^
 ||solarrecharge.net^
 ||soleblinds.com^
+||solidfiles.net^
 ||solidsub.com^
 ||solosduetstrios.com^
 ||solsticeblack.com^
@@ -2691,6 +2696,7 @@ $removeparam=ocid,document,domain=msn.com
 ||specialscissors.com^
 ||specialtypin.com^
 ||spectacularstamp.com^
+||speedmethod.com^
 ||speedysteaks.com^
 ||spellingthoughts.com^
 ||spellknight.com^
@@ -2744,6 +2750,7 @@ $removeparam=ocid,document,domain=msn.com
 ||starrynets.com^
 ||starsmarter.com^
 ||startercost.com^
+||starwinmedia.com^
 ||statshunt.com^
 ||statuesqueship.com^
 ||statusinside.com^
@@ -2752,6 +2759,7 @@ $removeparam=ocid,document,domain=msn.com
 ||steadfastsound.com^
 ||steadfastsystem.com^
 ||stealsteel.com^
+||steelcasket.com^
 ||steelmaiden.com^
 ||steepsister.com^
 ||steepsquirrel.com^
@@ -3374,6 +3382,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||app.link/_r?$script,third-party
 ||app.optibase.io^
 ||app.revenuehero.io/logs/ingest
+||app.thefrontrowhealth.com/api/tracking
 ||app.varify.io/varify.js
 ||appinthestore.com/click/
 ||applicationinsights.azure.com^$third-party,domain=~azure.net
@@ -6029,6 +6038,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||helpmonks.com/cftag/
 ||hepsiburada.com^$removeparam=wt_gl
 ||hilton.com/zJbufaUX/
+||hometubeporn.com/js/feeder.min.js
 ||hopper.com/api/v0/tracking/event
 ||hostinger.com/api-proxy/api/sentry/
 ||hotels.com/cl/data/omgpixel.json?
@@ -6340,6 +6350,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||poki.com/observer/
 ||politico.com/resource/assets/js.min/video-tracking.
 ||poptropica.com/brain/track.php?
+||porn-plus.com/js/feeder.min.js
 ||pornbox.com/stats/
 ||porzo.com/js/analytics
 ||poshmark.com/trck/
@@ -9128,6 +9139,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||stats.equium.io^
 ||stats.erikinthekitchen.com^
 ||stats.erlef.org^
+||stats.estrema.it^
 ||stats.evenchilada.com^
 ||stats.executebig.org^
 ||stats.extramilefloorcare.com^
@@ -38415,7 +38427,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||tolt.io^$3p
 ||urban-vpn.com^$removeparam=cid
 ||valuecommerce.ne.jp/cgi-bin/*^vc_url=http$doc,urlskip=?vc_url
-||g792337341.co^
 ||www.baidu.com/link?url=$removeparam=eqid
 ||toomics.com^$removeparam=gen
 ||dq8i9djm.com^$3p
@@ -42591,7 +42602,7 @@ visible.com##+js(set-local-storage-item, browser-ids, $remove$)
 usaa.com##+js(set-cookie, GPC, 1, , reload, 1)
 bolighub.dk##+js(acs, document.getElementsByTagName, gtm.js)
 247sports.com,al.com,arstechnica.com,bringmethenews.com,cattime.com,cbr.com,cheatsheet.com,collider.com,comingsoon.net,crooksandliars.com,cwtv.com,dogtime.com,esportstales.com,forums.hfboards.com,freep.com,fresnobee.com,gamerant.com,gbatemp.net,golfdigest.com,grabify.link,hancinema.net,hemmings.com,howtogeek.com,ijr.com,informazionefiscale.it,inquirer.net,insider-gaming.com,knowyourmeme.com,magesypro.pro,makeuseof.com,mlive.com,money.it,motorbiscuit.com,movieweb.com,nationalreview.com,nbcnews.com,neopets.com,nofilmschool.com,nypost.com,omg.blog,order-order.com,oregonlive.com,pcwelt.de,pennlive.com,playstationlifestyle.net,pwinsider.com,savvytime.com,screenrant.com,siliconera.com,simpleflying.com,sporcle.com,stealthoptional.com,techlicious.com,technicpack.net,thedraftnetwork.com,thefashionspot.com,thegamer.com,thelayoff.com,thenerdstash.com,theprovince.com,titantv.com,topspeed.com,twinfinite.net,videogamer.com,webmail.wiki,wnd.com,worldpopulationreview.com,wral.com,wrestlezone.com,wrestlinginc.com,xda-developers.com##+js(acs, document.createElement, admiral)
-10tv.com,11alive.com,12news.com,12newsnow.com,13newsnow.com,13wmaz.com,5newsonline.com,9news.com,abc10.com,al.com,apnews.com,artforum.com,artnews.com,billboard.com,birdsandblooms.com,calgaryherald.com,calgarysun.com,cbs19.tv,cbs8.com,cleveland.com,crooksandliars.com,deadline.com,dpreview.com,driving.ca,familyhandyman.com,financialpost.com,firstcoastnews.com,fox43.com,fox61.com,goldderby.com,golfdigest.com,hollywoodreporter.com,indiewire.com,kare11.com,kcentv.com,kens5.com,kgw.com,kiiitv.com,king5.com,krem.com,ktvb.com,kvue.com,lehighvalleylive.com,lfpress.com,localmemphis.com,masslive.com,myfoxzone.com,nationalpost.com,nbcsports.com,newscentermaine.com,newswest9.com,nj.com,oregonlive.com,ottawacitizen.com,ottawasun.com,rd.com,robbreport.com,rollingstone.com,sherdog.com,sidereel.com,superherohype.com,syracuse.com,tasteofhome.com,techcrunch.com,thehealthy.com,thv11.com,torontosun.com,vancouversun.com,variety.com,vibe.com,wbir.com,wcnc.com,weareiowa.com,wfaa.com,wfmynews2.com,wgrz.com,whas11.com,windsorstar.com,wkyc.com,wltx.com,wnep.com,wqad.com,wthr.com,wtol.com,wtsp.com,wusa9.com,wwd.com,wwltv.com,wzzm13.com##+js(acs, document.getElementsByTagName, .pubads)
+10tv.com,11alive.com,12news.com,12newsnow.com,13newsnow.com,13wmaz.com,5newsonline.com,9news.com,abc10.com,al.com,apnews.com,artforum.com,artnews.com,billboard.com,birdsandblooms.com,calgaryherald.com,calgarysun.com,cbs19.tv,cbs8.com,cleveland.com,crooksandliars.com,deadline.com,dpreview.com,driving.ca,familyhandyman.com,financialpost.com,firstcoastnews.com,fox43.com,fox61.com,futbin.com,goldderby.com,golfdigest.com,gulflive.com,hollywoodreporter.com,indiewire.com,kare11.com,kcentv.com,kens5.com,kgw.com,kiiitv.com,king5.com,krem.com,ktvb.com,kvue.com,lehighvalleylive.com,lfpress.com,localmemphis.com,masslive.com,myfoxzone.com,nationalpost.com,nbcsports.com,newscentermaine.com,newswest9.com,nj.com,oregonlive.com,ottawacitizen.com,ottawasun.com,rd.com,robbreport.com,rollingstone.com,sherdog.com,sidereel.com,superherohype.com,syracuse.com,tasteofhome.com,techcrunch.com,thehealthy.com,thv11.com,torontosun.com,vancouversun.com,variety.com,vibe.com,wbir.com,wcnc.com,weareiowa.com,wfaa.com,wfmynews2.com,wgrz.com,whas11.com,windsorstar.com,wkyc.com,wltx.com,wnep.com,wqad.com,wthr.com,wtol.com,wtsp.com,wusa9.com,wwd.com,wwltv.com,wzzm13.com##+js(acs, document.getElementsByTagName, .pubads)
 ranker.com##+js(aost, HTMLElement.prototype.insertBefore, /[A-Z] .+chunks\/\d{4}\./)
 reuters.com##+js(aost, admiral, .js?)
 al.com,attackofthefanboy.com,beavertonvalleytimes.com,destructoid.com,edmontonsun.com,gamepur.com,gamerjournalist.com,gameskinny.com,lehighvalleylivecom,lgbtqnation.com,macwelt.de,masslive.com,mlive.com,news8000.com,nj.com,oregonlive.com,pcwelt.de,pennlive.com,portlandtribune.com,primagames.com,progameguides.com,queerty.com,siliconera.com,silive.com,sporcle.com,techcrunch.com,thebeenews.com,themarysue.com,theoutlookonline.com,touchtapplay.com,wegotthiscovered.com##+js(aost, decodeURI, /(?=^(?!.*\.js))/)
@@ -42599,7 +42610,7 @@ mensjournal.com##+js(json-edit, ..props.children.*[?.key=="admiral-script"])
 247sports.com,cbsnews.com,cbssports.com,indiewire.com,nypost.com,pagesix.com,pennlive.com##+js(rmnt, script, '"data-adm-url"')
 abc17news.com,al.com,artforum.com,artnews.com,awkward.com,awkwardmom.com,bailiwickexpress.com,barnsleychronicle.com,becomingpeculiar.com,bethcakes.com,blogher.com,bluegraygal.com,briefeguru.de,carmagazine.co.uk,cattime.com,cbr.com,chaptercheats.com,collider.com,comingsoon.net,commercialobserver.com,competentedigitale.ro,crafty.house,dailyvoice.com,decider.com,didyouknowfacts.com,dogtime.com,dualshockers.com,dustyoldthing.com,faithhub.net,femestella.com,footwearnews.com,freeconvert.com,frogsandsnailsandpuppydogtail.com,fsm-media.com,funtasticlife.com,fwmadebycarli.com,gamerant.com,gfinityesports.com,givemesport.com,gulflive.com,helloflo.com,homeglowdesign.com,honeygirlsworld.com,hotcars.com,howtogeek.com,insider-gaming.com,insurancejournal.com,jasminemaria.com,kion546.com,lehighvalleylive.com,lettyskitchen.com,lifeinleggings.com,liveandletsfly.com,lizzieinlace.com,localnews8.com,lonestarlive.com,madeeveryday.com,maidenhead-advertiser.co.uk,makeuseof.com,mardomreport.net,melangery.com,milestomemories.com,mlive.com,modernmom.com,momtastic.com,mostlymorgan.com,motherwellmag.com,movieweb.com,muddybootsanddiamonds.com,musicfeeds.com.au,nationalreview.com,nj.com,nordot.app,nothingbutnewcastle.com,nsjonline.com,oakvillenews.org,observer.com,pagesix.com,pennlive.com,pinkonthecheek.com,predic.ro,puckermom.com,qtoptens.com,realgm.com,robbreport.com,royalmailchat.co.uk,samchui.com,sandrarose.com,screenrant.com,sheknows.com,sherdog.com,sidereel.com,simpleflying.com,sloughexpress.co.uk,spacenews.com,sportsgamblingpodcast.com,spotofteadesigns.com,ssnewstelegram.com,stacysrandomthoughts.com,superherohype.com,tablelifeblog.com,thebeautysection.com,thecelticblog.com,thecurvyfashionista.com,thefashionspot.com,thegamer.com,thenerdyme.com,thenonconsumeradvocate.com,thethings.com,timesnews.net,topspeed.com,toyotaklub.org.pl,travelingformiles.com,tvline.com##+js(rmnt, script, '"v4ac1eiZr0"')
 baeldung.com,cheatsheet.com,pcwelt.de,pwinsider.com##+js(rmnt, script, admiral)
-gbatemp.net,usatoday.com##+js(set, admiral, noopFunc)
+cbssports.com,gbatemp.net,usatoday.com##+js(set, admiral, noopFunc)
 usatoday.com##+js(set, gnt.x.adm, '')
 anikore.jp##html[class^="loading"]:style(visibility: visible !important;)
 fedex.com##+js(set-local-storage-item, fdx_enable_new_detail_page, true)
@@ -42635,7 +42646,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 |http://r.i.ua^
 |https://r.i.ua^
 # Easyprivacy, parsed and mirrored by https://firebog.net
-# Updated 02SEP26 from https://easylist.to/easylist/easyprivacy.txt
+# Updated 04SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
 07b3.pandasuite.io
 0ddf.pandasuite.io
@@ -46956,6 +46967,7 @@ adb.toggoeltern.de
 adc-js.nine.com.au
 adcontroll.com
 ad.daum.net
+addefend-platform.com
 addictedattention.com
 addressfriend.com
 adebis01.job-con.jp
@@ -47710,6 +47722,7 @@ analytics.archive.org
 analytics.argeton.com
 analytics.arunraghavan.net
 analytics.asml.com
+analytics-assets.tes.com
 analytics.atlas5.co
 analytics.atom.com
 analytics.audioeye.com
@@ -49067,7 +49080,6 @@ app.pacslo.org
 app.pally.live
 app.pandasuite.io
 app.panomoments.com
-app.partnerboost.com
 app.partner.fisglobal.com
 app.pawsket.com
 app.payments.53.com
@@ -51118,6 +51130,7 @@ cdn.9gtb.com
 cdn-a.raptor.digital
 cdn.arcstudiopro.com
 cdn-channels-pixel.ex.co
+cdn.dfsdk.com
 cdn.eaec.fpfis.tech.ec.europa.eu
 cdn-eu.usefathom.com
 cdnhst.xyz
@@ -51130,6 +51143,7 @@ cdnral.com
 cdn.ravm.tv
 cdn-rum.ngenix.net
 cdns.brsrvr.com
+cdn.seonintelligence.com
 cdn.sy-d.io
 cdn.usefathom.com
 cdnwidget.com
@@ -51697,7 +51711,6 @@ collector.hippodromeonline.com
 collector.mazeberry.com
 collector.megaxh.com
 collector.net-logger.com
-collector.orf.at
 collector-ovp.streamcloud.it
 collector.pi.spectrum.net
 collector.pmc.com
@@ -52038,6 +52051,7 @@ constructioncans.com
 consulting.guidehouse.com
 consulting.icmi.com
 consulting.mcgladrey.com
+consumerdebtnegotiation.com
 consumer.equifax.com
 consumer.inform.equifax.com
 consumerknowhow.com
@@ -53783,6 +53797,7 @@ digital.adt.co.uk
 digital.adt-worldwide.com
 digital.anicom-sompo.co.jp
 digital.aptaracorp.com
+digitalatticnewsletter.com
 digital.bebold.cx
 digitalblend.net
 digital.cloud.travelport.com
@@ -54320,6 +54335,7 @@ d.sourcepoint.capitalfm.com
 dsoxjxin5jji.controlconceptsusa.com
 dsp-track-global.zmaticoo.com
 dspx.tv
+dsspn.com
 dst05lp2.net.mydays.de
 d-staging.groc.press
 d.stay-app.com
@@ -56738,6 +56754,7 @@ g2insights-cdn.azureedge.net
 g4p.redtram.com
 g594253006.co
 g792337340.co
+g792337341.co
 g792337342.co
 g792337343.co
 g8715710740.co
@@ -68987,6 +69004,7 @@ p.tryretool.com
 ptsc.shoplocal.com
 ptw-i.actonservice.com
 p.typekit.net
+pubbug.com
 pubfs.com
 pubimgs.com
 public.9gtb.com
@@ -69590,6 +69608,7 @@ remp-beam.golem.de
 remp.nv.ua
 renaultbankdirekt.efscle.com
 rentinfinity.com
+rentinfrared.com
 renting.aldautomotive.es
 rent.mgrc.com
 rentpenny.com
@@ -69648,6 +69667,7 @@ reports.sdiapi.com
 reports-tsi.tangerine.io
 reports.tunein.com
 reppify.actonservice.com
+republicfarm.net
 reqssx.centerparcs.fr
 request.idangels.org
 request.verisign.com
@@ -69797,6 +69817,7 @@ retirementservices.firstallied.com
 retrack.q-divisioncdn.de
 retrievemint.com
 retrocrypt.com
+retrorays.com
 reuniondepadres.unisabana.edu.co
 reverb.digitalviscosity.com
 reversetickets.com
@@ -69901,6 +69922,7 @@ robotrefinery.com
 robotsrefinery.com
 rochelle.wantsext.me
 rockagainst.com
+rockcarving.com
 rocketmonitor.com
 rockstarwriter.com
 roedwy.imidapeptide.com
@@ -70013,6 +70035,7 @@ rtvision.actonservice.com
 rt.whitebridge.ai
 rtxlni.doclasse.com
 rtxpx-a.akamaihd.net
+rubouthunger.com
 rubyswinehouse.com
 rudder-tracking.rudderstack.com
 ru-go.experian.com
@@ -70391,6 +70414,7 @@ saffronrefuge.com
 sa.flux.community
 sa.foodnetwork.com
 s.agava.ru
+sagetrack.net
 sagxlv.daniellashevel.com
 sa.hgtv.com
 sailinsight20-app.sapsailing.com
@@ -70619,6 +70643,7 @@ sandbox-connectlp.keysight.com
 sandbox-elq.keysight.com
 sandstrophies.com
 sandypocket.com
+sandytaco.com
 sanl.champssports.ca
 sanl.champssports.com
 sanl.eastbay.com
@@ -70855,6 +70880,7 @@ sc.rbs.co.uk
 screechingfurniture.com
 screechingstocking.com
 screechingstove.com
+screenphotos.com
 sc.restplatzboerse.de
 sc.rhapsody.com
 scribblestring.com
@@ -75120,6 +75146,7 @@ smodus.nike.com
 smoggysnakes.com
 smoggysongs.com
 smoggystation.com
+smoketester.com
 smon.activate.cz
 smon.blackhistorymonth.gov
 smon.congress.gov
@@ -76830,6 +76857,7 @@ stats.equium.io
 stats.erikinthekitchen.com
 stats.erlef.org
 stats.esecured.net
+stats.estrema.it
 stats.evenchilada.com
 stats.executebig.org
 stats.exploratv.ca
@@ -80472,6 +80500,7 @@ tracking.vodafone.com
 tracking.vodafone.co.uk
 tracking.voordeeluitjes.nl
 tracking.voxeus.com
+tracking.vviinn.com
 tracking.wallapop.com
 tracking.wao-corp.com
 tracking.wao.ne.jp
@@ -85837,7 +85866,6 @@ arstechnica.com,dermnetnz.org##.gsc-webResult a[data-cturl]:remove-attr(/^data-c
 /wpm@*/web-pixel-
 /shopifycloud/media-analytics/v*/analytics.js
 www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300\,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST)
-/e/*^ip=*^compression=
 /wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-consent-mode-
 /wp-content/plugins/google-site-kit/dist/assets/js/googlesitekit-events-provider-
 /wp-content/plugins/tmbi-assertive-yield/*
@@ -85847,6 +85875,7 @@ www.youtube.com##+js(no-xhr-if, /\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d
 /wp-content/plugins/tmbi-permutive
 /wp-content/plugins/tmbi*-affiliate
 /e/*^ip=*^beacon=
+/e/*^ip=*^compression=
 /^https:\/\/(www\.)?[a-z0-9-]+\.[a-z]+(\.[a-z]+)?\/[a-z0-9]{4}\/$/$script,1p,match-case,to=~xsso.leagueoflegends.com|~xsso.lolesports.com|~xsso.playvalorant.com|~xsso.riotgames.com|~xsso.valorantesports.com
 /^https:\/\/(www\.)?[a-z0-9-]+\.[a-z]+(\.[a-z]+)?\/[a-z0-9]{4,9}\/\?id=$/$script,1p,match-case,to=~xsso.leagueoflegends.com|~xsso.lolesports.com|~xsso.playvalorant.com|~xsso.riotgames.com|~xsso.valorantesports.com
 /^https:\/\/(www\.)?[a-z0-9-]+\.[a-z]+(\.[a-z]+)?\/[a-z0-9]{4,6}\/\?id=AW-\d+/$script,1p,match-case,to=~xsso.leagueoflegends.com|~xsso.lolesports.com|~xsso.playvalorant.com|~xsso.riotgames.com|~xsso.valorantesports.com
