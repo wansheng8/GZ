@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13778
+! Total Rules: 13779
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -1187,6 +1187,7 @@ browsershots.org#@#.advert_area
 @@||cdn.segment.com/analytics.js/$script,domain=abstractapi.com|accounts-bc.com|app.cryptotrader.tax|app.joinhandshake.com|driversed.com|fender.com|finerdesk.com|foxbusiness.com|foxnews.com|givingassistant.org|inxeption.io|reuters.com|squaretrade.com|swatches.interiordefine.com
 @@||cdn.segment.com/next-integrations/integrations/
 @@||cdn.segment.com/v1/projects/
+@@||cdn.shopify.com/extensions/*/ba_tracking.js$domain=ridge.com
 @@||cdn.sophi.io/assets/$script,domain=nationalpost.com
 @@||cdn.usefathom.com/script.js$domain=sharpen-free-design-generator.netlify.app
 @@||cdn.viglink.com/api/vglnk.js$domain=9to5mac.com|electrek.co
@@ -3294,7 +3295,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@/ad-provider.js$xhr,domain=veev.to|doods.to
 @@/ad.sense/ad-m.js$~3p
 @@/ad/banner/_adsense_/_adserver/_adview_.ad.json
-@@/adBlockDetector.js$~3p,domain=biters.io|fisp.io
 @@/adblock/adblock.js$script,domain=javso.com
 @@/adframe.js$script
 @@/adgear.js$script,domain=vtele.ca
@@ -3695,7 +3695,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||anyporn.com/js/jquery.easy-autocomplete-my.js
 @@||anyporn.com/js/videopreview.js^
 @@||anyporn.com/js_ads/banner.js$~3p
-@@||anyporn.com/player/kt_player_*.jsx
 @@||aphim.co^$generichide
 @@||api-*.spot.im/v*/widget/spot/sp_*/conversation_header$domain=bizpacreview.com
 @@||api-edge.cognitive.microsofttranslator.com/translate?
@@ -4665,7 +4664,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=babygames.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=bbcamerica.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=bestgames.com
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=biters.io|fisp.io
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=cdn.htmlgames.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=cdn.witchhut.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=chili.com
@@ -6179,7 +6177,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||urlbeat.net/intermission/loadTargetUrl$xmlhttprequest
 @@||user.pnetlab.com/store/advs/check
 @@||usercdn.com/tmp/status.html
-@@||usercdn.com^$domain=userscloud.com
 @@||ut.pubmatic.com/geo?pubid=$domain=zeenews.india.com
 @@||v.fwmrm.net/?$xhr
 @@||v.fwmrm.net/ad/g/1$domain=tv4play.se
@@ -12204,6 +12201,8 @@ alltransistors.com#@##reklama
 @@||zonebourse.com/js/googleads.js
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=tetris.com
 @@||tetris.com/play-tetris-content/ads.js
+@@/adBlockDetector.js$~3p,domain=biters.io|fisp.io
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=biters.io|fisp.io
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=wordgames.com
 @@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=smsget.net
 @@||notebookcheck*/fileadmin/scripts/pagecall_dfp_async.js
@@ -12995,6 +12994,7 @@ alltransistors.com#@##reklama
 @@||cdn.jsdelivr.net/npm/jquery*/dist/jquery.min.js$domain=strikeout.nu
 @@||cdn.jsdelivr.net/combine/npm/bootstrap*/dist/js/bootstrap.min.js$domain=strikeout.nu
 @@||imasdk.googleapis.com/pal/sdkloader/pal.js$domain=investigationdiscovery.com
+@@||usercdn.com^$domain=userscloud.com
 @@||androidauthority.net/wp-content/uploads/*-300x600.$image,domain=androidauthority.com
 @@||payeer.com/style/images/adv_green.png$domain=payeer.com
 @@||1337x.st^$csp=script-src 'self' 'unsafe-inline'
@@ -13219,6 +13219,7 @@ alltransistors.com#@##reklama
 @@||instreamvideo.ru/storage/inplayer/$3p,image,script,stylesheet
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_108.js^$domain=pocketnow.com
 @@||bs.serving-sys.com/crossdomain.xml$domain=rte.ie
+@@||anyporn.com/player/kt_player_*.jsx
 @@||mssl.fwmrm.net/crossdomain.xml$domain=msn.com
 @@||mssl.fwmrm.net/p/msn_live/AdManager.swf$domain=msn.com
 @@||m.haberler.com/static/advertisement/ads_ima.js$domain=m.haberler.com

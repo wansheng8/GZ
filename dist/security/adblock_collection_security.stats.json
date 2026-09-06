@@ -1,20 +1,20 @@
 {
   "name": "adblock_collection_security",
-  "total": 43954,
+  "total": 43990,
   "by_category": {
-    "phishing": 38559,
-    "malware": 5395
+    "phishing": 38658,
+    "malware": 5332
   },
   "by_kind": {
-    "network": 43823,
+    "network": 43859,
     "css": 109,
     "scriptlet": 19,
     "html": 3
   },
   "by_source": {
-    "Phishing URL Blocklist": 38532,
+    "Phishing URL Blocklist": 38632,
     "uBO filters – Badware risks": 3637,
-    "Online Malicious URL Blocklist": 1758,
-    "ScamBlocklist (adguard)": 27
+    "Online Malicious URL Blocklist": 1695,
+    "ScamBlocklist (adguard)": 26
   }
 }

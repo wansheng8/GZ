@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31098
+! Total Rules: 31102
 ! ------------------------------------------
 ||clickiocdn.com/t/$third-party
 ||ligatus.com^$third-party
@@ -16126,6 +16126,7 @@ maalot.co.il,stevemadden.com##.ot-sdk-container
 sinparty.com##.ot-sdk-row
 3dviewer.net##.ov_bottom_floating_panel
 hero-wars.com##.overlay--cookie_banner_without_icons
+ratchet-galaxy.com##.overlay-alert
 jackjones.com,mamalicious.com,only.com,onlyandsons.com,veromoda.com##.overlay-backdrop
 banjaran.com.sg##.overlay-mobile-styles-enabled
 hero-wars.com##.overlay-modals-wrapper
@@ -16643,6 +16644,7 @@ jdslabs.com##[data-component="cookieBanner"]
 koenigsegg.com##[data-component="n3-cookie-notice"]
 plasma.org##[data-cookie-consent-banner="true"]
 pixilart.com##[data-cookie-number]
+insider.razer.com##[data-css-anchor="cookie-banner"]
 iol.co.za##[data-dialog="true"]
 eurovision.com##[data-ev-component="CookieConsent"]
 wizards.com##[data-fetch-key="TheCookiePrompt:0"]
@@ -24995,6 +24997,7 @@ tenable.com###blog-subscribe
 particular.net###blog-subscription-form
 theweek.com###blueconic-article-theweek
 timescolonist.com###body-subscribe
+razer.ai###bottom-popup
 menafn.com###bottom3
 healthcareitnews.com,mobihealthnews.com###boxes-box-subsctiption_middle
 businesspost.ie###bp_piano_homepage_newsletter_container
@@ -27624,6 +27627,7 @@ arylic.com##newsletter-popup
 miamiherald.com,sacbee.com##newsletter-signup-feature
 notus.org##notus-sunrise-dialog
 notus.org##notus-welcome-auth-sign-in-dialog
+people.com#?#.theme-generic.mntl-sc-block-universal-callout:has-text(daily newsletter)
 bcg.com##ps-subscription-module
 extremetech.com##section > .mt-8
 forty.news##section.newspaper-column
