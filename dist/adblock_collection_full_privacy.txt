@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87235
+! Total Rules: 87245
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -3380,6 +3380,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||api.usestoryteller.com/api/app/activity/recordActivity?
 ||api.wipmania.com^
 ||app.abralytics.com/assets/tracker/index.js
+||app.alhena.ai/analytics/
 ||app.carnow.com/dealers/track_visitor
 ||app.link/_r?$script,third-party
 ||app.optibase.io^
@@ -3417,6 +3418,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||b.bedop.com^
 ||b5media.com/bbpixel.php
 ||b8cdn.com/assets/v1/analytics-
+||backend.alia-prod.com/launcher/events/
 ||bamgrid.com/telemetry
 ||baqend.com/v1/rum/
 ||barium.cheezdev.com^
@@ -32815,6 +32817,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||web.newsletter.viviennewestwood.com^
 ||web.newsletterit.esprinet.com^
 ||web.online.monnalisa.com^
+||web.redazione.milanofinanza.it^
 ||web.sensilab.com^
 ||web.sensilab.cz^
 ||web.sensilab.de^
@@ -39499,6 +39502,7 @@ $removeparam=newsstand,to=sportalkorea.com
 /ASPixel.js
 /assets-cdonAnalytics.js
 /assets/beacons.js
+/assets/js/facebook-for-woocommerce-signals.js
 /assets/performance_timing-
 /assets/smarttag-$script
 /astrack.js
@@ -39788,6 +39792,8 @@ $removeparam=newsstand,to=sportalkorea.com
 /comscore_pageview
 /confiant.js
 /configuration-stat.js
+/content/plugins/facebook-conversion-pixel/pixel-cat.min.js
+/content/plugins/facebook-conversion-pixel/video.js
 /contentiq.js
 /conversion_async.js
 /convertro.js
@@ -40743,6 +40749,7 @@ $removeparam=newsstand,to=sportalkorea.com
 /ocount.php
 /ocounter.php
 /odoscope.js
+/official-facebook-pixel/js/facebook_signal.js
 /om.gif?
 /omni-tracking.min.js
 /omnitrack-lately.js
@@ -41907,6 +41914,7 @@ $removeparam=newsstand,to=sportalkorea.com
 /wp-js/analytics.js
 /wp-json/burst/v1/track/*
 /wp-json/iawp/*
+/wp-json/pys-facebook/v1/event
 /wp-monero-miner-class.js
 /wp-monero-miner-util.min.js
 /wp-monero-miner.js
@@ -42647,6 +42655,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||pccomponentes.*/api/users/tracking/
 |http://r.i.ua^
 |https://r.i.ua^
+$ping,third-party
 # Easyprivacy, parsed and mirrored by https://firebog.net
 # Updated 04SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
@@ -86702,6 +86711,7 @@ webex.com##+js(no-xhr-if, svc.webex.com/metrics)
 mashable.com##+js(href-sanitizer, a[href^="https://zdcs.link/"], ?u)
 vaughn.live##+js(no-fetch-if, method:POST body:zaraz)
 x.com##+js(prevent-xhr, /i/api/1.1/flow/viewer.json)
+x.com##+js(prevent-xhr, /i/api/1.1/flow/timeline.json)
 x.com##+js(proxy-apply-config, {"skipToString":true})
 telegraph.co.uk##.onward-journey
 civitai.com##+js(no-fetch-if, faro.civitai.com)

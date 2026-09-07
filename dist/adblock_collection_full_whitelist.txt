@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13779
+! Total Rules: 13781
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -3523,7 +3523,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||adm.fwmrm.net^$domain=revision3.com
 @@||admin.brightcove.com^$object-subrequest,domain=tvn24.pl
 @@||admin.mailchimp.com^
-@@||admob.google.com/static/$domain=admob.google.com
 @@||adnet.qq.com^$~3p
 @@||adnews.me^$domain=adnews.me
 @@||adnxs.com^$image,subdocument,domain=bitzfree.com
@@ -3924,6 +3923,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cdn.afp.ai/ssp/sdk.js$domain=manilatimes.net
 @@||cdn.ampproject.org^$domain=ettoday.net
 @@||cdn.bannersnack.com/banners/$~3p,image,subdocument
+@@||cdn.bootcdn.net/ajax/libs/$domain=aoi.hugemaker.com.cn
 @@||cdn.bootcss.com/fuckadblock/3.2.1/fuckadblock.min.js$domain=1090ys8.com
 @@||cdn.bootcss.com/fuckadblock/3.2.1/fuckadblock.min.js$domain=share1223.com
 @@||cdn.broadstreetads.com/init.js$domain=thebatavian.com
@@ -3976,6 +3976,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cdn.snigelweb.com/adengine/imagetotext.info/loader.js$domain=imagetotext.info
 @@||cdn.sssam.com/static/js/*.js
 @@||cdn.stat-rock.com/player/*player.js$domain=4shared.com
+@@||cdn.staticfile.org^$domain=aoi.hugemaker.com.cn
 @@||cdn.syndication.twimg.com/tweets.json?$domain=bizpacreview.com
 @@||cdn.taboola.com/libtrc/*/loader.js$domain=cnet.com
 @@||cdn.theguardian.tv/ad/*.m3u8$domain=theguardian.com
@@ -4039,7 +4040,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cmp.inmobi.com/*/vendor-list-*.json$domain=express.co.uk
 @@||cmp.inmobi.com/choice/*/choice.js$domain=express.co.uk
 @@||cmp.inmobi.com/tcfv2/*.js$domain=express.co.uk
-@@||cmp.inmobi.com^$domain=glasgowlive.co.uk
 @@||cmp.sky.it/wrapperMessagingWithoutDetection.js$domain=tv8.it
 @@||cnnturk.com/action/media^
 @@||cnzz.com/z_stat.php$domain=newsite.sherpa.com.cn
@@ -5586,7 +5586,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||promo.zendesk.com^$xhr,domain=promo.com
 @@||promods.net/*.js$~3p
 @@||protoawe.com/embed/*/?psid=*&accessKey=*jasminVideoPlayerContainer$domain=pornhd.com
-@@||protoawe.com/tube-player/?psid=*&accessKey=*jasminVideoPlayerContainer$domain=pornhd.com
 @@||protopage.com^$generichide
 @@||proxy.ads.canalplus-bo.net/web/undefined/v1/adserver/info/?asset=*&channel=$xmlhttprequest,domain=www.mycanal.fr
 @@||przegladpiaseczynski.pl/wp-content/plugins/wppas/$~3p
@@ -6125,6 +6124,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||translate.google.*/translate_a/single^
 @@||translate.googleapis.com/*translate_*/*=*=$xhr
 @@||translate.yandex.net^$domain=speedtest.net
+@@||travel-assets.com/ads/*/expadsblocked.js^
 @@||treebitcoin.com/static/js/Controller/Advertise.js$script
 @@||tremormedia.com/crossdomain.xml
 @@||trstx.org/overroll/$domain=jetfilmizle.link|trstx.org
@@ -6351,7 +6351,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||ynet.co.il/common/javascript/ads.js$script,~third-party
 @@||yospace.com^$domain=reuters.com
 @@||you.visualdna.com/user/iab^$domain=youronlinechoices.com
-@@||youchien.net/css/ad_side.css$~3p
 @@||youfap.me/intermission/loadTargetUrl$xmlhttprequest
 @@||youmaker.com/js/prebid.js$domain=epochtimes.com
 @@||youmath.it/_*.js$script
@@ -12288,7 +12287,6 @@ alltransistors.com#@##reklama
 @@||getfreesmsnumber.com/js/advertisement.js^
 @@||realclearpolitics.com/asset/section/ad-blocker.js
 @@||uploadboy.com/ads.js
-@@||travel-assets.com/ads/*/expadsblocked.js^
 @@||d.ibtimes.co.uk/imasdk/ads.js^
 @@||dailygeekshow.com/wp-content/themes/soofresh2/js/advertisement.js^
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=up-4ever.com
@@ -12647,6 +12645,7 @@ alltransistors.com#@##reklama
 @@||cdn.jsdelivr.net/gh/itspro-dev/project_files@master/publicearn2.js$domain=bhadohimusic.in.net|usanowday.com|fullformsmarathi.in
 @@||safebk.shop/?utm_data=$xhr,domain=sterham.net
 @@||assets.connatix.com/Elements/*/jwpc-player-init-plugin_v2.js$domain=nypost.com
+@@||cmp.inmobi.com^$domain=glasgowlive.co.uk
 @@||vms-players.minutemediaservices.com/voltax_player_embed_mount.js$domain=theplayerstribune.com
 @@||mp.mmvideocdn.com/mini-player/prod/voltax_$domain=theplayerstribune.com
 @@||vms-videos.minutemediaservices.com^$xhr,media,domain=theplayerstribune.com
@@ -12943,6 +12942,7 @@ alltransistors.com#@##reklama
 @@||sapixcraft.com/css/exitPopup.css
 @@||newad.abiechina.com^$domain=abiechina.com
 @@||cdn-static.pornhd.com/pornhd/*/css/dist/main.css$domain=pornhd.com
+@@||protoawe.com/tube-player/?psid=*&accessKey=*jasminVideoPlayerContainer$domain=pornhd.com
 @@||securepubads.g.doubleclick.net/gampad/ads?gdfp_req=*gamespot%2Cgallery&$other,domain=gamespot.com
 @@||hb.improvedigital.com/pbw/prebid/prebid-v*-pbjsgd.min.js$domain=html5.gamedistribution.com
 @@||thegamesshop.com.au/controls/ajaxpages/*.aspx?ad=
@@ -13345,6 +13345,7 @@ alltransistors.com#@##reklama
 @@||techdays.ru/banners?pid=
 @@||techdays.ru/Banners/Redirect?bannerId=
 @@||googlesyndication.com/pageadimg/$domain=adwords.google.com
+@@||admob.google.com/static/$domain=admob.google.com
 @@||adwords.google.com^$domain=accounts.google.com
 @@||media.simplemachinesweb.com/site/images/icons/ads.png$domain=simplemachines.org
 @@||bbc.co.uk/modules/branding/css/$domain=bbc.co.uk
@@ -13501,6 +13502,7 @@ alltransistors.com#@##reklama
 @@||totalvene.fi/media/yendifvideoshare/adverts/$~3p
 @@||uze-ads.com/ads/$~3p
 @@||youchien.net/ad/*/ad/img/$~3p
+@@||youchien.net/css/ad_side.css$~3p
 @@||2chmatome2.jp/images/sp/320x250.png$~3p
 @@||anitasrecipes.com/Content/Images/Recipes/$image,~3p
 @@||arnhemland-safaris.com/images/made/$image,~3p
