@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13535
+! Total Rules: 13537
 ! ------------------------------------------
 ||fwcdn3.com^$third-party
 ||xing.com/img/buttons/$third-party
@@ -12981,6 +12981,7 @@ noticias.cancaonova.com###share-widget-horizontal
 superesportes.com.br###shareitens
 tatarada.com.br###single-compartilhe
 spinoff.com.br###sociaisnk
+gazetadigital.com.br###social-line-right
 bomdia.eu###social-menu
 tecnoblog.net###tb-banner-whatsapp
 xvideossexo.com###whatsapp
@@ -13180,6 +13181,7 @@ metropoles.com##div[class^="HeaderSocialWrapper-"]
 nexojornal.com.br##div[class^="ShareButtons_"]
 fogaonet.com##div[class^="socialShare_"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
+ingresso.com##div[data-mobile-app="btn_share"]
 transtelex.ro##.fb-box
 newsweek.ro##.icons
 auto-bild.ro##.social > li:has(.icon.icon-outline)

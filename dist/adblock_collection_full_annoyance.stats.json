@@ -1,16 +1,17 @@
 {
   "name": "adblock_collection_full_annoyance",
-  "total": 31107,
+  "total": 31110,
   "by_category": {
-    "annoyance": 31107
+    "annoyance": 31110
   },
   "by_kind": {
-    "css": 25930,
-    "scriptlet": 2818,
-    "network": 2359
+    "css": 25931,
+    "scriptlet": 2819,
+    "network": 2360
   },
   "by_source": {
-    "Fanboy Annoyance": 31072,
-    "fqnovel adrules": 35
+    "Fanboy Annoyance": 31074,
+    "fqnovel adrules": 35,
+    "ADrules Cjx-Annoyance": 1
   }
 }
