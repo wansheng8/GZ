@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87247
+! Total Rules: 87251
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -2826,6 +2826,7 @@ $removeparam=ocid,document,domain=msn.com
 ||sulkycook.com^
 ||summerobject.com^
 ||sunflaggroup.com^
+||sunnylettings.com^
 ||sunsetcampfires.com^
 ||sunsetstatic.com^
 ||sunshinegates.com^
@@ -2839,6 +2840,7 @@ $removeparam=ocid,document,domain=msn.com
 ||surfacesmedia.com^
 ||surfform.com^
 ||surftogether.net^
+||sushivolant.com^
 ||sustaindenim.com^
 ||swankysquare.com^
 ||swanwebcreations.com^
@@ -2874,8 +2876,10 @@ $removeparam=ocid,document,domain=msn.com
 ||tealjewel.com^
 ||teamstatus.net^
 ||tearfulglass.com^
+||techcatcher.com^
 ||techconverter.com^
 ||techdrivethru.com^
+||techmix.net^
 ||tediousbear.com^
 ||tedioustooth.com^
 ||teejubilee.com^
@@ -32814,7 +32818,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||web.newsletter.viviennewestwood.com^
 ||web.newsletterit.esprinet.com^
 ||web.online.monnalisa.com^
-||web.redazione.milanofinanza.it^
 ||web.sensilab.com^
 ||web.sensilab.cz^
 ||web.sensilab.de^
@@ -38429,6 +38432,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||tolt.io^$3p
 ||urban-vpn.com^$removeparam=cid
 ||valuecommerce.ne.jp/cgi-bin/*^vc_url=http$doc,urlskip=?vc_url
+||api.lightyear.com/v1/web-visit/pixel.png
 ||www.baidu.com/link?url=$removeparam=eqid
 ||toomics.com^$removeparam=gen
 ||dq8i9djm.com^$3p
