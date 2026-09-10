@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 13782,
+  "total": 13784,
   "by_category": {
-    "whitelist": 13782
+    "whitelist": 13784
   },
   "by_kind": {
-    "network": 10991,
+    "network": 10993,
     "css": 2767,
     "scriptlet": 21,
     "html": 3
   },
   "by_source": {
-    "ADrules AdRules": 4690,
-    "AdGuard – Ads": 1807,
+    "ADrules AdRules": 4688,
+    "AdGuard – Ads": 1812,
     "uBO filters – Unbreak": 1390,
     "ADrules EasyListChina": 1161,
     "ADrules Easylist": 1083,
@@ -34,7 +34,6 @@
     "fqnovel adrules": 12,
     "uBO filters – Privacy": 7,
     "uBO filters – Badware risks": 2,
-    "ADrules I-Dont-Care-About-Cookies": 1,
-    "EasyPrivacy (ABP)": 1
+    "ADrules I-Dont-Care-About-Cookies": 1
   }
 }

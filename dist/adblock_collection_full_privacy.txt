@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87251
+! Total Rules: 87262
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -2897,6 +2897,7 @@ $removeparam=ocid,document,domain=msn.com
 ||terriblethumb.com^
 ||test2.uat.mundi.work^
 ||testadmiral.com^
+||texturehunt.com^
 ||texturetrick.com^
 ||thebestpaints.com^
 ||thebigvan.com^
@@ -2954,6 +2955,7 @@ $removeparam=ocid,document,domain=msn.com
 ||toolforthought.com^
 ||topcrazypress.com^
 ||topicalcartel.com^
+||topicjungle.com^
 ||topsecretapp.net^
 ||topthrowbacks.com^
 ||tortoisepage.com^
@@ -2993,11 +2995,13 @@ $removeparam=ocid,document,domain=msn.com
 ||tuneupcoffee.com^
 ||tuplebar.com^
 ||turtleface.net^
+||tutorshelf.com^
 ||twelvedawn.com^
 ||twentyerr.com^
 ||twistloss.com^
 ||twisty.net^
 ||twochihuahuas.com^
+||twofishweb.com^
 ||typepredict.com^
 ||typewebsite.com^
 ||typicalairplane.com^
@@ -3031,6 +3035,7 @@ $removeparam=ocid,document,domain=msn.com
 ||upsidebeauty.com^
 ||upsidehair.com^
 ||urbanlaurel.com^
+||urbanopus.net^
 ||usabilitybook.com^
 ||uselesslumber.com^
 ||userballot.com^
@@ -3378,6 +3383,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||api.gist.ai/v1/analytics/track
 ||api.gleap.io/sessions/ping
 ||api.ipgeolocation.io/getip
+||api.mambasms.com/monitorEvent/
 ||api.pcid.ca/v1/client/logs
 ||api.pearcommerce.com/v1/page_load?
 ||api.picox.bendingspoons.com/v1/events
@@ -5660,6 +5666,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||api.headliner.link/api/v1/b/receive
 ||api.ig.com/statistics/
 ||api.invideo.io/v3/send_analytics_event
+||api.lightyear.com/v1/web-visit/pixel.png
 ||api.samsungfind.com/log-collector
 ||api.takealot.com^$ping
 ||api.thefantazy.com/web-vitals
@@ -5877,6 +5884,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||dhresource.com/dhs/fob/js/common/track/$domain=dhgate.com
 ||diabrowser.com/js/arcnet-script.js
 ||discover-metrics.cloud.seek.com.au^
+||dmt.fidelity.com/prod/meas/
 ||docs.github.com/events
 ||dollartree.com/ccstoreui/*/analytics/
 ||domainit.com/scripts/track.js
@@ -38432,7 +38440,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||tolt.io^$3p
 ||urban-vpn.com^$removeparam=cid
 ||valuecommerce.ne.jp/cgi-bin/*^vc_url=http$doc,urlskip=?vc_url
-||api.lightyear.com/v1/web-visit/pixel.png
 ||www.baidu.com/link?url=$removeparam=eqid
 ||toomics.com^$removeparam=gen
 ||dq8i9djm.com^$3p
@@ -42659,7 +42666,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 |http://r.i.ua^
 |https://r.i.ua^
 # Easyprivacy, parsed and mirrored by https://firebog.net
-# Updated 07SEP26 from https://easylist.to/easylist/easyprivacy.txt
+# Updated 09SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
 07b3.pandasuite.io
 0ddf.pandasuite.io
@@ -77868,6 +77875,7 @@ suncanny.marvel.com
 suncanny.marvelhq.com
 sunflaggroup.com
 sunlightmetrics.b-cdn.net
+sunnylettings.com
 sunsetcampfires.com
 sunsetstatic.com
 sunshinegates.com
@@ -77905,6 +77913,7 @@ survey-staging.mazda.com.au
 survey.xo.com
 s.useeffectbyexample.com
 s.usenix.org
+sushivolant.com
 sustainability.ricoh.ch
 sustainability.ricoh.co.za
 sustainable.optum.com
@@ -78718,10 +78727,12 @@ teamstatus.net
 tearfulglass.com
 te.baur.de
 techadv.actonservice.com
+techcatcher.com
 techconverter.com
 techdrivethru.com
 tech.finalto.com
 techgifts.tradeshow.globalsources.com
+techmix.net
 technical.kyzen.com
 technology1.informaengage.com
 technologyadvice.actonservice.com
@@ -86939,7 +86950,7 @@ $to=~em.dynamicyield.com|~mootoon.co.kr|~iforms.americanexpress.com,removeparam=
 $to=~meishi.meituan.com|~portal-portm.meituan.com|~rd.bizrate.com|~glavnoe.life|~mmcref.pl|~t.send.vt.edu|~app.plex.tv|~hobbygames.ru,removeparam=utm_medium
 $to=~usprobioticguide.com|~rd.bizrate.com|~glavnoe.life|~redirects.tradedoubler.com|~t.send.vt.edu|~google.ad|~google.ae|~google.al|~google.am|~google.as|~google.at|~google.az|~google.ba|~google.be|~google.bf|~google.bg|~google.bi|~google.bj|~google.bs|~google.bt|~google.by|~google.ca|~google.cat|~google.cd|~google.cf|~google.cg|~google.ch|~google.ci|~google.cl|~google.cm|~google.cn|~google.co.ao|~google.co.bw|~google.co.ck|~google.co.cr|~google.co.id|~google.co.il|~google.co.in|~google.co.jp|~google.co.ke|~google.co.kr|~google.co.ls|~google.co.ma|~google.co.mz|~google.co.nz|~google.co.th|~google.co.tz|~google.co.ug|~google.co.uk|~google.co.uz|~google.co.ve|~google.co.vi|~google.co.za|~google.co.zm|~google.co.zw|~google.com|~google.com.af|~google.com.ag|~google.com.ai|~google.com.ar|~google.com.au|~google.com.bd|~google.com.bh|~google.com.bn|~google.com.bo|~google.com.br|~google.com.bz|~google.com.co|~google.com.cu|~google.com.cy|~google.com.do|~google.com.ec|~google.com.eg|~google.com.et|~google.com.fj|~google.com.gh|~google.com.gi|~google.com.gt|~google.com.hk|~google.com.jm|~google.com.kh|~google.com.kw|~google.com.lb|~google.com.ly|~google.com.mm|~google.com.mt|~google.com.mx|~google.com.my|~google.com.na|~google.com.nf|~google.com.ng|~google.com.ni|~google.com.np|~google.com.om|~google.com.pa|~google.com.pe|~google.com.pg|~google.com.ph|~google.com.pk|~google.com.pr|~google.com.py|~google.com.qa|~google.com.sa|~google.com.sb|~google.com.sg|~google.com.sl|~google.com.sv|~google.com.tj|~google.com.tr|~google.com.tw|~google.com.ua|~google.com.uy|~google.com.vc|~google.com.vn|~google.cv|~google.cz|~google.de|~google.dj|~google.dk|~google.dm|~google.dz|~google.ee|~google.es|~google.fi|~google.fm|~google.fr|~google.ga|~google.ge|~google.gg|~google.gl|~google.gm|~google.gp|~google.gr|~google.gy|~google.hn|~google.hr|~google.ht|~google.hu|~google.ie|~google.im|~google.iq|~google.is|~google.it|~google.je|~google.jo|~google.kg|~google.ki|~google.kz|~google.la|~google.li|~google.lk|~google.lt|~google.lu|~google.lv|~google.md|~google.me|~google.mg|~google.mk|~google.ml|~google.mn|~google.ms|~google.mu|~google.mv|~google.mw|~google.ne|~google.nl|~google.no|~google.nr|~google.nu|~google.pl|~google.pn|~google.ps|~google.pt|~google.ro|~google.rs|~google.ru|~google.rw|~google.sc|~google.se|~google.sh|~google.si|~google.sk|~google.sm|~google.sn|~google.so|~google.sr|~google.st|~google.td|~google.tg|~google.tk|~google.tl|~google.tm|~google.tn|~google.to|~google.tt|~google.vg|~google.vu|~google.ws|~hobbygames.ru,removeparam=utm_campaign
 $to=~reddit.app.link|~glavnoe.life|~gaugau.futabanet.jp|~redirects.tradedoubler.com|~app.plex.tv,removeparam=utm_content
-$to=~video-shoper.ru|~glavnoe.life|~uploadnow.io|~3dnews.ru|~transfernow.net|~carrefourpl.snrpage.com|~transfernow.net|~lanacion.com.ar|~t.send.vt.edu|~ofeminin.pl|~auto-swiat.pl|~komputerswiat.pl|~noizz.pl|~plejada.pl|~medonet.pl|~businessinsider.com.pl|~sendgb.com|~plex.tv|~insurancexblog.blogspot.com|~canadacompanyregistry.com|~hobbygames.ru,removeparam=utm_source
+$to=~3dnews.ru|~auto-swiat.pl|~businessinsider.com.pl|~canadacompanyregistry.com|~carrefourpl.snrpage.com|~eneba.com|~glavnoe.life|~hobbygames.ru|~insurancexblog.blogspot.com|~komputerswiat.pl|~lanacion.com.ar|~medonet.pl|~noizz.pl|~ofeminin.pl|~plejada.pl|~plex.tv|~sendgb.com|~t.send.vt.edu|~transfernow.net|~transfernow.net|~uploadnow.io|~video-shoper.ru,removeparam=utm_source
 $to=~glavnoe.life|~metabase.com,removeparam=utm_term
 $to=~lifehacker.ru|~forbes.ru|~kommersant.ru,removeparam=erid
 $to=~login.aliexpress.com|~login.aliexpress.us,removeparam=_ga
