@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87262
+! Total Rules: 87271
 ! ------------------------------------------
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
@@ -858,6 +858,7 @@ $removeparam=ocid,document,domain=msn.com
 ||beautifulrope.com^
 ||beautylulu.com^
 ||becomemummy.com^
+||beddingdownbaby.com^
 ||bedsberry.com^
 ||beelinecolor.com^
 ||beewhispering.com^
@@ -880,8 +881,10 @@ $removeparam=ocid,document,domain=msn.com
 ||bigfishapparel.com^
 ||biggerbling.com^
 ||bighornbasin.net^
+||bigpicframing.com^
 ||bigwetbrush.com^
 ||bigworldfashion.com^
+||bijouxbee.com^
 ||bikeexerciser.com^
 ||bikepaws.com^
 ||bikesboard.com^
@@ -893,6 +896,7 @@ $removeparam=ocid,document,domain=msn.com
 ||binarykite.com^
 ||binspiredtees.com^
 ||biologylog.com^
+||biotechnologysciences.com^
 ||birthdaybelief.com^
 ||biscuitbox.net^
 ||biztoolsbrief.com^
@@ -6162,6 +6166,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||logs.naukri.com^
 ||logs.netflix.com^
 ||lolwot.com/B5xaqzSGvMTM.js
+||lookawoman.com/t/
 ||lookfantastic.ie/track
 ||loom.com/metrics/graphql
 ||love.vidora.su^
@@ -6763,6 +6768,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||ups.com^$removeparam=src
 ||ups2up.fun/js/anti.js
 ||upstract.com/tokei/
+||urs.metacritic.com^
 ||use.hetzner.com^
 ||useblackbox.io/telemetry
 ||user-metrics.onthemarket.com^
@@ -9803,6 +9809,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||aa.last.fm^
 ||aa.maxblue.de^
 ||aa.mclaren.com^
+||aa.metacritic.com^
 ||aa.neom.com^
 ||aa.norisbank.de^
 ||aa.pacificdentalservices.com^
@@ -13412,6 +13419,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||saa.irvinecompanyapartments.com^
 ||saa.last.fm^
 ||saa.maxpreps.com^
+||saa.metacritic.com^
 ||saa.mysmile.wellfit.com^
 ||saa.pacificdentalservices.com^
 ||saa.paramountplus.com^
@@ -38424,6 +38432,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||adshares.net^$removeparam=cid
 ||zsp1.ah.nl/*/URhttp*$doc,urlskip=/\/UR(http.+)/
 ||blogfoster.com^$3p
+||cyber-ad01.cc^$removeparam=ip
 ||ds1.nl/redirect/*^dai_url=http$doc,urlskip=?dai_url
 ||d.ghostery.com^$removeparam
 ||gptgirlfriend.online^$removeparam=ref
@@ -38442,13 +38451,12 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||valuecommerce.ne.jp/cgi-bin/*^vc_url=http$doc,urlskip=?vc_url
 ||www.baidu.com/link?url=$removeparam=eqid
 ||toomics.com^$removeparam=gen
-||dq8i9djm.com^$3p
 ||ziprecruiter.com^$removeparam=zrclid
 ||marketwatch.com^$removeparam=mod
 ||weather.com^$doc,removeparam=par
 ||perfo.salestube.pl^$removeparam=aff_click_id
 ||atmrum.net/report/v*/atm/r.gif
-||cyber-ad01.cc^$removeparam=ip
+||dq8i9djm.com^$3p
 ||icontent.us^$doc
 ||lnkr.us^$doc
 ||myanalytic.net^$3p
@@ -86734,6 +86742,7 @@ telegraph.co.uk##.onward-journey
 civitai.com##+js(no-fetch-if, faro.civitai.com)
 $uritransform=/#Echobox=[\d]{10}$//,to=iltalehti.fi|hs.fi
 adhs-zentrum.de##+js(no-xhr-if, method:POST body:/"track"|adblock/)
+||umami-*.sufrah.net^
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
 $removeparam=x-source
