@@ -1,40 +1,39 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 13785,
+  "total": 13784,
   "by_category": {
-    "whitelist": 13785
+    "whitelist": 13784
   },
   "by_kind": {
-    "network": 10994,
-    "css": 2767,
+    "network": 10991,
+    "css": 2769,
     "scriptlet": 21,
     "html": 3
   },
   "by_source": {
-    "ADrules AdRules": 4683,
-    "AdGuard – Ads": 1814,
+    "ADrules AdRules": 4674,
+    "AdGuard – Ads": 1824,
     "uBO filters – Unbreak": 1390,
     "ADrules EasyListChina": 1161,
-    "ADrules Easylist": 1084,
+    "ADrules Easylist": 1085,
     "ADrules EasyPrivacy": 838,
     "Fanboy Annoyance": 781,
     "uBO filters – Ads": 759,
     "Fanboy Social": 202,
     "AdGuardSDNSFilter": 196,
     "AdGuard – Mobile Ads": 192,
-    "217heidai adblockdns": 166,
     "banbendalao ADgk": 166,
+    "217heidai adblockdns": 165,
     "ADrules anti-AD": 110,
-    "AdGuard/uBO – URL Tracking Protection": 80,
+    "AdGuard/uBO – URL Tracking Protection": 78,
     "Fanboy CookieMonster": 36,
-    "uBO filters – Quick fixes": 33,
+    "uBO filters – Quick fixes": 34,
     "uBO lan-block (Block Outsider Intrusion into LAN)": 27,
     "ADrules ChengFeng": 26,
     "ADrules HalfLife": 18,
     "fqnovel adrules": 12,
     "uBO filters – Privacy": 7,
     "uBO filters – Badware risks": 2,
-    "ADrules I-Dont-Care-About-Cookies": 1,
-    "EasyList (ABP)": 1
+    "ADrules I-Dont-Care-About-Cookies": 1
   }
 }

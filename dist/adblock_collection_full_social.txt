@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13544
+! Total Rules: 13545
 ! ------------------------------------------
 ||fwcdn3.com^$third-party
 ||xing.com/img/buttons/$third-party
@@ -12376,6 +12376,7 @@ vogel.de##.inf-toolbar
 islamische-zeitung.de##.iz-socmed
 portfoliojournal.de##.j-sharebuttons
 freiewelt.net##.jksocials
+derstandard.at,derstandard.de##.js-article-tool-socialshare-menu
 kicker.de##.kick__article__social
 lebensmittelwarnung.de##.lmw-footer-nav--social
 muenchen.de##.m-social-link

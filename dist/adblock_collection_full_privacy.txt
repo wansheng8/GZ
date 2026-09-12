@@ -3,8 +3,9 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87271
+! Total Rules: 87278
 ! ------------------------------------------
+||sponichi.co.jp^$removeparam=ref
 ||3ng6p6m0.de^$third-party
 ||adrta.com^$third-party
 ||analitycs.net^$third-party
@@ -911,6 +912,8 @@ $removeparam=ocid,document,domain=msn.com
 ||blitzcampaigns.com^
 ||blockdial.com^
 ||bloomsend.com^
+||bluebellbooks.com^
+||bluebirdteam.com^
 ||bluecollarmuse.com^
 ||blueeyedblow.com^
 ||bluelionlabs.net^
@@ -961,6 +964,7 @@ $removeparam=ocid,document,domain=msn.com
 ||broadborder.com^
 ||broadcastbed.com^
 ||broaddoor.com^
+||broflask.com^
 ||brotherslocket.com^
 ||brownboxgroup.com^
 ||browndogmanor.com^
@@ -3615,6 +3619,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||ct.capterra.com^
 ||ct.corpusapp.com^
 ||cts.businesswire.com/ct/CT?id=smartlink&url=$urlskip=?url
+||custom.search.yahoo.co.jp/images/window/*.gif
 ||customerlobby.com/ctrack-
 ||customfingerprints.bablosoft.com^
 ||d.lilstts.com^
@@ -5029,7 +5034,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||osd.oxygem.it^
 ||p.a2d.io/plx.js
 ||pagesjaunes.fr/pmp/
-||player.fabster.com/event/
 ||rs.smc.tf^
 ||scriptsgratuits.com/sg/stats/
 ||service-webmaster.fr/cpt-visites/$third-party
@@ -5359,6 +5363,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||nctrk.abmail.com.br^
 ||ndmais.com.br/tracking-parceiros-ndmais/
 ||neurotrack.neurolake.io^
+||osuper.com.br/beta/bundles/analytics/analytics-$script
 ||pixel.leadlovers.app^
 ||sat.soluall.net^
 ||scripts.dadata.com.br^
@@ -17483,7 +17488,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||sslmetrics.vivint.com^
 ||sslomni.canadiantire.ca^
 ||sslsc.sanitas.com^
-||sslstats.canadapost-postescanada.ca^
 ||sslstats.canadapost.ca^
 ||sslstats.deltavacations.com^
 ||sslstats.healthydirections.com^
@@ -17824,7 +17828,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||stats.bookingbuddy.co.uk^
 ||stats.bookingbuddy.eu^
 ||stats.cafepress.com^
-||stats.canadapost-postescanada.ca^
 ||stats.canadapost.ca^
 ||stats.carecredit.com^
 ||stats.cartoonnetwork.com^
@@ -37974,6 +37977,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||tuttocagliari.net/pixel
 ||tuttogratis.it/gopix.php?
 ||tuttomercatoweb.com/pixel
+||vannacci.gay/~flock.js
 ||videogame.it/a/logview/
 ||vinted.it/relay/events
 ||volkswagen-italia.it^*/tracking/
@@ -38036,7 +38040,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||kabu-sokuhou.com/js/cpv/
 ||kojima.net^$removeparam=dmai
 ||log-lb.skyperfectv.co.jp^
-||logcollector.note.com^
 ||logql.yahoo.co.jp^
 ||m-oo-m.com/data/report/
 ||majikichi.com/js/tracking.js
@@ -38283,7 +38286,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||umschool.net/_jts/api/s/track
 ||vedomosti.ru^$removeparam=from
 ||vesti.ru/counter/
-||vk.ru/rtrg
 ||vkvideo.ru/al_video.php?act=track
 ||vstat.rtr-vesti.ru^
 ||webbff.ru.4game.ru/api/exporter/events
@@ -38432,7 +38434,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||adshares.net^$removeparam=cid
 ||zsp1.ah.nl/*/URhttp*$doc,urlskip=/\/UR(http.+)/
 ||blogfoster.com^$3p
-||cyber-ad01.cc^$removeparam=ip
 ||ds1.nl/redirect/*^dai_url=http$doc,urlskip=?dai_url
 ||d.ghostery.com^$removeparam
 ||gptgirlfriend.online^$removeparam=ref
@@ -38456,6 +38457,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||weather.com^$doc,removeparam=par
 ||perfo.salestube.pl^$removeparam=aff_click_id
 ||atmrum.net/report/v*/atm/r.gif
+||cyber-ad01.cc^$removeparam=ip
 ||dq8i9djm.com^$3p
 ||icontent.us^$doc
 ||lnkr.us^$doc
@@ -38659,6 +38661,11 @@ $to=~glavnoe.life,removeparam=utm_referrer
 $to=~tix.axs.com,removeparam=irclickid
 $to=~booklive.jp,removeparam=vc_lpp
 $to=~greenbuildingadvisor.com,removeparam=oly_enc_id
+||canadapost-postescanada.ca^$removeparam=rid
+||note.com^$removeparam=rt
+||myfans.jp^$removeparam=aff
+||asahi.com^$removeparam=cid
+||yomiuri.co.jp^$removeparam=ref
 ||bookbang.jp^$removeparam=ui_source
 ||vivareal.com.br^$removeparam=source
 ||video.unext.jp^$removeparam=cid
@@ -38668,7 +38675,7 @@ $to=~greenbuildingadvisor.com,removeparam=oly_enc_id
 ||compshare.cn^$removeparam=ytag
 ||bg-mania.jp^$removeparam=in
 ||dailyshincho.jp^$removeparam=ui_source
-||detail.chiebukuro.yahoo.co.jp^$removeparam=fr
+||detail.chiebukuro.yahoo.co.jp^$removeparam=__ysp
 ||deview.co.jp^$removeparam=anc
 ||weathernews.jp^$removeparam=fm
 ||nna.jp^$removeparam=media
@@ -38732,7 +38739,6 @@ $to=~greenbuildingadvisor.com,removeparam=oly_enc_id
 ||irisplaza.co.jp^$removeparam=fd_bridge_id
 ||ana.co.jp^$removeparam=cid
 ||coca-cola.com^$removeparam=openExternalBrowser
-||promo-search.yahoo.co.jp^$removeparam=fr
 ||shop.tsukumo.co.jp/goods/$removeparam=cid
 ||s.awa.fm^$removeparam=t
 ||aozorabank.co.jp^$removeparam=lid
@@ -38894,7 +38900,6 @@ $removeparam=pg,to=fnnews.com
 ||plarium.com/landings/$removeparam
 ||lancasterarchery.com^$removeparam=dt_id
 ||lenta.ru^$removeparam=es
-||finance.yahoo.co.jp^$removeparam=cpt_s
 ||sbisec.co.jp^$removeparam=waad
 ||ejje.weblio.jp^$removeparam=erl
 ||map.yahoo.co.jp^$removeparam=from_srv
@@ -38941,7 +38946,6 @@ $removeparam=pg,to=fnnews.com
 ||donga.com^$removeparam=ref
 $removeparam=adcref,to=fafit24.de
 $removeparam=cvrsid,to=decathlon.pl
-||donation.yahoo.co.jp^$removeparam=cpt_c
 ||tinkoff.ru^$removeparam=dsp_click_id
 ||happymail.co.jp^$removeparam=Log
 ||gotanynudes.com^$removeparam=ref
@@ -39021,7 +39025,6 @@ $removeparam=newsstand,to=sportalkorea.com
 ||jlcpcb.com^$removeparam=from,to=~passport.jlcpcb.com
 ||event.hoken-mammoth.jp^$removeparam=s_mf
 ||basketballking.jp^$removeparam=cx_art
-||asahi.com^$removeparam=cid
 ||cnn.co.jp^$removeparam=ref
 ||fashion-press.net^$removeparam=media
 ||immobilienscout24.de^$removeparam=source
@@ -39070,7 +39073,6 @@ $removeparam=newsstand,to=sportalkorea.com
 ||approach.yahoo.co.jp^$removeparam=code
 ||agoda.com^$removeparam=tag
 ||editor.flixier.com^$removeparam=/fx_(source|medium|campaign)/
-||toku.yahoo.co.jp^$removeparam=fr
 ||nikkeibp.co.jp^$removeparam=i_cid
 ||cyberlink.com^$removeparam=affid
 ||zestradar.com^$removeparam=adclid
@@ -39115,7 +39117,6 @@ $removeparam=newsstand,to=sportalkorea.com
 ||galaxus.de^$removeparam=idealoid
 ||www.electronic4you.de^$removeparam=idealoid
 ||mvideo.ru^$removeparam=/^(_requestid|reff)=/
-||search.yahoo.co.jp^$removeparam=fr
 ||theregister.com^$removeparam=td
 ||gamesplanet.com^$removeparam=ref
 &&sub19=undefined&sub20=undefined
@@ -42674,7 +42675,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 |http://r.i.ua^
 |https://r.i.ua^
 # Easyprivacy, parsed and mirrored by https://firebog.net
-# Updated 09SEP26 from https://easylist.to/easylist/easyprivacy.txt
+# Updated 11SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
 07b3.pandasuite.io
 0ddf.pandasuite.io
@@ -50135,6 +50136,7 @@ beautylulu.com
 bebpon.zetronix.com
 becanium.com
 becomemummy.com
+beddingdownbaby.com
 bedsberry.com
 beeline.beeline-tire.co.jp
 beelinecolor.com
@@ -50235,12 +50237,14 @@ bigdata.clarin.com
 bigfishapparel.com
 biggerbling.com
 bighornbasin.net
+bigpicframing.com
 bigwetbrush.com
 bigworldfashion.com
 b.iheart.southwest.com
 bi.heyloyalty.com
 bi.irisdating.com
 bijkep.hotelesestelar.com
+bijouxbee.com
 bikeexerciser.com
 bikepaws.com
 bikesboard.com
@@ -50263,6 +50267,7 @@ bioanalyticalmarketing.eurofins-info.com
 bio.chups.co
 biologylog.com
 biophysicsgroup.actonservice.com
+biotechnologysciences.com
 bi.pst.tech
 birthdaybelief.com
 biscuitbox.net
@@ -78967,6 +78972,7 @@ text.convenzioniaziendali.it
 text.mitarbeiterangebote.at
 text.mitarbeiterangebote.de
 text.rahmenvereinbarungen.de
+texturehunt.com
 texturetrick.com
 te.yomonda.de
 te.your-look-for-less.nl
@@ -79508,6 +79514,7 @@ topcrazypress.com
 top.elec.ru
 top-fwz1.mail.ru
 topicalcartel.com
+topicjungle.com
 topsecretapp.net
 top.skyzone.ro
 topspin.npo.nl
@@ -82454,6 +82461,7 @@ t.usajaguars.com
 t.usctrojans.com
 t.utahstateaggies.com
 tutbc1.www.tapmyback.com
+tutorshelf.com
 t.utrockets.com
 tuvevx.agent-sana.com
 t.valcyte.com
@@ -82497,6 +82505,7 @@ twkbui.mansion-review.jp
 twochihuahuas.com
 two.cm.com
 twoeej.carrefour.fr
+twofishweb.com
 two.tio.nl
 tw.reppublika.com
 twsdne.petenkoiratarvike.com
@@ -82785,6 +82794,7 @@ uqd.io
 uqhpej.wiberrentacar.com
 urbanairship.com
 urbanlaurel.com
+urbanopus.net
 ur.b.inhaabit.com
 urehgr.halekulani.com
 ureoaw.netthandelen.no
@@ -86742,7 +86752,6 @@ telegraph.co.uk##.onward-journey
 civitai.com##+js(no-fetch-if, faro.civitai.com)
 $uritransform=/#Echobox=[\d]{10}$//,to=iltalehti.fi|hs.fi
 adhs-zentrum.de##+js(no-xhr-if, method:POST body:/"track"|adblock/)
-||umami-*.sufrah.net^
 $removeparam=/^weekend-reading-link-\d{6}$/
 $removeparam=x-clickref
 $removeparam=x-source
@@ -86954,7 +86963,7 @@ $removeparam=guccounter
 $removeparam=action_object_map
 $removeparam=action_ref_map
 $removeparam=action_type_map
-$to=~adj.st|~yandex.go.link|~dermanostic.go.link,removeparam=adj_t
+$to=~adj.st|~yandex.go.link|~dermanostic.go.link|~jfc.go.link,removeparam=adj_t
 $to=~em.dynamicyield.com|~mootoon.co.kr|~iforms.americanexpress.com,removeparam=cuid
 $to=~meishi.meituan.com|~portal-portm.meituan.com|~rd.bizrate.com|~glavnoe.life|~mmcref.pl|~t.send.vt.edu|~app.plex.tv|~hobbygames.ru,removeparam=utm_medium
 $to=~usprobioticguide.com|~rd.bizrate.com|~glavnoe.life|~redirects.tradedoubler.com|~t.send.vt.edu|~google.ad|~google.ae|~google.al|~google.am|~google.as|~google.at|~google.az|~google.ba|~google.be|~google.bf|~google.bg|~google.bi|~google.bj|~google.bs|~google.bt|~google.by|~google.ca|~google.cat|~google.cd|~google.cf|~google.cg|~google.ch|~google.ci|~google.cl|~google.cm|~google.cn|~google.co.ao|~google.co.bw|~google.co.ck|~google.co.cr|~google.co.id|~google.co.il|~google.co.in|~google.co.jp|~google.co.ke|~google.co.kr|~google.co.ls|~google.co.ma|~google.co.mz|~google.co.nz|~google.co.th|~google.co.tz|~google.co.ug|~google.co.uk|~google.co.uz|~google.co.ve|~google.co.vi|~google.co.za|~google.co.zm|~google.co.zw|~google.com|~google.com.af|~google.com.ag|~google.com.ai|~google.com.ar|~google.com.au|~google.com.bd|~google.com.bh|~google.com.bn|~google.com.bo|~google.com.br|~google.com.bz|~google.com.co|~google.com.cu|~google.com.cy|~google.com.do|~google.com.ec|~google.com.eg|~google.com.et|~google.com.fj|~google.com.gh|~google.com.gi|~google.com.gt|~google.com.hk|~google.com.jm|~google.com.kh|~google.com.kw|~google.com.lb|~google.com.ly|~google.com.mm|~google.com.mt|~google.com.mx|~google.com.my|~google.com.na|~google.com.nf|~google.com.ng|~google.com.ni|~google.com.np|~google.com.om|~google.com.pa|~google.com.pe|~google.com.pg|~google.com.ph|~google.com.pk|~google.com.pr|~google.com.py|~google.com.qa|~google.com.sa|~google.com.sb|~google.com.sg|~google.com.sl|~google.com.sv|~google.com.tj|~google.com.tr|~google.com.tw|~google.com.ua|~google.com.uy|~google.com.vc|~google.com.vn|~google.cv|~google.cz|~google.de|~google.dj|~google.dk|~google.dm|~google.dz|~google.ee|~google.es|~google.fi|~google.fm|~google.fr|~google.ga|~google.ge|~google.gg|~google.gl|~google.gm|~google.gp|~google.gr|~google.gy|~google.hn|~google.hr|~google.ht|~google.hu|~google.ie|~google.im|~google.iq|~google.is|~google.it|~google.je|~google.jo|~google.kg|~google.ki|~google.kz|~google.la|~google.li|~google.lk|~google.lt|~google.lu|~google.lv|~google.md|~google.me|~google.mg|~google.mk|~google.ml|~google.mn|~google.ms|~google.mu|~google.mv|~google.mw|~google.ne|~google.nl|~google.no|~google.nr|~google.nu|~google.pl|~google.pn|~google.ps|~google.pt|~google.ro|~google.rs|~google.ru|~google.rw|~google.sc|~google.se|~google.sh|~google.si|~google.sk|~google.sm|~google.sn|~google.so|~google.sr|~google.st|~google.td|~google.tg|~google.tk|~google.tl|~google.tm|~google.tn|~google.to|~google.tt|~google.vg|~google.vu|~google.ws|~hobbygames.ru,removeparam=utm_campaign
@@ -87157,8 +87166,6 @@ $removeparam=from,domain=anime.nicovideo.jp|dic.nicovideo.jp
 ||google.*/search$removeparam=oq
 ||google.*/search$removeparam=oe
 ||google.*/websearch$removeparam=visit_id
-||google.*/search$removeparam=biw
-||google.*/search$removeparam=bih
 ||google.*/search$removeparam=sa
 ||google.*/search$removeparam=source
 ||google.*/search$removeparam=aqs
