@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="140" viewBox="0 0 1160 140" fill="none" role="img" aria-label="stats">
+  <defs>
+    <filter id="sg" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3.6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="1.0" y="1" width="268" height="138" rx="10" fill="#0b0b16" stroke="#ff00e5" stroke-opacity="0.5" stroke-width="1.4"/>
+  <rect x="1.0" y="1" width="268" height="5" rx="2.5" fill="#ff00e5"/>
+  <text x="134.0" y="72" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="40" font-weight="700" fill="#ff00e5" filter="url(#sg)">968,349</text>
+  <text x="134.0" y="104" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="13" letter-spacing="3" fill="#cdc6ff">FULL RULES</text>
+  <rect x="298.33" y="1" width="268" height="138" rx="10" fill="#0b0b16" stroke="#00f0ff" stroke-opacity="0.5" stroke-width="1.4"/>
+  <rect x="298.33" y="1" width="268" height="5" rx="2.5" fill="#00f0ff"/>
+  <text x="431.33" y="72" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="40" font-weight="700" fill="#00f0ff" filter="url(#sg)">491,021</text>
+  <text x="431.33" y="104" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="13" letter-spacing="3" fill="#cdc6ff">DNS DOMAINS</text>
+  <rect x="595.66" y="1" width="268" height="138" rx="10" fill="#0b0b16" stroke="#9d00ff" stroke-opacity="0.5" stroke-width="1.4"/>
+  <rect x="595.66" y="1" width="268" height="5" rx="2.5" fill="#9d00ff"/>
+  <text x="728.66" y="72" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="40" font-weight="700" fill="#9d00ff" filter="url(#sg)">60</text>
+  <text x="728.66" y="104" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="13" letter-spacing="3" fill="#cdc6ff">UPSTREAM</text>
+  <rect x="892.99" y="1" width="268" height="138" rx="10" fill="#0b0b16" stroke="#39ff14" stroke-opacity="0.5" stroke-width="1.4"/>
+  <rect x="892.99" y="1" width="268" height="5" rx="2.5" fill="#39ff14"/>
+  <text x="1025.99" y="72" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="40" font-weight="700" fill="#39ff14" filter="url(#sg)">33.8万+</text>
+  <text x="1025.99" y="104" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="13" letter-spacing="3" fill="#cdc6ff">DEDUPLICATED</text>
+</svg>

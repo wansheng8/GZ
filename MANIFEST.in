@@ -1,4 +1,5 @@
 include config/sources.yaml
 include README.md
 include LICENSE
+recursive-include assets *.svg
 recursive-include tests *.py
