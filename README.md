@@ -28,24 +28,51 @@
 
 ## ▓▒░ 订阅中心 ░▒▓
 
-链接均可 **直接点击跳转订阅地址**，在过滤工具里粘贴即可（或右键复制链接）。
+每日 `03:00 UTC` 自动构建 · **订阅一次，自动更新** · 链接长期有效
 
-| 数据流 | GitHub 源 · 点击即得 | jsDelivr CDN 加速 |
-| --- | --- | --- |
-| **`[浏览器专用]`** uBO / AdGuard / ABP · 广告+隐私+安全 | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt |
-| **`[DNS · IPv4 hosts]`** AdGuard Home / Pi-hole / dnsmasq | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt |
-| **`[DNS · IPv6 hosts]`** 双栈再补订阅这一条 | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt |
-| **`[单行域名列表]`** AdGuard DNS 等域名格式 | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt |
-| **`[安全专项]`** 恶意 + 钓鱼 · 误杀风险低 · 可选 | https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt | https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_security.txt |
+| 订阅包 | 适用工具 | 一键导入 |
+| :--- | :--- | :--- |
+| **`[浏览器专用]`** 广告 + 隐私 + 安全 | uBlock Origin · AdGuard · AdBlock Plus | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff00e5?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt) |
+| **`[DNS · IPv4 hosts]`** 设备级拦截 | AdGuard Home · Pi-hole · dnsmasq | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff00e5?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt) |
+| **`[DNS · IPv6 hosts]`** 双栈设备补订 | AdGuard Home · Pi-hole · dnsmasq | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff00e5?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt) |
+| **`[单行域名列表]`** 纯域名格式 | AdGuard DNS · 各类域名过滤 | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff00e5?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt) |
+| **`[安全专项]`** 恶意 + 钓鱼 · 低误杀 | 只需安全拦截的设备 | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-39ff14?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_security.txt) |
 
 ```console
 >_ 三步上手
   1. 按设备选一行（浏览器选第 1 条，DNS 设备选第 2~4 条）
-  2. 点击链接复制地址（国内访问慢换 CDN 列）
+  2. 点「订阅 GitHub」，国内访问慢就点「订阅 jsDelivr」
   3. 在过滤工具里「添加自定义过滤列表」并粘贴
 ```
 
 > `[ TIP ]` 仅需安全拦截：单独订阅「安全专项」行即可，绕过完整版的误杀风险。
+
+<details>
+<summary><code>纯文本订阅链接</code></summary>
+
+```text
+[浏览器专用]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt
+
+[DNS · IPv4 hosts]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt
+
+[DNS · IPv6 hosts]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt
+
+[单行域名列表]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt
+
+[安全专项]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_security.txt
+```
+
+</details>
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
