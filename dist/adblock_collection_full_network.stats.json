@@ -1,24 +1,24 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 742827,
+  "total": 742933,
   "by_category": {
-    "network": 742827
+    "network": 742933
   },
   "by_kind": {
-    "network": 658812,
+    "network": 658918,
     "css": 76231,
     "scriptlet": 7617,
     "html": 166,
     "js": 1
   },
   "by_source": {
-    "oisd": 124028,
+    "oisd": 124126,
     "Hagezi DNS Pro Plus": 117416,
     "ADrules DNS": 88711,
     "StevenBlack Hosts": 75797,
     "ADrules Easylist": 72077,
     "Firebog Easylist Hosts": 45583,
-    "217heidai adblockdns": 36752,
+    "217heidai adblockdns": 36768,
     "ADrules AdRules": 29345,
     "Anti-AD Domains": 28222,
     "AdGuard – Ads": 24788,
@@ -29,12 +29,12 @@
     "AdGuard – Mobile Ads": 6487,
     "AdAway Hosts": 6287,
     "KADhosts": 6179,
-    "AdGuardSDNSFilter": 5171,
+    "AdGuardSDNSFilter": 5213,
     "banbendalao ADgk": 5082,
     "uBO filters – Ads": 4805,
     "Peter Lowe's Blocklist": 3561,
     "Disconnect Simple Ad": 2507,
-    "Accelerate-Hosts": 1843,
+    "Accelerate-Hosts": 1797,
     "AWAvenue-Ads-Rule Hosts": 1482,
     "ADrules ChengFeng": 970,
     "uBO filters – Unbreak": 673,
@@ -46,7 +46,6 @@
     "BlueSkyXN skyrules": 43,
     "AWAvenue-Ads-Rule": 23,
     "Shadowrocket to AdGuardHome": 20,
-    "EasyList (ABP)": 10,
-    "EasyList (easylist.to)": 1
+    "EasyList (ABP)": 7
   }
 }
