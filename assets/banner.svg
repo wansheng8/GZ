@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="340" viewBox="0 0 1280 340" fill="none" role="img" aria-label="Adblock Rule Collection">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05050c"/>
+      <stop offset="0.5" stop-color="#0a0616"/>
+      <stop offset="1" stop-color="#12051f"/>
+    </linearGradient>
+    <linearGradient id="neon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00f0ff"/>
+      <stop offset="0.5" stop-color="#ff00e5"/>
+      <stop offset="1" stop-color="#9d00ff"/>
+    </linearGradient>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00f0ff" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#ff00e5" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#9d00ff" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" stroke="#00f0ff" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1280" height="340" fill="url(#bg)"/>
+  <rect width="1280" height="340" fill="url(#grid)"/>
+
+  <rect x="14" y="14" width="1252" height="312" rx="6" fill="none" stroke="url(#neon)" stroke-opacity="0.55" stroke-width="1.5"/>
+
+  <path d="M14 46 H64 M14 46 V14" stroke="#00f0ff" stroke-width="3"/>
+  <path d="M1266 46 H1216 M1266 46 V14" stroke="#ff00e5" stroke-width="3"/>
+  <path d="M14 294 H64 M14 294 V326" stroke="#9d00ff" stroke-width="3"/>
+  <path d="M1266 294 H1216 M1266 294 V326" stroke="#00f0ff" stroke-width="3"/>
+
+  <text x="640" y="92" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="16" letter-spacing="10" fill="#00f0ff" fill-opacity="0.85">&gt;_ ADBLOCK RULE COLLECTION</text>
+
+  <g filter="url(#soft)" opacity="0.55">
+    <text x="636" y="172" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="88" font-weight="800" letter-spacing="4" fill="#ff00e5">ADBLOCK</text>
+    <text x="644" y="172" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="88" font-weight="800" letter-spacing="4" fill="#00f0ff">ADBLOCK</text>
+  </g>
+  <text x="640" y="172" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="88" font-weight="800" letter-spacing="4" fill="#f6f0ff" filter="url(#glow)">ADBLOCK</text>
+
+  <text x="640" y="222" text-anchor="middle" font-family="'Segoe UI',Arial,sans-serif" font-size="30" font-weight="600" letter-spacing="14" fill="url(#neon)" filter="url(#glow)">RULE COLLECTION</text>
+
+  <line x1="300" y1="252" x2="980" y2="252" stroke="url(#line)" stroke-width="1.5"/>
+
+  <text x="640" y="285" text-anchor="middle" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="18" letter-spacing="5" fill="#c9c2ff" fill-opacity="0.92">AD BLOCKING · DNS FILTERING · SECURITY</text>
+
+  <text x="640" y="318" text-anchor="middle" font-family="'Consolas','SFMono-Regular',monospace" font-size="13" letter-spacing="2" fill="#00f0ff" fill-opacity="0.75">60+ SOURCES   //   968,349 RULES   //   491,021 DOMAINS</text>
+</svg>

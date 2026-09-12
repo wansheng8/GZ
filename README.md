@@ -1,44 +1,26 @@
 <div align="center">
 
-```
- ▄▄▄       ▓█████▄  ▄▄▄▄    ██▓     ▒█████   ▄████▄   ██ ▄█▀
-▒████▄    ▒██▀ ██▌▓█████▄ ▓██▒    ▒██▒  ██▒▒██▀ ▀█   ██▄█▒
-▒██  ▀█▄  ░██   █▌▒██▒ ▄██▒██░    ▒██░  ██▒▒▓█    ▄ ▓███▄░
-░██▄▄▄▄██ ░▓█▄   ▌▒██░█▀  ▒██░    ▒██   ██░▒▓▓▄ ▄██▒▓██ █▄
- ▓█   ▓██▒░▒████▓ ░▓█  ▀█▓░██████▒░ ████▓▒░▒ ▓███▀ ░▒██▒ █▄
- ▒▒   ▓▒█░ ▒▒▓  ▒ ░▒▓███▀▒░ ▒░▓  ░░ ▒░▒░▒░ ░ ░▒ ▒  ░▒ ▒▒ ▓▒
-  ▒   ▒▒ ░ ░ ▒  ▒  ░▒   ▒  ░ ░ ▒  ░  ░ ▒ ▒░   ░  ▒   ░ ▒ ▒░
-  ░   ▒    ░ ░  ░   ░   ░    ░ ░   ░ ░ ░ ░ ░      ░  ░ ░ ░
-      ░      ░    ░ ░   ░      ░  ░    ░ ░ ░░ ░        ░ ░
+<img src="assets/banner.svg" width="100%" alt="Adblock Rule Collection — 广告拦截 · DNS 过滤 · 安全防护"/>
 
-              R U L E   C O L L E C T I O N
-```
+<br/>
 
-[![BANNER](https://img.shields.io/badge/%3E%3E_SYSTEM__ONLINE_-%E5%B9%BF%E5%91%8A%E6%8B%A6%E6%88%AA_%C2%B7_DNS_%E8%BF%87%E6%BB%A4_%C2%B7_%E5%AE%89%E5%85%A8%E9%98%B2%E6%8A%A4-ff00ff?style=for-the-badge&labelColor=0d0d0d)]()
+[![Build](https://github.com/wansheng8/GZ/actions/workflows/build.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/build.yml)
+[![Rules](https://img.shields.io/badge/Total_Rules-968%2C349-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
+[![DNS](https://img.shields.io/badge/DNS_Domains-491%2C021-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
+[![Sources](https://img.shields.io/badge/Upstream-60_sources-9d00ff?style=for-the-badge&labelColor=0d0d0d)](config/sources.yaml)
+[![License](https://img.shields.io/badge/License-MIT-39ff14?style=for-the-badge&labelColor=0d0d0d)](LICENSE)
+[![Update](https://img.shields.io/badge/Update-Daily-ff9c39?style=for-the-badge&labelColor=0d0d0d)]()
 
-**一站式规则合集生成器**
-
-将 `60+` 上游列表 **转化 ▸ 去重 ▸ 合并** 为百万级广告拦截与 DNS 过滤规则
+**将 `60+` 上游列表转化 · 去重 · 合并为百万级广告拦截与 DNS 过滤规则**
 
 `URL` · `域名` · `CSS` · `脚本` · `隐私` · `Cookie` · `恶意` · `钓鱼` · `挖矿`
 
-[![Build](https://github.com/wansheng8/GZ/actions/workflows/build.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/build.yml)
-[![Rules](https://img.shields.io/badge/Total_Rules-968%2C349-ff00ff?style=flat-square&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
-[![DNS](https://img.shields.io/badge/DNS_Domains-491%2C021-00ffff?style=flat-square&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
-[![Sources](https://img.shields.io/badge/Upstream-60_sources-9d00ff?style=flat-square&labelColor=0d0d0d)](config/sources.yaml)
-[![License](https://img.shields.io/badge/License-MIT-39ff14?style=flat-square&labelColor=0d0d0d)](LICENSE)
-[![Update](https://img.shields.io/badge/Update-Daily-ff9c39?style=flat-square&labelColor=0d0d0d)]()
-
----
-
 > **「 宁愿少拦截，不要误拦截 」**
->
-> 内置 `DNS 安全分级` ▸ `误杀回归库` ▸ `质量门禁`
-> 构建失败 **自动中止发布**
+> 内置 `DNS 安全分级` ▸ `误杀回归库` ▸ `质量门禁`，构建失败 **自动中止发布**
 
 </div>
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ```diff
 + [ SYSTEM ONLINE ]  daily build @ 03:00 UTC  ::  订阅一次 · 自动更新 · 链接长期有效
@@ -65,7 +47,7 @@
 
 > `[ TIP ]` 仅需安全拦截：单独订阅「安全专项」行即可，绕过完整版的误杀风险。
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 当前规模 ░▒▓
 
@@ -103,7 +85,7 @@
 > 每个类别均附带 `_dns.txt` / `_dns_ipv6.txt` / `_domains.txt` 版本。
 > 只想订阅安全类别（malware / phishing / mining）时，可绕过完整版的误杀风险。
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 特性 ░▒▓
 
@@ -116,7 +98,7 @@
 | `05` | 阶段缓存 | 源内容 sha256 + 算法版本，增量构建秒级完成 |
 | `06` | 自动更新 | GitHub Actions 每日 03:00 UTC 自动重建推送 |
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 使用指南 ░▒▓
 
@@ -129,7 +111,7 @@
 - **双栈网络**：`_dns.txt` 与 `_dns_ipv6.txt` 同时订阅，避免 IPv6 绕过。
 - **仅需安全拦截**：只订阅「安全专项」。
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 快速开始 · 本地构建 ░▒▓
 
@@ -149,7 +131,7 @@ python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 
 缓存位于 `.cache/sources/` 与 `.cache/parsed/`，首次下载后离线可重建。
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 防误杀与审计体系 ░▒▓
 
@@ -179,7 +161,7 @@ DNS 规则在解析层生效、无法限定上下文，误杀代价最高，故�
   `conf = min(1.0, 0.5 + 0.1 × 独立源组数)`
 - `relation_graph.json`：识别父子域冗余 / 跨源重复 / 阻断与例外冲突三类关系
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 自定义上游 · DIY ░▒▓
 
@@ -195,7 +177,7 @@ sources:
       level: strict-safe   # all / safe / strict-safe
 ```
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 项目结构 ░▒▓
 
@@ -219,7 +201,7 @@ tests/
 .github/workflows/build.yml   每日自动构建并推送
 ```
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 ## ▓▒░ 警告 ░▒▓
 
@@ -227,7 +209,7 @@ tests/
 > 本过滤器 **可能破坏某些网站功能**，或 **阻断部分成人 / 赌博站点**。
 > 如有误杀，请向上游列表反馈；本仓库仅提供去重、转化、合并，不参与内容判定。
 
----
+<img src="assets/divider.svg" width="100%" alt=""/>
 
 <div align="center">
 
