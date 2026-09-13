@@ -29,6 +29,7 @@ spellsalsa.com$domain=interestingengineering.com
 /cf-analytics/*$domain=chatfuel.com
 cmp.dmgmediaprivacy.co.uk$domain=~metro.co.uk
 thirstylettuce.com$domain=thewindowsclub.com
+/consentMgmt/*$domain=comdirect.de
 /cm-body.js$domain=tarnkappe.info
 ||zoneadsl.com/clientscript/cnil.min.js$script
 ||cc.dalten.cz/ccJs$script
@@ -292,7 +293,6 @@ bounceexchange.com$domain=lumberliquidators.com
 /cookienote/*$domain=wittetools.com
 /gdpr-idgy$domain=vejutechnika.lt
 /pltk.js$domain=goodcontent.pl
-/consentMgmt/*$domain=comdirect.de
 /privacy.js$domain=pasztor.at
 /tealium-external/*$domain=weltverbesserer.de
 /cookiesettings.js$domain=aarhusmotion.dk
