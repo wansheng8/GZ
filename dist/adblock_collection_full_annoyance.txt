@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31123
+! Total Rules: 31129
 ! ------------------------------------------
 ||clickiocdn.com/t/$third-party
 ||ligatus.com^$third-party
@@ -420,6 +420,7 @@
 ||reviewability.com^$third-party
 ||revpusher.com^$third-party
 ||rightmessage.com^$third-party
+||rival-contents.com^$third-party
 ||rokt.com^$third-party
 ||push.rollout.io^$third-party
 ||royapp.com^$third-party
@@ -537,6 +538,7 @@
 ||zfacts.com^$third-party
 ||mssdk.zijieapi.com^$app=com.dragon.read,important
 ||dig.zjurl.cn^$app=com.dragon.read,important
+||gry-online.pl/js/cookie2.js
 ||joemonster.org/i/js/cmp.js
 ||laprovence.com/scripts/refresh.js
 ||linker.ba^$third-party
@@ -591,7 +593,6 @@
 ||cleversite.ru/client/default/sound/
 ||widget.clutch.co^$third-party
 ||collectcdn.com^$media
-||d2ip7iv1l4ergv.cloudfront.net^$domain=~zeddit.com
 ||sample.dragonforms.com^$subdocument,third-party
 ||widgets.dzone.com^$third-party
 ||emsecure.net^$subdocument,third-party
@@ -603,7 +604,6 @@
 ||leadgenic.ru/production/$media
 ||nojazz.eu/nl/client/drimble.nl/init.js
 ||omnisnippet1.com^$domain=miuratakuya.store|yourcelebritymagazines.com
-||api.postscript.io/v2/public/popups/
 ||secondstreetapp.com/embed/$subdocument,third-party
 ||techbeat.com/wp-content/custom-php/$third-party
 ||widget.thuiswinkel.org^$third-party
@@ -614,6 +614,8 @@
 ||bsync3-normal-hl.zijieapi.com^$app=com.dragon.read,important
 ||ecombdimg.com^$app=com.dragon.read,important
 ||chatango.com/pcache/sounds/
+||d2ip7iv1l4ergv.cloudfront.net^$domain=~zeddit.com
+||api.postscript.io/v2/public/popups/
 ||widget.adviceiq.com^$third-party
 ||widgets.itunes.apple.com^$third-party
 ||widget.breakingburner.com^$third-party
@@ -1004,7 +1006,6 @@
 ||allegrostatic.com/opbox-rodo-consent-modal/
 ||animesub.info/skrypty/pierdolecookie.js
 ||browarlomza.pl/js/vendor/js.cookie.min.js
-||gry-online.pl/js/cookie2.js
 ||lubuskie.pl/themes/src/cookie.js
 ||nexto.pl/js/nexto/jm_cookie_message.js
 ||niewygodne.info.pl/pierwsza.htm
@@ -14722,7 +14723,7 @@ wyze.com###wyze-cookie-banner
 xhorsetool.com###xri_GoogConsent
 hydramatics.co.za###zcb-banner
 spiceworks.com###zdprivacy-content-new
-1kosmos.com,avaloniaui.net,brside.com,buildship.com,bunq.com,coworker.ai,daytona.io,enhanced.com,fitanalytics.com,framer.com,gitbook.com,iverify.io,juliahub.com,localculture.org,luckyorange.com,meetkevin.com,neon-free.ch,netcraft.com,podspace.com,rollbar.com,site.trasti.pl,snoutcover.com,stirling.com,strongcloud.online,syncly.app,walllet.com##.--framer-cookie-banner-container
+1kosmos.com,avaloniaui.net,brside.com,buildship.com,bunq.com,coworker.ai,daytona.io,enhanced.com,etfbook.com,fitanalytics.com,framer.com,gitbook.com,iverify.io,juliahub.com,localculture.org,luckyorange.com,meetkevin.com,neon-free.ch,netcraft.com,podspace.com,rollbar.com,site.trasti.pl,snoutcover.com,stirling.com,strongcloud.online,syncly.app,walllet.com##.--framer-cookie-banner-container
 dublininquirer.com##.-alert.-fixed.notice
 pastebin.com##.-cookies
 alpari.com,alpariforex.org##.-footer__notice
@@ -15690,6 +15691,7 @@ digitalranking.eu,sentramedikahospitals.com##.fixed.bottom-0:has(.lucide-cookie)
 cashbackeasy.com##.fixed.bottom-0:has([href="/article/Cashback-Easy-Cookie-Policy-Statement"])
 cline.bot,forgemods.de##.fixed.bottom-0:has([href="/privacy"])
 bdtickets.com,intl.chronoswiss.com,wecoach.gg##.fixed.bottom-0:has([href="/privacy-policy"])
+help.openai.com##.fixed.bottom-0:has(a[href="https://openai.com/policies/cookie-policy"])
 tomtom.com##.fixed.bottom-24
 thelatinonewsletter.org##.fixed.left-2
 newsbreak.com##.fixed:has([aria-label="Close cookie banner"])
@@ -16803,7 +16805,8 @@ pinnacle.com##div[data-test-id="Cookie-PolicyBanner"]
 lego.com##div[data-test="age-gate-disclaimer"]
 metadefender.com##div[data-testid="banner"]:has(a[href="https://www.opswat.com/legal/cookies-policy"])
 athenegpt.ai,betterhelp.com,brilliant.org,elsevier.com,regain.us##div[data-testid="cookie-banner"]
-expo.dev##div[data-testid="cookie-banner-root"]
+ssense.com##div[data-testid="cookie-banner-overlay"]
+expo.dev,ssense.com##div[data-testid="cookie-banner-root"]
 link.com##div[data-testid="cookie-consent-cookie-consent-notification"]
 developers.eyeo.com##div[data-testid="cookies-dialog"]
 deepl.com##div[data-testid="dl-cookieBanner"]
@@ -19457,7 +19460,7 @@ solana.com##+js(set-local-storage-item, cookie_consent, 1)
 fadxploit.my.id,goodpods.com##+js(set-local-storage-item, cookie_consent, accepted)
 rig-flip.com##+js(set-local-storage-item, cookie_consent, declined)
 luel.ai,vibeslist.ai##+js(set-local-storage-item, cookie_consent, denied)
-6amgroup.com,chipcitycookies.com,go.bkk.hu,happiful.com,moondao.com,worldlibertyfinancial.com##+js(set-local-storage-item, cookie_consent, false)
+6amgroup.com,chipcitycookies.com,go.bkk.hu,happiful.com,moondao.com,tailed.ca,worldlibertyfinancial.com##+js(set-local-storage-item, cookie_consent, false)
 search.odin.io,ukrinform.ua##+js(set-local-storage-item, cookie_consent, granted)
 granola.ai,hatchet.run,polar.sh,posthog.com##+js(set-local-storage-item, cookie_consent, no)
 openwebui.com,startuphub.ai##+js(set-local-storage-item, cookie_consent, rejected)
@@ -25716,6 +25719,7 @@ buzzfeednews.com##.bfp-newsletter-signup
 thriftytraveler.com##.bg-\[url\(\'\.\.\/images\/newsletter-bg\.jpg\'\)\]
 theblock.co##.bg-black\/90.z-\[9999\].inset-0.fixed
 newsbreak.com##.bg-blue-link
+invezz.com##.bg-dark.relative:has-text(News and alerts!)
 freedomnews.tv##.bg-fntv-gray\/50
 searchengineland.com##.bg-ftr-subscribe
 thebaffler.com##.bg-graphite
@@ -25894,6 +25898,7 @@ thegazette.com##.capdigest_sign_up_page_breaker
 bustle.com##.card-180737953
 thepostmillennial.com##.card-body
 finbold.com##.card-subscribe
+intertek.com##.card-wrap-blue
 depthfirst.com##.case-study_sticky_email_wrap
 claimdepot.com##.case_newsletter
 ticketnews.com##.categories-widget.sidebar-widget
@@ -30179,6 +30184,7 @@ autoscout24.it,dailynews24.in,m.calciomercato.com,mygwork.com,prioritypass.com,s
 mygwork.com##.app-banner--overlay
 autoscout24.it##.app-banner-fragment
 coinmarketcap.com##.app-banner-new
+video.twimg-image.com##.app-bar
 republika.rs##.app-box
 financialexpress.com,indianexpress.com##.app-btn
 klook.com##.app-download

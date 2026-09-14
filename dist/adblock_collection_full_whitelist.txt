@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13771
+! Total Rules: 13787
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -1006,6 +1006,7 @@ browsershots.org#@#.advert_area
 @@||esko.cloud^*_300x600_$~third-party
 @@||government-and-constitution.org/images/presidential-seal-300-250.gif$image,~third-party
 @@||hiveworkscomics.com/frontboxes/300x250_$image,~third-party
+@@||img.cf.47news.jp/static/*/300x250$~third-party
 @@||img.tile.expert/*/*_300x600_$image,~third-party
 @@||keibana.com/wp-content/uploads/*/300x250_$~third-party
 @@||leerolymp.com/_nuxt/300-250.$script,~third-party
@@ -3469,7 +3470,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||abczdrowie.pl^$generichide
 @@||about.smartnews.com/ja/wp-content/assets/img/advertisers/ad_$~3p
 @@||abovetopsecret.com/ads.html$subdocument
-@@||abv-p.com/Images/
 @@||abysstream.com/ads.js$script
 @@||accounts.google.*^$removeparam
 @@||accounts.google.com/o/oauth2/$removeparam
@@ -3750,7 +3750,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||assets.evolutionadv.it/prebid/*/prebid.min.js$domain=adnkronos.com
 @@||assets.hcaptcha.com/captcha/
 @@||assets.macys.com/dyn_img/site_ads/
-@@||at.adtech.redventures.io/lib/api/$xhr,domain=gamespot.com|giantbomb.com|metacritic.com
 @@||atozmath.com/Scripts/advertisement.js
 @@||atozmath.com^$generichide
 @@||attach.mobile01.com/image/mod_ad/*$domain=mobile01.com
@@ -4054,7 +4053,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||concert.io/lib/concert-ads/v*-latest/concert_ads.js$domain=goldenstateofmind.com
 @@||concertads-configs.vox-cdn.com/sbn/sbn/arrowheadpride/config.json$domain=arrowheadpride.com
 @@||concertads-configs.vox-cdn.com/sbn/sbn/config.json$domain=bavarianfootballworks.com
-@@||concertads-configs.vox-cdn.com/sbn/sbn/config.json$domain=goldenstateofmind.com
 @@||concertads-configs.vox-cdn.com/sbn/sbn/config.json$domain=mmafighting.com
 @@||condorsoft.co^$generichide
 @@||confidecross.com^$domain=openlua.cloud
@@ -4147,7 +4145,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||djxmaza.in^$generichide
 @@||dl.r3sub.com^$generichide
 @@||dlh.net/ads.html$subdocument
-@@||dlh.net/public/js/advertisement.js
 @@||dn0qt3r0xannq.cloudfront.net/*/default/prebid-library.js$domain=nationalreview.com
 @@||dn0qt3r0xannq.cloudfront.net/*/default/prebid-load.js$domain=nationalreview.com
 @@||docs.w3cub.com^$generichide
@@ -4202,6 +4199,8 @@ fqsousou.com,kengso.com#@#.user-share
 @@||edge.microsoft.com/translate/auth
 @@||edge1.certona.net/*/scripts/resonance.js$domain=canadiantire.ca
 @@||edith.xiaohongshu.com/api/sns/web/v1/user/hover_card$removeparam
+@@||editmysite.com/app/website/static/js/wsnbn/snowday262.js$domain=checkout.square.site
+@@||editmysite.com/js/wsnbn/snowday262.js$domain=checkout.square.site
 @@||eenadu.net/ads.js$script
 @@||egprices.com^$generichide
 @@||ehgt.org/*.jpg|$image,domain=e-hentai.org
@@ -4415,6 +4414,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||geomedia.gala100.net^$generichide
 @@||get.x-link.pl^$generichide
 @@||getbootstrap.com/docs/*/assets/js/vendor/popper.min.js
+@@||getcopy.link/js/prebid-ads.js
 @@||getfreesmsnumber.com^$generichide
 @@||getintopc.com/*.js$domain=getintopc.com
 @@||getintopc.com^$generichide
@@ -4513,7 +4513,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||googletagmanager.com/gtm.js$domain=se.pl
 @@||googletagmanager.com/gtm.js$domain=zennioptical.com
 @@||googletagservices.com/tag/js/gpt.js$domain=core77.com
-@@||googletagservices.com/tag/js/gpt.js$domain=downdetector.in
 @@||googletagservices.com/tag/js/gpt.js$domain=edition.cnn.com
 @@||googletagservices.com/tag/js/gpt.js$domain=ikitesurf.com
 @@||googletagservices.com/tag/js/gpt.js$domain=ndtv.in
@@ -4636,7 +4635,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||images.voyageforum.com^$image
 @@||imasdk.googleapis.com$domain=vvvvid.it
 @@||imasdk.googleapis.com/flash/*.swf$domain=syndication.vmma.be,object-subrequest
-@@||imasdk.googleapis.com/js/core/dai_iframe3$domain=southpark.cc.com
 @@||imasdk.googleapis.com/js/sdkloader/*$script,domain=mindgames.com|htmlgames.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3$domain=rotana.net
 @@||imasdk.googleapis.com/js/sdkloader/ima3*.js$domain=cbsnews.com
@@ -4803,6 +4801,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||img*.kangaroobro.com/images/$image,domain=leyuman.com
 @@||img.ads.tvb.com/news/min.js$domain=news.tvb.com
 @@||img.ak.impact-ad.jp^$domain=nissan.co.jp
+@@||img.cf.47news.jp/static/*/300x250$~3p
 @@||img.hentai-foundry.com/themes/default/js/adv.js$script
 @@||img.informer.com/images/mac_banner_$domain=informer.com
 @@||img.soft98.ir/*/300x250.
@@ -5542,7 +5541,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||pornhub.*/*?*&ajax=$xhr
 @@||pornhub.*/*?ajax=*&$xhr
 @@||pornhub.*/signup
-@@||pornhub.phncdn.com^$image,domain=pornhub.com|pornhub.org|pornhub.net|redtube.com|redtube.net|tube8.com|tube8.es|tube8.fr|youporn.com|youporngay.com
 @@||portal.autotrader.co.uk/advert/$~3p
 @@||posttrack.com^$xhr,~3p
 @@||potalapalace.cn/upload/images/advertise/picture/131030000583.jpg
@@ -5708,6 +5706,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||securepubads.g.doubleclick.net/gampad/ads^$domain=theatlantic.com
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=ibtimes.co.in
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=southwalesargus.co.uk
+@@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=tvmovie.de
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=www.vulture.com
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=autocentre.ua
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=beinsports.com
@@ -5855,7 +5854,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||sports.ru^*/adfox.$xmlhttprequest
 @@||sportsplays.com/ads/ad.html$subdocument
 @@||sportsplays.com/ads/banner.jpg$image
-@@||sportspyder.com/assets/ads-*.js|
 @@||sportsvideo.net^$generichide
 @@||squid.gazeta.pl/info/squid/fprint.js$script,domain=wyborcza.pl|gazeta.pl
 @@||squid.gazeta.pl/sqpwgl/pwfpl$xmlhttprequest,domain=wyborcza.pl|gazeta.pl
@@ -5932,7 +5930,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||static.gamergen.com/img/pubs/ads.html
 @@||static.koreus.com/js/advert.js
 @@||static.mega.nz/*/html/*.html$document
-@@||static.mobile.eu^*/resources/images/ads/superteaser_$image,domain=automobile.fr|automobile.it|mobile.eu|mobile.ro
 @@||static.opensubtitles.org/libs/js/common.js
 @@||static.opensubtitles.org/libs/js/urlshortener.js
 @@||static.popads.net/img/icons/menu/websites.png$domain=a2zupload.com
@@ -7928,6 +7925,7 @@ tgfcer.com#@##content_adv
 @@||afi-b.com^
 @@||analytics.amplitude.com^
 @@||79423.analytics.edgekey.net^
+@@||ma135-r.analytics.edgekey.net^
 @@||ssai.aniview.com^
 @@||click.appcast.io^
 @@||artifactory.appodeal.com^
@@ -7968,6 +7966,7 @@ tgfcer.com#@##content_adv
 @@||5471782.fls.doubleclick.net^
 @@||pagead.l.doubleclick.net^
 @@||proto2ad.durasite.net^
+@@||ac.ebis.ne.jp^
 @@||daikoku.ebis.ne.jp^
 @@||f-gear.ec-optimizer.com^
 @@||itoya.ec-optimizer.com^
@@ -7980,6 +7979,7 @@ tgfcer.com#@##content_adv
 @@||tlh.gedidigital.it^
 @@||str.hit.gemius.pl^
 @@||links.getblueshift.com^
+@@||developers.google.com^
 @@||www.googleadservices.com^
 @@||promo.gramedia.com^
 @@||cdn.duurzaam.greenchoice.nl^
@@ -7991,6 +7991,7 @@ tgfcer.com#@##content_adv
 @@||prod.impartner.live^
 @@||cmp.inmobi.com^
 @@||ia.hit.interia.pl^
+@@||www.jdoqocy.com^
 @@||api.karte.io^
 @@||learn.khanacademy.org^
 @@||omsc.kpn.com^
@@ -8003,6 +8004,7 @@ tgfcer.com#@##content_adv
 @@||linka.page^
 @@||logentries.com^
 @@||data.notify.macys.com^
+@@||taiga.maven.io^
 @@||link.meet5.net^
 @@||action.metaffiliation.com^
 @@||link.morningbrew.com^
@@ -8015,6 +8017,7 @@ tgfcer.com#@##content_adv
 @@||oneline.nextday.media^
 @@||sedge.nfl.com^
 @@||res.ads.nicovideo.jp^
+@@||forum.notebookreview.com^
 @@||cloud.notification-naviextras.com^
 @@||link.nzz.ch^
 @@||partner.o2online.de^
@@ -8028,6 +8031,7 @@ tgfcer.com#@##content_adv
 @@||official.paymaya.com^
 @@||crm-cdn.peek-cloppenburg.com^
 @@||intersport.peerius.com^
+@@||validate.perfdrive.com^
 @@||pics.porn300.com^
 @@||grp07.ias.rakuten.co.jp^
 @@||hb.afl.rakuten.co.jp^
@@ -8036,6 +8040,7 @@ tgfcer.com#@##content_adv
 @@||tr.rdrtr.com^
 @@||go.redirectingat.com^
 @@||remembering.ca^
+@@||surveymyopinion.researchnow.com^
 @@||stash.roistat.com^
 @@||cdn.rozetka.com.ua^
 @@||track.rutarget.ru^
@@ -8060,6 +8065,8 @@ tgfcer.com#@##content_adv
 @@||click.trafficguard.ai^
 @@||ap01.records.in.treasuredata.com^
 @@||used.ca^
+@@||vcentry2.valuecommerce.ne.jp^
+@@||vcentry3.valuecommerce.ne.jp^
 @@||content.viralize.tv^
 @@||goto.walmart.com^
 @@||omniture.walmart.com^
@@ -11680,6 +11687,7 @@ alltransistors.com#@##reklama
 @@||127.0.0.1:$xhr,domain=creator.kodular.io|starter.kodular.io
 @@||localhost:$xhr,domain=creator.kodular.io|starter.kodular.io
 @@||amgload.net/z|$domain=sinoptik.ua|gismeteo.ua
+@@/js/ads.js|$script,~3p,domain=~internethaber.com|~knaqu.tv|~5ch.io|~svetserialu.to
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mshares.co|gayvidsclub.com|1069boys.net
 @@||rddywd.com/advertising.js$domain=populistpress.com|canadafreepress.com|thelibertydaily.com|writerscafe.org|populist.press|welovetrump.com|grammarist.com|protrumpnews.com|gamersheroes.com|letocard.fr|100percentfedup.com|thepalmierireport.com|kresy.pl|beforeitsnews.com|thepatriotjournal.com|phoenixnewtimes.com|thepoke.co.uk|comicallyincorrect.com|thegatewaypundit.com|toptenz.net
 @@||cdn.adspirit.de/banner/_default/160x600.jpg$domain=streetdir.com|roaddir.com
@@ -11721,6 +11729,7 @@ alltransistors.com#@##reklama
 @@||static.flight-report.com/static/js/adsAPI.js$domain=flight-report.com
 @@||up4load.com^$generichide
 @@||choralia.net/anymanagerrecover.js
+@@||imasdk.googleapis.com/js/core/dai_iframe3$domain=southpark.cc.com
 @@||wouterplanet.com/scripts/ads-front.min.js$domain=wouterplanet.com
 @@||miningblocks.club/pageScripts/adblockDetect.js
 @@||foodtechnos.in^$generichide
@@ -11869,7 +11878,6 @@ alltransistors.com#@##reklama
 @@||btcadspace.com/assets/ads-*.js
 @@||streamsb.net/pop.js
 @@||playmyopinion.com/assets/developer/js/prebid-ads.js
-@@||getcopy.link/js/prebid-ads.js
 @@||dlvideo.*/prebid.js$domain=bigbtc.win|shrink.icu
 @@||onceagain.mooo.com/prebid.js$domain=bigbtc.win
 @@||bigbtc.win/js/ads-prebid.js
@@ -12240,6 +12248,7 @@ alltransistors.com#@##reklama
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=lolalytics.com
 @@||egobits.com/envato/detector/detector/adsbygoogle.js$~3p
 @@||moviemakeronline.com/resources/jsc/ads.js
+@@||sportspyder.com/assets/ads-*.js|
 @@||stream.nbcsports.com/assets/page/general/ads.js
 @@||vaughnlive.tv/*/js/ima3.js
 @@||assets.gameallianz.com/api/js/ads/ads.js
@@ -12328,6 +12337,7 @@ alltransistors.com#@##reklama
 @@/scripts/adv.js$domain=securenetsystems.net
 @@||cdn.needrom.com/advert*.js
 @@||techonthenet.com/javascript/advert-min.js
+@@||dlh.net/public/js/advertisement.js
 @@||dlh.net/_application/modules/Standard/Adv/assets/advertisement.js
 @@||4shared.com/show_ad
 @@||pubads.g.doubleclick.net/gampad/ads?adk=$domain=viki.io
@@ -12592,6 +12602,7 @@ alltransistors.com#@##reklama
 @@||adv.lack-girl.com/_assets/$image,stylesheet,script,~3p
 @@||geoip.redirect-ads.com/js/$script,~3p
 @@||geoip.redirect-ads.com^$subdocument,3p
+@@||assets.connatix.com/Elements/*/jw-player-skin_testing.js$domain=pagesix.com
 @@||airfind.com^$image,domain=headlinelogic.com
 @@||cdn.membrana.media/video/ntp/desktop/videoSources.json$domain=ntvspor.net
 @@||cdn.membrana.media/pub_scripts/common/videojs/videojs.ima.mod.min.js$domain=ntvspor.net
@@ -12656,6 +12667,7 @@ alltransistors.com#@##reklama
 @@||vms-videos.minutemediaservices.com/*/m3u8/$domain=reignoftroy.com
 @@||abv-p.com/Images/adv.png
 @@||timeweb.com/*/other-user-articles/google-ads
+@@||abv-p.com/Images/
 @@||rootzaffiliates.com^$domain=rootzaffiliates.com
 @@||craftaro.com/build/assets/GoogleAd-*.js
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=manoramamax.com
@@ -12674,6 +12686,7 @@ alltransistors.com#@##reklama
 @@||sonic-ui.highereducation.com/latest/vendor.js$domain=thebestschools.org
 @@||sonic-ui.highereducation.com/latest/ucl.adapter.js$domain=thebestschools.org
 @@||sonic-ui.highereducation.com/latest/sonic-callout.js$domain=thebestschools.org
+@@||concertads-configs.vox-cdn.com/sbn/sbn/config.json$domain=goldenstateofmind.com
 @@||lngtd.com/ehftv_ros.js$domain=ehftv.com
 @@||spbentleigheast.schoolzineplus.com/_file/media/*/*.pdf
 @@||xweb.instagram.com/ads/preferences/
@@ -12733,6 +12746,7 @@ alltransistors.com#@##reklama
 @@||dailymotion.com/embed/video/$subdocument,domain=xataka.com
 @@||cdn.cnn.com/ads/adfuel/ais/*/cnngo-ais.min.js$domain=go.cnn.com
 @@||pubads.g.doubleclick.net/ssai/event/*/streams$xhr,domain=rotana.net
+@@||googletagservices.com/tag/js/gpt.js$domain=downdetector.in
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=downdetector.in
 @@||yastatic.net/pcode/adfox/loader.js$domain=minsknews.by
 @@||an.yandex.ru/system/adfox.js$domain=minsknews.by
@@ -13148,7 +13162,6 @@ alltransistors.com#@##reklama
 @@||s.206ads.com/js/data/androidauthority.com.js$domain=androidauthority.com
 @@||pagead2.googlesyndication.com/pub-config/ca-pub-$script,domain=onlinemschool.com
 @@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=onlinemschool.com
-@@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=tvmovie.de
 @@||ads.ayads.co/ajs.php?zid=$domain=411mania.com
 @@||gelbooru.com/script/try.js
 @@||k.uecdn.es/html5/html5lib/*/modules/DoubleClick/resources/mw.DoubleClick.js$domain=videos.marca.com
@@ -13326,6 +13339,7 @@ alltransistors.com#@##reklama
 @@||cdn.flurry.com/js/flurry.js$domain=slantnews.com
 @@||cdn.vidible.tv/stage/js/$domain=dev.vidible.tv
 @@||invodo.com^$domain=crutchfield.com
+@@||pornhub.phncdn.com^$image,domain=pornhub.com|pornhub.org|pornhub.net|redtube.com|redtube.net|tube8.com|tube8.es|tube8.fr|youporn.com|youporngay.com
 @@||guru3d.com/core_javaload/$document
 @@||portal.pixelfederation.com/*/login.php^$document
 @@||payeer.com/bitrix/components/payeer/system.auth.form/$document,xhr
@@ -13416,6 +13430,7 @@ alltransistors.com#@##reklama
 @@||mediacdn.disqus.com^$document
 @@||download.com/ad-
 @@||player.arsenal.com/adverts/video
+@@||static.mobile.eu^*/resources/images/ads/superteaser_$image,domain=automobile.fr|automobile.it|mobile.eu|mobile.ro
 @@||tous-sports.fr/js/advertisement-AdBlock.js
 @@||tous-sports.tv/js/advertisement-AdBlock.js
 @@||forum.warthunder.ru/?&identity_
@@ -13432,6 +13447,7 @@ alltransistors.com#@##reklama
 @@||almayadeen.net/Content/VideoJS/js/videoPlayer/VideoAds.js$script,~3p
 @@||api.adnetmedia.lt/api/$~3p
 @@||app.veggly.net/plugins/cordova-plugin-admobpro/www/AdMob.js$script,~3p
+@@||at.adtech.redventures.io/lib/api/$xhr,domain=gamespot.com|giantbomb.com|metacritic.com
 @@||atlas.playpilot.com/api/v1/ads/browse/$xhr,domain=playpilot.com
 @@||bitcoinbazis.hu/advertise-with-us/$~3p
 @@||borneobulletin.com.bn/wp-content/banners/bblogo.jpg$~3p

@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87293
+! Total Rules: 87301
 ! ------------------------------------------
 ||sponichi.co.jp^$removeparam=ref
 ||3ng6p6m0.de^$third-party
@@ -380,6 +380,7 @@ $removeparam=ocid,document,domain=msn.com
 ||imzahrwl.xyz^
 ||ineed2s.ro^
 ||infisecure.com^
+||inmobicdn.net^
 ||innerskinresearch.com^
 ||instantfox.co^
 ||intellimizeio.com^
@@ -1198,6 +1199,7 @@ $removeparam=ocid,document,domain=msn.com
 ||crunchcontrol.com^
 ||crypticgenius.com^
 ||crystalboulevard.com^
+||crystaldewfarm.com^
 ||cubchannel.com^
 ||cubeface.com^
 ||cubeglobal.net^
@@ -1246,6 +1248,7 @@ $removeparam=ocid,document,domain=msn.com
 ||debonairdust.com^
 ||debonairtree.com^
 ||decidedrum.com^
+||decimalnet.com^
 ||decisionhut.com^
 ||decisivebase.com^
 ||decisivedrawer.com^
@@ -2864,6 +2867,7 @@ $removeparam=ocid,document,domain=msn.com
 ||swordblock.com^
 ||swordgoose.com^
 ||syllablesight.com^
+||synccache.com^
 ||synonymoussticks.com^
 ||synthesizescarecrow.com^
 ||systemssummit.com^
@@ -3713,6 +3717,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||events.mapbox.com^
 ||events.matterport.com^
 ||events.pickrr.com^
+||events.plutus.ninja^
 ||events.realgravity.com^
 ||events.shareably.net^
 ||events.storifyme.com^
@@ -4534,6 +4539,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||tracking.bababam.com^
 ||tracking.brandmentions.com^
 ||tracking.carbonatixaudio.com^
+||tracking.dealeranalytics.com^
 ||tracking.fanbridge.com^
 ||tracking.g2crowd.com^
 ||tracking.groupe-ldlc.com^
@@ -5262,7 +5268,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||ev.tpocdm.com^
 ||future-shop.jp/rview.gif?
 ||heatmap.support-inc.co.jp^
-||insight-x.tech/trackerlog-publisher-service/tracker-logs
 ||ip2c.landscape.co.jp^
 ||jal.co.jp/common_rn/js/rtam.js
 ||karte.io/rewrite-log/
@@ -32841,6 +32846,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||web.newsletter.viviennewestwood.com^
 ||web.newsletterit.esprinet.com^
 ||web.online.monnalisa.com^
+||web.redazione.milanofinanza.it^
 ||web.sensilab.com^
 ||web.sensilab.cz^
 ||web.sensilab.de^
@@ -37819,6 +37825,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||vipstatic.com/mars/
 ||wanmei.com/public/js/stat.js
 ||wkctj.baidu.com^
+||wl.jd.com^
 ||xiaohongshu.com^$removeparam=share_channel
 ||xiaomi.com/js/mstr.js?
 ||zhihu.com^$removeparam=hybrid_search_extra
@@ -38446,6 +38453,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||adshares.net^$removeparam=cid
 ||zsp1.ah.nl/*/URhttp*$doc,urlskip=/\/UR(http.+)/
 ||blogfoster.com^$3p
+||cyber-ad01.cc^$removeparam=ip
 ||ds1.nl/redirect/*^dai_url=http$doc,urlskip=?dai_url
 ||d.ghostery.com^$removeparam
 ||gptgirlfriend.online^$removeparam=ref
@@ -38462,6 +38470,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||tolt.io^$3p
 ||urban-vpn.com^$removeparam=cid
 ||valuecommerce.ne.jp/cgi-bin/*^vc_url=http$doc,urlskip=?vc_url
+||swissquote.com/SQB.Microsoft.Tracking/TrackPage.aspx?
 ||www.baidu.com/link?url=$removeparam=eqid
 ||toomics.com^$removeparam=gen
 ||ziprecruiter.com^$removeparam=zrclid
@@ -38469,7 +38478,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||weather.com^$doc,removeparam=par
 ||perfo.salestube.pl^$removeparam=aff_click_id
 ||atmrum.net/report/v*/atm/r.gif
-||cyber-ad01.cc^$removeparam=ip
 ||dq8i9djm.com^$3p
 ||icontent.us^$doc
 ||lnkr.us^$doc
@@ -38616,7 +38624,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||fptonline.net/ea_min.js
 ||vtcnews.vn/Content/pc/js/pages/loadjs/tracking.js
 ||prod.outgoing.prod.webservices.mozgcp.net/v1/$urlskip=/\/v1\/\w+\/(http.+)$/ -uricomponent +https
-||www.google.com/url?q=$urlskip=?q
+||www.google.com/url?*q=$urlskip=?q
 ||safelinks.protection.outlook.com/?url=$urlskip=?url
 ||swatalk.com/wp-admin/admin-ajax.php?action=bill_minozzi_js_error_catched
 ||pornoenspanish.es^$ping,1p
