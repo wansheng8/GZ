@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13787
+! Total Rules: 13791
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -3339,13 +3339,12 @@ fqsousou.com,kengso.com#@#.user-share
 @@/js/adblock-advertisement.js$script,domain=imged.pl
 @@/js/adblock.js$script,domain=20minutes.fr|20min.fr
 @@/js/admanager/ads.js$domain=businessnovinite.bg|btv.bg|btvsport.bg|btvplus.bg|btvnovinite.bg
-@@/js/ads.js|$script,~3p,domain=~internethaber.com|~knaqu.tv|~5ch.io
+@@/js/ads.js|$script,~3p,domain=~internethaber.com|~knaqu.tv|~5ch.io|~svetserialu.to
 @@/js/advert.js$~3p,domain=~maket.laserbiz.ru
 @@/js/adview_*.adsbygoogle.js$~3p,domain=letv8.cc|zhibo1.cc
 @@/js/detect-blocked-ads.js$script,domain=prod.static.cardinals.clubs.nfl.com
 @@/js/lib/controllers/Leitor/Leitor.min.js$script,domain=mangasproject.com.br|mangasproject.net.br|mangas.zlx.com.br
 @@/main/js/ad*.js$script,third-party,domain=writing.com
-@@/media/*/js/adblock_detector.js$domain=eska.pl|eskarock.pl|voxfm.pl|vibefm.pl|radiosupernova.pl|se.pl
 @@/media/*/zpr_footer/js/pageear.js$domain=eska.pl|eskarock.pl|voxfm.pl|vibefm.pl|radiosupernova.pl|se.pl
 @@/nbc-ad*.js$domain=notebookcheck-hu.com|notebookcheck.com|notebookcheck.net|notebookcheck.org|notebookcheck.biz|notebookcheck.it|notebookcheck.nl|notebookcheck.info|notebookcheck-tr.com|notebookcheck.se|notebookcheck-ru.com
 @@/noadblock-nice-message/assets/js/ads.js?$script,~third-party
@@ -3746,6 +3745,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||aseanlegacy.net/senzement/ads.png
 @@||aseanlegacy.net/senzement/senzement.js.php
 @@||asianporn.li^$generichide
+@@||assets.connatix.com/Elements/*/jw-player-skin_testing.js$domain=pagesix.com
 @@||assets.evolutionadv.it/optiload/*/optiload_video.min.js$domain=adnkronos.com
 @@||assets.evolutionadv.it/prebid/*/prebid.min.js$domain=adnkronos.com
 @@||assets.hcaptcha.com/captcha/
@@ -3904,7 +3904,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cdn.adsafeprotected.com/*.js$domain=gentside.com|ohmymag.com
 @@||cdn.adsninja.ca/adsninja_client.js$domain=androidpolice.com
 @@||cdn.adsninja.ca/adsninja_client_style.css$domain=androidpolice.com
-@@||cdn.adsninja.ca/adsninja_client_style.css$domain=makeuseof.com|howtogeek.com|polygon.com
 @@||cdn.adsninja.ca/adsninja_worker_caller.js$domain=makeuseof.com|howtogeek.com
 @@||cdn.adsninja.ca/api/$domain=polygon.com
 @@||cdn.adsninja.ca/v*/an.js$domain=androidpolice.com|babygaga.com|backyardboss.net|carbuzz.com|cbr.com|collider.com|dualshockers.com|footballfancast.com|footballleagueworld.co.uk|gamerant.com|givemesport.com|hardcoregamer.com|hotcars.com|howtogeek.com|makeuseof.com|moms.com|movieweb.com|pocket-lint.com|pocketnow.com|screenrant.com|simpleflying.com|thegamer.com|therichest.com|thesportster.com|thethings.com|thetravel.com|topspeed.com|xda-developers.com|polygon.com
@@ -3936,6 +3935,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cdn.exmarketplace.com/bidder/video_scripts/video_updated_*.js$domain=tvserial.it
 @@||cdn.fluidplayer.com/*/current/fluidplayer.min.js
 @@||cdn.games.mobinozer.com/shared/loader/advert.js
+@@||cdn.gigya.com/js/gigya.services.plugins.base.min.js$domain=muscleandfitness.com
 @@||cdn.gledaitv.*/embed.php$generichide
 @@||cdn.jsdelivr.net/*/clappr^
 @@||cdn.jsdelivr.net/clappr
@@ -4974,10 +4974,8 @@ fqsousou.com,kengso.com#@#.user-share
 @@||litvp.com/checkStatus/$domain=emturbovid.com
 @@||litvp.com/creatDownload$domain=emturbovid.com
 @@||live.b8b8.tv/watch/js/adview*.js$script,~third-party
-@@||live.lequipe.fr/thirdparty/prebid.js$~3p
 @@||live.primis.tech/content/$domain=manchestereveningnews.co.uk
 @@||live.primis.tech/live/liveVideo.php$domain=manchestereveningnews.co.uk
-@@||live.primis.tech/live/liveView.php$domain=akinator.com
 @@||live.primis.tech/live/liveView.php$domain=manchestereveningnews.co.uk
 @@||live.primis.tech^$xhr,domain=xxlmag.com
 @@||live.streamtheworld.com/*.aac
@@ -5142,7 +5140,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||nextcloud.com/remote.php/$~3p,xhr
 @@||nibbits.com^$generichide
 @@||nicematin.com/assets/*/ads.js$script
-@@||nihasi.ru/upload/resize_cache/*/300_250_$image,~3p
 @@||nir-oz.blogspot.com^$generichide
 @@||nitroflare.com/view/$xhr
 @@||nizista.com/api/v1/adbanner$~3p
@@ -5319,7 +5316,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=thehomestyle.co
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=theplace2.ru
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=thesun.co.uk|the-sun.com|thesun.ie|thescottishsun.co.uk
-@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=thizissam.in
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=tsviewer.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=unlockapk.com
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=uploadbox.io
@@ -5628,7 +5624,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||read.amazon.co.jp/*/show_ad.js$script,~3p
 @@||recaptcha.net/recaptcha/$csp
 @@||receive-sms-online.info/advert*.js$script
-@@||receivesms.co/js/fuckadblock.js
 @@||record.xl.pt/pub/mrec_dynamic.aspx?pubvar=FOTOS
 @@||redirect.disqus.com^
 @@||removeadblock.com/js/show_ads.js$script
@@ -5753,7 +5748,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=tractorsupply.com
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=wunderground.com
 @@||securepubads.g.doubleclick.net^$domain=hoyts.com.au
-@@||secureservercdn.net/*.myftpupload.com/wp-content/themes/jannah/assets/js/advertisement.js$domain=sailuniverse.com
 @@||securitykiss.com$document
 @@||securitytrails.com/app/api/$domain=securitytrails.com
 @@||securitytrails.com/domain/$domain=securitytrails.com
@@ -7299,6 +7293,8 @@ peugeotclub.eu#@#.reklama
 pfps.gg#@#.ad-slot
 phineypet.com#@##adsiframe
 photos.freeones.com#@#a[href^="http://click.payserve.com/"]
+pianetafanta.it#@#.ad-space:not(.textads)
+pianetafanta.it#@#.ad-unit:not(.textads)
 pianetafanta.it,wikitrik.com#@##AdRectangle
 pianetafanta.it,wikitrik.com#@##Adrectangle
 pianetafanta.it,wikitrik.com#@##Ads
@@ -7942,6 +7938,7 @@ tgfcer.com#@##content_adv
 @@||chaturbate.com^
 @@||cindyholbrook.lpages.co^
 @@||classliving.lpages.co^
+@@||netatmo.commander1.com^
 @@||puzzles-games-api.gp-prod.conde.digital^
 @@||om-ssl.consorsbank.de^
 @@||data.digital.costco.ca^
@@ -7976,6 +7973,7 @@ tgfcer.com#@##content_adv
 @@||public-cis.exponea.com^
 @@||gate.first-id.fr^
 @@||home.focusatwill.com^
+@@||smtp.focusgroupresearch.com^
 @@||tlh.gedidigital.it^
 @@||str.hit.gemius.pl^
 @@||links.getblueshift.com^
@@ -8048,6 +8046,7 @@ tgfcer.com#@##content_adv
 @@||go.scorptec.com.au^
 @@||secureimage.securedataimages.com^
 @@||a.sellpoint.net^
+@@||login.sendpulse.com^
 @@||cs.silverpop.com^
 @@||gs.statcounter.com^
 @@||www.statcounter.com^
@@ -11687,7 +11686,6 @@ alltransistors.com#@##reklama
 @@||127.0.0.1:$xhr,domain=creator.kodular.io|starter.kodular.io
 @@||localhost:$xhr,domain=creator.kodular.io|starter.kodular.io
 @@||amgload.net/z|$domain=sinoptik.ua|gismeteo.ua
-@@/js/ads.js|$script,~3p,domain=~internethaber.com|~knaqu.tv|~5ch.io|~svetserialu.to
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=mshares.co|gayvidsclub.com|1069boys.net
 @@||rddywd.com/advertising.js$domain=populistpress.com|canadafreepress.com|thelibertydaily.com|writerscafe.org|populist.press|welovetrump.com|grammarist.com|protrumpnews.com|gamersheroes.com|letocard.fr|100percentfedup.com|thepalmierireport.com|kresy.pl|beforeitsnews.com|thepatriotjournal.com|phoenixnewtimes.com|thepoke.co.uk|comicallyincorrect.com|thegatewaypundit.com|toptenz.net
 @@||cdn.adspirit.de/banner/_default/160x600.jpg$domain=streetdir.com|roaddir.com
@@ -11859,6 +11857,7 @@ alltransistors.com#@##reklama
 @@||read.amazon.*/ads-prebid.js
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=paraphrasetool.com
 @@||sarapbabe.com/nativeads-v2.js
+@@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=thizissam.in
 @@||liveindex.org/wp-content/plugins/imedia-basic/*.js
 @@||jpopsingles.eu/ddl/ads_300x250.png
 @@||jpopsingles.eu/ads/banners_300x250.png
@@ -12046,6 +12045,7 @@ alltransistors.com#@##reklama
 @@||thefastlaneforum.com/community/js/*/adblocker-leader.js
 @@||gogodl.com/*/js/advertisement.js
 @@||lookmovie.ag/*dfp.min.js
+@@||secureservercdn.net/*.myftpupload.com/wp-content/themes/jannah/assets/js/advertisement.js$domain=sailuniverse.com
 @@||cdn.jsdelivr.net/npm/*/fuckadblock.min.js$domain=theandroidpro.com
 @@||scriptcdn.net/code/$xhr,domain=filecr.com
 @@||viptools.es/assets/ads.js
@@ -12064,6 +12064,7 @@ alltransistors.com#@##reklama
 @@||promods.net/ads.js
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=litecoinfaucet.info
 @@||bagi.co.in/*/js/advertisement.js
+@@||receivesms.co/js/fuckadblock.js
 @@||radio.securenetsystems.net/cwa/scripts/ads/prebid.js
 @@||keran.co/*/js/advertisement.js
 @@||megaup.net/ads.js
@@ -12255,7 +12256,6 @@ alltransistors.com#@##reklama
 @@/adsense.js$~3p,domain=handjob.pro|lezbiyen-tube.com|mybigbeautifulwoman.com|mystreetgirl.com|sex-jav.com
 @@||ahmedabadmirror.indiatimes.com/ads.cms
 @@||timesofindia.indiatimes.com/ads_native_js^
-@@||player.9cartoon.me/static/ads.js^
 @@||indiaeveryday.com/staticcontent/ads/googleads.js^
 @@||tubeninja.net/ads.js^
 @@//aka-cdn-ns.adtechus.com/images/$domain=cinemablend.com
@@ -12285,7 +12285,6 @@ alltransistors.com#@##reklama
 @@||traffichaus.com/scripts/*ad*.js$domain=hdzog.com
 @@||ad.atdmt.com/m/*account_id=*&source=cm&step=1^$domain=facebook.com|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion
 @@||dato.porn/js/pop.js|
-@@||video-download.online/js/advertisement.js
 @@||securepubads.g.doubleclick.net/gampad/ads?gdfp_req=1$domain=wired.com
 @@.adcenter.$domain=indiansgetfucked.com
 @@||gamenguide.com/common/js/common/ads.js
@@ -12402,6 +12401,8 @@ alltransistors.com#@##reklama
 @@||xiaomi-miui.gr/*/advertisement.js
 @@||admedia.com/images/cross_channel_arrows.png$domain=weather2day.co.il
 @@/walla_vod/*$domain=walla.co.il
+cinefreak.nl,cinefreak.*#@#.ad-unit:not(.textads)
+cinefreak.nl,cinefreak.*#@#.sponsored-ad
 @@||pubads.g.doubleclick.net/ssai/event/*/master.m3u8$domain=timesnowhindi.com|timesnowmarathi.com
 @@||totalcar.hu/assets/js/adbd/ads.js
 @@||napi.hu/js/advertisement.js
@@ -12511,6 +12512,7 @@ alltransistors.com#@##reklama
 @@||portel.pl/adex.js
 @@||pisupisu.pl/*/adsbygoogle.js
 @@||bham.pl/templates/bham_res/js/adsbygoogle.js
+@@/media/*/js/adblock_detector.js$domain=eska.pl|eskarock.pl|voxfm.pl|vibefm.pl|radiosupernova.pl|se.pl
 @@||soisk-me.pl/modules/*/js/advertisement.js
 @@||wfirma.pl/*/add/*?_=$other
 @@||m.olx.pl/api/v*/ads/*?adId=
@@ -12602,7 +12604,7 @@ alltransistors.com#@##reklama
 @@||adv.lack-girl.com/_assets/$image,stylesheet,script,~3p
 @@||geoip.redirect-ads.com/js/$script,~3p
 @@||geoip.redirect-ads.com^$subdocument,3p
-@@||assets.connatix.com/Elements/*/jw-player-skin_testing.js$domain=pagesix.com
+@@||live.primis.tech/live/liveView.php$domain=akinator.com
 @@||airfind.com^$image,domain=headlinelogic.com
 @@||cdn.membrana.media/video/ntp/desktop/videoSources.json$domain=ntvspor.net
 @@||cdn.membrana.media/pub_scripts/common/videojs/videojs.ima.mod.min.js$domain=ntvspor.net
@@ -12647,6 +12649,7 @@ alltransistors.com#@##reklama
 @@app.arizonawildcats.com/preferences
 @@||cdn.adsninja.ca/adsninja_client.js$domain=makeuseof.com|howtogeek.com|polygon.com
 @@||cdn.adsninja.ca/adsninja_worker.js$domain=makeuseof.com|howtogeek.com
+@@||cdn.adsninja.ca/adsninja_client_style.css$domain=makeuseof.com|howtogeek.com|polygon.com
 @@||cdn.adsninja.ca/an_sn.js$domain=polygon.com
 @@||cdn.adsninja.ca/ads_initiator.js$domain=polygon.com
 @@||cdn.adsninja.ca/ads_injector.js$domain=polygon.com
@@ -13274,7 +13277,6 @@ alltransistors.com#@##reklama
 @@||pdk.theplatform.com^$domain=vplayer.nbcolympics.com
 @@||heartyhosting.com^$domain=muscleandfitness.com
 @@||gigya.com/comments.getComments$domain=muscleandfitness.com
-@@||cdn.gigya.com/js/gigya.services.plugins.base.min.js$domain=muscleandfitness.com
 @@||cdn.gigya.com/JS/socialize.js$domain=muscleandfitness.com
 @@||amazon-adsystem.com/aax2/amzn_ads.js^$domain=kino.de
 @@||amazon-adsystem.com/e/dtb/bid^$domain=kino.de
@@ -13497,6 +13499,7 @@ alltransistors.com#@##reklama
 @@||iko-yo.net/system/ad_images/$~3p
 @@||img.rakudaclub.com/adv/$~3p
 @@||kincho.co.jp/cm/img/bnr_ad_$image,~3p
+@@||live.lequipe.fr/thirdparty/prebid.js$~3p
 @@||mail.bg/mail/index/getads/$xhr
 @@||minyu-net.com/parts/ad/banner/$image,~3p
 @@||mjhobbymassan.se/r/annonser/$image,~3p
@@ -13519,6 +13522,7 @@ alltransistors.com#@##reklama
 @@||img.tile.expert/*/*_300x600_$image,~3p
 @@||leerolymp.com/_nuxt/300-250.$script,~3p
 @@||nc-myus.com/images/pub/www/uploads/merchant-logos/$image,~3p
+@@||nihasi.ru/upload/resize_cache/*/300_250_$image,~3p
 @@||redditinc.com/assets/images/site/*_300x250.$image,~3p
 @@||wavepc.pl/wp-content/*-500x100.png$image,~3p
 @@||gaynetwork.co.uk/Images/ads/bg/$image,~3p

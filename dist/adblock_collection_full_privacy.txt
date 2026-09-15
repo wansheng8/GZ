@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87301
+! Total Rules: 87329
 ! ------------------------------------------
 ||sponichi.co.jp^$removeparam=ref
 ||3ng6p6m0.de^$third-party
@@ -1321,6 +1321,7 @@ $removeparam=ocid,document,domain=msn.com
 ||drainpaste.com^
 ||dramaticdirection.com^
 ||dreamsdome.com^
+||driedwheat.com^
 ||driftingchef.com^
 ||driftpizza.com^
 ||droidwiz.com^
@@ -1422,6 +1423,7 @@ $removeparam=ocid,document,domain=msn.com
 ||extramonies.com^
 ||exuberantedge.com^
 ||fabcharting.com^
+||fabledglory.com^
 ||fabledsoul.com^
 ||fabulousbooking.com^
 ||facilitatebreakfast.com^
@@ -1453,6 +1455,7 @@ $removeparam=ocid,document,domain=msn.com
 ||fatcoil.com^
 ||faucetfoot.com^
 ||faultycanvas.com^
+||faxardent.net^
 ||faxcoupons.com^
 ||fearfulfish.com^
 ||fearfulmint.com^
@@ -1484,6 +1487,7 @@ $removeparam=ocid,document,domain=msn.com
 ||findyourdelight.com^
 ||firecatfilms.com^
 ||fireworkcamp.com^
+||firmasset.com^
 ||firstendpoint.com^
 ||firstscreenshot.com^
 ||fishersfinds.com^
@@ -2914,6 +2918,7 @@ $removeparam=ocid,document,domain=msn.com
 ||thebestpaints.com^
 ||thebigvan.com^
 ||thebrainybulb.com^
+||thecodingpad.com^
 ||thecounter.net^
 ||thecrazychili.com^
 ||thefishstops.com^
@@ -4539,7 +4544,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||tracking.bababam.com^
 ||tracking.brandmentions.com^
 ||tracking.carbonatixaudio.com^
-||tracking.dealeranalytics.com^
 ||tracking.fanbridge.com^
 ||tracking.g2crowd.com^
 ||tracking.groupe-ldlc.com^
@@ -6607,6 +6611,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||sumsub.com/stry/
 ||support.github.com/session/user
 ||support.google.com/apis/logjourney
+||swissquote.com/SQB.Microsoft.Tracking/TrackPage.aspx?
 ||szrpr.raen.com^
 ||t-mobile.com/self-service-commerce/v1/logging
 ||t.airasia.com^
@@ -37158,6 +37163,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||schottenland.de/na/ajax.php?ax=HiT&
 ||sgtm.tennis-point.de^
 ||shoop.de/mgtrx/
+||smartbrokerplus.de/_ingenious-script.js
 ||sp.chip.de^
 ||sparkasse.de/frontend/setTrackingCookie.htm
 ||sportnews.bz/pcookie?
@@ -38470,7 +38476,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||tolt.io^$3p
 ||urban-vpn.com^$removeparam=cid
 ||valuecommerce.ne.jp/cgi-bin/*^vc_url=http$doc,urlskip=?vc_url
-||swissquote.com/SQB.Microsoft.Tracking/TrackPage.aspx?
 ||www.baidu.com/link?url=$removeparam=eqid
 ||toomics.com^$removeparam=gen
 ||ziprecruiter.com^$removeparam=zrclid
@@ -38681,6 +38686,11 @@ $to=~glavnoe.life,removeparam=utm_referrer
 $to=~tix.axs.com,removeparam=irclickid
 $to=~booklive.jp,removeparam=vc_lpp
 $to=~greenbuildingadvisor.com,removeparam=oly_enc_id
+||jisin.jp^$removeparam=rf
+||newsdig.tbs.co.jp^$removeparam=ex_id
+||jprime.jp^$removeparam=from
+||ck12.org^$doc,removeparam=_mid
+||newspicks.com^$removeparam=ref_t
 ||spotfund.com^$removeparam=SFID
 ||canadapost-postescanada.ca^$removeparam=rid
 ||note.com^$removeparam=rt
@@ -38867,7 +38877,6 @@ $removeparam=pg,to=fnnews.com
 ||moebel.de^$removeparam=visitor_status
 ||rentio.jp^$removeparam=click_from
 ||readyfor.jp^$removeparam=sns_share_token
-||newspicks.com^$removeparam=ref_t
 ||fanatical.com^$removeparam=CJEVENT
 ||tagomago.pl^$removeparam=variant
 ||dls.igg.com^$removeparam=campaign_name
@@ -42696,7 +42705,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 |http://r.i.ua^
 |https://r.i.ua^
 # Easyprivacy, parsed and mirrored by https://firebog.net
-# Updated 11SEP26 from https://easylist.to/easylist/easyprivacy.txt
+# Updated 14SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
 07b3.pandasuite.io
 0ddf.pandasuite.io
@@ -47790,6 +47799,7 @@ analytics.belgacom.be
 analytics.bestreviews.com
 analytics.betterplaces.nl
 analytics.bgr.com
+analytics.bhaskarsaikia.in
 analytics.bigfishgames.com
 analytics.bitchute.com
 analytics.bitrix.info
@@ -50368,6 +50378,8 @@ bloomreach.co
 bloomsend.com
 blsoof.wirwinzer.de
 bl-test.curatedplanet.com
+bluebellbooks.com
+bluebirdteam.com
 bluebusiness.actonservice.com
 bluecollarmuse.com
 bluecore-email.branch.rocks
@@ -50724,6 +50736,7 @@ broadborder.com
 broadcastbed.com
 broaddoor.com
 broadstreet.ai
+broflask.com
 b.rohde-schwarz.com
 bronxvanilla.openapp.link
 brooklynway.openapp.link
@@ -50945,6 +50958,7 @@ cache2.delvenetworks.com
 ca.clubavantages.net
 ca.connect.finning.com
 ca.creditacceptance.com
+cactus.jd.com
 cactus.joybuy.com
 caderonline.bu.edu
 cadsuta.net
@@ -52469,6 +52483,7 @@ cryo.socialblade.com
 crypticgenius.com
 crypto.egghead.link
 crystalboulevard.com
+crystaldewfarm.com
 crzohw.intersport.gr
 cs0010sbeda.theory-clinic.com
 cs1470sbeda.schoolasp.com
@@ -53598,6 +53613,7 @@ debonairtree.com
 debug-inform.liilix.com
 debug-r.rover.com
 decidedrum.com
+decimalnet.com
 decisionhut.com
 decisivebase.com
 decisivedrawer.com
@@ -55917,6 +55933,7 @@ event.spektare.com
 events.pella.com
 events.pickrr.com
 events.plus.yandex.net
+events.plutus.ninja
 events.practo.com
 events.prd.api.max.com
 events.privy.com
@@ -58134,6 +58151,7 @@ helpingbits.com
 hemblx.vans.cl
 herbgreencolumn.com
 herbstarsbuilding.com
+hermes.jd.com
 herpes2.pa-ruit.jp
 hesconet.actonservice.com
 hesprh.sony.jp
@@ -60010,6 +60028,7 @@ in.invitd.us
 inkcoupon.com
 inkubate.actonservice.com
 in-mktg.vodafone.com
+inmobicdn.net
 inmtuj.jobs.ie
 inmuzp.popsockets.com
 innerskinresearch.com
@@ -62267,6 +62286,7 @@ logging.pw.adn.cloud
 log.go.com
 log.gs3.goo.ne.jp
 loggychops.paulsmith.site
+log-h5.imdada.cn
 log.hiiir.com
 log.hypebeast.com
 logicalminds.net
@@ -64693,6 +64713,7 @@ merchant-app.th3rdwave.coffee
 merchant.libertycarz.com
 merchant-mail.neosurf.com
 mercuryace.com
+mercury.jd.com
 meremark.com
 merequartz.com
 merryvault.com
@@ -66426,6 +66447,7 @@ mlinks.fluz.app
 mlinks.helloalfred.com
 mlkblr.la-becanerie.com
 mlkklg.suncamp.de
+mllog.jd.com
 mlmswk.janpara.co.jp
 mlqzau.koffer.com
 ml-sys.xyz
@@ -78192,6 +78214,7 @@ synapse-da.actonservice.com
 synbiobeta.actonservice.com
 sync-a8.cocolocala.jp
 sync.adap.tv
+synccache.com
 syncingbridge.com
 sync.rambler.ru
 sync.shinobi.jp
@@ -79747,6 +79770,7 @@ track.docusign.jp
 track.docusign.mx
 track.docusign.nl
 track.dunedinincomegrowth.co.uk
+track.dws.com
 track.dws.de
 track.eadv.it
 track-e.cypress.com
@@ -82813,6 +82837,7 @@ upz1.destinia.lt
 uqckxr.chilli.se
 uqd.io
 uqhpej.wiberrentacar.com
+uranus.jd.com
 urbanairship.com
 urbanlaurel.com
 urbanopus.net
@@ -84231,6 +84256,7 @@ wl-analytics.tsp.li
 wl.bl.frequentvalues.com.au
 wlct-one.de
 wlct-two.de
+wl.jd.com
 wlkojk.orange.ro
 wlog.kuaishou.com
 wlp3.aegon.es
@@ -86993,6 +87019,8 @@ $to=~3dnews.ru|~auto-swiat.pl|~businessinsider.com.pl|~canadacompanyregistry.com
 $to=~glavnoe.life|~metabase.com,removeparam=utm_term
 $to=~lifehacker.ru|~forbes.ru|~kommersant.ru,removeparam=erid
 $to=~login.aliexpress.com|~login.aliexpress.us,removeparam=_ga
+$removeparam=ro,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
+$removeparam=ri,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
 ref=shadcn.com^$removeparam=ref
 $removeparam=promo,to=vjav.com|vjav.tube
 ||notebooklm.google.*$removeparam=icid

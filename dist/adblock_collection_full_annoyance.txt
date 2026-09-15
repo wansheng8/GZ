@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31129
+! Total Rules: 31131
 ! ------------------------------------------
 ||clickiocdn.com/t/$third-party
 ||ligatus.com^$third-party
@@ -593,6 +593,7 @@
 ||cleversite.ru/client/default/sound/
 ||widget.clutch.co^$third-party
 ||collectcdn.com^$media
+||d2ip7iv1l4ergv.cloudfront.net^$domain=~zeddit.com
 ||sample.dragonforms.com^$subdocument,third-party
 ||widgets.dzone.com^$third-party
 ||emsecure.net^$subdocument,third-party
@@ -604,6 +605,7 @@
 ||leadgenic.ru/production/$media
 ||nojazz.eu/nl/client/drimble.nl/init.js
 ||omnisnippet1.com^$domain=miuratakuya.store|yourcelebritymagazines.com
+||api.postscript.io/v2/public/popups/
 ||secondstreetapp.com/embed/$subdocument,third-party
 ||techbeat.com/wp-content/custom-php/$third-party
 ||widget.thuiswinkel.org^$third-party
@@ -614,8 +616,6 @@
 ||bsync3-normal-hl.zijieapi.com^$app=com.dragon.read,important
 ||ecombdimg.com^$app=com.dragon.read,important
 ||chatango.com/pcache/sounds/
-||d2ip7iv1l4ergv.cloudfront.net^$domain=~zeddit.com
-||api.postscript.io/v2/public/popups/
 ||widget.adviceiq.com^$third-party
 ||widgets.itunes.apple.com^$third-party
 ||widget.breakingburner.com^$third-party
@@ -891,7 +891,7 @@
 ||teamsimmer.com/wp-content/uploads/klaro/klaro.js
 ||technomedia.com/*/cookies.js$script,~third-party
 ||terencehill.com/modules/hicookielaw/
-||transcend-cdn.com^$domain=1password.com|aibusiness.com|airtable.com|anaconda.com|apollo.io|aviationweek.com|chubbiesshorts.com|classy.org|conan.io|costco.ca|costco.com|costcobusinesscentre.ca|costcobusinessdelivery.com|darkreading.com|digicert.com|etsy.com|eyeconic.com|fanexpohq.com|fashionnova.com|fightingillini.com|forhers.com|gamechoiceawards.com|gamedeveloper.com|gdconf.com|gdcvault.com|gofundme.com|habitburger.com|igf.com|igt.com|indiegogo.com|informa.com|informaconnect.com|jfrog.com|kfc.com|kickstarter.com|later.com|lifetouch.com|mayoclinic.org|mountaineast.org|mutigers.com|ncaa.org|nelnet.studentaid.gov|netapp.com|notion.com|nrn.com|patreon.com|saucelabs.com|shutterfly.com|tacobell.co.uk|tandfonline.com|taylorfrancis.com|theaisummit.com|theordinary.com|vimeo.com|visible.com|vsp.com|vspdirect.com
+||transcend-cdn.com^$domain=1password.com|aibusiness.com|airtable.com|anaconda.com|apollo.io|aviationweek.com|chubbiesshorts.com|classy.org|conan.io|costco.ca|costco.com|costcobusinesscentre.ca|costcobusinessdelivery.com|darkreading.com|digicert.com|etsy.com|eyeconic.com|fanexpohq.com|fashionnova.com|fightingillini.com|forhers.com|gamechoiceawards.com|gamedeveloper.com|gdconf.com|gdcvault.com|gofundme.com|habitburger.com|igf.com|igt.com|indiegogo.com|informa.com|informaconnect.com|jfrog.com|kfc.com|kickstarter.com|later.com|lifetouch.com|mayoclinic.org|mountaineast.org|mutigers.com|ncaa.org|nelnet.studentaid.gov|netapp.com|notion.com|nrn.com|patreon.com|saucelabs.com|shutterfly.com|tacobell.co.uk|tandfonline.com|taylorfrancis.com|theaisummit.com|theordinary.com|vimeo.com|visible.com|vsp.com|vspdirect.com|wealthmanagement.com
 ||tvpworld.com/files/portale-v4/polityka-prywatnosci/js/tvp-tcfapi.js
 ||umich.edu/apis/umcookieconsent/
 ||vandalism-sounds.com^*/notices.min.js
@@ -16720,7 +16720,7 @@ ccc.eu##cookie-consent-manager
 azbtr.portalus.thentiacloud.net##cookie-dialog
 access.login.nhs.uk##core-cookie-banner
 crazymaplestudios.com#?#.fixed:has-text(Cookie)
-grumpystackle.com,santacruzbicycles.com,shop.orqafpv.com##csm-cookie-consent
+ascensionpress.com,grumpystackle.com,santacruzbicycles.com,shop.orqafpv.com##csm-cookie-consent
 czds.icann.org##czds-cookie-notification
 daily.dev#?#.bottom-0.fixed:has-text(This site uses cookies)
 c.realme.com##div > .cookie-privacy
@@ -19577,6 +19577,7 @@ dvx.pe##+js(set-local-storage-item, isCookiesAcceptedDVX, 1)
 dvx.pe##+js(set-local-storage-item, isCookiesAcceptedNRTN, DENIED)
 yellow.systems##+js(set-local-storage-item, isCookiesNotificationHidden, true)
 planner.kaboodle.co.nz##+js(set-local-storage-item, isNotificationDisplayed, true)
+n.exchange##+js(set-local-storage-item, isUserAcceptCookiesPolicy, true)
 fydeos.com,fydeos.io##+js(set-local-storage-item, is_accept_cookie, true)
 mamamia.com.au##+js(set-local-storage-item, itbl_consent_timestamp, 1)
 khanacademy.org##+js(set-local-storage-item, ka:4:legal-updates, true)
@@ -25518,6 +25519,7 @@ meltingpot.com##.MPHomepageModalWidget
 coingape.com##.Mainads
 outdoorstatus.com##.Modal
 aeon.co,psyche.co##.NLFormInsertFromCMS
+wealthmanagement.com##.NLSubscriptionModule
 stocktwits.com##.NewsArticleNewsletterWidget_border__rjr0o
 jagranjosh.com##.NewsLetterInlineHome
 abergavennychronicle.com,tenby-today.co.uk##.NewsLetterSignUpstyled__NewsLetterSignUpWrapper-sc-aru595-0
@@ -25719,7 +25721,6 @@ buzzfeednews.com##.bfp-newsletter-signup
 thriftytraveler.com##.bg-\[url\(\'\.\.\/images\/newsletter-bg\.jpg\'\)\]
 theblock.co##.bg-black\/90.z-\[9999\].inset-0.fixed
 newsbreak.com##.bg-blue-link
-invezz.com##.bg-dark.relative:has-text(News and alerts!)
 freedomnews.tv##.bg-fntv-gray\/50
 searchengineland.com##.bg-ftr-subscribe
 thebaffler.com##.bg-graphite
@@ -27646,6 +27647,7 @@ amazingcto.com##form
 theverge.com##form.a18g6g5._1ymtmqpj
 kcrw.com##form[class^="Footer_newsletter_"]
 medicalnewstoday.com##hl-newsletter-cta
+invezz.com#?#.bg-dark.relative:has-text(News and alerts!)
 michiganmedicine.org##labcoat-promo
 arylic.com##newsletter-popup
 miamiherald.com,sacbee.com##newsletter-signup-feature
