@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87329
+! Total Rules: 87339
 ! ------------------------------------------
 ||sponichi.co.jp^$removeparam=ref
 ||3ng6p6m0.de^$third-party
@@ -1489,6 +1489,7 @@ $removeparam=ocid,document,domain=msn.com
 ||fireworkcamp.com^
 ||firmasset.com^
 ||firstendpoint.com^
+||firsthoughtstudios.com^
 ||firstscreenshot.com^
 ||fishersfinds.com^
 ||fishingtoolsbox.com^$redirect=noopjs,script
@@ -1769,6 +1770,7 @@ $removeparam=ocid,document,domain=msn.com
 ||infinityhedge.com^
 ||informalbook.com^
 ||infrafood.com^
+||inkcarts.net^
 ||inkcoupon.com^
 ||innocentlamp.com^
 ||inputicicle.com^
@@ -1861,6 +1863,7 @@ $removeparam=ocid,document,domain=msn.com
 ||lasttaco.com^
 ||laughcloth.com^
 ||launchjack.com^
+||launchkite.com^
 ||lavaorganic.com^
 ||lazychord.com^
 ||lazyexplore.com^
@@ -1884,6 +1887,7 @@ $removeparam=ocid,document,domain=msn.com
 ||limepeal.com^
 ||linksoutside.com^
 ||linkstable.com^
+||littlegeese.com^
 ||littlesun.net^
 ||livelumber.com^
 ||livelylaugh.com^
@@ -1908,6 +1912,7 @@ $removeparam=ocid,document,domain=msn.com
 ||lostwaxlab.com^
 ||loudlunch.com^
 ||lovelydrum.com^
+||lovesbooks.com^
 ||loveseashore.com^
 ||lowercases.com^
 ||lowerthewatts.net^
@@ -2336,6 +2341,7 @@ $removeparam=ocid,document,domain=msn.com
 ||queenskart.com^
 ||questionate.com^
 ||quicklyedit.com^
+||quicktattoo.com^
 ||quicktrick.net^
 ||quietknowledge.com^
 ||quillkick.com^
@@ -4287,6 +4293,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||showstopped.com/owa/modules/base/dist/owa.tracker.js
 ||shrinetheme.com/api/analytics/
 ||shrtfly.vip/js/tag.js
+||sitecorecloud.io/v1/events/
 ||sitefinity.com/collect/
 ||sitescdn.net/ytag/ytag.min.js
 ||skeepers.io/data/collect
@@ -4544,6 +4551,7 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||tracking.bababam.com^
 ||tracking.brandmentions.com^
 ||tracking.carbonatixaudio.com^
+||tracking.dealeranalytics.com^
 ||tracking.fanbridge.com^
 ||tracking.g2crowd.com^
 ||tracking.groupe-ldlc.com^
@@ -32851,7 +32859,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||web.newsletter.viviennewestwood.com^
 ||web.newsletterit.esprinet.com^
 ||web.online.monnalisa.com^
-||web.redazione.milanofinanza.it^
 ||web.sensilab.com^
 ||web.sensilab.cz^
 ||web.sensilab.de^
@@ -38101,7 +38108,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||shueisha.online/op/analytics.js
 ||sidecar.unext.jp/track/
 ||so-zou.jp/js/ga.js
-||socialxup.com/api/sale-accounts
+||socialxup.com/api/track
 ||softonic.jp/web-stats
 ||ssai.api.streaks.jp/*/ad_info?
 ||sy.amebame.com^
@@ -38166,6 +38173,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||stats.tunt.lv^
 ||tanks.lv/top/stats.php
 ||15min.lt/cached/tgif$~third-party
+||api.lrt.lt/pagd/sirens
 ||lrytas.lt/counter/
 ||event-tracking.hellohealthgroup.com^
 ||propertyguru.com.my/api/consumer/vast-media/impression?
@@ -38459,7 +38467,6 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||adshares.net^$removeparam=cid
 ||zsp1.ah.nl/*/URhttp*$doc,urlskip=/\/UR(http.+)/
 ||blogfoster.com^$3p
-||cyber-ad01.cc^$removeparam=ip
 ||ds1.nl/redirect/*^dai_url=http$doc,urlskip=?dai_url
 ||d.ghostery.com^$removeparam
 ||gptgirlfriend.online^$removeparam=ref
@@ -38483,6 +38490,7 @@ $to=~a8cv.amiami.jp,removeparam=a8
 ||weather.com^$doc,removeparam=par
 ||perfo.salestube.pl^$removeparam=aff_click_id
 ||atmrum.net/report/v*/atm/r.gif
+||cyber-ad01.cc^$removeparam=ip
 ||dq8i9djm.com^$3p
 ||icontent.us^$doc
 ||lnkr.us^$doc
@@ -42058,7 +42066,7 @@ $removeparam=newsstand,to=sportalkorea.com
 ://dwh-prod.*/de.npg/
 ://elqtrk.
 ://fallback.*/collector
-://fathom.$domain=~fathom.care|~fathom.co.za|~fathom.fm|~fathom.info|~fathom.io|~fathom.lib.uchicago.edu|~fathom.news|~fathom.org|~fathom.video|~fathom.world|~fathomdelivers.com|~fathomseo.com|~usesfathom.com
+://fathom.$domain=~fathom.care|~fathom.co.za|~fathom.fm|~fathom.info|~fathom.io|~fathom.lib.uchicago.edu|~fathom.news|~fathom.org|~fathom.services|~fathom.video|~fathom.world|~fathomdelivers.com|~fathomseo.com|~usesfathom.com
 ://gtrack.*/dye
 ://insights-collector.
 ://internal-matomo.
@@ -42704,6 +42712,8 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||pccomponentes.*/api/users/tracking/
 |http://r.i.ua^
 |https://r.i.ua^
+/analytics-talk-content-tracking.
+/gtm4wp-$script
 # Easyprivacy, parsed and mirrored by https://firebog.net
 # Updated 14SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
