@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13785
+! Total Rules: 13783
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -1145,6 +1145,7 @@ browsershots.org#@#.advert_area
 @@||api.useinsider.com/api/web/$xmlhttprequest
 @@||api.vk.com/method/statEvents.$~third-party
 @@||api.zeeg.me/api/analytics/events/$~third-party
+@@||appdynamics.com/adrum/adrum-$script,domain=telecharge.com
 @@||asb.co.nz.ssl.d2.sc.omtrdc.net^$xmlhttprequest,domain=asb.co.nz
 @@||assets.fyers.in/Lib/analytics/Analytics.js$~third-party
 @@||assets.msn.com/staticsb/statics/latest/adboxes/$script,~third-party
@@ -2048,7 +2049,6 @@ huawei.com#@#.ad-wrap:not(#google_ads_iframe_checktag)
 photonmedia.net#@#.ads-banner
 brandsales.58.com#@#div[id^="ad_"]
 tt1069.com#@##ad-slot
-333ood.com#@#.ad-box:not(#ad-banner):not(:empty)
 android-doc.com,apk.tw,chaojizhibo.net,chtoen.com,dizhishengcheng.com,doitwell.tw,epinv.com,ff14angler.com,fxpan.com,haoweichi.com,logi.im,lspdfrcn.com,moa.tw,moe48.com,numberempire.com,playok.com,reh.tw,shenfendaquan.com,vaptcha.com#@#ins.adsbygoogle[data-ad-slot]
 @@.adserver.$domain=litv.tv
 @@||holmesmind.com/js/drawV2.$domain=bingfong.com
@@ -2760,7 +2760,6 @@ android-doc.com,apk.tw,chaojizhibo.net,chtoen.com,dizhishengcheng.com,doitwell.t
 @@||vvic.com/monetize/ads/index/
 @@||wandhi.com^$generichide
 @@||ware.shop.jd.com^$genericblock,generichide
-@@||wavse.com^$generichide
 @@||webmail.smartlinkcorp.com/dotrans_20160909.php
 @@||weibo.com/api/weipan/getAds
 @@||weithenn.org^$generichide
@@ -3999,7 +3998,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads^$domain=in.gr
 @@||cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls^
 @@||cdntvn.pl/*/assets/*advert*.js$domain=player.pl|get.x-link.pl|tvn24.pl|vod.pl
-@@||cds.w6x3h2w2.hwcdn.net/ads/advertisement.js
 @@||ceesty.com^$generichide
 @@||cgchannel.com/wp-content/uploads/*_Advertorial_*.jpg
 @@||chamsko.pl/js/advertisement.js
@@ -4391,7 +4389,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||games.gamesplaza.com/shared/loader/gads.js
 @@||games.gamesplaza.com^$generichide
 @@||games.iwin.com^$generichide
-@@||gamesglue.com/game_core/check^
 @@||gamesmain.xyz^$generichide
 @@||gametimers.it^$generichide
 @@||gametop.com^$generichide
@@ -4414,7 +4411,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||geomedia.gala100.net^$generichide
 @@||get.x-link.pl^$generichide
 @@||getbootstrap.com/docs/*/assets/js/vendor/popper.min.js
-@@||getcopy.link/js/prebid-ads.js
 @@||getfreesmsnumber.com^$generichide
 @@||getintopc.com/*.js$domain=getintopc.com
 @@||getintopc.com^$generichide
@@ -5767,6 +5763,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||sexpalace.gs/intermission/loadTargetUrl$xmlhttprequest
 @@||sextb.date^$generichide
 @@||sextb.net^$generichide
+@@||sf.ezoiccdn.com/ezossp/https/kosmofoto.com/wp-content/$script,domain=kosmofoto.com
 @@||sh.st$generichide
 @@||shahid.mbc.net^$generichide
 @@||shaka-player-demo.appspot.com/lib/ads/ad_manager.js$script,~3p
@@ -5833,7 +5830,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||sparkylinux.org/images/ad/$image
 @@||spaste.com/ads/$subdocument
 @@||spaste.com^$generichide
-@@||speedtest.net/api/api.php
 @@||speedtest.net/api/js/user-settings|$xhr
 @@||speedtest.net/javascript/ads.js
 @@||spieletipps.de/static/ads/adb_detector.gif$image
@@ -6036,7 +6032,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||tpc.googlesyndication.com^$domain=edition.cnn.com
 @@||tpc.googlesyndication.com^$domain=ytlarge.com
 @@||tpi.li^$generichide
-@@||track.adform.net/serving/scripts/trackpoint/async/$domain=ethias.be
 @@||track.adtraction.com/t/t?a*epi=*url=
 @@||track.sendle.com/tracking$removeparam=ref
 @@||track.webgains.com/click.html?$popup,domain=pepper.*
@@ -7560,8 +7555,8 @@ surfline.com#@#.ad-box:not(#ad-banner):not(:empty)
 surl.li#@#.ads-card
 suzukiclub.cz#@#.reklama
 svapo.it#@#.ad-placement
-svetserialu.to#@##ads-banner
-svetserialu.to#@##google-ads
+svetserialu.io,svetserialu.to,svetserialu.*#@##ads-banner
+svetserialu.io,svetserialu.to,svetserialu.*#@##google-ads
 sxsw.com#@#.sponsors
 szukampracy.pl#@#[class^="ad-"]
 tabletowo.pl#@#a[href^="https://ad.doubleclick.net/"]
@@ -7904,6 +7899,8 @@ zol.com.cn#@##search_ad
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
 @@||tb.mgtv.com/sdk/*/ad-sdk.js^$script
 @@||js.tv.itc.cn/gg.seed.js
+333ood.com#@#.ad-box:not(#ad-banner):not(:empty)
+@@||wavse.com^$generichide
 tgfcer.com#@##content_adv
 @@||cctv.com/js/cntv_Advertise.js
 @@||alllaw.112.2o7.net^
@@ -11355,7 +11352,6 @@ hornoxe.com#@#div.post:has(a[href^="https://www.amazon.de/"])
 @@||api.aws.parking.godaddy.com/*/domains/*$xhr,3p
 @@||sf.ezoiccdn.com/ezoimgfmt/$image,domain=kosmofoto.com
 @@||sf.ezoiccdn.com/ezossp/https/kosmofoto.com/_static/$script,domain=kosmofoto.com
-@@||sf.ezoiccdn.com/ezossp/https/kosmofoto.com/wp-content/$script,domain=kosmofoto.com
 @@||sf.ezoiccdn.com/ezossp/https/kosmofoto.com/wp-includes/$script,domain=kosmofoto.com
 @@||miclaro.com.gt/assets/analytics.*.js$script,1p
 @@||tags.bkrtx.com/js/bk-coretag.js$script,domain=miclaro.com.gt
@@ -11690,6 +11686,8 @@ alltransistors.com#@##reklama
 @@/dh-anti-adblocker/assets/js/prebid-ads-
 @@/dh-anti-adblocker/public/js/adex.js
 @@/libs/advertisement.js$domain=getfree.co.in|bagi.co.in|aztecafaucet.space|multifaucet.org|dogestar.website|claimbits.io|i-bits.io|gobits.io|faucet.shorterall.com|simplyfaucet.xyz|tv3.lv
+tap4porn.cc#@#.ads-wrapper
+tap4porn.cc#@#.ad-slot
 @@||gdl.freegogpcgames.xyz^$generichide
 @@||api.poki.com/ads/houseads/video/$domain=vectaria.io
 @@||v.poki-cdn.com^$domain=vectaria.io
@@ -12000,7 +11998,6 @@ alltransistors.com#@##reklama
 @@||mixdrop.to/adblock.js
 @@||playtube.ws/ad/banner/*.json
 @@||dloady.com/js/*/ad728x90-gmu.js
-@@||fruitlab.com/js/pages/dfp.js
 @@||brighteon.com/static/dfp.js
 @@||ninja.io/js/dist/ads.js
 @@||cdn.witchhut.com/network-js/witch-afg/ima3.js$domain=witchhut.com
@@ -12345,8 +12342,6 @@ alltransistors.com#@##reklama
 @@||medialaancdn.be^$generichide
 @@||v.fwmrm.net/ad/g/1$domain=medialaancdn.be
 @@||flair.be/js/default/*_jq.$script
-svetserialu.io,svetserialu.to,svetserialu.*#@##ads-banner
-svetserialu.io,svetserialu.to,svetserialu.*#@##google-ads
 @@||titulky.com/ads/*.js$domain=titulky.com
 @@||titulky.com/exitpop*.js$domain=titulky.com
 @@||aktualne.cz/embed_iframe/$csp=child-src *
@@ -12564,6 +12559,7 @@ svetserialu.io,svetserialu.to,svetserialu.*#@##google-ads
 @@||play.tv3.ee/static/scripts/adroot/facebook.net/fbevents.js
 @@||play.tv3.ee/static/scripts/adroot/imasdk.googleapis.com/js/sdkloader/ima3.js
 @@||v.fwmrm.net/ad/g/1$domain=dplay.se
+@@||cds.w6x3h2w2.hwcdn.net/ads/advertisement.js
 @@||videoplaza.tv/creatives/assets*.mp4^$domain=expressen.se
 @@||static.bigc.co.th/media/bannerads/images/$domain=bigc.co.th
 @@||p.jwpcdn.com/player/plugins/vast/v*/vast.js$domain=player.cartoonth12.com
@@ -12893,6 +12889,7 @@ svetserialu.io,svetserialu.to,svetserialu.*#@##google-ads
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=storyfire.com
 @@||platform.twitter.com/js/moment~timeline~tweet.*.js$domain=gamerant.com
 @@||cdn.syndication.twimg.com/tweets.json$domain=gamerant.com
+@@||track.adform.net/serving/scripts/trackpoint/async/$domain=ethias.be
 @@||cdn.plytv.me/scripts/embed.min.js
 @@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=epaper.timesgroup.com
 @@||googletagservices.com/tag/js/gpt.js$domain=nfl.com
@@ -13225,6 +13222,7 @@ svetserialu.io,svetserialu.to,svetserialu.*#@##google-ads
 @@||gstatic.com/images/branding/product/*/adsense_$image,domain=support.google.com
 @@||partner.googleadservices.com/gpt/pubads_impl_$domain=simple.ripley.cl
 @@||speedtest.net/*-login.php$domain=speedtest.net
+@@||speedtest.net/api/api.php
 @@/speedtest/upload.php$domain=speedtest.net
 @@|https://www.speedtest.net/user-*.php$script,xhr
 @@||c.speedtest.net/flash/speedtest-*.swf

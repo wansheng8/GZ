@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 87339
+! Total Rules: 87354
 ! ------------------------------------------
 ||sponichi.co.jp^$removeparam=ref
 ||3ng6p6m0.de^$third-party
@@ -1489,7 +1489,6 @@ $removeparam=ocid,document,domain=msn.com
 ||fireworkcamp.com^
 ||firmasset.com^
 ||firstendpoint.com^
-||firsthoughtstudios.com^
 ||firstscreenshot.com^
 ||fishersfinds.com^
 ||fishingtoolsbox.com^$redirect=noopjs,script
@@ -1972,6 +1971,7 @@ $removeparam=ocid,document,domain=msn.com
 ||measlymiddle.com^
 ||meatydime.com^
 ||meddleplant.com^
+||mediamaker.net^
 ||mediatescarf.com^
 ||mellowhush.com^
 ||melodiouschorus.com^
@@ -1999,6 +1999,7 @@ $removeparam=ocid,document,domain=msn.com
 ||messmonster.com^
 ||messyoranges.com^
 ||metajaws.com^
+||metalsfactory.com^
 ||metawelcome.com^
 ||metricfresh.com^
 ||midnightmead.com^
@@ -2041,6 +2042,7 @@ $removeparam=ocid,document,domain=msn.com
 ||motionlessbelief.com^
 ||motionlessmeeting.com^
 ||mountedbattery.com^
+||mousescene.com^
 ||movableobject.com^
 ||movemeal.com^
 ||mowgoats.com^
@@ -2341,7 +2343,6 @@ $removeparam=ocid,document,domain=msn.com
 ||queenskart.com^
 ||questionate.com^
 ||quicklyedit.com^
-||quicktattoo.com^
 ||quicktrick.net^
 ||quietknowledge.com^
 ||quillkick.com^
@@ -2430,6 +2431,7 @@ $removeparam=ocid,document,domain=msn.com
 ||retrocrypt.com^
 ||retrorays.com^
 ||reversetickets.com^
+||reviewacousticguitar.com^
 ||revivalvoice.com^
 ||rhetoricalactivity.com^
 ||rhetoricalloss.com^
@@ -39240,6 +39242,7 @@ $removeparam=newsstand,to=sportalkorea.com
 /2x2.gif?$image
 /3.gif?
 /500b-bench.jpg?
+/?compression=*&ip=
 /?dm=*&blogid=$script
 /?essb_counter_
 /?livehit=
@@ -39415,6 +39418,7 @@ $removeparam=newsstand,to=sportalkorea.com
 /analytics-reporter/*
 /analytics-sdk.
 /analytics-secure.js
+/analytics-talk-content-tracking.
 /analytics-tracker/*
 /analytics-tracking.js
 /analytics-worker.iife.js
@@ -40321,6 +40325,7 @@ $removeparam=newsstand,to=sportalkorea.com
 /gtm.js
 /gtm.min.js
 /gtm/gtm-
+/gtm4wp-$script
 /gtmDataLayer.js
 /gtmTracking.js
 /gv-analytics/riveted.js
@@ -41005,7 +41010,6 @@ $removeparam=newsstand,to=sportalkorea.com
 /plugins/affiliate-wp/assets/js/tracking.min.js
 /plugins/catman/*
 /plugins/civic-science/js/pixel.js
-/plugins/duracelltomi-google-tag-manager/*
 /plugins/exactmetrics-
 /plugins/nimiq/*$script
 /plugins/nsmg-tracking/*
@@ -41158,6 +41162,7 @@ $removeparam=newsstand,to=sportalkorea.com
 /retargeting-pixels.php
 /revinit.js
 /rgea.min.js
+/ria.analytics.js
 /risk_fp_log?
 /riveted.min.js
 /rivraddon.js
@@ -42343,7 +42348,7 @@ _WebVitalsReporter_
 .sendcloud.net/track/$image
 .sendemail.gate.io/o/$image
 .sendibm1.com/*.gif?
-.sendibm1.com/mk/
+.sendibm1.com/mk/op/$image
 .sendibt2.com/tr/op/$image
 .sendibt3.com/tr/op/$image
 .simplicitycrm.com/rd/
@@ -42712,10 +42717,8 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||pccomponentes.*/api/users/tracking/
 |http://r.i.ua^
 |https://r.i.ua^
-/analytics-talk-content-tracking.
-/gtm4wp-$script
 # Easyprivacy, parsed and mirrored by https://firebog.net
-# Updated 14SEP26 from https://easylist.to/easylist/easyprivacy.txt
+# Updated 16SEP26 from https://easylist.to/easylist/easyprivacy.txt
 00px.net
 07b3.pandasuite.io
 0ddf.pandasuite.io
@@ -54376,6 +54379,7 @@ dramaticdirection.com
 drau.viessmann.si
 dreamsdome.com
 drfdisvc.walmart.com
+driedwheat.com
 driftingchef.com
 driftpizza.com
 drive.carpoollogistics.com
@@ -56144,6 +56148,7 @@ f928.pandasuite.io
 f.a23.in
 fa5.dn4.it
 fabcharting.com
+fabledglory.com
 fabledsoul.com
 fabryczna.viessmann.pl
 fabulousbooking.com
@@ -56214,6 +56219,7 @@ faucetfoot.com
 faucons.viessmann.fr
 faultycanvas.com
 fauzxn.hairlavie.com
+faxardent.net
 faxcoupons.com
 fazphz.theiconic.com.au
 fb.echovisuals.com
@@ -56356,7 +56362,9 @@ firebaselogging-pa.googleapis.com
 firecatfilms.com
 fire.solutions.jci.com
 fireworkcamp.com
+firmasset.com
 firstendpoint.com
+firsthoughtstudios.com
 firstpac.actonservice.com
 firstparty1.dentsplysirona.com
 firstparty.alloyio.com
@@ -60035,6 +60043,7 @@ ingredients.firmenich.com
 ingress.linktr.ee
 ingress.trendii.com
 in.invitd.us
+inkcarts.net
 inkcoupon.com
 inkubate.actonservice.com
 in-mktg.vodafone.com
@@ -61042,6 +61051,7 @@ laughcloth.com
 launch.aella.app
 launch-analytics-plugin.launchpotato.com
 launchjack.com
+launchkite.com
 launch.meetsaturn.com
 launch.vypr.it
 laurel.macrovision.com
@@ -62140,6 +62150,7 @@ lists.ccmbg.com
 lit.connatix.com
 literally-analytics.appspot.com
 l.itribe.in
+littlegeese.com
 littlesun.net
 live.alljobs.co.il
 live.comunicaciones.jetstereo.com
@@ -62398,6 +62409,7 @@ lotte.myomee.com
 loudlunch.com
 loveeveryday.brighterkind.com
 lovelydrum.com
+lovesbooks.com
 loveseashore.com
 love.vidora.su
 lowercases.com
@@ -69368,6 +69380,7 @@ quickkoala.io
 quicklyedit.com
 quick.openapp.link
 quickpcfixer.click
+quicktattoo.com
 quicktrick.net
 quidel.actonservice.com
 quietknowledge.com
@@ -79118,6 +79131,7 @@ thebestpaints.com
 thebigvan.com
 thebrainybulb.com
 thecea.actonservice.com
+thecodingpad.com
 thecounter.net
 thecrazychili.com
 thefishstops.com
@@ -86805,6 +86819,7 @@ vaughn.live##+js(no-fetch-if, method:POST body:zaraz)
 x.com##+js(prevent-xhr, /i/api/1.1/flow/viewer.json)
 x.com##+js(prevent-xhr, /i/api/1.1/flow/timeline.json)
 x.com##+js(proxy-apply-config, {"skipToString":true})
+x.com##+js(prevent-xhr, /i/api/1.1/graphql/viewer_context.json)
 telegraph.co.uk##.onward-journey
 civitai.com##+js(no-fetch-if, faro.civitai.com)
 $uritransform=/#Echobox=[\d]{10}$//,to=iltalehti.fi|hs.fi
