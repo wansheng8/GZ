@@ -3,69 +3,13 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13551
+! Total Rules: 13498
 ! ------------------------------------------
-||fwcdn3.com^$third-party
-||xing.com/img/buttons/$third-party
-||fireworkapi1.com^$third-party,domain=~matsukiyococokara-online.com
-||addtoany.com^$third-party
-||followistic.com^$third-party
-||meebo.com^$third-party
-||patreon.com/becomePatronButton.bundle.js$third-party
-||platform.twitter.com/js/button.$third-party
-||shareaholic.com^$third-party
 ||line-scdn.net/line_add_friends/edge/btn/
 ||line.me/js/line-button.js?$third-party
-||feedly.com/img/follows/$third-party
-||flipboard.com/web/buttons/$third-party
-||hatena.ne.jp/entry/button/$third-party
-||addnow.com^$third-party
-||bshare.cn^$third-party
-||crowdynews.com^$third-party
-||jsoon.digitiminimi.com^$third-party
-||badge.facebook.com^$third-party
-||fireworkapi.com^$third-party
-||fireworktv.com^$third-party
-||fwcdn2.com^$third-party
-||getsocialbar.com^$third-party
-||handll.com^$third-party
-||insidesoci.al^$third-party
-||badges.instagram.com^$third-party
-||share.itraffic.su^$third-party
-||lessbuttons.com^$third-party
-||likebtn.com^$third-party
-||platform.linkedin.com^$third-party
-||loveclaw.com^$third-party
-||markerly.com^$third-party
-||massrelevance.com^$third-party
-||messengerpeople.com^$third-party
-||milotree.com^$third-party
-||newsharecounts.com^$third-party
-||opensharecount.com^$third-party
-||t.pridat.eu^$third-party
-||reactandshare.com^$third-party
-||revinate.com^$third-party
-||scoop.it^$third-party
-||sekomums.lv^$third-party
-||sharedcount.com^$third-party
-||sharexy.com^$third-party
-||sharpay.io^$third-party
-||shpg.org^$third-party
-||simplesharebuttons.com^$third-party
-||softwebzone.com^$third-party
-||statigr.am^$third-party
-||usocial.pro^$third-party
-||xing-share.com^$third-party
-||bloglovin.com/widget/$third-party
+||people.com.cn/img/2020fenxiang/
+||lequipe.fr/_nuxt/Share.
 ||feedgrabbr.com/widget/
-||friends2follow.com^$subdocument,third-party
-||getbutton.io/widget-send-button/$third-party
-||iconosquare.com/widget.php$third-party
-||button.like.co^$third-party
-||po.st/static/$third-party
-||widget.weibo.com^$third-party
-/wordpress-popup/*$domain=ahchealthenews.com
-/jquery.bpopup.$script,domain=telechargerunevideo.com
 ||b.st-hatena.com/js/$script,third-party,domain=~b.hatena.ne.jp
 ||figshare.com^$third-party
 ||jit.su/frame$third-party
@@ -88,6 +32,7 @@
 ||focus.it/images/embed/banner-canale-whats-up/
 ||napolimagazine.com/web/img/iconetop/
 ||nursetimes.org/wp-content/uploads/2016/01/telegram-banner.png
+||imyfone.com/assets/js/media_share/
 ||taishurx.jp/js/web/sns_header.js
 ||aventurasnahistoria.com.br/static/socialmedia/
 ||bnews.com.br/static/socialmedia/
@@ -493,6 +438,7 @@
 /widgets/sharing-
 /widgets/socials/*
 /widgets/twitter/*
+/wordpress-popup/*$domain=ahchealthenews.com
 /wp-content/plugins/advanced-facebook-content-locker/*
 /wp-social-toolbar/js/scripts.js
 /wpsms-public.css
@@ -507,6 +453,7 @@ _social_badge_$~xmlhttprequest
 _social_bookmark/
 _social_bookmarks/
 _social_footer_
+/jquery.bpopup.$script,domain=telechargerunevideo.com
 /wp-content/plugins/videolock/*$script
 ###BottomSocialLinks
 ###FBslideout

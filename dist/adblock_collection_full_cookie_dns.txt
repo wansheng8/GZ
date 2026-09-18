@@ -1,9 +1,10 @@
 # Adblock Rule Collection (Full) (cookie)
-# Format: hosts (0.0.0.0 domain), total 29
+# Format: hosts (0.0.0.0 domain), total 30
 0.0.0.0 api.brookiebot.com
 0.0.0.0 api.cookielaw-script.it
 0.0.0.0 api.cookielaw.eu
 0.0.0.0 app.eprivacy-keeper.eu
+0.0.0.0 browser-consent-front.coco.s-cloud.fi
 0.0.0.0 bs-cookie.staging.springbok.agency
 0.0.0.0 ccm19.dsg-schweiz.ch
 0.0.0.0 ccm19.vucx.de
