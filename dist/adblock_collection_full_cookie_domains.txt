@@ -1,13 +1,15 @@
 # Adblock Rule Collection (Full) (cookie)
-# Format: one domain per line (AdGuard DNS / AdGuard Home), total 30
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 33
 api.brookiebot.com
 api.cookielaw-script.it
 api.cookielaw.eu
 app.eprivacy-keeper.eu
 browser-consent-front.coco.s-cloud.fi
 bs-cookie.staging.springbok.agency
+ccm.npo.nl
 ccm19.dsg-schweiz.ch
 ccm19.vucx.de
+cdn.cookiecode.nl
 cdn.realpeoplemedia.co.uk
 cmp.cls.pm
 cmp.pafo.fairbung.com
@@ -19,6 +21,7 @@ consent.scm-verlagsgruppe.de
 consent.theneweuropean.co.uk
 cookie-bar.salessquad.co.uk
 cookie.consent.is
+cookieconsent.blob.core.windows.net
 cookieconsent.syreta.com
 cookielaw.emea.fcagroup.com
 cookiemon.atcom.gr

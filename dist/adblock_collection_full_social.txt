@@ -3,45 +3,8 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13498
+! Total Rules: 13527
 ! ------------------------------------------
-||line-scdn.net/line_add_friends/edge/btn/
-||line.me/js/line-button.js?$third-party
-||people.com.cn/img/2020fenxiang/
-||lequipe.fr/_nuxt/Share.
-||feedgrabbr.com/widget/
-||b.st-hatena.com/js/$script,third-party,domain=~b.hatena.ne.jp
-||figshare.com^$third-party
-||jit.su/frame$third-party
-||karmacracy.com/widget$third-party
-||line-apps.com^*/thirdparty/$third-party
-||meerkatapp.co/btn/$third-party
-||storeya.com/externalscript/$third-party
-||vkontakte.ru/widget_like.php$third-party
-||zextit.com/partners/$third-party
-||gasgoo.com/api/wxshare/
-||hotpot.ai/components/shareOverlay
-||ipaddress.com/shariff/
-||shbarcelona.com/img/socialnetwork/
-||probook.bg/like?$third-party
-||produits-asiatiques.com/annuaire/templates/coolor/images/facebook-faces.gif
-||radio-canada.ca/mp/modules.socialbar.executer.$script
-||almasryalyoum.com/scripts/sharing.js
-||stjegypt.com/uploads/stjnew.jpg
-||fanclubbarcelona.nl/images/mediabuttons/
-||focus.it/images/embed/banner-canale-whats-up/
-||napolimagazine.com/web/img/iconetop/
-||nursetimes.org/wp-content/uploads/2016/01/telegram-banner.png
-||imyfone.com/assets/js/media_share/
-||taishurx.jp/js/web/sns_header.js
-||aventurasnahistoria.com.br/static/socialmedia/
-||bnews.com.br/static/socialmedia/
-||defatoonline.com.br/whatsapp.html
-||harem69.com.br/img/social.png
-||hollywoodforevertv.com.br/static/socialmedia/
-||jcconcursos.com.br/static/socialmedia/
-||opto.sic.pt/footer/socials/
-||sputnik.by/files/tgparser/
 -facebook-likeButton-
 -facebook-share.
 -facebook-widget.
@@ -10204,6 +10167,49 @@ _social_footer_
 ##.social.footer-links
 ##div[class^="SocialIcons_"]
 ##div[class^="style__social"]
+||assets.pinterest.com/js/pinit.js$third-party
+||assets.pinterest.com/pidget.html$third-party
+||b.st-hatena.com/images/$image,third-party,domain=~b.hatena.ne.jp
+||b.st-hatena.com/js/$script,third-party,domain=~b.hatena.ne.jp
+||buttons.github.io/buttons.js$third-party
+||dailymotion.com/badge/user/$third-party
+||feedly.com/img/follows/$third-party
+||figshare.com^$third-party
+||flipboard.com/web/buttons/$third-party
+||graph.facebook.com/fql?q=SELECT$third-party
+||hatena.ne.jp/entry/button/$third-party
+||herokuapp.com/button.html?$third-party
+||jit.su/frame$third-party
+||karmacracy.com/widget$third-party
+||line-apps.com^*/thirdparty/$third-party
+||line.me/js/line-button.js?$third-party
+||meerkatapp.co/btn/$third-party
+||patreon.com/becomePatronButton.bundle.js$third-party
+||pinterest.com/images/$third-party
+||pinterest.com/js/pinit_main.js$third-party
+||pinterest.com/v1/urls/count.json$third-party
+||platform.twitter.com/anywhere.js$third-party
+||platform.twitter.com/embed/$~stylesheet,~subdocument,third-party
+||platform.twitter.com/js/button.$third-party
+||storeya.com/externalscript/$third-party
+||vk.com/share.php?$third-party
+||vk.com/widget_community.php$third-party
+||vk.com/widget_community_messages.php?$third-party
+||vk.com/widget_like.php$third-party
+||vkontakte.ru/js/api/$third-party,domain=~arudex.com|~tapclap.com|~ugo.ru|~vk.com
+||vkontakte.ru/share.php?$third-party
+||vkontakte.ru/widget_community.php$third-party
+||vkontakte.ru/widget_like.php$third-party
+||widgets.wp.com/likes/$third-party
+||wykop.pl/dataprovider/diggerwidget/$third-party
+||xing.com/img/buttons/$third-party
+||zextit.com/partners/$third-party
+||gasgoo.com/api/wxshare/
+||hotpot.ai/components/shareOverlay
+||ipaddress.com/shariff/
+||naturalnews.com/getviews2.
+||people.com.cn/img/2020fenxiang/
+||shbarcelona.com/img/socialnetwork/
 iflscience.com###FollowOnGoogleNewsBtn
 sfgate.com###HP-Sig-ChronFunds
 rockmods.net###LinkList76
@@ -12267,6 +12273,7 @@ berglouter.com##.pwebbox
 gnttv.com##.social_tracking_home
 nova.bg##.subs-wrapper
 news.bg##.twitter-icon
+||probook.bg/like?$third-party
 ef-magazin.de###bookmarkblock
 pctipp.ch###buttons-social
 handwerk-magazin.de###custom_html-5
@@ -12471,6 +12478,9 @@ tv5monde.com##.tv5monde-footer-menu--social
 tomshardware.fr##.widget-toms-widget-google-news
 arcinfo.ch,lacote.ch,lenouvelliste.ch##button[aria-label^="Partager"]
 lematin.ch##button[class^="ActivityButton_"]
+||lequipe.fr/_nuxt/Share.
+||produits-asiatiques.com/annuaire/templates/coolor/images/facebook-faces.gif
+||radio-canada.ca/mp/modules.socialbar.executer.$script
 pramgnet.com###Share
 algerie-radio.com###block-block-11
 elmogaz.com##.SocialNetworks
@@ -12498,6 +12508,8 @@ raya.com##.social_single_post
 raya.com##.social_single_post_bottom
 nabd.com##.socials
 khutabaa.com##.sqr-social-icons
+||almasryalyoum.com/scripts/sharing.js
+||stjegypt.com/uploads/stjnew.jpg
 nezavisne.com##.btn-primary
 radiosarajevo.ba##.flex.flex-row.lg\:flex-col
 radiosarajevo.ba##.flex.flex-row.tems-center.justify-center
@@ -12596,6 +12608,7 @@ at5.nl,nhnieuws.nl##div[class^="article_share_"]
 at5.nl##div[class^="footer_socials_"]
 pu.nl##div[class^="share_"]
 omroepflevoland.nl##whatsapp
+||fanclubbarcelona.nl/images/mediabuttons/
 rakentaja.fi###scrak_CONT_keski
 adressit.com###share_buttons_top_of_petition_menu
 kirjastot.fi###sharing
@@ -12876,6 +12889,10 @@ ilpost.it##div[class^="_share_"]
 lacapitale.it##div[id^="post-social-actions_"]
 liberoquotidiano.it##img[id^="social-"]
 play.radionorba.it##share-view
+||focus.it/images/embed/banner-canale-whats-up/
+||napolimagazine.com/web/img/iconefooter/
+||napolimagazine.com/web/img/iconetop/
+||nursetimes.org/wp-content/uploads/2016/01/telegram-banner.png
 nlab.itmedia.co.jp###my_social_top
 blog.esuteru.com##.article-button-simple
 bizgate.nikkei.com##.c-single-sns
@@ -12886,6 +12903,9 @@ news.yahoo.co.jp##[class^="ArticleShare"]
 qiita.com##[class^="style-"] > [class^="style-"] > div[class^="style-"]:has(> button[aria-label][title][aria-describedby] + p[id][role="tooltip"])
 qiita.com##[href^="https://b.hatena.ne.jp/entry/"]
 qiita.com##div[id^="AdventCalendar"] hr ~ div[class^="style-"]:has(> button[class^="style-"][aria-label][title])
+||imyfone.com/assets/js/media_share/
+||line-scdn.net/line_add_friends/edge/btn/
+||taishurx.jp/js/web/sns_header.js
 knivesout.jp###Jfacebook
 knivesout.jp###Jtwitter
 srad.jp###article-bottom
@@ -13143,6 +13163,14 @@ nexojornal.com.br##div[class^="ShareButtons_"]
 fogaonet.com##div[class^="socialShare_"]
 megacurioso.com.br##div[class^="styles_shareLinks_"]
 ingresso.com##div[data-mobile-app="btn_share"]
+||aventurasnahistoria.com.br/static/socialmedia/
+||aventurasnahistoria.uol.com.br/static/socialmedia/
+||bnews.com.br/static/socialmedia/
+||defatoonline.com.br/whatsapp.html
+||harem69.com.br/img/social.png
+||hollywoodforevertv.com.br/static/socialmedia/
+||jcconcursos.com.br/static/socialmedia/
+||opto.sic.pt/footer/socials/
 transtelex.ro##.fb-box
 newsweek.ro##.icons
 auto-bild.ro##.social > li:has(.icon.icon-outline)
@@ -13175,6 +13203,7 @@ grozny.tv##.soc_list
 tvrus.eu##.telegram-banner
 avtoradio.ru##.vk
 avtoradio.ru##.yt
+||sputnik.by/files/tgparser/
 sputnikportal.rs###cta
 glassrpske.com###d-block
 sputnikportal.rs##.article__messengers

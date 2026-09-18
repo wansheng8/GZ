@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (phishing)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 9665
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 9824
 :: 0-1-x.16215785.xyz
 :: 0-1-x.26215785.xyz
 :: 0-lix-a8sbqnxt.d1cdej.top
@@ -9,6 +9,7 @@
 :: 02twg3.top
 :: 0386467.xyz
 :: 0465kk.com
+:: 06-0040-0-3986-7356-1324992141.cos.ap-jakarta.myqcloud.com
 :: 0668ka.com
 :: 06egte3.top
 :: 097ey43.top
@@ -31,12 +32,15 @@
 :: 0wa477gswk848mbc7309gd.mattsenior1.repl.co
 :: 0wkie7y.top
 :: 0wuy6e.top
+:: 10.196.252.46.host.secureserver.net
 :: 1047qra.ink
 :: 1058zra.hair
 :: 10or4r.info
+:: 11.123.168.184.host.secureserver.net
 :: 118924kraken.com
 :: 11g2vg2.hair
 :: 11qqm.com
+:: 121312.b-cdn.net
 :: 121hiu.senes.at
 :: 128-251-13-23.cprapid.com
 :: 12gyt3.ink
@@ -44,9 +48,11 @@
 :: 1420zra.top
 :: 1480wqm.hair
 :: 1492lka.top
+:: 156.108.205.92.host.secureserver.net
 :: 158-158-1-61.cprapid.com
 :: 158-158-76-195.cprapid.com
 :: 161-35-72-148.cprapid.com
+:: 162.89.74.97.host.secureserver.net
 :: 165-154-235-121.cprapid.com
 :: 1670082278.dojiner.at
 :: 1675zke.top
@@ -59,6 +65,7 @@
 :: 1850mvp.top
 :: 1875mvp.top
 :: 19283047.xyz
+:: 196.44.167.72.host.secureserver.net
 :: 1985mzn.top
 :: 1ft25r5tt.lol
 :: 1g2tt2g.sbs
@@ -111,6 +118,8 @@
 :: 21590374.xyz
 :: 2168xwt.top
 :: 2196tka.top
+:: 225.48.167.72.host.secureserver.net
+:: 231.34.109.208.host.secureserver.net
 :: 2381mqn.ink
 :: 23gytf3.top
 :: 24089371.xyz
@@ -161,6 +170,7 @@
 :: 2ww.me
 :: 2x2landgarage.jp
 :: 2y3tg2y.skin
+:: 3.y18060138696-781.workers.dev
 :: 3024vwt.top
 :: 3027vqm.hair
 :: 3028wva.hair
@@ -355,6 +365,7 @@
 :: 6519xpk.skin
 :: 6521vrn.skin
 :: 65wyg3t.skin
+:: 67.27.109.208.host.secureserver.net
 :: 674-2832-43.weebly.com
 :: 67ifs.app.link
 :: 68-210-100-36.cprapid.com
@@ -363,6 +374,7 @@
 :: 68-210-200-182.cprapid.com
 :: 68-210-98-27.cprapid.com
 :: 68392047.xyz
+:: 69.232.109.208.host.secureserver.net
 :: 6a-lpost.shop
 :: 6e38ue.skin
 :: 6e3u48e6.hair
@@ -420,6 +432,7 @@
 :: 7850qkp.skin
 :: 78gbf4g476.tolydas.com
 :: 7934xwn.top
+:: 7iv67789b.pages.dev
 :: 7kp5zrw.hair
 :: 7kpz6k.info
 :: 7mw3fi.info
@@ -507,6 +520,7 @@
 :: 96dpe.info
 :: 9888tec.com
 :: 98wqui.wiki
+:: 99.37.167.72.host.secureserver.net
 :: 9955game.com
 :: 99ai.mobi
 :: 9an4ng9.top
@@ -614,12 +628,14 @@
 :: activee-digital.com
 :: actnewswps.wpdevcloud.com
 :: actu729261.pro
+:: actualizacionean.z9.web.core.windows.net
 :: adamint.ristestate.com
 :: adamwymore.com
 :: adesao-nivel5.shop
 :: admin-booking-extranet.cfng-sso86764.site
 :: admin-support-nz.com
 :: admins.mzzrj.com
+:: adobfilem.github.io
 :: adsbusinessaccountcreditscoupon.com
 :: aduroconsulti.com
 :: ae722u.info
@@ -634,6 +650,7 @@
 :: aerovise.za.com
 :: afaktv.com
 :: afiles.protectionsfilesorg.ru
+:: afiliaruniversal--afiliacioncorpo.replit.app
 :: afojfr.cn
 :: agaasia.ro
 :: agenciatributariai-cm.eu.cc
@@ -672,6 +689,10 @@
 :: alertdeiivery.com
 :: alfabez.net
 :: alfandegaseguroliberacao.com
+:: alfinbancoope.z13.web.core.windows.net
+:: alfinbancope.z13.web.core.windows.net
+:: alfinbancopep.z13.web.core.windows.net
+:: alfinenlineabanco.z13.web.core.windows.net
 :: alice.form11420.pro
 :: alimentationcompte.com
 :: aliorncescv.xyz
@@ -1836,6 +1857,7 @@
 :: allegrolokalnie.15334265x2.sbs
 :: allegrolokalnie.162561.shop
 :: allegrolokalnie.162616.click
+:: allegrolokalnie.1648b754c91.lol
 :: allegrolokalnie.164x56v468b1.biz
 :: allegrolokalnie.1678c6819x6b7.biz
 :: allegrolokalnie.1712432.cfd
@@ -1931,6 +1953,7 @@
 :: allegrolokalnie.614710.cfd
 :: allegrolokalnie.6161958.click
 :: allegrolokalnie.623413de.top
+:: allegrolokalnie.623456ip.top
 :: allegrolokalnie.624354er.top
 :: allegrolokalnie.624454hr.top
 :: allegrolokalnie.628d6s8d.click
@@ -2360,6 +2383,7 @@
 :: allegrolokalnie.lokalna-ofeta129.sbs
 :: allegrolokalnie.lokalna-ofeta141.sbs
 :: allegrolokalnie.lokalna-ofeta1692.sbs
+:: allegrolokalnie.lokalna-ofeta16xpv0yj004b75v0.shop
 :: allegrolokalnie.lokalna-ofeta16xv0y2j00475.shop
 :: allegrolokalnie.lokalna-ofeta16xv0y2j0070.shop
 :: allegrolokalnie.lokalna-ofeta1792811.sbs
@@ -2834,6 +2858,7 @@
 :: allegrolokalnie.pl-63142.icu
 :: allegrolokalnie.pl-6342523.lol
 :: allegrolokalnie.pl-63592.icu
+:: allegrolokalnie.pl-638466384.click
 :: allegrolokalnie.pl-647295.sbs
 :: allegrolokalnie.pl-651241.cyou
 :: allegrolokalnie.pl-65891248791243.sbs
@@ -3144,6 +3169,7 @@
 :: allegrolokalnie.pl018986702306.cfd
 :: allegrolokalnie.pl1-32142.cfd
 :: allegrolokalnie.pl121960721.cfd
+:: allegrolokalnie.pl18363.lol
 :: allegrolokalnie.pl199622.icu
 :: allegrolokalnie.pl23953.top
 :: allegrolokalnie.pl29333.top
@@ -3373,8 +3399,10 @@
 :: annulation-fnac.connexion-files.de
 :: anozlnd.com
 :: anpost.pics
+:: anshul-kukreti.github.io
 :: antaigouvfr-paiement-en-ligne-amendes.service-public-info.com.es
 :: antarangfashion.com
+:: anuragverma43.github.io
 :: aoeygkwcfzrq.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click
 :: apchanrun.com
 :: aphomes.in
@@ -3384,6 +3412,8 @@
 :: aplgareana-lienquan.com
 :: apoio-empresarial.online
 :: app-brevo.campaign-login-id292.com
+:: app-claimboard.pages.dev
+:: app-mtapps-prod-wu2.azurewebsites.net
 :: app-netempresas.site
 :: app-official-qiutan.com
 :: app-web-pgsumilator.com
@@ -3597,11 +3627,13 @@
 :: banca.bacpuntos.help
 :: banca.bacseguridad.help
 :: banca.bacsoporte.help
+:: bancaenlineaempresa.z13.web.core.windows.net
 :: bancaporinternet-interbank.movilaplicativo.com
 :: bancbancochile-sitiospublicos-contactos.cmg-cl.sbs
 :: bancofalabella-colombia.co
 :: bancointernacionale.shop
 :: banescardvisa.app
+:: bank-alwasleeh.pages.dev
 :: banking.dkb-deutschland.com
 :: bankofamerica.329841.com
 :: bankofanrnarbar.top
@@ -3610,6 +3642,7 @@
 :: basvurrrprsmynnkmpnyaa94823482.online
 :: bav3xo.lat
 :: bav8xo.top
+:: bawafide.z27.web.core.windows.net
 :: bayar-sah.shop
 :: bayar-sah4u.shop
 :: bayar-terus2u.shop
@@ -3638,11 +3671,13 @@
 :: beneficiosmilhas.online
 :: benyanshi.com
 :: beocw.com
+:: bep20usdt-five.vercel.app
 :: beqfw.com
 :: beragere.tjcr5781135.pro
 :: beranger.tjcr5781135.pro
 :: berliner-sparkasse.apcovernightdiplomat.xyz
 :: bernard.tjcr5781135.pro
+:: berquni-mpt-zavfelo-r4x8ka65.pages.dev
 :: best-change.biz
 :: best-change.net
 :: bestbeike.com
@@ -3681,6 +3716,7 @@
 :: bjkama.com
 :: bjlivecircle.com
 :: blocked-payments.com
+:: blocklook.pages.dev
 :: blueschist.cfd
 :: bluetickserviceinnnstagram4409x.ga
 :: bn9njv.info
@@ -3984,6 +4020,7 @@
 :: bshdnekun.bdhnekwhjsdl.shop
 :: bsvtecnology.com
 :: btcplaying.com
+:: btg-hr-portal-vendor-comparison.pages.dev
 :: buftgc.icu
 :: buhtaobmena.com
 :: bulkydeafeningprofessional--five-nine.repl.co
@@ -3997,6 +4034,7 @@
 :: bwbank-auth.com
 :: byfqsy.com
 :: bymmygc.com
+:: c-binance.github.io
 :: c-cetou.com
 :: c0n4h5.cfd
 :: c2k8r5v1n7y4d9q3ha.live
@@ -4066,6 +4104,7 @@
 :: canjesdirecto.help
 :: canjevpuntosbac.help
 :: canjewpuntosbac.help
+:: capitalstreets8.blob.core.windows.net
 :: captctha.icu
 :: cardinfo.smbc-memo.com
 :: cardinfo.smbc-memp.com
@@ -4097,6 +4136,7 @@
 :: cdaifa.com
 :: cdzeb.cn
 :: cem-neuillysurmarne.com
+:: cen-cal-urgent-care.pages.dev
 :: cena161.ru
 :: centerbac.help
 :: centerofmetro.com
@@ -4220,6 +4260,7 @@
 :: confirmmydetails.com
 :: confirmnew-payee.com
 :: conn-tech.dyndns-blog.com
+:: connect-pages-healthequity-5f9.pages.dev
 :: connect-sncf.me
 :: connection-trezor.io
 :: connexion-mondial.com
@@ -4266,6 +4307,7 @@
 :: corprnontana.com
 :: correoses.app.link
 :: correspondenciaonline.com
+:: corrieossap0maillsrverxyz.pages.dev
 :: cosevio.cc
 :: cosmodafaby.vip
 :: cotacao-brasil.online
@@ -4277,6 +4319,7 @@
 :: craigslist.org.owner-trade-swap-car.com
 :: creation-numerique.com
 :: credi-autos-rd.info
+:: credi-miii--credi-miles.replit.app
 :: crediitmutueel-fr.s-host.net
 :: credit-agricole-region.ck21164.tmweb.ru
 :: credit-manufacturation-doliper.co
@@ -4352,6 +4395,7 @@
 :: dashboard.mystore-shopify.com
 :: dashlboard-rho.com
 :: data.cloudsave247.com
+:: datiamministrativi7x5.blob.core.windows.net
 :: davestrap.xyz
 :: davidlillis.com
 :: dawnrevealed.com
@@ -4394,6 +4438,7 @@
 :: demarche-remboursement-prime.com
 :: demzamasonry.com
 :: deregister-update.com
+:: derioklasdercb.z9.web.core.windows.net
 :: desenrola-brasil.blog
 :: detw8o.info
 :: deutsch.paninishop.net
@@ -4422,6 +4467,7 @@
 :: dhofareng.com
 :: dhvuuxhmt.qh399063.cn
 :: di-kaiyun.com
+:: diageo.pages.dev
 :: diagnosticar.aarc.com.mx
 :: diagnosticar.addcom.mx
 :: diagnosticar.becatricodesapi.com
@@ -4475,6 +4521,8 @@
 :: dmsu69w33edha.cloudfront.net
 :: dmv-ca.gnewia.shop
 :: dnmkj.com
+:: docs-trezor-app.pages.dev
+:: documentale6bosco7.blob.core.windows.net
 :: dogmatitive.yymx8r.info
 :: dokommo.jeffcarey.shop
 :: domain-phrase.cfd
@@ -4491,6 +4539,7 @@
 :: dossierpens.com
 :: douhed.dnsdojo.com
 :: dovis.agileum.com
+:: dp-8fz.pages.dev
 :: dpd-local.eu.cc
 :: dpd.774021938.cfd
 :: dpd.bmvxtrq.cyou
@@ -4964,6 +5013,7 @@
 :: eiffage-recrutement-chantier.com
 :: eiffagebtp.com
 :: einloggen-2kunden7c3-elstr.my-app-kunden.com
+:: eiuhfasdcioknd.z20.web.core.windows.net
 :: ekacmilherdtoopo.gq
 :: el-change.net
 :: elavution-login-ck-856213879846734125851.tk
@@ -4989,6 +5039,7 @@
 :: email-classplus.co
 :: email-facturation-prime.com
 :: email-justica.net
+:: email-nsd-gov-pk-2fa.pages.dev
 :: email-social.com
 :: embrateltv.org
 :: emea.dcv.ms
@@ -5180,6 +5231,7 @@
 :: feminist-brown-plkm1dgi.edgeone.dev
 :: femstah.com
 :: fengniaosport-app.com
+:: ferreteriaonline9.z13.web.core.windows.net
 :: fewo-schlueter-rees.de
 :: ffaffx.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click
 :: fi-delitby.cyou
@@ -5244,6 +5296,7 @@
 :: flag-84857437.royal-eng.ps
 :: flare.shafultonb.com
 :: flashobmen.net
+:: flashusdtverification.vercel.app
 :: flde-liggy.cyou
 :: flde-lighy.cyou
 :: flde-ligiy.cyou
@@ -5287,6 +5340,9 @@
 :: forb-fbookcom-854101193154.ctiaspire.com
 :: forb-fbookcom-867649776823.ctiaspire.com
 :: forever21closed.com
+:: form-rg59.vercel.app
+:: form-uung.vercel.app
+:: form1-indol-delta.vercel.app
 :: form5821.shop
 :: form8899533.pro
 :: formanovalimit.s3.us-east-005.backblazeb2.com
@@ -5329,8 +5385,10 @@
 :: g12f2tg.ink
 :: g2t6532gg.ink
 :: ga8icc.cfd
+:: gabbiano4vento.blob.core.windows.net
 :: gaktr.com
 :: galciasservicios.blog
+:: galicia-brief-abm.pages.dev
 :: galvarez.do
 :: gamechallange.com
 :: gameschallanger.com
@@ -5348,6 +5406,7 @@
 :: gdubeyle.com
 :: gecab.wbb.it
 :: gecko-limon.com
+:: gecowipuso.z16.web.core.windows.net
 :: gei2q5.info
 :: gekanoblog.com
 :: gelfoffic.wpdevcloud.com
@@ -5377,6 +5436,7 @@
 :: gh4mmu.sbs
 :: ghost-loader.com
 :: gi2mqf.sbs
+:: gidadudic.z38.web.core.windows.net
 :: gift86.com
 :: gifts-reward.fun
 :: gifts-reward.quest
@@ -5651,6 +5711,7 @@
 :: gsgkm.com
 :: gswlrc.com
 :: gtsxdyxx.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click
+:: gttt22.github.io
 :: gtttn.top
 :: gtttr.top
 :: gtttt.top
@@ -5681,6 +5742,7 @@
 :: guide-84402677.zjlions.org
 :: guide-86385722.zjlions.org
 :: guideinf.hfffamily.co.nz
+:: guinness-ar-demo.pages.dev
 :: gunaigute.com
 :: gunind.com
 :: guoqv.com
@@ -5725,6 +5787,7 @@
 :: heh7nq8nz.shop
 :: hehd-czlygl.medicalfollow.mobi
 :: hehd-n9x1ih.medicalfollow.mobi
+:: heladosalfin.z13.web.core.windows.net
 :: helliro.vu
 :: help-745958.knievel.com
 :: help-customerservice.soeeo.com
@@ -5766,6 +5829,8 @@
 :: homebank-argenta-be.webapp-fr.info
 :: homecaremedicalsupply.com
 :: homehq.shop
+:: homekankingitau.z1.web.core.windows.net
+:: homepages-bridge-us.pages.dev
 :: homologousrecombination.cfd
 :: hongbomedia.com
 :: hongbozq.com
@@ -5812,6 +5877,7 @@
 :: hottmax.la
 :: houstonworkshops.com
 :: howular.af7119.info
+:: hp-b5e.pages.dev
 :: hs-bc-onlinepayee-authorization.com
 :: hs-cancel-payee-auth.com
 :: hs-payee-logingroup.com
@@ -5932,6 +5998,7 @@
 :: iitdxf.info
 :: ikatched.com
 :: il-online.org
+:: iletaitunefoisunmasque.us2.list-manage.com
 :: iloveanimals.shop
 :: img.maplejournal.co.in
 :: immediateedge.online
@@ -5997,6 +6064,8 @@
 :: interiakastliveretsbrokeers.com
 :: internacional.ghltq.com
 :: internacional.zufsu.com
+:: internacionalahoaaaaa.z9.web.core.windows.net
+:: internacionallunos.z9.web.core.windows.net
 :: internal-revenue-service.rapeleiroscapixabas.com.br
 :: internalrevenue.us
 :: intervenecon.xyz
@@ -6006,6 +6075,7 @@
 :: investradar.xyz
 :: invfort.one
 :: invitale.xyz
+:: invoice-generator-2k6.pages.dev
 :: invoice-payment.invoice-ads-program.com
 :: iocmfh84.ink
 :: ionio012.top
@@ -6050,10 +6120,13 @@
 :: jdavxy.p5yjlf31w6hve12yktuwmenkyz07nk.lat
 :: jdcarnes.davidsabido.com
 :: jdjdldkenrkf.sbs
+:: jellyfish-app-eshkj.ondigitalocean.app
+:: jellyfish-app-jsmsz.ondigitalocean.app
 :: jeremie.info-9726105.pro
 :: jeromelaan.com
 :: jetzt.aktualisierung2026.xyz
 :: jfglmqsft.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click
+:: jgpsmeydnemtihfmgtxt.supabase.co
 :: jh-sl.com
 :: jh6xzw.casa
 :: jho.la
@@ -6110,6 +6183,7 @@
 :: justekg.com
 :: justica-rcbe.com
 :: juwprqb.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click
+:: juwts-339-gk6a-wdh64-14-09-2026-hh.pages.dev
 :: jw77nh.info
 :: jxygdsgc.com
 :: jygteude.com
@@ -6160,6 +6234,7 @@
 :: kfckid.com
 :: kimajattejiver.com
 :: kindlyfrequenttransfer--five-nine.repl.co
+:: kiortderscdvbu.z9.web.core.windows.net
 :: kk-dk-parkiingkkt.one
 :: kkkat.top
 :: kkkax.top
@@ -6294,6 +6369,7 @@
 :: ks.asxeddf.cyou
 :: ksafewjus.com
 :: kucoinaii.top
+:: kukurelkrre.vercel.app
 :: kumanomi.massigra.com
 :: kunden-bank.info
 :: kundenhilfe.icu
@@ -6336,6 +6412,7 @@
 :: laforgiamarineo.com
 :: lagebericht-aktuell.click
 :: lagekompass.click
+:: laguna7fiore4.blob.core.windows.net
 :: lahmw.com
 :: laika1314.com
 :: lamamaevyters.com
@@ -6352,6 +6429,7 @@
 :: lasmejoresoportunidadesmxfall.com
 :: lastquarterr.com
 :: lasvegasbeyond.com
+:: layerxxyz.pages.dev
 :: lbp-certcodeinfo.com
 :: lckyspinpubg.com
 :: lcxhgg.net
@@ -6364,6 +6442,7 @@
 :: ledger-security-checker.com
 :: ledger.com.af
 :: ledger.setupterms.com
+:: leggero5fiume8rio.blob.core.windows.net
 :: legittechinfo.com
 :: leguji.com
 :: leleelaser.com
@@ -6373,6 +6452,7 @@
 :: leo.suiv-expd002.pro
 :: leonard.ext826180.pro
 :: levestito.com.br
+:: leyalobis.z33.web.core.windows.net
 :: lflzvy.com
 :: lg.awieelj.com
 :: lgyd68.info
@@ -6400,6 +6480,7 @@
 :: link-novobanco.com
 :: link.kemkes.go.id
 :: links.analisedisc.com.br
+:: links.truthsocial.com
 :: linn-eska.de
 :: linqinghuahui.com
 :: linxicha.cn
@@ -6616,6 +6697,7 @@
 :: lumber3.com
 :: lumennix.xyz
 :: lumensreview.com
+:: luminoso4fiore9.blob.core.windows.net
 :: lunatiquelogiquebayla.com
 :: lusewang.com
 :: lusofarma.pt
@@ -6692,7 +6774,9 @@
 :: mail.secure-online-login.com
 :: mail8.royal-eng.ps
 :: mailhost.royal-eng.ps
+:: mailsrvr30corrieossap0.pages.dev
 :: main-web-kering.com
+:: maindoc-app-md8gw.ondigitalocean.app
 :: maisixx.us.cc
 :: maisxc.us.cc
 :: maixisxapp.uk
@@ -6722,6 +6806,7 @@
 :: managwebapapsdog092w3yhiosdgsd.pepe1.biz.id
 :: managwerbapapasiguyuiwesdgsdge.kratos5.biz.id
 :: mangeaappsdfhjghagwezxcsdf.hjgjfgkhgasdgakhigh.com
+:: manish1719.github.io
 :: mannger-us-checcksupports-verrification.click
 :: mans4.archeopassicilia.eu
 :: manutenzioneconto-web.com
@@ -6757,6 +6842,7 @@
 :: massagecentrekarachi.pk
 :: mastevbcs.com
 :: masumtraders.com
+:: mataratcmis.pages.dev
 :: matignon.grv5781752.pro
 :: matkahuoink.bond
 :: matkahuoink.vip
@@ -6850,6 +6936,7 @@
 :: mediache.net
 :: mefinesale.shop
 :: megane.info-804431.pro
+:: mehdi-bellache.github.io
 :: meihsue.us.cc
 :: meilin-paper.com
 :: mein-rechnung-ionos.de
@@ -6868,6 +6955,7 @@
 :: mesiax.us.cc
 :: mesmerized-dotterel-4bd504.instawp.xyz
 :: messagerie-sfr-alerte.ddns-ip.net
+:: messagrie-conseillerbnpparibasnumero-requis-nki3c43ch.vercel.app
 :: messenger-verrification-supporst.us
 :: meta-authorized.invoice-ads-program.com
 :: meta-backup.invoice-ads-program.com
@@ -6902,6 +6990,7 @@
 :: microsoft.team365.realtrade4.com
 :: micuentabac.help
 :: midasboy.in
+:: migroscx.qualtrics.com
 :: mijn.overheid.nl.berichtenbox.l5gtzeulqa6vfxbcwev2bg2xpctug1zf5hbidtmwi7u2ukg986en.tsla.com.br
 :: mijn.overheid.nl.berichtenbox.services.kwi1f1q3vdcyxneqfiwfifts5uroqrpavwvhkg1k6monzla9ktv8.cbrmedical.com.br
 :: mijn.overheid.nl.berichtenbox.services.kwp7z384yrdou64sro4kufv3kaygbdx3jfg6wmufnjfaskeuvoz3.rutrainfo.com.br
@@ -6912,6 +7001,7 @@
 :: milfcall.com
 :: milfguys.com
 :: milhas.portaldocartao.ru.com
+:: milkyfloors.vercel.app
 :: minigun.com.br
 :: minimalisticapparel.com
 :: minixingwa.com
@@ -6932,6 +7022,7 @@
 :: mlbflarldo.xyz
 :: mlpxp.com
 :: mlsxabes.uk.cc
+:: mmmm-beta-lac.vercel.app
 :: mnaxskpmya.top
 :: mo.avo-esnft.cam
 :: mo.govdety.autos
@@ -7119,6 +7210,7 @@
 :: n8kq2b.cfd
 :: n8qv3xt.skin
 :: nacex.esvfx.shop
+:: nadyascloset.us13.list-manage.com
 :: naivewanmarkuplanguage--five-nine.repl.co
 :: nal7xo.lat
 :: namacolove.com
@@ -7147,6 +7239,8 @@
 :: ne2013.com
 :: nederluxe.com
 :: needyhonestmachinecode--five-nine.repl.co
+:: neo-jc-001.pages.dev
+:: neqpropulsor.blob.core.windows.net
 :: net.tkburgers.com
 :: netatendimento.com
 :: netbanco-santander.pt-clientes.com
@@ -7165,6 +7259,7 @@
 :: netflix-accounts.info
 :: netflix-formulaire.info
 :: netflix-jp-accounts0-secure.tk
+:: netflix-two-mu.vercel.app
 :: netid.mondialcustominfo.com
 :: nettelebe.info
 :: neukontoregeln.click
@@ -7183,6 +7278,7 @@
 :: newmexico.gov-zci.help
 :: newpayeeverification.net
 :: newsignmanageserveroearkghaergmaoriemkhb.izu104.com
+:: nexoenlineaexterior.z13.web.core.windows.net
 :: nfodndsl.info
 :: nftw.eu.cc
 :: ng7w2k-sfr.cregaps.sbs
@@ -7392,6 +7488,7 @@
 :: one-provide.ch
 :: onedej.uber.space
 :: onedrive-cdn.res.taibai.icu
+:: onefinance-demo.pages.dev
 :: onegonaddown.com
 :: onesharegoodness.com
 :: oneyardproperties.com
@@ -7415,6 +7512,7 @@
 :: oo01xv1-tura2.k4zlib.top
 :: oo1ilxp0l-zaya7.s7pfuk.sbs
 :: ooy071pxl1-uat-dg67.y3qgxl.qpon
+:: op-3oz.pages.dev
 :: ope-10884282.pro
 :: ope-143109.pro
 :: ope-961084.pro
@@ -7462,6 +7560,7 @@
 :: oxranashit.ru
 :: oxussid.waazsz.cn
 :: oy1lx-tw54.d1cdej.top
+:: oyster-app-gm48s.ondigitalocean.app
 :: ozatak.com
 :: ozrqyov.info
 :: p-pav.net
@@ -7489,6 +7588,7 @@
 :: pagamenti.dietcarereviews.com
 :: pagamento-pedagio.dynv6.net
 :: paganomonthly.com
+:: page-credential.vercel.app
 :: page.ember-whatsapp.com
 :: pagelpa.xin
 :: pages.cm.com
@@ -7840,6 +7940,7 @@
 :: portugal-demo-b809c22957159f4.webflow.io
 :: posindonesiat.cc
 :: positivitybuilders.com
+:: postaorganizzata4x9.blob.core.windows.net
 :: postbg-tracks.com
 :: postfix-dns.com
 :: postid46827492.us
@@ -7857,6 +7958,7 @@
 :: ppl-survey-admin.com
 :: ppl.center-resolution.eu.cc
 :: pqieyxgq.sbs
+:: pqzcdsh.us17.list-manage.com
 :: pr0dubanc0-ec.zonbplngreso.site
 :: praisworthilya.info
 :: praktijkwensing.nl
@@ -7949,6 +8051,7 @@
 :: promisesmanualsimplementations.fr
 :: pronoskills.com
 :: proto.xperti.io
+:: protocnodes.pages.dev
 :: protocolo.avisobrada.online
 :: protoytype.za.com
 :: prtsw.ru
@@ -7973,6 +8076,7 @@
 :: punco.slavistik.uni-muenchen.de
 :: purolator.etcexh.vip
 :: purolatorko.com
+:: purrssrccrusareuuppsesuuowq.sfo2.cdn.digitaloceanspaces.com
 :: putianannan.com
 :: putrajayagemilang.com
 :: puurkoud.info
@@ -8020,6 +8124,7 @@
 :: qrha.top
 :: qrrrt.top
 :: qs2frz.cfd
+:: qsnetwork.az1.qualtrics.com
 :: qsoftexpensestracker.coherestudios.com
 :: qssmyzs.com
 :: qual-seu-acesso.diainformatica.com.br
@@ -8065,6 +8170,7 @@
 :: rawatpharmacycollege.com
 :: rax3ri.lat
 :: rbbtsn0w.gb.net
+:: rbfcu-star.azurewebsites.net
 :: rbfcvn-vsa.icu
 :: rbfcvrlakcv-online.icu
 :: rblx.asia
@@ -8082,6 +8188,7 @@
 :: recklessdarkreddefragment--five-nine.repl.co
 :: recovery-bitpanda.com
 :: red-local.click
+:: redcorporativa.z13.web.core.windows.net
 :: redelymembe.com
 :: redirect-orange.com
 :: redirect.141-195-116-45.cprapid.com
@@ -8196,6 +8303,7 @@
 :: rmv-961665928.adventistgh.org
 :: rmv-995470242.adventistgh.org
 :: rmyocsv.top
+:: rnh3rdznhe.eu-west-2.awsapprunner.com
 :: rntrc.org
 :: robiox.com.sb
 :: robiox.com.ua
@@ -8205,6 +8313,7 @@
 :: roblox.so
 :: roblox.tc
 :: robloxcheatengine.com
+:: rough-forest-d36c.paclibarshalomadic15846.workers.dev
 :: rowtl.com
 :: roxplolts.net
 :: rozksva.com
@@ -8221,6 +8330,7 @@
 :: rtvhdjpnotczb.top
 :: rty-helpconfirm.email
 :: ruangdev.com
+:: rubricaufficio4x9.blob.core.windows.net
 :: rubrique-contestation-xoom.info
 :: rubrique-details-activiter.info
 :: rubrique-service-transfert-gestion.fr
@@ -8281,10 +8391,12 @@
 :: santander-pts.cfd
 :: sante-compte.help
 :: sanwensuibi.com
+:: sap0mailsrvr30corrieossap0.pages.dev
 :: sapepdja.lol
 :: sapq.top
 :: sarkarisamadhan.com
 :: sassere.fr
+:: sastatest-five.vercel.app
 :: sat-billop.top
 :: saudiwba.me
 :: savregiontextpass.cd72663.tmweb.ru
@@ -8341,6 +8453,7 @@
 :: sdtiemo.com
 :: sdxinling.com
 :: sdzdksjx.com
+:: seal-app-gvgyd.ondigitalocean.app
 :: seasoacfbornk.top
 :: seblevqc.com
 :: seblotnb.com
@@ -8384,6 +8497,8 @@
 :: securite-doctolib.com
 :: security-ledger.live
 :: security-messenger-notification.art
+:: security-server-landing-page--lgcylinders.replit.app
+:: security-server-page--larrydice2.replit.app
 :: security-server-stat-3nce.bolt.host
 :: securitylater.pplcloud.bratatekhomes.com
 :: securpassactualisation-ca.com
@@ -8402,8 +8517,10 @@
 :: seleccion.cc
 :: selectionlocker.com
 :: selfcarearubacc.online
+:: selfhelpserver.pages.dev
 :: selliphoneapp.com
 :: sen2ri.cfd
+:: send-usdt-09.vercel.app
 :: send.coolchop.live
 :: sense-international.com
 :: ser.cn-ltd-28quan.com
@@ -8425,9 +8542,11 @@
 :: services-mrelay.com
 :: services.runascape.com-ro.ru
 :: servicesettallup.com
+:: servicioallianzadelvalle.z13.web.core.windows.net
 :: servicioslider.shop
 :: serviciozcanje.club
 :: servislaptopsemarang.com
+:: servitlan001.z13.web.core.windows.net
 :: servwebappscurenewverifyngmngesahsbdhauwbdhsavdgywad.manolovici.ro
 :: sesss.top
 :: setori-credusuarios-departamentocred.xyz
@@ -8454,6 +8573,7 @@
 :: shkelou.com
 :: shkgkl.com
 :: shlxp.com
+:: shop.us21.list-manage.com
 :: shopee.club
 :: shopee.scred.top
 :: shorten.ee
@@ -8490,6 +8610,7 @@
 :: skyrestaurante.com
 :: sl8.in
 :: slanketips-online.com
+:: slotbanksinarmas.pages.dev
 :: slxjd.com
 :: smapyuwvv.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click
 :: smartactionflow.com
@@ -8566,11 +8687,14 @@
 :: sogen-reactivation.com
 :: soilnonlinearity.cfd
 :: solemark.cfd
+:: soliciinternacionalec.z13.web.core.windows.net
 :: solution-analytics.com
 :: soulsisterssunday.com
 :: souscription-prim.com
 :: souscriptions-prims.com
 :: soyc8a.info
+:: sp20ct-kavem-biz-zanik-vorel.pages.dev
+:: sp20ct-vadex-biz-zunel-korav.pages.dev
 :: spacebank.us
 :: spanrowvvallef.digital
 :: spark-push.alwaysdata.net
@@ -8585,6 +8709,7 @@
 :: sportuaacolora.icu
 :: sprwf.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click
 :: sqkufy.com
+:: squid-app-67sb8.ondigitalocean.app
 :: squidnetservice.com
 :: sqwww.top
 :: sqzzz.top
@@ -8599,6 +8724,7 @@
 :: sso-revolut.s-host.net
 :: sssae.top
 :: sstwrp.cn
+:: staging.dc4q8j1zv0grh.amplifyapp.com
 :: starmovies.cc
 :: starttrejor-io-usa.wasmer.app
 :: staybox.org
@@ -8611,6 +8737,7 @@
 :: stickersbleu.xyz
 :: stkfoodservices.com
 :: stlinlong.com
+:: stonex-website.pages.dev
 :: store.communitystudionsarts.shop
 :: storebucks.org
 :: stoverf.cfd
@@ -8618,6 +8745,7 @@
 :: streaming-accountlogin.com
 :: streaminghost.myvnc.com
 :: studio-hub.pro
+:: sturdy-octo-guacamole1.vercel.app
 :: stvbhvb-online.top
 :: stxiannaiba.com
 :: suasmilhas.top
@@ -8683,6 +8811,7 @@
 :: sxdwdime.shop
 :: sxgahmjk.yottnats.cn
 :: sxgv.top
+:: sykessler.blob.core.windows.net
 :: symlmy.com
 :: symsolar.cl
 :: syndromemeasurement.cfd
@@ -8749,7 +8878,9 @@
 :: t4ysk5.info
 :: t6xk1v.top
 :: tachon.hub-9184898.pro
+:: tadobiyaf.z9.web.core.windows.net
 :: tag-home.buzz
+:: tagiyole.z6.web.core.windows.net
 :: talkify006.top
 :: tap-medmobilepay.abrdns.com
 :: tarifassatualizadas.online
@@ -8808,12 +8939,14 @@
 :: th3k85.info
 :: thanveve.invoice-ads-program.com
 :: thatints.club
+:: the-cash-technology-internet-group.us21.list-manage.com
 :: theartechflows.com
 :: theatershowbill.site
 :: theblackpearl.com.au
 :: thechennaimarathon200.top
 :: thegamb.cc
 :: theguesthousebb.com
+:: thehatfieldhotel-9g5jl.ondigitalocean.app
 :: thesparkhub.in
 :: thewitchezink.com
 :: three-security-billing.com
@@ -8840,6 +8973,7 @@
 :: tnzr.cc
 :: tnzt.cc
 :: tnzy.cc
+:: tofedowawu.z32.web.core.windows.net
 :: toicfijb.sbs
 :: token-activation.darklight.it
 :: tokibasv3urdumunnngeldi.xyz
@@ -8864,6 +8998,7 @@
 :: tranbearers.club
 :: transcript.bnktothefuturepolicyreview.com
 :: transfer-wisea.app.link
+:: transfer.sapo.pt
 :: translanebrokerage.com
 :: transporteur-france1.com
 :: treertx.autos
@@ -8959,6 +9094,8 @@
 :: ugyintezesgo.life
 :: uhaul-pos.net
 :: uhiths.info
+:: uioerdklscverz.z9.web.core.windows.net
+:: uiohgfredswazx.z9.web.core.windows.net
 :: ujannyagedeung.com
 :: ujv7zg.info
 :: uk-confirm.co.uk
@@ -8987,6 +9124,7 @@
 :: updateversescoopyah.dpdns.org
 :: updatingnowyahoo.weebly.com
 :: uphodvlog.godaddysites.com
+:: upstore-web.pages.dev
 :: urbanizab2b.com
 :: urge284671.pro
 :: urge5718504.pro
@@ -9077,11 +9215,15 @@
 :: vehicle-tax-service.com
 :: vel8xo.cfd
 :: verbindunginfo.de
+:: verde9collina4.blob.core.windows.net
 :: verifcolis.com
 :: verifica-app-isp.com
 :: verificacion365.freepage.cc
 :: verificadorbhd.viafirmas.com
+:: verification-blueticks-fb07.vercel.app
 :: verified-forms.com
+:: verifiedbadge-bridge.vercel.app
+:: verifiedbadge-delta.vercel.app
 :: verifier62214.click
 :: verify-your-new-payee.com
 :: verify-yournew-payee.com
@@ -9098,6 +9240,7 @@
 :: victor.bdll845276.pro
 :: victoria.bdll845276.pro
 :: vidanatural520.pro
+:: vidasmiass.z13.web.core.windows.net
 :: video-abo.com
 :: video-assistance.info
 :: video-souscrip.com
@@ -9117,6 +9260,7 @@
 :: vipcenter-mymx.space
 :: vipcenter-mymx.top
 :: vipcenturionconvite.com
+:: vipipufuy.z38.web.core.windows.net
 :: visaaa.eu.cc
 :: visaacr.gu.cc
 :: visacru.gu.cc
@@ -9171,6 +9315,7 @@
 :: w2.ltau-30hrs.click
 :: w3-inf-y-e-t-t-e-l-ugf.adm.ibsystem.com.br
 :: w3if0t.info
+:: w4avestwvv1ud2xo.z21.web.core.windows.net
 :: w4zuod.info
 :: w71tkh.info
 :: w7eh7e.lat
@@ -9185,6 +9330,7 @@
 :: wanpptv.com
 :: watch-sports-eg.com
 :: waterbeleid-groepuniebe.mandarisbe.info
+:: wauterszeefdruksignhulst.pages.dev
 :: wchuai.com
 :: wd2966.com
 :: wda.pt
@@ -9332,6 +9478,7 @@
 :: web7portaalkunden.bolojas.pt
 :: webappaseureaccntswkuyhkljdfhj.dfi457yhfdg45ydj.com
 :: webappsecureacntkjsdyiosdg.sdg34tgsdhgsd.com
+:: webflow.us21.list-manage.com
 :: webjidi.com
 :: webluse.com
 :: webmail-aruba-areaclienti.sys-webm73.sbs
@@ -9340,6 +9487,7 @@
 :: webmail-aruba.pms-areaclienti.top
 :: webmail-free.clients-2.com
 :: webmail-ionos.de-en.cc
+:: webmail2jsdq.z20.web.core.windows.net
 :: webmailseguroltda.store
 :: webmaster.alwaysdata.net
 :: websbc-caird.cikerman.com
@@ -9512,7 +9660,10 @@
 :: xalyxmy.com
 :: xaysxy.com
 :: xbhoanectxcl.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click
+:: xblocktest.pages.dev
+:: xbls.pages.dev
 :: xdjtz.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click
+:: xdropc.pages.dev
 :: xenoware.lol
 :: xfinitysupportdesk.com
 :: xgyjcc.com
@@ -9536,7 +9687,12 @@
 :: xn--xgwajq202603090111mzqz9oja-ye44ce01ib5g.iufhtss.info
 :: xnsqbw.com
 :: xpmoq.com
+:: xre10.pages.dev
 :: xsajk.com
+:: xsuki3.pages.dev
+:: xsuki5.pages.dev
+:: xsuki7.pages.dev
+:: xsuki8.pages.dev
 :: xt12358.com
 :: xtic.live-lanboesports.com
 :: xtsrevyapwyg.top
@@ -9598,6 +9754,7 @@
 :: z2mv8qx.skin
 :: z2qm8xn.skin
 :: z2qx8mp.skin
+:: z55gxbf0bb.execute-api.us-west-2.amazonaws.com
 :: z5d2b8.lat
 :: z5mx7qn.skin
 :: z5qt3xm.skin
@@ -9644,12 +9801,14 @@
 :: zhs-okx-app.com
 :: zhs-okx-apps.net
 :: zhw-china-pggaming.com
+:: zight-shortner.replit.app
 :: zjouying.com
 :: zjsyjoydesign.com
 :: zjzkzh.com
 :: zkantonl.com
 :: znbiz.com
 :: zngtpna.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click
+:: zodubagasa.z7.web.core.windows.net
 :: zonaeventmaterials.web.id
 :: zonasegvra-bnonline1info.com
 :: zorgvlaandbe.info
