@@ -1,11 +1,11 @@
 # adblock_collection_full 规则分类统计
-# 总规则数: 965768
-network: 750284
-privacy: 87362
-phishing: 40125
-annoyance: 31140
-cookie: 24188
-whitelist: 13781
+# 总规则数: 703688
+network: 561325
+privacy: 44305
+annoyance: 31141
+cookie: 24138
+whitelist: 13784
 social: 13551
-malware: 5327
+phishing: 10120
+malware: 5314
 css: 10

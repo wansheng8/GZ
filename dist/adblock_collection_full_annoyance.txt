@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31140
+! Total Rules: 31141
 ! ------------------------------------------
 ||clickiocdn.com/t/$third-party
 ||ligatus.com^$third-party
@@ -548,6 +548,7 @@
 ||cookies.fo^$third-party
 ||cdn-cookieyes.com^$domain=hamat.co.il|lykke.com|meiro.io|miniso-us.com|planhub.ca|tarisio.com
 ||posta.sk/cookies-consents/v1/cookies-consents.js
+||browser-consent-front.coco.s-cloud.fi/js/$script
 ||tmgrup.com.tr^*/tmdconsent-
 ||consent.daa.net/app.js
 ||consent-bist.de/public/app.js
@@ -589,6 +590,7 @@
 ||personaclick.com/assets/webpush/sw.js
 ||polaris.zijieapi.com^$app=com.dragon.read,important
 ||privacy.advancelocal.com/fides.js
+||api.postscript.io/v2/public/popups/
 ||toolbar.avg.com^$third-party
 ||chimpstatic.com/mcjs-connected/$script,domain=stilldrinking.org
 ||cleversite.ru/client/default/sound/
@@ -606,7 +608,6 @@
 ||leadgenic.ru/production/$media
 ||nojazz.eu/nl/client/drimble.nl/init.js
 ||omnisnippet1.com^$domain=miuratakuya.store|yourcelebritymagazines.com
-||api.postscript.io/v2/public/popups/
 ||secondstreetapp.com/embed/$subdocument,third-party
 ||techbeat.com/wp-content/custom-php/$third-party
 ||widget.thuiswinkel.org^$third-party
@@ -962,7 +963,6 @@
 ||tmgonlinemedia.nl/cc$script
 ||wijchensnieuws.nl/js/cookie.js
 ||a-lehdet.fi^*/cmp.js
-||browser-consent-front.coco.s-cloud.fi/js/$script
 ||elisa.fi/consent-management/
 ||finnair.com/a/consent/v1/cookies/
 ||korkeinoikeus.fi/webcomponents/oh-internet-seuranta/evastekysely.html
@@ -29279,6 +29279,7 @@ costco.ca,costcobusinesscentre.ca##[aria-label="Email Sign Up Form"]
 kayak.com##[aria-label="Receive our newsletter."]
 costco.com##[data-testid="emailsignupform--all"]
 leer.com##c-tag-home-page-sign-up-pop-up
+creditcardgenius.ca##ccg-modal
 shopcjglobal.com##flashy-popup
 market.samm.com#?#.bg-light:has-text(newsletter)
 recordcollectormag.com#?#.widget_text:has-text(newsletter)

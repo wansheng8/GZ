@@ -5,12 +5,13 @@
   "dns_eligible_network_rules": 0,
   "dns_rejected_network_rules": 13551,
   "by_eligibility": {
-    "CONDITIONAL": 49,
-    "REJECT": 13502
+    "CONDITIONAL": 46,
+    "REJECT": 13505
   },
   "by_reason": {
-    "domain_modifier": 49,
-    "path_rule": 43,
+    "domain_modifier": 46,
+    "path_rule": 42,
+    "scoped_modifier": 4,
     "untranslatable": 411,
     "css_rule": 13048
   }

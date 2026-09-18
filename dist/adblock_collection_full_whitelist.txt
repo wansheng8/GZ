@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 13781
+! Total Rules: 13784
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -12011,6 +12011,7 @@ alltransistors.com#@##reklama
 @@||ievaphone.com/public/javascripts/ads.js
 @@||windows101tricks.com/wp-content/plugins/better-adsmanager/js/advertising.min.js
 @@||call2friends.com/*/javascripts/ads.js
+@@||devuploads.com^$generichide
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=arcai.com
 @@/ad.sense/ad-m.js$~3p
 @@||in-page-push.com^$script,domain=mylink.*|my1ink.*|myl1nk.*|myli3k.*
@@ -12573,6 +12574,8 @@ alltransistors.com#@##reklama
 @@||modulous.huffpost.com/static/js/prebid-ads.js
 @@||youtube.com/get_video_info*&el=editpage
 @@||youtube.com/get_video_info?*embedded$~3p,other
+wolt.com#@#div:has(> div > div > div > div > div > div > p:contains(Sponsored))
+wolt.com#@#div:has(> div > div > div > div > div > p:contains(Sponsored))
 @@||entitlements.jwplayer.com/*.json$domain=pro.thestreet.com
 @@||cdn.jwplayer.com/*/media/$domain=pro.thestreet.com
 @@||adv.lack-girl.com/_assets/$image,stylesheet,script,~3p
