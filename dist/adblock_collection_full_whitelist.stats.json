@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 13783,
+  "total": 13781,
   "by_category": {
-    "whitelist": 13783
+    "whitelist": 13781
   },
   "by_kind": {
-    "network": 10983,
-    "css": 2776,
+    "network": 10978,
+    "css": 2779,
     "scriptlet": 21,
     "html": 3
   },
   "by_source": {
-    "ADrules AdRules": 4655,
-    "AdGuard – Ads": 1845,
+    "ADrules AdRules": 4649,
+    "AdGuard – Ads": 1847,
     "uBO filters – Unbreak": 1392,
     "ADrules EasyListChina": 1159,
     "ADrules Easylist": 1086,
@@ -27,7 +27,7 @@
     "ADrules anti-AD": 110,
     "AdGuard/uBO – URL Tracking Protection": 78,
     "Fanboy CookieMonster": 36,
-    "uBO filters – Quick fixes": 33,
+    "uBO filters – Quick fixes": 35,
     "uBO lan-block (Block Outsider Intrusion into LAN)": 27,
     "ADrules ChengFeng": 26,
     "ADrules HalfLife": 20,

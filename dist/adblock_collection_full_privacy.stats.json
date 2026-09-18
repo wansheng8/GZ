@@ -1,20 +1,20 @@
 {
   "name": "adblock_collection_full_privacy",
-  "total": 87354,
+  "total": 87362,
   "by_category": {
-    "privacy": 87354
+    "privacy": 87362
   },
   "by_kind": {
-    "network": 86998,
+    "network": 87006,
     "scriptlet": 318,
     "css": 23,
     "html": 15
   },
   "by_source": {
     "Firebog Easyprivacy Hosts": 43031,
-    "ADrules EasyPrivacy": 41797,
-    "uBO filters – Privacy": 1316,
-    "AdGuard/uBO – URL Tracking Protection": 1181,
+    "ADrules EasyPrivacy": 41799,
+    "uBO filters – Privacy": 1317,
+    "AdGuard/uBO – URL Tracking Protection": 1186,
     "Disconnect Simple Tracking": 29
   }
 }
