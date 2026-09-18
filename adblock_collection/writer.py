@@ -18,11 +18,12 @@ from pathlib import Path
 
 from .dns_policy import (
     DNS_REJECT,
+    SCOPED_MODIFIERS,
     classify_dns,
     is_dns_eligible,
     resolve_policy,
 )
-from .rules import _PURE_DOMAIN_RE, Rule
+from .rules import _PURE_DOMAIN_RE, Rule, _option_start
 
 HOMEPAGE = "https://github.com/wansheng8/GZ"
 
@@ -83,11 +84,34 @@ def write_adblock(rules: Iterable[Rule], path: Path, title: str, desc: str) -> i
     return count
 
 
+def _is_global_domain_exception(rule: Rule) -> bool:
+    """单域名例外是否「整域且全局」放行，可用于在 DNS 层抵消同名整域阻断。
+
+    仅当例外同时满足：
+
+    - 网络规则、单域名，且模式为纯域名（``@@||a.com^`` / ``@@||a.com``，无路径/通配）；
+    - 不含作用域修饰符（``$domain`` / ``$from`` / ``$to`` / ``$denyallow`` /
+      ``$ipaddress`` / ``$method``）。
+
+    这样 ``@@||a.com^$domain=x.com`` 这类站点作用域例外、以及 ``@@||a.com^*/path``
+    这类路径例外都不会把 a.com 从整域阻断集合中移除，避免「某站点的局部放行导致整个
+    广告域名在全球范围被放行」。
+    """
+    if not (rule.kind == "network" and rule.is_exception and len(rule.domains) == 1):
+        return False
+    if set(rule.options) & SCOPED_MODIFIERS:
+        return False
+    idx = _option_start(rule.raw)
+    pattern = rule.raw if idx is None else rule.raw[:idx]
+    return bool(_PURE_DOMAIN_RE.search(pattern))
+
+
 def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[str]:
-    """从规则集提取「应拦截的纯域名」集合，并抵消例外规则放行的域名。
+    """从规则集提取「应拦截的纯域名」集合，并抵消整域全局例外放行的域名。
 
     仅统计满足 dns_policy 安全分级的单域名网络阻断规则（||a.com^ 或策略允许的修饰符规则），
-    同时收集 @@||a.com^ / @@||a.com 这类单域名例外，从拦截集中剔除，使 DNS/Hosts 版也尊重精确放行。
+    同时收集 @@||a.com^ / @@||a.com 这类**整域全局**例外，从拦截集中剔除，使 DNS/Hosts 版
+    也尊重精确放行；作用域/路径例外（$domain=、含路径）不影响整域阻断判定。
     """
     blocked: set[str] = set()
     exceptions: set[str] = set()
@@ -95,8 +119,9 @@ def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[s
         if r.kind != "network" or not r.domains or len(r.domains) != 1:
             continue
         if r.is_exception:
-            # 例外规则独立于策略判定，始终参与放行集合
-            exceptions.add(r.domains[0])
+            # 仅整域全局例外参与放行；作用域/路径例外无法在 DNS 层表达，不抵消整域阻断
+            if _is_global_domain_exception(r):
+                exceptions.add(r.domains[0])
             continue
         if not is_dns_eligible(r, policy):
             continue

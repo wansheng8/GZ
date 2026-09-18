@@ -217,6 +217,18 @@ def test_redundant_domain_narrow_parent_does_not_cover_child():
     assert {r.raw for r in kept} == {"||a.com^$third-party", "||sub.a.com^"}
 
 
+def test_path_rule_does_not_override_pure_domain_block():
+    rules = [_rule("||doubleclick.net/tag/js/gpt.js"), _rule("||doubleclick.net^")]
+    kept = remove_redundant_domains(rules)
+    assert {r.raw for r in kept} == {"||doubleclick.net^"}
+
+
+def test_path_rule_does_not_cover_subdomain():
+    rules = [_rule("||a.com/path^"), _rule("||sub.a.com^")]
+    kept = remove_redundant_domains(rules)
+    assert {r.raw for r in kept} == {"||a.com/path^", "||sub.a.com^"}
+
+
 def test_redundant_css_dedupes_extended_syntax():
     rules = [
         _rule("example.com#$#.ad-banner"),
@@ -965,6 +977,33 @@ def test_scoped_exception_does_not_allowlist_target_domain():
 
     rules = [parse_line("||a.com^"), parse_line("@@/banner/ad/*$image,domain=a.com")]
     assert sorted(writer._blocked_domains(rules)) == ["a.com"]
+
+
+def test_scoped_domain_exception_does_not_disable_dns_block():
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("||doubleclick.net^"),
+        parse_line("@@||doubleclick.net^$xmlhttprequest,domain=yyets.click"),
+    ]
+    assert writer._blocked_domains(rules) == {"doubleclick.net"}
+
+
+def test_path_exception_does_not_disable_dns_block():
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("||scorecardresearch.com^"),
+        parse_line("@@||scorecardresearch.com^*/streamingtag_jwplayer.js"),
+    ]
+    assert writer._blocked_domains(rules) == {"scorecardresearch.com"}
+
+
+def test_pure_domain_exception_disables_dns_block():
+    from adblock_collection import writer
+
+    rules = [parse_line("||a.com^"), parse_line("@@||a.com^")]
+    assert writer._blocked_domains(rules) == set()
 
 
 # ---------------- 本地规则扩展分隔符校验 ----------------

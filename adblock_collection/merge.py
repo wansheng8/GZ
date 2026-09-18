@@ -13,7 +13,7 @@ from pathlib import Path
 import requests
 
 from .pipeline import parse_source_cached
-from .rules import _ELEMENT_SEP_RE, Rule, parse_lines
+from .rules import _ELEMENT_SEP_RE, _PURE_DOMAIN_RE, Rule, _option_start, parse_lines
 
 LOG = logging.getLogger("adblock_collection")
 
@@ -231,32 +231,47 @@ def apply_badfilter(rules: Iterable[Rule]) -> list[Rule]:
 _FULL_BLOCK_OPTIONS = frozenset({"important"})
 
 
+def _pattern_part(raw: str) -> str:
+    """返回规则去掉 ``$options`` 后的匹配模式部分。"""
+    idx = _option_start(raw)
+    return raw if idx is None else raw[:idx]
+
+
 def _is_full_domain_block(r: Rule) -> bool:
-    """该规则是否拦截目标域名的**全部**请求（可安全覆盖其子域）。"""
+    """该规则是否拦截目标域名的**全部**请求（可安全覆盖其子域）。
+
+    必须是「纯域名」模式（``||domain^`` / ``||domain``）。带路径的规则
+    （``||domain/path``）只拦截部分请求，既不能覆盖子域、也不能顶替同域纯域名规则，
+    否则会把 ``||doubleclick.net^`` 之类的整域封锁误删，导致该域名彻底失守。
+    """
     if r.kind != "network" or r.is_exception:
         return False
-    return not (set(r.options) - _FULL_BLOCK_OPTIONS)
-
-
-def _rule_strength(r: Rule) -> int:
-    """同域多条阻断规则只保留一条时，用于挑选覆盖面最广的代表。"""
-    if r.is_important:
-        return 2
-    return 1 if _is_full_domain_block(r) else 0
+    if set(r.options) - _FULL_BLOCK_OPTIONS:
+        return False
+    return bool(_PURE_DOMAIN_RE.search(_pattern_part(r.raw)))
 
 
 def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
-    """消除冗余的单域名网络阻断规则。
+    """消除被「整域全量拦截」覆盖的冗余单域名网络规则。
 
-    同一域名只保留覆盖面最广的一条（优先 $important，其次纯域全量拦截），避免出现
-    「同时有 `||a.com^` 与 `||a.com^$image` 时留下窄规则、丢掉整域封锁」的弱化。
-
-    子域仅在**父域存在全量拦截**（`||a.com^` / `||a.com^$important`）时才归并；父域若
-    只是作用域受限的窄规则（如 `||a.com^$third-party`），子域规则仍需保留。例外（@@）
-    规则不参与归并。
+    仅当同一域名（或某祖先域）存在纯域名全量拦截（``||a.com^`` /
+    ``||a.com^$important``）时，才删除被其覆盖的窄规则（``||a.com^$image``、
+    ``||a.com/path``、``||sub.a.com^`` 等）。同一域名同时存在普通与 ``$important``
+    全量拦截时只保留 ``$important`` 版本。带路径的规则（``||a.com/path^``）不是全量
+    拦截，既不覆盖子域也不顶替纯域名规则。例外（@@）规则始终保留。
     """
-    blocked: dict[str, Rule] = {}
-    others: list[Rule] = []
+    rules = list(rules)
+    # 每个域名的整域全量拦截代表（优先 $important）
+    full_block: dict[str, Rule] = {}
+    for r in rules:
+        if _is_full_domain_block(r) and len(r.domains) == 1:
+            d = r.domains[0]
+            prev = full_block.get(d)
+            if prev is None or (r.is_important and not prev.is_important):
+                full_block[d] = r
+
+    kept: list[Rule] = []
+    removed = 0
     for r in rules:
         if (
             r.kind == "network"
@@ -265,27 +280,21 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
             and len(r.domains) == 1
         ):
             d = r.domains[0]
-            prev = blocked.get(d)
-            if prev is None or _rule_strength(r) >= _rule_strength(prev):
-                blocked[d] = r
-        else:
-            others.append(r)
-
-    # 仅当父域存在「全量拦截」规则时，其子域规则才在主机名层面冗余
-    roots = {d for d, r in blocked.items() if _is_full_domain_block(r)}
-    covered: set[str] = set()
-    for domain in blocked:
-        parts = domain.split(".")
-        for i in range(1, len(parts)):
-            parent = ".".join(parts[i:])
-            if parent in roots:
-                covered.add(domain)
-                break
-    kept_blocked = [r for d, r in blocked.items() if d not in covered]
-    removed = len(covered)
+            # 严格祖先域存在整域全量拦截时，当前规则（含子域全量拦截）冗余
+            parts = d.split(".")
+            if any(".".join(parts[i:]) in full_block for i in range(1, len(parts))):
+                removed += 1
+                continue
+            if d in full_block:
+                if r is full_block[d]:
+                    kept.append(r)
+                else:
+                    removed += 1
+                continue
+        kept.append(r)
     if removed:
         LOG.info("冗余域名规则移除: %d", removed)
-    return kept_blocked + others
+    return kept
 
 
 _CSS_SELECTOR_RE = re.compile(r"[#$@%#?]+(.+)$")
