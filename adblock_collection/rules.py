@@ -31,8 +31,6 @@ _SCRIPTLET_RE = re.compile(
     r"|#[@%$?]{0,2}#\+js\("
     r"|#[@%$?]{0,2}#//scriptlet\s*\("
 )
-# 域名选项 domain=/from=/to=
-_DOMAIN_OPTION_RE = re.compile(r"(?:domain|from|to)=([^,)]+)")
 # 网络规则主体（|| 之后、^ 或 / 或 $ 之前的部分），用于提取域名（允许 @@ 等前缀，故不锚行首）
 _NET_DOMAIN_RE = re.compile(r"\|\|([a-z0-9*_.-]+(?:\.[a-z0-9*_.-]+)+)")
 # 严格的合法域名校验：仅允许字母数字与连字符，含点分隔的标签，TLD 至少 2 字母
@@ -261,12 +259,15 @@ def parse_options(option_str: str) -> dict[str, str]:
 
 
 def _extract_domains(raw: str) -> list[str]:
-    """提取规则涉及的域名。
+    """提取规则「请求目标」涉及的域名。
 
     - 元素规则 example.com,~sub.com##.ad -> [example.com]（忽略取反域名）
     - 网络规则 ||example.com^         -> [example.com]
     - 网络规则 ||example.com/ads^     -> [example.com]（含路径时仍提取主机名）
-    - 回退：从 domain=/from=/to= 选项提取
+    - 仅按 URL 模式解析，不取 domain=/from=/to= 选项：这些是**作用域**（限定规则
+      在哪些来源站点生效），并非被拦截的目标域名。若误当作目标域名，会让
+      `*$domain=a.com` 与 `||a.com^` 撞车，导致 remove_redundant_domains 丢规则、
+      例外规则 `@@...$domain=x` 误放行 x。
     """
     domains: list[str] = []
     m = _ELEMENT_SEP_RE.search(raw)
@@ -283,14 +284,6 @@ def _extract_domains(raw: str) -> list[str]:
         host = nm.group(1).lower()
         if "*" not in host and _VALID_DOMAIN_RE.match(host):
             domains.append(host)
-            return domains
-    # 退而求其次，从 domain= 选项提取
-    for dm in _DOMAIN_OPTION_RE.finditer(raw):
-        val = dm.group(1)
-        for d in val.split("|"):
-            d = d.strip().lstrip("~").lower()
-            if d and "*" not in d and _VALID_DOMAIN_RE.match(d):
-                domains.append(d)
     return domains
 
 

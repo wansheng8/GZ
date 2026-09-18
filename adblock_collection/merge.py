@@ -227,11 +227,33 @@ def apply_badfilter(rules: Iterable[Rule]) -> list[Rule]:
     return kept
 
 
-def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
-    """消除冗余的纯域名网络规则。
+# 视为「整域全量拦截」的选项集合：仅 $important 不改变拦截范围，只是提升优先级。
+_FULL_BLOCK_OPTIONS = frozenset({"important"})
 
-    当 '||a.com^'（阻断）存在时，更具体的 '||sub.a.com^' 或 '||a.com/ads^'
-    在阻断语义上冗余，但保留例外（@@）规则。仅对阻断型单域名网络规则做父域归并。
+
+def _is_full_domain_block(r: Rule) -> bool:
+    """该规则是否拦截目标域名的**全部**请求（可安全覆盖其子域）。"""
+    if r.kind != "network" or r.is_exception:
+        return False
+    return not (set(r.options) - _FULL_BLOCK_OPTIONS)
+
+
+def _rule_strength(r: Rule) -> int:
+    """同域多条阻断规则只保留一条时，用于挑选覆盖面最广的代表。"""
+    if r.is_important:
+        return 2
+    return 1 if _is_full_domain_block(r) else 0
+
+
+def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
+    """消除冗余的单域名网络阻断规则。
+
+    同一域名只保留覆盖面最广的一条（优先 $important，其次纯域全量拦截），避免出现
+    「同时有 `||a.com^` 与 `||a.com^$image` 时留下窄规则、丢掉整域封锁」的弱化。
+
+    子域仅在**父域存在全量拦截**（`||a.com^` / `||a.com^$important`）时才归并；父域若
+    只是作用域受限的窄规则（如 `||a.com^$third-party`），子域规则仍需保留。例外（@@）
+    规则不参与归并。
     """
     blocked: dict[str, Rule] = {}
     others: list[Rule] = []
@@ -242,17 +264,21 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
             and r.domains
             and len(r.domains) == 1
         ):
-            blocked[r.domains[0]] = r
+            d = r.domains[0]
+            prev = blocked.get(d)
+            if prev is None or _rule_strength(r) >= _rule_strength(prev):
+                blocked[d] = r
         else:
             others.append(r)
 
-    # 标记被父域覆盖的子域规则（无论是否带路径，主机名层面冗余即移除）
+    # 仅当父域存在「全量拦截」规则时，其子域规则才在主机名层面冗余
+    roots = {d for d, r in blocked.items() if _is_full_domain_block(r)}
     covered: set[str] = set()
     for domain in blocked:
         parts = domain.split(".")
         for i in range(1, len(parts)):
             parent = ".".join(parts[i:])
-            if parent in blocked:
+            if parent in roots:
                 covered.add(domain)
                 break
     kept_blocked = [r for d, r in blocked.items() if d not in covered]

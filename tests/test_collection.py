@@ -199,6 +199,24 @@ def test_redundant_domain_removal():
     assert "||other.com^" in raws
 
 
+def test_redundant_domain_prefers_full_block_over_narrow():
+    rules = [_rule("||a.com^$image"), _rule("||a.com^")]
+    kept = remove_redundant_domains(rules)
+    assert [r.raw for r in kept] == ["||a.com^"]
+
+
+def test_redundant_domain_prefers_important():
+    rules = [_rule("||a.com^"), _rule("||a.com^$important")]
+    kept = remove_redundant_domains(rules)
+    assert [r.raw for r in kept] == ["||a.com^$important"]
+
+
+def test_redundant_domain_narrow_parent_does_not_cover_child():
+    rules = [_rule("||a.com^$third-party"), _rule("||sub.a.com^")]
+    kept = remove_redundant_domains(rules)
+    assert {r.raw for r in kept} == {"||a.com^$third-party", "||sub.a.com^"}
+
+
 def test_redundant_css_dedupes_extended_syntax():
     rules = [
         _rule("example.com#$#.ad-banner"),
@@ -925,6 +943,28 @@ def test_scoped_modifiers_rejected_from_dns():
         assert classify_dns(r).reason == "scoped_modifier", raw
         assert is_dns_eligible(r, {"level": "safe"}) is False, raw
         assert is_dns_eligible(r, {"level": "all"}) is False, raw
+
+
+# ---------------- domain= 是作用域，不是目标域名 ----------------
+
+
+def test_domain_option_is_scope_not_target():
+    assert parse_line("*$domain=a.com").domains == []
+    assert parse_line("@@/banner/ad/*$image,domain=a.com").domains == []
+
+
+def test_scoped_rule_does_not_drop_real_domain_rule():
+    kept = remove_redundant_domains(
+        [parse_line("||a.com^"), parse_line("*$domain=a.com")]
+    )
+    assert {r.raw for r in kept} == {"||a.com^", "*$domain=a.com"}
+
+
+def test_scoped_exception_does_not_allowlist_target_domain():
+    from adblock_collection import writer
+
+    rules = [parse_line("||a.com^"), parse_line("@@/banner/ad/*$image,domain=a.com")]
+    assert sorted(writer._blocked_domains(rules)) == ["a.com"]
 
 
 # ---------------- 本地规则扩展分隔符校验 ----------------
