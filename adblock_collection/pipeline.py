@@ -17,17 +17,17 @@ from __future__ import annotations
 import hashlib
 import json
 import logging
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable, Optional
 
-from .rules import Rule, parse_line
+from .rules import Rule, parse_lines
 
 LOG = logging.getLogger("adblock_collection")
 
 # 各阶段算法版本。逻辑变更时递增，旧缓存自动失效。
-PARSER_VERSION = "1.2.0"
+PARSER_VERSION = "1.4.0"
 NORMALIZER_VERSION = "1.0.0"
-CLASSIFIER_VERSION = "1.1.0"
+CLASSIFIER_VERSION = "1.2.0"
 
 STAGE_DIR = Path(".cache/parsed")
 
@@ -37,7 +37,7 @@ def _source_sha256(text: str) -> str:
 
 
 def _stage_key(url: str, src_sha: str) -> str:
-    payload = "||".join([url, src_sha, PARSER_VERSION, NORMALIZER_VERSION, CLASSIFIER_VERSION])
+    payload = f"{url}||{src_sha}||{PARSER_VERSION}||{NORMALIZER_VERSION}||{CLASSIFIER_VERSION}"
     return hashlib.sha256(payload.encode("utf-8")).hexdigest()[:24]
 
 
@@ -46,7 +46,7 @@ def cache_path(url: str, src_sha: str) -> Path:
     return STAGE_DIR / _stage_key(url, src_sha)
 
 
-def load_parsed(url: str, src_sha: str) -> Optional[list[Rule]]:
+def load_parsed(url: str, src_sha: str) -> list[Rule] | None:
     """命中阶段缓存则返回已解析的 Rule 列表，否则返回 None。"""
     path = cache_path(url, src_sha)
     if not path.exists():
@@ -99,8 +99,13 @@ def save_parsed(url: str, src_sha: str, rules: Iterable[Rule]) -> None:
     path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
 
 
-def parse_source_cached(lines: Iterable[str], category_hint: str, source: str,
-                        url: str = "", use_stage_cache: bool = True) -> list[Rule]:
+def parse_source_cached(
+    lines: Iterable[str],
+    category_hint: str,
+    source: str,
+    url: str = "",
+    use_stage_cache: bool = True,
+) -> list[Rule]:
     """带阶段缓存的解析入口。
 
     use_stage_cache=False 时退化为原 parse_source 行为（离线/调试场景）。
@@ -112,10 +117,7 @@ def parse_source_cached(lines: Iterable[str], category_hint: str, source: str,
         if cached is not None:
             return cached
 
-    rules = [
-        r for r in (parse_line(line, category_hint=category_hint, source=source) for line in lines)
-        if r is not None
-    ]
+    rules = parse_lines(lines, category_hint=category_hint, source=source)
     if use_stage_cache and url:
         save_parsed(url, _source_sha256("\n".join(lines)), rules)
     return rules

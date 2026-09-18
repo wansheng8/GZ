@@ -4,8 +4,6 @@ from __future__ import annotations
 
 from adblock_collection.provenance import (
     build_relation_graph,
-    build_provenance,
-    cross_source_duplicate_count,
 )
 from adblock_collection.rules import parse_line
 
@@ -60,5 +58,6 @@ def test_relation_graph_reports_in_provenance_flow(tmp_path, monkeypatch):
     rg = tmp_path / "relation_graph.json"
     assert rg.exists()
     import json
+
     data = json.loads(rg.read_text(encoding="utf-8"))
     assert any(d["kind"] == "PARENT_CHILD" for d in data)

@@ -1,0 +1,27 @@
+# Ruff 配置：统一代码格式与静态检查，保持语法结构整齐一致。
+# 用法：
+#   ruff format .        # 格式化
+#   ruff check --fix .   # 自动修复
+
+line-length = 88
+target-version = "py38"
+
+[lint]
+select = [
+    "E",    # pycodestyle
+    "F",    # pyflakes
+    "W",    # pycodestyle warnings
+    "I",    # isort 导入排序
+    "UP",   # pyupgrade
+    "B",    # flake8-bugbear
+    "BLE",  # flake8-blind-except
+    "PIE",  # flake8-pie
+    "FLY",  # flynt
+    "FURB", # refurb
+]
+ignore = [
+    "E501", # 行超长交由 formatter 处理
+]
+
+[format]
+quote-style = "double"

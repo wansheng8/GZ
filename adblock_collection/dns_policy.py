@@ -7,7 +7,9 @@ hosts / domains 文件。目的是在「宁愿少拦截、不要误拦截」原�
 
 分级依据（参考 Adblock 语义）：
 
-- REJECT  : CSS 元素隐藏、脚本注入、正则、重定向、含路径的网络规则。
+- REJECT  : CSS 元素隐藏、脚本注入、正则、重定向、含路径的网络规则，
+            以及带动作/修饰选项（$csp/$removeparam/$replace…）或作用域限定选项
+            （$domain/$from/$to/$denyallow/$ipaddress/$method）的规则。
             DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
 - SAFE    : 纯域名网络规则（||ads.example.com^），整域拦截语义等价，confidence=1.0。
 - CONDITIONAL: 带修饰符的单域名规则（如 ||example.com^$third-party），作用域受限，
@@ -25,9 +27,8 @@ from __future__ import annotations
 import re
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
 
-from .rules import Rule, _PURE_DOMAIN_RE, _NET_DOMAIN_RE
+from .rules import _NET_DOMAIN_RE, _PURE_DOMAIN_RE, Rule
 
 # 置信度常量
 CONF_PURE_DOMAIN = 1.0
@@ -47,7 +48,46 @@ DNS_LEVELS = {
 }
 DEFAULT_LEVEL = "all"
 
+# 非阻断型「动作/修饰」选项：带这些选项的规则不拦截域名，只改写请求或响应内容
+# （如 $removeparam 去参、$csp 注入响应头、$replace 改写响应体）。它们即使写成
+# 单域名规则也绝不能升级为 DNS 整域拦截，否则会造成整站误杀。
+NON_BLOCKING_MODIFIERS = frozenset(
+    {
+        "removeparam",
+        "replace",
+        "csp",
+        "permissions",
+        "cookie",
+        "set-cookie",
+        "header",
+        "removeheader",
+        "urltransform",
+        "urlskip",
+        "generichide",
+        "specifichide",
+        "elemhide",
+        "content",
+        "inline-script",
+        "inline-font",
+        "genericblock",
+    }
+)
+
 _OPTION_RE = re.compile(r"\$([^$]*)$")
+
+# 作用域限定选项：DNS 只能按整域拦截，无法表达「仅在某来源站点 / 某目标域名 /
+# 某 IP / 某请求方法下生效」。带这些选项的规则一旦升级为 DNS 拦截，会波及作用域
+# 之外的全部正常流量，属于误拦截，因此必须硬拒绝（而不只是降为 CONDITIONAL）。
+SCOPED_MODIFIERS = frozenset(
+    {
+        "domain",
+        "from",
+        "to",
+        "denyallow",
+        "ipaddress",
+        "method",
+    }
+)
 
 
 @dataclass
@@ -71,13 +111,22 @@ def classify_dns(rule: Rule) -> DnsVerdict:
 
     # 正则 / 重定向类规则无法转 DNS（白名单例外也转不出域名语义）
     if rule.options:
-        if any(k in rule.options for k in ("regexp", "redirect", "rewrite")):
+        if any(
+            k in rule.options
+            for k in ("regexp", "redirect", "redirect-rule", "rewrite")
+        ):
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "regex_or_redirect_rule")
+        # 动作/修饰型选项不阻断域名，禁止升级为整域拦截
+        if any(k in rule.options for k in NON_BLOCKING_MODIFIERS):
+            return DnsVerdict(DNS_REJECT, CONF_REJECT, "non_blocking_modifier")
+        # 作用域限定选项无法在 DNS 层表达，禁止升级为整域拦截
+        if any(k in rule.options for k in SCOPED_MODIFIERS):
+            return DnsVerdict(DNS_REJECT, CONF_REJECT, "scoped_modifier")
 
     # 含路径的网络规则：DNS 只能看到域名，整域拦截会误伤，拒绝
     m = _NET_DOMAIN_RE.search(rule.raw)
     if m:
-        after = _OPTION_RE.sub("", rule.raw[m.end():])
+        after = _OPTION_RE.sub("", rule.raw[m.end() :])
         if "/" in after:
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "path_rule")
 
@@ -92,7 +141,7 @@ def classify_dns(rule: Rule) -> DnsVerdict:
     return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
 
 
-def resolve_policy(policy: Optional[dict]) -> dict:
+def resolve_policy(policy: dict | None) -> dict:
     """返回有效的策略字典，缺失或未知字段用默认等级补齐。"""
     if policy is None:
         return dict(DNS_LEVELS[DEFAULT_LEVEL])
@@ -108,7 +157,7 @@ def resolve_policy(policy: Optional[dict]) -> dict:
     return base
 
 
-def is_dns_eligible(rule: Rule, policy: Optional[dict] = None) -> bool:
+def is_dns_eligible(rule: Rule, policy: dict | None = None) -> bool:
     """阻塞型规则是否应进入 DNS/Hosts/Domains 输出。"""
     verdict = classify_dns(rule)
     if not verdict.eligible:

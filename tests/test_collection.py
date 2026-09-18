@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from pathlib import Path
-
 from adblock_collection.dns_policy import (
     DNS_LEVELS,
     DNS_REJECT,
@@ -21,12 +19,6 @@ from adblock_collection.merge import (
     source_stats,
     validate_local_rules,
 )
-from adblock_collection.quality_gate import (
-    collect_metrics,
-    evaluate,
-    load_thresholds,
-    save_previous,
-)
 from adblock_collection.pipeline import (
     PARSER_VERSION,
     parse_source_cached,
@@ -38,8 +30,14 @@ from adblock_collection.provenance import (
     load_security_policy,
     source_group,
 )
+from adblock_collection.quality_gate import (
+    collect_metrics,
+    evaluate,
+    load_thresholds,
+    save_previous,
+)
 from adblock_collection.regression import check_allow, check_block, load_false_positives
-from adblock_collection.rules import Rule, parse_line
+from adblock_collection.rules import Rule, parse_line, parse_lines, parse_options
 
 
 def _rule(raw: str, **kw) -> Rule:
@@ -103,6 +101,12 @@ def test_parse_adguard_scriptlet():
     assert r.kind == "scriptlet" and r.is_scriptlet
 
 
+def test_parse_adguard_scriptlet_exception():
+    r = parse_line("example.com#@%#//scriptlet(abort-on-property-read, ads)")
+    assert r is not None
+    assert r.kind == "scriptlet" and r.is_scriptlet and r.is_exception
+
+
 def test_parse_html_filter_kind():
     r = parse_line("example.com##^script:has-text(adsbygoogle)")
     assert r is not None
@@ -127,6 +131,42 @@ def test_normalize_option_order():
     b = parse_line("||x.com^$script,third-party")
     assert a is not None and b is not None
     assert a.norm == b.norm
+
+
+def test_parse_options_keeps_comma_in_regex_value():
+    opts = parse_options("frame,3p,removeparam=/^__mk_[a-z]{1,3}_[a-z]{1,3}=/,script")
+    assert set(opts) == {"frame", "3p", "removeparam", "script"}
+    assert opts["removeparam"] == "/^__mk_[a-z]{1,3}_[a-z]{1,3}=/"
+
+
+def test_parse_options_keeps_comma_in_quoted_value():
+    opts = parse_options("frame,replace='/a,b/c/'")
+    assert set(opts) == {"frame", "replace"}
+    assert opts["replace"] == "'/a,b/c/'"
+
+
+def test_parse_options_honours_escaped_comma():
+    opts = parse_options(r"header=vary:/^referer\,accept-encoding/i")
+    assert opts["header"] == r"vary:/^referer\,accept-encoding/i"
+
+
+def test_parse_options_keeps_comma_in_named_header_regex():
+    opts = parse_options(r"script,3p,header=via:/, 1\.1 google$/,domain=x")
+    assert set(opts) == {"script", "3p", "header", "domain"}
+    assert opts["header"] == r"via:/, 1\.1 google$/"
+
+
+def test_parse_options_csp_url_not_treated_as_regex():
+    opts = parse_options("csp=default-src 'self' https://cdn.example.com,domain=x")
+    assert set(opts) == {"csp", "domain"}
+    assert opts["csp"] == "default-src 'self' https://cdn.example.com"
+
+
+def test_options_locates_dollar_inside_value():
+    r = parse_line("$uritransform=/#E=[\\d]{10}$//,to=a.com|b.com")
+    assert r is not None
+    assert set(r.options) == {"uritransform", "to"}
+    assert r.options["uritransform"] == "/#E=[\\d]{10}$//"
 
 
 def test_dedupe():
@@ -221,12 +261,15 @@ def test_domain_extraction_rejects_garbage():
 
 def test_category_split(tmp_path):
     from adblock_collection.cli import _emit_by_category
+
     rules = [
         parse_line("||ads.example.com^"),
         parse_line("||malware.example.com^"),
         parse_line("##.ad-banner"),
     ]
-    _emit_by_category(rules, tmp_path, "test", "T", gen_dns=False, manifest=[], policy=None)
+    _emit_by_category(
+        rules, tmp_path, "test", "T", gen_dns=False, manifest=[], policy=None
+    )
     assert (tmp_path / "test_other.txt").exists()
     assert (tmp_path / "test_malware.txt").exists()
     assert (tmp_path / "test_css.txt").exists()
@@ -234,6 +277,7 @@ def test_category_split(tmp_path):
 
 def test_path_bearing_rule_excluded_from_dns():
     from adblock_collection import writer
+
     r = parse_line("||example.com/ads^")
     assert writer._to_hosts_line(r) is None
     assert writer._to_domain(r) is None
@@ -241,6 +285,7 @@ def test_path_bearing_rule_excluded_from_dns():
 
 def test_exception_cancels_blocked_domain_in_dns():
     from adblock_collection import writer
+
     rules = [
         parse_line("||block.com^"),
         parse_line("@@||block.com^"),
@@ -251,12 +296,14 @@ def test_exception_cancels_blocked_domain_in_dns():
 
 def test_pure_domain_rule_included_in_dns():
     from adblock_collection import writer
+
     r = parse_line("||example.com^")
     assert writer._to_hosts_line(r) == "0.0.0.0 example.com"
     assert writer._to_domain(r) == "example.com"
 
 
 # ---------------- DNS 安全分级 ----------------
+
 
 def test_classify_pure_domain_is_safe():
     v = classify_dns(parse_line("||ads.example.com^"))
@@ -294,7 +341,9 @@ def test_policy_strict_safe_rejects_modifier():
 
 def test_load_dns_policy_default_all(tmp_path):
     cfg = tmp_path / "sources.yaml"
-    cfg.write_text("name: x\nsources:\n  - name: a\n    url: https://a\n", encoding="utf-8")
+    cfg.write_text(
+        "name: x\nsources:\n  - name: a\n    url: https://a\n", encoding="utf-8"
+    )
     policy = load_dns_policy(cfg)
     assert policy["level"] == "all"
     assert policy["allow_modifier"] is False
@@ -319,12 +368,14 @@ def test_resolve_policy_unknown_level_falls_back():
 
 def test_exception_rule_not_in_dns():
     from adblock_collection import writer
+
     r = parse_line("@@||example.com^")
     assert writer._to_hosts_line(r) is None
     assert writer._to_domain(r) is None
 
 
 # ---------------- 误杀回归 ----------------
+
 
 def test_check_allow_flags_exact_block():
     # 精确匹配：allow 清单中的域名本身被整域阻断才算误杀
@@ -366,7 +417,9 @@ def test_check_block_passes_when_present():
 
 def test_load_false_positives_default(tmp_path):
     cfg = tmp_path / "false_positives.yaml"
-    cfg.write_text("allow:\n  - google.com\nblock:\n  - doubleclick.net\n", encoding="utf-8")
+    cfg.write_text(
+        "allow:\n  - google.com\nblock:\n  - doubleclick.net\n", encoding="utf-8"
+    )
     fps = load_false_positives(cfg)
     assert fps["allow"] == ["google.com"]
     assert fps["block"] == ["doubleclick.net"]
@@ -376,9 +429,14 @@ def test_regression_end_to_end_via_cli(tmp_path):
     from adblock_collection.cli import regression_cmd
 
     cfg = tmp_path / "sources.yaml"
-    cfg.write_text("name: x\ndns_policy:\n  level: all\nsources:\n  - name: a\n    url: https://a\n", encoding="utf-8")
+    cfg.write_text(
+        "name: x\ndns_policy:\n  level: all\nsources:\n  - name: a\n    url: https://a\n",
+        encoding="utf-8",
+    )
     fp = tmp_path / "false_positives.yaml"
-    fp.write_text("allow:\n  - google.com\nblock:\n  - doubleclick.net\n", encoding="utf-8")
+    fp.write_text(
+        "allow:\n  - google.com\nblock:\n  - doubleclick.net\n", encoding="utf-8"
+    )
     out = tmp_path / "dist"
     out.mkdir()
     # 误杀：整域封禁了 google.com 自身
@@ -394,13 +452,16 @@ def test_regression_end_to_end_via_cli(tmp_path):
 
 # ---------------- 质量门禁 ----------------
 
+
 def test_collect_metrics_counts_root_blocks():
     rules = [
         parse_line("||example.com^"),
         parse_line("||a.example.com^"),
         parse_line("||com^"),  # 非合法域，domains 为空，不计
     ]
-    m = collect_metrics(rules, dns_domains=1, source_counts={"A": 2}, category_counts={"network": 2})
+    m = collect_metrics(
+        rules, dns_domains=1, source_counts={"A": 2}, category_counts={"network": 2}
+    )
     assert m.total_rules == 3
     assert m.dns_domains == 1
     assert m.root_domain_blocks == 1  # 仅 example.com（单点分隔）
@@ -410,7 +471,9 @@ def test_collect_metrics_counts_root_blocks():
 def test_evaluate_passes_without_previous():
     from adblock_collection.quality_gate import Metrics
 
-    m = Metrics(total_rules=100, dns_domains=10, source_counts={"A": 5}, category_counts={})
+    m = Metrics(
+        total_rules=100, dns_domains=10, source_counts={"A": 5}, category_counts={}
+    )
     gate = evaluate(m, None, _default_thresholds())
     assert gate.passed
 
@@ -428,8 +491,12 @@ def _default_thresholds():
 def test_evaluate_flags_rule_surge():
     from adblock_collection.quality_gate import Metrics
 
-    prev = Metrics(total_rules=1000, dns_domains=100, source_counts={"A": 500}, category_counts={})
-    cur = Metrics(total_rules=1500, dns_domains=100, source_counts={"A": 500}, category_counts={})
+    prev = Metrics(
+        total_rules=1000, dns_domains=100, source_counts={"A": 500}, category_counts={}
+    )
+    cur = Metrics(
+        total_rules=1500, dns_domains=100, source_counts={"A": 500}, category_counts={}
+    )
     gate = evaluate(cur, prev, _default_thresholds())
     assert not gate.passed
     assert any("总规则数增长" in f for f in gate.failures)
@@ -438,8 +505,18 @@ def test_evaluate_flags_rule_surge():
 def test_evaluate_flags_source_drop():
     from adblock_collection.quality_gate import Metrics
 
-    prev = Metrics(total_rules=1000, dns_domains=100, source_counts={"A": 500, "B": 500}, category_counts={})
-    cur = Metrics(total_rules=1000, dns_domains=100, source_counts={"A": 100, "B": 500}, category_counts={})
+    prev = Metrics(
+        total_rules=1000,
+        dns_domains=100,
+        source_counts={"A": 500, "B": 500},
+        category_counts={},
+    )
+    cur = Metrics(
+        total_rules=1000,
+        dns_domains=100,
+        source_counts={"A": 100, "B": 500},
+        category_counts={},
+    )
     gate = evaluate(cur, prev, _default_thresholds())
     assert not gate.passed
     assert any("骤降" in f for f in gate.failures)
@@ -448,8 +525,12 @@ def test_evaluate_flags_source_drop():
 def test_evaluate_flags_dns_surge():
     from adblock_collection.quality_gate import Metrics
 
-    prev = Metrics(total_rules=1000, dns_domains=100, source_counts={"A": 500}, category_counts={})
-    cur = Metrics(total_rules=1000, dns_domains=200, source_counts={"A": 500}, category_counts={})
+    prev = Metrics(
+        total_rules=1000, dns_domains=100, source_counts={"A": 500}, category_counts={}
+    )
+    cur = Metrics(
+        total_rules=1000, dns_domains=200, source_counts={"A": 500}, category_counts={}
+    )
     gate = evaluate(cur, prev, _default_thresholds())
     assert not gate.passed
     assert any("DNS" in f for f in gate.failures)
@@ -468,7 +549,9 @@ def test_load_thresholds_from_config(tmp_path):
 def test_save_and_load_previous(tmp_path):
     from adblock_collection.quality_gate import Metrics
 
-    m = Metrics(total_rules=10, dns_domains=2, source_counts={"A": 1}, category_counts={})
+    m = Metrics(
+        total_rules=10, dns_domains=2, source_counts={"A": 1}, category_counts={}
+    )
     save_previous(m, tmp_path)
     loaded = save_previous.__module__ and __import__(
         "adblock_collection.quality_gate", fromlist=["load_previous"]
@@ -478,7 +561,6 @@ def test_save_and_load_previous(tmp_path):
 
 
 def test_quality_gate_via_cli_build(tmp_path):
-    from adblock_collection.cli import build
 
     cfg = tmp_path / "sources.yaml"
     cfg.write_text(
@@ -490,18 +572,21 @@ def test_quality_gate_via_cli_build(tmp_path):
     # 第一轮构建，无 previous，应通过
     rules_txt = "! t\n" + "\n".join(f"||a{i}.example.com^" for i in range(100)) + "\n"
     (tmp_path / "sample.txt").write_text(rules_txt, encoding="utf-8")
-    args1 = type("A", (), {
-        "config": str(cfg), "out": str(out), "no_cache": True, "offline": False,
-        "no_dns": False, "redundant": False, "split_by_category": False, "dns_policy": None,
-    })()
     # 直接调用 _run_quality_gate 逻辑：用 build 内部不便，单独构造
-    from adblock_collection.quality_gate import (
-        collect_metrics, evaluate, load_previous, load_thresholds, save_previous, write_build_report,
-    )
     from adblock_collection.merge import source_stats
+    from adblock_collection.quality_gate import (
+        collect_metrics,
+        evaluate,
+        load_previous,
+        load_thresholds,
+        save_previous,
+        write_build_report,
+    )
     from adblock_collection.rules import parse_line
 
-    rules = [parse_line(x) for x in rules_txt.splitlines() if x and not x.startswith("!")]
+    rules = [
+        parse_line(x) for x in rules_txt.splitlines() if x and not x.startswith("!")
+    ]
     sc = source_stats(rules)
     m1 = collect_metrics(rules, dns_domains=100, source_counts=sc, category_counts={})
     prev = load_previous(out)
@@ -512,7 +597,9 @@ def test_quality_gate_via_cli_build(tmp_path):
 
     # 第二轮：规则数暴增 200%，应失败
     rules_txt2 = "! t\n" + "\n".join(f"||b{i}.example.com^" for i in range(300)) + "\n"
-    rules2 = [parse_line(x) for x in rules_txt2.splitlines() if x and not x.startswith("!")]
+    rules2 = [
+        parse_line(x) for x in rules_txt2.splitlines() if x and not x.startswith("!")
+    ]
     sc2 = source_stats(rules2)
     m2 = collect_metrics(rules2, dns_domains=300, source_counts=sc2, category_counts={})
     prev2 = load_previous(out)
@@ -521,6 +608,7 @@ def test_quality_gate_via_cli_build(tmp_path):
 
 
 # ---------------- 阶段缓存 / 算法版本 ----------------
+
 
 def test_parser_version_constant():
     assert PARSER_VERSION
@@ -560,6 +648,7 @@ def test_collect_uses_stage_cache(tmp_path, monkeypatch):
         encoding="utf-8",
     )
     import hashlib
+
     raw = "! c\n||ads.example.com^\n"
     cs = tmp_path / ".cache" / "sources"
     cs.mkdir(parents=True, exist_ok=True)
@@ -573,6 +662,7 @@ def test_collect_uses_stage_cache(tmp_path, monkeypatch):
 
 
 # ---------------- 来源血缘 / 语义去重 ----------------
+
 
 def test_source_group_classifies():
     assert source_group("AdGuard Base") == "adguard"
@@ -630,8 +720,9 @@ def test_load_security_policy_default(tmp_path):
 
 # ---------------- 安全类独立发行 ----------------
 
+
 def test_security_independent_release(tmp_path, monkeypatch):
-    from adblock_collection.cli import _emit_security, write_manifest
+    from adblock_collection.cli import _emit_security
 
     monkeypatch.chdir(tmp_path)
     rules = [
@@ -641,7 +732,9 @@ def test_security_independent_release(tmp_path, monkeypatch):
     ]
     sp = {"categories": ["malware", "phishing"], "source_drop_percent": 80.0}
     manifest = []
-    _emit_security(rules, tmp_path, sp, manifest, gen_dns=True, dns_policy={"level": "all"})
+    _emit_security(
+        rules, tmp_path, sp, manifest, gen_dns=True, dns_policy={"level": "all"}
+    )
 
     sec_dir = tmp_path / "security"
     assert (sec_dir / "adblock_collection_security.txt").exists()
@@ -654,6 +747,7 @@ def test_security_independent_release(tmp_path, monkeypatch):
 
 # ---------------- 本地增强规则校验 ----------------
 
+
 def test_validate_local_rules_passes_normal(tmp_path):
     cfg = tmp_path / "sources.yaml"
     cfg.write_text("sources: []\n", encoding="utf-8")
@@ -662,7 +756,7 @@ def test_validate_local_rules_passes_normal(tmp_path):
         "# 注释\n"
         "! 标题\n"
         "example.com##.ad-banner\n"
-        "live.bilibili.com##[class*=\"recommend\"]\n"
+        'live.bilibili.com##[class*="recommend"]\n'
         "||ad.douyin.com^\n",
         encoding="utf-8",
     )
@@ -674,10 +768,7 @@ def test_validate_local_rules_blocks_wildcard(tmp_path):
     cfg.write_text("sources: []\n", encoding="utf-8")
     lr = tmp_path / "local_rules.txt"
     lr.write_text(
-        "example.com##*\n"
-        "example.com##body\n"
-        "##[class*=\"ad\"]\n"
-        "*##.banner\n",
+        'example.com##*\nexample.com##body\n##[class*="ad"]\n*##.banner\n',
         encoding="utf-8",
     )
     v = validate_local_rules(cfg)
@@ -707,3 +798,150 @@ def test_validate_local_rules_missing_file_ok(tmp_path):
     cfg = tmp_path / "sources.yaml"
     cfg.write_text("sources: []\n", encoding="utf-8")
     assert validate_local_rules(cfg) == []
+
+
+# ---------------- hosts / 纯域名上游规范化 ----------------
+
+
+def test_hosts_line_normalized_to_network_rule():
+    r = parse_line("0.0.0.0 ads.example.com")
+    assert r is not None
+    assert r.kind == "network"
+    assert r.raw == "||ads.example.com^"
+    assert r.domains == ["ads.example.com"]
+
+
+def test_hosts_line_skips_boilerplate_and_inline_comment():
+    assert parse_line("127.0.0.1 localhost") is None
+    assert parse_line("::1 ip6-localhost") is None
+    assert parse_line("0.0.0.0") is None
+    r = parse_line("127.0.0.1 tracker.example.com # comment")
+    assert r is not None
+    assert r.raw == "||tracker.example.com^"
+
+
+def test_bare_domain_line_normalized():
+    r = parse_line("ubmcmm.baidustatic.com")
+    assert r is not None
+    assert r.raw == "||ubmcmm.baidustatic.com^"
+    # 单标签不是合法域名，原样保留且不产生 DNS 域名
+    assert parse_line("notadomain").domains == []
+
+
+def test_parse_lines_expands_multi_domain_hosts_line():
+    rules = parse_lines(["0.0.0.0 a.example.com b.example.com", "||c.example.com^"])
+    assert {r.raw for r in rules} == {
+        "||a.example.com^",
+        "||b.example.com^",
+        "||c.example.com^",
+    }
+
+
+def test_hash_comment_skipped_but_no_domain_cosmetic_kept():
+    assert parse_line("#189") is None
+    r = parse_line("###AC_ad")
+    assert r is not None
+    assert r.kind == "css"
+
+
+def test_hosts_source_domain_enters_dns():
+    from adblock_collection import writer
+
+    r = parse_line("0.0.0.0 ads.example.com")
+    assert writer._to_hosts_line(r) == "0.0.0.0 ads.example.com"
+    assert writer._to_domain(r) == "ads.example.com"
+
+
+def test_collect_expands_hosts_source_into_dns(tmp_path, monkeypatch):
+    import hashlib
+
+    from adblock_collection import writer
+    from adblock_collection.merge import collect
+
+    monkeypatch.chdir(tmp_path)
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "name: x\nsources:\n  - name: h\n    url: https://h\n    category: network\n",
+        encoding="utf-8",
+    )
+    cs = tmp_path / ".cache" / "sources"
+    cs.mkdir(parents=True, exist_ok=True)
+    cp = cs / hashlib.sha256(b"https://h").hexdigest()[:16]
+    cp.write_text(
+        "# 注释\n0.0.0.0 ads.example.com\n127.0.0.1 localhost\n",
+        encoding="utf-8",
+    )
+    res = collect(cfg, use_cache=True, offline=True, use_stage_cache=False)
+    rules = res["all"][0][1]
+    assert {r.raw for r in rules} == {"||ads.example.com^"}
+    assert writer._blocked_domains(rules) == {"ads.example.com"}
+
+
+# ---------------- 非阻断修饰符不得进入 DNS ----------------
+
+
+def test_removeparam_not_dns_eligible_even_safe_policy():
+    r = parse_line("||sponichi.co.jp^$removeparam=ref")
+    assert classify_dns(r).reason == "non_blocking_modifier"
+    assert is_dns_eligible(r, {"level": "all"}) is False
+    assert is_dns_eligible(r, {"level": "safe"}) is False
+
+
+def test_non_blocking_modifiers_rejected_from_dns():
+    raws = [
+        "||example.com^$csp=script-src-attr 'none'",
+        "||example.com^$replace=/a/b/",
+        "||example.com^$permissions=geolocation=()",
+        "||example.com^$header=vary:/x/i",
+        "||example.com^$urlskip=x",
+        "||example.com^$cookie=x",
+    ]
+    for raw in raws:
+        assert is_dns_eligible(parse_line(raw), {"level": "safe"}) is False, raw
+
+
+def test_redirect_rule_rejected_from_dns():
+    r = parse_line("||acacdn.com/script/*.js$script,redirect-rule=noop.js")
+    assert is_dns_eligible(r, {"level": "safe"}) is False
+
+
+def test_third_party_modifier_still_conditional_at_safe_policy():
+    r = parse_line("||example.com^$third-party")
+    assert is_dns_eligible(r, {"level": "safe"}) is True
+    assert is_dns_eligible(r, {"level": "all"}) is False
+
+
+def test_scoped_modifiers_rejected_from_dns():
+    raws = [
+        "||ads.example.com^$domain=shop.example.org",
+        "||a.example.com^$to=b.example.org",
+        "||a.example.com^$from=b.example.org",
+        "||a.example.com^$denyallow=b.example.org",
+        "||a.example.com^$ipaddress=1.2.3.4",
+        "||a.example.com^$method=get",
+    ]
+    for raw in raws:
+        r = parse_line(raw)
+        assert classify_dns(r).reason == "scoped_modifier", raw
+        assert is_dns_eligible(r, {"level": "safe"}) is False, raw
+        assert is_dns_eligible(r, {"level": "all"}) is False, raw
+
+
+# ---------------- 本地规则扩展分隔符校验 ----------------
+
+
+def test_validate_local_rules_blocks_extended_separator_wildcards(tmp_path):
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text("sources: []\n", encoding="utf-8")
+    lr = tmp_path / "local_rules.txt"
+    lr.write_text(
+        "example.com#?#*\n"
+        "example.com$$*\n"
+        "example.com#?#div:has(> a)\n"
+        'example.com$$div[ad_dot_url="adclick"]\n',
+        encoding="utf-8",
+    )
+    v = validate_local_rules(cfg)
+    assert len(v) == 2
+    assert any("#?#*" in x for x in v)
+    assert any("$$*" in x for x in v)

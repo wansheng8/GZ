@@ -18,7 +18,6 @@ from __future__ import annotations
 import json
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
 
 from .rules import Rule
 
@@ -62,7 +61,9 @@ DEFAULT_THRESHOLDS = {
 }
 
 
-def collect_metrics(rules: list[Rule], dns_domains: int, source_counts: dict, category_counts: dict) -> Metrics:
+def collect_metrics(
+    rules: list[Rule], dns_domains: int, source_counts: dict, category_counts: dict
+) -> Metrics:
     """从构建产物收集关键指标。"""
     root_blocks = 0
     for r in rules:
@@ -102,7 +103,7 @@ def load_thresholds(config_path: Path) -> dict:
     return spec
 
 
-def evaluate(metrics: Metrics, prev: Optional[Metrics], thresholds: dict) -> GateResult:
+def evaluate(metrics: Metrics, prev: Metrics | None, thresholds: dict) -> GateResult:
     res = GateResult(passed=True)
 
     # 1. 单源突然减少
@@ -135,12 +136,13 @@ def evaluate(metrics: Metrics, prev: Optional[Metrics], thresholds: dict) -> Gat
             pc = prev.category_counts.get(cat, 0)
             cg = _pct_change(cnt, pc)
             if pc > 0 and cg > thresholds["category_growth_percent"]:
-                res.warnings.append(
-                    f"类别 {cat} 增长 {cg:.1f}% ({pc} -> {cnt})"
-                )
+                res.warnings.append(f"类别 {cat} 增长 {cg:.1f}% ({pc} -> {cnt})")
 
     # 5. 根域阻断数
-    if thresholds["max_root_domain_blocks"] > 0 and metrics.root_domain_blocks > thresholds["max_root_domain_blocks"]:
+    if (
+        thresholds["max_root_domain_blocks"] > 0
+        and metrics.root_domain_blocks > thresholds["max_root_domain_blocks"]
+    ):
         res.add_failure(
             f"根域级阻断规则 {metrics.root_domain_blocks} 超过阈值 {int(thresholds['max_root_domain_blocks'])}"
         )
@@ -148,7 +150,7 @@ def evaluate(metrics: Metrics, prev: Optional[Metrics], thresholds: dict) -> Gat
     return res
 
 
-def load_previous(output_dir: Path) -> Optional[Metrics]:
+def load_previous(output_dir: Path) -> Metrics | None:
     path = output_dir / "previous_metrics.json"
     if not path.exists():
         return None
@@ -167,13 +169,21 @@ def load_previous(output_dir: Path) -> Optional[Metrics]:
 
 def save_previous(metrics: Metrics, output_dir: Path) -> None:
     path = output_dir / "previous_metrics.json"
-    path.write_text(json.dumps(metrics.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8")
+    path.write_text(
+        json.dumps(metrics.to_dict(), ensure_ascii=False, indent=2), encoding="utf-8"
+    )
 
 
-def write_build_report(output_dir: Path, metrics: Metrics, prev: Optional[Metrics], gate: GateResult) -> dict:
+def write_build_report(
+    output_dir: Path, metrics: Metrics, prev: Metrics | None, gate: GateResult
+) -> dict:
     diff = {
-        "total_rules": _diff_value(metrics.total_rules, prev.total_rules if prev else None),
-        "dns_domains": _diff_value(metrics.dns_domains, prev.dns_domains if prev else None),
+        "total_rules": _diff_value(
+            metrics.total_rules, prev.total_rules if prev else None
+        ),
+        "dns_domains": _diff_value(
+            metrics.dns_domains, prev.dns_domains if prev else None
+        ),
     }
     report = {
         "passed": gate.passed,
@@ -188,7 +198,7 @@ def write_build_report(output_dir: Path, metrics: Metrics, prev: Optional[Metric
     return report
 
 
-def _diff_value(cur: int, prev: Optional[int]) -> dict:
+def _diff_value(cur: int, prev: int | None) -> dict:
     if prev is None:
         return {"current": cur, "previous": None, "delta": None, "percent": None}
     return {

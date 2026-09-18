@@ -13,17 +13,21 @@ from __future__ import annotations
 
 import json
 from collections import defaultdict
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable, Optional
 
-from .dns_policy import DNS_REJECT, DnsVerdict, classify_dns, is_dns_eligible, resolve_policy
-from .rules import Rule, _PURE_DOMAIN_RE
-
+from .dns_policy import (
+    DNS_REJECT,
+    classify_dns,
+    is_dns_eligible,
+    resolve_policy,
+)
+from .rules import _PURE_DOMAIN_RE, Rule
 
 HOMEPAGE = "https://github.com/wansheng8/GZ"
 
 
-def _to_hosts_line(rule: Rule, policy: Optional[dict] = None) -> str | None:
+def _to_hosts_line(rule: Rule, policy: dict | None = None) -> str | None:
     """将可进 DNS 的纯域名网络阻断规则转换为 hosts 行，无法转换返回 None。
 
     仅接受无路径的纯域名规则（如 ||a.com^），避免把 ||a.com/ads^ 误扩成整域拦截。
@@ -34,13 +38,13 @@ def _to_hosts_line(rule: Rule, policy: Optional[dict] = None) -> str | None:
     return f"0.0.0.0 {rule.domains[0]}"
 
 
-def _to_hosts_ipv6_line(rule: Rule, policy: Optional[dict] = None) -> str | None:
+def _to_hosts_ipv6_line(rule: Rule, policy: dict | None = None) -> str | None:
     if not _dns_eligible(rule, policy):
         return None
     return f":: {rule.domains[0]}"
 
 
-def _to_domain(rule: Rule, policy: Optional[dict] = None) -> str | None:
+def _to_domain(rule: Rule, policy: dict | None = None) -> str | None:
     if not _dns_eligible(rule, policy):
         return None
     if "/" not in rule.domains[0]:
@@ -48,7 +52,7 @@ def _to_domain(rule: Rule, policy: Optional[dict] = None) -> str | None:
     return None
 
 
-def _dns_eligible(rule: Rule, policy: Optional[dict]) -> bool:
+def _dns_eligible(rule: Rule, policy: dict | None) -> bool:
     if not (
         rule.kind == "network"
         and rule.domains
@@ -79,7 +83,7 @@ def write_adblock(rules: Iterable[Rule], path: Path, title: str, desc: str) -> i
     return count
 
 
-def _blocked_domains(rules: Iterable[Rule], policy: Optional[dict] = None) -> set[str]:
+def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[str]:
     """从规则集提取「应拦截的纯域名」集合，并抵消例外规则放行的域名。
 
     仅统计满足 dns_policy 安全分级的单域名网络阻断规则（||a.com^ 或策略允许的修饰符规则），
@@ -101,7 +105,9 @@ def _blocked_domains(rules: Iterable[Rule], policy: Optional[dict] = None) -> se
     return blocked
 
 
-def write_hosts(rules: Iterable[Rule], path: Path, title: str, policy: Optional[dict] = None) -> int:
+def write_hosts(
+    rules: Iterable[Rule], path: Path, title: str, policy: dict | None = None
+) -> int:
     domains = _blocked_domains(rules, policy)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
@@ -111,7 +117,9 @@ def write_hosts(rules: Iterable[Rule], path: Path, title: str, policy: Optional[
     return len(domains)
 
 
-def write_hosts_ipv6(rules: Iterable[Rule], path: Path, title: str, policy: Optional[dict] = None) -> int:
+def write_hosts_ipv6(
+    rules: Iterable[Rule], path: Path, title: str, policy: dict | None = None
+) -> int:
     domains = _blocked_domains(rules, policy)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
@@ -121,11 +129,15 @@ def write_hosts_ipv6(rules: Iterable[Rule], path: Path, title: str, policy: Opti
     return len(domains)
 
 
-def write_domains(rules: Iterable[Rule], path: Path, title: str, policy: Optional[dict] = None) -> int:
+def write_domains(
+    rules: Iterable[Rule], path: Path, title: str, policy: dict | None = None
+) -> int:
     domains = _blocked_domains(rules, policy)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
-        fh.write(f"# Format: one domain per line (AdGuard DNS / AdGuard Home), total {len(domains)}\n")
+        fh.write(
+            f"# Format: one domain per line (AdGuard DNS / AdGuard Home), total {len(domains)}\n"
+        )
         for d in sorted(domains):
             fh.write(d + "\n")
     return len(domains)
@@ -151,9 +163,14 @@ def write_summary(stats: dict[str, int], output_dir: Path, name: str) -> None:
             fh.write(f"{cat}: {cnt}\n")
 
 
-def write_summary_json(category_counts: dict[str, int], kind_counts: dict[str, int],
-                       output_dir: Path, name: str, total: int,
-                       source_counts: dict[str, int] | None = None) -> None:
+def write_summary_json(
+    category_counts: dict[str, int],
+    kind_counts: dict[str, int],
+    output_dir: Path,
+    name: str,
+    total: int,
+    source_counts: dict[str, int] | None = None,
+) -> None:
     path = output_dir / f"{name}.stats.json"
     payload = {
         "name": name,
@@ -166,8 +183,9 @@ def write_summary_json(category_counts: dict[str, int], kind_counts: dict[str, i
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
 
-def write_dns_safety_report(rules: Iterable[Rule], output_dir: Path, name: str,
-                            policy: Optional[dict] = None) -> dict:
+def write_dns_safety_report(
+    rules: Iterable[Rule], output_dir: Path, name: str, policy: dict | None = None
+) -> dict:
     """统计 DNS 安全分级分布，输出 *dns_safety.json 并返回汇总。
 
     对每条网络规则做 classify_dns 分级，区分 SAFE / CONDITIONAL / REJECT，
@@ -185,7 +203,9 @@ def write_dns_safety_report(rules: Iterable[Rule], output_dir: Path, name: str,
         if verdict.eligibility == DNS_REJECT:
             rejected += 1
             continue
-        if verdict.reason == "domain_modifier" and not policy.get("allow_modifier", False):
+        if verdict.reason == "domain_modifier" and not policy.get(
+            "allow_modifier", False
+        ):
             rejected += 1
             continue
         if verdict.confidence >= policy.get("min_confidence", 0.0):

@@ -20,6 +20,7 @@ import sys
 import time
 from pathlib import Path
 
+from .dns_policy import load_dns_policy
 from .merge import (
     apply_allowlist,
     apply_badfilter,
@@ -28,12 +29,18 @@ from .merge import (
     dedupe,
     kind_stats,
     load_sources,
-    remove_redundant_domains,
     remove_redundant_css,
+    remove_redundant_domains,
     source_stats,
     validate_local_rules,
 )
-from .dns_policy import load_dns_policy
+from .provenance import (
+    build_provenance,
+    build_relation_graph,
+    cross_source_duplicate_count,
+    detect_exception_conflicts,
+    load_security_policy,
+)
 from .quality_gate import (
     collect_metrics,
     evaluate,
@@ -43,59 +50,89 @@ from .quality_gate import (
     write_build_report,
 )
 from .regression import load_false_positives, run_regression
-from .provenance import (
-    build_provenance,
-    build_relation_graph,
-    cross_source_duplicate_count,
-    detect_exception_conflicts,
-    load_security_policy,
-)
 from .writer import (
     write_adblock,
-    write_domains,
     write_dns_safety_report,
+    write_domains,
     write_hosts,
     write_hosts_ipv6,
+    write_manifest,
     write_summary,
     write_summary_json,
-    write_manifest,
 )
 
 LOG = logging.getLogger("adblock_collection")
 
 DEFAULT_HEADERS = {
-    "full": ("Adblock Rule Collection (Full)", "完整版广告拦截与 DNS 过滤规则集合，含大量上游列表，可能有误杀。"),
+    "full": (
+        "Adblock Rule Collection (Full)",
+        "完整版广告拦截与 DNS 过滤规则集合，含大量上游列表，可能有误杀。",
+    ),
 }
 
 
-def _emit(rules, output_dir, prefix, title, desc, gen_dns, source_counts, manifest, policy):
+def _emit(
+    rules, output_dir, prefix, title, desc, gen_dns, source_counts, manifest, policy
+):
     rules = list(rules)
     results = {}
     ap = output_dir / f"{prefix}.txt"
     n = write_adblock(rules, ap, title, desc)
     results["adblock"] = (ap, n)
-    manifest.append({"name": prefix, "file": f"{prefix}.txt", "format": "adblock", "rules": n})
+    manifest.append(
+        {"name": prefix, "file": f"{prefix}.txt", "format": "adblock", "rules": n}
+    )
     src_counts = source_stats(rules) if source_counts is None else source_counts
     write_summary(category_stats(rules), output_dir, prefix)
-    write_summary_json(category_stats(rules), kind_stats(rules), output_dir, prefix, len(rules), src_counts)
+    write_summary_json(
+        category_stats(rules),
+        kind_stats(rules),
+        output_dir,
+        prefix,
+        len(rules),
+        src_counts,
+    )
     if gen_dns:
         hp = output_dir / f"{prefix}_dns.txt"
         nh = write_hosts(rules, hp, title, policy)
         results["hosts"] = (hp, nh)
-        manifest.append({"name": prefix, "file": f"{prefix}_dns.txt", "format": "hosts", "rules": nh})
+        manifest.append(
+            {
+                "name": prefix,
+                "file": f"{prefix}_dns.txt",
+                "format": "hosts",
+                "rules": nh,
+            }
+        )
         ipv6p = output_dir / f"{prefix}_dns_ipv6.txt"
         n6 = write_hosts_ipv6(rules, ipv6p, title, policy)
         results["hosts_ipv6"] = (ipv6p, n6)
-        manifest.append({"name": prefix, "file": f"{prefix}_dns_ipv6.txt", "format": "hosts_ipv6", "rules": n6})
+        manifest.append(
+            {
+                "name": prefix,
+                "file": f"{prefix}_dns_ipv6.txt",
+                "format": "hosts_ipv6",
+                "rules": n6,
+            }
+        )
         dp = output_dir / f"{prefix}_domains.txt"
         nd = write_domains(rules, dp, title, policy)
         results["domains"] = (dp, nd)
-        manifest.append({"name": prefix, "file": f"{prefix}_domains.txt", "format": "domains", "rules": nd})
+        manifest.append(
+            {
+                "name": prefix,
+                "file": f"{prefix}_domains.txt",
+                "format": "domains",
+                "rules": nd,
+            }
+        )
         write_dns_safety_report(rules, output_dir, prefix, policy)
     return results
 
 
-def _emit_by_category(rules, output_dir, base_prefix, title_prefix, gen_dns, manifest, policy):
+def _emit_by_category(
+    rules, output_dir, base_prefix, title_prefix, gen_dns, manifest, policy
+):
     """按类别筛选全局去重后的规则集，分别生成子列表（不二次去重）。"""
     by_cat: dict[str, list] = {}
     for r in rules:
@@ -104,7 +141,17 @@ def _emit_by_category(rules, output_dir, base_prefix, title_prefix, gen_dns, man
         prefix = f"{base_prefix}_{cat}"
         title = f"{title_prefix} ({cat})"
         desc = f"按类型拆分：{cat}"
-        _emit(cat_rules, output_dir, prefix, title, desc, gen_dns, source_counts=None, manifest=manifest, policy=policy)
+        _emit(
+            cat_rules,
+            output_dir,
+            prefix,
+            title,
+            desc,
+            gen_dns,
+            source_counts=None,
+            manifest=manifest,
+            policy=policy,
+        )
 
 
 def _emit_security(rules, output_dir, security_policy, manifest, gen_dns, dns_policy):
@@ -122,8 +169,17 @@ def _emit_security(rules, output_dir, security_policy, manifest, gen_dns, dns_po
     sec_dir.mkdir(parents=True, exist_ok=True)
     title = "Adblock Rule Collection (Security)"
     desc = f"安全类规则（{', '.join(sorted(sec_cats))}）独立发行"
-    _emit(sec_rules, sec_dir, "adblock_collection_security", title, desc,
-          gen_dns=gen_dns, source_counts=None, manifest=manifest, policy=dns_policy)
+    _emit(
+        sec_rules,
+        sec_dir,
+        "adblock_collection_security",
+        title,
+        desc,
+        gen_dns=gen_dns,
+        source_counts=None,
+        manifest=manifest,
+        policy=dns_policy,
+    )
     LOG.info("安全类独立发行: %d 条 -> security/", len(sec_rules))
 
 
@@ -149,9 +205,13 @@ def _write_provenance_report(rules, output_dir) -> dict:
     # 语义关系图：供调试/审计，记录每条关系
     (output_dir / "relation_graph.json").write_text(
         json.dumps(
-            [{"kind": r.kind, "a": r.a, "b": r.b} for r in relations
-             if r.kind != "CROSS_SOURCE" or len(r.b.split(",")) > 1],
-            ensure_ascii=False, indent=2,
+            [
+                {"kind": r.kind, "a": r.a, "b": r.b}
+                for r in relations
+                if r.kind != "CROSS_SOURCE" or len(r.b.split(",")) > 1
+            ],
+            ensure_ascii=False,
+            indent=2,
         ),
         encoding="utf-8",
     )
@@ -177,7 +237,6 @@ def build(args: argparse.Namespace) -> int:
     output_dir = Path(args.out)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    sources_meta = load_sources(config_path)
     dns_policy = load_dns_policy(config_path)
     if args.dns_policy:
         from .dns_policy import DNS_LEVELS
@@ -186,8 +245,12 @@ def build(args: argparse.Namespace) -> int:
             dns_policy = dict(DNS_LEVELS[args.dns_policy])
             dns_policy["level"] = args.dns_policy
     security_policy = load_security_policy(config_path)
-    collected = collect(config_path, use_cache=not args.no_cache, offline=args.offline,
-                       use_stage_cache=not args.no_stage_cache)
+    collected = collect(
+        config_path,
+        use_cache=not args.no_cache,
+        offline=args.offline,
+        use_stage_cache=not args.no_stage_cache,
+    )
     failed_sources = collected.get("_failed", [])
 
     # 本地增强规则静态校验：禁止通配误伤规则，违规则阻断构建，落实「宁愿少拦截」
@@ -195,7 +258,10 @@ def build(args: argparse.Namespace) -> int:
     if lr_violations:
         for v in lr_violations:
             LOG.error("本地增强规则违规: %s", v)
-        LOG.error("local_rules.txt 含 %d 条可能误伤整页/整站的通配规则，已阻断构建。请改为精确选择器。", len(lr_violations))
+        LOG.error(
+            "local_rules.txt 含 %d 条可能误伤整页/整站的通配规则，已阻断构建。请改为精确选择器。",
+            len(lr_violations),
+        )
         return 2
 
     all_rules: list = []
@@ -206,7 +272,9 @@ def build(args: argparse.Namespace) -> int:
     for name, cnt in src_counts.items():
         LOG.info("上游贡献规则: %-35s %d", name, cnt)
     if failed_sources:
-        LOG.warning("本次下载失败的源 (%d): %s", len(failed_sources), ", ".join(failed_sources))
+        LOG.warning(
+            "本次下载失败的源 (%d): %s", len(failed_sources), ", ".join(failed_sources)
+        )
 
     LOG.info("原始规则总数: %d", len(all_rules))
     deduped = dedupe(all_rules)
@@ -224,31 +292,64 @@ def build(args: argparse.Namespace) -> int:
 
     full_title, full_desc = DEFAULT_HEADERS["full"]
     manifest: list = []
-    full_results = _emit(deduped, output_dir, "adblock_collection_full", full_title, full_desc,
-                          gen_dns=not args.no_dns, source_counts=src_counts, manifest=manifest,
-                          policy=dns_policy)
+    full_results = _emit(
+        deduped,
+        output_dir,
+        "adblock_collection_full",
+        full_title,
+        full_desc,
+        gen_dns=not args.no_dns,
+        source_counts=src_counts,
+        manifest=manifest,
+        policy=dns_policy,
+    )
     if args.split_by_category:
-        _emit_by_category(deduped, output_dir, "adblock_collection_full", full_title,
-                           gen_dns=not args.no_dns, manifest=manifest, policy=dns_policy)
+        _emit_by_category(
+            deduped,
+            output_dir,
+            "adblock_collection_full",
+            full_title,
+            gen_dns=not args.no_dns,
+            manifest=manifest,
+            policy=dns_policy,
+        )
         # 不变量校验：按类别拆分的子列表并集必须等于完整版
         cat_total = sum(
-            r["rules"] for r in manifest
+            r["rules"]
+            for r in manifest
             if r["name"].startswith("adblock_collection_full_")
-            and not any(r["file"].endswith(s) for s in ("_dns.txt", "_domains.txt", "_dns_ipv6.txt"))
+            and not any(
+                r["file"].endswith(s)
+                for s in ("_dns.txt", "_domains.txt", "_dns_ipv6.txt")
+            )
             and r["file"] != "adblock_collection_full.txt"
         )
-        full_n = next(r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt")
+        full_n = next(
+            r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt"
+        )
         if cat_total != full_n:
-            LOG.error("类别拆分不变量被破坏: 子列表总和 %d != 完整版 %d", cat_total, full_n)
+            LOG.error(
+                "类别拆分不变量被破坏: 子列表总和 %d != 完整版 %d", cat_total, full_n
+            )
 
     # 安全类独立发行（malware/phishing/mining 等）
-    _emit_security(deduped, output_dir, security_policy, manifest, gen_dns=not args.no_dns, dns_policy=dns_policy)
+    _emit_security(
+        deduped,
+        output_dir,
+        security_policy,
+        manifest,
+        gen_dns=not args.no_dns,
+        dns_policy=dns_policy,
+    )
 
     # 来源血缘与语义关系图报告
     prov_summary = _write_provenance_report(deduped, output_dir)
-    LOG.info("来源血缘: 跨源重复 %d, 例外冲突 %d, 父子域关系 %d",
-             prov_summary["cross_source_duplicates"], prov_summary["exception_conflicts"],
-             prov_summary["parent_child_relations"])
+    LOG.info(
+        "来源血缘: 跨源重复 %d, 例外冲突 %d, 父子域关系 %d",
+        prov_summary["cross_source_duplicates"],
+        prov_summary["exception_conflicts"],
+        prov_summary["parent_child_relations"],
+    )
 
     # 写入上游健康报告（供订阅者判断数据完整性）
     status_path = output_dir / "sources_status.json"
@@ -270,8 +371,14 @@ def build(args: argparse.Namespace) -> int:
     regression_failed = _run_regression(deduped, config_path, dns_policy, output_dir)
 
     # 质量门禁与构建变化检测
-    gate_failed, _ = _run_quality_gate(deduped, src_counts, category_stats(deduped),
-                                       full_results, output_dir, config_path)
+    gate_failed, _ = _run_quality_gate(
+        deduped,
+        src_counts,
+        category_stats(deduped),
+        full_results,
+        output_dir,
+        config_path,
+    )
 
     write_manifest(manifest, output_dir)
     LOG.info("生成完成:")
@@ -283,7 +390,9 @@ def build(args: argparse.Namespace) -> int:
     return 1 if (regression_failed or gate_failed) else 0
 
 
-def _run_quality_gate(rules, src_counts, cat_counts, full_results, output_dir, config_path):
+def _run_quality_gate(
+    rules, src_counts, cat_counts, full_results, output_dir, config_path
+):
     """执行质量门禁与构建变化检测，写 build_report.json 并返回 (失败标记, 报告)。"""
     dns_domains = 0
     if "domains" in full_results:
@@ -346,6 +455,7 @@ def stats_cmd(args: argparse.Namespace) -> int:
         LOG.error("输出目录不存在: %s", output_dir)
         return 1
     from .rules import parse_line
+
     manifest = []
     for txt in sorted(output_dir.glob("*.txt")):
         if txt.name.endswith((".stats.txt", "manifest.json")):
@@ -361,7 +471,9 @@ def stats_cmd(args: argparse.Namespace) -> int:
                 r = parse_line(line, source="reload")
                 if r is not None:
                     rule_count += 1
-        manifest.append({"name": txt.stem, "file": txt.name, "format": "auto", "rules": rule_count})
+        manifest.append(
+            {"name": txt.stem, "file": txt.name, "format": "auto", "rules": rule_count}
+        )
     write_manifest(manifest, output_dir)
     LOG.info("manifest 已刷新: %d 个文件", len(manifest))
     return 0
@@ -374,7 +486,9 @@ def sources_cmd(args: argparse.Namespace) -> int:
         return 1
     for src in load_sources(config_path):
         lite = "lite" if src.get("lite") else "full"
-        print(f"{src.get('name', '?'):<35} {lite:<5} {src.get('category', 'other'):<12} {src.get('url', '')}")
+        print(
+            f"{src.get('name', '?'):<35} {lite:<5} {src.get('category', 'other'):<12} {src.get('url', '')}"
+        )
     return 0
 
 
@@ -411,16 +525,32 @@ def main(argv: list[str] | None = None) -> int:
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_build = sub.add_parser("build", help="下载上游列表并生成过滤器")
-    p_build.add_argument("--config", default="config/sources.yaml", help="上游列表配置文件")
+    p_build.add_argument(
+        "--config", default="config/sources.yaml", help="上游列表配置文件"
+    )
     p_build.add_argument("--out", default="dist", help="输出目录")
     p_build.add_argument("--no-cache", action="store_true", help="禁用下载缓存")
-    p_build.add_argument("--no-stage-cache", action="store_true", help="禁用阶段解析缓存（每次重新解析上游）")
+    p_build.add_argument(
+        "--no-stage-cache",
+        action="store_true",
+        help="禁用阶段解析缓存（每次重新解析上游）",
+    )
     p_build.add_argument("--offline", action="store_true", help="离线模式，仅使用缓存")
-    p_build.add_argument("--no-dns", action="store_true", help="不生成 DNS/hosts/domains 文件")
-    p_build.add_argument("--redundant", action="store_true", help="启用冗余域名规则消除")
-    p_build.add_argument("--split-by-category", action="store_true", help="split output by category")
-    p_build.add_argument("--dns-policy", default=None, choices=["all", "safe", "strict-safe"],
-                         help="DNS 安全分级策略（覆盖 config 中的 dns_policy.level）")
+    p_build.add_argument(
+        "--no-dns", action="store_true", help="不生成 DNS/hosts/domains 文件"
+    )
+    p_build.add_argument(
+        "--redundant", action="store_true", help="启用冗余域名规则消除"
+    )
+    p_build.add_argument(
+        "--split-by-category", action="store_true", help="split output by category"
+    )
+    p_build.add_argument(
+        "--dns-policy",
+        default=None,
+        choices=["all", "safe", "strict-safe"],
+        help="DNS 安全分级策略（覆盖 config 中的 dns_policy.level）",
+    )
     p_build.set_defaults(func=build)
 
     p_stats = sub.add_parser("stats", help="基于已有输出目录重新生成统计")

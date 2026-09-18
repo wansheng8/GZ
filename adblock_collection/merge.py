@@ -7,13 +7,13 @@ import logging
 import re
 import time
 from collections import defaultdict
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable, Optional
 
 import requests
 
 from .pipeline import parse_source_cached
-from .rules import Rule, parse_line
+from .rules import _ELEMENT_SEP_RE, Rule, parse_lines
 
 LOG = logging.getLogger("adblock_collection")
 
@@ -35,7 +35,12 @@ def _cache_path(url: str) -> Path:
     return CACHE_DIR / digest
 
 
-def fetch_source(url: str, use_cache: bool = True, offline: bool = False, mirror: Optional[str] = None) -> list[str]:
+def fetch_source(
+    url: str,
+    use_cache: bool = True,
+    offline: bool = False,
+    mirror: str | None = None,
+) -> list[str]:
     """下载上游列表，支持本地缓存、离线模式与备用镜像。
 
     主源下载失败时，若提供 mirror 则自动尝试镜像；两者皆失败且存在有效缓存时，
@@ -53,7 +58,7 @@ def fetch_source(url: str, use_cache: bool = True, offline: bool = False, mirror
     if mirror:
         candidates.append(mirror)
 
-    last_err: Optional[Exception] = None
+    last_err: Exception | None = None
     for attempt in range(1, MAX_RETRIES + 1):
         for cand in candidates:
             try:
@@ -66,7 +71,7 @@ def fetch_source(url: str, use_cache: bool = True, offline: bool = False, mirror
                 text = resp.text
                 # 跳过返回 HTML 而非过滤器列表的响应（如错误页、登录页）
                 stripped = text.lstrip()
-                if stripped.startswith("<!DOCTYPE") or stripped.startswith("<html"):
+                if stripped.startswith(("<!DOCTYPE", "<html")):
                     raise ValueError("响应不是过滤器列表（疑似 HTML 页面）")
                 if use_cache:
                     cache.parent.mkdir(parents=True, exist_ok=True)
@@ -87,11 +92,15 @@ def fetch_source(url: str, use_cache: bool = True, offline: bool = False, mirror
 
 
 def parse_source(lines: Iterable[str], category_hint: str, source: str) -> list[Rule]:
-    return [r for r in (parse_line(line, category_hint=category_hint, source=source) for line in lines) if r is not None]
+    return parse_lines(lines, category_hint=category_hint, source=source)
 
 
-def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
-            use_stage_cache: bool = True) -> dict[str, list[Rule]]:
+def collect(
+    config_path: Path,
+    use_cache: bool = True,
+    offline: bool = False,
+    use_stage_cache: bool = True,
+) -> dict[str, list[Rule]]:
     """下载并解析所有上游列表，返回 {"all": [(name, rules), ...], "_failed": [name, ...]}。
 
     use_stage_cache=True 时，未变化的上游会复用 .cache/parsed 下的解析结果，跳过重复解析。
@@ -106,9 +115,20 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
     if local_path.exists():
         try:
             ltext = local_path.read_text(encoding="utf-8", errors="replace")
-            llines = [ln for ln in ltext.splitlines()
-                      if ln.strip() and not ln.lstrip().startswith("#") and not ln.lstrip().startswith("!")]
-            lrules = parse_source_cached(llines, "other", "LocalRules", url=str(local_path), use_stage_cache=use_stage_cache)
+            llines = [
+                ln
+                for ln in ltext.splitlines()
+                if ln.strip()
+                and not ln.lstrip().startswith("#")
+                and not ln.lstrip().startswith("!")
+            ]
+            lrules = parse_source_cached(
+                llines,
+                "other",
+                "LocalRules",
+                url=str(local_path),
+                use_stage_cache=use_stage_cache,
+            )
             result["all"].append(("LocalRules", lrules))
             LOG.info("纳入本地增强规则: %s (%d 条)", local_path, len(lrules))
         except OSError as exc:
@@ -123,13 +143,15 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
         if not url:
             return name, None
         try:
-            lines = fetch_source(url, use_cache=use_cache, offline=offline, mirror=src.get("mirror"))
-        except Exception as exc:  # 单源异常不应中断整体构建
+            lines = fetch_source(
+                url, use_cache=use_cache, offline=offline, mirror=src.get("mirror")
+            )
+        except Exception as exc:  # noqa: BLE001 - 单源异常不应中断整体构建
             LOG.warning("源处理异常 %s: %s", name, exc)
             return name, None
         return name, lines
 
-    fetch_results: dict[str, Optional[list[str]]] = {}
+    fetch_results: dict[str, list[str] | None] = {}
     with ThreadPoolExecutor(max_workers=min(16, max(4, len(sources)))) as ex:
         futures = {ex.submit(_fetch, src): src for src in sources}
         for fut in as_completed(futures):
@@ -144,8 +166,11 @@ def collect(config_path: Path, use_cache: bool = True, offline: bool = False,
             continue
         LOG.info("处理上游列表: %s", name)
         rules = parse_source_cached(
-            lines, src.get("category", "other"), name,
-            url=src.get("url"), use_stage_cache=use_stage_cache,
+            lines,
+            src.get("category", "other"),
+            name,
+            url=src.get("url"),
+            use_stage_cache=use_stage_cache,
         )
         result["all"].append((name, rules))
     result["_failed"] = failed
@@ -211,7 +236,12 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
     blocked: dict[str, Rule] = {}
     others: list[Rule] = []
     for r in rules:
-        if r.kind == "network" and not r.is_exception and r.domains and len(r.domains) == 1:
+        if (
+            r.kind == "network"
+            and not r.is_exception
+            and r.domains
+            and len(r.domains) == 1
+        ):
             blocked[r.domains[0]] = r
         else:
             others.append(r)
@@ -255,7 +285,14 @@ def remove_redundant_css(rules: Iterable[Rule]) -> list[Rule]:
             continue
         sel = m.group(1).strip()
         # 仅当选择器是单一纯类名（无空格、逗号、方括号、冒号、CSS 声明）时才视为可去重
-        if " " in sel or "," in sel or "[" in sel or ":" in sel or "{" in sel or not sel.startswith("."):
+        if (
+            " " in sel
+            or "," in sel
+            or "[" in sel
+            or ":" in sel
+            or "{" in sel
+            or not sel.startswith(".")
+        ):
             kept.append(r)
             continue
         key = (r.domains[0], sel)
@@ -282,7 +319,12 @@ def apply_allowlist(rules: Iterable[Rule], allow: Iterable[str]) -> list[Rule]:
         return list(rules)
     kept: list[Rule] = []
     for r in rules:
-        if r.kind == "network" and not r.is_exception and r.domains and len(r.domains) == 1:
+        if (
+            r.kind == "network"
+            and not r.is_exception
+            and r.domains
+            and len(r.domains) == 1
+        ):
             dom = r.domains[0].lower()
             if dom in allow_set:
                 continue
@@ -322,42 +364,49 @@ def kind_stats(rules: Iterable[Rule]) -> dict[str, int]:
 
 
 _WILDCARD_BLOCKLIST_RE = re.compile(
-    r"^(?:\*|#[@$%?]{0,2}#\*)"        # 全局/整页元素隐藏（行首无域名限定，覆盖 ##/#@#/#$#/#%#/#?# 等）
-    r"|#[@$%?]{0,2}#(?:body|html|head)\b"   # 隐藏整页主体元素（任意域名前缀）
-    r"|##\[\s"                        # 空属性选择器
+    r"^(?:\*|#[@$%?]{0,2}#\*)"  # 全局/整页元素隐藏（行首无域名限定，覆盖 ##/#@#/#$#/#%#/#?# 等）
+    r"|#[@$%?]{0,2}#(?:body|html|head)\b"  # 隐藏整页主体元素（任意域名前缀）
+    r"|^#[@$%?]{0,2}#\["  # 无域名限定的属性选择器（如 ##[class*="ad"]），易整站误伤
 )
 # 域名级通配（如 *.example.com##、*##、*#$# 等）同样禁止
 _DOMAIN_WILDCARD_RE = re.compile(r"^(?:\*|[*\w.-]*\*[*\w.-]*)\s*#[@$%?]{0,2}#")
 # 选择器内出现裸 * 通配（除 [class*="x"] 这类属性包含匹配外）禁止
-_SELECTOR_WILDCARD_RE = re.compile(r"(?:##|#\$#).*(^|\s)\*(,|\s|$|>)")
+_SELECTOR_WILDCARD_RE = re.compile(r"(^|\s)\*(,|\s|$|>)")
 
 
 def validate_local_rules(config_path: Path) -> list[str]:
     """校验 config/local_rules.txt，禁止可能误伤整页/整站的通配规则。
 
-    返回违规行列表（非空即应阻断构建）。允许的属性包含匹配（如 [class*="ad"]）被视为安全，
-    不在禁止范围内；仅拦截无差别的裸通配选择器与全局隐藏。
+    返回违规行列表（非空即应阻断构建）。覆盖 ##、#?#、#$#、#%#、$$ 等全部装饰分隔符；
+    JS 注入（#%#）后是脚本而非选择器，不参与通配校验；例外规则（#@#）会减少拦截，放行。
+    允许的属性包含匹配（如 [class*="ad"]）在被限定的选择器中视为安全。
     """
     local_path = config_path.parent / "local_rules.txt"
     if not local_path.exists():
         return []
     violations: list[str] = []
-    for idx, raw in enumerate(local_path.read_text(encoding="utf-8", errors="replace").splitlines(), 1):
+    for idx, raw in enumerate(
+        local_path.read_text(encoding="utf-8", errors="replace").splitlines(), 1
+    ):
         line = raw.strip()
-        if not line or line.startswith("#") or line.startswith("!"):
+        if not line or line.startswith(("#", "!")):
             continue
         if _WILDCARD_BLOCKLIST_RE.search(line) or _DOMAIN_WILDCARD_RE.search(line):
             violations.append(f"{local_path.name}:{idx}: {line}")
             continue
-        # 仅对元素隐藏规则检查选择器内裸通配（排除属性包含匹配 [class*="x"]）
-        sep = next((s for s in ("##", "#$#") if s in line), None)
-        if sep and not line.startswith("@@"):
-            selector = line.split(sep, 1)[1]
-            if "{" in selector:
-                # 含 CSS 声明（如 #$#sel{...}），body/html/head 已由 blocklist 拦截，跳过裸通配检查
-                continue
-            # 移除合法的属性包含匹配后再判断裸 *
-            scrubbed = re.sub(r"\[[^\]]*\*=\"[^\"]*\"\]", "", selector)
-            if re.search(r"(^|\s)\*(,|\s|$|>)", scrubbed):
-                violations.append(f"{local_path.name}:{idx}: {line}")
+        # 仅对元素隐藏/扩展 CSS/HTML 过滤规则检查选择器内裸通配
+        m = _ELEMENT_SEP_RE.search(line)
+        if not m or m.group(1).startswith("#@"):
+            continue
+        if m.group(1) in ("#%#", "#@%#"):
+            continue  # JS 注入，后接脚本代码
+        selector = line[m.end() :]
+        if not selector:
+            continue
+        # CSS 注入的 { ... } 是声明部分，仅校验其前的选择器
+        selector = selector.split("{", 1)[0]
+        # 移除合法的属性包含匹配 [class*="x"] 后再判断裸 *
+        scrubbed = re.sub(r'\[[^\]]*\*="[^"]*"\]', "", selector)
+        if _SELECTOR_WILDCARD_RE.search(scrubbed):
+            violations.append(f"{local_path.name}:{idx}: {line}")
     return violations

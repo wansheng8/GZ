@@ -15,8 +15,8 @@
 
 from __future__ import annotations
 
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable, Optional
 
 import yaml
 
@@ -49,7 +49,9 @@ def _ancestors(domain: str) -> list[str]:
     return [".".join(parts[i:]) for i in range(len(parts))]
 
 
-def check_allow(rules: Iterable[Rule], fps: list[str], policy: Optional[dict] = None) -> list[dict]:
+def check_allow(
+    rules: Iterable[Rule], fps: list[str], policy: dict | None = None
+) -> list[dict]:
     """返回误杀违规：allow 清单中的域名本身被整域阻断。
 
     采用精确匹配：仅当清单域名（如 tencent.com / aws.amazon.com）自身出现在整域阻断集合中
@@ -64,7 +66,9 @@ def check_allow(rules: Iterable[Rule], fps: list[str], policy: Optional[dict] = 
     return violations
 
 
-def check_block(rules: Iterable[Rule], fps: list[str], policy: Optional[dict] = None) -> list[dict]:
+def check_block(
+    rules: Iterable[Rule], fps: list[str], policy: dict | None = None
+) -> list[dict]:
     """返回漏拦：block 域名及其祖先均未被整域阻断。"""
     blocked = _blocked_domains(rules, policy)
     missing: list[dict] = []
@@ -74,7 +78,9 @@ def check_block(rules: Iterable[Rule], fps: list[str], policy: Optional[dict] = 
     return missing
 
 
-def run_regression(rules: Iterable[Rule], fps: dict, policy: Optional[dict] = None) -> dict:
+def run_regression(
+    rules: Iterable[Rule], fps: dict, policy: dict | None = None
+) -> dict:
     return {
         "allow_violations": check_allow(rules, fps.get("allow", []), policy),
         "block_missing": check_block(rules, fps.get("block", []), policy),

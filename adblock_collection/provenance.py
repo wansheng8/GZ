@@ -20,11 +20,11 @@ Semantic dedup（语义去重增强）：
 from __future__ import annotations
 
 from collections import defaultdict
+from collections.abc import Iterable
 from dataclasses import dataclass, field
-from typing import Iterable, Optional
+from pathlib import Path
 
 from .rules import Rule
-
 
 # 独立源组归类：同一组的源视为一个信息源，避免共享上游虚高计数。
 # 归类依据为源名关键前缀；未匹配归入自身。
@@ -33,8 +33,24 @@ _SOURCE_GROUP_RULES = {
     "easylist": ["EasyList", "Easy", "easylist"],
     "ubo": ["uBlock", "ubo", "uBO"],
     "chinese": ["China", "Chinese", "CJX", "EasyListChina"],
-    "security": ["Malware", "Phishing", "MalwareDomain", "Abuse", "security", "Security", "urlhaus", "URLHaus"],
-    "community": ["Fanboy", "FanBoy", "community", "Community", "wangwang", "AdblockPlus"],
+    "security": [
+        "Malware",
+        "Phishing",
+        "MalwareDomain",
+        "Abuse",
+        "security",
+        "Security",
+        "urlhaus",
+        "URLHaus",
+    ],
+    "community": [
+        "Fanboy",
+        "FanBoy",
+        "community",
+        "Community",
+        "wangwang",
+        "AdblockPlus",
+    ],
 }
 
 
@@ -93,7 +109,11 @@ def build_provenance(rules: Iterable[Rule]) -> dict[str, Provenance]:
             by_norm[r.norm] = p
         p = by_norm[r.norm]
         # 优先使用去重合并后的 sources，回退到单值 source
-        srcs = r.sources if getattr(r, "sources", None) else ([r.source] if r.source else [])
+        srcs = (
+            r.sources
+            if getattr(r, "sources", None)
+            else ([r.source] if r.source else [])
+        )
         for sname in srcs:
             if not sname:
                 continue
@@ -145,7 +165,9 @@ class Relation:
     b: str
 
 
-def build_relation_graph(rules: Iterable[Rule], provenance: Optional[dict] = None) -> list[Relation]:
+def build_relation_graph(
+    rules: Iterable[Rule], provenance: dict | None = None
+) -> list[Relation]:
     """构建规则间的语义关系图。
 
     - PARENT_CHILD：纯域名阻断规则中，父域已存在阻断规则时，子域规则标记为子关系。
@@ -159,7 +181,7 @@ def build_relation_graph(rules: Iterable[Rule], provenance: Optional[dict] = Non
         if r.kind == "network" and not r.is_exception:
             blocked.setdefault(r.domains[0], r)
     relations: list[Relation] = []
-    for domain, r in blocked.items():
+    for domain in blocked:
         parts = domain.split(".")
         for i in range(1, len(parts)):
             parent = ".".join(parts[i:])
