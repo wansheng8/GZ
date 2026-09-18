@@ -49,4 +49,13 @@ Entries discovered by the Agent during task execution should follow this format:
 - Context: Discovered by Agent while performing 删除源后 rebase 解决 dist 冲突
 - Category: Troubleshooting & Debugging
 - Instructions:
-  - git rebase 遇到 dist 产物冲突时，checkout --ours 取的是 rebase 前 HEAD（即远程 CI 版本），--theirs 才是正在重放的本地产物版本。用错方向会把 CI 产物混入，导致删除源等本地变更丢失。正确姿势：对 dist 冲突文件用 `git checkout --theirs`；或放弃冲突解决，直接基于当前 config 重新构建产物再提交（更可靠）。提交后必须用 `git rev-list HEAD...origin/main --count` 验证同步，并抽查产物 total/残留源确认内容正确。
+   - git rebase 遇到 dist 产物冲突时，checkout --ours 取的是 rebase 前 HEAD（即远程 CI 版本），--theirs 才是正在重放的本地产物版本。用错方向会把 CI 产物混入，导致删除源等本地变更丢失。正确姿势：对 dist 冲突文件用 `git checkout --theirs`；或放弃冲突解决，直接基于当前 config 重新构建产物再提交（更可靠）。提交后必须用 `git rev-list HEAD...origin/main --count` 验证同步，并抽查产物 total/残留源确认内容正确。
+
+[Project Knowledge Summary]
+- Date: 2026-09-18
+- Context: Discovered by Agent while performing 全量 dist 构建验证
+- Category: Build Methods
+- Instructions:
+  - 本地执行全量 `python -m adblock_collection build --out <dir> --split-by-category --redundant` 峰值内存超过 2.72GiB；用 background terminal 且 memory_percent 设为 35（约 2.72GiB）会被 cgroup OOM 杀死（exit 137）。本地验证可去掉 `--split-by-category` 或给足内存上限，完整产物以 CI 构建为准。
+  - hosts/纯域名类源（StevenBlack、Firebog、Peter Lowe、AdAway 等）经解析统一规范化为 `||domain^` 后与 adblock 源做全局去重，所以这些源的 by_source 计数会大幅下降甚至接近 0，属预期行为而非解析回归；同时 `dns/domains` 域数会上升。
+  - CI 的 build workflow 先 `rm -rf dist` 再构建，因此质量门禁没有 previous_metrics 基线，不会因规则总量变化或删源而误报骤降。
