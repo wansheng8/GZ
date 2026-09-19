@@ -24,7 +24,7 @@ from .dns_policy import (
     is_dns_eligible,
     resolve_policy,
 )
-from .rules import _PURE_DOMAIN_RE, Rule, _option_start
+from .rules import _HOSTS_RESERVED, _PURE_DOMAIN_RE, Rule, _option_start
 
 HOMEPAGE = "https://github.com/wansheng8/GZ"
 
@@ -157,14 +157,19 @@ def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[s
     for r in rules:
         if r.kind != "network" or not r.domains or len(r.domains) != 1:
             continue
+        domain = r.domains[0]
+        # 保留域名（localhost/local 等）不进入 DNS 产物：屏蔽它们会破坏本机解析，
+        # 且 hosts 行解析时本就会剔除，写入后无法往返一致。
+        if domain in _HOSTS_RESERVED:
+            continue
         if r.is_exception:
             # 仅整域全局例外参与放行；作用域/路径例外无法在 DNS 层表达，不抵消整域阻断
             if _is_global_domain_exception(r):
-                exceptions.add(r.domains[0])
+                exceptions.add(domain)
             continue
         if not is_dns_eligible(r, policy):
             continue
-        blocked.add(r.domains[0])
+        blocked.add(domain)
     blocked -= exceptions
     return blocked
 

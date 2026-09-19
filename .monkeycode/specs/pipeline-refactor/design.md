@@ -243,6 +243,16 @@ class FoldReport:
 > 保留兼容，仅在 `--no-domain-fold` 时复现重构前折叠路径（P10 字节基线）。
 > 新增 `tests/baseline/m3`（默认产物）与 `tests/baseline/m2`（全关产物）两套 golden。
 
+### M4 自审补齐
+
+1. 需求 9：新增 `roundtrip.py`，`cli.emit_outputs` 对 adblock 完整版与四种 DNS 等价产物
+   （hosts / ipv6 hosts / domains / adblock_domains）做解析-序列化往返校验（P9）；
+   不一致时以退出码 3 结束并指出格式与差异条目。测试见 `tests/test_roundtrip.py`。
+2. 需求 2.2：CI 通过 `actions/upload-artifact` 上传 `.cache/build/rules.jsonl`（保留 7 天）。
+3. 需求 6.4：`domain_fold.json` 记录 `folded`、`before`、`after` 与被折叠域名清单。
+4. 需求 8：`build_report.json` 已含完整版与 DNS 总数变化；单源骤降由质量门禁
+   `source_drop` 捕获。逐源明细与新增/移除规则清单按大产物权衡，暂缓排期。
+
 ## 9. 参考
 
 - [^1]: requirements.md，当前工作区 内的 `/.monkeycode/specs/pipeline-refactor/requirements.md`

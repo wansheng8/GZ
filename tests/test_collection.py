@@ -328,6 +328,13 @@ def test_pure_domain_rule_included_in_dns():
     assert writer._blocked_domains([parse_line("||example.com^")]) == {"example.com"}
 
 
+def test_reserved_hostname_excluded_from_dns():
+    from adblock_collection import writer
+
+    rules = [parse_line("||localhost.localdomain^"), parse_line("||example.com^")]
+    assert writer._blocked_domains(rules) == {"example.com"}
+
+
 def test_adblock_split_builds_include_master(tmp_path):
     from adblock_collection import writer
 

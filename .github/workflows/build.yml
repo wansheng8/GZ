@@ -54,6 +54,13 @@ jobs:
           fi
       - name: Build filters
         run: python -m adblock_collection build --out dist --split-by-category
+      - name: Upload rules.jsonl artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: rules-jsonl
+          path: .cache/build/rules.jsonl
+          if-no-files-found: warn
+          retention-days: 7
       - name: Check build health
         id: health
         run: |

@@ -62,6 +62,7 @@ from .quality_gate import (
     write_build_report,
 )
 from .regression import load_false_positives, run_regression
+from .roundtrip import check_roundtrip
 from .rules import classify_per_rule
 from .rules_jsonl import DEFAULT_JSONL_PATH, dump_rules_jsonl, safe_load_rules_jsonl
 from .writer import (
@@ -377,6 +378,14 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
         gen_dns=gen_dns,
         dns_policy=ctx.dns_policy,
     )
+    roundtrip_paths = {fmt: p for fmt, (p, _n) in full_results.items()}
+    for entry in manifest:
+        if entry.get("format") == "adblock_domains":
+            roundtrip_paths["adblock_domains"] = target / entry["file"]
+            break
+    issues = check_roundtrip(roundtrip_paths, rules, ctx.dns_policy)
+    if issues:
+        raise InvariantError("往返校验失败(P9): " + "; ".join(issues))
     return manifest, full_results
 
 

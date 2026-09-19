@@ -20,10 +20,17 @@ from .rules import Rule
 @dataclass
 class DomainFoldReport:
     folded: int = 0
+    before: int = 0
+    after: int = 0
     domains: list[str] = field(default_factory=list)
 
     def to_dict(self) -> dict:
-        return {"folded": self.folded, "domains": self.domains}
+        return {
+            "folded": self.folded,
+            "before": self.before,
+            "after": self.after,
+            "domains": self.domains,
+        }
 
 
 def fold_domains(
@@ -35,6 +42,7 @@ def fold_domains(
     则保留该子域的阻断规则；为 False 时与旧版 ``remove_redundant_domains`` 等价。
     """
     rules = list(rules)
+    before = len(rules)
 
     # 每个域名的整域全量拦截代表（优先 $important）
     full_block: dict[str, Rule] = {}
@@ -84,4 +92,6 @@ def fold_domains(
         kept.append(rule)
 
     report.domains = sorted(folded_domains)
+    report.before = before
+    report.after = len(kept)
     return kept, report

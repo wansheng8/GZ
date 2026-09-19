@@ -18,7 +18,7 @@ python3 -m adblock_collection build --out dist --split-by-category
 | 0 | 成功（门禁与回归均通过） |
 | 1 | 构建完成但门禁或误杀回归失败 |
 | 2 | 本地增强规则校验未通过（构建前阻断） |
-| 3 | 内部一致性失败（阶段异常、产物不变量破坏、字节基线差异） |
+| 3 | 内部一致性失败（阶段异常、产物不变量破坏、往返校验失败、字节基线差异） |
 | 其他 | 配置/环境错误（见各阶段） |
 
 ---
@@ -49,7 +49,7 @@ python3 -m adblock_collection build --out dist --split-by-category
 | 4b 规则增强（默认开启） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四项默认开启，`--no-*` 可分别关闭；逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
 | 5 冗余消除 | 去重后规则 | `domain_fold.fold_domains`（例外感知）/ `remove_redundant_css` | 仅纯域名/纯类名归并；CSS 去重常开 | 精简规则集 | 仅记录移除数，不阻断 |
 | 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库） | 损坏 → `safe_load` 回退内存规则集 |
-| 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版 | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量破坏 → 返回 3 |
+| 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
 | 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
 | 9 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
 | 10 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0` | `regression_report.json` | 有误杀 → 返回 1 阻断 |
