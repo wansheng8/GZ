@@ -70,10 +70,12 @@ jobs:
           if len(failed) >= 5:
               print("WARNING: 超过 5 个上游源下载失败")
           PY
+      - name: Sync stats badges
+        run: python -m adblock_collection.stats_badge
       - name: Check for changes
         id: changes
         run: |
-          git add -A dist/
+          git add -A dist/ README.md assets/stats.svg
           if git diff --cached --quiet; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
