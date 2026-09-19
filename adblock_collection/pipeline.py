@@ -25,9 +25,11 @@ from .rules import Rule, parse_lines
 LOG = logging.getLogger("adblock_collection")
 
 # 各阶段算法版本。逻辑变更时递增，旧缓存自动失效。
-PARSER_VERSION = "1.4.0"
+# 1.5.0 / 1.6.0：发行按规则类型划分的三层产物（网络拦截 / 元素隐藏 / DNS 等价），
+# 依赖解析阶段产出的 kind 与分类阶段的 category，故同步递增使旧解析缓存失效。
+PARSER_VERSION = "1.5.0"
 NORMALIZER_VERSION = "1.0.0"
-CLASSIFIER_VERSION = "1.5.0"
+CLASSIFIER_VERSION = "1.6.0"
 
 STAGE_DIR = Path(".cache/parsed")
 
