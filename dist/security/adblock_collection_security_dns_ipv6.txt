@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Security)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 10034
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 10037
 :: 0-1-x.16215785.xyz
 :: 0-1-x.26215785.xyz
 :: 0-lix-a8sbqnxt.d1cdej.top
@@ -5827,6 +5827,9 @@
 :: guide-84402677.zjlions.org
 :: guide-86385722.zjlions.org
 :: guideinf.hfffamily.co.nz
+:: guildbase.org
+:: guildkit.org
+:: guildpass.one
 :: guinness-ar-demo.pages.dev
 :: gumnilogcn.gitbook.io
 :: gunaigute.com
