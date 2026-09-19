@@ -101,6 +101,7 @@ def _build_args(cfg, out, alias):
             "redundant": False,
             "split_by_category": False,
             "alias_normalize": alias,
+            "resolve_conflicts": False,
         },
     )()
 

@@ -21,6 +21,7 @@ import time
 from pathlib import Path
 
 from .aliases import normalize_aliases
+from .arbitrate import arbitrate
 from .dns_policy import load_dns_policy
 from .merge import (
     apply_allowlist,
@@ -384,6 +385,20 @@ def build(args: argparse.Namespace) -> int:
         deduped = apply_allowlist(deduped, _fps["allow"])
         LOG.info("白名单强制放行移除规则: %d", before - len(deduped))
     deduped = apply_badfilter(deduped)
+    if args.resolve_conflicts:
+        deduped, arb_records = arbitrate(deduped)
+        removed = sum(len(r.losers) for r in arb_records)
+        (output_dir / "arbitration.json").write_text(
+            json.dumps(
+                [r.to_dict() for r in arb_records], ensure_ascii=False, indent=2
+            ),
+            encoding="utf-8",
+        )
+        enhancements["resolve_conflicts"] = {
+            "removed": removed,
+            "records": len(arb_records),
+        }
+        LOG.info("冲突仲裁: 移除 %d 条, 记录 %d 条 -> arbitration.json", removed, len(arb_records))
     if args.redundant:
         deduped = remove_redundant_domains(deduped)
         deduped = remove_redundant_css(deduped)
@@ -676,6 +691,11 @@ def main(argv: list[str] | None = None) -> int:
         "--alias-normalize",
         action="store_true",
         help="归一化等价选项别名（xmlhttprequest/doc/ghide/elemhide）并折叠重复规则",
+    )
+    p_build.add_argument(
+        "--resolve-conflicts",
+        action="store_true",
+        help="对整域目标仲裁阻断与例外（例外 > $important > 普通阻断），记录 arbitration.json",
     )
     p_build.add_argument(
         "--split-by-category", action="store_true", help="split output by category"
