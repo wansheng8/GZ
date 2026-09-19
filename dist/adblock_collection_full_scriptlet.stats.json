@@ -1,0 +1,24 @@
+{
+  "name": "adblock_collection_full_scriptlet",
+  "total": 10780,
+  "by_category": {
+    "scriptlet": 10780
+  },
+  "by_kind": {
+    "scriptlet": 10780
+  },
+  "by_source": {
+    "ADrules AdRules": 4613,
+    "Fanboy Annoyance": 2824,
+    "uBO filters – Ads": 2439,
+    "uBO filters – Unbreak": 303,
+    "uBO filters – Privacy": 290,
+    "uBO filters – Quick fixes": 154,
+    "AdGuard – Mobile Ads": 91,
+    "ADrules EasyPrivacy": 28,
+    "uBO filters – Badware risks": 22,
+    "ADrules HalfLife": 12,
+    "ADrules ChengFeng": 3,
+    "AdGuard – Ads": 1
+  }
+}

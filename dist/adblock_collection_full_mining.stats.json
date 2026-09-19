@@ -1,0 +1,29 @@
+{
+  "name": "adblock_collection_full_mining",
+  "total": 234,
+  "by_category": {
+    "mining": 234
+  },
+  "by_kind": {
+    "network": 234
+  },
+  "by_source": {
+    "oisd": 61,
+    "Hagezi DNS Pro Plus": 39,
+    "ADrules DNS": 33,
+    "ADrules anti-AD": 30,
+    "217heidai adblockdns": 22,
+    "ADrules EasyPrivacy": 15,
+    "Online Malicious URL Blocklist": 11,
+    "AdGuard – Ads": 7,
+    "AdGuardSDNSFilter": 4,
+    "ADrules Easylist": 3,
+    "ADrules AdRules": 2,
+    "10007_auto reward": 2,
+    "ADrules ChengFeng": 1,
+    "banbendalao ADgk": 1,
+    "StevenBlack Hosts": 1,
+    "Fanboy Annoyance": 1,
+    "uBO filters – Ads": 1
+  }
+}

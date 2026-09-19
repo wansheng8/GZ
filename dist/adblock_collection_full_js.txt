@@ -1,0 +1,9 @@
+[Adblock Plus 2.0]
+! Title: Adblock Rule Collection (Full) (js)
+! Description: 按类型拆分：js
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 1
+! ------------------------------------------
+www.itdog.cn#%#window.alert=function(str){return}

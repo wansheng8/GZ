@@ -1,0 +1,18 @@
+{
+  "policy_level": "safe",
+  "min_confidence": 0.8,
+  "allow_modifier": true,
+  "dns_eligible_network_rules": 204,
+  "dns_rejected_network_rules": 30,
+  "by_eligibility": {
+    "SAFE": 204,
+    "REJECT": 30
+  },
+  "by_reason": {
+    "pure_domain": 204,
+    "untranslatable": 11,
+    "path_rule": 17,
+    "regex_or_redirect_rule": 1,
+    "scoped_modifier": 1
+  }
+}

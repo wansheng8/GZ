@@ -1,0 +1,21 @@
+{
+  "name": "adblock_collection_full_redirect",
+  "total": 500,
+  "by_category": {
+    "redirect": 500
+  },
+  "by_kind": {
+    "network": 500
+  },
+  "by_source": {
+    "AdGuard – Ads": 144,
+    "uBO filters – Ads": 128,
+    "ADrules AdRules": 109,
+    "uBO filters – Unbreak": 84,
+    "ADrules EasyListChina": 8,
+    "banbendalao ADgk": 8,
+    "uBO filters – Quick fixes": 8,
+    "AdGuard – Mobile Ads": 7,
+    "ADrules Easylist": 4
+  }
+}

@@ -1,0 +1,1074 @@
+[
+  {
+    "target": "17173im.allyes.com",
+    "winner": "@@||17173im.allyes.com^",
+    "losers": [
+      "||17173im.allyes.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "1warie.com",
+    "winner": "@@||1warie.com^$generichide",
+    "losers": [
+      "||1warie.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "79423.analytics.edgekey.net",
+    "winner": "@@||79423.analytics.edgekey.net^",
+    "losers": [
+      "||79423.analytics.edgekey.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "action.metaffiliation.com",
+    "winner": "@@||action.metaffiliation.com^",
+    "losers": [
+      "||action.metaffiliation.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ad.10010.com",
+    "winner": "@@||ad.10010.com^",
+    "losers": [
+      "||ad.10010.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ad.ourgame.com",
+    "winner": "@@||ad.ourgame.com^",
+    "losers": [
+      "||ad.ourgame.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ad.vivo.com.cn",
+    "winner": "@@||ad.vivo.com.cn^$~third-party",
+    "losers": [
+      "||ad.vivo.com.cn^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "adf.ly",
+    "winner": "@@||adf.ly^$generichide",
+    "losers": [
+      "||adf.ly^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "adm.10jqka.com.cn",
+    "winner": "@@||adm.10jqka.com.cn^",
+    "losers": [
+      "||adm.10jqka.com.cn^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "admin.dable.io",
+    "winner": "@@||admin.dable.io^",
+    "losers": [
+      "||admin.dable.io^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "adnet.qq.com",
+    "winner": "@@||adnet.qq.com^$~third-party",
+    "losers": [
+      "||adnet.qq.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.95516.com",
+    "winner": "@@||ads.95516.com^",
+    "losers": [
+      "||ads.95516.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.cdn.tvb.com",
+    "winner": "@@||ads.cdn.tvb.com^",
+    "losers": [
+      "||ads.cdn.tvb.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.console.aliyun.com",
+    "winner": "@@||ads.console.aliyun.com^",
+    "losers": [
+      "||ads.console.aliyun.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.cs.washington.edu",
+    "winner": "@@||ads.cs.washington.edu^$popup",
+    "losers": [
+      "||ads.cs.washington.edu^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.google.com",
+    "winner": "@@||ads.google.com^$popup",
+    "losers": [
+      "||ads.google.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.microsoft.com",
+    "winner": "@@||ads.microsoft.com^$generichide",
+    "losers": [
+      "||ads.microsoft.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.midwayusa.com",
+    "winner": "@@||ads.midwayusa.com^$popup",
+    "losers": [
+      "||ads.midwayusa.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.pinterest.com",
+    "winner": "@@||ads.pinterest.com^$popup",
+    "losers": [
+      "||ads.pinterest.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.privacy.qq.com",
+    "winner": "@@||ads.privacy.qq.com^",
+    "losers": [
+      "||ads.privacy.qq.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.snapchat.com",
+    "winner": "@@||ads.snapchat.com^$popup",
+    "losers": [
+      "||ads.snapchat.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.spotify.com",
+    "winner": "@@||ads.spotify.com^$popup",
+    "losers": [
+      "||ads.spotify.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.taboola.com",
+    "winner": "@@||ads.taboola.com^$popup",
+    "losers": [
+      "||ads.taboola.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.tiktok.com",
+    "winner": "@@||ads.tiktok.com^$popup",
+    "losers": [
+      "||ads.tiktok.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.twitter.com",
+    "winner": "@@||ads.twitter.com^$popup",
+    "losers": [
+      "||ads.twitter.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.vk.com",
+    "winner": "@@||ads.vk.com^$popup",
+    "losers": [
+      "||ads.vk.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.vk.ru",
+    "winner": "@@||ads.vk.ru^$popup",
+    "losers": [
+      "||ads.vk.ru^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ads.x.com",
+    "winner": "@@||ads.x.com^$popup",
+    "losers": [
+      "||ads.x.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "adshnk.com",
+    "winner": "@@||adshnk.com^$generichide",
+    "losers": [
+      "||adshnk.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "adsrvmedia.adk2.co",
+    "winner": "||adsrvmedia.adk2.co^$important",
+    "losers": [
+      "||adsrvmedia.adk2.co^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  },
+  {
+    "target": "advertising.yahoo.com",
+    "winner": "@@||advertising.yahoo.com^$~3p",
+    "losers": [
+      "||advertising.yahoo.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "adverts.1foo.com",
+    "winner": "@@||adverts.1foo.com^",
+    "losers": [
+      "||adverts.1foo.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "affyun.com",
+    "winner": "@@||affyun.com^$generichide",
+    "losers": [
+      "||affyun.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "afi-b.com",
+    "winner": "@@||afi-b.com^",
+    "losers": [
+      "||afi-b.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "analytics.amplitude.com",
+    "winner": "@@||analytics.amplitude.com^$~third-party",
+    "losers": [
+      "||analytics.amplitude.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "analytics.itunes.apple.com",
+    "winner": "@@||analytics.itunes.apple.com^$~third-party",
+    "losers": [
+      "||analytics.itunes.apple.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "api-secure.solvemedia.com",
+    "winner": "@@||api-secure.solvemedia.com^$frame",
+    "losers": [
+      "||api-secure.solvemedia.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "api.ads.tvb.com",
+    "winner": "@@||api.ads.tvb.com^",
+    "losers": [
+      "||api.ads.tvb.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "api.karte.io",
+    "winner": "@@||api.karte.io^",
+    "losers": [
+      "||api.karte.io^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "app.adjust.com",
+    "winner": "@@||app.adjust.com^",
+    "losers": [
+      "||app.adjust.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "app.appsflyer.com",
+    "winner": "@@||app.appsflyer.com^",
+    "losers": [
+      "||app.appsflyer.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "autocomplete.clearbit.com",
+    "winner": "@@||autocomplete.clearbit.com^$xhr",
+    "losers": [
+      "||autocomplete.clearbit.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "awempire.com",
+    "winner": "@@||awempire.com^$generichide",
+    "losers": [
+      "||awempire.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "awin1.com",
+    "winner": "@@||awin1.com^",
+    "losers": [
+      "||awin1.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "belgium.wolterskluwer.com",
+    "winner": "@@||belgium.wolterskluwer.com^",
+    "losers": [
+      "||belgium.wolterskluwer.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "bet.championat.com",
+    "winner": "||bet.championat.com^$important",
+    "losers": [
+      "||bet.championat.com^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  },
+  {
+    "target": "blockadblock.com",
+    "winner": "@@||blockadblock.com^$generichide",
+    "losers": [
+      "||blockadblock.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "c.data.mob.com",
+    "winner": "@@||c.data.mob.com^$app=com.sinovatech.unicom.ui",
+    "losers": [
+      "||c.data.mob.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "cdn.intergient.com",
+    "winner": "@@||cdn.intergient.com^$1p",
+    "losers": [
+      "||cdn.intergient.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "cj.dotomi.com",
+    "winner": "@@||cj.dotomi.com^",
+    "losers": [
+      "||cj.dotomi.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "cmp.osano.com",
+    "winner": "@@||cmp.osano.com^",
+    "losers": [
+      "||cmp.osano.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "coinadster.com",
+    "winner": "@@||coinadster.com^$generichide",
+    "losers": [
+      "||coinadster.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "content.ingbank.pl",
+    "winner": "@@||content.ingbank.pl^",
+    "losers": [
+      "||content.ingbank.pl^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "corneey.com",
+    "winner": "@@||corneey.com^$generichide",
+    "losers": [
+      "||corneey.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "data.bilibili.com",
+    "winner": "@@||data.bilibili.com^$ping,xhr",
+    "losers": [
+      "||data.bilibili.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "data.digital.costco.ca",
+    "winner": "@@||data.digital.costco.ca^",
+    "losers": [
+      "||data.digital.costco.ca^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "data.digital.costco.com",
+    "winner": "@@||data.digital.costco.com^",
+    "losers": [
+      "||data.digital.costco.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "data.notify.macys.com",
+    "winner": "@@||data.notify.macys.com^",
+    "losers": [
+      "||data.notify.macys.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "data.orders.costco.ca",
+    "winner": "@@||data.orders.costco.ca^",
+    "losers": [
+      "||data.orders.costco.ca^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "data.orders.costco.com",
+    "winner": "@@||data.orders.costco.com^",
+    "losers": [
+      "||data.orders.costco.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "data.promo.timhortons.ca",
+    "winner": "@@||data.promo.timhortons.ca^",
+    "losers": [
+      "||data.promo.timhortons.ca^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "deloton.com",
+    "winner": "||deloton.com$important",
+    "losers": [
+      "||deloton.com^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  },
+  {
+    "target": "destyy.com",
+    "winner": "@@||destyy.com^$generichide",
+    "losers": [
+      "||destyy.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "e.customeriomail.com",
+    "winner": "@@||e.customeriomail.com^",
+    "losers": [
+      "||e.customeriomail.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "em.dynamicyield.com",
+    "winner": "@@||em.dynamicyield.com^$removeparam=cuid",
+    "losers": [
+      "||em.dynamicyield.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ens.nzz.ch",
+    "winner": "@@||ens.nzz.ch^$~third-party",
+    "losers": [
+      "||ens.nzz.ch^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "festyy.com",
+    "winner": "@@||festyy.com^$generichide",
+    "losers": [
+      "||festyy.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "fingerprintjs.com",
+    "winner": "@@||fingerprintjs.com^$generichide",
+    "losers": [
+      "||fingerprintjs.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "freebitco.in",
+    "winner": "@@||freebitco.in^$generichide",
+    "losers": [
+      "||freebitco.in^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "fundingchoicesmessages.google.com",
+    "winner": "@@||fundingchoicesmessages.google.com^$script,subdocument,xhr",
+    "losers": [
+      "||fundingchoicesmessages.google.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "g.tbcdn.cn",
+    "winner": "@@||g.tbcdn.cn^",
+    "losers": [
+      "||g.tbcdn.cn^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "gamepccrack.com",
+    "winner": "@@||gamepccrack.com^$generichide",
+    "losers": [
+      "||gamepccrack.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "get.x-link.pl",
+    "winner": "@@||get.x-link.pl^$generichide",
+    "losers": [
+      "||get.x-link.pl^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "go.redirectingat.com",
+    "winner": "@@||go.redirectingat.com^$document",
+    "losers": [
+      "||go.redirectingat.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "hackintosh.computer",
+    "winner": "@@||hackintosh.computer^$generichide",
+    "losers": [
+      "||hackintosh.computer^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "haxnode.net",
+    "winner": "@@||haxnode.net^$generichide",
+    "losers": [
+      "||haxnode.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "hb.afl.rakuten.co.jp",
+    "winner": "@@||hb.afl.rakuten.co.jp^",
+    "losers": [
+      "||hb.afl.rakuten.co.jp^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "identity.mparticle.com",
+    "winner": "@@||identity.mparticle.com^$xhr",
+    "losers": [
+      "||identity.mparticle.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "img.ads.tvb.com",
+    "winner": "@@||img.ads.tvb.com^",
+    "losers": [
+      "||img.ads.tvb.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "linkvertise.com",
+    "winner": "@@||linkvertise.com^$generichide",
+    "losers": [
+      "||linkvertise.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "log.mmstat.com",
+    "winner": "@@||log.mmstat.com^",
+    "losers": [
+      "||log.mmstat.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "logentries.com",
+    "winner": "@@||logentries.com^",
+    "losers": [
+      "||logentries.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "marketing.net.idealo-partner.com",
+    "winner": "@@||marketing.net.idealo-partner.com^",
+    "losers": [
+      "||marketing.net.idealo-partner.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "mediacdn.disqus.com",
+    "winner": "@@||mediacdn.disqus.com^$document",
+    "losers": [
+      "||mediacdn.disqus.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "metrics.icloud.com",
+    "winner": "@@||metrics.icloud.com^",
+    "losers": [
+      "||metrics.icloud.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "metrika.lookmovie.io",
+    "winner": "||metrika.lookmovie.io^$important",
+    "losers": [
+      "||metrika.lookmovie.io^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  },
+  {
+    "target": "msn.wrating.com",
+    "winner": "@@||msn.wrating.com^",
+    "losers": [
+      "||msn.wrating.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "neobux.com",
+    "winner": "@@||neobux.com^$1p,css,script",
+    "losers": [
+      "||neobux.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "oclasrv.com",
+    "winner": "||oclasrv.com$important",
+    "losers": [
+      "||oclasrv.com^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  },
+  {
+    "target": "om-ssl.consorsbank.de",
+    "winner": "@@||om-ssl.consorsbank.de^",
+    "losers": [
+      "||om-ssl.consorsbank.de^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "omniture.walmart.com",
+    "winner": "@@||omniture.walmart.com^",
+    "losers": [
+      "||omniture.walmart.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "omsc.kpn.com",
+    "winner": "@@||omsc.kpn.com^",
+    "losers": [
+      "||omsc.kpn.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "pagead.l.doubleclick.net",
+    "winner": "@@||pagead.l.doubleclick.net^",
+    "losers": [
+      "||pagead.l.doubleclick.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "pgpartner.com",
+    "winner": "@@||pgpartner.com^",
+    "losers": [
+      "||pgpartner.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "phs.tanx.com",
+    "winner": "@@||phs.tanx.com^",
+    "losers": [
+      "||phs.tanx.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "pingjs.qq.com",
+    "winner": "@@||pingjs.qq.com^$~third-party",
+    "losers": [
+      "||pingjs.qq.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "pixel.wp.pl",
+    "winner": "||pixel.wp.pl^$important",
+    "losers": [
+      "||pixel.wp.pl^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  },
+  {
+    "target": "proto2ad.durasite.net",
+    "winner": "@@||proto2ad.durasite.net^",
+    "losers": [
+      "||proto2ad.durasite.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "puma.112.2o7.net",
+    "winner": "@@||puma.112.2o7.net^",
+    "losers": [
+      "||puma.112.2o7.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "px.a8.net",
+    "winner": "@@||px.a8.net^",
+    "losers": [
+      "||px.a8.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "recommender.scarabresearch.com",
+    "winner": "@@||recommender.scarabresearch.com^",
+    "losers": [
+      "||recommender.scarabresearch.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "s.optnx.com",
+    "winner": "@@||s.optnx.com^",
+    "losers": [
+      "||s.optnx.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "sadeempc.com",
+    "winner": "@@||sadeempc.com^$generichide",
+    "losers": [
+      "||sadeempc.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "sarapbeh.com",
+    "winner": "@@||sarapbeh.com^$generichide",
+    "losers": [
+      "||sarapbeh.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "sax.sina.com.cn",
+    "winner": "@@||sax.sina.com.cn^",
+    "losers": [
+      "||sax.sina.com.cn^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "sedge.nfl.com",
+    "winner": "@@||sedge.nfl.com^",
+    "losers": [
+      "||sedge.nfl.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "sgtm.farmasave.it",
+    "winner": "@@||sgtm.farmasave.it^$script,~third-party",
+    "losers": [
+      "||sgtm.farmasave.it^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "shrtfly.com",
+    "winner": "@@||shrtfly.com^$generichide",
+    "losers": [
+      "||shrtfly.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "sobot.com",
+    "winner": "@@||sobot.com^",
+    "losers": [
+      "||sobot.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "softwarebrother.com",
+    "winner": "@@||softwarebrother.com^$generichide",
+    "losers": [
+      "||softwarebrother.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "str.hit.gemius.pl",
+    "winner": "@@||str.hit.gemius.pl^",
+    "losers": [
+      "||str.hit.gemius.pl^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "succeedscene.com",
+    "winner": "@@||succeedscene.com^$script",
+    "losers": [
+      "||succeedscene.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "sunbtc.space",
+    "winner": "@@||sunbtc.space^$generichide",
+    "losers": [
+      "||sunbtc.space^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "tagmanager.google.com",
+    "winner": "@@||tagmanager.google.com^$document",
+    "losers": [
+      "||tagmanager.google.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "tags.crwdcntrl.net",
+    "winner": "@@||tags.crwdcntrl.net^",
+    "losers": [
+      "||tags.crwdcntrl.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "target.microsoft.com",
+    "winner": "@@||target.microsoft.com^$1p,xhr",
+    "losers": [
+      "||target.microsoft.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "target.my.com",
+    "winner": "@@||target.my.com^$document,~3p",
+    "losers": [
+      "||target.my.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "the-man.gr",
+    "winner": "@@||the-man.gr^$generichide",
+    "losers": [
+      "||the-man.gr^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "tms.capitalone.com",
+    "winner": "@@||tms.capitalone.com^",
+    "losers": [
+      "||tms.capitalone.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "torimochi.line-apps.com",
+    "winner": "@@||torimochi.line-apps.com^",
+    "losers": [
+      "||torimochi.line-apps.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "track.webgains.com",
+    "winner": "@@||track.webgains.com^",
+    "losers": [
+      "||track.webgains.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "tradedoubler.com",
+    "winner": "@@||tradedoubler.com^$removeparam=tduid",
+    "losers": [
+      "||tradedoubler.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "ucoz.com",
+    "winner": "@@||ucoz.com^$generichide",
+    "losers": [
+      "||ucoz.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "uii.io",
+    "winner": "@@||uii.io^$generichide",
+    "losers": [
+      "||uii.io^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "union2.50bang.org",
+    "winner": "@@||union2.50bang.org^$third-party",
+    "losers": [
+      "||union2.50bang.org^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "vd.l.qq.com",
+    "winner": "@@||vd.l.qq.com^",
+    "losers": [
+      "||vd.l.qq.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "vid.connatix.com",
+    "winner": "@@||vid.connatix.com^$3p,media,xhr",
+    "losers": [
+      "||vid.connatix.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "vitacost.122.2o7.net",
+    "winner": "@@||vitacost.122.2o7.net^",
+    "losers": [
+      "||vitacost.122.2o7.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "wan.douyu.com",
+    "winner": "@@||wan.douyu.com^",
+    "losers": [
+      "||wan.douyu.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "widget.weibo.com",
+    "winner": "@@||widget.weibo.com^",
+    "losers": [
+      "||widget.weibo.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "www.datadoghq-browser-agent.com",
+    "winner": "@@||www.datadoghq-browser-agent.com^",
+    "losers": [
+      "||www.datadoghq-browser-agent.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "www.googleadservices.com",
+    "winner": "@@||www.googleadservices.com^",
+    "losers": [
+      "||www.googleadservices.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "www.jdoqocy.com",
+    "winner": "@@||www.jdoqocy.com^",
+    "losers": [
+      "||www.jdoqocy.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "www.statcounter.com",
+    "winner": "@@||www.statcounter.com^",
+    "losers": [
+      "||www.statcounter.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  }
+]

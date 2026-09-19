@@ -1,24 +1,24 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 13784,
+  "total": 13702,
   "by_category": {
-    "whitelist": 13784
+    "whitelist": 13702
   },
   "by_kind": {
-    "network": 10979,
+    "network": 10897,
     "css": 2781,
     "scriptlet": 21,
     "html": 3
   },
   "by_source": {
-    "ADrules AdRules": 4646,
-    "AdGuard – Ads": 1852,
+    "ADrules AdRules": 4598,
+    "AdGuard – Ads": 1844,
     "uBO filters – Unbreak": 1392,
     "ADrules EasyListChina": 1159,
     "ADrules Easylist": 1086,
     "ADrules EasyPrivacy": 841,
     "Fanboy Annoyance": 782,
-    "uBO filters – Ads": 750,
+    "uBO filters – Ads": 724,
     "Fanboy Social": 202,
     "AdGuardSDNSFilter": 196,
     "AdGuard – Mobile Ads": 192,

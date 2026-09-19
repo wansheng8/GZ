@@ -1,14 +1,37 @@
 {
   "name": "adblock_collection_full_social",
-  "total": 13526,
+  "total": 1889,
   "by_category": {
-    "social": 13526
+    "social": 1889
   },
   "by_kind": {
-    "css": 13049,
-    "network": 477
+    "network": 1889
   },
   "by_source": {
-    "Fanboy Social": 13526
+    "Fanboy Social": 478,
+    "oisd": 417,
+    "Hagezi DNS Pro Plus": 266,
+    "ADrules DNS": 202,
+    "217heidai adblockdns": 123,
+    "ADrules Easylist": 87,
+    "ADrules anti-AD": 71,
+    "ADrules AdRules": 64,
+    "AdGuard – Ads": 35,
+    "uBO filters – Ads": 27,
+    "AdGuardSDNSFilter": 23,
+    "ADrules EasyListChina": 21,
+    "StevenBlack Hosts": 15,
+    "banbendalao ADgk": 11,
+    "10007_auto reward": 10,
+    "Hagezi DNS Light": 10,
+    "KADhosts": 10,
+    "Disconnect Simple Ad": 6,
+    "Accelerate-Hosts": 4,
+    "AdGuard – Mobile Ads": 3,
+    "uBO filters – Unbreak": 2,
+    "ADrules ChengFeng": 1,
+    "ADrules HalfLife": 1,
+    "Anti-AD (adguard)": 1,
+    "uBO filters – Quick fixes": 1
   }
 }

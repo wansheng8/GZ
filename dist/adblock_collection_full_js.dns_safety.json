@@ -1,0 +1,13 @@
+{
+  "policy_level": "safe",
+  "min_confidence": 0.8,
+  "allow_modifier": true,
+  "dns_eligible_network_rules": 0,
+  "dns_rejected_network_rules": 1,
+  "by_eligibility": {
+    "REJECT": 1
+  },
+  "by_reason": {
+    "non_network_rule": 1
+  }
+}
