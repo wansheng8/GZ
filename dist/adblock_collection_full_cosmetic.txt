@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 152186
+! Total Rules: 152188
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -131645,6 +131645,8 @@ javboss.me###preroll
 asilmedia.org##a[href^="http://yangi-kinolar.ru/"]
 asilmedia.org##a[href^="https://yourbonus.online/"]
 asilmedia.org###banner
+motchille.ws##+js(set-constant, HTMLAnchorElement.prototype.click, noopFunc)
+motchille.ws##div.fixed.inset-0
 vnjpclub.com##.vnjp-ad-slot
 rophim1.vip##a[href="https://colatv99.live"]
 animehay01.site##img[src^="/ad_banner/"]
