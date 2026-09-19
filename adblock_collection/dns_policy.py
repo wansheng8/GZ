@@ -12,6 +12,8 @@ hosts / domains 文件。目的是在「宁愿少拦截、不要误拦截」原�
             （$domain/$from/$to/$denyallow/$ipaddress/$method）的规则。
             DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
 - SAFE    : 纯域名网络规则（||ads.example.com^），整域拦截语义等价，confidence=1.0。
+            仅带「整域语义」修饰（$all/$important/$match-case，不限定类型与作用域）
+            的规则语义等价于纯域名，同样归为 SAFE。
 - CONDITIONAL: 带修饰符的单域名规则（如 ||example.com^$third-party），作用域受限，
             confidence=0.8，是否进入 DNS 由策略的 allow_modifier 决定。
 
@@ -70,8 +72,17 @@ NON_BLOCKING_MODIFIERS = frozenset(
         "inline-script",
         "inline-font",
         "genericblock",
+        # uBO/AdGuard 短别名，等价于上面的非阻断选项
+        "ghide",
+        "shide",
+        "ehide",
     }
 )
+
+# 整域语义修饰：只调整优先级或大小写匹配，不限定资源类型，也不限定作用域。
+# 形如 ||ads.example.com^$all 的规则阻断到该域名的全部请求，DNS 整域拦截语义等价，
+# 因而可归入 SAFE 而不是被当成作用域受限的 CONDITIONAL 丢弃。
+WHOLE_DOMAIN_MODIFIERS = frozenset({"all", "important", "match-case"})
 
 _OPTION_RE = re.compile(r"\$([^$]*)$")
 
@@ -133,6 +144,11 @@ def classify_dns(rule: Rule) -> DnsVerdict:
     # 纯域名规则
     if _PURE_DOMAIN_RE.match(rule.raw):
         return DnsVerdict(DNS_SAFE, CONF_PURE_DOMAIN, "pure_domain")
+
+    # 仅带整域语义修饰（$all/$important/$match-case）的纯域名规则
+    if rule.options and set(rule.options) <= WHOLE_DOMAIN_MODIFIERS:
+        if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
+            return DnsVerdict(DNS_SAFE, CONF_PURE_DOMAIN, "pure_domain_modifier")
 
     # 带修饰符的单域名规则（如 $third-party）：作用域受限，保守处理
     if rule.domains and len(rule.domains) == 1 and rule.options:

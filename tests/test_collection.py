@@ -358,6 +358,35 @@ def test_classify_modifier_rule_is_conditional():
     assert v.reason == "domain_modifier"
 
 
+def test_classify_whole_domain_modifier_is_safe():
+    for raw in (
+        "||ads.example.com^$all",
+        "||ads.example.com^$important",
+        "||ads.example.com^$match-case",
+        "||ads.example.com^$all,important",
+    ):
+        v = classify_dns(parse_line(raw))
+        assert v.eligibility == DNS_SAFE, raw
+        assert v.reason == "pure_domain_modifier", raw
+        assert v.confidence == 1.0, raw
+        assert is_dns_eligible(parse_line(raw), {"level": "all"}) is True, raw
+
+
+def test_classify_whole_domain_modifier_rejects_scoped_or_path():
+    # 带作用域或路径时仍不得升级为整域拦截
+    assert classify_dns(parse_line("||ads.example.com^$all,domain=x.com")).reason == (
+        "scoped_modifier"
+    )
+    assert classify_dns(parse_line("||ads.example.com/p^$all")).reason == "path_rule"
+
+
+def test_classify_non_blocking_alias_is_reject():
+    for raw in ("||ads.example.com^$ghide", "||ads.example.com^$shide"):
+        v = classify_dns(parse_line(raw))
+        assert v.reason == "non_blocking_modifier", raw
+        assert is_dns_eligible(parse_line(raw), {"level": "safe"}) is False, raw
+
+
 def test_policy_all_rejects_modifier():
     r = parse_line("||example.com^$third-party")
     assert is_dns_eligible(r, {"level": "all"}) is False
