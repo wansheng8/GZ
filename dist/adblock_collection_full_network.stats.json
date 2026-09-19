@@ -1,13 +1,13 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 602227,
+  "total": 602229,
   "by_category": {
-    "network": 602227
+    "network": 602229
   },
   "by_kind": {
-    "network": 518093,
+    "network": 518094,
     "css": 76351,
-    "scriptlet": 7616,
+    "scriptlet": 7617,
     "html": 166,
     "js": 1
   },
@@ -18,7 +18,7 @@
     "ADrules Easylist": 75699,
     "217heidai adblockdns": 41386,
     "ADrules AdRules": 29117,
-    "AdGuard – Ads": 24318,
+    "AdGuard – Ads": 24319,
     "ADrules anti-AD": 17497,
     "ADrules EasyListChina": 17117,
     "StevenBlack Hosts": 6694,
@@ -43,6 +43,7 @@
     "AdAway Hosts": 12,
     "Peter Lowe's Blocklist": 2,
     "EasyList (ABP)": 1,
+    "EasyList (easylist.to)": 1,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
   }

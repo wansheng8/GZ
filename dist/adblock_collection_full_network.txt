@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 602227
+! Total Rules: 602229
 ! ------------------------------------------
 &rb=&uuid=$third-party
 &subaffid=%$subdocument,third-party
@@ -284604,6 +284604,7 @@ analytics-*.aasaam.com
 ||a4.overclockers.ua^
 ||novunu.football-plyus.net^
 ||agzyvvhjbkdwm.website^
+||apuwmrafrjesx.online^
 /killcovid2021\.com/\d\.mp4/$mp4
 dmhy.org###pkpk
 dmhy.org##div[id*="_ad"]
@@ -579164,6 +579165,7 @@ vi-control.net,nullforums.net,landyzone.co.uk,nullcave.pro,woxmax.com,waskucity.
 /\.[a-z]{2,6}\/[0-9A-Za-z]{5,8}\.js$/$script,~3p,domain=love4porn.com|suptube.com|upload-pics.com
 $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 ||linksconsole.com/ad-system/
+minefun.io##+js(set-constant, __poki_no_ads, true)
 historicaerials.com###bot_container
 historicaerials.com###top_container
 reelsuites.tv##.rt-ad-slot
