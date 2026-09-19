@@ -49,7 +49,7 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 echo "exit=$?"   # 0=成功; 1=门禁/回归失败; 2=本地规则违规
 ```
 
-**构建后自检清单**（5 项）：
+**构建后自检清单**（6 项）：
 
 ```bash
 # ① 本地增强规则已入库（应 = config/local_rules.txt 非注释行数，当前 10）
@@ -68,9 +68,23 @@ python3 -c "import json;d=json.load(open('dist/build_report.json'));print('gate_
 
 # ⑤ 产物与 git 一致（避免提交遗漏）
 git status --short dist/ | head
+
+# ⑥ 三层产物完整性（网络 + 元素隐藏 == 完整版；DNS 等价 == 单行域名）
+python3 - <<'PY'
+import json
+
+e = {x["file"]: x["rules"] for x in json.load(open("dist/manifest.json"))["generated_files"]}
+net = e.get("adblock_collection_full_browser_network.txt", 0)
+cos = e.get("adblock_collection_full_cosmetic.txt", 0)
+abp = e.get("adblock_collection_full_dns_abp.txt", 0)
+full = e.get("adblock_collection_full.txt", 0)
+dom = e.get("adblock_collection_full_domains.txt", 0)
+print("三层并集 == 完整版:", net + cos == full, f"({net} + {cos} vs {full})")
+print("DNS 等价 == 单行域名:", abp == dom, f"({abp} vs {dom})")
+PY
 ```
 
-**完成判定**：①≥规则数、②=0、③<5 源、④passed=True、⑤已提交全部 dist 变更。
+**完成判定**：①≥规则数、②=0、③<5 源、④passed=True、⑤已提交全部 dist 变更、⑥两个等式均为 True。
 
 ---
 

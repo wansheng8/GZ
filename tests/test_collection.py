@@ -504,6 +504,62 @@ def test_emit_layers_skips_dns_abp_without_dns(tmp_path):
     assert "adblock_collection_full_browser_network.txt" in files
 
 
+def test_emit_layers_union_equals_full(tmp_path):
+    from adblock_collection import cli
+
+    rules = [
+        parse_line("||ads.example.com^"),
+        parse_line("||track.example.com^$third-party"),
+        parse_line("example.com##.ad-banner"),
+        parse_line("example.com##+js(set-constant, adblockDetected, false)"),
+        parse_line("example.com#?#div:has(.advert)"),
+    ]
+    manifest: list = []
+    cli._emit_layers(
+        rules,
+        tmp_path,
+        "adblock_collection_full",
+        manifest,
+        gen_dns=True,
+        policy={"level": "all"},
+    )
+    counts = {m["file"]: m["rules"] for m in manifest}
+    assert (
+        counts["adblock_collection_full_browser_network.txt"]
+        + counts["adblock_collection_full_cosmetic.txt"]
+        == len(rules)
+    )
+
+
+def test_dns_abp_matches_domains_set(tmp_path):
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("||ads.example.com^"),
+        parse_line("||track.example.com^$third-party"),
+        parse_line("@@||allow.example.com^"),
+        parse_line("@@||doubleclick.net^$xhr,domain=yyets.click"),
+        parse_line("example.com##.ad"),
+    ]
+    policy = {"level": "all"}
+    abp = tmp_path / "a_dns_abp.txt"
+    dom = tmp_path / "b_domains.txt"
+    n1 = writer.write_domain_rules(rules, abp, "T", "D", policy)
+    n2 = writer.write_domains(rules, dom, "T", policy)
+    assert n1 == n2
+    abp_domains = {
+        line[2:-1]
+        for line in abp.read_text(encoding="utf-8").splitlines()
+        if line.startswith("||")
+    }
+    dom_domains = {
+        line
+        for line in dom.read_text(encoding="utf-8").splitlines()
+        if line and not line.startswith("#")
+    }
+    assert abp_domains == dom_domains
+
+
 # ---------------- DNS 安全分级 ----------------
 
 

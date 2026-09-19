@@ -48,6 +48,7 @@
 > [!CAUTION]
 > DNS 黑名单里**绝对不能**出现 `##`、`#?#`、`##+js`、`$xxx` 修饰符——DNS 系统不认识，轻则丢弃规则，重则整份清单失效。这类规则**只放进浏览器扩展**。
 > 本仓库的 `_dns.txt` / `_dns_ipv6.txt` / `_domains.txt` 由构建流程保证只含纯域名，并有回归测试固定该不变量。
+> `#?#` 与 `##+js(...)` 由 uBlock Origin / AdGuard 支持，Adblock Plus 支持有限；只使用 Adblock Plus 时优先选基础 `##` 规则。
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 

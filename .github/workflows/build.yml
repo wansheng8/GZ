@@ -56,6 +56,14 @@ jobs:
           failed = status.get("failed_sources", [])
           print(f"完整版规则数: {total}")
           print(f"失败源数: {len(failed)} -> {failed}")
+          net = entries.get("adblock_collection_full_browser_network.txt", 0)
+          cos = entries.get("adblock_collection_full_cosmetic.txt", 0)
+          abp = entries.get("adblock_collection_full_dns_abp.txt", 0)
+          print(f"三层产物: 网络拦截 {net} / 元素隐藏 {cos} / DNS 等价 {abp}")
+          if not net or not cos or not abp:
+              print("WARNING: 三层产物缺失（browser_network / cosmetic / dns_abp）")
+          elif total and net + cos != total:
+              print(f"WARNING: 三层并集 {net + cos} != 完整版 {total}")
           # 规则数骤降或大量源失败则标记异常（不阻断推送，但输出供审查）
           if total < 300000:
               print("WARNING: 完整版规则数异常偏低，可能上游大面积失败")

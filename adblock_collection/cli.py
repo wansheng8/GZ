@@ -396,6 +396,19 @@ def build(args: argparse.Namespace) -> int:
         gen_dns=not args.no_dns,
         policy=dns_policy,
     )
+    # 不变量校验：网络拦截层 + 元素隐藏层必须等于完整版（三层并集无损）
+    _full_n = next(
+        r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt"
+    )
+    _layer_n = sum(
+        r["rules"]
+        for r in manifest
+        if r["file"].endswith(("_browser_network.txt", "_cosmetic.txt"))
+    )
+    if _layer_n != _full_n:
+        LOG.error(
+            "三层产物不变量被破坏: 网络+元素隐藏 %d != 完整版 %d", _layer_n, _full_n
+        )
     if args.split_by_category:
         _emit_by_category(
             deduped,
