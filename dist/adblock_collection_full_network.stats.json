@@ -1,13 +1,13 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 602237,
+  "total": 602238,
   "by_category": {
-    "network": 602237
+    "network": 602238
   },
   "by_kind": {
     "network": 518103,
     "css": 76351,
-    "scriptlet": 7616,
+    "scriptlet": 7617,
     "html": 166,
     "js": 1
   },
@@ -18,7 +18,7 @@
     "ADrules Easylist": 75699,
     "217heidai adblockdns": 41386,
     "ADrules AdRules": 29117,
-    "AdGuard – Ads": 24318,
+    "AdGuard – Ads": 24319,
     "ADrules anti-AD": 17497,
     "ADrules EasyListChina": 17117,
     "StevenBlack Hosts": 6694,

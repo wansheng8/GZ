@@ -3,7 +3,7 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 779493,
+    "total_rules": 779494,
     "dns_domains": 541608,
     "source_counts": {
       "Hagezi DNS Pro Plus": 254256,
@@ -13,7 +13,7 @@
       "ADrules DNS (gp mirror)": 200103,
       "AdGuardSDNSFilter": 180696,
       "ADrules AdRules": 137642,
-      "AdGuard – Ads": 135644,
+      "AdGuard – Ads": 135666,
       "Anti-AD Domains": 107600,
       "Shadowrocket to AdGuardHome": 99982,
       "Anti-AD (adguard)": 99423,
@@ -69,7 +69,7 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 602237,
+      "network": 602238,
       "privacy": 48816,
       "phishing": 36678,
       "annoyance": 30758,
@@ -83,7 +83,7 @@
   },
   "diff": {
     "total_rules": {
-      "current": 779493,
+      "current": 779494,
       "previous": null,
       "delta": null,
       "percent": null
@@ -95,5 +95,6 @@
       "percent": null
     }
   },
-  "previous": null
+  "previous": null,
+  "enhancements": {}
 }

@@ -3,9 +3,9 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "dns_eligible_network_rules": 543403,
-  "dns_rejected_network_rules": 236090,
+  "dns_rejected_network_rules": 236091,
   "by_eligibility": {
-    "REJECT": 236090,
+    "REJECT": 236091,
     "SAFE": 543168,
     "CONDITIONAL": 235
   },
@@ -19,7 +19,7 @@
     "navigation_domain_modifier": 202,
     "regex_or_redirect_rule": 621,
     "non_blocking_modifier": 4647,
-    "script_rule": 10801,
+    "script_rule": 10802,
     "non_network_rule": 188,
     "pure_domain_modifier": 1378
   }
