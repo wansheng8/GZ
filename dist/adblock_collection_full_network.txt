@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 602238
+! Total Rules: 602213
 ! ------------------------------------------
 &rb=&uuid=$third-party
 &subaffid=%$subdocument,third-party
@@ -61218,10 +61218,8 @@ _800x80_
 ||doubleclick.com^
 ||eroterest.net^$third-party
 ||ip-adress.com^$third-party
-||jango.com^$third-party
 ||partner.video.syndication.msn.com^$~object,third-party
 ||redventures.io^$script,subdocument,third-party,xmlhttprequest
-||simplyhired.com^$third-party
 ||2mdn-cn.net^
 ||admob-cn.com^
 ||doubleclick-cn.net^
@@ -61740,7 +61738,6 @@ _800x80_
 ||cache.myth.dev^
 ||caffeine.tv/embed/$third-party
 ||campaigns.williamhill.com^
-||capital.com/widgets/$third-party
 ||careerwebsite.com/distrib_pages/jobs.cfm?
 ||carfax.com/img_myap/
 ||cas.*.criteo.com^
@@ -61869,7 +61866,6 @@ _800x80_
 ||instant-gaming.com/affgames/
 ||jam.hearstapps.com/js/renderer.js
 ||jinx.com/content/banner/
-||jobs.sciencecareers.org^$subdocument,third-party
 ||jobtarget.com/distrib_pages/
 ||js.kkraw.com^
 ||js.manga1001.win^
@@ -61938,7 +61934,6 @@ _800x80_
 ||pb.s3wfg.com^
 ||perfectmoney.com/img/banners/
 ||piratecat.online/ads/
-||play-asia.com^$image,subdocument,third-party
 ||playgama.com/ads/
 ||plus.net/images/referrals/
 ||pngmart.com/files/10/Download-Now-Button-PNG-Free-Download.png
@@ -64148,7 +64143,6 @@ $third-party,xmlhttprequest,domain=mega4upload.net
 ||softcab.com/google.php?
 ||sonichits.com/tf.php
 ||sorcerers.net/images/aff/
-||soundcloud.com/audio-ads?
 ||soundstageultra.com/images/banners/
 ||sourceforge.net/about/sitewide_top?source=
 ||southfloridagaynews.com/images/banners/
@@ -64269,7 +64263,6 @@ $third-party,xmlhttprequest,domain=mega4upload.net
 ||x.castanet.net^
 ||xcity.org/wp-content/themes/NewsPulse/images/banner300.jpg
 ||xcitypass.com/wp-content/themes/NewsPulse/images/banner728.jpg
-||xing.com/xas/
 ||xinhuanet.com/s?
 ||yandex.com/ads/system/context.js
 ||yimg.com/aaq/benji/benji-
@@ -136156,7 +136149,6 @@ zzztube.com,me-gay.com,gaysuperman.com##.mobile-random
 ||plaitluctual.com^
 ||planner.tiscali.it^
 ||plarimoplus.com^
-||play-asia.com^$image,subdocument,3p
 ||player.twitch.tv/js/embed/v1.js$domain=wago.io|uesp.net
 ||player.twitch.tv^$domain=aetherhub.com
 ||player.urdupoint.com^
@@ -136985,8 +136977,6 @@ zzztube.com,me-gay.com,gaysuperman.com##.mobile-random
 ||sexvid.*/rrt/xd.js
 ||sexvid.*/ysla/
 ||sexyfuckgames.com/includes/*.php
-||seznam.cz/*/*/js/*?nocache=1^$domain=www.seznam.cz
-||seznam.cz/*/static/*/*?nocache=1^$domain=www.seznam.cz
 ||seznamzpravy.cz/*/static/js/*^$domain=seznamzpravy.cz
 ||seznamzpravy.cz^$removeparam=dop_ab_variant
 ||seznamzpravy.cz^$removeparam=dop_id
@@ -137144,7 +137134,6 @@ zzztube.com,me-gay.com,gaysuperman.com##.mobile-random
 ||skypie.info^
 ||skypipevatican.com^
 ||skyrock.net/img/*/adblock/
-||slashdot.org/ajax.pl?op=nel|
 ||slashlook.com/_resource/html/_bloggerAdsBottom.html
 ||slashlook.com/_resource/html/_bloggerAdsInline1.html
 ||slatterflowers.com^
@@ -284578,25 +284567,25 @@ analytics-*.aasaam.com
 ||af6ca65844.com^
 ||anarchyedmond.shop^
 ||behearmyiasis.cfd^
+||binomycremes.shop^
+||bolanenst.shop^
+||britetammies.cfd^
+||crtsjbsjgvtrl.space^
 ||exogamygironde.shop^
 ||gduvsrewmvikj.space^
+||glophething.cfd^
 ||jdzbabgbhq.com^
 ||nabekdbrk.com^
 ||old-make.pro^
 ||phytomapearlstungs.qpon^
 ||rbbeggfihugwgp.com^
+||tiniestseethes.cfd^
+||zeismpurpie.shop^
 ||zqfjqsubxsazb.online^
 ||zsghgqdtkrarp.website^
 trace.moe##.sponsor-module__2LoZHG__sponsor
 ||acirurknejixq.website^
-||binomycremes.shop^
-||bolanenst.shop^
-||britetammies.cfd^
-||crtsjbsjgvtrl.space^
 ||diaperstackies.cfd^
-||glophething.cfd^
-||tiniestseethes.cfd^
-||zeismpurpie.shop^
 /killcovid2021\.com/\d\.mp4/$mp4
 dmhy.org###pkpk
 dmhy.org##div[id*="_ad"]
@@ -565901,7 +565890,6 @@ srt.am##+js(nowebrtc)
 srt.am##+js(aopr, RunAds)
 ||srt.am/sw.js$script,1p
 adyou.*##+js(aeld, /^(?:click|mousedown)$/, bypassEventsInProxies)
-||fbs.com^$3p
 123link.*##+js(aopr, jQuery.adblock)
 123link.*##+js(acs, $, test-block)
 123link.*##+js(acs, $, adi)
@@ -568401,8 +568389,6 @@ lookmovie.ag.w3snoop.com##.ezoic-ad
 streamhentaimovies.com##+js(nostif, pum-open)
 ||p-cdn.us/public/*$media,redirect=noopmp3-0.1s,domain=soundcloud.com
 ||sndcdn.com/audio/*$media,redirect=noopmp3-0.1s,domain=soundcloud.com
-||soundcloud.com/audio-ad$1p,xhr
-||soundcloud.com/promoted$1p,xhr
 soundcloud.com##.soundList__item:has(.sc-promoted-icon-medium)
 *expires$media,redirect=noopmp3-0.1s,domain=kabeleins.de
 *expires$media,redirect=noopmp3-0.1s,domain=kabeleinsdoku.de
@@ -569002,7 +568988,6 @@ rainanime.*##.fake_player
 watson.de##[data-ad]
 activistpost.com##+js(aopr, XMLHttpRequest)
 activistpost.com##+js(aopr, String.fromCharCode)
-||activistpost.com^$script,1p
 hackedonlinegames.com##+js(nostif, _0x)
 crunchyroll.com##+js(nosiif, onAdVideoStart)
 crunchyroll.com###template_skin_leaderboard
@@ -570290,7 +570275,6 @@ bigbrothercanada.ca##.video-adTile
 bigbrothercanada.ca##.adWrapper
 newtorrentgame.com##^script:has-text('shift')
 newtorrentgame.com##^script:has-text(\'shift\')
-||allbloggingtips.com^$3p
 sunbtc.space##+js(set, adBlock, false)
 suanoticia.online##+js(nano-sib)
 bibliotechsuper.com##[href="https://bibliotechsuper.com/"]
@@ -571169,7 +571153,6 @@ forum.dji.com##+js(set, sensorsDataAnalytic201505.track, noopFunc)
 macrotrends.net##+js(set, clicky, {})
 macrotrends.net##+js(set, clicky.goal, noopFunc)
 code.world##+js(set, WURFL, {})
-||services.haaretz.co.il^$from=~haaretz.co.il|~haaretz.com
 topgear.com##+js(set, _sp_.config.events.onSPPMObjectReady, noopFunc)
 imasdk.googleapis.com##+js(no-xhr-if, worldsurfleague.com, war:noop-vmap1.0.xml)
 eservice.directauto.com##+js(set, gtm, {})
@@ -573376,8 +573359,6 @@ betarena.cz###lightbox-search > p:has(> strong > img[src^="/img/poker"])
 ||svetapple.sk/*/ecophone-banner.jpg
 ||sport.cz/*/static/js/ssp.js
 nasezahrada.com##.leaderboard-banner
-||seznam.cz/*/v2/vast?
-||seznam.cz/*/static/js/ssp.js
 seznamzpravy.cz##div[style^="max-width:"][style*="480px;"]
 svetapple.sk##figure:has(> figcaption:contains(Reklama))
 megaknihy.cz##.small_vertical_banner_container
@@ -589624,14 +589605,12 @@ porngun.net###player-container > #video-pause
 vpnranks.com###sticky-banner
 ||compare.thecrazytourist.com/*/javascripts/intent_media_sca_ads.js
 gematsu.com##iframe[data-src^="https://www.play-asia.com/"][data-src*="iframe_banner-"]
-||play-asia.com/*iframe_banner-$domain=gematsu.com
 erome.com##.free-space
 ||erome.com/35.js
 hdporncomics.com###sidebar-right > #text-3
 hdporncomics.com###sidebar-right > #custom_html-9
 ||analyticsindiamag.com/wp-content/uploads/2019/02/Blue_03.jpg
 analyticsindiamag.com##.textwidget > p > a[rel="nofollow external noopener noreferrer"] > img
-||activistpost.com/*/*.jpg$script
 flyingmag.com##.arcAdsContainer
 flyingmag.com##.article_ad_text
 techgenix.com##.pp_ads_single_before_related
@@ -595395,10 +595374,8 @@ wss://loader.*.com/ws^$3p
 /AdServer/*$popup,3p
 ?dovr=true$popup,3p
 ||bannersnack.net^$3p,domain=~bannersnack.dev
-||jango.com^$3p
 ||partner.video.syndication.msn.com^$~object,3p
 ||redventures.io^$script,subdocument,3p,xhr
-||simplyhired.com^$3p
 /(https?:\/\/)\w{30,}\.me\/\w{30,}\./$script,3p
 ||142.91.$popup,3p,domain=~in-addr.arpa
 ||172.255.6.$popup,3p,domain=~in-addr.arpa
@@ -595411,7 +595388,6 @@ wss://loader.*.com/ws^$3p
 ||blufm.de/pr/$3p
 ||bookingdragon.com^$subdocument,3p
 ||caffeine.tv/embed/$3p
-||capital.com/widgets/$3p
 ||cdnpub.info^$subdocument,3p,domain=~iqbroker.co|~iqbroker.com|~iqoption.co.th|~iqoption.com|~tr-iqoption.com
 ||cpkshop.com/campaign/$3p
 ||ddownload.com/images/promo/$3p
@@ -595424,7 +595400,6 @@ wss://loader.*.com/ws^$3p
 ||github.io/*/invoke.js$3p
 ||graph.org/file/$3p
 ||hostmonster.com/src/js/$3p
-||jobs.sciencecareers.org^$subdocument,3p
 ||kinguin.net/affiliatepluswidget/$3p
 ||lawdepot.com/affiliate/$3p
 ||legitonlinejobs.com/images/$3p

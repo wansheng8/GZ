@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 30762
+! Total Rules: 30758
 ! ------------------------------------------
 ||*static*^$app=com.dragon.read,important
 ||*sealaly*^$app=com.dragon.read,important
@@ -1052,7 +1052,6 @@ thebetterindia.com##.vspl__gtap-notification-overlay
 ||realclearpolitics.com^*/widget_wrapper_$third-party
 ||riddle.com/embed/$domain=evoke.ie|mentalfloss.com
 ||s3.amazonaws.com/scripts.hellobar.com/$third-party
-||slashdot.org^$third-party
 ||swiftypecdn.com^$third-party,domain=~swiftype.com
 ||systeme.io^$third-party
 ||tapcdn.com/mosaic/tap_button.js
@@ -1065,7 +1064,6 @@ thebetterindia.com##.vspl__gtap-notification-overlay
 ||ui-widgets.preezie.io/apps/widget/preezie-cta.esm.js
 ||vuukle.com/widgets/quiz.html$third-party
 ||webme.com/designs/globals/snow2.js
-||weworkremotely.com^$third-party
 ||widget.gleamjs.io^$script,third-party,domain=~gleam.io
 ||widget.pico.tools^$third-party
 ||wishpond.com^$third-party,domain=~markanthonywineandspirits.ca
@@ -23254,13 +23252,11 @@ epayitalia.it##.cookies-text
 ||news.atptour.com/p/$subdocument
 ||nscreenmedia.com/wp-content/uploads/subscribe-nscreen-newsletter.jpg
 ||omniform1.com^$domain=yourcelebritymagazines.com
-||p.ynet.co.il^$subdocument
 ||p2a.co/embed/widget/app/$domain=thefire.org
 ||researchnews.cc/subscribe.html
 ||scmp.com/misc/inkstone_sub_widget/
 ||sibforms.com/serve/$domain=maidenhead-advertiser.co.uk|sloughexpress.co.uk
 ||smartbrief.com/TheForecast?$subdocument
-||subscriptions.cbc.ca^$xmlhttprequest
 ||tdgardenapps.com/countdown/2024_Game_Clock.html$subdocument
 ||thejewishstar.com/images/enews-ad.png
 ||tinypass.com^$domain=artnews.com|bbc.com|bbcgoodfood.com|billboard.com|brusselstimes.com|businessinsider.com.pl|connexionfrance.com|deadline.com|hollywoodreporter.com|nationalobserver.com|npr.org|outsideonline.com|prospectmagazine.co.uk|rawstory.com|refinery29.com|rollingstone.com|sifted.eu|stuff.co.nz|telegraph.co.uk|the42.ie|thedailybeast.com|thelogic.co|thenation.com|variety.com|wwd.com

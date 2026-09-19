@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 32
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 28
 :: adobe-campaign.com
 :: agechecker.net
 :: ageverif.com
@@ -18,17 +18,13 @@
 :: lifteragecheck.com
 :: mail.bonnier-subscriptions.com
 :: onetrust.com
-:: p.ynet.co.il
 :: placehold.it
 :: printfriendly.com
 :: privacidade.integra.global
 :: privally.global
 :: purch.com
-:: slashdot.org
 :: snssdk.com
-:: subscriptions.cbc.ca
 :: systeme.io
 :: tidiochat.com
 :: usercentrics.eu
-:: weworkremotely.com
 :: widget.pico.tools

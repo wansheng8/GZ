@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 24196
+! Total Rules: 24194
 ! ------------------------------------------
 ###stickyCookieBar
 ##.cookiebar-bar:not(body):not(html)
@@ -23646,8 +23646,6 @@ cmp.faktor.mgr.consensu.org$domain=~consent.talpanetwork.com
 /sibbo-cmp-core.js$domain=~atresplayer.com
 ||gravito.net/alehdetcmp$script
 /sibbo-cmp-loader.js
-||seznam.cz/js/cmp2/scmp.js$script
-||seznam.cz/js/cmp2/scmp-external.js$script
 ||gofundme.com/js/3.0/visitorCookie.js$script
 /CookiesDirective
 CookieAccept/affirmation.js

@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 48845
+! Total Rules: 48814
 ! ------------------------------------------
 &&sub19=undefined&sub20=undefined
 &action=js_stats
@@ -3948,7 +3948,6 @@ omni.soundestlink.com$image
 ||logrocket.com^$third-party
 ||mgln.ai^$~media,third-party
 ||pdst.fm^$script,third-party
-||proofpoint.com^$third-party
 ||questionpro.com^$third-party,domain=~questionpro.com.au|~questionpro.eu
 ||scarf.sh^$third-party
 ||sellsy.com^$third-party,domain=~sellsy.fr
@@ -6565,7 +6564,6 @@ omni.soundestlink.com$image
 ||surfer.com/.api/admiral
 ||amazonaws.com/cdn.aimtell.com/
 ||aswpsdkus.com^
-||pushbullet.com^$third-party
 ||pushmaster-cdn.xyz^
 ||urbanairship.com^
 ||google-analytics-cn.com^
@@ -6592,7 +6590,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||tracking*.euroads.fi^$third-party
 ||dcdn.lt/g.js
 ||naanalle.pl^
-||sas.com^$third-party
 -client-tracking.goodgamestudios.com/
 -wrapper-analytics-prod.cloudfunctions.net/
 ||1.1.1.1/cdn-cgi/trace
@@ -7951,7 +7948,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||prf.vagnt.com^
 ||pricespider.com/impression/
 ||primedia.co.za/analytics/
-||primer.typekit.net^$xmlhttprequest
 ||privacy.outdoorsg.com^
 ||processor.asccommunications.com^
 ||prod.benchmarkemail.com/tracker.bundle.js
@@ -9998,7 +9994,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||api.meetup.com/pico/v4/web-events
 ||api.samsungfind.com/log-collector
 ||api.streamelements.com/science/
-||api.takealot.com^$ping
 ||api.thefantazy.com/web-vitals
 ||api.tsc.ca/Tracking/v1/events/
 ||api.vk.com/method/statEvents.
@@ -10124,7 +10119,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||c.fingerprint.com^
 ||c.gq.com^
 ||c.newyorker.com^
-||c.paypal.com^$image,script
 ||c.thredup.com^
 ||c.vanityfair.com^
 ||c.vogue.com^
@@ -10139,7 +10133,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||camxpress.com/api/metrics
 ||canstockphoto.com/server.php?rqst=track
 ||canva.com/_ajax/ae/createBatch
-||capital.com^$ping
 ||capitalone.com/collector/
 ||cargurus.com/cars/cganalyticspageview.action
 ||cargurus.com/tr/
@@ -10878,7 +10871,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||mdt.crateandbarrel.com^
 ||me-qr.com/metrics/
 ||me-qr.com/statistic/collect/
-||medal.tv^$ping
 ||media.io/trk
 ||medium.com/_/batch
 ||meduza.io/stat/
@@ -11281,7 +11273,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||saa.insideedition.com^
 ||samsung.com/us/web/internal/logger
 ||sapi.tremendous.com^
-||scholar.google.com^$ping
 ||sciencechannel.com/events/
 ||scloud.online/stat/
 ||scoot.co.uk/ajax/log_
@@ -11340,9 +11331,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||slack.com/beacon/
 ||slack.com/clog/track/
 ||slant.co/js/track.min.js
-||slashdot.org/country.js
-||slashdot.org/images/js.gif
-||slashdot.org/software/$image
 ||slickdeals.net/ajax/stats/
 ||slipstream.skyscanner.net^
 ||smartlink-api.amuse.io/api/analytics/
@@ -11358,7 +11346,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||solarwinds.com/ra-$script
 ||solidcams.com/api/metrics
 ||sortlist.cloud/log
-||soundcloud.com^$ping
 ||source.chromium.org/v1/logging
 ||sourcesync.io/analytics
 ||southwest.com/api/logging/v1/logging/
@@ -11851,7 +11838,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||wellsfargo.com/dti_apg/
 ||wellsfargo.com/jenny/
 ||wellsfargo.com/tracking/
-||weworkremotely.com/listing_ads/8/impression?
 ||wfinterface.com/tracking/$domain=wellsfargo.com
 ||wh.ipaddress.com^
 ||whattomine.com/stats
@@ -11877,7 +11863,6 @@ $third-party,xmlhttprequest,domain=opensubtitles.org
 ||xhamster.com/api/$ping
 ||xhamster.com/api/v1/player/metrics
 ||xhamsterlive.com/pixel/
-||xing.com/logjam/
 ||xnxx.com/picserror/
 ||xnxx.tv/picserror/
 ||xp.apple.com/config/*/report/
@@ -43426,7 +43411,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||as.mirapodo.de^
 ||as.mytoys.de^
 ||as.yomonda.de^
-||autoscout24.de^$ping
 ||aw.perlesandco.com^
 ||basicthinking.de/stats/
 ||behave.sn.at^
@@ -43534,9 +43518,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||nickles.de/ivw/
 ||nius.de/monitoring
 ||ostjob.ch/public/statistic/teaser/hit/
-||otto.de/error-logging/
-||otto.de/pass/scale-beacon-service/
-||otto.de^$ping
 ||oxifwsabgd.nzz.ch^
 ||pi.technik3d.com^
 ||pixel.ionos.de^
@@ -43597,9 +43578,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||tarnkappe.info^$ping
 ||taz.de/count/
 ||telemetry.portal.voltdeutschland.org^
-||teltarif.de/scripts/ttt.js
-||teltarif.de/scripts/ttt.v2.js
-||teltarif.de^$ping
 ||tgw.gmx.ch^
 ||tgw.gmx.net^
 ||tgw.web.de^
@@ -43665,15 +43643,12 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||wa.gmx.ch^
 ||wa.gmx.net^
 ||wa.web.de^
-||walbusch.de^$ping
 ||weltbild.de/tracking/
 ||werkenntdenbesten.de/js/tracking.
 ||werkenntdenbesten.de/pd.js
 ||wikipedia.de/tracking.js
-||witt-weiden.de^$ping
 ||wlw.de/unified_search_backend/api/v1/tracking/
 ||wnoz.de/nieyohh8.js
-||xing.com^$ping
 ||ymprove.gmx.net^
 ||ymprove.web.de^
 ||zooplus.de/om/pxl/
@@ -44506,7 +44481,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||logapi.alza.cz^
 ||o2.cz^*-ga_o2cz_bundle.js?
 ||sa.kolik.cz^
-||seznam.cz^$ping
 ||stat.super.cz^
 ||statistics.csob.cz^
 ||xtv.cz/api/v3/log/
@@ -44603,7 +44577,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||cellstats.mako.co.il^
 ||ds.haaretz.co.il^
 ||inn.co.il/Controls/HPJS.ashx?act=log
-||services.haaretz.co.il^$ping
 ||stats.mako.co.il^
 ||walla.co.il/CountsHP.asp?
 ||walla.co.il/impression/
@@ -44736,7 +44709,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||virgilio.it/js/web-vitals-evnt/tracking.js
 ||vistanet.it^*/category_event.js
 ||volkswagen-italia.it^*/tracking/
-||vvvvid.it^$ping
 ||yachtingnetwork.it/stat/
 ||abema-tv.com/v1/stats/
 ||ad-bls-tracking.lemino.docomo.ne.jp^
@@ -45053,7 +45025,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||sapo.pt/Projects/sapoabd/
 ||sdk-analytics-web.cloud.itau.com.br^
 ||sinonimos.com.br/hits.php
-||standvirtual.com^$ping
 ||stats.uniplaces.com^
 ||strapi.clickjogos.com.br^
 ||sympla.com.br/api/event-bff/tracking/
@@ -45285,7 +45256,6 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||blocket.se/js/trafikfonden.js
 ||bonmed.se/monitoring?
 ||falkenbergtorget.se/sc.gif?
-||fotbollskanalen.se^$ping
 ||fusion.bonniertidskrifter.se^
 ||gx.idg.se^
 ||prisjakt.nu/js.php?p=trafikfonden
@@ -47002,7 +46972,6 @@ $removeparam=ri,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.
 ||yomiuri.co.jp^$removeparam=ref
 ||sponichi.co.jp^$removeparam=nid
 ||sponichi.co.jp^$removeparam=ref
-||medal.tv^$removeparam=invite
 ||rumble.com^$removeparam=e9s
 ||rumble.com^$removeparam=sci
 ||bookbang.jp^$removeparam=ui_campaign

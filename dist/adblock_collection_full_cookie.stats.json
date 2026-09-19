@@ -1,15 +1,15 @@
 {
   "name": "adblock_collection_full_cookie",
-  "total": 24196,
+  "total": 24194,
   "by_category": {
-    "cookie": 24196
+    "cookie": 24194
   },
   "by_kind": {
     "css": 22900,
-    "network": 1296
+    "network": 1294
   },
   "by_source": {
-    "ADrules I-Dont-Care-About-Cookies": 24189,
+    "ADrules I-Dont-Care-About-Cookies": 24187,
     "Fanboy CookieMonster": 7
   }
 }
