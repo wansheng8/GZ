@@ -1,4 +1,10 @@
 ! Adblock Rule Collection (Full) (jsDelivr part 02)
+||switluxent-system.com^
+||switshburgutrbes.club^
+||switzerlandu.web.app^
+||switzertravels.com^
+||swizzlebiz.biz^
+||swjzb.com^
 ||swmwater.it^
 ||swobodnyswiatlamero.site^
 ||swobodnywyborvxkqrdlacodziennegozycia.site^
@@ -29832,7 +29838,6 @@ pentest.blog##+js(acs, atob, new )
 ||soundcloudapp.com^$all
 ##body[data-clipboard-code] > .main-wrapper
 ||get-verification.to^$all
-||interseq.at^
 /captcha/api|$script,3p
 ##html > .cfmd-shadow-host
 ||guildpass.one^$doc,reason=malicious
@@ -114335,4 +114340,3 @@ xn--d1aqfkf.xn--p1ai
 ||zrr.kr/ggzA^$all
 ||zrr.kr/rsqK^$all
 fe00::0		ip6-localnet
-||www.classeroom.com^

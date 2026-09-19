@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 602222
+! Total Rules: 602227
 ! ------------------------------------------
 &rb=&uuid=$third-party
 &subaffid=%$subdocument,third-party
@@ -162865,6 +162865,7 @@ _box_ad_
 ||eqothv.degrenne.fr^
 ||eqrqq.brilliance.com^
 ||eqsdv.everlane.com^
+||eqtkbdzdzexmk.site^
 ||equilibrios.ga^
 ||equilist.raj-ohlavek.cz^
 ||equipamentos.karcher-center-dikmaq.com.br^
@@ -164630,6 +164631,7 @@ _box_ad_
 ||fjucj.livora.co^
 ||fjvmj.dilettoso.com^
 ||fjxadi.maxi-pieces-50.fr^
+||fk0hwmdoh.com^
 ||fkakp.ekster.com^
 ||fkgmi.respshop.com^
 ||fkihr.wantable.com^
@@ -175187,6 +175189,7 @@ _box_ad_
 ||internwise.fr^
 ||interpretation-reves.fr^
 ||interreklame.de^
+||interseq.at^
 ||intertech.co.jp^
 ||intevry.fr^
 ||intlsst.zagg.com^
@@ -177754,6 +177757,7 @@ _box_ad_
 ||linux.unitys3d.com^
 ||linux2.googlerenewals.net^
 ||lio.aiservice.vn^
+||liohkiizoylww.online^
 ||lion-acc.ing.de^
 ||lion-test.ing.de^
 ||lion.ing.de^
@@ -230363,6 +230367,7 @@ _box_ad_
 ||www.cidersunjt.com^
 ||www.ciscopowerofpartnership.com^
 ||www.cjkassociates.co.in^
+||www.classeroom.com^
 ||www.cleanvvlife.com^
 ||www.cleanvvmagic.com^
 ||www.clearacreonline.com^
@@ -284598,6 +284603,7 @@ analytics-*.aasaam.com
 ||torvind.com^
 ||a4.overclockers.ua^
 ||novunu.football-plyus.net^
+||agzyvvhjbkdwm.website^
 /killcovid2021\.com/\d\.mp4/$mp4
 dmhy.org###pkpk
 dmhy.org##div[id*="_ad"]
@@ -602227,4 +602233,3 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_mobile
 ||mobilemaps-pa.googleapis.com/google.internal.mothership.maps.mobilemaps.ads.v1.MobileMapsAdsService/ListPromotedPinAds^
 ||mangaapi.manhuaren.com/*/public/getRecommendedGame^
 fe00::0		ip6-localnet
-||www.classeroom.com^

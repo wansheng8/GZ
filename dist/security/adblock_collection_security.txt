@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 46169
+! Total Rules: 46168
 ! ------------------------------------------
 ||avito.avito.avito.
 .com-id*.info^
@@ -591,7 +591,6 @@ pentest.blog##+js(acs, atob, new )
 ||soundcloudapp.com^$all
 ##body[data-clipboard-code] > .main-wrapper
 ||get-verification.to^$all
-||interseq.at^
 /captcha/api|$script,3p
 ##html > .cfmd-shadow-host
 ||guildpass.one^$doc,reason=malicious

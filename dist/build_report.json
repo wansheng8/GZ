@@ -3,15 +3,15 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 779479,
-    "dns_domains": 541594,
+    "total_rules": 779483,
+    "dns_domains": 541598,
     "source_counts": {
       "Hagezi DNS Pro Plus": 254256,
       "oisd": 247362,
       "217heidai adblockdns": 215846,
-      "ADrules DNS": 200001,
-      "ADrules DNS (gp mirror)": 200001,
-      "AdGuardSDNSFilter": 180660,
+      "ADrules DNS": 200103,
+      "ADrules DNS (gp mirror)": 200103,
+      "AdGuardSDNSFilter": 180696,
       "ADrules AdRules": 137642,
       "AdGuard – Ads": 135644,
       "Anti-AD Domains": 107600,
@@ -20,9 +20,9 @@
       "ADrules anti-AD": 93831,
       "Anti-AD Easylist": 93831,
       "Anti-AD (easylist)": 93831,
+      "EasyList (ABP)": 82012,
+      "EasyList (easylist.to)": 82012,
       "ADrules Easylist": 82009,
-      "EasyList (ABP)": 82009,
-      "EasyList (easylist.to)": 82009,
       "StevenBlack Hosts": 80181,
       "Phishing URL Blocklist": 67645,
       "ADrules EasyPrivacy": 56111,
@@ -37,8 +37,8 @@
       "ADrules HalfLife": 22333,
       "HalfLife list (jsdelivr)": 22333,
       "AdGuard – Chinese": 21998,
+      "EasyList China (ABP)": 18993,
       "ADrules EasyListChina": 18992,
-      "EasyList China (ABP)": 18992,
       "Fanboy Social": 13840,
       "Dan Pollock's hosts": 13087,
       "10007_auto reward": 12433,
@@ -69,27 +69,27 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 602222,
+      "network": 602227,
       "privacy": 48816,
       "phishing": 36678,
       "annoyance": 30758,
       "cookie": 24194,
       "whitelist": 13784,
       "social": 13526,
-      "malware": 9491,
+      "malware": 9490,
       "css": 10
     },
-    "root_domain_blocks": 324776
+    "root_domain_blocks": 324780
   },
   "diff": {
     "total_rules": {
-      "current": 779479,
+      "current": 779483,
       "previous": null,
       "delta": null,
       "percent": null
     },
     "dns_domains": {
-      "current": 541594,
+      "current": 541598,
       "previous": null,
       "delta": null,
       "percent": null
