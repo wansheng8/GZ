@@ -1,0 +1,4 @@
+# Adblock Rule Collection (Security)
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 2
+badmalware.example
+evil-phish.example

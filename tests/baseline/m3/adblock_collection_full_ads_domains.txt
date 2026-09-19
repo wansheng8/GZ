@@ -1,0 +1,7 @@
+# Adblock Rule Collection (Full) (ads)
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 5
+ads.example
+bare.example
+gone.example
+hosts.example
+shared.example

@@ -3,16 +3,24 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from _baseline_fixture import build_fixture  # noqa: E402
+from _baseline_fixture import build_default_fixture, build_fixture  # noqa: E402
 
 from adblock_collection.baseline import compare_baseline  # noqa: E402
 
 GOLDEN = Path(__file__).parent / "baseline" / "m2"
+GOLDEN_DEFAULT = Path(__file__).parent / "baseline" / "m3"
 
 
 def test_fixture_build_matches_golden(tmp_path):
     out = build_fixture(tmp_path)
     diff = compare_baseline(GOLDEN, out)
+    assert diff.passed, [f.to_dict() for f in diff.mismatches]
+
+
+def test_default_build_matches_golden(tmp_path):
+    """M3：四项增强默认开启时的产物字节基线。"""
+    out = build_default_fixture(tmp_path)
+    diff = compare_baseline(GOLDEN_DEFAULT, out)
     assert diff.passed, [f.to_dict() for f in diff.mismatches]
 
 

@@ -1,0 +1,17 @@
+[Adblock Plus 2.0]
+! Title: Adblock Rule Collection (DNS-domain rules)
+! Description: DNS 等价域名阻断：整域 ||domain^ 纯域名规则，无修饰符，浏览器与 DNS 端均可导入
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 9
+! ------------------------------------------
+||ads.example^
+||analytics.example^
+||badmalware.example^
+||bare.example^
+||evil-phish.example^
+||gone.example^
+||hosts.example^
+||shared.example^
+||tracker.example^

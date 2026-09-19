@@ -5,8 +5,11 @@
 入口命令（与 CI 完全一致）：
 
 ```bash
-python3 -m adblock_collection build --out dist --split-by-category --redundant
+python3 -m adblock_collection build --out dist --split-by-category
 ```
+
+> M3 起四项规则增强默认开启；`--no-alias-normalize` / `--no-resolve-conflicts` /
+> `--no-per-rule-classify` / `--no-domain-fold` 可分别关闭，`--redundant` 仅作旧产物兼容。
 
 退出码约定：
 
@@ -26,11 +29,15 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 处理阶段均为 `(rules, ctx) -> rules` 纯函数，I/O 只出现在 `collect` 与 `emit`。
 
 ```
-配置加载 → 本地规则校验 → [Pipeline: collect → alias? → source_stats → dedupe
-        → allowlist → badfilter → classify? → arbitrate? → domain_fold? → redundant?]
+配置加载 → 本地规则校验 → [Pipeline: collect → alias → source_stats → dedupe
+        → allowlist → badfilter → classify → arbitrate → domain_fold → css_dedupe]
         → rules.jsonl → 多格式输出 → 血缘/关系图 → 上游健康报告 → 误杀回归
         → 质量门禁 → manifest → [字节基线比对?]
 ```
+
+> M3 起 `alias` / `classify` / `arbitrate` / `domain_fold` 默认进入阶段序列，
+> 由 `--no-*` 开关移除；`css_dedupe` 常开。`--redundant` 且 `--no-domain-fold` 时
+> 走旧版域名折叠，用于复现重构前产物。
 
 | 阶段 | 输入 | 执行位置 | 校验 | 产物 | 失败处置 |
 |------|------|----------|------|------|----------|
@@ -38,8 +45,8 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 | 2 本地规则校验 | `config/local_rules.txt` | `merge.validate_local_rules` | 无通配误伤（`##*`/`##body`/域通配/裸 `*`） | 校验报告（日志） | 有违规 → 返回 2 阻断发布 |
 | 3 上游收集 | 60 源 + mirror | `merge.collect`（线程池并行） | 失败源记录、过期缓存回退 | `.cache/sources/`、`sources_status.json` | 单源失败 → 容忍并记录；全源失败 → 产物为空 |
 | 4 合并去重 | 各源 Rule 列表 | `merge.dedupe` / `apply_allowlist` / `apply_badfilter` | 白名单精确放行、badfilter 抵消 | 去重后规则集 | 逻辑错误 → 测试兜底（tests/） |
-| 4b 规则增强（可选） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四个开关默认关闭；启用后逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
-| 5 冗余消除 | 去重后规则 | `remove_redundant_domains` / `remove_redundant_css` | 仅纯域名/纯类名归并 | 精简规则集 | 仅记录移除数，不阻断 |
+| 4b 规则增强（默认开启） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四项默认开启，`--no-*` 可分别关闭；逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
+| 5 冗余消除 | 去重后规则 | `domain_fold.fold_domains`（例外感知）/ `remove_redundant_css` | 仅纯域名/纯类名归并；CSS 去重常开 | 精简规则集 | 仅记录移除数，不阻断 |
 | 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库） | 损坏 → `safe_load` 回退内存规则集 |
 | 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版 | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量破坏 → 返回 3 |
 | 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
@@ -129,25 +136,31 @@ python3 -c "import json;d=json.load(open('dist/sources_status.json'));print('失
 
 ---
 
-## 阶段 4b：规则增强（开关，默认关闭）
+## 阶段 4b：规则增强（默认开启）
 
-四个增强 pass 均为纯函数，开关关闭时不进入阶段序列，产物与重构前一致：
+四个增强 pass 均为纯函数，M3 起默认进入阶段序列；用 `--no-*` 关闭后产物与重构前一致：
 
-| 开关 | 模块 | 行为 | 报告 |
-|------|------|------|------|
-| `--alias-normalize` | `aliases.normalize_aliases` | 折叠 `xmlhttprequest→xhr`、`doc→document`、`ghide/elemhide→generichide`，使别名不同的同一规则可去重 | `build_report.json#enhancements.alias_normalize` |
-| `--per-rule-classify` | `rules.classify_per_rule` | 逐条按「安全类 > 隐私/社交等具体类 > url」扫描原文与域名，安全信号与泛化提示可覆盖上游类别提示 | `build_report.json#enhancements.per_rule_classify` |
-| `--resolve-conflicts` | `arbitrate.arbitrate` | 同一整域目标按「整域全局例外 > `$important` 阻断 > 普通阻断」仲裁；作用域/路径例外不抵消整域阻断 | `arbitration.json`、`enhancements.resolve_conflicts` |
-| `--domain-fold` | `domain_fold.fold_domains` | 折叠被祖先域整域拦截覆盖的子域规则；子域有精确例外时保留 | `domain_fold.json`、`enhancements.domain_fold` |
+| 开关（默认开） | 关闭参数 | 模块 | 行为 | 报告 |
+|------|------|------|------|------|
+| `--alias-normalize` | `--no-alias-normalize` | `aliases.normalize_aliases` | 折叠 `xmlhttprequest→xhr`、`doc→document`、`ghide/elemhide→generichide`，使别名不同的同一规则可去重 | `build_report.json#enhancements.alias_normalize` |
+| `--per-rule-classify` | `--no-per-rule-classify` | `rules.classify_per_rule` | 逐条按「安全类 > 隐私/社交等具体类 > url」扫描原文与域名，安全信号与泛化提示可覆盖上游类别提示 | `build_report.json#enhancements.per_rule_classify` |
+| `--resolve-conflicts` | `--no-resolve-conflicts` | `arbitrate.arbitrate` | 同一整域目标按「整域全局例外 > `$important` 阻断 > 普通阻断」仲裁；作用域/路径例外不抵消整域阻断 | `arbitration.json`、`enhancements.resolve_conflicts` |
+| `--domain-fold` | `--no-domain-fold` | `domain_fold.fold_domains` | 折叠被祖先域整域拦截覆盖的子域规则；子域有精确例外时保留 | `domain_fold.json`、`enhancements.domain_fold` |
 
-**与 `--redundant` 的关系**：`remove_redundant_domains` 复用 `fold_domains(protect_exception_children=False)`，行为与改动前一致；`--domain-fold` 是例外感知版本，两者可同时开启（折叠幂等）。
+**与 `--redundant` 的关系**：`--redundant` 保留兼容，仅在 `--no-domain-fold` 时走旧版
+`remove_redundant_domains`（`fold_domains(protect_exception_children=False)`），用于复现
+重构前产物；默认路径由例外感知的 `--domain-fold` 完成折叠。
 
 **自检**：
 
 ```bash
-python3 -m adblock_collection build --out /tmp/dist-enhanced --split-by-category --redundant \
-  --alias-normalize --resolve-conflicts --per-rule-classify --domain-fold
-python3 -c "import json;print(json.load(open('/tmp/dist-enhanced/build_report.json'))['enhancements'])"
+# 默认（四项增强全开）
+python3 -m adblock_collection build --out /tmp/dist-default --split-by-category
+python3 -c "import json;print(json.load(open('/tmp/dist-default/build_report.json'))['enhancements'])"
+
+# 全关（复现重构前产物）
+python3 -m adblock_collection build --out /tmp/dist-off --split-by-category \
+  --no-alias-normalize --no-resolve-conflicts --no-per-rule-classify --no-domain-fold --redundant
 ```
 
 **dry-run 与字节基线**：
@@ -157,17 +170,17 @@ python3 -c "import json;print(json.load(open('/tmp/dist-enhanced/build_report.js
 python3 -m adblock_collection build --out /tmp/dry --dry-run
 
 # 与既有产物目录逐字节比对（忽略 sources_status.json 的 generated_at）
-python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --redundant \
-  --baseline dist
+python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --baseline dist
 ```
 
 ---
 
-## 阶段 5：冗余消除（--redundant）
+## 阶段 5：冗余消除
 
-**范围**：仅 `||a.com^` 这类纯域名阻断规则做父域归并；CSS 仅对「单域 + 纯类名」去重。复杂选择器（含逗号/属性/伪类）不参与，避免误删。
+**范围**：仅 `||a.com^` 这类纯域名阻断规则做父域归并（`--domain-fold`，例外感知）；
+CSS 仅对「单域 + 纯类名」去重（`css_dedupe`，常开）。复杂选择器（含逗号/属性/伪类）不参与，避免误删。
 
-**注意**：此阶段只减不加。若某次构建规则数异常增加且启用了 redundant，先检查是否为新增源贡献。
+**注意**：此阶段只减不加。若某次构建规则数异常增加，先检查是否为新增源贡献。
 
 ---
 

@@ -1,0 +1,7 @@
+[
+  {
+    "kind": "CROSS_SOURCE_DUPLICATE",
+    "a": "||shared.example^",
+    "b": "FixtureAds,FixturePrivacy"
+  }
+]

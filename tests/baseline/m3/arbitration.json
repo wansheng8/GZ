@@ -1,0 +1,10 @@
+[
+  {
+    "target": "ads.example",
+    "winner": "||ads.example^$important",
+    "losers": [
+      "||ads.example^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  }
+]

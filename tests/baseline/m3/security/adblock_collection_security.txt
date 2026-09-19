@@ -1,0 +1,10 @@
+[Adblock Plus 2.0]
+! Title: Adblock Rule Collection (Security)
+! Description: 安全类规则（malware, mining, phishing）独立发行
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 2
+! ------------------------------------------
+||badmalware.example^
+||evil-phish.example^

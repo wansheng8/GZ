@@ -11,9 +11,9 @@
 **触发**：GitHub Actions 每日 03:00 UTC 定时运行（`.github/workflows/build.yml`），main 分支 push 时若涉及代码也会触发。
 
 **CI 自动做的事**：
-1. 拉取仓库 → 安装开发依赖 → 运行 `python -m pytest -q`（含字节基线夹具比对）→ 用缓存下载源
-2. 执行构建命令 `python3 -m adblock_collection build --out dist --split-by-category --redundant`（CI 镜像中 `python` 与本地 `python3` 等价）
-3. 再以「增强开关全开」构建到 `/tmp/dist-enhanced`，校验四个增强报告均生成（`--alias-normalize --resolve-conflicts --per-rule-classify --domain-fold`），不产出正式 dist
+1. 拉取仓库 → 安装开发依赖 → 运行 `python -m pytest -q`（含 M2/M3 字节基线夹具比对）→ 用缓存下载源
+2. 执行构建命令 `python3 -m adblock_collection build --out dist --split-by-category`（四项增强默认开启；CI 镜像中 `python` 与本地 `python3` 等价）
+3. 再以「增强全关 + 旧 --redundant」构建到 `/tmp/dist-legacy`，校验退出开关路径与重构前字节基线（`--no-alias-normalize --no-resolve-conflicts --no-per-rule-classify --no-domain-fold --redundant`），不产出正式 dist
 4. 健康检查（规则数 < 30 万 或 失败源 ≥ 5 时输出 WARNING，不阻断）
 5. dist 有变化则自动提交 `chore: auto update filter lists [skip ci]` 并推送
 
@@ -45,18 +45,18 @@ for x in validate_local_rules(Path("config/sources.yaml")):
     print("违规:", x)
 PY
 
-# 3) 完整构建（CI 同款参数）
-python3 -m adblock_collection build --out dist --split-by-category --redundant
+# 3) 完整构建（CI 同款参数，四项增强默认开启）
+python3 -m adblock_collection build --out dist --split-by-category
 echo "exit=$?"   # 0=成功; 1=门禁/回归失败; 2=本地规则违规; 3=内部一致性失败
 
-# 4) 可选：增强开关全开验证（产物写临时目录，不影响 dist）
-python3 -m adblock_collection build --out /tmp/dist-enhanced --split-by-category --redundant \
-  --alias-normalize --resolve-conflicts --per-rule-classify --domain-fold
-python3 -c "import json;print(json.load(open('/tmp/dist-enhanced/build_report.json'))['enhancements'])"
+# 4) 可选：增强全关验证（产物写临时目录，不影响 dist）
+python3 -m adblock_collection build --out /tmp/dist-legacy --split-by-category \
+  --no-alias-normalize --no-resolve-conflicts --no-per-rule-classify --no-domain-fold --redundant
+python3 -c "import json;print(json.load(open('/tmp/dist-legacy/build_report.json')).get('enhancements', {}))"
 
 # 5) 可选：dry-run 与字节基线（dry-run 不写产物；baseline 逐字节比对）
 python3 -m adblock_collection build --out /tmp/dry --dry-run
-python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --redundant --baseline dist
+python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --baseline dist
 ```
 
 **构建后自检清单**（6 项）：
@@ -116,7 +116,7 @@ curl -s -o /dev/null -w "%{http_code}\n" --max-time 25 "新源URL"   # 期望 20
 python3 -m adblock_collection sources | awk '{print $4}' | sort | uniq -d   # 应无输出
 
 # 3) 手动构建（见第 2 节）
-python3 -m adblock_collection build --out dist --split-by-category --redundant
+python3 -m adblock_collection build --out dist --split-by-category
 echo "exit=$?"
 ```
 
@@ -128,7 +128,7 @@ echo "exit=$?"
 **注意**：
 - 新增「加速类 hosts 源」会破坏访问，禁止（历史教训：加速 hosts 源导致站点无法打开）。
 - 已知持续失败的源（GOODBYEADS / HalfLife ad）可容忍，不阻断。
-- **不要**随意用不同参数构建覆盖 dist（如不带 `--redundant`），否则 dist 与 CI 不一致（历史教训）。
+- **不要**随意改构建参数覆盖 dist（本地构建须与 CI 同款：`--split-by-category`，四项增强默认开启），否则 dist 与 CI 不一致（历史教训）。
 
 **完成判定**：门禁通过、回归 0 违规、dist 产物正确，提交 `config/sources.yaml` + dist。
 
@@ -143,7 +143,7 @@ echo "exit=$?"
 ```bash
 # 1) 编辑 config/false_positives.yaml，向 allow 追加域名（裸域即可，如 tencent.com）
 # 2) 构建验证
-python3 -m adblock_collection build --out dist --split-by-category --redundant
+python3 -m adblock_collection build --out dist --split-by-category
 # 3) 确认回归通过（allow_violations 应 = 0）
 python3 -c "import json;d=json.load(open('dist/regression_report.json'));print(d['allow_violations'])"
 ```
@@ -228,7 +228,7 @@ curl -s -o /dev/null -w "%{http_code}\n" --max-time 25 "失败源的url"
 # 1) 编辑 config/local_rules.txt，追加精确选择器
 #    规则格式：域名##选择器（元素隐藏） 或 ||域名^（网络阻断）
 # 2) 构建自动校验并纳入
-python3 -m adblock_collection build --out dist --split-by-category --redundant
+python3 -m adblock_collection build --out dist --split-by-category
 echo "exit=$?"   # =2 说明有通配误伤，需修正
 ```
 

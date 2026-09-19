@@ -239,6 +239,10 @@ class FoldReport:
 2. 移除不再使用的旧编排路径。
 3. 更新 `docs/FLOW.md` 与 `docs/OPS.md` 的流程与自检清单。
 
+> 已落地：四项增强默认开启，`--no-*` 为退出开关；`css_dedupe` 常开；`--redundant`
+> 保留兼容，仅在 `--no-domain-fold` 时复现重构前折叠路径（P10 字节基线）。
+> 新增 `tests/baseline/m3`（默认产物）与 `tests/baseline/m2`（全关产物）两套 golden。
+
 ## 9. 参考
 
 - [^1]: requirements.md，当前工作区 内的 `/.monkeycode/specs/pipeline-refactor/requirements.md`

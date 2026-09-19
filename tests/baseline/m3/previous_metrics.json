@@ -1,0 +1,18 @@
+{
+  "total_rules": 16,
+  "dns_domains": 9,
+  "source_counts": {
+    "FixtureAds": 17,
+    "FixturePrivacy": 3
+  },
+  "category_counts": {
+    "ads": 7,
+    "whitelist": 2,
+    "css": 2,
+    "privacy": 2,
+    "malware": 1,
+    "phishing": 1,
+    "scriptlet": 1
+  },
+  "root_domain_blocks": 11
+}

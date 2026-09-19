@@ -1,0 +1,9 @@
+[Adblock Plus 2.0]
+! Title: Adblock Rule Collection (Full) (scriptlet)
+! Description: 按类型拆分：scriptlet
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 1
+! ------------------------------------------
+example.com##+js(noop)

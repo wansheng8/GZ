@@ -1,0 +1,14 @@
+{
+  "name": "adblock_collection_security",
+  "total": 2,
+  "by_category": {
+    "malware": 1,
+    "phishing": 1
+  },
+  "by_kind": {
+    "network": 2
+  },
+  "by_source": {
+    "FixtureAds": 2
+  }
+}

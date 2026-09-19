@@ -207,8 +207,8 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_s
 ```bash
 pip install -r requirements.txt
 
-# 完整版 + 类别拆分 + 三层产物 + DNS + 冗余消除
-python -m adblock_collection build --out dist --split-by-category --redundant
+# 完整版 + 类别拆分 + 三层产物 + DNS（规则增强默认开启）
+python -m adblock_collection build --out dist --split-by-category
 
 # 常用子命令
 python -m adblock_collection sources               # 列出上游列表
@@ -216,7 +216,7 @@ python -m adblock_collection regression            # 误杀回归校验
 python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 ```
 
-构建选项：`--no-dns`（不生成 DNS 与「域名规则」文件）· `--offline`（仅用缓存）· `--no-cache`（禁用下载缓存）· `--dns-policy safe`（DNS 安全分级）。
+构建选项：`--no-dns`（不生成 DNS 与「域名规则」文件）· `--offline`（仅用缓存）· `--no-cache`（禁用下载缓存）· `--dns-policy safe`（DNS 安全分级）· `--no-alias-normalize` / `--no-resolve-conflicts` / `--no-per-rule-classify` / `--no-domain-fold`（分别关闭四项规则增强，默认开启）。
 
 缓存位于 `.cache/sources/` 与 `.cache/parsed/`，首次下载后离线可重建。
 

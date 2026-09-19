@@ -1,0 +1,22 @@
+{
+  "name": "adblock_collection_full",
+  "total": 16,
+  "by_category": {
+    "ads": 7,
+    "whitelist": 2,
+    "css": 2,
+    "privacy": 2,
+    "malware": 1,
+    "phishing": 1,
+    "scriptlet": 1
+  },
+  "by_kind": {
+    "network": 13,
+    "css": 2,
+    "scriptlet": 1
+  },
+  "by_source": {
+    "FixtureAds": 17,
+    "FixturePrivacy": 3
+  }
+}

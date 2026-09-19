@@ -1,0 +1,4 @@
+# Adblock Rule Collection (Security)
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 2
+:: badmalware.example
+:: evil-phish.example

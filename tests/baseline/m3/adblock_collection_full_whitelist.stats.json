@@ -1,0 +1,14 @@
+{
+  "name": "adblock_collection_full_whitelist",
+  "total": 2,
+  "by_category": {
+    "whitelist": 2
+  },
+  "by_kind": {
+    "network": 2
+  },
+  "by_source": {
+    "FixtureAds": 1,
+    "FixturePrivacy": 1
+  }
+}

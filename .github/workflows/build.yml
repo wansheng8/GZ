@@ -45,7 +45,7 @@ jobs:
       - name: Clean stale dist
         run: rm -rf dist && mkdir dist
       - name: Build filters
-        run: python -m adblock_collection build --out dist --split-by-category --redundant
+        run: python -m adblock_collection build --out dist --split-by-category
       - name: Check build health
         id: health
         run: |
@@ -72,23 +72,35 @@ jobs:
           if len(failed) >= 5:
               print("WARNING: 超过 5 个上游源下载失败")
           PY
-      - name: Build filters (all enhancements on)
-        run: |
-          python -m adblock_collection build \
-            --out /tmp/dist-enhanced \
-            --split-by-category --redundant \
-            --alias-normalize --resolve-conflicts \
-            --per-rule-classify --domain-fold
-      - name: Verify enhancement reports
+      - name: Verify default enhancement reports
         run: |
           python - <<'PY'
           import json
-          report = json.load(open("/tmp/dist-enhanced/build_report.json"))
+          report = json.load(open("dist/build_report.json"))
           enhancements = report.get("enhancements", {})
           for key in ("alias_normalize", "resolve_conflicts", "per_rule_classify", "domain_fold"):
               if key not in enhancements:
                   raise SystemExit(f"missing enhancement report: {key}")
               print(f"{key}: {enhancements[key]}")
+          PY
+      - name: Build filters (all enhancements off, legacy baseline)
+        run: |
+          python -m adblock_collection build \
+            --out /tmp/dist-legacy \
+            --split-by-category --redundant \
+            --no-alias-normalize --no-resolve-conflicts \
+            --no-per-rule-classify --no-domain-fold
+      - name: Verify opt-out path
+        run: |
+          python - <<'PY'
+          import json, pathlib
+          report = json.load(open("/tmp/dist-legacy/build_report.json"))
+          if report.get("enhancements"):
+              raise SystemExit(f"enhancements not disabled: {report['enhancements']}")
+          for name in ("manifest.json", "adblock_collection_full_browser_network.txt"):
+              if not (pathlib.Path("/tmp/dist-legacy") / name).exists():
+                  raise SystemExit(f"missing artifact: {name}")
+          print("opt-out build ok")
           PY
       - name: Sync stats badges
         run: python -m adblock_collection.stats_badge

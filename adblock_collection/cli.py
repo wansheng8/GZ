@@ -590,9 +590,15 @@ def build(args: argparse.Namespace) -> int:
         )
         return out
 
-    def redundant_stage(rules, context):
-        out = remove_redundant_domains(rules)
-        return remove_redundant_css(out)
+    def legacy_redundant_stage(rules, context):
+        # 兼容旧 --redundant：增强折叠关闭时用于复现重构前产物
+        return remove_redundant_domains(rules)
+
+    def css_dedupe_stage(rules, context):
+        before = len(rules)
+        out = remove_redundant_css(rules)
+        LOG.info("CSS 冗余消除: %d -> %d 条", before, len(out))
+        return out
 
     stages = [FunctionStage("collect", collect_stage)]
     if flags.alias_normalize:
@@ -607,8 +613,9 @@ def build(args: argparse.Namespace) -> int:
         stages.append(FunctionStage("arbitrate", arbitrate_stage))
     if flags.domain_fold:
         stages.append(FunctionStage("domain_fold", fold_stage))
-    if flags.redundant:
-        stages.append(FunctionStage("redundant", redundant_stage))
+    elif flags.redundant:
+        stages.append(FunctionStage("redundant", legacy_redundant_stage))
+    stages.append(FunctionStage("css_dedupe", css_dedupe_stage))
 
     try:
         deduped, pipeline_report = Pipeline(stages).run([], ctx)
@@ -840,7 +847,7 @@ def regression_cmd(args: argparse.Namespace) -> int:
     return 1 if failed else 0
 
 
-def main(argv: list[str] | None = None) -> int:
+def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="adblock-rule-collection",
         description="合并、去重、生成 Adblock / DNS 过滤器规则",
@@ -863,27 +870,61 @@ def main(argv: list[str] | None = None) -> int:
         "--no-dns", action="store_true", help="不生成 DNS/hosts/domains 文件"
     )
     p_build.add_argument(
-        "--redundant", action="store_true", help="启用冗余域名规则消除"
+        "--redundant",
+        action="store_true",
+        help="[兼容保留] 旧版冗余域名消除；增强折叠开启时自动忽略",
     )
     p_build.add_argument(
         "--alias-normalize",
         action="store_true",
-        help="归一化等价选项别名（xmlhttprequest/doc/ghide/elemhide）并折叠重复规则",
+        default=True,
+        help="[默认开启] 归一化等价选项别名（xmlhttprequest/doc/ghide/elemhide）并折叠重复规则",
+    )
+    p_build.add_argument(
+        "--no-alias-normalize",
+        dest="alias_normalize",
+        action="store_false",
+        default=argparse.SUPPRESS,
+        help="关闭别名归一化",
     )
     p_build.add_argument(
         "--resolve-conflicts",
         action="store_true",
-        help="对整域目标仲裁阻断与例外（例外 > $important > 普通阻断），记录 arbitration.json",
+        default=True,
+        help="[默认开启] 对整域目标仲裁阻断与例外（例外 > $important > 普通阻断），记录 arbitration.json",
+    )
+    p_build.add_argument(
+        "--no-resolve-conflicts",
+        dest="resolve_conflicts",
+        action="store_false",
+        default=argparse.SUPPRESS,
+        help="关闭冲突仲裁",
     )
     p_build.add_argument(
         "--per-rule-classify",
         action="store_true",
-        help="逐条多信号分类：安全信号与泛化提示可覆盖上游类别提示",
+        default=True,
+        help="[默认开启] 逐条多信号分类：安全信号与泛化提示可覆盖上游类别提示",
+    )
+    p_build.add_argument(
+        "--no-per-rule-classify",
+        dest="per_rule_classify",
+        action="store_false",
+        default=argparse.SUPPRESS,
+        help="关闭逐条多信号分类",
     )
     p_build.add_argument(
         "--domain-fold",
         action="store_true",
-        help="折叠被祖先域整域拦截覆盖的子域规则，记录 domain_fold.json",
+        default=True,
+        help="[默认开启] 折叠被祖先域整域拦截覆盖的子域规则，记录 domain_fold.json",
+    )
+    p_build.add_argument(
+        "--no-domain-fold",
+        dest="domain_fold",
+        action="store_false",
+        default=argparse.SUPPRESS,
+        help="关闭域名层级折叠",
     )
     p_build.add_argument(
         "--split-by-category", action="store_true", help="split output by category"
@@ -919,6 +960,11 @@ def main(argv: list[str] | None = None) -> int:
     p_reg.add_argument("--out", default="dist", help="已构建输出目录")
     p_reg.set_defaults(func=regression_cmd)
 
+    return parser
+
+
+def main(argv: list[str] | None = None) -> int:
+    parser = _build_parser()
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     try:

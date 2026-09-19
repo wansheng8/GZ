@@ -1,0 +1,10 @@
+[Adblock Plus 2.0]
+! Title: Adblock Rule Collection (Full) (css)
+! Description: 按类型拆分：css
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 2
+! ------------------------------------------
+example.com##.ad-banner
+example.com#?#.promo

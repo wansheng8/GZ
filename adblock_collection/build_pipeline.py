@@ -33,10 +33,11 @@ class InvariantError(BuildError):
 
 @dataclass(frozen=True)
 class BuildFlags:
-    alias_normalize: bool = False
-    resolve_conflicts: bool = False
-    per_rule_classify: bool = False
-    domain_fold: bool = False
+    alias_normalize: bool = True
+    resolve_conflicts: bool = True
+    per_rule_classify: bool = True
+    domain_fold: bool = True
+    # 兼容旧 `--redundant`：仅当增强折叠关闭时用于复现重构前产物（P10 字节基线）
     redundant: bool = False
     split_by_category: bool = False
     gen_dns: bool = True
