@@ -94,6 +94,43 @@ allow:
   - wix.com
   - wordpress.com
   - yahoo.co.jp
+
+  # dns_policy.level: safe 升格后新纳入整域拦截、但属于正当终端服务的域名兜底：
+  # 这些域只因 $ping/$script 等窄类型规则被升格，整域拦截会破坏正常访问。
+  - scholar.google.com
+  - c.paypal.com
+  - primer.typekit.net
+  - soundcloud.com
+  - seznam.cz
+  - xing.com
+  - otto.de
+  - walbusch.de
+  - witt-weiden.de
+  - standvirtual.com
+  - autoscout24.de
+  - capital.com
+  - api.takealot.com
+  - subscriptions.cbc.ca
+  - services.haaretz.co.il
+  - p.ynet.co.il
+  - fotbollskanalen.se
+  - play-asia.com
+  - simplyhired.com
+  - weworkremotely.com
+  - teltarif.de
+  - slashdot.org
+  - activistpost.com
+  - allbloggingtips.com
+  - jobs.sciencecareers.org
+  - figshare.com
+  - pushbullet.com
+  - jango.com
+  - vvvvid.it
+  - outertune.org
+  - medal.tv
+  - fbs.com
+  - sas.com
+  - proofpoint.com
 block:
   - doubleclick.net
   - adservice.google.com
