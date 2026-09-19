@@ -387,6 +387,36 @@ def test_classify_non_blocking_alias_is_reject():
         assert is_dns_eligible(parse_line(raw), {"level": "safe"}) is False, raw
 
 
+def test_classify_navigation_modifier_is_dns_eligible():
+    for raw in (
+        "||ads.example.com^$popup",
+        "||ads.example.com^$doc",
+        "||ads.example.com^$document",
+        "||ads.example.com^$doc,popup",
+    ):
+        r = parse_line(raw)
+        v = classify_dns(r)
+        assert v.reason == "navigation_domain_modifier", raw
+        # level: all 与 safe 都会输出；strict-safe 因置信度 0.8 被排除
+        assert is_dns_eligible(r, {"level": "all"}) is True, raw
+        assert is_dns_eligible(r, {"level": "safe"}) is True, raw
+        assert is_dns_eligible(r, {"level": "strict-safe"}) is False, raw
+
+
+def test_classify_navigation_modifier_scope_still_rejected():
+    # 与作用域/其它类型混用时保持保守
+    assert classify_dns(parse_line("||ads.example.com^$popup,domain=x.com")).reason == (
+        "scoped_modifier"
+    )
+    assert classify_dns(parse_line("||ads.example.com^$popup,third-party")).reason == (
+        "domain_modifier"
+    )
+    assert (
+        classify_dns(parse_line("||ads.example.com^$document,subdocument")).reason
+        == "domain_modifier"
+    )
+
+
 def test_policy_all_rejects_modifier():
     r = parse_line("||example.com^$third-party")
     assert is_dns_eligible(r, {"level": "all"}) is False

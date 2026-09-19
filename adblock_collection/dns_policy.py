@@ -13,7 +13,8 @@ hosts / domains 文件。目的是在「宁愿少拦截、不要误拦截」原�
             DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
 - SAFE    : 纯域名网络规则（||ads.example.com^），整域拦截语义等价，confidence=1.0。
             仅带「整域语义」修饰（$all/$important/$match-case，不限定类型与作用域）
-            的规则语义等价于纯域名，同样归为 SAFE。
+            的规则语义等价于纯域名，同样归为 SAFE。仅带导航/弹窗修饰
+            （$popup/$doc/$document）的单域名规则在用户确认放宽后按整域拦截输出。
 - CONDITIONAL: 带修饰符的单域名规则（如 ||example.com^$third-party），作用域受限，
             confidence=0.8，是否进入 DNS 由策略的 allow_modifier 决定。
 
@@ -84,6 +85,14 @@ NON_BLOCKING_MODIFIERS = frozenset(
 # 因而可归入 SAFE 而不是被当成作用域受限的 CONDITIONAL 丢弃。
 WHOLE_DOMAIN_MODIFIERS = frozenset({"all", "important", "match-case"})
 
+# 导航/弹窗语义修饰：$popup 拦截弹窗，$doc/$document 拦截页面加载。二者都只针对
+# 「打开页面」这一动作，常见于广告与跳转域；DNS 无法区分请求类型，把这类单域名
+# 规则按整域拦截处理，属于用户确认后的放宽策略。与其它类型/作用域选项混用时不算。
+NAVIGATION_DOMAIN_MODIFIERS = frozenset({"popup", "doc", "document"})
+
+# 可作为整域阻断的选项全集
+DNS_WHOLE_DOMAIN_MODIFIERS = WHOLE_DOMAIN_MODIFIERS | NAVIGATION_DOMAIN_MODIFIERS
+
 _OPTION_RE = re.compile(r"\$([^$]*)$")
 
 # 作用域限定选项：DNS 只能按整域拦截，无法表达「仅在某来源站点 / 某目标域名 /
@@ -149,6 +158,14 @@ def classify_dns(rule: Rule) -> DnsVerdict:
     if rule.options and set(rule.options) <= WHOLE_DOMAIN_MODIFIERS:
         if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
             return DnsVerdict(DNS_SAFE, CONF_PURE_DOMAIN, "pure_domain_modifier")
+
+    # 仅带导航/弹窗修饰（$popup/$doc/$document）的纯域名规则：用户确认放宽，
+    # 按整域拦截输出；置信度略低，strict-safe 档仍会排除。
+    if rule.options and set(rule.options) <= NAVIGATION_DOMAIN_MODIFIERS:
+        if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
+            return DnsVerdict(
+                DNS_SAFE, CONF_DOMAIN_MODIFIER, "navigation_domain_modifier"
+            )
 
     # 带修饰符的单域名规则（如 $third-party）：作用域受限，保守处理
     if rule.domains and len(rule.domains) == 1 and rule.options:
