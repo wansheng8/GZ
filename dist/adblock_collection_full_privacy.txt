@@ -3,7 +3,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 48841
+! Total Rules: 48845
 ! ------------------------------------------
 &&sub19=undefined&sub20=undefined
 &action=js_stats
@@ -4104,6 +4104,7 @@ omni.soundestlink.com$image
 ||anxiousapples.com^
 ||applocus.com^
 ||applyless.com^
+||appsecstudio.com^
 ||aquaticowl.com^
 ||archswimming.com^
 ||arclet.net^
@@ -4260,6 +4261,7 @@ omni.soundestlink.com$image
 ||boundlessargument.com^
 ||boundlessbrake.com^
 ||boundlessveil.com^
+||bowlershut.com^
 ||boxandcover.com^
 ||brainybasin.com^
 ||branchborder.com^
@@ -4524,6 +4526,7 @@ omni.soundestlink.com$image
 ||cuddlycake.com^
 ||cuddlylab.com^
 ||cuddlylunchroom.com^
+||cuisinevoyager.com^
 ||culturedcamera.com^
 ||culturedfeather.com^
 ||cumbersomecarpenter.com^
@@ -45339,6 +45342,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||pixel.coccoc.com^
 ||track-srv.vietnamnet.vn^
 ||assets.adobedtm.com/extensions/*/AppMeasurement$script,domain=medscape.com|skinny.co.nz
+||pcapredict.com/js/sensor.js
 fb_servpub-a.akamaihd.net
 ||bango.combango.org^
 ||basic-check.disconnect.me^
