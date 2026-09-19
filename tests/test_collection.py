@@ -332,6 +332,77 @@ def test_pure_domain_rule_included_in_dns():
     assert writer._to_domain(r) == "example.com"
 
 
+def test_adblock_split_builds_include_master(tmp_path):
+    from adblock_collection import writer
+
+    rules = [parse_line(f"||h{i}.example.com^") for i in range(50)]
+    result = writer.write_adblock_split(rules, tmp_path, "big", "T", "D", max_bytes=400)
+    assert result is not None
+    master, parts, total = result
+    assert master == "big_jsdelivr.txt"
+    assert total == len(rules)
+    assert len(parts) > 1
+    merged = []
+    for name in parts:
+        part = tmp_path / name
+        assert part.stat().st_size <= 400
+        for line in part.read_text(encoding="utf-8").splitlines():
+            if not line.startswith("!"):
+                merged.append(line)
+    assert merged == [r.raw for r in rules]
+    content = (tmp_path / master).read_text(encoding="utf-8")
+    for name in parts:
+        assert f"!#include {name}" in content
+
+
+def test_emit_generates_jsdelivr_split_when_oversized(tmp_path, monkeypatch):
+    from adblock_collection import cli
+
+    monkeypatch.setattr(cli, "JSDELIVR_MAX_BYTES", 200)
+    rules = [parse_line(f"||h{i}.example.com^") for i in range(30)]
+    manifest = []
+    cli._emit(
+        rules,
+        tmp_path,
+        "adblock_collection_full",
+        "T",
+        "D",
+        gen_dns=False,
+        source_counts=None,
+        manifest=manifest,
+        policy=None,
+    )
+    files = {m["file"] for m in manifest}
+    assert "adblock_collection_full.txt" in files
+    assert "adblock_collection_full_jsdelivr.txt" in files
+    assert (tmp_path / "adblock_collection_full_jsdelivr.txt").exists()
+
+
+def test_dns_outputs_contain_only_pure_blocked_domains(tmp_path):
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("||ads.example.com^"),
+        parse_line("@@||allow.example.com^"),
+        parse_line("@@||ads.taboola.com^"),
+        parse_line("@@||doubleclick.net^$xhr,domain=yyets.click"),
+        parse_line("||ads.example.com/track^"),
+        parse_line("example.com##.ad"),
+    ]
+    path = tmp_path / "x_dns.txt"
+    writer.write_hosts(rules, path, "T", {"level": "all"})
+    content = path.read_text(encoding="utf-8")
+    domains = {
+        line.split(" ", 1)[1]
+        for line in content.splitlines()
+        if line.startswith("0.0.0.0 ")
+    }
+    assert "ads.example.com" in domains
+    # 例外与路径规则绝不能以任何形式进入 DNS 输出，否则会被 DNS 端当作放行
+    assert "@@" not in content
+    assert "/" not in content
+
+
 # ---------------- DNS 安全分级 ----------------
 
 

@@ -59,3 +59,12 @@ Entries discovered by the Agent during task execution should follow this format:
   - 本地执行全量 `python -m adblock_collection build --out <dir> --split-by-category --redundant` 峰值内存超过 2.72GiB；用 background terminal 且 memory_percent 设为 35（约 2.72GiB）会被 cgroup OOM 杀死（exit 137）。本地验证可去掉 `--split-by-category` 或给足内存上限，完整产物以 CI 构建为准。
   - hosts/纯域名类源（StevenBlack、Firebog、Peter Lowe、AdAway 等）经解析统一规范化为 `||domain^` 后与 adblock 源做全局去重，所以这些源的 by_source 计数会大幅下降甚至接近 0，属预期行为而非解析回归；同时 `dns/domains` 域数会上升。
   - CI 的 build workflow 先 `rm -rf dist` 再构建，因此质量门禁没有 previous_metrics 基线，不会因规则总量变化或删源而误报骤降。
+
+[Project Knowledge Summary]
+- Date: 2026-09-19
+- Context: Discovered by Agent while investigating 用户反馈「导入列表后测试站整体 0 拦截」
+- Category: Troubleshooting & Debugging
+- Instructions:
+  - DNS 客户端（AdGuard Home / Pi-hole）报「0 拦截」时，先确认解析流量是否真的经过该 DNS，而不是列表问题：`nslookup doubleclick.net <DNS地址>` 应返回 `0.0.0.0`/NXDOMAIN；返回真实 IP 说明设备或浏览器走了 DoH（Chrome/系统「安全 DNS」）绕过了本地 DNS。
+  - 浏览器测试站（d3ward、AdBlock Tester、CanYouBlockIt 等）大量测试项是元素隐藏/脚本/脚本注入，DNS 层天然无法拦截；用 DNS 列表去测这些站点得分低属预期，不代表列表失效。验证 DNS 是否生效应看广告网络域名（googlesyndication.com、doubleclick.net、an.yandex.ru）是否被解析拦截。
+  - 订阅链接按客户端区分：浏览器用 `adblock_collection_full.txt`；DNS 用 `_dns.txt`（hosts，Pi-hole/AdGuard Home/dnsmasq）或 `_domains.txt`（纯域名，AdGuard Home/AdGuard DNS），两者内容等价、只导一个即可。

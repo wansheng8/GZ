@@ -42,7 +42,7 @@
 
 | 订阅包 | 适用工具 | 一键导入 |
 | :--- | :--- | :--- |
-| **`[浏览器专用]`** 广告 + 隐私 + 安全 | uBlock Origin · AdGuard · AdBlock Plus | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff00e5?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt) |
+| **`[浏览器专用]`** 广告 + 隐私 + 安全 | uBlock Origin · AdGuard · AdBlock Plus | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff00e5?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_jsdelivr.txt) |
 | **`[DNS · IPv4 hosts]`** 设备级拦截 | AdGuard Home · Pi-hole · dnsmasq | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-00f0ff?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt) |
 | **`[DNS · IPv6 hosts]`** 双栈设备补订 | AdGuard Home · Pi-hole · dnsmasq | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-9d00ff?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt) |
 | **`[单行域名列表]`** 纯域名格式 | AdGuard DNS · 各类域名过滤 | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff9c39?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt) |
@@ -58,13 +58,22 @@
 > [!TIP]
 > 仅需安全拦截：单独订阅「安全专项」行即可，绕过完整版的误杀风险。
 
+> [!IMPORTANT]
+> **按客户端选对文件**：AdGuard Home / Pi-hole 等 DNS 设备只能导入「DNS · IPv4 hosts」或「单行域名列表」中的**一个**（两者内容等价），并且**只保留这一个**——不要同时导入「浏览器专用」列表。
+>
+> 原因：浏览器列表里有约 2,500 条 `@@||ad-domain^$domain=...` 形式的站点级例外（`@@||ads.taboola.com^`、`@@||pagead2.googlesyndication.com^$domain=...`、`@@||doubleclick.net^$xhr,domain=...` 等）。DNS 层没有页面上下文，这些例外会被当作**域名级放行**，直接抵消对应广告域的封锁，于是出现「导得越多、拦得越少 / 以前能拦现在拦不了」。DNS 封锁清单里应只保留 `_dns.txt` 或 `_domains.txt` 之一，删除其余格式列表。
+>
+> **浏览器版两条链接的区别**：GitHub 链接是单文件完整版；jsDelivr 链接是 `!#include` 分片主链（完整版单文件约 23.7MB，超过 jsDelivr 单文件 20MB 上限会返回 403，故自动拆分，uBlock Origin / AdGuard 会跟随分片）。
+>
+> **导入 DNS 列表后仍不拦截时**，先确认域名解析确实经过该 DNS：`nslookup doubleclick.net <你的 AdGuard Home/Pi-hole 地址>` 应返回 `0.0.0.0` 或 NXDOMAIN。若返回真实 IP，说明设备/浏览器走了 DoH（如 Chrome/系统「安全 DNS」），请关闭 DoH 后再测。
+
 <details>
 <summary><code>纯文本订阅链接</code></summary>
 
 ```text
 [浏览器专用]
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt
-https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full.txt
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_jsdelivr.txt
 
 [DNS · IPv4 hosts]
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt

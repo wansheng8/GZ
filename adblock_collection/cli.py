@@ -51,7 +51,9 @@ from .quality_gate import (
 )
 from .regression import load_false_positives, run_regression
 from .writer import (
+    JSDELIVR_MAX_BYTES,
     write_adblock,
+    write_adblock_split,
     write_dns_safety_report,
     write_domains,
     write_hosts,
@@ -82,6 +84,28 @@ def _emit(
     manifest.append(
         {"name": prefix, "file": f"{prefix}.txt", "format": "adblock", "rules": n}
     )
+    if ap.stat().st_size > JSDELIVR_MAX_BYTES:
+        split = write_adblock_split(
+            rules, output_dir, prefix, title, desc, max_bytes=JSDELIVR_MAX_BYTES
+        )
+        if split:
+            master, parts, total = split
+            LOG.info(
+                "adblock 列表 %s (%.2f MiB) 超过 jsDelivr 上限，已拆分为 %d 个分片主链 %s",
+                ap.name,
+                ap.stat().st_size / 1048576,
+                len(parts),
+                master,
+            )
+            manifest.append(
+                {
+                    "name": prefix,
+                    "file": master,
+                    "format": "adblock_include",
+                    "rules": total,
+                    "parts": parts,
+                }
+            )
     src_counts = source_stats(rules) if source_counts is None else source_counts
     write_summary(category_stats(rules), output_dir, prefix)
     write_summary_json(
@@ -322,6 +346,7 @@ def build(args: argparse.Namespace) -> int:
                 r["file"].endswith(s)
                 for s in ("_dns.txt", "_domains.txt", "_dns_ipv6.txt")
             )
+            and "_jsdelivr" not in r["file"]
             and r["file"] != "adblock_collection_full.txt"
         )
         full_n = next(

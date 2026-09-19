@@ -27,6 +27,28 @@ from .rules import _PURE_DOMAIN_RE, Rule, _option_start
 
 HOMEPAGE = "https://github.com/wansheng8/GZ"
 
+# jsDelivr 对单个 gh 文件有 20MB 上限，超过会返回 403，订阅者将拿不到任何规则。
+# 留出约 2MiB 安全余量：超过 18MiB 的 adblock 列表自动拆分为 !#include 主链。
+JSDELIVR_MAX_BYTES = 18 * 1024 * 1024
+
+
+def _adblock_header(title: str, desc: str, total: int) -> list[str]:
+    """标准 adblock 列表头。
+
+    首行 ``[Adblock Plus 2.0]`` 是 Adblock Plus 识别一个文件为过滤列表的前提；
+    uBlock Origin / AdGuard 同样接受该头。缺少它时 ABP 会拒绝导入。
+    """
+    return [
+        "[Adblock Plus 2.0]",
+        f"! Title: {title}",
+        f"! Description: {desc}",
+        "! Expires: 1 day",
+        f"! Homepage: {HOMEPAGE}",
+        "! License: MIT",
+        f"! Total Rules: {total}",
+        "! ------------------------------------------",
+    ]
+
 
 def _to_hosts_line(rule: Rule, policy: dict | None = None) -> str | None:
     """将可进 DNS 的纯域名网络阻断规则转换为 hosts 行，无法转换返回 None。
@@ -69,19 +91,75 @@ def _dns_eligible(rule: Rule, policy: dict | None) -> bool:
 
 
 def write_adblock(rules: Iterable[Rule], path: Path, title: str, desc: str) -> int:
-    count = 0
+    rules = list(rules)
     with path.open("w", encoding="utf-8") as fh:
-        fh.write(f"! Title: {title}\n")
-        fh.write(f"! Description: {desc}\n")
-        fh.write("! Expires: 1 day\n")
-        fh.write(f"! Homepage: {HOMEPAGE}\n")
-        fh.write("! License: MIT\n")
-        fh.write(f"! Total Rules: {len(list(rules))}\n")
-        fh.write("! ------------------------------------------\n")
+        for line in _adblock_header(title, desc, len(rules)):
+            fh.write(line + "\n")
+        count = 0
         for r in rules:
             fh.write(r.raw + "\n")
             count += 1
     return count
+
+
+def _write_adblock_part(
+    output_dir: Path, prefix: str, part_no: int, lines: list[str], title: str
+) -> tuple[str, int]:
+    name = f"{prefix}_jsdelivr_part{part_no:02d}.txt"
+    with (output_dir / name).open("w", encoding="utf-8") as fh:
+        fh.write(f"! {title} (jsDelivr part {part_no:02d})\n")
+        for line in lines:
+            fh.write(line + "\n")
+    return name, len(lines)
+
+
+def write_adblock_split(
+    rules: Iterable[Rule],
+    output_dir: Path,
+    prefix: str,
+    title: str,
+    desc: str,
+    max_bytes: int = JSDELIVR_MAX_BYTES,
+) -> tuple[str, list[str], int] | None:
+    """把超出 jsDelivr 单文件上限的 adblock 列表拆成 ``!#include`` 主链。
+
+    生成 ``{prefix}_jsdelivr.txt`` 主文件与 ``{prefix}_jsdelivr_partNN.txt`` 分片，
+    每个分片都小于 ``max_bytes``。uBlock Origin / AdGuard 会递归跟随相对路径的
+    ``!#include``，GitHub raw 与 jsDelivr 都能按相对路径取到分片，因此订阅方
+    完全无感；规则内容不会因拆分丢失。
+
+    返回 ``(主文件名, 分片文件名列表, 总规则数)``。规则为空时返回 ``None``。
+    """
+    rules = list(rules)
+    if not rules:
+        return None
+    # 分片文件头的预留空间，保证分片本身也小于上限
+    header_budget = 256
+    parts: list[str] = []
+    chunk: list[str] = []
+    chunk_bytes = 0
+    part_no = 0
+    for r in rules:
+        line_bytes = len(r.raw.encode("utf-8")) + 1
+        if chunk and chunk_bytes + line_bytes > max_bytes - header_budget:
+            part_no += 1
+            name, _ = _write_adblock_part(output_dir, prefix, part_no, chunk, title)
+            parts.append(name)
+            chunk, chunk_bytes = [], 0
+        chunk.append(r.raw)
+        chunk_bytes += line_bytes
+    if chunk:
+        part_no += 1
+        name, _ = _write_adblock_part(output_dir, prefix, part_no, chunk, title)
+        parts.append(name)
+
+    master_name = f"{prefix}_jsdelivr.txt"
+    with (output_dir / master_name).open("w", encoding="utf-8") as fh:
+        for line in _adblock_header(title, f"{desc}（jsDelivr 分片主链）", len(rules)):
+            fh.write(line + "\n")
+        for name in parts:
+            fh.write(f"!#include {name}\n")
+    return master_name, parts, len(rules)
 
 
 def _is_global_domain_exception(rule: Rule) -> bool:
