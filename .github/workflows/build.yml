@@ -70,6 +70,24 @@ jobs:
           if len(failed) >= 5:
               print("WARNING: 超过 5 个上游源下载失败")
           PY
+      - name: Build filters (all enhancements on)
+        run: |
+          python -m adblock_collection build \
+            --out /tmp/dist-enhanced \
+            --split-by-category --redundant \
+            --alias-normalize --resolve-conflicts \
+            --per-rule-classify --domain-fold
+      - name: Verify enhancement reports
+        run: |
+          python - <<'PY'
+          import json
+          report = json.load(open("/tmp/dist-enhanced/build_report.json"))
+          enhancements = report.get("enhancements", {})
+          for key in ("alias_normalize", "resolve_conflicts", "per_rule_classify", "domain_fold"):
+              if key not in enhancements:
+                  raise SystemExit(f"missing enhancement report: {key}")
+              print(f"{key}: {enhancements[key]}")
+          PY
       - name: Sync stats badges
         run: python -m adblock_collection.stats_badge
       - name: Check for changes

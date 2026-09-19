@@ -22,7 +22,7 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 ## 阶段总览
 
 ```
-配置加载 → 本地规则校验 → 上游收集(并行下载) → 合并去重 → 冗余消除
+配置加载 → 本地规则校验 → 上游收集(并行下载) → 合并去重 → [规则增强(开关)] → 冗余消除
         → 多格式输出 → 血缘/关系图 → 上游健康报告 → 误杀回归 → 质量门禁 → manifest
 ```
 
@@ -32,6 +32,7 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 | 2 本地规则校验 | `config/local_rules.txt` | `merge.validate_local_rules` | 无通配误伤（`##*`/`##body`/域通配/裸 `*`） | 校验报告（日志） | 有违规 → 返回 2 阻断发布 |
 | 3 上游收集 | 60 源 + mirror | `merge.collect`（线程池并行） | 失败源记录、过期缓存回退 | `.cache/sources/`、`sources_status.json` | 单源失败 → 容忍并记录；全源失败 → 产物为空 |
 | 4 合并去重 | 各源 Rule 列表 | `merge.dedupe` / `apply_allowlist` / `apply_badfilter` | 白名单精确放行、badfilter 抵消 | 去重后规则集 | 逻辑错误 → 测试兜底（tests/） |
+| 4b 规则增强（可选） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四个开关默认关闭；启用后逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
 | 5 冗余消除 | 去重后规则 | `remove_redundant_domains` / `remove_redundant_css` | 仅纯域名/纯类名归并 | 精简规则集 | 仅记录移除数，不阻断 |
 | 6 多格式输出 | 全量规则 | `cli._emit` + `_emit_layers` + `_emit_by_category` + `_emit_security` | 分类子列表并集 == 完整版；三层产物按规则类型划分 | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量断言失败 → 报错阻断 |
 | 7 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
@@ -117,6 +118,29 @@ python3 -c "import json;d=json.load(open('dist/sources_status.json'));print('失
 3. `apply_badfilter`：移除被 `,badfilter` 抵消的规则。
 
 **不可变更点**：apply_allowlist 必须保持精确匹配（祖先匹配会把子域广告一并放行，历史教训）。
+
+---
+
+## 阶段 4b：规则增强（开关，默认关闭）
+
+四个增强 pass 均为纯函数，开关关闭时不进入阶段序列，产物与重构前一致：
+
+| 开关 | 模块 | 行为 | 报告 |
+|------|------|------|------|
+| `--alias-normalize` | `aliases.normalize_aliases` | 折叠 `xmlhttprequest→xhr`、`doc→document`、`ghide/elemhide→generichide`，使别名不同的同一规则可去重 | `build_report.json#enhancements.alias_normalize` |
+| `--per-rule-classify` | `rules.classify_per_rule` | 逐条按「安全类 > 隐私/社交等具体类 > url」扫描原文与域名，安全信号与泛化提示可覆盖上游类别提示 | `build_report.json#enhancements.per_rule_classify` |
+| `--resolve-conflicts` | `arbitrate.arbitrate` | 同一整域目标按「整域全局例外 > `$important` 阻断 > 普通阻断」仲裁；作用域/路径例外不抵消整域阻断 | `arbitration.json`、`enhancements.resolve_conflicts` |
+| `--domain-fold` | `domain_fold.fold_domains` | 折叠被祖先域整域拦截覆盖的子域规则；子域有精确例外时保留 | `domain_fold.json`、`enhancements.domain_fold` |
+
+**与 `--redundant` 的关系**：`remove_redundant_domains` 复用 `fold_domains(protect_exception_children=False)`，行为与改动前一致；`--domain-fold` 是例外感知版本，两者可同时开启（折叠幂等）。
+
+**自检**：
+
+```bash
+python3 -m adblock_collection build --out /tmp/dist-enhanced --split-by-category --redundant \
+  --alias-normalize --resolve-conflicts --per-rule-classify --domain-fold
+python3 -c "import json;print(json.load(open('/tmp/dist-enhanced/build_report.json'))['enhancements'])"
+```
 
 ---
 
