@@ -3,8 +3,8 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 779494,
-    "dns_domains": 541608,
+    "total_rules": 779495,
+    "dns_domains": 541609,
     "source_counts": {
       "Hagezi DNS Pro Plus": 254256,
       "oisd": 247482,
@@ -20,8 +20,8 @@
       "ADrules anti-AD": 93831,
       "Anti-AD Easylist": 93831,
       "Anti-AD (easylist)": 93831,
+      "EasyList (easylist.to)": 82022,
       "EasyList (ABP)": 82021,
-      "EasyList (easylist.to)": 82021,
       "ADrules Easylist": 82009,
       "StevenBlack Hosts": 80181,
       "Phishing URL Blocklist": 67645,
@@ -69,7 +69,7 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 602238,
+      "network": 602239,
       "privacy": 48816,
       "phishing": 36678,
       "annoyance": 30758,
@@ -79,17 +79,17 @@
       "malware": 9490,
       "css": 10
     },
-    "root_domain_blocks": 324788
+    "root_domain_blocks": 324789
   },
   "diff": {
     "total_rules": {
-      "current": 779494,
+      "current": 779495,
       "previous": null,
       "delta": null,
       "percent": null
     },
     "dns_domains": {
-      "current": 541608,
+      "current": 541609,
       "previous": null,
       "delta": null,
       "percent": null
