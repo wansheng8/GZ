@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 602207,
+  "total": 602223,
   "by_category": {
-    "network": 602207
+    "network": 602223
   },
   "by_kind": {
-    "network": 518065,
+    "network": 518081,
     "css": 76358,
     "scriptlet": 7617,
     "html": 166,
@@ -27,7 +27,7 @@
     "AdGuardSDNSFilter": 5250,
     "uBO filters – Ads": 4980,
     "10007_auto reward": 2591,
-    "Accelerate-Hosts": 1841,
+    "Accelerate-Hosts": 1854,
     "Hagezi DNS Light": 1673,
     "KADhosts": 1337,
     "ADrules HalfLife": 1199,
@@ -41,9 +41,10 @@
     "BlueSkyXN skyrules": 47,
     "AWAvenue-Ads-Rule": 26,
     "AdAway Hosts": 12,
-    "EasyList (ABP)": 5,
+    "EasyList (ABP)": 7,
     "Peter Lowe's Blocklist": 2,
     "Dan Pollock's hosts": 2,
+    "EasyList (easylist.to)": 1,
     "Firebog Easylist Hosts": 1
   }
 }
