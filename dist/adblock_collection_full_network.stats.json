@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 602236,
+  "total": 602237,
   "by_category": {
-    "network": 602236
+    "network": 602237
   },
   "by_kind": {
-    "network": 518102,
+    "network": 518103,
     "css": 76351,
     "scriptlet": 7616,
     "html": 166,
@@ -41,8 +41,7 @@
     "BlueSkyXN skyrules": 47,
     "AWAvenue-Ads-Rule": 26,
     "AdAway Hosts": 12,
-    "EasyList (easylist.to)": 7,
-    "EasyList (ABP)": 2,
+    "EasyList (ABP)": 10,
     "Peter Lowe's Blocklist": 2,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
