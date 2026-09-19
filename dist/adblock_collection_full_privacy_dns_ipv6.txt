@@ -1,8 +1,9 @@
 # Adblock Rule Collection (Full) (privacy)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 37970
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 38035
 :: 0.myikas.com
 :: 0.net.easyjet.com
 :: 00px.net
+:: 0404.co.il
 :: 07b3.pandasuite.io
 :: 0ddf.pandasuite.io
 :: 0sbm.consobaby.co.uk
@@ -54,6 +55,7 @@
 :: 1stparty.equifax.co.uk
 :: 1to1.bbva.com
 :: 1vyt1eguj27.ommasign.com
+:: 1win.com
 :: 2.wantsext.me
 :: 20bd.pandasuite.io
 :: 2143.pandasuite.io
@@ -3458,6 +3460,7 @@
 :: api.fuck.education
 :: api.ryanyao.design
 :: api.sae.systems
+:: api.takealot.com
 :: api.wipmania.com
 :: apilog-web.acfun.cn
 :: apis.4bn.xyz
@@ -3465,6 +3468,7 @@
 :: apiwmda.58.com.cn
 :: aplobv.xexymix.com
 :: aplus.alibaba.com
+:: aplus.aliexpress.com
 :: apm.qwant.com
 :: apm.tnet.nl
 :: app-branch.yummybazaar-qa.com
@@ -3601,6 +3605,7 @@
 :: app.charlotte49ers.com
 :: app.chartwayarena.com
 :: app.chat.global.xiaomi.net.iberostar.com
+:: app.chat.xiaomi.net
 :: app.cimarketing.aig.com
 :: app.cincinnatiarts.org
 :: app.citibikenyc.com
@@ -4616,6 +4621,7 @@
 :: automotive-business.vodafone.com
 :: automotive.autodeskcommunications.com
 :: automotive.balluff.com
+:: autoscout24.de
 :: autovista-fi.autovistagroup.com
 :: autovista-fr.autovistagroup.com
 :: autovista-se.autovistagroup.com
@@ -5053,6 +5059,7 @@
 :: bestboundary.com
 :: bestclimbers.net
 :: bestcoffeemachine.net
+:: bestcontactform.com
 :: bestill.help.no
 :: bestinfo.bluetrustloans.com
 :: bestshoesboot.com
@@ -5710,6 +5717,7 @@
 :: c.mibank.com
 :: c.musicradio.com
 :: c.newyorker.com
+:: c.paypal.com
 :: c.refun.do
 :: c.seznam.cz
 :: c.sibnet.ru
@@ -5841,6 +5849,7 @@
 :: canvasandsocks.com
 :: canyonpizza.net
 :: caowuq.babyliss-romania.ro
+:: capital.com
 :: capitalopera.com
 :: caplights.com
 :: capping.sirius.press
@@ -6032,6 +6041,7 @@
 :: check.frbservices.org
 :: check2.bankofscotland.co.uk
 :: check2.lloydsbank.co.uk
+:: checkout.arukereso.hu
 :: checkpointcharlie.heizung.de
 :: cheese.guac.live
 :: chef.getmenoo.com
@@ -6064,6 +6074,7 @@
 :: christians.lifeway.com
 :: chronicle.medal.tv
 :: chrooo.soccerandrugby.com
+:: chtbl.com
 :: chubbycreature.com
 :: chunkycactus.com
 :: churro.noteapps.info
@@ -6182,6 +6193,7 @@
 :: click.rollouki.com
 :: click.signaturemarket.co
 :: click.sutra.co
+:: click.taobao.com
 :: click.techtree.jp
 :: click.totallymoney.com
 :: click.transactional.carousell.com
@@ -6386,6 +6398,7 @@
 :: cnt.iceporn.com
 :: cnt.iol.it
 :: cnt.logoslovo.ru
+:: cnt.mail.netbk.co.jp
 :: cnt.nov.ru
 :: cnt.rambler.ru
 :: cnt.viptube.com
@@ -7003,6 +7016,7 @@
 :: counter.cnw.cz
 :: counter.cropvid.com
 :: counter.darkreader.app
+:: counter.dev
 :: counter.drom.ru
 :: counter.hackers.lv
 :: counter.hyipexplorer.com
@@ -8107,6 +8121,7 @@
 :: dazdmx.cobra.fr
 :: dazzlescript.com
 :: dazzlingbook.com
+:: db-ip.com
 :: db7q4jg5rkhk8.cloudfront.net
 :: dba4.pandasuite.io
 :: dbex-tracker-v2.driveback.ru
@@ -8992,6 +9007,7 @@
 :: dtzrrz.green-japan.com
 :: du4rq1xqh3i1k.cloudfront.net
 :: dualping.com
+:: duckdns.org
 :: dujgiq.trendhim.pl
 :: dumpster.cam4.com
 :: duqqrl.jefchaussures.com
@@ -9500,6 +9516,7 @@
 :: eloqua.binarytree.com
 :: eloqua.brakepartsinc.com
 :: eloqua.certiport.com
+:: eloqua.com
 :: eloqua.digitalpi.com
 :: eloqua.eafit.edu.co
 :: eloqua.eft.com
@@ -10461,6 +10478,7 @@
 :: ewfrnd.stockmann.ru
 :: eworfe.babyartikel.de
 :: ewygto.swanicoco.co.kr
+:: exacttarget.com
 :: exampleshake.com
 :: exbujk.glamood.com
 :: exchange.carte-gr.total.fr
@@ -10525,6 +10543,7 @@
 :: explore.revenera.com
 :: explore.waldenu.edu
 :: expo.nada.org
+:: export.newscube.de
 :: exportdialog.com
 :: exprealty377.myre.io
 :: exr-mms.expertreviews.co.uk
@@ -10965,6 +10984,7 @@
 :: fortunatemark.com
 :: forwardslashetc.com
 :: fossilzero.com
+:: fotbollskanalen.se
 :: fourier.taobao.com
 :: fourlevelsgame.com
 :: fourmtagservices.appspot.com
@@ -11348,6 +11368,7 @@
 :: geolocation.forbes.com
 :: geolocation.outreach.com
 :: geoservice.curse.com
+:: geotrust.com
 :: gestiondocumentaire.ricoh.fr
 :: get-beta.kabbee.com
 :: get-dev.mastersapp.com
@@ -11586,6 +11607,7 @@
 :: glassguide-au.autovistagroup.com
 :: glassmoni.researchgate.net
 :: glbgox.djoser.de
+:: gleam.io
 :: gleamingcow.com
 :: gleaminghaven.com
 :: gleamingtrade.com
@@ -11608,6 +11630,7 @@
 :: globalorders.net
 :: globalsolutions.risk.lexisnexis.com
 :: globo-ab.globo.com
+:: glomex.com
 :: glookup.info
 :: gloomyseason.com
 :: gloriousbeef.com
@@ -14406,6 +14429,7 @@
 :: install.playgpl.com
 :: install.pranavconstructions.com
 :: install.xchange.sabx.com
+:: instant.page
 :: instantfox.co
 :: insulatech.com
 :: insurance.alliant.com
@@ -14512,11 +14536,13 @@
 :: iot.informaengage.com
 :: iotapool.com
 :: ioxqdp.leatherology.com
+:: ip-tracker.org
 :: ip.chipestimate.com
 :: ip.cliphunter.com
 :: ip.lovely-app.com
 :: ip.up66.ru
 :: ip2c.landscape.co.jp
+:: ip2location.com
 :: ip7prksb2muxvmmh25t6rxl2te0tfulc.lambda-url.eu-west-1.on.aws
 :: ipcfgw.pieces.com
 :: ipdmlm.yoriso.com
@@ -15287,6 +15313,7 @@
 :: lakerspreferences.gleague.nba.com
 :: lakerspreferences.nba.com
 :: lakesecure.com
+:: lambda-url.eu-west-1.on.aws
 :: lameletters.com
 :: lamplow.com
 :: lan.landing.ni.com
@@ -16360,6 +16387,7 @@
 :: links2.fluent-forever.com
 :: links2.pillar.app
 :: linksbntest.branchcustom.xyz
+:: linksnappy.com
 :: linksoutside.com
 :: linkspine.insights.md
 :: linkspinedev.insights.md
@@ -16534,16 +16562,19 @@
 :: logging.api.intuit.com
 :: logging.je-apps.com
 :: loggingapi.spingo.com
+:: loggly.com
 :: loggychops.paulsmith.site
 :: logicalminds.net
 :: logicanalytics.io
 :: login.e-ticket.co.jp
+:: loginfra.com
 :: logistics.coyote.com
 :: logistics.dbschenker.com
 :: logistics.osmworldwide.com
 :: loglady.kiwi.com
 :: loglady.skypicker.com
 :: logql.yahoo.co.jp
+:: logrocket.com
 :: logs-api.shoprunner.com
 :: logs-partners.coupang.com
 :: logs.51cto.com
@@ -18793,6 +18824,7 @@
 :: med.viibryd.com
 :: med.viibrydhcp.com
 :: med.vraylar.com
+:: medal.tv
 :: meddleplant.com
 :: media-analytic.com
 :: media-atl3-1.cdn.whatsapp.net.iberostar.com
@@ -20411,6 +20443,7 @@
 :: mgefhu.suomi24.fi
 :: mggakg.littleblack.co.kr
 :: mgixgn.wittchen.com
+:: mgln.ai
 :: mgn.ebis.xn--olsz5f0ufw02b.net
 :: mgptul.finson.com
 :: mgt7.madeindesign.it
@@ -21737,6 +21770,7 @@
 :: onesimpleweek.com
 :: onespecify.com
 :: onespot-tracking.herokuapp.com
+:: onetrust.com
 :: onghfx.revolve.com
 :: onioncomic.com
 :: onjjbn.koffiemarkt.be
@@ -21939,6 +21973,7 @@
 :: otracks.workday.com
 :: otrnww.pipingrock.com
 :: ottawa-content.cresa.com
+:: otto.de
 :: oturvy.sanitairwinkel.nl
 :: otuumq.manyavar.com
 :: otx23nu6rzon.prep.toppers.com
@@ -22270,6 +22305,7 @@
 :: pdmsmrt.gmccanada.ca
 :: pds.auction.co.kr
 :: pdsgaj.piquadro.com
+:: pdst.fm
 :: pduwvp.chanti.dk
 :: pdzutf.sftworks.jp
 :: pe.txbe.at
@@ -22380,6 +22416,9 @@
 :: pipadvance.com
 :: pipe-collect.ebu.io
 :: pipedream.wistia.com
+:: pipeline.balkstercourant.nl
+:: pipeline.dvhn.nl
+:: pipeline.lc.nl
 :: pipeline.nachtkastje.nl
 :: piper.amocrm.ru
 :: pippio.com
@@ -22705,6 +22744,7 @@
 :: podname.com
 :: poemprompt.com
 :: poeticpackage.com
+:: pog.com
 :: pointdigestion.com
 :: pointlesspocket.com
 :: pointlessprofit.com
@@ -22735,6 +22775,7 @@
 :: popplantation.com
 :: popup-static.unisender.com
 :: porksoda.com
+:: pornoenspanish.es
 :: poro.58.com
 :: porpoise.azettl.net
 :: porqhi.topictravel.nl
@@ -22843,6 +22884,8 @@
 :: primary-app.hotdoc.com.au
 :: primary.hasegawa.jp
 :: prime.net.jumia.co.tz
+:: prime.rambler.ru
+:: primer.typekit.net
 :: princessbeak.com
 :: priority-app.hotdoc.com.au
 :: prism.drivingkyoto.com
@@ -22949,6 +22992,7 @@
 :: promotions.la-z-boy.com
 :: promotions.stationcasinos.com
 :: promotions.thermofisher.com
+:: proofpoint.com
 :: prop.astonvillanews.co.uk
 :: properties.insiterealestate.com
 :: property.aon.com
@@ -23039,6 +23083,7 @@
 :: purpose.maxizoo.ie
 :: purpose.maxizoo.pl
 :: purposepipe.com
+:: pushbullet.com
 :: pushd.netky.tech
 :: pushmaster-cdn.xyz
 :: putphc.zuhre.com.tr
@@ -23332,6 +23377,7 @@
 :: r.rover.com
 :: r.sdiapi.net
 :: r.sportsie.com
+:: r.stripe.com
 :: r.winf.site
 :: r.wz.de
 :: r1ztni.oui.sncf
@@ -24692,6 +24738,7 @@
 :: sapi.tremendous.com
 :: sapnest.com
 :: sappmetrics.sprint.com
+:: sas.com
 :: sas.nsm-corp.com
 :: sasc.solidworks.com
 :: sat.sanoma.fi
@@ -24802,6 +24849,7 @@
 :: scaredsong.com
 :: scaredstomach.com
 :: scarefowl.com
+:: scarf.sh
 :: scarfsmash.com
 :: scatteredheat.com
 :: scatteredstream.com
@@ -24811,6 +24859,7 @@
 :: scenicdrops.com
 :: scentedkindly.com
 :: scheduling.qualifi.hr
+:: scholar.google.com
 :: scholarloop.com
 :: schoolpaws.com
 :: schwacke.autovistagroup.com
@@ -25366,6 +25415,7 @@
 :: services.cairn.info
 :: services.eclerx.com
 :: services.edc.ca
+:: services.haaretz.co.il
 :: services.princes-trust.org.uk
 :: services.releasepoint.com
 :: servicing.business.hsbc.com
@@ -25388,6 +25438,7 @@
 :: seyfwl.smaker.pl
 :: seyfwl.styl.pl
 :: sezixz.officesupply.com
+:: seznam.cz
 :: sf-insights.io
 :: sf-test.groc.press
 :: sf.groc.press
@@ -29165,6 +29216,7 @@
 :: sosc.hrs.com
 :: soubej.larebajavirtual.com
 :: soulclicking.com
+:: soundcloud.com
 :: soundmachine.net
 :: soundmuseums.com
 :: soundstocking.com
@@ -29977,6 +30029,7 @@
 :: stalesummer.com
 :: stalkoda.com
 :: stan.xing.com
+:: standvirtual.com
 :: stape.brascast.com
 :: starchild.odencat.com
 :: starfurniture.net
@@ -31014,6 +31067,7 @@
 :: statsegg.cdngeek.com
 :: statshunt.com
 :: statsig.anthropic.com
+:: statsig.com
 :: statsjs.klevu.com
 :: statsmp2.emol.com
 :: statss.smartdestinations.com
@@ -32302,6 +32356,7 @@
 :: targetsecure.kohler.com
 :: targetsoc.spela.svenskaspel.se
 :: targettur.www.svenskaspel.se
+:: tarnkappe.info
 :: taskdelight.com
 :: tasselapp.com
 :: tasteeat.openapp.link
@@ -32321,6 +32376,7 @@
 :: tbknig.ecc.jp
 :: tblcontent.com
 :: tbmgyz.centerparcs.de
+:: tbskip.taobao.com
 :: tbvjrd.gocase.com.br
 :: tc.europcar.com
 :: tc.europcar.com.au
@@ -32474,6 +32530,7 @@
 :: telemetry.vtex.com
 :: telemetry.webasto.com
 :: telephoneapparatus.com
+:: teltarif.de
 :: telulr.golfgalaxy.com
 :: temails.productnotice.thomsonreuters.com
 :: temp.twicomi.com
@@ -32644,6 +32701,7 @@
 :: thoseshades.com
 :: thoughtlessknot.com
 :: thraka.openapp.link
+:: threatbook.cn
 :: threechurch.com
 :: threetruck.com
 :: thriftyguru.com
@@ -35036,6 +35094,7 @@
 :: trends.privacywall.org
 :: trg.bosch-home.es
 :: trialowl.com
+:: trib.al
 :: trickfile.com
 :: triggers.wfxtriggers.com
 :: triplelarge.com
@@ -35795,6 +35854,7 @@
 :: url7674.fitgenieapp.com
 :: url8196.mindrise.app
 :: url9609.account.experience-muse.com
+:: urldefense.com
 :: urmgui.nationsphotolab.com
 :: uroqgj.wind.it
 :: urr.kumamoto-food.com
@@ -36557,6 +36617,7 @@
 :: vvktyh.yotsuyagakuin.com
 :: vvnhhb.mebeles1.lv
 :: vvqizy.witt-weiden.de
+:: vvvvid.it
 :: vwakpz.vidri.com.sv
 :: vwiind.beautyforever.com
 :: vwonwkaqvq-a.global.ssl.fastly.net
@@ -36655,6 +36716,7 @@
 :: wafoub.graindemalice.fr
 :: waitingnumber.com
 :: wal.wolfram.com
+:: walbusch.de
 :: wallet.chain.com
 :: wamahe.wokularach.pl
 :: wantingwindow.com
@@ -37101,6 +37163,7 @@
 :: withsharks.com
 :: withsounds.com
 :: withyou.shorr.com
+:: witt-weiden.de
 :: wittypopcorn.com
 :: wittyshack.com
 :: wiz.empowerhearing.com
@@ -37144,6 +37207,7 @@
 :: wnozpl.escarpe.it
 :: wnvieu.enpal.de
 :: wnyywf.frankonia.de
+:: wo-cloud.com
 :: won.wooribank.com
 :: wondermakings.com
 :: woodpeckerlog.com
@@ -37455,6 +37519,7 @@
 :: xhuahy.juwelo.it
 :: xhxmhs.ounass.ae
 :: xibspj.komehyo.jp
+:: xing.com
 :: xiqvza.dickblick.com
 :: xitvce.webtretho.com
 :: xiuksf.worten.es
