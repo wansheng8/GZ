@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 48816
+! Total Rules: 48819
 ! ------------------------------------------
 &&sub19=undefined&sub20=undefined
 &action=js_stats
@@ -46939,6 +46939,9 @@ $to=~lifehacker.ru|~forbes.ru|~kommersant.ru,removeparam=erid
 $to=~greenbuildingadvisor.com,removeparam=oly_enc_id
 $to=~login.aliexpress.com|~login.aliexpress.us,removeparam=_ga
 $to=~tradedoubler.com,removeparam=tduid
+||maps.app.goo.gl^$removeparam=g_st
+||oita-press.co.jp^$removeparam=yh
+||eiga.com^$removeparam=cid
 ||fukuishimbun.co.jp^$removeparam=f
 ||natalie.mu^$removeparam=ref
 ||natalie.mu^$removeparam=place
@@ -46957,8 +46960,8 @@ $to=~tradedoubler.com,removeparam=tduid
 ||ck12.org^$doc,removeparam=_eid
 ||ck12.org^$doc,removeparam=_mid
 ||newspicks.com^$removeparam=invoker
-$removeparam=ro,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
-$removeparam=ri,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
+$removeparam=ro,to=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
+$removeparam=ri,to=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.jp|yorozoonews.jp|news.ksb.co.jp
 ||spotfund.com^$removeparam=source
 ||spotfund.com^$removeparam=share_location
 ||spotfund.com^$removeparam=SFID
@@ -47007,7 +47010,7 @@ $removeparam=ri,domain=khb-tv.co.jp|kab.co.jp|kfb.co.jp|maidonanews.jp|ncctv.co.
 ||adesampa.com.br^$removeparam=suid
 ||bandsintown.com^$removeparam=actor_id
 ||bandsintown.com^$removeparam=affil_code
-||bandsintown.com^$removeparam=app_id
+||bandsintown.com^$doc,removeparam=app_id
 ||bandsintown.com^$removeparam=came_from
 ||bandsintown.com^$removeparam=signature
 ||bandsintown.com^$removeparam=spn
