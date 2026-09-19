@@ -15,6 +15,12 @@ on:
 permissions:
   contents: write
 
+# 串行化构建：连续 push 会触发多个 run。并发执行时，后完成的 run 会因为
+# 远端已被先完成的 run 推送而 push 失败（non-fast-forward），出现红色报错。
+concurrency:
+  group: build-filters
+  cancel-in-progress: false
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -71,4 +77,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git commit -m "chore: auto update filter lists [skip ci]"
-          git push
+          # 远端可能被并发 run 或人工 push 推进，先 rebase 再推。
+          # dist 是生成物，冲突时以本次刚构建的产物为准（rebase 中 --theirs 即本地产物）。
+          pushed=false
+          for attempt in 1 2 3; do
+            if git fetch origin main \
+              && git rebase -X theirs origin/main \
+              && git push origin main; then
+              pushed=true
+              break
+            fi
+            echo "push attempt ${attempt} failed; retrying..."
+            git rebase --abort 2>/dev/null || true
+            sleep 10
+          done
+          if [ "$pushed" != "true" ]; then
+            echo "ERROR: failed to push after 3 attempts"
+            exit 1
+          fi
