@@ -7,7 +7,7 @@
     "dns_domains": 9,
     "source_counts": {
       "FixtureAds": 17,
-      "FixturePrivacy": 3
+      "FixturePrivacy": 4
     },
     "category_counts": {
       "ads": 7,
@@ -38,7 +38,7 @@
   "enhancements": {
     "alias_normalize": {
       "normalized": 1,
-      "collapsed": 1,
+      "collapsed": 0,
       "by_alias": {
         "xmlhttprequest": 1
       }

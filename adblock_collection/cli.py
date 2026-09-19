@@ -601,10 +601,10 @@ def build(args: argparse.Namespace) -> int:
         return out
 
     stages = [FunctionStage("collect", collect_stage)]
-    if flags.alias_normalize:
-        stages.append(FunctionStage("alias", alias_stage))
     stages.append(FunctionStage("source_stats", source_stats_stage))
     stages.append(FunctionStage("dedupe", dedupe_stage))
+    if flags.alias_normalize:
+        stages.append(FunctionStage("alias", alias_stage))
     stages.append(FunctionStage("allowlist", allowlist_stage))
     stages.append(FunctionStage("badfilter", badfilter_stage))
     if flags.per_rule_classify:

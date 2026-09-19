@@ -29,7 +29,7 @@ python3 -m adblock_collection build --out dist --split-by-category
 处理阶段均为 `(rules, ctx) -> rules` 纯函数，I/O 只出现在 `collect` 与 `emit`。
 
 ```
-配置加载 → 本地规则校验 → [Pipeline: collect → alias → source_stats → dedupe
+配置加载 → 本地规则校验 → [Pipeline: collect → source_stats → dedupe → alias
         → allowlist → badfilter → classify → arbitrate → domain_fold → css_dedupe]
         → rules.jsonl → 多格式输出 → 血缘/关系图 → 上游健康报告 → 误杀回归
         → 质量门禁 → manifest → [字节基线比对?]
@@ -37,7 +37,8 @@ python3 -m adblock_collection build --out dist --split-by-category
 
 > M3 起 `alias` / `classify` / `arbitrate` / `domain_fold` 默认进入阶段序列，
 > 由 `--no-*` 开关移除；`css_dedupe` 常开。`--redundant` 且 `--no-domain-fold` 时
-> 走旧版域名折叠，用于复现重构前产物。
+> 走旧版域名折叠，用于复现重构前产物。`source_stats` 在去重前统计原始来源贡献，
+> `alias` 在去重后仅合并别名等价的残留重复。
 
 | 阶段 | 输入 | 执行位置 | 校验 | 产物 | 失败处置 |
 |------|------|----------|------|------|----------|
