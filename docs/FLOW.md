@@ -30,10 +30,10 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 |------|------|----------|------|------|----------|
 | 1 配置加载 | `config/sources.yaml` | `merge.load_sources` | YAML 可解析、源无重复 | `sources` 列表 | 文件缺失/解析失败 → 返回 1 |
 | 2 本地规则校验 | `config/local_rules.txt` | `merge.validate_local_rules` | 无通配误伤（`##*`/`##body`/域通配/裸 `*`） | 校验报告（日志） | 有违规 → 返回 2 阻断发布 |
-| 3 上游收集 | 51 源 + mirror | `merge.collect`（线程池并行） | 失败源记录、过期缓存回退 | `.cache/sources/`、`sources_status.json` | 单源失败 → 容忍并记录；全源失败 → 产物为空 |
+| 3 上游收集 | 60 源 + mirror | `merge.collect`（线程池并行） | 失败源记录、过期缓存回退 | `.cache/sources/`、`sources_status.json` | 单源失败 → 容忍并记录；全源失败 → 产物为空 |
 | 4 合并去重 | 各源 Rule 列表 | `merge.dedupe` / `apply_allowlist` / `apply_badfilter` | 白名单精确放行、badfilter 抵消 | 去重后规则集 | 逻辑错误 → 测试兜底（tests/） |
 | 5 冗余消除 | 去重后规则 | `remove_redundant_domains` / `remove_redundant_css` | 仅纯域名/纯类名归并 | 精简规则集 | 仅记录移除数，不阻断 |
-| 6 多格式输出 | 全量规则 | `writer._emit` + `_emit_by_category` + `_emit_security` | 分类子列表并集 == 完整版 | `dist/*.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量断言失败 → 报错阻断 |
+| 6 多格式输出 | 全量规则 | `cli._emit` + `_emit_layers` + `_emit_by_category` + `_emit_security` | 分类子列表并集 == 完整版；三层产物按规则类型划分 | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量断言失败 → 报错阻断 |
 | 7 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
 | 8 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
 | 9 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0` | `regression_report.json` | 有误杀 → 返回 1 阻断 |
@@ -135,6 +135,9 @@ python3 -c "import json;d=json.load(open('dist/sources_status.json'));print('失
 | 文件 | 格式 |
 |------|------|
 | `adblock_collection_full[_category].txt` | Adblock Plus / uBO / AdGuard |
+| `adblock_collection_full_browser_network.txt` | 三层·扩展网络拦截层（`kind=network` 请求阻断） |
+| `adblock_collection_full_cosmetic.txt` | 三层·扩展元素隐藏层（`##` / `#?#` / `##+js` / HTML） |
+| `adblock_collection_full_dns_abp.txt` | 三层·DNS 等价域名规则（每行 `\|\|domain^`，无修饰符） |
 | `*_dns.txt` | hosts（`0.0.0.0 domain`） |
 | `*_dns_ipv6.txt` | hosts（`:: domain`） |
 | `*_domains.txt` | 每行一域名（AdGuard DNS/Home） |
@@ -142,7 +145,7 @@ python3 -c "import json;d=json.load(open('dist/sources_status.json'));print('失
 | `*.dns_safety.json` | DNS 安全分级分布 |
 | `security/adblock_collection_security*.txt` | 安全类独立发行 |
 
-**不变量**：按类别拆分的子列表（非 DNS 后缀文件）并集必须等于完整版。若被破坏，构建报错（`cli.py` 断言）。
+**不变量**：按类别拆分的子列表（排除 DNS 后缀与三层产物 `_dns_abp` / `_browser_network` / `_cosmetic`）并集必须等于完整版。若被破坏，构建报错（`cli.py` 断言）。
 
 ---
 

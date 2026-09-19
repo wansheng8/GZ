@@ -55,6 +55,7 @@ from .writer import (
     write_adblock,
     write_adblock_split,
     write_dns_safety_report,
+    write_domain_rules,
     write_domains,
     write_hosts,
     write_hosts_ipv6,
@@ -73,18 +74,17 @@ DEFAULT_HEADERS = {
 }
 
 
-def _emit(
-    rules, output_dir, prefix, title, desc, gen_dns, source_counts, manifest, policy
-):
+def _emit_adblock_file(
+    rules, output_dir, prefix, title, desc, manifest
+) -> tuple[Path, int]:
+    """写一个 adblock 列表文件；超过 jsDelivr 单文件上限时自动生成分片主链。"""
     rules = list(rules)
-    results = {}
-    ap = output_dir / f"{prefix}.txt"
-    n = write_adblock(rules, ap, title, desc)
-    results["adblock"] = (ap, n)
+    path = output_dir / f"{prefix}.txt"
+    n = write_adblock(rules, path, title, desc)
     manifest.append(
         {"name": prefix, "file": f"{prefix}.txt", "format": "adblock", "rules": n}
     )
-    if ap.stat().st_size > JSDELIVR_MAX_BYTES:
+    if path.stat().st_size > JSDELIVR_MAX_BYTES:
         split = write_adblock_split(
             rules, output_dir, prefix, title, desc, max_bytes=JSDELIVR_MAX_BYTES
         )
@@ -92,8 +92,8 @@ def _emit(
             master, parts, total = split
             LOG.info(
                 "adblock 列表 %s (%.2f MiB) 超过 jsDelivr 上限，已拆分为 %d 个分片主链 %s",
-                ap.name,
-                ap.stat().st_size / 1048576,
+                path.name,
+                path.stat().st_size / 1048576,
                 len(parts),
                 master,
             )
@@ -106,6 +106,16 @@ def _emit(
                     "parts": parts,
                 }
             )
+    return path, n
+
+
+def _emit(
+    rules, output_dir, prefix, title, desc, gen_dns, source_counts, manifest, policy
+):
+    rules = list(rules)
+    results = {}
+    ap, n = _emit_adblock_file(rules, output_dir, prefix, title, desc, manifest)
+    results["adblock"] = (ap, n)
     src_counts = source_stats(rules) if source_counts is None else source_counts
     write_summary(category_stats(rules), output_dir, prefix)
     write_summary_json(
@@ -176,6 +186,57 @@ def _emit_by_category(
             manifest=manifest,
             policy=policy,
         )
+
+
+_COSMETIC_KINDS = ("css", "scriptlet", "html", "js")
+
+
+def _emit_layers(rules, output_dir, base_prefix, manifest, gen_dns, policy) -> None:
+    """按「规则类型」产出三层防护清单，对应 DNS / 扩展网络 / 扩展元素隐藏。
+
+    - 扩展网络拦截层：``kind=network``，请求阻断规则（含修饰符与站点例外）
+    - 扩展元素隐藏层：``css/scriptlet/html/js``，DOM 隐藏与脚本注入
+    - DNS 等价清单：整域阻断的纯域名 ``||domain^`` 规则，无修饰符
+
+    类别拆分按来源类别（network/privacy/...）分组，本函数按规则类型分组，二者互补。
+    """
+    rules = list(rules)
+    network = [r for r in rules if r.kind == "network"]
+    cosmetic = [r for r in rules if r.kind in _COSMETIC_KINDS]
+    _emit_adblock_file(
+        network,
+        output_dir,
+        f"{base_prefix}_browser_network",
+        "Adblock Rule Collection (Browser Network)",
+        "扩展网络拦截层：域名/URL/资源请求阻断，含修饰符与站点例外，不含元素隐藏",
+        manifest,
+    )
+    _emit_adblock_file(
+        cosmetic,
+        output_dir,
+        f"{base_prefix}_cosmetic",
+        "Adblock Rule Collection (Cosmetic)",
+        "扩展元素隐藏层：CSS 隐藏 / 扩展选择器 / scriptlet 脚本注入 / HTML 过滤",
+        manifest,
+    )
+    if gen_dns:
+        dp = output_dir / f"{base_prefix}_dns_abp.txt"
+        nd = write_domain_rules(
+            rules,
+            dp,
+            "Adblock Rule Collection (DNS-domain rules)",
+            "DNS 等价域名阻断：整域 ||domain^ 纯域名规则，无修饰符，浏览器与 DNS 端均可导入",
+            policy,
+        )
+        manifest.append(
+            {
+                "name": f"{base_prefix}_dns_abp",
+                "file": dp.name,
+                "format": "adblock_domains",
+                "rules": nd,
+            }
+        )
+    LOG.info("三层产物: 网络拦截 %d 条, 元素隐藏 %d 条", len(network), len(cosmetic))
 
 
 def _emit_security(rules, output_dir, security_policy, manifest, gen_dns, dns_policy):
@@ -327,6 +388,14 @@ def build(args: argparse.Namespace) -> int:
         manifest=manifest,
         policy=dns_policy,
     )
+    _emit_layers(
+        deduped,
+        output_dir,
+        "adblock_collection_full",
+        manifest,
+        gen_dns=not args.no_dns,
+        policy=dns_policy,
+    )
     if args.split_by_category:
         _emit_by_category(
             deduped,
@@ -344,7 +413,14 @@ def build(args: argparse.Namespace) -> int:
             if r["name"].startswith("adblock_collection_full_")
             and not any(
                 r["file"].endswith(s)
-                for s in ("_dns.txt", "_domains.txt", "_dns_ipv6.txt")
+                for s in (
+                    "_dns.txt",
+                    "_domains.txt",
+                    "_dns_ipv6.txt",
+                    "_dns_abp.txt",
+                    "_browser_network.txt",
+                    "_cosmetic.txt",
+                )
             )
             and "_jsdelivr" not in r["file"]
             and r["file"] != "adblock_collection_full.txt"

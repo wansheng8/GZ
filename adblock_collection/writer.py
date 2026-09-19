@@ -5,6 +5,7 @@
 - hosts   : 0.0.0.0 域名 形式，供 Pi-hole / dnsmasq 使用
 - hosts_ipv6 : :: 域名 形式，供 IPv6 环境 NXDOMAIN 使用
 - domains : 每行一个域名，供 AdGuard Home / AdGuard DNS 使用
+- domain_rules : 每行 ``||domain^``，DNS 等价的纯域名 adblock 清单（浏览器可导入）
 - stats   : 人类可读分类统计
 - stats_json : 机器可读统计
 """
@@ -243,6 +244,28 @@ def write_domains(
         )
         for d in sorted(domains):
             fh.write(d + "\n")
+    return len(domains)
+
+
+def write_domain_rules(
+    rules: Iterable[Rule],
+    path: Path,
+    title: str,
+    desc: str,
+    policy: dict | None = None,
+) -> int:
+    """生成「DNS 等价」纯域名 adblock 清单，每行 ``||domain^``。
+
+    与 hosts/domains 同源（同一 _blocked_domains 集合），仅含整域阻断、无任何修饰符
+    与元素隐藏规则。用途：不搭 DNS 的用户可用它把域名阻断层直接导入浏览器扩展；
+    由于输出是纯 adblock 语法，也可作为 DNS 端「域名规则」形态导入 AdGuard Home。
+    """
+    domains = _blocked_domains(rules, policy)
+    with path.open("w", encoding="utf-8") as fh:
+        for line in _adblock_header(title, desc, len(domains)):
+            fh.write(line + "\n")
+        for d in sorted(domains):
+            fh.write(f"||{d}^\n")
     return len(domains)
 
 

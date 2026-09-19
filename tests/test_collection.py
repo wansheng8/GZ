@@ -403,6 +403,107 @@ def test_dns_outputs_contain_only_pure_blocked_domains(tmp_path):
     assert "/" not in content
 
 
+# ---------------- 三层产物（网络 / 元素隐藏 / DNS 等价） ----------------
+
+
+def test_emit_layers_splits_rules_by_kind(tmp_path):
+    from adblock_collection import cli
+
+    rules = [
+        parse_line("||ads.example.com^"),
+        parse_line("||track.example.com^$third-party"),
+        parse_line("example.com##.ad-banner"),
+        parse_line("example.com##+js(set-constant, adblockDetected, false)"),
+        parse_line("example.com#?#div:has(.advert)"),
+    ]
+    manifest: list = []
+    cli._emit_layers(
+        rules,
+        tmp_path,
+        "adblock_collection_full",
+        manifest,
+        gen_dns=True,
+        policy={"level": "all"},
+    )
+    files = {m["file"] for m in manifest}
+    assert {
+        "adblock_collection_full_browser_network.txt",
+        "adblock_collection_full_cosmetic.txt",
+        "adblock_collection_full_dns_abp.txt",
+    } <= files
+
+    network = (tmp_path / "adblock_collection_full_browser_network.txt").read_text(
+        encoding="utf-8"
+    )
+    assert "||ads.example.com^" in network
+    assert "||track.example.com^$third-party" in network
+    assert "##" not in network
+
+    cosmetic = (tmp_path / "adblock_collection_full_cosmetic.txt").read_text(
+        encoding="utf-8"
+    )
+    assert "example.com##.ad-banner" in cosmetic
+    assert "##+js(" in cosmetic
+    assert "#?#div:has(.advert)" in cosmetic
+    assert "||ads.example.com^" not in cosmetic
+
+
+def test_dns_abp_contains_only_pure_domain_rules(tmp_path):
+    from adblock_collection import cli
+
+    rules = [
+        parse_line("||ads.example.com^"),
+        parse_line("||track.example.com^$third-party"),
+        parse_line("@@||allow.example.com^"),
+        parse_line("@@||doubleclick.net^$xhr,domain=yyets.click"),
+        parse_line("||ads.example.com/track^"),
+        parse_line("example.com##.ad"),
+    ]
+    manifest: list = []
+    cli._emit_layers(
+        rules,
+        tmp_path,
+        "adblock_collection_full",
+        manifest,
+        gen_dns=True,
+        policy={"level": "all"},
+    )
+    content = (tmp_path / "adblock_collection_full_dns_abp.txt").read_text(
+        encoding="utf-8"
+    )
+    body = [
+        line
+        for line in content.splitlines()
+        if line and not line.startswith("!") and not line.startswith("[")
+    ]
+    assert body
+    for line in body:
+        assert line.startswith("||") and line.endswith("^")
+        assert "$" not in line
+        assert "##" not in line
+        assert "@@" not in line
+    assert "||ads.example.com^" in body
+    # 路径规则不得被扩成整域，例外不得出现在 DNS 等价清单里
+    assert "||allow.example.com^" not in body
+
+
+def test_emit_layers_skips_dns_abp_without_dns(tmp_path):
+    from adblock_collection import cli
+
+    manifest: list = []
+    cli._emit_layers(
+        [parse_line("||ads.example.com^")],
+        tmp_path,
+        "adblock_collection_full",
+        manifest,
+        gen_dns=False,
+        policy={"level": "all"},
+    )
+    files = {m["file"] for m in manifest}
+    assert "adblock_collection_full_dns_abp.txt" not in files
+    assert "adblock_collection_full_browser_network.txt" in files
+
+
 # ---------------- DNS 安全分级 ----------------
 
 
