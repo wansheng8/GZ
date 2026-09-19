@@ -260,40 +260,11 @@ def remove_redundant_domains(rules: Iterable[Rule]) -> list[Rule]:
     全量拦截时只保留 ``$important`` 版本。带路径的规则（``||a.com/path^``）不是全量
     拦截，既不覆盖子域也不顶替纯域名规则。例外（@@）规则始终保留。
     """
-    rules = list(rules)
-    # 每个域名的整域全量拦截代表（优先 $important）
-    full_block: dict[str, Rule] = {}
-    for r in rules:
-        if _is_full_domain_block(r) and len(r.domains) == 1:
-            d = r.domains[0]
-            prev = full_block.get(d)
-            if prev is None or (r.is_important and not prev.is_important):
-                full_block[d] = r
+    from .domain_fold import fold_domains
 
-    kept: list[Rule] = []
-    removed = 0
-    for r in rules:
-        if (
-            r.kind == "network"
-            and not r.is_exception
-            and r.domains
-            and len(r.domains) == 1
-        ):
-            d = r.domains[0]
-            # 严格祖先域存在整域全量拦截时，当前规则（含子域全量拦截）冗余
-            parts = d.split(".")
-            if any(".".join(parts[i:]) in full_block for i in range(1, len(parts))):
-                removed += 1
-                continue
-            if d in full_block:
-                if r is full_block[d]:
-                    kept.append(r)
-                else:
-                    removed += 1
-                continue
-        kept.append(r)
-    if removed:
-        LOG.info("冗余域名规则移除: %d", removed)
+    kept, report = fold_domains(rules, protect_exception_children=False)
+    if report.folded:
+        LOG.info("冗余域名规则移除: %d", report.folded)
     return kept
 
 

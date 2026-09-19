@@ -103,6 +103,7 @@ def _build_args(cfg, out, alias):
             "alias_normalize": alias,
             "resolve_conflicts": False,
             "per_rule_classify": False,
+            "domain_fold": False,
         },
     )()
 

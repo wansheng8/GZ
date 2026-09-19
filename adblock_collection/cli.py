@@ -23,6 +23,7 @@ from pathlib import Path
 from .aliases import normalize_aliases
 from .arbitrate import arbitrate
 from .dns_policy import load_dns_policy
+from .domain_fold import fold_domains
 from .merge import (
     apply_allowlist,
     apply_badfilter,
@@ -409,6 +410,21 @@ def build(args: argparse.Namespace) -> int:
             "records": len(arb_records),
         }
         LOG.info("冲突仲裁: 移除 %d 条, 记录 %d 条 -> arbitration.json", removed, len(arb_records))
+    if args.domain_fold:
+        deduped, fold_report = fold_domains(deduped)
+        (output_dir / "domain_fold.json").write_text(
+            json.dumps(fold_report.to_dict(), ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        enhancements["domain_fold"] = {
+            "folded": fold_report.folded,
+            "domains": len(fold_report.domains),
+        }
+        LOG.info(
+            "域名层级折叠: 折叠 %d 条, 涉及 %d 个域名 -> domain_fold.json",
+            fold_report.folded,
+            len(fold_report.domains),
+        )
     if args.redundant:
         deduped = remove_redundant_domains(deduped)
         deduped = remove_redundant_css(deduped)
@@ -711,6 +727,11 @@ def main(argv: list[str] | None = None) -> int:
         "--per-rule-classify",
         action="store_true",
         help="逐条多信号分类：安全信号与泛化提示可覆盖上游类别提示",
+    )
+    p_build.add_argument(
+        "--domain-fold",
+        action="store_true",
+        help="折叠被祖先域整域拦截覆盖的子域规则，记录 domain_fold.json",
     )
     p_build.add_argument(
         "--split-by-category", action="store_true", help="split output by category"

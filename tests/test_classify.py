@@ -100,6 +100,7 @@ def test_cli_build_per_rule_classify_promotes_security(tmp_path, monkeypatch):
             "alias_normalize": False,
             "resolve_conflicts": False,
             "per_rule_classify": True,
+            "domain_fold": False,
         },
     )()
     assert cli.build(args) == 0

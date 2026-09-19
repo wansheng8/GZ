@@ -89,6 +89,8 @@ def fold_domains(rules: list[Rule]) -> tuple[list[Rule], FoldReport]: ...
 
 `arbitrate` 的仲裁范围限定为整域规则：仅当目标是纯域名且选项集合是 `{"important"}` 的子集时参与。整域全局例外的判定复用 `writer._is_global_domain_exception`，作用域与路径例外保持原样输出。仲裁记录写入 `dist/arbitration.json`，条数汇总进构建报告。
 
+`fold_domains` 是 `merge.remove_redundant_domains` 的增强实现：后者改为以 `protect_exception_children=False` 调用前者，保持 `--redundant` 的既有产物字节级不变；新开关 `--domain-fold` 启用 `protect_exception_children=True`，当子域自身存在精确例外时保留其阻断规则，并把折叠条数与域名清单写入 `dist/domain_fold.json`。
+
 ### 3.3 中间产物接口
 
 ```python
