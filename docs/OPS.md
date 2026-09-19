@@ -11,7 +11,7 @@
 **触发**：GitHub Actions 每日 03:00 UTC 定时运行（`.github/workflows/build.yml`），main 分支 push 时若涉及代码也会触发。
 
 **CI 自动做的事**：
-1. 拉取仓库 → 安装依赖 → 用缓存下载源
+1. 拉取仓库 → 安装开发依赖 → 运行 `python -m pytest -q`（含字节基线夹具比对）→ 用缓存下载源
 2. 执行构建命令 `python3 -m adblock_collection build --out dist --split-by-category --redundant`（CI 镜像中 `python` 与本地 `python3` 等价）
 3. 再以「增强开关全开」构建到 `/tmp/dist-enhanced`，校验四个增强报告均生成（`--alias-normalize --resolve-conflicts --per-rule-classify --domain-fold`），不产出正式 dist
 4. 健康检查（规则数 < 30 万 或 失败源 ≥ 5 时输出 WARNING，不阻断）
@@ -47,12 +47,16 @@ PY
 
 # 3) 完整构建（CI 同款参数）
 python3 -m adblock_collection build --out dist --split-by-category --redundant
-echo "exit=$?"   # 0=成功; 1=门禁/回归失败; 2=本地规则违规
+echo "exit=$?"   # 0=成功; 1=门禁/回归失败; 2=本地规则违规; 3=内部一致性失败
 
 # 4) 可选：增强开关全开验证（产物写临时目录，不影响 dist）
 python3 -m adblock_collection build --out /tmp/dist-enhanced --split-by-category --redundant \
   --alias-normalize --resolve-conflicts --per-rule-classify --domain-fold
 python3 -c "import json;print(json.load(open('/tmp/dist-enhanced/build_report.json'))['enhancements'])"
+
+# 5) 可选：dry-run 与字节基线（dry-run 不写产物；baseline 逐字节比对）
+python3 -m adblock_collection build --out /tmp/dry --dry-run
+python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --redundant --baseline dist
 ```
 
 **构建后自检清单**（6 项）：

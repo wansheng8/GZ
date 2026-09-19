@@ -22,6 +22,15 @@ from pathlib import Path
 
 from .aliases import normalize_aliases
 from .arbitrate import arbitrate
+from .baseline import compare_baseline
+from .build_pipeline import (
+    BuildContext,
+    BuildError,
+    BuildFlags,
+    FunctionStage,
+    InvariantError,
+    Pipeline,
+)
 from .dns_policy import load_dns_policy
 from .domain_fold import fold_domains
 from .merge import (
@@ -54,8 +63,10 @@ from .quality_gate import (
 )
 from .regression import load_false_positives, run_regression
 from .rules import classify_per_rule
+from .rules_jsonl import DEFAULT_JSONL_PATH, dump_rules_jsonl, safe_load_rules_jsonl
 from .writer import (
     JSDELIVR_MAX_BYTES,
+    _blocked_domains,
     write_adblock,
     write_adblock_split,
     write_dns_safety_report,
@@ -272,6 +283,118 @@ def _emit_security(rules, output_dir, security_policy, manifest, gen_dns, dns_po
     LOG.info("安全类独立发行: %d 条 -> security/", len(sec_rules))
 
 
+def _check_layers_invariant(manifest: list) -> None:
+    """P1：网络拦截层 + 元素隐藏层必须等于完整版（三层并集无损）。"""
+    full_n = next(
+        r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt"
+    )
+    layer_n = sum(
+        r["rules"]
+        for r in manifest
+        if r["file"].endswith(("_browser_network.txt", "_cosmetic.txt"))
+    )
+    if layer_n != full_n:
+        raise InvariantError(
+            f"三层产物不变量被破坏: 网络+元素隐藏 {layer_n} != 完整版 {full_n}"
+        )
+
+
+def _check_category_invariant(manifest: list) -> None:
+    """P3：按类别拆分的子列表并集必须等于完整版。"""
+    cat_total = sum(
+        r["rules"]
+        for r in manifest
+        if r["name"].startswith("adblock_collection_full_")
+        and not any(
+            r["file"].endswith(s)
+            for s in (
+                "_dns.txt",
+                "_domains.txt",
+                "_dns_ipv6.txt",
+                "_dns_abp.txt",
+                "_browser_network.txt",
+                "_cosmetic.txt",
+            )
+        )
+        and "_jsdelivr" not in r["file"]
+        and r["file"] != "adblock_collection_full.txt"
+    )
+    full_n = next(
+        r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt"
+    )
+    if cat_total != full_n:
+        raise InvariantError(
+            f"类别拆分不变量被破坏: 子列表总和 {cat_total} != 完整版 {full_n}"
+        )
+
+
+def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
+    """写出完整版、三层、类别拆分与安全类产物，并校验不变量。
+
+    复用现有 writer 逻辑，不发起网络请求，可由 ``rules_jsonl.emit_from_jsonl``
+    在离线场景下调用。
+    """
+    target = Path(output_dir) if output_dir is not None else ctx.output_dir
+    gen_dns = ctx.flags.gen_dns
+    title, desc = DEFAULT_HEADERS["full"]
+    manifest: list = []
+    full_results = _emit(
+        rules,
+        target,
+        "adblock_collection_full",
+        title,
+        desc,
+        gen_dns=gen_dns,
+        source_counts=ctx.artifacts.get("source_counts"),
+        manifest=manifest,
+        policy=ctx.dns_policy,
+    )
+    _emit_layers(
+        rules,
+        target,
+        "adblock_collection_full",
+        manifest,
+        gen_dns=gen_dns,
+        policy=ctx.dns_policy,
+    )
+    _check_layers_invariant(manifest)
+    if ctx.flags.split_by_category:
+        _emit_by_category(
+            rules,
+            target,
+            "adblock_collection_full",
+            title,
+            gen_dns=gen_dns,
+            manifest=manifest,
+            policy=ctx.dns_policy,
+        )
+        _check_category_invariant(manifest)
+    _emit_security(
+        rules,
+        target,
+        ctx.security_policy,
+        manifest,
+        gen_dns=gen_dns,
+        dns_policy=ctx.dns_policy,
+    )
+    return manifest, full_results
+
+
+def _validate_invariants(rules, dns_policy) -> list[str]:
+    """dry-run 场景下的内存不变量校验（不写盘）。"""
+    problems: list[str] = []
+    network = [r for r in rules if r.kind == "network"]
+    cosmetic = [r for r in rules if r.kind in _COSMETIC_KINDS]
+    if len(network) + len(cosmetic) != len(rules):
+        problems.append(
+            f"P1 类型互斥完备: 网络 {len(network)} + 元素 {len(cosmetic)} != 总数 {len(rules)}"
+        )
+    domains = _blocked_domains(rules, dns_policy)
+    if any(not d or "." not in d for d in domains):
+        problems.append("P2 DNS 等价: 域名集合含非法条目")
+    return problems
+
+
 def _write_provenance_report(rules, output_dir) -> dict:
     """生成来源血缘报告 provenance.json、语义关系图 relation_graph.json 与冲突报告。
 
@@ -324,7 +447,8 @@ def build(args: argparse.Namespace) -> int:
         return 1
 
     output_dir = Path(args.out)
-    output_dir.mkdir(parents=True, exist_ok=True)
+    if not getattr(args, "dry_run", False):
+        output_dir.mkdir(parents=True, exist_ok=True)
 
     dns_policy = load_dns_policy(config_path)
     if args.dns_policy:
@@ -334,13 +458,6 @@ def build(args: argparse.Namespace) -> int:
             dns_policy = dict(DNS_LEVELS[args.dns_policy])
             dns_policy["level"] = args.dns_policy
     security_policy = load_security_policy(config_path)
-    collected = collect(
-        config_path,
-        use_cache=not args.no_cache,
-        offline=args.offline,
-        use_stage_cache=not args.no_stage_cache,
-    )
-    failed_sources = collected.get("_failed", [])
 
     # 本地增强规则静态校验：禁止通配误伤规则，违规则阻断构建，落实「宁愿少拦截」
     lr_violations = validate_local_rules(config_path)
@@ -353,162 +470,179 @@ def build(args: argparse.Namespace) -> int:
         )
         return 2
 
-    all_rules: list = []
-    for _name, rules in collected.get("all", []):
-        all_rules.extend(rules)
+    flags = BuildFlags(
+        alias_normalize=args.alias_normalize,
+        resolve_conflicts=args.resolve_conflicts,
+        per_rule_classify=args.per_rule_classify,
+        domain_fold=args.domain_fold,
+        redundant=args.redundant,
+        split_by_category=args.split_by_category,
+        gen_dns=not args.no_dns,
+        dry_run=getattr(args, "dry_run", False),
+    )
+    ctx = BuildContext(
+        config_path=config_path,
+        output_dir=output_dir,
+        dns_policy=dns_policy,
+        security_policy=security_policy,
+        flags=flags,
+    )
 
-    # 规则增强（默认关闭，开启后允许语义等价变化）：
-    # 别名归一化先把等价选项名折叠为规范名，使后续去重能合并别名不同的同一规则。
-    enhancements: dict = {}
-    if args.alias_normalize:
-        all_rules, alias_report = normalize_aliases(all_rules)
-        enhancements["alias_normalize"] = alias_report.to_dict()
+    def collect_stage(rules, context):
+        collected = collect(
+            config_path,
+            use_cache=not args.no_cache,
+            offline=args.offline,
+            use_stage_cache=not args.no_stage_cache,
+        )
+        context.artifacts["failed_sources"] = collected.get("_failed", [])
+        all_rules: list = []
+        for _name, source_rules in collected.get("all", []):
+            all_rules.extend(source_rules)
+        return all_rules
+
+    def alias_stage(rules, context):
+        out, report = normalize_aliases(rules)
+        context.artifacts.setdefault("enhancements", {})["alias_normalize"] = (
+            report.to_dict()
+        )
         LOG.info(
-            "别名归一化: 改写 %d 条, 折叠 %d 条",
-            alias_report.normalized,
-            alias_report.collapsed,
+            "别名归一化: 改写 %d 条, 折叠 %d 条", report.normalized, report.collapsed
         )
+        return out
 
-    src_counts = source_stats(all_rules)
-    for name, cnt in src_counts.items():
-        LOG.info("上游贡献规则: %-35s %d", name, cnt)
-    if failed_sources:
-        LOG.warning(
-            "本次下载失败的源 (%d): %s", len(failed_sources), ", ".join(failed_sources)
-        )
+    def source_stats_stage(rules, context):
+        stats = source_stats(rules)
+        context.artifacts["source_counts"] = stats
+        for name, cnt in stats.items():
+            LOG.info("上游贡献规则: %-35s %d", name, cnt)
+        failed = context.artifacts.get("failed_sources") or []
+        if failed:
+            LOG.warning("本次下载失败的源 (%d): %s", len(failed), ", ".join(failed))
+        LOG.info("原始规则总数: %d", len(rules))
+        return rules
 
-    LOG.info("原始规则总数: %d", len(all_rules))
-    deduped = dedupe(all_rules)
-    LOG.info("去重后规则总数: %d", len(deduped))
-    # 强制白名单放行：allow 清单（含祖先域）绝不整域封锁，落实「宁愿少拦截」
-    _fps = load_false_positives(config_path)
-    if _fps.get("allow"):
-        before = len(deduped)
-        deduped = apply_allowlist(deduped, _fps["allow"])
-        LOG.info("白名单强制放行移除规则: %d", before - len(deduped))
-    deduped = apply_badfilter(deduped)
-    if args.per_rule_classify:
-        before_cats = [r.category for r in deduped]
-        deduped = classify_per_rule(deduped)
+    def dedupe_stage(rules, context):
+        out = dedupe(rules)
+        LOG.info("去重后规则总数: %d", len(out))
+        return out
+
+    def allowlist_stage(rules, context):
+        fps = load_false_positives(config_path)
+        if not fps.get("allow"):
+            return rules
+        before = len(rules)
+        out = apply_allowlist(rules, fps["allow"])
+        LOG.info("白名单强制放行移除规则: %d", before - len(out))
+        return out
+
+    def badfilter_stage(rules, context):
+        return apply_badfilter(rules)
+
+    def classify_stage(rules, context):
+        before_cats = [r.category for r in rules]
+        out = classify_per_rule(rules)
         changed = sum(
-            1 for rule, prev in zip(deduped, before_cats, strict=True)
+            1
+            for rule, prev in zip(out, before_cats, strict=True)
             if rule.category != prev
         )
-        enhancements["per_rule_classify"] = {"reclassified": changed}
-        LOG.info("逐条多信号分类: 改写类别 %d 条", changed)
-    if args.resolve_conflicts:
-        deduped, arb_records = arbitrate(deduped)
-        removed = sum(len(r.losers) for r in arb_records)
-        (output_dir / "arbitration.json").write_text(
-            json.dumps(
-                [r.to_dict() for r in arb_records], ensure_ascii=False, indent=2
-            ),
-            encoding="utf-8",
-        )
-        enhancements["resolve_conflicts"] = {
-            "removed": removed,
-            "records": len(arb_records),
+        context.artifacts.setdefault("enhancements", {})["per_rule_classify"] = {
+            "reclassified": changed
         }
-        LOG.info("冲突仲裁: 移除 %d 条, 记录 %d 条 -> arbitration.json", removed, len(arb_records))
-    if args.domain_fold:
-        deduped, fold_report = fold_domains(deduped)
-        (output_dir / "domain_fold.json").write_text(
-            json.dumps(fold_report.to_dict(), ensure_ascii=False, indent=2),
-            encoding="utf-8",
+        LOG.info("逐条多信号分类: 改写类别 %d 条", changed)
+        return out
+
+    def arbitrate_stage(rules, context):
+        out, records = arbitrate(rules)
+        removed = sum(len(r.losers) for r in records)
+        if not context.flags.dry_run:
+            (context.output_dir / "arbitration.json").write_text(
+                json.dumps([r.to_dict() for r in records], ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+        context.artifacts.setdefault("enhancements", {})["resolve_conflicts"] = {
+            "removed": removed,
+            "records": len(records),
+        }
+        LOG.info(
+            "冲突仲裁: 移除 %d 条, 记录 %d 条 -> arbitration.json",
+            removed,
+            len(records),
         )
-        enhancements["domain_fold"] = {
-            "folded": fold_report.folded,
-            "domains": len(fold_report.domains),
+        return out
+
+    def fold_stage(rules, context):
+        out, report = fold_domains(rules)
+        if not context.flags.dry_run:
+            (context.output_dir / "domain_fold.json").write_text(
+                json.dumps(report.to_dict(), ensure_ascii=False, indent=2),
+                encoding="utf-8",
+            )
+        context.artifacts.setdefault("enhancements", {})["domain_fold"] = {
+            "folded": report.folded,
+            "domains": len(report.domains),
         }
         LOG.info(
             "域名层级折叠: 折叠 %d 条, 涉及 %d 个域名 -> domain_fold.json",
-            fold_report.folded,
-            len(fold_report.domains),
+            report.folded,
+            len(report.domains),
         )
-    if args.redundant:
-        deduped = remove_redundant_domains(deduped)
-        deduped = remove_redundant_css(deduped)
+        return out
 
-    full_title, full_desc = DEFAULT_HEADERS["full"]
-    manifest: list = []
-    full_results = _emit(
-        deduped,
-        output_dir,
-        "adblock_collection_full",
-        full_title,
-        full_desc,
-        gen_dns=not args.no_dns,
-        source_counts=src_counts,
-        manifest=manifest,
-        policy=dns_policy,
-    )
-    _emit_layers(
-        deduped,
-        output_dir,
-        "adblock_collection_full",
-        manifest,
-        gen_dns=not args.no_dns,
-        policy=dns_policy,
-    )
-    # 不变量校验：网络拦截层 + 元素隐藏层必须等于完整版（三层并集无损）
-    _full_n = next(
-        r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt"
-    )
-    _layer_n = sum(
-        r["rules"]
-        for r in manifest
-        if r["file"].endswith(("_browser_network.txt", "_cosmetic.txt"))
-    )
-    if _layer_n != _full_n:
-        LOG.error(
-            "三层产物不变量被破坏: 网络+元素隐藏 %d != 完整版 %d", _layer_n, _full_n
-        )
-    if args.split_by_category:
-        _emit_by_category(
-            deduped,
-            output_dir,
-            "adblock_collection_full",
-            full_title,
-            gen_dns=not args.no_dns,
-            manifest=manifest,
-            policy=dns_policy,
-        )
-        # 不变量校验：按类别拆分的子列表并集必须等于完整版
-        cat_total = sum(
-            r["rules"]
-            for r in manifest
-            if r["name"].startswith("adblock_collection_full_")
-            and not any(
-                r["file"].endswith(s)
-                for s in (
-                    "_dns.txt",
-                    "_domains.txt",
-                    "_dns_ipv6.txt",
-                    "_dns_abp.txt",
-                    "_browser_network.txt",
-                    "_cosmetic.txt",
-                )
-            )
-            and "_jsdelivr" not in r["file"]
-            and r["file"] != "adblock_collection_full.txt"
-        )
-        full_n = next(
-            r["rules"] for r in manifest if r["file"] == "adblock_collection_full.txt"
-        )
-        if cat_total != full_n:
-            LOG.error(
-                "类别拆分不变量被破坏: 子列表总和 %d != 完整版 %d", cat_total, full_n
-            )
+    def redundant_stage(rules, context):
+        out = remove_redundant_domains(rules)
+        return remove_redundant_css(out)
 
-    # 安全类独立发行（malware/phishing/mining 等）
-    _emit_security(
-        deduped,
-        output_dir,
-        security_policy,
-        manifest,
-        gen_dns=not args.no_dns,
-        dns_policy=dns_policy,
-    )
+    stages = [FunctionStage("collect", collect_stage)]
+    if flags.alias_normalize:
+        stages.append(FunctionStage("alias", alias_stage))
+    stages.append(FunctionStage("source_stats", source_stats_stage))
+    stages.append(FunctionStage("dedupe", dedupe_stage))
+    stages.append(FunctionStage("allowlist", allowlist_stage))
+    stages.append(FunctionStage("badfilter", badfilter_stage))
+    if flags.per_rule_classify:
+        stages.append(FunctionStage("classify", classify_stage))
+    if flags.resolve_conflicts:
+        stages.append(FunctionStage("arbitrate", arbitrate_stage))
+    if flags.domain_fold:
+        stages.append(FunctionStage("domain_fold", fold_stage))
+    if flags.redundant:
+        stages.append(FunctionStage("redundant", redundant_stage))
+
+    try:
+        deduped, pipeline_report = Pipeline(stages).run([], ctx)
+    except BuildError as exc:
+        LOG.error("构建失败: %s", exc)
+        return 3
+    enhancements = ctx.artifacts.get("enhancements", {})
+
+    # 中间产物：无条件落盘，输出阶段由其派生（可离线重建）
+    dump_rules_jsonl(deduped, DEFAULT_JSONL_PATH)
+    reloaded = safe_load_rules_jsonl(DEFAULT_JSONL_PATH)
+    if reloaded is not None:
+        deduped = reloaded
+
+    if flags.dry_run:
+        problems = _validate_invariants(deduped, dns_policy)
+        for problem in problems:
+            LOG.error("dry-run 不变量校验失败: %s", problem)
+        LOG.info(
+            "dry-run 完成: %d 条规则, %d 个阶段, 共 %d ms",
+            len(deduped),
+            len(pipeline_report.stages),
+            pipeline_report.total_elapsed_ms,
+        )
+        return 3 if problems else 0
+
+    src_counts = ctx.artifacts.get("source_counts", {})
+
+    # 输出阶段：由中间产物派生的规则集写出全部产物并校验不变量
+    try:
+        manifest, full_results = emit_outputs(deduped, ctx)
+    except BuildError as exc:
+        LOG.error("构建失败: %s", exc)
+        return 3
 
     # 来源血缘与语义关系图报告
     prov_summary = _write_provenance_report(deduped, output_dir)
@@ -525,7 +659,7 @@ def build(args: argparse.Namespace) -> int:
         json.dumps(
             {
                 "total_sources": len(load_sources(config_path)),
-                "failed_sources": failed_sources,
+                "failed_sources": ctx.artifacts.get("failed_sources", []),
                 "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
             },
             ensure_ascii=False,
@@ -550,6 +684,24 @@ def build(args: argparse.Namespace) -> int:
     )
 
     write_manifest(manifest, output_dir)
+
+    # 字节级基线比对（骨架迁移阶段门禁；迁移完成后为诊断工具）
+    baseline_dir = getattr(args, "baseline", None)
+    if baseline_dir:
+        diff = compare_baseline(Path(baseline_dir), output_dir)
+        if diff.passed:
+            LOG.info("字节基线比对通过: %d 个文件一致", len(diff.files))
+        else:
+            for f in diff.mismatches:
+                LOG.error(
+                    "字节基线差异: %s (missing=%s, 首个差异行=%s, 差异行数=%d)",
+                    f.name,
+                    f.missing,
+                    f.first_diff_line,
+                    f.diff_lines,
+                )
+            return 3
+
     LOG.info("生成完成:")
     for label, res in (("完整版", full_results),):
         if not res:
@@ -742,6 +894,16 @@ def main(argv: list[str] | None = None) -> int:
         choices=["all", "safe", "strict-safe"],
         help="DNS 安全分级策略（覆盖 config 中的 dns_policy.level）",
     )
+    p_build.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="只执行全部阶段与不变量校验，不写入任何产物",
+    )
+    p_build.add_argument(
+        "--baseline",
+        default=None,
+        help="与给定产物目录逐字节比对（忽略 sources_status.json 的 generated_at）",
+    )
     p_build.set_defaults(func=build)
 
     p_stats = sub.add_parser("stats", help="基于已有输出目录重新生成统计")
@@ -759,7 +921,11 @@ def main(argv: list[str] | None = None) -> int:
 
     args = parser.parse_args(argv)
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
-    sys.exit(args.func(args))
+    try:
+        sys.exit(args.func(args))
+    except BuildError as exc:
+        LOG.error("内部一致性失败: %s", exc)
+        sys.exit(3)
 
 
 if __name__ == "__main__":

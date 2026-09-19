@@ -1,0 +1,11 @@
+[Adblock Plus 2.0]
+! Title: Adblock Rule Collection (Cosmetic)
+! Description: 扩展元素隐藏层：CSS 隐藏 / 扩展选择器 / scriptlet 脚本注入 / HTML 过滤
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 3
+! ------------------------------------------
+example.com##.ad-banner
+example.com#?#.promo
+example.com##+js(noop)

@@ -15,15 +15,21 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 | 0 | 成功（门禁与回归均通过） |
 | 1 | 构建完成但门禁或误杀回归失败 |
 | 2 | 本地增强规则校验未通过（构建前阻断） |
+| 3 | 内部一致性失败（阶段异常、产物不变量破坏、字节基线差异） |
 | 其他 | 配置/环境错误（见各阶段） |
 
 ---
 
 ## 阶段总览
 
+主流程由 `build_pipeline.Pipeline` 按阶段序列执行，阶段序列在 `cli.build` 按开关组装；
+处理阶段均为 `(rules, ctx) -> rules` 纯函数，I/O 只出现在 `collect` 与 `emit`。
+
 ```
-配置加载 → 本地规则校验 → 上游收集(并行下载) → 合并去重 → [规则增强(开关)] → 冗余消除
-        → 多格式输出 → 血缘/关系图 → 上游健康报告 → 误杀回归 → 质量门禁 → manifest
+配置加载 → 本地规则校验 → [Pipeline: collect → alias? → source_stats → dedupe
+        → allowlist → badfilter → classify? → arbitrate? → domain_fold? → redundant?]
+        → rules.jsonl → 多格式输出 → 血缘/关系图 → 上游健康报告 → 误杀回归
+        → 质量门禁 → manifest → [字节基线比对?]
 ```
 
 | 阶段 | 输入 | 执行位置 | 校验 | 产物 | 失败处置 |
@@ -34,11 +40,13 @@ python3 -m adblock_collection build --out dist --split-by-category --redundant
 | 4 合并去重 | 各源 Rule 列表 | `merge.dedupe` / `apply_allowlist` / `apply_badfilter` | 白名单精确放行、badfilter 抵消 | 去重后规则集 | 逻辑错误 → 测试兜底（tests/） |
 | 4b 规则增强（可选） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四个开关默认关闭；启用后逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
 | 5 冗余消除 | 去重后规则 | `remove_redundant_domains` / `remove_redundant_css` | 仅纯域名/纯类名归并 | 精简规则集 | 仅记录移除数，不阻断 |
-| 6 多格式输出 | 全量规则 | `cli._emit` + `_emit_layers` + `_emit_by_category` + `_emit_security` | 分类子列表并集 == 完整版；三层产物按规则类型划分 | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量断言失败 → 报错阻断 |
-| 7 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
-| 8 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
-| 9 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0` | `regression_report.json` | 有误杀 → 返回 1 阻断 |
-| 10 质量门禁 | 本批 vs 上批 metrics | `quality_gate.evaluate` | 增长率在阈值内 | `build_report.json` / `previous_metrics.json` | 超阈值 → 返回 1 阻断 |
+| 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库） | 损坏 → `safe_load` 回退内存规则集 |
+| 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版 | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量破坏 → 返回 3 |
+| 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
+| 9 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
+| 10 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0` | `regression_report.json` | 有误杀 → 返回 1 阻断 |
+| 11 质量门禁 | 本批 vs 上批 metrics | `quality_gate.evaluate` | 增长率在阈值内 | `build_report.json` / `previous_metrics.json` | 超阈值 → 返回 1 阻断 |
+| 12 字节基线（可选） | `--baseline DIR` | `baseline.compare_baseline` | 逐字节一致（忽略 `generated_at`） | 差异日志 | 有差异 → 返回 3 |
 
 ---
 
@@ -140,6 +148,17 @@ python3 -c "import json;d=json.load(open('dist/sources_status.json'));print('失
 python3 -m adblock_collection build --out /tmp/dist-enhanced --split-by-category --redundant \
   --alias-normalize --resolve-conflicts --per-rule-classify --domain-fold
 python3 -c "import json;print(json.load(open('/tmp/dist-enhanced/build_report.json'))['enhancements'])"
+```
+
+**dry-run 与字节基线**：
+
+```bash
+# 只跑阶段与内存不变量校验（P1/P2），不写任何产物
+python3 -m adblock_collection build --out /tmp/dry --dry-run
+
+# 与既有产物目录逐字节比对（忽略 sources_status.json 的 generated_at）
+python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --redundant \
+  --baseline dist
 ```
 
 ---

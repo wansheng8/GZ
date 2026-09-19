@@ -1,0 +1,21 @@
+[Adblock Plus 2.0]
+! Title: Adblock Rule Collection (Browser Network)
+! Description: 扩展网络拦截层：域名/URL/资源请求阻断，含修饰符与站点例外，不含元素隐藏
+! Expires: 1 day
+! Homepage: https://github.com/wansheng8/GZ
+! License: MIT
+! Total Rules: 13
+! ------------------------------------------
+||track.example/path^
+||ads.example^$important
+||bare.example
+||hosts.example^
+||xmpl.example^$xmlhttprequest
+||gone.example^
+@@||allowed.example^
+||badmalware.example^
+||evil-phish.example^
+||shared.example^
+||analytics.example^
+||tracker.example^
+@@||sub.allowed.example^
