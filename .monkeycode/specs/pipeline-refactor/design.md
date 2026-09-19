@@ -117,7 +117,7 @@ def compare_baseline(old_dir: Path, new_dir: Path) -> BaselineDiff: ...
 | `adblock_collection/aliases.py` | 选项别名归一化 | M1 |
 | `adblock_collection/arbitrate.py` | 例外与冲突确定性仲裁 | M1 |
 | `adblock_collection/domain_fold.py` | 域名层级折叠 | M1 |
-| `adblock_collection/rules.py` | 扩展 `_classify` 为多信号逐条分类 | M1 |
+| `adblock_collection/rules.py` | 新增 `classify_per_rule` 多信号逐条分类 pass（保留 `_classify` 供解析期使用） | M1 |
 | `adblock_collection/rules_jsonl.py` | 中间产物读写与派生 | M2 |
 | `adblock_collection/baseline.py` | 字节级基线比对 | M2 |
 | `adblock_collection/cli.py` | 标志解析、阶段组装、报告落盘 | M1/M2 |
@@ -218,7 +218,7 @@ class FoldReport:
 
 1. 新增 `aliases.py` 并在 `cli.build` 中按 `--alias-normalize` 插入。
 2. 新增 `arbitrate.py` 并在 `cli.build` 中按 `--resolve-conflicts` 插入。
-3. 扩展 `rules._classify` 为多信号，按 `--per-rule-classify` 启用。
+3. 在 `rules.py` 新增 `classify_per_rule` pass（不改解析期 `_classify`），按 `--per-rule-classify` 启用；安全类信号与泛化提示允许覆盖上游提示。
 4. 新增 `domain_fold.py` 并在 `cli.build` 中按 `--domain-fold` 插入。
 5. 每个 pass 配单元、属性、往返测试；开关默认关闭。
 6. 递增 `NORMALIZER_VERSION` / `CLASSIFIER_VERSION`。

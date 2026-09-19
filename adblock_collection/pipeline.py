@@ -30,7 +30,7 @@ LOG = logging.getLogger("adblock_collection")
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
 PARSER_VERSION = "1.5.0"
 NORMALIZER_VERSION = "1.1.0"
-CLASSIFIER_VERSION = "1.6.0"
+CLASSIFIER_VERSION = "1.7.0"
 
 STAGE_DIR = Path(".cache/parsed")
 

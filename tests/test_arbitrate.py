@@ -102,6 +102,7 @@ def test_cli_build_resolve_conflicts_writes_report(tmp_path, monkeypatch):
             "split_by_category": False,
             "alias_normalize": False,
             "resolve_conflicts": True,
+            "per_rule_classify": False,
         },
     )()
     assert cli.build(args) == 0

@@ -102,6 +102,7 @@ def _build_args(cfg, out, alias):
             "split_by_category": False,
             "alias_normalize": alias,
             "resolve_conflicts": False,
+            "per_rule_classify": False,
         },
     )()
 

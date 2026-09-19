@@ -15,7 +15,7 @@ from __future__ import annotations
 
 import re
 from collections.abc import Iterable
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 
 # 单个选项名的合法形态（用于在规则中定位真正的选项段起始 $）
 _OPTION_HEAD_RE = re.compile(r"~?[A-Za-z0-9][A-Za-z0-9-]*")
@@ -306,6 +306,71 @@ def _classify(raw: str, category_hint: str, kind: str, is_exception: bool) -> st
     if re.search(r"\$.*(websocket|webrtc)", raw, re.IGNORECASE):
         return "network"
     return "other"
+
+
+# 逐条多信号分类的信号优先级：安全类最优先，其后是隐私/社交等具体类别，url 兜底。
+SIGNAL_CATEGORY_ORDER = (
+    "malware",
+    "phishing",
+    "mining",
+    "privacy",
+    "cookie",
+    "social",
+    "annoyance",
+    "url",
+)
+_SECURITY_CATEGORIES = frozenset({"malware", "phishing", "mining"})
+# 泛化类提示：这些提示不携带具体语义，允许逐条信号覆盖。
+_GENERIC_HINTS = frozenset({"other", "network", "url"})
+
+
+def _scan_category(text: str) -> str | None:
+    """按信号优先级扫描文本命中的首个类别。"""
+    low = text.lower()
+    for cat in SIGNAL_CATEGORY_ORDER:
+        if any(kw in low for kw in CATEGORY_KEYWORDS.get(cat, ())):
+            return cat
+    return None
+
+
+def _signal_category(rule: Rule) -> str | None:
+    """综合规则原文与目标域名的逐条分类信号，返回命中的类别或 None。"""
+    for text in (rule.raw, ",".join(rule.domains)):
+        cat = _scan_category(text)
+        if cat is not None:
+            return cat
+    if re.search(r"\$.*(redirect|rewrite)", rule.raw, re.IGNORECASE):
+        return "redirect"
+    if re.search(r"\$.*(regexp)", rule.raw, re.IGNORECASE):
+        return "regexp"
+    return None
+
+
+def classify_per_rule(rules: Iterable[Rule]) -> list[Rule]:
+    """逐条多信号分类：安全类信号与泛化提示允许覆盖上游类别提示。
+
+    - 例外规则归 whitelist；元素/脚本类按 kind 归类，二者不参与逐条判定。
+    - 安全类信号（malware/phishing/mining）优先级最高，覆盖任何上游提示，
+      避免综合源中的恶意域名被误标为普通广告而漏出安全独立发行。
+    - 上游提示为泛化类别（other/network/url）时，采用关键词与域名信号。
+    - 上游提示为具体类别（ads/privacy/social 等）且无安全信号时，保留上游提示。
+    """
+    out: list[Rule] = []
+    for rule in rules:
+        if rule.is_exception:
+            category = "whitelist"
+        elif rule.kind in ("css", "scriptlet", "html", "js"):
+            category = rule.kind
+        else:
+            signal = _signal_category(rule)
+            if signal is not None and (
+                signal in _SECURITY_CATEGORIES or rule.category in _GENERIC_HINTS
+            ):
+                category = signal
+            else:
+                category = rule.category
+        out.append(replace(rule, category=category) if category != rule.category else rule)
+    return out
 
 
 def _normalize(raw: str) -> str:

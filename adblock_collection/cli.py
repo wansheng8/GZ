@@ -52,6 +52,7 @@ from .quality_gate import (
     write_build_report,
 )
 from .regression import load_false_positives, run_regression
+from .rules import classify_per_rule
 from .writer import (
     JSDELIVR_MAX_BYTES,
     write_adblock,
@@ -385,6 +386,15 @@ def build(args: argparse.Namespace) -> int:
         deduped = apply_allowlist(deduped, _fps["allow"])
         LOG.info("白名单强制放行移除规则: %d", before - len(deduped))
     deduped = apply_badfilter(deduped)
+    if args.per_rule_classify:
+        before_cats = [r.category for r in deduped]
+        deduped = classify_per_rule(deduped)
+        changed = sum(
+            1 for rule, prev in zip(deduped, before_cats, strict=True)
+            if rule.category != prev
+        )
+        enhancements["per_rule_classify"] = {"reclassified": changed}
+        LOG.info("逐条多信号分类: 改写类别 %d 条", changed)
     if args.resolve_conflicts:
         deduped, arb_records = arbitrate(deduped)
         removed = sum(len(r.losers) for r in arb_records)
@@ -696,6 +706,11 @@ def main(argv: list[str] | None = None) -> int:
         "--resolve-conflicts",
         action="store_true",
         help="对整域目标仲裁阻断与例外（例外 > $important > 普通阻断），记录 arbitration.json",
+    )
+    p_build.add_argument(
+        "--per-rule-classify",
+        action="store_true",
+        help="逐条多信号分类：安全信号与泛化提示可覆盖上游类别提示",
     )
     p_build.add_argument(
         "--split-by-category", action="store_true", help="split output by category"
