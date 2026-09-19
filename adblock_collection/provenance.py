@@ -203,17 +203,6 @@ def build_relation_graph(
     return relations
 
 
-def semantic_dedupe(rules: Iterable[Rule]) -> list[Rule]:
-    """在文本去重基础上保留血缘，返回去重后的规则列表（与 dedupe 行为一致，保留首次出现）。"""
-    seen: dict[str, Rule] = {}
-    order: list[str] = []
-    for r in rules:
-        if r.norm not in seen:
-            seen[r.norm] = r
-            order.append(r.norm)
-    return [seen[k] for k in order]
-
-
 def cross_source_duplicate_count(provenance: dict[str, Provenance]) -> int:
     """统计出现在多于一个源的规范化规则数（用于报告跨源重复率）。"""
     return sum(1 for p in provenance.values() if p.source_count > 1)

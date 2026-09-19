@@ -376,14 +376,6 @@ def source_stats(rules: Iterable[Rule]) -> dict[str, int]:
     return dict(sorted(stats.items(), key=lambda kv: kv[1], reverse=True))
 
 
-def split_lite(rules: Iterable[Rule], sources_meta: list[dict]) -> list[Rule]:
-    """仅保留来自 lite 标记上游的规则。"""
-    lite_sources = {s.get("name") for s in sources_meta if s.get("lite")}
-    if not lite_sources:
-        return list(rules)
-    return [r for r in rules if r.source in lite_sources]
-
-
 def category_stats(rules: Iterable[Rule]) -> dict[str, int]:
     stats: dict[str, int] = defaultdict(int)
     for r in rules:

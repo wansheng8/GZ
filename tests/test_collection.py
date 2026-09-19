@@ -308,9 +308,7 @@ def test_category_split(tmp_path):
 def test_path_bearing_rule_excluded_from_dns():
     from adblock_collection import writer
 
-    r = parse_line("||example.com/ads^")
-    assert writer._to_hosts_line(r) is None
-    assert writer._to_domain(r) is None
+    assert writer._blocked_domains([parse_line("||example.com/ads^")]) == set()
 
 
 def test_exception_cancels_blocked_domain_in_dns():
@@ -327,9 +325,7 @@ def test_exception_cancels_blocked_domain_in_dns():
 def test_pure_domain_rule_included_in_dns():
     from adblock_collection import writer
 
-    r = parse_line("||example.com^")
-    assert writer._to_hosts_line(r) == "0.0.0.0 example.com"
-    assert writer._to_domain(r) == "example.com"
+    assert writer._blocked_domains([parse_line("||example.com^")]) == {"example.com"}
 
 
 def test_adblock_split_builds_include_master(tmp_path):
@@ -705,9 +701,7 @@ def test_resolve_policy_unknown_level_falls_back():
 def test_exception_rule_not_in_dns():
     from adblock_collection import writer
 
-    r = parse_line("@@||example.com^")
-    assert writer._to_hosts_line(r) is None
-    assert writer._to_domain(r) is None
+    assert writer._blocked_domains([parse_line("@@||example.com^")]) == set()
 
 
 # ---------------- 误杀回归 ----------------
@@ -1183,9 +1177,9 @@ def test_hash_comment_skipped_but_no_domain_cosmetic_kept():
 def test_hosts_source_domain_enters_dns():
     from adblock_collection import writer
 
-    r = parse_line("0.0.0.0 ads.example.com")
-    assert writer._to_hosts_line(r) == "0.0.0.0 ads.example.com"
-    assert writer._to_domain(r) == "ads.example.com"
+    assert writer._blocked_domains([parse_line("0.0.0.0 ads.example.com")]) == {
+        "ads.example.com"
+    }
 
 
 def test_collect_expands_hosts_source_into_dns(tmp_path, monkeypatch):

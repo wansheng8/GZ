@@ -51,46 +51,6 @@ def _adblock_header(title: str, desc: str, total: int) -> list[str]:
     ]
 
 
-def _to_hosts_line(rule: Rule, policy: dict | None = None) -> str | None:
-    """将可进 DNS 的纯域名网络阻断规则转换为 hosts 行，无法转换返回 None。
-
-    仅接受无路径的纯域名规则（如 ||a.com^），避免把 ||a.com/ads^ 误扩成整域拦截。
-    是否接受带修饰符的单域名规则由 dns_policy 决定。
-    """
-    if not _dns_eligible(rule, policy):
-        return None
-    return f"0.0.0.0 {rule.domains[0]}"
-
-
-def _to_hosts_ipv6_line(rule: Rule, policy: dict | None = None) -> str | None:
-    if not _dns_eligible(rule, policy):
-        return None
-    return f":: {rule.domains[0]}"
-
-
-def _to_domain(rule: Rule, policy: dict | None = None) -> str | None:
-    if not _dns_eligible(rule, policy):
-        return None
-    if "/" not in rule.domains[0]:
-        return rule.domains[0]
-    return None
-
-
-def _dns_eligible(rule: Rule, policy: dict | None) -> bool:
-    if not (
-        rule.kind == "network"
-        and rule.domains
-        and len(rule.domains) == 1
-        and not rule.is_exception
-    ):
-        return False
-    if not _PURE_DOMAIN_RE.search(rule.raw) and not rule.options:
-        return False
-    from .dns_policy import is_dns_eligible
-
-    return is_dns_eligible(rule, policy)
-
-
 def write_adblock(rules: Iterable[Rule], path: Path, title: str, desc: str) -> int:
     rules = list(rules)
     with path.open("w", encoding="utf-8") as fh:
