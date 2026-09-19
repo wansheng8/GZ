@@ -64,6 +64,7 @@ NON_BLOCKING_MODIFIERS = frozenset(
         "set-cookie",
         "header",
         "removeheader",
+        "addheader",
         "urltransform",
         "urlskip",
         "generichide",
@@ -167,9 +168,13 @@ def classify_dns(rule: Rule) -> DnsVerdict:
                 DNS_SAFE, CONF_DOMAIN_MODIFIER, "navigation_domain_modifier"
             )
 
-    # 带修饰符的单域名规则（如 $third-party）：作用域受限，保守处理
+    # 带修饰符的单域名规则（如 $third-party）：作用域受限，保守处理。
+    # 仅当模式仍是纯域名时才可进入 CONDITIONAL；带通配/查询串等模式限定
+    # （如 ||bet365.com^*affiliate=$popup）不构成整域语义，仍按不可翻译拒绝。
     if rule.domains and len(rule.domains) == 1 and rule.options:
-        return DnsVerdict(DNS_CONDITIONAL, CONF_DOMAIN_MODIFIER, "domain_modifier")
+        if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
+            return DnsVerdict(DNS_CONDITIONAL, CONF_DOMAIN_MODIFIER, "domain_modifier")
+        return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
 
     return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
 

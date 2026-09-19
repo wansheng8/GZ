@@ -387,6 +387,25 @@ def test_classify_non_blocking_alias_is_reject():
         assert is_dns_eligible(parse_line(raw), {"level": "safe"}) is False, raw
 
 
+def test_classify_addheader_is_reject():
+    r = parse_line("||site.example^$addheader=response:set-cookie:x=1")
+    assert classify_dns(r).reason == "non_blocking_modifier"
+    assert is_dns_eligible(r, {"level": "safe"}) is False
+
+
+def test_safe_level_promotes_type_modifier():
+    for raw in (
+        "||ads.example.com^$third-party",
+        "||ads.example.com^$script",
+        "||ads.example.com^$subdocument",
+        "||ads.example.com^$ping",
+    ):
+        r = parse_line(raw)
+        assert is_dns_eligible(r, {"level": "all"}) is False, raw
+        assert is_dns_eligible(r, {"level": "safe"}) is True, raw
+        assert is_dns_eligible(r, {"level": "strict-safe"}) is False, raw
+
+
 def test_classify_navigation_modifier_is_dns_eligible():
     for raw in (
         "||ads.example.com^$popup",
