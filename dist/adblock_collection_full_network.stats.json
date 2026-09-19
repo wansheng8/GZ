@@ -5,20 +5,20 @@
     "network": 602229
   },
   "by_kind": {
-    "network": 518094,
+    "network": 518095,
     "css": 76351,
-    "scriptlet": 7617,
+    "scriptlet": 7616,
     "html": 166,
     "js": 1
   },
   "by_source": {
-    "oisd": 138280,
+    "oisd": 138281,
     "Hagezi DNS Pro Plus": 126680,
     "ADrules DNS": 91936,
     "ADrules Easylist": 75699,
     "217heidai adblockdns": 41386,
     "ADrules AdRules": 29117,
-    "AdGuard – Ads": 24319,
+    "AdGuard – Ads": 24318,
     "ADrules anti-AD": 17497,
     "ADrules EasyListChina": 17117,
     "StevenBlack Hosts": 6694,
@@ -41,9 +41,8 @@
     "BlueSkyXN skyrules": 47,
     "AWAvenue-Ads-Rule": 26,
     "AdAway Hosts": 12,
+    "EasyList (ABP)": 2,
     "Peter Lowe's Blocklist": 2,
-    "EasyList (ABP)": 1,
-    "EasyList (easylist.to)": 1,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
   }
