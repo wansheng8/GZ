@@ -43,7 +43,15 @@ jobs:
       - name: Run tests
         run: python -m pytest -q
       - name: Clean stale dist
-        run: rm -rf dist && mkdir dist
+        run: |
+          # 保留上一批门禁基线，供本次质量门禁与构建差异报告使用
+          if [ -f dist/previous_metrics.json ]; then
+            cp dist/previous_metrics.json /tmp/previous_metrics.json
+          fi
+          rm -rf dist && mkdir dist
+          if [ -f /tmp/previous_metrics.json ]; then
+            cp /tmp/previous_metrics.json dist/previous_metrics.json
+          fi
       - name: Build filters
         run: python -m adblock_collection build --out dist --split-by-category
       - name: Check build health

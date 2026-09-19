@@ -12,10 +12,11 @@
 
 **CI 自动做的事**：
 1. 拉取仓库 → 安装开发依赖 → 运行 `python -m pytest -q`（含 M2/M3 字节基线夹具比对）→ 用缓存下载源
-2. 执行构建命令 `python3 -m adblock_collection build --out dist --split-by-category`（四项增强默认开启；CI 镜像中 `python` 与本地 `python3` 等价）
-3. 再以「增强全关 + 旧 --redundant」构建到 `/tmp/dist-legacy`，校验退出开关路径与重构前字节基线（`--no-alias-normalize --no-resolve-conflicts --no-per-rule-classify --no-domain-fold --redundant`），不产出正式 dist
-4. 健康检查（规则数 < 30 万 或 失败源 ≥ 5 时输出 WARNING，不阻断）
-5. dist 有变化则自动提交 `chore: auto update filter lists [skip ci]` 并推送
+2. 清理 dist 前先保留上一批 `previous_metrics.json`，使质量门禁与构建差异报告有基线可比
+3. 执行构建命令 `python3 -m adblock_collection build --out dist --split-by-category`（四项增强默认开启；CI 镜像中 `python` 与本地 `python3` 等价）；门禁或误杀回归失败会以退出码 1 阻断本次推送
+4. 再以「增强全关 + 旧 --redundant」构建到 `/tmp/dist-legacy`，校验退出开关路径与重构前字节基线（`--no-alias-normalize --no-resolve-conflicts --no-per-rule-classify --no-domain-fold --redundant`），不产出正式 dist
+5. 健康检查（规则数 < 30 万 或 失败源 ≥ 5 时输出 WARNING，不阻断）
+6. dist 有变化则自动提交 `chore: auto update filter lists [skip ci]` 并推送
 
 **人工介入条件**（任一出现才需处理）：
 - Actions 运行显示失败（红色）
