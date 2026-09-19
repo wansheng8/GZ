@@ -20,6 +20,7 @@ import sys
 import time
 from pathlib import Path
 
+from .aliases import normalize_aliases
 from .dns_policy import load_dns_policy
 from .merge import (
     apply_allowlist,
@@ -353,6 +354,18 @@ def build(args: argparse.Namespace) -> int:
     for _name, rules in collected.get("all", []):
         all_rules.extend(rules)
 
+    # 规则增强（默认关闭，开启后允许语义等价变化）：
+    # 别名归一化先把等价选项名折叠为规范名，使后续去重能合并别名不同的同一规则。
+    enhancements: dict = {}
+    if args.alias_normalize:
+        all_rules, alias_report = normalize_aliases(all_rules)
+        enhancements["alias_normalize"] = alias_report.to_dict()
+        LOG.info(
+            "别名归一化: 改写 %d 条, 折叠 %d 条",
+            alias_report.normalized,
+            alias_report.collapsed,
+        )
+
     src_counts = source_stats(all_rules)
     for name, cnt in src_counts.items():
         LOG.info("上游贡献规则: %-35s %d", name, cnt)
@@ -492,6 +505,7 @@ def build(args: argparse.Namespace) -> int:
         full_results,
         output_dir,
         config_path,
+        enhancements=enhancements,
     )
 
     write_manifest(manifest, output_dir)
@@ -505,7 +519,7 @@ def build(args: argparse.Namespace) -> int:
 
 
 def _run_quality_gate(
-    rules, src_counts, cat_counts, full_results, output_dir, config_path
+    rules, src_counts, cat_counts, full_results, output_dir, config_path, enhancements=None
 ):
     """执行质量门禁与构建变化检测，写 build_report.json 并返回 (失败标记, 报告)。"""
     dns_domains = 0
@@ -515,7 +529,9 @@ def _run_quality_gate(
     metrics = collect_metrics(rules, dns_domains, src_counts, cat_counts)
     prev = load_previous(output_dir)
     gate = evaluate(metrics, prev, thresholds)
-    report = write_build_report(output_dir, metrics, prev, gate)
+    report = write_build_report(
+        output_dir, metrics, prev, gate, enhancements=enhancements
+    )
     save_previous(metrics, output_dir)
 
     if gate.failures:
@@ -655,6 +671,11 @@ def main(argv: list[str] | None = None) -> int:
     )
     p_build.add_argument(
         "--redundant", action="store_true", help="启用冗余域名规则消除"
+    )
+    p_build.add_argument(
+        "--alias-normalize",
+        action="store_true",
+        help="归一化等价选项别名（xmlhttprequest/doc/ghide/elemhide）并折叠重复规则",
     )
     p_build.add_argument(
         "--split-by-category", action="store_true", help="split output by category"

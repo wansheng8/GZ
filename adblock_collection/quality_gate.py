@@ -175,7 +175,11 @@ def save_previous(metrics: Metrics, output_dir: Path) -> None:
 
 
 def write_build_report(
-    output_dir: Path, metrics: Metrics, prev: Metrics | None, gate: GateResult
+    output_dir: Path,
+    metrics: Metrics,
+    prev: Metrics | None,
+    gate: GateResult,
+    enhancements: dict | None = None,
 ) -> dict:
     diff = {
         "total_rules": _diff_value(
@@ -192,6 +196,7 @@ def write_build_report(
         "metrics": metrics.to_dict(),
         "diff": diff,
         "previous": prev.to_dict() if prev else None,
+        "enhancements": enhancements or {},
     }
     path = output_dir / "build_report.json"
     path.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
