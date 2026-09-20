@@ -174,6 +174,34 @@ def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[s
     return blocked
 
 
+def _global_exception_domains(rules: Iterable[Rule]) -> set[str]:
+    """收集「整域全局例外」放行的域名，用于生成 DNS 白名单。"""
+    return {
+        r.domains[0]
+        for r in rules
+        if _is_global_domain_exception(r)
+    }
+
+
+def write_dns_allow(
+    rules: Iterable[Rule], path: Path, title: str
+) -> int:
+    """生成 DNS 白名单：每行一个被整域全局例外放行的域名。
+
+    供 AdGuard Home / Pi-hole 的「允许清单」分组直接导入。作用域/路径例外无法
+    在 DNS 层表达，不在此列出。
+    """
+    domains = sorted(_global_exception_domains(rules))
+    with path.open("w", encoding="utf-8") as fh:
+        fh.write(f"# {title}\n")
+        fh.write(
+            f"# Format: DNS allowlist (AdGuard Home / Pi-hole), total {len(domains)}\n"
+        )
+        for d in domains:
+            fh.write(d + "\n")
+    return len(domains)
+
+
 def write_hosts(
     rules: Iterable[Rule], path: Path, title: str, policy: dict | None = None
 ) -> int:

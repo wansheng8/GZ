@@ -59,9 +59,12 @@ python3 -c "import json;print(json.load(open('/tmp/dist-legacy/build_report.json
 # 5) 可选：dry-run 与字节基线（dry-run 不写产物；baseline 逐字节比对）
 python3 -m adblock_collection build --out /tmp/dry --dry-run
 python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --baseline dist
+
+# 6) 可选：规则过期跟踪（本地连续构建；复用 .cache/build/rule_history.tsv）
+python3 -m adblock_collection build --out /tmp/dist-history --split-by-category --history --stale-days 30
 ```
 
-**构建后自检清单**（6 项）：
+**构建后自检清单**（7 项）：
 
 ```bash
 # ① 本地增强规则已入库（应 = config/local_rules.txt 非注释行数，当前 10）
@@ -94,9 +97,13 @@ dom = e.get("adblock_collection_full_domains.txt", 0)
 print("三层并集 == 完整版:", net + cos == full, f"({net} + {cos} vs {full})")
 print("DNS 等价 == 单行域名:", abp == dom, f"({abp} vs {dom})")
 PY
+
+# ⑦ 增量产物已生成（DNS 白名单 / uBO 增强子集）
+test -s dist/dns_allow.txt && echo "dns_allow.txt OK"
+test -s dist/adblock_collection_ubo_enhance.txt && echo "ubo_enhance.txt OK"
 ```
 
-**完成判定**：①≥规则数、②=0、③<5 源、④passed=True、⑤已提交全部 dist 变更、⑥两个等式均为 True。
+**完成判定**：①≥规则数、②=0、③<5 源、④passed=True、⑤已提交全部 dist 变更、⑥两个等式均为 True、⑦两个增量产物非空。
 
 ---
 

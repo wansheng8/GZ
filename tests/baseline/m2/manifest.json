@@ -44,6 +44,18 @@
       "rules": 9
     },
     {
+      "name": "adblock_collection_ubo_enhance",
+      "file": "adblock_collection_ubo_enhance.txt",
+      "format": "adblock_ubo",
+      "rules": 0
+    },
+    {
+      "name": "dns_allow",
+      "file": "dns_allow.txt",
+      "format": "dns_allow",
+      "rules": 2
+    },
+    {
       "name": "adblock_collection_full_ads",
       "file": "adblock_collection_full_ads.txt",
       "format": "adblock",

@@ -49,7 +49,8 @@ python3 -m adblock_collection build --out dist --split-by-category
 | 4b 规则增强（默认开启） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四项默认开启，`--no-*` 可分别关闭；逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
 | 5 冗余消除 | 去重后规则 | `domain_fold.fold_domains`（例外感知）/ `remove_redundant_css` | 仅纯域名/纯类名归并；CSS 去重常开 | 精简规则集 | 仅记录移除数，不阻断 |
 | 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库） | 损坏 → `safe_load` 回退内存规则集 |
-| 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
+| 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `dns_allow.txt` / `*_ubo_enhance.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
+| 7b 维护跟踪（可选） | 去重后规则 | `cli.build` 调 `maintenance.update_history` | 末见日期、保留期清理 | `.cache/build/rule_history.tsv`、`maintenance_report.json` | 仅记录，不阻断（需 `--history`） |
 | 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
 | 9 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
 | 10 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0` | `regression_report.json` | 有误杀 → 返回 1 阻断 |
@@ -199,11 +200,17 @@ CSS 仅对「单域 + 纯类名」去重（`css_dedupe`，常开）。复杂选�
 | `*_dns.txt` | hosts（`0.0.0.0 domain`） |
 | `*_dns_ipv6.txt` | hosts（`:: domain`） |
 | `*_domains.txt` | 每行一域名（AdGuard DNS/Home） |
+| `dns_allow.txt` | DNS 层整域白名单（`@@||domain^` 全局例外放行域名，供 DNS 允许清单） |
+| `adblock_collection_ubo_enhance.txt` | uBO 增强子集（含 `$redirect` / `$csp` / `$removeparam` 等高级修饰符，ABP 不识别） |
 | `*.stats.txt` / `*.stats.json` | 分类/来源统计 |
 | `*.dns_safety.json` | DNS 安全分级分布 |
 | `security/adblock_collection_security*.txt` | 安全类独立发行 |
 
 **不变量**：按类别拆分的子列表（排除 DNS 后缀与三层产物 `_dns_abp` / `_browser_network` / `_cosmetic`）并集必须等于完整版。若被破坏，构建报错（`cli.py` 断言）。
+
+**维护跟踪（可选）**：`--history` 时把每条规则的首见/末见写入 `.cache/build/rule_history.tsv`，
+并在 `dist/maintenance_report.json` 输出 `tracked` / `current` / `stale`（`--stale-days` 默认 30，
+缺席超过保留期 120 天的条目会在更新历史时自动清理）。CI 全新 checkout 无历史文件，自动跳过。
 
 ---
 

@@ -255,6 +255,18 @@ class FoldReport:
    由 `build_diff.py` 输出到 `dist/build_diff.txt`，依赖上一批指纹
    `.cache/build/previous_rules.txt`，在本地/连续构建生效，CI 全新 checkout 自动跳过。
 
+### M5 三层方案增量（1+2+3）
+
+1. uBO 增强子集（增量 1）：`rules.UBO_ENHANCED_MODIFIERS` 与 `is_ubo_enhanced(rule)` 识别含
+   `$redirect` / `$rewrite` / `$csp` / `$removeparam` / `$replace` / `$permissions` 等高级修饰符的规则；
+   `cli._emit_ubo_enhance` 输出 `dist/adblock_collection_ubo_enhance.txt`（ABP 不识别，独立订阅）。
+2. DNS 白名单（增量 2）：`writer.write_dns_allow`/`_global_exception_domains` 从整域全局例外
+   （无作用域、无路径）提取放行域名，输出 `dist/dns_allow.txt`，供 AdGuard Home / Pi-hole 允许清单，
+   避免站内例外被 DNS 层误当整域放行。
+3. 规则过期跟踪（增量 3）：`maintenance.py` 维护 `.cache/build/rule_history.tsv`（首见/末见），
+   `--history` 开启后输出 `dist/maintenance_report.json`（`tracked`/`current`/`stale`/`stale_count`），
+   `--stale-days` 默认 30，缺席超过保留期（120 天）的条目在更新历史时清理。opt-in，CI 不生成。
+
 ## 9. 参考
 
 - [^1]: requirements.md，当前工作区 内的 `/.monkeycode/specs/pipeline-refactor/requirements.md`

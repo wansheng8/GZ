@@ -335,6 +335,32 @@ def test_reserved_hostname_excluded_from_dns():
     assert writer._blocked_domains(rules) == {"example.com"}
 
 
+def test_ubo_enhanced_rule_selection():
+    from adblock_collection.rules import is_ubo_enhanced
+
+    assert is_ubo_enhanced(parse_line("||a.com^$removeparam=utm_source"))
+    assert is_ubo_enhanced(parse_line("||a.com^$csp=script-src 'self'"))
+    assert is_ubo_enhanced(parse_line("||a.com^$redirect=noopjs"))
+    assert not is_ubo_enhanced(parse_line("||a.com^$third-party"))
+    assert not is_ubo_enhanced(parse_line("||a.com^"))
+
+
+def test_write_dns_allow_lists_global_exceptions(tmp_path):
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("@@||allowed.example^"),
+        parse_line("@@||scoped.example^$domain=x.com"),
+        parse_line("||blocked.example^"),
+    ]
+    path = tmp_path / "dns_allow.txt"
+    count = writer.write_dns_allow(rules, path, "T")
+    text = path.read_text(encoding="utf-8")
+    assert count == 1
+    assert "allowed.example" in text
+    assert "scoped.example" not in text
+
+
 def test_adblock_split_builds_include_master(tmp_path):
     from adblock_collection import writer
 

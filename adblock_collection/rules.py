@@ -323,6 +323,34 @@ _SECURITY_CATEGORIES = frozenset({"malware", "phishing", "mining"})
 # 泛化类提示：这些提示不携带具体语义，允许逐条信号覆盖。
 _GENERIC_HINTS = frozenset({"other", "network", "url"})
 
+# uBO/AdGuard 高级修饰符：ABP 及原生 hosts/domains 均不识别，单独归入 uBO 增强清单，
+# 供支持该能力的扩展订阅；DNS 层同样不会因这些规则做整域拦截。
+UBO_ENHANCED_MODIFIERS = frozenset(
+    {
+        "redirect",
+        "redirect-rule",
+        "rewrite",
+        "csp",
+        "removeparam",
+        "queryprune",
+        "replace",
+        "permissions",
+        "removeheader",
+        "addheader",
+        "header",
+        "set-cookie",
+        "cookie",
+        "urltransform",
+        "urlskip",
+    }
+)
+
+
+def is_ubo_enhanced(rule: Rule) -> bool:
+    """规则是否使用了 uBO/AdGuard 高级修饰符（ABP 不支持的增强能力）。"""
+    return bool(UBO_ENHANCED_MODIFIERS & set(rule.options))
+
+
 
 def _scan_category(text: str) -> str | None:
     """按信号优先级扫描文本命中的首个类别。"""

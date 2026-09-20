@@ -19,3 +19,5 @@ dist/relation_graph.json
 dist/provenance.json
 # 本地/连续构建的逐条规则差异（依赖上一批指纹，CI 全新 checkout 无此文件）
 dist/build_diff.txt
+# 规则过期跟踪报告（需 --history，CI 不生成）
+dist/maintenance_report.json

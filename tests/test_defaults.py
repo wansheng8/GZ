@@ -84,6 +84,8 @@ def test_default_flags_enable_all_enhancements(tmp_path, monkeypatch):
         assert key in report["enhancements"], f"missing enhancement report: {key}"
     assert (out / "arbitration.json").exists()
     assert (out / "domain_fold.json").exists()
+    assert (out / "adblock_collection_ubo_enhance.txt").exists()
+    assert (out / "dns_allow.txt").exists()
     full = (out / "adblock_collection_full.txt").read_text(encoding="utf-8").splitlines()
     assert "||sub.c.com^" not in full
 

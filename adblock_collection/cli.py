@@ -40,6 +40,7 @@ from .build_pipeline import (
 )
 from .dns_policy import load_dns_policy
 from .domain_fold import fold_domains
+from .maintenance import update_history, write_maintenance_report
 from .merge import (
     apply_allowlist,
     apply_badfilter,
@@ -70,13 +71,14 @@ from .quality_gate import (
 )
 from .regression import load_false_positives, run_regression
 from .roundtrip import check_roundtrip
-from .rules import classify_per_rule
+from .rules import classify_per_rule, is_ubo_enhanced
 from .rules_jsonl import DEFAULT_JSONL_PATH, dump_rules_jsonl, safe_load_rules_jsonl
 from .writer import (
     JSDELIVR_MAX_BYTES,
     _blocked_domains,
     write_adblock,
     write_adblock_split,
+    write_dns_allow,
     write_dns_safety_report,
     write_domain_rules,
     write_domains,
@@ -262,6 +264,47 @@ def _emit_layers(rules, output_dir, base_prefix, manifest, gen_dns, policy) -> N
     LOG.info("三层产物: 网络拦截 %d 条, 元素隐藏 %d 条", len(network), len(cosmetic))
 
 
+def _emit_ubo_enhance(rules, output_dir, manifest) -> None:
+    """uBO/AdGuard 高级增强清单：聚合 $redirect/$csp/$removeparam 等规则。
+
+    ABP 与原生 hosts/domains 不识别这些修饰符，单独成一份便于支持该能力的扩展订阅；
+    文件名为 ``adblock_collection_ubo_enhance.txt``，不参与类别并集不变量。
+    """
+    rules = list(rules)
+    enhanced = [r for r in rules if is_ubo_enhanced(r)]
+    path = output_dir / "adblock_collection_ubo_enhance.txt"
+    n = write_adblock(
+        enhanced,
+        path,
+        "Adblock Rule Collection (uBO enhance)",
+        "uBlock Origin / AdGuard 高级增强规则：$redirect / $csp / $removeparam 等，ABP 不识别",
+    )
+    manifest.append(
+        {
+            "name": "adblock_collection_ubo_enhance",
+            "file": path.name,
+            "format": "adblock_ubo",
+            "rules": n,
+        }
+    )
+    LOG.info("uBO 增强清单: %d 条 -> %s", n, path.name)
+
+
+def _emit_dns_allow(rules, output_dir, manifest) -> None:
+    """DNS 白名单：整域全局例外放行的域名，供 AGH/Pi-hole 允许清单导入。"""
+    path = output_dir / "dns_allow.txt"
+    n = write_dns_allow(rules, path, "Adblock Rule Collection (DNS allowlist)")
+    manifest.append(
+        {
+            "name": "dns_allow",
+            "file": path.name,
+            "format": "dns_allow",
+            "rules": n,
+        }
+    )
+    LOG.info("DNS 白名单: %d 个域名 -> %s", n, path.name)
+
+
 def _emit_security(rules, output_dir, security_policy, manifest, gen_dns, dns_policy):
     """将安全类（malware/phishing/mining 等）规则独立发行到 security/ 子目录。
 
@@ -366,6 +409,9 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
         policy=ctx.dns_policy,
     )
     _check_layers_invariant(manifest)
+    _emit_ubo_enhance(rules, target, manifest)
+    if gen_dns:
+        _emit_dns_allow(rules, target, manifest)
     if ctx.flags.split_by_category:
         _emit_by_category(
             rules,
@@ -691,6 +737,20 @@ def build(args: argparse.Namespace) -> int:
         LOG.info("无上一批规则指纹，跳过逐条构建差异（首次构建）")
     save_fingerprint(deduped)
 
+    # 规则过期/维护跟踪（opt-in，本地连续构建场景）
+    if getattr(args, "history", False):
+        maint = update_history(
+            deduped, stale_days=getattr(args, "stale_days", 30) or 30
+        )
+        write_maintenance_report(output_dir, maint)
+        LOG.info(
+            "维护跟踪: 在册 %d 条, 其中 %d 条连续缺席 >= %d 天 -> %s",
+            maint["tracked"],
+            len(maint["stale"]),
+            maint["stale_days"],
+            "maintenance_report.json",
+        )
+
     # 写入上游健康报告（供订阅者判断数据完整性）
     status_path = output_dir / "sources_status.json"
     status_path.write_text(
@@ -975,6 +1035,17 @@ def _build_parser() -> argparse.ArgumentParser:
         "--baseline",
         default=None,
         help="与给定产物目录逐字节比对（忽略 sources_status.json 的 generated_at）",
+    )
+    p_build.add_argument(
+        "--history",
+        action="store_true",
+        help="启用规则过期跟踪：更新 .cache/build/rule_history.tsv 并输出 maintenance_report.json",
+    )
+    p_build.add_argument(
+        "--stale-days",
+        type=int,
+        default=30,
+        help="规则连续缺席多少天后计入维护报告的过期清单（默认 30，需配合 --history）",
     )
     p_build.set_defaults(func=build)
 
