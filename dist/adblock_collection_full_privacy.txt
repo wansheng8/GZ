@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55369
+! Total Rules: 55365
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -48541,24 +48541,24 @@ $removeparam=tracking_source
 ||www.tracking.nudgepay.in^
 ||ymtracking.com^
 ||zantracker.com^
-23.34.62.206                   hugeota.d.miui.com
-23.34.62.202                   hugeota.d.miui.com
-2600:1406:2e00:b01::170b:e869  hugeota.d.miui.com
-2600:1406:2e00:b03::170b:e80e  hugeota.d.miui.com
-208.54.110.9                   crl.geo.t-mobile.com
-208.54.39.195                  epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+23.59.169.139                  hugeota.d.miui.com
+23.59.169.141                  hugeota.d.miui.com
+2600:1407:7400:16::17d7:fd9    hugeota.d.miui.com
+2600:1407:7400:16::17d7:f8b    hugeota.d.miui.com
+208.54.140.1                   crl.geo.t-mobile.com
+208.54.83.35                   epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
 44.218.73.213                  eulatracking-public-service-prod06.ol.epicgames.com
-100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
 50.17.4.167                    eulatracking-public-service-prod06.ol.epicgames.com
-172.67.71.137                  ip2location.com
+100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
 104.26.3.214                   ip2location.com
 104.26.2.214                   ip2location.com
+172.67.71.137                  ip2location.com
+2606:4700:20::681a:2d6         ip2location.com
 2606:4700:20::ac43:4789        ip2location.com
 2606:4700:20::681a:3d6         ip2location.com
-2606:4700:20::681a:2d6         ip2location.com
-184.192.132.151                tracking.epicgames.com
 100.63.121.43                  tracking.epicgames.com
 52.20.4.225                    tracking.epicgames.com
+184.192.132.151                tracking.epicgames.com
 43.159.0.230                   weighted-zh-eulatracking-public-service-prod06.ol.epicgames.com
 ||ad.track.66mobi.com^
 ||ads.boardtracker.com^
@@ -51669,7 +51669,6 @@ fb_servpub-a.akamaihd.net
 ||geometryport.com^
 ||geomorpholognny.info^
 ||geomoto.com^
-||geonys.com^
 ||georgecard.com^
 ||georgejeansonne.com^
 ||georgekiraz.com^
@@ -51829,7 +51828,6 @@ fb_servpub-a.akamaihd.net
 ||privacystealthnet.com^
 ||privacytower.com^
 ||privacywils.weebly.com^
-||projectgilgameshtracker.com^
 ||ptracker.58.com^
 ||qcc.qccgeo.qualcomm.com^
 ||querulous-peach-4dtaevfs.edgeone.dev^
@@ -51861,7 +51859,6 @@ fb_servpub-a.akamaihd.net
 ||securetracklink.com^
 ||securitytrackdevice.com^
 ||segeolia.com^
-||senelocation.com^
 ||separate-apricot-hbdffwuz.edgeone.dev^
 ||seri3sawsapprunner-south1-dpkkvw2rkadj.edgeone.dev^
 ||severe-copper-y92uxuu9.edgeone.dev^
@@ -52000,7 +51997,6 @@ fb_servpub-a.akamaihd.net
 ||weight-tracking.com^
 ||welcome-ivory-mla3tpma-dpgbipy9x8sc.edgeone.dev^
 ||well-aquamarine-psata8ej.edgeone.dev^
-||whgprivacy.org^
 ||wrh-track.click^
 ||xpertrack.site^
 ||xxchangeonline.weebly.com^

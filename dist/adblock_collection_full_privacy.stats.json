@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_privacy",
-  "total": 55369,
+  "total": 55365,
   "by_category": {
-    "privacy": 55369
+    "privacy": 55365
   },
   "by_kind": {
-    "network": 55369
+    "network": 55365
   },
   "by_source": {
     "ADrules EasyPrivacy": 45298,
@@ -14,7 +14,7 @@
     "Hagezi DNS Pro Plus": 1883,
     "uBO filters – Privacy": 1115,
     "217heidai adblockdns": 847,
-    "oisd": 506,
+    "oisd": 502,
     "ADrules anti-AD": 313,
     "ADrules Easylist": 160,
     "StevenBlack Hosts": 73,

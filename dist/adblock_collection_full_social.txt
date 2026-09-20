@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1889
+! Total Rules: 1888
 ! ------------------------------------------
 /wp-content/plugins/automatic-social-locker/*
 ||18cc51d1fb.com^
@@ -453,10 +453,10 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||www.sociallypublish.com^
 ||www2.shareswiss.de^
 ||xvid.social-previews.top^
-52.85.151.112                  epic-social-social-modules-prod.ol.epicgames.com
-52.85.151.45                   epic-social-social-modules-prod.ol.epicgames.com
-52.85.151.19                   epic-social-social-modules-prod.ol.epicgames.com
-52.85.151.4                    epic-social-social-modules-prod.ol.epicgames.com
+3.168.51.18                    epic-social-social-modules-prod.ol.epicgames.com
+3.168.51.60                    epic-social-social-modules-prod.ol.epicgames.com
+3.168.51.9                     epic-social-social-modules-prod.ol.epicgames.com
+3.168.51.82                    epic-social-social-modules-prod.ol.epicgames.com
 ||1-free-share-buttons.com^
 ||ads.socialreach.com^
 ||adshare.toutiao.com^
@@ -1825,7 +1825,6 @@ _social_footer_
 ||xn--scurit-sociale-bkbf.fr^
 ||yfb.net^
 ||yoursocialconnections.com^
-||yxkfb.com^
 ||zlippyshare.com^
 ||socialbars-web5.com/*/notifications/$script
 *$script,3p,denyallow=cloudflare.com|cloudflare.net|disqus.com|disquscdn.com|fastly.net|fastlylb.net|google.com|googleapis.com|gstatic.com|hcaptcha.com|hwcdn.net|jsdelivr.net|jquery.com|jwpcdn.com|recaptcha.net|tawk.to,domain=cpmlink.net

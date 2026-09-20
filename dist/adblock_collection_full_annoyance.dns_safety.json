@@ -2,11 +2,11 @@
   "policy_level": "safe",
   "min_confidence": 0.8,
   "allow_modifier": true,
-  "dns_eligible_network_rules": 1091,
+  "dns_eligible_network_rules": 1090,
   "dns_rejected_network_rules": 2501,
   "by_eligibility": {
     "REJECT": 2501,
-    "SAFE": 1087,
+    "SAFE": 1086,
     "CONDITIONAL": 4
   },
   "by_reason": {
@@ -14,7 +14,7 @@
     "untranslatable": 1341,
     "party_modifier": 153,
     "scoped_modifier": 180,
-    "pure_domain": 925,
+    "pure_domain": 924,
     "navigation_domain_modifier": 162,
     "path_rule": 693,
     "non_blocking_modifier": 4,
