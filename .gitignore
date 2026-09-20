@@ -17,3 +17,5 @@ venv/
 # 审计用大文件（CI 每次构建重新生成，订阅者不需要，不入库）
 dist/relation_graph.json
 dist/provenance.json
+# 本地/连续构建的逐条规则差异（依赖上一批指纹，CI 全新 checkout 无此文件）
+dist/build_diff.txt

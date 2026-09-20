@@ -53,7 +53,8 @@ python3 -m adblock_collection build --out dist --split-by-category
 | 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
 | 9 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
 | 10 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0` | `regression_report.json` | 有误杀 → 返回 1 阻断 |
-| 11 质量门禁 | 本批 vs 上批 metrics | `quality_gate.evaluate` | 增长率在阈值内 | `build_report.json` / `previous_metrics.json` | 超阈值 → 返回 1 阻断 |
+| 11 质量门禁 | 本批 vs 上批 metrics | `quality_gate.evaluate` | 增长率在阈值内；`build_report.json#diff.sources` 记录逐源变化 | `build_report.json` / `previous_metrics.json` | 超阈值 → 返回 1 阻断 |
+| 11b 构建差异 | 本批 vs 上批规则指纹 | `build_diff.diff_fingerprint` | 有上批指纹时输出逐条新增/移除 | `dist/build_diff.txt`（不入库；CI 首次构建跳过） | 仅记录 |
 | 12 字节基线（可选） | `--baseline DIR` | `baseline.compare_baseline` | 逐字节一致（忽略 `generated_at`） | 差异日志 | 有差异 → 返回 3 |
 
 ---

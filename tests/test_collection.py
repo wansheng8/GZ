@@ -944,6 +944,46 @@ def test_quality_gate_via_cli_build(tmp_path):
     assert not gate2.passed
 
 
+def test_build_report_records_source_diff(tmp_path):
+    from adblock_collection.quality_gate import GateResult, Metrics, write_build_report
+
+    prev = Metrics(total_rules=10, source_counts={"a": 10, "gone": 5})
+    cur = Metrics(total_rules=12, source_counts={"a": 12, "new": 3})
+    report = write_build_report(tmp_path, cur, prev, GateResult(passed=True))
+    sources = report["diff"]["sources"]
+    assert sources["a"] == {
+        "current": 12,
+        "previous": 10,
+        "delta": 2,
+        "percent": 20.0,
+    }
+    assert sources["gone"]["delta"] == -5
+    assert sources["new"]["previous"] == 0
+
+
+def test_build_report_source_diff_empty_without_previous(tmp_path):
+    from adblock_collection.quality_gate import GateResult, Metrics, write_build_report
+
+    cur = Metrics(total_rules=10, source_counts={"a": 10})
+    report = write_build_report(tmp_path, cur, None, GateResult(passed=True))
+    assert report["diff"]["sources"] == {}
+
+
+def test_quality_gate_warns_on_source_growth():
+    from adblock_collection.quality_gate import (
+        DEFAULT_THRESHOLDS,
+        Metrics,
+        evaluate,
+    )
+
+    prev = Metrics(source_counts={"a": 10})
+    cur = Metrics(source_counts={"a": 20})
+    gate = evaluate(cur, prev, dict(DEFAULT_THRESHOLDS))
+    assert gate.passed
+    assert any("上游 a" in warning and "增长" in warning for warning in gate.warnings)
+
+
+
 # ---------------- 阶段缓存 / 算法版本 ----------------
 
 

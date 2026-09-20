@@ -13,14 +13,14 @@ GOLDEN_DEFAULT = Path(__file__).parent / "baseline" / "m3"
 
 def test_fixture_build_matches_golden(tmp_path):
     out = build_fixture(tmp_path)
-    diff = compare_baseline(GOLDEN, out)
+    diff = compare_baseline(GOLDEN, out, extra_ignores=["build_diff.txt"])
     assert diff.passed, [f.to_dict() for f in diff.mismatches]
 
 
 def test_default_build_matches_golden(tmp_path):
     """M3：四项增强默认开启时的产物字节基线。"""
     out = build_default_fixture(tmp_path)
-    diff = compare_baseline(GOLDEN_DEFAULT, out)
+    diff = compare_baseline(GOLDEN_DEFAULT, out, extra_ignores=["build_diff.txt"])
     assert diff.passed, [f.to_dict() for f in diff.mismatches]
 
 

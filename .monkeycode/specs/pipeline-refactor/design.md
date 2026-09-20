@@ -250,8 +250,10 @@ class FoldReport:
    不一致时以退出码 3 结束并指出格式与差异条目。测试见 `tests/test_roundtrip.py`。
 2. 需求 2.2：CI 通过 `actions/upload-artifact` 上传 `.cache/build/rules.jsonl`（保留 7 天）。
 3. 需求 6.4：`domain_fold.json` 记录 `folded`、`before`、`after` 与被折叠域名清单。
-4. 需求 8：`build_report.json` 已含完整版与 DNS 总数变化；单源骤降由质量门禁
-   `source_drop` 捕获。逐源明细与新增/移除规则清单按大产物权衡，暂缓排期。
+4. 需求 8：`build_report.json#diff.sources` 记录每个上游源的贡献变化（8.2），
+   单源骤降计为门禁失败、单源增长超阈值计为告警（8.3）；逐条新增/移除清单（8.1）
+   由 `build_diff.py` 输出到 `dist/build_diff.txt`，依赖上一批指纹
+   `.cache/build/previous_rules.txt`，在本地/连续构建生效，CI 全新 checkout 自动跳过。
 
 ## 9. 参考
 

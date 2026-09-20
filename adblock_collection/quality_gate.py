@@ -138,7 +138,17 @@ def evaluate(metrics: Metrics, prev: Metrics | None, thresholds: dict) -> GateRe
             if pc > 0 and cg > thresholds["category_growth_percent"]:
                 res.warnings.append(f"类别 {cat} 增长 {cg:.1f}% ({pc} -> {cnt})")
 
-    # 5. 根域阻断数
+        # 5. 单源贡献增长（幅度超过阈值时告警；骤降已在上方计为失败）
+        for src, cnt in metrics.source_counts.items():
+            old = prev.source_counts.get(src, 0)
+            if old > 0:
+                sg = _pct_change(cnt, old)
+                if sg >= thresholds["source_drop_percent"]:
+                    res.warnings.append(
+                        f"上游 {src} 规则数增长 {sg:.1f}% ({old} -> {cnt})"
+                    )
+
+    # 6. 根域阻断数
     if (
         thresholds["max_root_domain_blocks"] > 0
         and metrics.root_domain_blocks > thresholds["max_root_domain_blocks"]
@@ -188,6 +198,7 @@ def write_build_report(
         "dns_domains": _diff_value(
             metrics.dns_domains, prev.dns_domains if prev else None
         ),
+        "sources": _source_diff(metrics, prev),
     }
     report = {
         "passed": gate.passed,
@@ -212,3 +223,21 @@ def _diff_value(cur: int, prev: int | None) -> dict:
         "delta": cur - prev,
         "percent": round(_pct_change(cur, prev), 2),
     }
+
+
+def _source_diff(metrics: Metrics, prev: Metrics | None) -> dict[str, dict]:
+    """需求 8.2：每个上游源的贡献变化（当前/上次/增量/百分比）。"""
+    if prev is None:
+        return {}
+    names = sorted(set(prev.source_counts) | set(metrics.source_counts))
+    out: dict[str, dict] = {}
+    for src in names:
+        cur = metrics.source_counts.get(src, 0)
+        old = prev.source_counts.get(src, 0)
+        out[src] = {
+            "current": cur,
+            "previous": old,
+            "delta": cur - old,
+            "percent": round(_pct_change(cur, old), 2),
+        }
+    return out

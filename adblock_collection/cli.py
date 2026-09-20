@@ -23,6 +23,13 @@ from pathlib import Path
 from .aliases import normalize_aliases
 from .arbitrate import arbitrate
 from .baseline import compare_baseline
+from .build_diff import (
+    DIFF_NAME,
+    diff_fingerprint,
+    load_previous_fingerprint,
+    save_fingerprint,
+    write_build_diff,
+)
 from .build_pipeline import (
     BuildContext,
     BuildError,
@@ -668,6 +675,21 @@ def build(args: argparse.Namespace) -> int:
         prov_summary["exception_conflicts"],
         prov_summary["parent_child_relations"],
     )
+
+    # 相邻两次构建的逐条规则差异（本地/连续构建；CI 全新 checkout 跳过）
+    prev_fingerprint = load_previous_fingerprint()
+    if prev_fingerprint is not None:
+        added, removed = diff_fingerprint(prev_fingerprint, deduped)
+        diff_summary = write_build_diff(output_dir, added, removed)
+        LOG.info(
+            "构建差异: 新增 %d 条, 移除 %d 条 -> %s",
+            diff_summary["added"],
+            diff_summary["removed"],
+            DIFF_NAME,
+        )
+    else:
+        LOG.info("无上一批规则指纹，跳过逐条构建差异（首次构建）")
+    save_fingerprint(deduped)
 
     # 写入上游健康报告（供订阅者判断数据完整性）
     status_path = output_dir / "sources_status.json"
