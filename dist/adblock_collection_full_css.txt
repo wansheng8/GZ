@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 138421
+! Total Rules: 138425
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -68333,6 +68333,10 @@ msn.com##.ad
 ##a[href^="http://ad.doubleclick.net/"]
 ##a[href^="http://affiliate.godaddy.com/"]
 ##div[id^="div-gpt-ad"]
+fapnado.xxx,some.porn,xcafe.com##.fluid_html_on_pause_container
+fapnado.xxx##.hqb-topbar
+4wank.com,fapnado.xxx##.plads
+fapnado.xxx##.text_link_holder
 ###BottomSocialLinks
 ###FBslideout
 ###FaceBookStayInTouch
