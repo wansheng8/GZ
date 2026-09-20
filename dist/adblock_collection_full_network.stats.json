@@ -1,14 +1,14 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 483402,
+  "total": 483413,
   "by_category": {
-    "network": 483402
+    "network": 483413
   },
   "by_kind": {
-    "network": 483402
+    "network": 483413
   },
   "by_source": {
-    "oisd": 133209,
+    "oisd": 133212,
     "Hagezi DNS Pro Plus": 116145,
     "ADrules DNS": 85190,
     "ADrules Easylist": 50028,
@@ -36,9 +36,9 @@
     "uBO filters – Unbreak": 41,
     "AWAvenue-Ads-Rule": 27,
     "uBO filters – Quick fixes": 19,
+    "EasyList (ABP)": 11,
     "AdAway Hosts": 11,
     "Anti-AD Domains": 8,
-    "EasyList (easylist.to)": 3,
     "Peter Lowe's Blocklist": 2,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
