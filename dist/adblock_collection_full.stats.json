@@ -1,8 +1,8 @@
 {
   "name": "adblock_collection_full",
-  "total": 781677,
+  "total": 781678,
   "by_category": {
-    "network": 483413,
+    "network": 483414,
     "css": 138419,
     "privacy": 55369,
     "phishing": 36702,
@@ -19,7 +19,7 @@
     "js": 1
   },
   "by_kind": {
-    "network": 629489,
+    "network": 629490,
     "css": 141200,
     "scriptlet": 10800,
     "html": 187,
@@ -27,7 +27,7 @@
   },
   "by_source": {
     "Hagezi DNS Pro Plus": 256743,
-    "oisd": 246579,
+    "oisd": 246699,
     "217heidai adblockdns": 215729,
     "ADrules DNS": 200458,
     "ADrules DNS (gp mirror)": 200458,
@@ -40,8 +40,8 @@
     "ADrules anti-AD": 94581,
     "Anti-AD Easylist": 94581,
     "Anti-AD (easylist)": 94581,
-    "EasyList (ABP)": 82369,
-    "EasyList (easylist.to)": 82369,
+    "EasyList (ABP)": 82370,
+    "EasyList (easylist.to)": 82370,
     "ADrules Easylist": 82350,
     "StevenBlack Hosts": 80181,
     "Phishing URL Blocklist": 67662,

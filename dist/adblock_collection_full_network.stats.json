@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 483413,
+  "total": 483414,
   "by_category": {
-    "network": 483413
+    "network": 483414
   },
   "by_kind": {
-    "network": 483413
+    "network": 483414
   },
   "by_source": {
     "oisd": 133212,
@@ -36,7 +36,7 @@
     "uBO filters – Unbreak": 41,
     "AWAvenue-Ads-Rule": 27,
     "uBO filters – Quick fixes": 19,
-    "EasyList (ABP)": 11,
+    "EasyList (ABP)": 12,
     "AdAway Hosts": 11,
     "Anti-AD Domains": 8,
     "Peter Lowe's Blocklist": 2,

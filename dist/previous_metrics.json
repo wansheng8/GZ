@@ -1,9 +1,9 @@
 {
-  "total_rules": 781677,
-  "dns_domains": 543376,
+  "total_rules": 781678,
+  "dns_domains": 543378,
   "source_counts": {
     "Hagezi DNS Pro Plus": 256743,
-    "oisd": 246579,
+    "oisd": 246699,
     "217heidai adblockdns": 215729,
     "ADrules DNS": 200458,
     "ADrules DNS (gp mirror)": 200458,
@@ -16,8 +16,8 @@
     "ADrules anti-AD": 94581,
     "Anti-AD Easylist": 94581,
     "Anti-AD (easylist)": 94581,
-    "EasyList (ABP)": 82369,
-    "EasyList (easylist.to)": 82369,
+    "EasyList (ABP)": 82370,
+    "EasyList (easylist.to)": 82370,
     "ADrules Easylist": 82350,
     "StevenBlack Hosts": 80181,
     "Phishing URL Blocklist": 67662,
@@ -65,7 +65,7 @@
     "LocalRules": 10
   },
   "category_counts": {
-    "network": 483413,
+    "network": 483414,
     "css": 138419,
     "privacy": 55369,
     "phishing": 36702,
@@ -81,5 +81,7 @@
     "html": 184,
     "js": 1
   },
-  "root_domain_blocks": 324082
+  "root_domain_blocks": 324083,
+  "local_blocklist_rules": 0,
+  "local_allowlist_rules": 0
 }
