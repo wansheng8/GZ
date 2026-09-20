@@ -43,10 +43,12 @@ python3 -m adblock_collection build --out dist --split-by-category
 | 阶段 | 输入 | 执行位置 | 校验 | 产物 | 失败处置 |
 |------|------|----------|------|------|----------|
 | 1 配置加载 | `config/sources.yaml` | `merge.load_sources` | YAML 可解析、源无重复 | `sources` 列表 | 文件缺失/解析失败 → 返回 1 |
-| 2 本地规则校验 | `config/local_rules.txt` | `merge.validate_local_rules` | 无通配误伤（`##*`/`##body`/域通配/裸 `*`） | 校验报告（日志） | 有违规 → 返回 2 阻断发布 |
-| 3 上游收集 | 60 源 + mirror | `merge.collect`（线程池并行） | 失败源记录、过期缓存回退 | `.cache/sources/`、`sources_status.json` | 单源失败 → 容忍并记录；全源失败 → 产物为空 |
+| 2 本地规则校验 | `config/local_rules.txt`、`config/lists/*.txt` | `merge.validate_local_rules` / `merge.validate_custom_lists` | 无通配误伤（`##*`/`##body`/域通配/裸 `*`） | 校验报告（日志） | 有违规 → 返回 2 阻断发布 |
+| 3 上游收集 | 60 源 + mirror + `config/lists/` + `local_rules.txt` | `merge.collect`（线程池并行） | 失败源记录、过期缓存回退；自定义名单缺失/读取失败记日志并跳过 | `.cache/sources/`、`sources_status.json` | 单源失败 → 容忍并记录；全源失败 → 产物为空 |
 | 4 合并去重 | 各源 Rule 列表 | `merge.dedupe` / `apply_allowlist` / `apply_badfilter` | 白名单精确放行、badfilter 抵消 | 去重后规则集 | 逻辑错误 → 测试兜底（tests/） |
 | 4b 规则增强（默认开启） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四项默认开启，`--no-*` 可分别关闭；逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
+
+仲裁（`arbitrate.arbitrate`）按域名分层裁决，优先级：自定义白名单（`LocalAllowlist` 整域全局例外）> 自定义黑名单（`LocalBlocklist` 整域阻断）> 上游例外 > 上游 `$important` > 上游普通阻断。
 | 5 冗余消除 | 去重后规则 | `domain_fold.fold_domains`（例外感知）/ `remove_redundant_css` | 仅纯域名/纯类名归并；CSS 去重常开 | 精简规则集 | 仅记录移除数，不阻断 |
 | 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库；`--dry-run` 跳过落盘） | 损坏 → `safe_load` 回退内存规则集 |
 | 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `dns_allow.txt` / `*_ubo_enhance.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
@@ -78,7 +80,7 @@ python3 -m adblock_collection sources   # 列出全部源，检查是否有重�
 
 ## 阶段 2：本地规则校验
 
-**触发**：每次 build 自动执行，无需手动。校验逻辑位于 `merge.validate_local_rules`。
+**触发**：每次 build 自动执行，无需手动。校验逻辑位于 `merge.validate_local_rules`（`config/local_rules.txt`）与 `merge.validate_custom_lists`（`config/lists/*.txt`）。
 
 **禁止的规则模式**（触发返回码 2）：
 
@@ -202,7 +204,7 @@ CSS 仅对「单域 + 纯类名」去重（`css_dedupe`，常开）。复杂选�
 | `*_dns.txt` | hosts（`0.0.0.0 domain`） |
 | `*_dns_ipv6.txt` | hosts（`:: domain`） |
 | `*_domains.txt` | 每行一域名（AdGuard DNS/Home） |
-| `dns_allow.txt` | DNS 层整域白名单（`@@||domain^` 全局例外放行域名，供 DNS 允许清单） |
+| `dns_allow.txt` | DNS 层整域白名单（仅来自 `config/lists/allowlist.txt` 的 `@@\|\|domain^` 整域全局例外，供 DNS 允许清单；`manifest.json` 标记 `source=custom_allowlist`） |
 | `adblock_collection_ubo_enhance.txt` | uBO 增强子集（网络高级修饰符 `$redirect` / `$csp` / `$removeparam`，以及 scriptlet `##+js`、过程式 `#?#`、`:remove()`、AdGuard `#$#` 与 HTML 过滤 `##^`，ABP 不识别） |
 | `*.stats.txt` / `*.stats.json` | 分类/来源统计 |
 | `*.dns_safety.json` | DNS 安全分级分布 |

@@ -136,3 +136,19 @@ hosts 行只接受完整域名，不支持路径、修饰符与通配；本项�
 - `$important` 可临时提升优先级定位冲突，测试后移除。
 - `#@#` 可临时取消某条元素隐藏。
 - 本项目提供 `python -m adblock_collection lint`：校验语法与冲突，并列出可进 DNS 的域名与仅浏览器可用的规则。
+
+## 11. 自定义黑白名单语法
+
+`config/lists/blocklist.txt`（来源 `LocalBlocklist`）与 `config/lists/allowlist.txt`（来源 `LocalAllowlist`）在去重前并入，语法与上游一致，并额外支持**裸域名简写**：
+
+| 写法 | 实际规则 | 说明 |
+| :--- | :--- | :--- |
+| `example.com`（blocklist） | `\|\|example.com^` | 自定义阻断 |
+| `example.com`（allowlist） | `@@\|\|example.com^` | 自定义整域放行 |
+| `\|\|ads.example.com^$script` | 原样 | 阻断，不支持裸域名以外的简写扩展 |
+| `@@\|\|cdn.example.com^` | 原样 | 例外 |
+| `! 注释` / `# 注释` | 忽略 | `##`/`#?#`/`#$#`/`#%#`/`#@#` 开头的元素规则不视为注释 |
+
+同行内可使用标准资源类型与作用域修饰符。只有**整域全局例外**（`@@||域名^`，不含路径/作用域/资源类型）会进入 `dist/dns_allow.txt`；带修饰符的局部放行仅作用于浏览器层。
+
+优先级（从高到低）：自定义白名单 > 自定义黑名单 > 上游例外 > 上游 `$important` > 上游普通阻断。

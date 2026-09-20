@@ -14,5 +14,7 @@
     "phishing": 1,
     "scriptlet": 1
   },
-  "root_domain_blocks": 11
+  "root_domain_blocks": 11,
+  "local_blocklist_rules": 0,
+  "local_allowlist_rules": 0
 }

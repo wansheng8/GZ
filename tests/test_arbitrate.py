@@ -76,6 +76,80 @@ def test_arbitrate_is_deterministic():
     assert [r.to_dict() for r in rec1] == [r.to_dict() for r in rec2]
 
 
+def test_custom_allowlist_exception_beats_upstream_block():
+    rules = [
+        parse_line("||a.com^", source="Upstream"),
+        parse_line("@@||a.com^", source="LocalAllowlist"),
+    ]
+    kept, records = arbitrate(rules)
+    norms = {r.norm for r in kept}
+    assert "@@||a.com^" in norms
+    assert "||a.com^" not in norms
+    assert records[0].winner == "@@||a.com^"
+    assert records[0].reason == "自定义白名单优先于阻断"
+
+
+def test_custom_allowlist_exception_beats_custom_block():
+    rules = [
+        parse_line("||a.com^", source="LocalBlocklist"),
+        parse_line("@@||a.com^", source="LocalAllowlist"),
+    ]
+    kept, records = arbitrate(rules)
+    norms = {r.norm for r in kept}
+    assert "@@||a.com^" in norms
+    assert "||a.com^" not in norms
+    assert len(records) == 1
+
+
+def test_custom_block_beats_upstream_exception():
+    rules = [
+        parse_line("@@||a.com^", source="Upstream"),
+        parse_line("||a.com^", source="LocalBlocklist"),
+    ]
+    kept, records = arbitrate(rules)
+    norms = {r.norm for r in kept}
+    assert "||a.com^" in norms
+    assert "@@||a.com^" not in norms
+    assert records[0].winner == "||a.com^"
+    assert records[0].reason == "自定义黑名单优先于上游规则"
+
+
+def test_custom_block_beats_upstream_important_block():
+    rules = [
+        parse_line("||a.com^$important", source="Upstream"),
+        parse_line("||a.com^", source="LocalBlocklist"),
+    ]
+    kept, records = arbitrate(rules)
+    norms = {r.norm for r in kept}
+    assert "||a.com^" in norms
+    assert "||a.com^$important" not in norms
+
+
+def test_custom_block_beats_upstream_normal_block():
+    rules = [
+        parse_line("||a.com^", source="Upstream"),
+        parse_line("||a.com^$third-party", source="LocalBlocklist"),
+    ]
+    kept, _ = arbitrate(rules)
+    norms = {r.norm for r in kept}
+    assert "||a.com^$third-party" in norms
+    assert "||a.com^" not in norms
+
+
+def test_upstream_priority_unchanged_without_custom():
+    rules = [
+        parse_line("@@||a.com^", source="Upstream"),
+        parse_line("||a.com^$important", source="Upstream"),
+        parse_line("||a.com^", source="Upstream"),
+    ]
+    kept, records = arbitrate(rules)
+    norms = {r.norm for r in kept}
+    assert "@@||a.com^" in norms
+    assert "||a.com^$important" not in norms
+    assert "||a.com^" not in norms
+    assert records[0].reason == "整域全局例外优先于整域阻断"
+
+
 def test_cli_build_resolve_conflicts_writes_report(tmp_path, monkeypatch):
     from adblock_collection import cli, merge
 

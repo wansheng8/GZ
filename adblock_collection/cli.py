@@ -42,6 +42,8 @@ from .dns_policy import load_dns_policy
 from .domain_fold import fold_domains
 from .maintenance import update_history, write_maintenance_report
 from .merge import (
+    CUSTOM_LIST_FILES,
+    _normalize_custom_line,
     apply_allowlist,
     apply_badfilter,
     category_stats,
@@ -52,6 +54,7 @@ from .merge import (
     remove_redundant_css,
     remove_redundant_domains,
     source_stats,
+    validate_custom_lists,
     validate_local_rules,
 )
 from .provenance import (
@@ -76,7 +79,7 @@ from .rules_jsonl import DEFAULT_JSONL_PATH, dump_rules_jsonl, safe_load_rules_j
 from .writer import (
     JSDELIVR_MAX_BYTES,
     _blocked_domains,
-    _global_exception_domains,
+    _custom_allow_domains,
     write_adblock,
     write_adblock_split,
     write_dns_allow,
@@ -305,7 +308,7 @@ def _emit_ubo_enhance(rules, output_dir, manifest) -> None:
 
 
 def _emit_dns_allow(rules, output_dir, manifest) -> None:
-    """DNS 白名单：整域全局例外放行的域名，供 AGH/Pi-hole 允许清单导入。"""
+    """DNS 白名单：仅来自自定义白名单（config/lists/allowlist.txt）的整域全局例外。"""
     path = output_dir / "dns_allow.txt"
     n = write_dns_allow(rules, path, "Adblock Rule Collection (DNS allowlist)")
     manifest.append(
@@ -313,6 +316,7 @@ def _emit_dns_allow(rules, output_dir, manifest) -> None:
             "name": "dns_allow",
             "file": path.name,
             "format": "dns_allow",
+            "source": "custom_allowlist",
             "rules": n,
         }
     )
@@ -468,8 +472,8 @@ def _validate_invariants(rules, dns_policy) -> list[str]:
     domains = _blocked_domains(rules, dns_policy)
     if any(not d or "." not in d for d in domains):
         problems.append("P2 DNS 等价: 域名集合含非法条目")
-    # P3 DNS 白名单：整域全局例外域名必须合法（供 AGH/Pi-hole 直接导入）
-    allow = _global_exception_domains(rules)
+    # P3 DNS 白名单：自定义白名单整域全局例外域名必须合法（供 AGH/Pi-hole 直接导入）
+    allow = _custom_allow_domains(rules)
     bad_allow = sorted(d for d in allow if not d or "." not in d or "*" in d)
     if bad_allow:
         problems.append(
@@ -556,6 +560,17 @@ def build(args: argparse.Namespace) -> int:
         LOG.error(
             "local_rules.txt 含 %d 条可能误伤整页/整站的通配规则，已阻断构建。请改为精确选择器。",
             len(lr_violations),
+        )
+        return 2
+
+    # 自定义黑/白名单静态校验：同样禁止通配误伤规则
+    cl_violations = validate_custom_lists(config_path)
+    if cl_violations:
+        for v in cl_violations:
+            LOG.error("自定义名单违规: %s", v)
+        LOG.error(
+            "config/lists/ 含 %d 条可能误伤整页/整站的通配规则，已阻断构建。请改为精确选择器。",
+            len(cl_violations),
         )
         return 2
 
@@ -997,36 +1012,61 @@ def regression_cmd(args: argparse.Namespace) -> int:
 def lint_cmd(args: argparse.Namespace) -> int:
     """校验规则文件的语法与冲突，并拆分 DNS 域名与浏览器规则（不修改输入）。"""
     from .dns_policy import DNS_LEVELS
-    from .lint import lint_text
+    from .lint import LintReport, lint_text
 
-    rules_path = Path(args.rules)
-    if not rules_path.exists():
-        LOG.error("规则文件不存在: %s", rules_path)
+    config_path = Path(args.config)
+    paths = [Path(p) for p in args.rules]
+    existing: list[Path] = []
+    for p in paths:
+        if p.exists():
+            existing.append(p)
+        else:
+            LOG.warning("规则文件不存在，跳过: %s", p)
+    if not existing:
+        LOG.error("没有可校验的规则文件")
         return 1
     if args.dns_policy:
         policy = dict(DNS_LEVELS[args.dns_policy])
         policy["level"] = args.dns_policy
     else:
-        config_path = Path(args.config)
         policy = load_dns_policy(config_path) if config_path.exists() else None
 
-    text = rules_path.read_text(encoding="utf-8", errors="replace")
-    report = lint_text(text, source=str(rules_path), policy=policy)
-    for issue in report.issues:
-        LOG.info(
-            "%s:%d: %s: %s | %s",
-            rules_path,
-            issue.line,
-            issue.level,
-            issue.message,
-            issue.text,
-        )
+    custom_names = {
+        (config_path.parent / rel).resolve(): name for name, rel in CUSTOM_LIST_FILES
+    }
+
+    merged = LintReport()
+    for rules_path in existing:
+        text = rules_path.read_text(encoding="utf-8", errors="replace")
+        custom_name = custom_names.get(rules_path.resolve())
+        if custom_name:
+            is_allow = custom_name == "LocalAllowlist"
+            text = "\n".join(
+                norm
+                for raw in text.splitlines()
+                if (norm := _normalize_custom_line(raw, is_allow)) is not None
+            )
+        report = lint_text(text, source=str(rules_path), policy=policy)
+        for issue in report.issues:
+            LOG.info(
+                "%s:%d: %s: %s | %s",
+                rules_path,
+                issue.line,
+                issue.level,
+                issue.message,
+                issue.text,
+            )
+        merged.issues.extend(report.issues)
+        merged.dns_domains.extend(report.dns_domains)
+        merged.browser_rules.extend(report.browser_rules)
+
+    merged.dns_domains = sorted(set(merged.dns_domains))
     LOG.info(
         "lint 完成: %d error / %d warning; DNS 域名 %d 条, 浏览器规则 %d 条",
-        len(report.errors),
-        len(report.warnings),
-        len(report.dns_domains),
-        len(report.browser_rules),
+        len(merged.errors),
+        len(merged.warnings),
+        len(merged.dns_domains),
+        len(merged.browser_rules),
     )
     if args.split_dir:
         split_dir = Path(args.split_dir)
@@ -1035,16 +1075,16 @@ def lint_cmd(args: argparse.Namespace) -> int:
         browser_path = split_dir / "lint_browser_rules.txt"
         dns_path.write_text(
             "# lint 拆分：可安全进入 DNS 的整域阻断域名\n"
-            + "".join(f"{d}\n" for d in report.dns_domains),
+            + "".join(f"{d}\n" for d in merged.dns_domains),
             encoding="utf-8",
         )
         browser_path.write_text(
             "# lint 拆分：仅浏览器扩展可用的规则\n"
-            + "".join(f"{r}\n" for r in report.browser_rules),
+            + "".join(f"{r}\n" for r in merged.browser_rules),
             encoding="utf-8",
         )
         LOG.info("拆分产物: %s, %s", dns_path, browser_path)
-    if report.errors or (args.strict and report.warnings):
+    if merged.errors or (args.strict and merged.warnings):
         return 2
     return 0
 
@@ -1177,7 +1217,14 @@ def _build_parser() -> argparse.ArgumentParser:
         "lint", help="校验规则语法/冲突，并拆分 DNS 域名与浏览器规则"
     )
     p_lint.add_argument(
-        "--rules", default="config/local_rules.txt", help="待校验的规则文件"
+        "--rules",
+        nargs="+",
+        default=[
+            "config/local_rules.txt",
+            "config/lists/blocklist.txt",
+            "config/lists/allowlist.txt",
+        ],
+        help="待校验的规则文件（可多个；默认校验本地增强与自定义黑/白名单）",
     )
     p_lint.add_argument(
         "--config", default="config/sources.yaml", help="读取 dns_policy 的配置文件"

@@ -149,14 +149,15 @@ def _is_global_domain_exception(rule: Rule) -> bool:
 
 
 def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[str]:
-    """从规则集提取「应拦截的纯域名」集合，并抵消整域全局例外放行的域名。
+    """从规则集提取「应拦截的纯域名」集合，并抵消自定义白名单放行的域名。
 
-    仅统计满足 dns_policy 安全分级的单域名网络阻断规则（||a.com^ 或策略允许的修饰符规则），
-    同时收集 @@||a.com^ / @@||a.com 这类**整域全局**例外，从拦截集中剔除，使 DNS/Hosts 版
-    也尊重精确放行；作用域/路径例外（$domain=、含路径）不影响整域阻断判定。
+    仅统计满足 dns_policy 安全分级的单域名网络阻断规则（``||a.com^`` 或策略允许的
+    修饰符规则）。DNS 层的例外来源收敛为自定义白名单：只有来源为 ``LocalAllowlist``
+    的整域全局例外（``@@||a.com^``）会从拦截集中剔除；上游例外规则与作用域/路径例外
+    均不影响 DNS 判定，避免上游白名单内容参与本地放行决策。
     """
     blocked: set[str] = set()
-    exceptions: set[str] = set()
+    allowed: set[str] = set()
     for r in rules:
         if r.kind != "network" or not r.domains or len(r.domains) != 1:
             continue
@@ -166,35 +167,35 @@ def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[s
         if domain in _HOSTS_RESERVED:
             continue
         if r.is_exception:
-            # 仅整域全局例外参与放行；作用域/路径例外无法在 DNS 层表达，不抵消整域阻断
-            if _is_global_domain_exception(r):
-                exceptions.add(domain)
+            if r.source == "LocalAllowlist" and _is_global_domain_exception(r):
+                allowed.add(domain)
             continue
         if not is_dns_eligible(r, policy):
             continue
         blocked.add(domain)
-    blocked -= exceptions
+    blocked -= allowed
     return blocked
 
 
-def _global_exception_domains(rules: Iterable[Rule]) -> set[str]:
-    """收集「整域全局例外」放行的域名，用于生成 DNS 白名单。"""
+def _custom_allow_domains(rules: Iterable[Rule]) -> set[str]:
+    """收集自定义白名单（``LocalAllowlist``）中整域全局例外放行的域名。"""
     return {
         r.domains[0]
         for r in rules
-        if _is_global_domain_exception(r)
+        if r.source == "LocalAllowlist" and _is_global_domain_exception(r)
     }
 
 
 def write_dns_allow(
     rules: Iterable[Rule], path: Path, title: str
 ) -> int:
-    """生成 DNS 白名单：每行一个被整域全局例外放行的域名。
+    """生成 DNS 白名单：每行一个自定义白名单整域全局例外放行的域名。
 
-    供 AdGuard Home / Pi-hole 的「允许清单」分组直接导入。作用域/路径例外无法
-    在 DNS 层表达，不在此列出。
+    供 AdGuard Home / Pi-hole 的「允许清单」分组直接导入。白名单内容完全来自
+    ``config/lists/allowlist.txt``，不由上游例外派生；作用域/路径例外无法在 DNS 层
+    表达，不在此列出。
     """
-    domains = sorted(_global_exception_domains(rules))
+    domains = sorted(_custom_allow_domains(rules))
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(

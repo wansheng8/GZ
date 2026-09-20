@@ -29,6 +29,8 @@ class Metrics:
     source_counts: dict[str, int] = field(default_factory=dict)
     category_counts: dict[str, int] = field(default_factory=dict)
     root_domain_blocks: int = 0
+    local_blocklist_rules: int = 0
+    local_allowlist_rules: int = 0
 
     def to_dict(self) -> dict:
         return {
@@ -37,6 +39,8 @@ class Metrics:
             "source_counts": self.source_counts,
             "category_counts": self.category_counts,
             "root_domain_blocks": self.root_domain_blocks,
+            "local_blocklist_rules": self.local_blocklist_rules,
+            "local_allowlist_rules": self.local_allowlist_rules,
         }
 
 
@@ -81,6 +85,8 @@ def collect_metrics(
         source_counts=dict(source_counts),
         category_counts=dict(category_counts),
         root_domain_blocks=root_blocks,
+        local_blocklist_rules=int(source_counts.get("LocalBlocklist", 0)),
+        local_allowlist_rules=int(source_counts.get("LocalAllowlist", 0)),
     )
 
 
@@ -174,6 +180,8 @@ def load_previous(output_dir: Path) -> Metrics | None:
         source_counts=data.get("source_counts", {}) or {},
         category_counts=data.get("category_counts", {}) or {},
         root_domain_blocks=data.get("root_domain_blocks", 0),
+        local_blocklist_rules=data.get("local_blocklist_rules", 0),
+        local_allowlist_rules=data.get("local_allowlist_rules", 0),
     )
 
 

@@ -21,6 +21,65 @@ DOWNLOAD_TIMEOUT = (10, 30)
 MAX_RETRIES = 2
 CACHE_DIR = Path(".cache/sources")
 
+# 自定义名单：固定目录 config/lists/ 下的两个文件，按来源名并入规则集。
+# 白名单以 @@ 例外规则表达，黑名单以普通阻断规则表达；两者均支持裸域名简写。
+CUSTOM_LIST_FILES = (
+    ("LocalBlocklist", "lists/blocklist.txt"),
+    ("LocalAllowlist", "lists/allowlist.txt"),
+)
+_DOMAIN_ONLY_RE = re.compile(
+    r"^[a-z0-9]([a-z0-9-]*[a-z0-9])?(\.[a-z0-9]([a-z0-9-]*[a-z0-9])?)+$", re.IGNORECASE
+)
+
+
+def _normalize_custom_line(line: str, is_allow: bool) -> str | None:
+    """把自定义名单的一行规范成 adblock 规则；裸域名按方向补全。
+
+    黑名单裸域名 ``example.com`` -> ``||example.com^``；
+    白名单裸域名 ``example.com`` -> ``@@||example.com^``。注释与空行返回 None。
+    """
+    stripped = line.strip()
+    if not stripped or stripped.startswith("!"):
+        return None
+    # 以 # 开头且不是元素隐藏分隔符（##/#?#/#$#/#%#/#@#）的行视为注释
+    if stripped.startswith("#") and _ELEMENT_SEP_RE.match(stripped) is None:
+        return None
+    if _DOMAIN_ONLY_RE.match(stripped):
+        return f"@@||{stripped}^" if is_allow else f"||{stripped}^"
+    return stripped
+
+
+def load_custom_lists(
+    config_path: Path, use_stage_cache: bool = True
+) -> list[tuple[str, list[Rule]]]:
+    """加载 config/lists/ 下的自定义黑/白名单，返回 [(来源名, 规则), ...]。
+
+    文件缺失或读取失败时记日志并跳过，保证构建继续。
+    """
+    loaded: list[tuple[str, list[Rule]]] = []
+    for name, rel in CUSTOM_LIST_FILES:
+        path = config_path.parent / rel
+        if not path.exists():
+            LOG.info("自定义名单不存在，跳过: %s", path)
+            continue
+        try:
+            text = path.read_text(encoding="utf-8", errors="replace")
+        except OSError as exc:
+            LOG.warning("读取自定义名单失败: %s: %s", path, exc)
+            continue
+        is_allow = name == "LocalAllowlist"
+        lines = []
+        for raw in text.splitlines():
+            norm = _normalize_custom_line(raw, is_allow)
+            if norm is not None:
+                lines.append(norm)
+        rules = parse_source_cached(
+            lines, "other", name, url=str(path), use_stage_cache=use_stage_cache
+        )
+        loaded.append((name, rules))
+        LOG.info("纳入自定义名单: %s (%d 条)", path, len(rules))
+    return loaded
+
 
 def load_sources(config_path: Path) -> list[dict]:
     import yaml
@@ -129,6 +188,10 @@ def collect(
             LOG.info("纳入本地增强规则: %s (%d 条)", local_path, len(lrules))
         except OSError as exc:
             LOG.warning("读取本地增强规则失败: %s", exc)
+
+    # 自定义黑/白名单：config/lists/ 下固定两文件，在去重前并入，参与全流水线。
+    for name, rules in load_custom_lists(config_path, use_stage_cache=use_stage_cache):
+        result["all"].append((name, rules))
 
     # 并行下载所有上游（下载是最大的耗时瓶颈，顺序下载会让失败源的重试超时拖垮整体）
     from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -368,25 +431,15 @@ _DOMAIN_WILDCARD_RE = re.compile(r"^(?:\*|[*\w.-]*\*[*\w.-]*)\s*#[@$%?]{0,2}#")
 _SELECTOR_WILDCARD_RE = re.compile(r"(^|\s)\*(,|\s|$|>)")
 
 
-def validate_local_rules(config_path: Path) -> list[str]:
-    """校验 config/local_rules.txt，禁止可能误伤整页/整站的通配规则。
-
-    返回违规行列表（非空即应阻断构建）。覆盖 ##、#?#、#$#、#%#、$$ 等全部装饰分隔符；
-    JS 注入（#%#）后是脚本而非选择器，不参与通配校验；例外规则（#@#）会减少拦截，放行。
-    允许的属性包含匹配（如 [class*="ad"]）在被限定的选择器中视为安全。
-    """
-    local_path = config_path.parent / "local_rules.txt"
-    if not local_path.exists():
-        return []
+def _validate_lines(lines: Iterable[str], label: str) -> list[str]:
+    """校验一组规则的误伤通配，返回违规行列表（含标签与行号）。"""
     violations: list[str] = []
-    for idx, raw in enumerate(
-        local_path.read_text(encoding="utf-8", errors="replace").splitlines(), 1
-    ):
+    for idx, raw in enumerate(lines, 1):
         line = raw.strip()
         if not line or line.startswith(("#", "!")):
             continue
         if _WILDCARD_BLOCKLIST_RE.search(line) or _DOMAIN_WILDCARD_RE.search(line):
-            violations.append(f"{local_path.name}:{idx}: {line}")
+            violations.append(f"{label}:{idx}: {line}")
             continue
         # 仅对元素隐藏/扩展 CSS/HTML 过滤规则检查选择器内裸通配
         m = _ELEMENT_SEP_RE.search(line)
@@ -402,5 +455,41 @@ def validate_local_rules(config_path: Path) -> list[str]:
         # 移除合法的属性包含匹配 [class*="x"] 后再判断裸 *
         scrubbed = re.sub(r'\[[^\]]*\*="[^"]*"\]', "", selector)
         if _SELECTOR_WILDCARD_RE.search(scrubbed):
-            violations.append(f"{local_path.name}:{idx}: {line}")
+            violations.append(f"{label}:{idx}: {line}")
+    return violations
+
+
+def validate_local_rules(config_path: Path) -> list[str]:
+    """校验 config/local_rules.txt，禁止可能误伤整页/整站的通配规则。
+
+    返回违规行列表（非空即应阻断构建）。覆盖 ##、#?#、#$#、#%#、$$ 等全部装饰分隔符；
+    JS 注入（#%#）后是脚本而非选择器，不参与通配校验；例外规则（#@#）会减少拦截，放行。
+    允许的属性包含匹配（如 [class*="ad"]）在被限定的选择器中视为安全。
+    """
+    local_path = config_path.parent / "local_rules.txt"
+    if not local_path.exists():
+        return []
+    return _validate_lines(
+        local_path.read_text(encoding="utf-8", errors="replace").splitlines(),
+        local_path.name,
+    )
+
+
+def validate_custom_lists(config_path: Path) -> list[str]:
+    """校验 config/lists/ 下的自定义黑/白名单，禁止可能误伤整页/整站的通配规则。
+
+    裸域名简写先按方向补全为规则再校验；文件缺失时跳过。
+    """
+    violations: list[str] = []
+    for name, rel in CUSTOM_LIST_FILES:
+        path = config_path.parent / rel
+        if not path.exists():
+            continue
+        is_allow = name == "LocalAllowlist"
+        normalized = [
+            norm
+            for raw in path.read_text(encoding="utf-8", errors="replace").splitlines()
+            if (norm := _normalize_custom_line(raw, is_allow)) is not None
+        ]
+        violations.extend(_validate_lines(normalized, path.name))
     return violations

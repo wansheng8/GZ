@@ -25,6 +25,16 @@ from .writer import _is_global_domain_exception
 _FULL_BLOCK_OPTIONS = frozenset({"important"})
 
 
+def _is_custom_block(rule: Rule) -> bool:
+    """是否为自定义黑名单中的单域名阻断规则（含带修饰符的阻断）。"""
+    return (
+        rule.source == "LocalBlocklist"
+        and rule.kind == "network"
+        and not rule.is_exception
+        and len(rule.domains) == 1
+    )
+
+
 @dataclass
 class ArbitrationRecord:
     """一条仲裁记录：目标、胜出规则、败出规则与依据。"""
@@ -72,6 +82,13 @@ def arbitrate(rules: Iterable[Rule]) -> tuple[list[Rule], list[ArbitrationRecord
     records: list[ArbitrationRecord] = []
     for domain in sorted(by_domain):
         indices = by_domain[domain]
+        custom_exceptions = [
+            i
+            for i in indices
+            if rules[i].source == "LocalAllowlist"
+            and _is_global_domain_exception(rules[i])
+        ]
+        custom_blocks = [i for i in indices if _is_custom_block(rules[i])]
         exceptions = [i for i in indices if _is_global_domain_exception(rules[i])]
         important = [
             i
@@ -83,7 +100,39 @@ def arbitrate(rules: Iterable[Rule]) -> tuple[list[Rule], list[ArbitrationRecord
             for i in indices
             if _is_whole_domain_block(rules[i]) and not rules[i].is_important
         ]
-        if exceptions and (important or normal):
+        if custom_exceptions:
+            # 自定义白名单优先级最高：移除同域全部阻断（上游与自定义）
+            losers = [
+                i
+                for i in indices
+                if _is_whole_domain_block(rules[i]) or _is_custom_block(rules[i])
+            ]
+            dropped.update(losers)
+            records.append(
+                ArbitrationRecord(
+                    target=domain,
+                    winner=rules[custom_exceptions[0]].norm,
+                    losers=[rules[i].norm for i in losers],
+                    reason="自定义白名单优先于阻断",
+                )
+            )
+        elif custom_blocks:
+            # 自定义黑名单优先于上游：移除同域上游例外与上游整域阻断
+            losers = [
+                i
+                for i in exceptions + important + normal
+                if i not in custom_blocks
+            ]
+            dropped.update(losers)
+            records.append(
+                ArbitrationRecord(
+                    target=domain,
+                    winner=rules[custom_blocks[0]].norm,
+                    losers=[rules[i].norm for i in losers],
+                    reason="自定义黑名单优先于上游规则",
+                )
+            )
+        elif exceptions and (important or normal):
             losers = important + normal
             dropped.update(losers)
             records.append(

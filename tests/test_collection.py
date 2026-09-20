@@ -311,7 +311,7 @@ def test_path_bearing_rule_excluded_from_dns():
     assert writer._blocked_domains([parse_line("||example.com/ads^")]) == set()
 
 
-def test_exception_cancels_blocked_domain_in_dns():
+def test_upstream_exception_does_not_cancel_dns_block():
     from adblock_collection import writer
 
     rules = [
@@ -319,7 +319,36 @@ def test_exception_cancels_blocked_domain_in_dns():
         parse_line("@@||block.com^"),
         parse_line("||keep.com^"),
     ]
+    # 上游例外不参与 DNS 剔除（P3）：两个整域阻断都保留
+    assert sorted(writer._blocked_domains(rules)) == ["block.com", "keep.com"]
+
+
+def test_custom_allowlist_exception_cancels_dns_block():
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("||block.com^"),
+        parse_line("@@||block.com^", source="LocalAllowlist"),
+        parse_line("||keep.com^"),
+    ]
     assert sorted(writer._blocked_domains(rules)) == ["keep.com"]
+
+
+def test_custom_blocklist_enters_dns_block():
+    from adblock_collection import writer
+
+    rules = [parse_line("||local.example^", source="LocalBlocklist")]
+    assert writer._blocked_domains(rules) == {"local.example"}
+
+
+def test_custom_allowlist_overrides_custom_blocklist_in_dns():
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("||a.com^", source="LocalBlocklist"),
+        parse_line("@@||a.com^", source="LocalAllowlist"),
+    ]
+    assert writer._blocked_domains(rules) == set()
 
 
 def test_pure_domain_rule_included_in_dns():
@@ -362,14 +391,15 @@ def test_ubo_enhanced_includes_ubo_only_cosmetic():
     assert not is_ubo_enhanced(parse_line("example.com#@#.ad-banner"))
 
 
-def test_write_dns_allow_lists_global_exceptions(tmp_path):
+def test_write_dns_allow_lists_custom_allowlist_exceptions(tmp_path):
     from adblock_collection import writer
 
     rules = [
-        parse_line("@@||allowed.example^"),
-        parse_line("@@||scoped.example^$domain=x.com"),
-        parse_line("@@||typed.example^$script"),
-        parse_line("@@||party.example^$third-party"),
+        parse_line("@@||allowed.example^", source="LocalAllowlist"),
+        parse_line("@@||upstream.example^"),
+        parse_line("@@||scoped.example^$domain=x.com", source="LocalAllowlist"),
+        parse_line("@@||typed.example^$script", source="LocalAllowlist"),
+        parse_line("@@||party.example^$third-party", source="LocalAllowlist"),
         parse_line("||blocked.example^"),
     ]
     path = tmp_path / "dns_allow.txt"
@@ -377,6 +407,8 @@ def test_write_dns_allow_lists_global_exceptions(tmp_path):
     text = path.read_text(encoding="utf-8")
     assert count == 1
     assert "allowed.example" in text
+    # 上游例外不再派生 DNS 白名单
+    assert "upstream.example" not in text
     assert "scoped.example" not in text
     # 资源类型/第三方限定的例外是局部放行，不得升级为整域 DNS 白名单
     assert "typed.example" not in text
@@ -801,8 +833,19 @@ def test_check_allow_passes_when_not_blocked():
     assert check_allow(rules, ["google.com"]) == []
 
 
-def test_check_allow_ignores_exception():
+def test_check_allow_ignores_upstream_exception():
+    # 上游例外不参与 DNS 剔除，误杀门禁按 DNS 阻断集合判定
     rules = [parse_line("||example.com^"), parse_line("@@||example.com^")]
+    assert check_allow(rules, ["example.com"]) == [
+        {"domain": "example.com", "blocked_by": "example.com"}
+    ]
+
+
+def test_check_allow_respects_custom_allowlist_exception():
+    rules = [
+        parse_line("||example.com^"),
+        parse_line("@@||example.com^", source="LocalAllowlist"),
+    ]
     assert check_allow(rules, ["example.com"]) == []
 
 
@@ -1446,10 +1489,20 @@ def test_path_exception_does_not_disable_dns_block():
     assert writer._blocked_domains(rules) == {"scorecardresearch.com"}
 
 
-def test_pure_domain_exception_disables_dns_block():
+def test_pure_domain_upstream_exception_keeps_dns_block():
     from adblock_collection import writer
 
     rules = [parse_line("||a.com^"), parse_line("@@||a.com^")]
+    assert writer._blocked_domains(rules) == {"a.com"}
+
+
+def test_pure_domain_custom_exception_disables_dns_block():
+    from adblock_collection import writer
+
+    rules = [
+        parse_line("||a.com^"),
+        parse_line("@@||a.com^", source="LocalAllowlist"),
+    ]
     assert writer._blocked_domains(rules) == set()
 
 

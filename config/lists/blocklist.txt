@@ -1,0 +1,20 @@
+# 自定义黑名单（LocalBlocklist）
+#
+# 本文件承载维护者自有的阻断规则，在 dedupe 之前作为独立来源（LocalBlocklist）
+# 并入流水线，与上游规则同权参与去重、仲裁与质量门禁。
+#
+# 优先级：自定义黑名单高于上游规则；当同一整域上存在上游整域全局例外时，
+#         自定义黑名单阻断胜出（覆盖上游误判）。
+#
+# 格式：标准 AdGuard / uBO 语法，支持裸域名简写：
+#   example.com                 # 等价于 ||example.com^
+#   ||ads.example.com^
+#   ||track.example.com^$script,third-party
+#   example.com##.ad-slot
+#
+# 注意：含通配的误伤规则（如 ||*ad*^、##*[class*="ad"]）会阻断构建；
+#       纯域名阻断会进入 DNS 产物，请确认目标确为广告/追踪域名。
+#
+# 示例（仅供格式参考，默认注释，按需取消注释或替换为真实目标）：
+# ||ads.example.com^
+# ||track.example.com^$script,xhr,third-party

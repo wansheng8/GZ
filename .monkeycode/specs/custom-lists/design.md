@@ -68,16 +68,13 @@ CUSTOM_LIST_FILES = (
 
 ### 3.3 来源优先级 `adblock_collection/arbitrate.py`
 
-```python
-SOURCE_PRIORITY = {"LocalAllowlist": 0, "LocalBlocklist": 1, "LocalRules": 2}
-DEFAULT_PRIORITY = 100
-```
+`arbitrate` 按域名分组后按优先级分层裁决，先命中者胜出：
 
-`arbitrate` 按域名分组后改为分层裁决：
-
-1. 若存在 `LocalAllowlist` 的整域全局例外，胜出，其余阻断记为败出。
-2. 否则若存在 `LocalBlocklist` 的整域阻断，胜出，上游例外记为败出（reason 记为「自定义黑名单优先于上游例外」）。
+1. 若存在 `LocalAllowlist` 的整域全局例外，胜出，其余整域阻断（含自定义黑名单）记为败出，reason 记为「自定义白名单优先于阻断」。
+2. 否则若存在 `LocalBlocklist` 的整域阻断，胜出，上游例外与上游整域阻断记为败出，reason 记为「自定义黑名单优先于上游规则」。
 3. 否则沿用现有「上游整域全局例外 > `$important` 阻断 > 普通阻断」。
+
+新增 `_is_custom_block(rule)` 判定来源为 `LocalBlocklist` 的单域名网络阻断（含带修饰符）。
 
 ### 3.4 DNS 阻断集合与白名单 `adblock_collection/writer.py`
 

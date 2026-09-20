@@ -245,7 +245,7 @@ DNS 规则在解析层生效、无法限定上下文，误杀代价最高，故�
 | ![safe](https://img.shields.io/badge/safe-00f0ff?style=flat-square&labelColor=0d0d0d) | 纯域名 + 仅带导航语义修饰（`$popup`/`$document`）的规则 | 低 |
 | ![strict-safe](https://img.shields.io/badge/strict--safe-39ff14?style=flat-square&labelColor=0d0d0d) | 仅最不易误杀的纯域名规则 | 最低 |
 
-资源类型（`$script`/`$websocket`/`$fetch`）、第一/第三方（`$third-party`）与作用域（`$domain`）等限定在 DNS 层无法表达，一律拒绝升级为整域拦截；整域全局例外之外的局部例外也不会写入 DNS 白名单。
+资源类型（`$script`/`$websocket`/`$fetch`）、第一/第三方（`$third-party`）与作用域（`$domain`）等限定在 DNS 层无法表达，一律拒绝升级为整域拦截。`dns_allow.txt` 只收录 `config/lists/allowlist.txt` 中的整域全局例外，不再由上游例外派生，白名单内容完全由维护者掌控。
 
 ### ├─ `[2]` 误杀回归库 · regression
 
@@ -282,6 +282,15 @@ sources:
       level: strict-safe   # all / safe / strict-safe
 ```
 
+自定义黑/白名单放在固定目录 `config/lists/`，在去重前作为独立来源并入，与上游同权参与流水线：
+
+```text
+config/lists/blocklist.txt   自定义阻断（LocalBlocklist），示例 example.com 或 ||ads.example.com^
+config/lists/allowlist.txt   自定义放行（LocalAllowlist），示例 example.com 或 @@||example.com^
+```
+
+优先级：自定义白名单 > 自定义黑名单 > 上游例外 > 上游 `$important` > 上游普通阻断。裸域名会按方向补全（黑名单补成 `||域名^`，白名单补成 `@@||域名^`）。`config/lists/allowlist.txt` 中的整域全局例外同时输出到 `dist/dns_allow.txt`，作为 DNS 允许清单。
+
 <img src="assets/divider.svg" width="100%" alt=""/>
 
 <img src="assets/sections/structure.svg" width="100%" alt="项目结构"/>
@@ -301,6 +310,10 @@ adblock_collection/
 config/
   sources.yaml            上游配置（dns_policy / quality_gate / security_policy）
   false_positives.yaml    误杀回归清单
+  local_rules.txt         本地增强规则（元素隐藏 / 精确阻断）
+  lists/
+    blocklist.txt         自定义黑名单（LocalBlocklist）
+    allowlist.txt         自定义白名单（LocalAllowlist）
 tests/
   test_collection.py      单元与端到端测试
   test_relation_graph.py

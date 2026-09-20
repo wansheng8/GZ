@@ -151,6 +151,9 @@ echo "exit=$?"
 
 **适用场景**：用户反馈某大站被整域误封，需加入 `allow` 保护。
 
+> 说明：本节维护的是**误杀回归保护清单**（命中即构建失败），防止误拦关键站点。
+> 若要在产物中**真正放行**某个域名（含 DNS 允许清单），请改 `config/lists/allowlist.txt`，见第 8 节。
+
 **标准命令序列**：
 
 ```bash
@@ -254,7 +257,41 @@ echo "exit=$?"   # =2 说明有通配误伤，需修正
 
 ---
 
-## 8. CI 自动提交冲突处置
+## 8. 修改自定义黑白名单（config/lists/）
+
+**适用场景**：在上游规则之外稳定维护自己的阻断或放行，或覆盖上游的错误判定。
+
+**文件与来源**：
+
+| 文件 | 来源名 | 作用 |
+|------|--------|------|
+| `config/lists/blocklist.txt` | `LocalBlocklist` | 自定义阻断 |
+| `config/lists/allowlist.txt` | `LocalAllowlist` | 自定义放行（含 DNS 允许清单） |
+
+**标准命令序列**：
+
+```bash
+# 1) 编辑名单文件，支持标准 Adblock 语法与裸域名简写
+#    blocklist.txt: example.com        -> ||example.com^
+#    allowlist.txt: example.com        -> @@||example.com^
+# 2) 校验语法与通配误伤（默认即校验 config/lists/ 两文件与 local_rules.txt）
+python3 -m adblock_collection lint --config config/sources.yaml
+# 3) 构建
+python3 -m adblock_collection build --out dist --split-by-category
+echo "exit=$?"   # =2 说明名单含通配误伤，需修正
+```
+
+**优先级**：自定义白名单 > 自定义黑名单 > 上游例外 > 上游 `$important` > 上游普通阻断。
+
+**产物**：`config/lists/allowlist.txt` 的整域全局例外会写入 `dist/dns_allow.txt`，`manifest.json` 标记其 `source` 为 `custom_allowlist`；上游例外不再派生 DNS 白名单。
+
+**铁律**：与 `local_rules.txt` 相同——**禁止**通配误伤（`##*`、`##body`、`*##`、`##.a *`），否则构建返回码 2。
+
+**完成判定**：lint 无 error，exit=0，自定义阻断进入产物、自定义放行生效且出现在 `dns_allow.txt`。
+
+---
+
+## 9. CI 自动提交冲突处置
 
 **适用场景**：本地 push 被拒（远程有 auto update 提交）。
 
@@ -287,4 +324,5 @@ git push
 | 构建报门禁失败 | 第 5 节 |
 | 某个源挂了 | 第 6 节 |
 | 补一条直播广告规则 | 第 7 节 |
-| push 被拒 / rebase 冲突 | 第 8 节 |
+| 自定义黑/白名单、覆盖上游 | 第 8 节 |
+| push 被拒 / rebase 冲突 | 第 9 节 |
