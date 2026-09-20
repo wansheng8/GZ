@@ -41,6 +41,7 @@ class BuildFlags:
     redundant: bool = False
     split_by_category: bool = False
     gen_dns: bool = True
+    gen_rulesets: bool = True
     dry_run: bool = False
 
 

@@ -68,12 +68,14 @@
 | **安全** | **`[安全专项]`** 恶意 + 钓鱼 · 低误杀 | 只需安全拦截的设备 | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-39ff14?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_security.txt) |
 | **DNS 白名单** | **`[DNS 白名单]`** 整域放行域名 | AdGuard Home · Pi-hole 允许清单 | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/dns_allow.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-00f0ff?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/dns_allow.txt) |
 | **uBO 增强** | **`[uBO 增强]`** `$redirect` / `$csp` / `$removeparam` / scriptlet / `:remove()` | uBlock Origin · AdGuard（ABP 不识别） | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_ubo_enhance.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-c70f0f?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_ubo_enhance.txt) |
+| **连接层** | **`[代理规则集]`** `rulesets/` 四格式 | mihomo · sing-box · Surge · Quantumult X（TUN 模式按 SNI 拒绝，可穿透 HTTPDNS） | 见下方「连接层规则集」 |
 
 ```console
 >_ 按层选文件
   DNS 设备    -> 第 1~3 行选一（IPv4 / IPv6 / 单行域名，内容等价）
   浏览器扩展  -> 第 5~7 行：要分层就分别装「网络拦截层 + 元素隐藏层」，图省事就装「浏览器专用」
   只想不搭 DNS 又想要域名级全局 -> 第 4 行「域名规则」，浏览器可直接导入
+  代理内核    -> 末行「代理规则集」：mihomo / sing-box / Surge / Quantumult X，TUN 模式按 SNI 拒绝
 ```
 
 > [!TIP]
@@ -88,6 +90,10 @@
 > **浏览器版 jsDelivr 分片**：GitHub 链接始终是单文件完整版；jsDelivr 链接是 `!#include` 分片主链（完整版单文件约 24MB，超过 jsDelivr 单文件 20MB 上限会返回 403，故自动拆分，uBlock Origin / AdGuard 会跟随分片）。若「网络拦截层」日后增长超过 20MB，jsDelivr 链接会 403，此时改用 `adblock_collection_full_browser_network_jsdelivr.txt` 主链。
 >
 > **导入 DNS 列表后仍不拦截时**，先确认域名解析确实经过该 DNS：`nslookup doubleclick.net <你的 AdGuard Home/Pi-hole 地址>` 应返回 `0.0.0.0` 或 NXDOMAIN。若返回真实 IP，说明设备/浏览器走了 DoH（如 Chrome/系统「安全 DNS」），请关闭 DoH 后再测。
+>
+> **App 内广告（开屏 / 信息流原生）DNS 拦不住**：这类广告由 App 内嵌广告 SDK 拉取，常经 App 自身接口、共享核心域（`pstatp.com`、`kuaishou.com`、`gifshow.com` 等）或 HTTPDNS / IP 直连下发。DNS 层只能按独立广告域拦截整域，无法区分同一接口返回里的广告与正常内容；封掉共享核心域会直接弄坏对应 App。
+>
+> 端上代理内核（mihomo / sing-box / Surge / Quantumult X）开启 TUN 后按 TLS/QUIC SNI 匹配域名，可穿透 HTTPDNS，是本仓库唯一能自动化拦到这类广告的手段——订阅下方「连接层规则集」，把广告域名 REJECT 即可；接口级广告再配合 iOS 圈X MITM rewrite、Android AdGuard HTTPS 过滤或 LSPosed 去广告模块。
 
 <details>
 <summary><code>纯文本订阅链接</code></summary>
@@ -132,6 +138,79 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/dns_allow.txt
 [uBO 增强 · redirect / csp / removeparam / scriptlet]
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_ubo_enhance.txt
 https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_ubo_enhance.txt
+
+[连接层 · mihomo / Clash Meta 规则集]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_clash.yaml
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_clash.yaml
+
+[连接层 · sing-box 规则集]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_singbox.json
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_singbox.json
+
+[连接层 · Surge 规则集]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_surge.list
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_part01.list
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_part02.list
+
+[连接层 · Quantumult X 规则集]
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_quanx.list
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01.list
+https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02.list
+```
+
+</details>
+
+<details>
+<summary><code>连接层规则集用法（穿透 HTTPDNS）</code></summary>
+
+四种格式内容一致（与 DNS 域名集合同源），每条均为「域名 + 其所有子域」拒绝，并同样尊重 `config/lists/allowlist.txt` 的自定义放行。TUN 模式下由内核读取 TLS/QUIC SNI 匹配，App 用 HTTPDNS 或 IP 直连也无法绕过。
+
+> Surge / Quantumult X 规则集超过 jsDelivr 单文件 20MB 上限，故 jsDelivr 提供 `_part01`/`_part02` 分片，需把两份都加入；GitHub raw 上则是单个完整文件。
+
+**mihomo / Clash Meta**
+
+```yaml
+rule-providers:
+  adblock:
+    type: http
+    behavior: domain
+    format: yaml
+    url: "https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_clash.yaml"
+    path: ./ruleset/adblock.yaml
+    interval: 86400
+rules:
+  - RULE-SET,adblock,REJECT
+```
+
+**sing-box**（先编译为二进制规则集）
+
+```bash
+sing-box rule-set compile adblock_singbox.json -o adblock.srs
+```
+
+```json
+{
+  "route": {
+    "rule_set": [
+      { "type": "local", "tag": "adblock", "format": "binary", "path": "./adblock.srs" }
+    ],
+    "rules": [{ "rule_set": "adblock", "action": "reject" }]
+  }
+}
+```
+
+**Surge**（jsDelivr 分片需两条）：
+
+```ini
+RULE-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_part01.list,REJECT
+RULE-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_part02.list,REJECT
+```
+
+**Quantumult X**（jsDelivr 分片需两条）：
+
+```ini
+filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01.list, tag=Adblock-1, force-remote-filter=1
+filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02.list, tag=Adblock-2, force-remote-filter=1
 ```
 
 </details>

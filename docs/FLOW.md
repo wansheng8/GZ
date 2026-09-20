@@ -51,7 +51,7 @@ python3 -m adblock_collection build --out dist --split-by-category
 仲裁（`arbitrate.arbitrate`）按域名分层裁决，优先级：自定义白名单（`LocalAllowlist` 整域全局例外）> 自定义黑名单（`LocalBlocklist` 整域阻断）> 上游例外 > 上游 `$important` > 上游普通阻断。
 | 5 冗余消除 | 去重后规则 | `domain_fold.fold_domains`（例外感知）/ `remove_redundant_css` | 仅纯域名/纯类名归并；CSS 去重常开 | 精简规则集 | 仅记录移除数，不阻断 |
 | 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库；`--dry-run` 跳过落盘） | 损坏 → `safe_load` 回退内存规则集 |
-| 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `dns_allow.txt` / `*_ubo_enhance.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
+| 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `dns_allow.txt` / `rulesets/*` / `*_ubo_enhance.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
 | 7b 维护跟踪（可选） | 去重后规则 | `cli.build` 调 `maintenance.update_history` | 末见日期、保留期清理 | `.cache/build/rule_history.tsv`、`maintenance_report.json` | 仅记录，不阻断（需 `--history`） |
 | 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
 | 9 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
@@ -205,6 +205,10 @@ CSS 仅对「单域 + 纯类名」去重（`css_dedupe`，常开）。复杂选�
 | `*_dns_ipv6.txt` | hosts（`:: domain`） |
 | `*_domains.txt` | 每行一域名（AdGuard DNS/Home） |
 | `dns_allow.txt` | DNS 层整域白名单（仅来自 `config/lists/allowlist.txt` 的 `@@\|\|domain^` 整域全局例外，供 DNS 允许清单；`manifest.json` 标记 `source=custom_allowlist`） |
+| `rulesets/adblock_clash.yaml` | 连接层·mihomo/Clash Meta 规则集（`behavior: domain`，`+.domain`） |
+| `rulesets/adblock_singbox.json` | 连接层·sing-box 源规则集（`domain_suffix`，`version: 3`） |
+| `rulesets/adblock_surge.list` | 连接层·Surge 规则集（`DOMAIN-SUFFIX,domain,REJECT`） |
+| `rulesets/adblock_quanx.list` | 连接层·Quantumult X 规则集（`host-suffix, domain, reject`） |
 | `adblock_collection_ubo_enhance.txt` | uBO 增强子集（网络高级修饰符 `$redirect` / `$csp` / `$removeparam`，以及 scriptlet `##+js`、过程式 `#?#`、`:remove()`、AdGuard `#$#` 与 HTML 过滤 `##^`，ABP 不识别） |
 | `*.stats.txt` / `*.stats.json` | 分类/来源统计 |
 | `*.dns_safety.json` | DNS 安全分级分布 |

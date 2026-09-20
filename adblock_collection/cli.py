@@ -89,6 +89,7 @@ from .writer import (
     write_hosts,
     write_hosts_ipv6,
     write_manifest,
+    write_rulesets,
     write_summary,
     write_summary_json,
 )
@@ -323,6 +324,49 @@ def _emit_dns_allow(rules, output_dir, manifest) -> None:
     LOG.info("DNS 白名单: %d 个域名 -> %s", n, path.name)
 
 
+def _emit_rulesets(rules, output_dir, manifest, policy) -> None:
+    """连接层规则集：mihomo / sing-box / Surge / Quantumult X。
+
+    内容与 DNS 域名集合完全一致，供 TUN 模式按 TLS/QUIC SNI 在连接层拒绝广告域，
+    从而绕过 App 的 HTTPDNS / IP 直连。
+    """
+    counts = write_rulesets(
+        rules, output_dir, policy, "Adblock Rule Collection (connection-layer ruleset)"
+    )
+    for fmt, fname in (
+        ("clash", "adblock_clash.yaml"),
+        ("singbox", "adblock_singbox.json"),
+        ("surge", "adblock_surge.list"),
+        ("quanx", "adblock_quanx.list"),
+    ):
+        manifest.append(
+            {
+                "name": f"ruleset_{fmt}",
+                "file": f"rulesets/{fname}",
+                "format": f"{fmt}_ruleset",
+                "rules": counts[fmt],
+            }
+        )
+    # Surge / Quantumult X 文本规则集超 jsDelivr 上限时生成 _partNN 分片，单独登记
+    rdir = output_dir / "rulesets"
+    for fmt, base in (("surge", "adblock_surge"), ("quanx", "adblock_quanx")):
+        for part in sorted(rdir.glob(f"{base}_part*.list")):
+            rules_n = sum(
+                1
+                for line in part.read_text(encoding="utf-8").splitlines()
+                if line and not line.startswith("#")
+            )
+            manifest.append(
+                {
+                    "name": f"ruleset_{fmt}_part",
+                    "file": f"rulesets/{part.name}",
+                    "format": f"{fmt}_ruleset_part",
+                    "rules": rules_n,
+                }
+            )
+    LOG.info("连接层规则集: %d 个域名 -> rulesets/", counts["clash"])
+
+
 def _emit_security(rules, output_dir, security_policy, manifest, gen_dns, dns_policy):
     """将安全类（malware/phishing/mining 等）规则独立发行到 security/ 子目录。
 
@@ -430,6 +474,8 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
     _emit_ubo_enhance(rules, target, manifest)
     if gen_dns:
         _emit_dns_allow(rules, target, manifest)
+    if gen_dns and ctx.flags.gen_rulesets:
+        _emit_rulesets(rules, target, manifest, ctx.dns_policy)
     if ctx.flags.split_by_category:
         _emit_by_category(
             rules,
@@ -582,6 +628,7 @@ def build(args: argparse.Namespace) -> int:
         redundant=args.redundant,
         split_by_category=args.split_by_category,
         gen_dns=not args.no_dns,
+        gen_rulesets=not getattr(args, "no_rulesets", False),
         dry_run=getattr(args, "dry_run", False),
     )
     ctx = BuildContext(
@@ -1110,6 +1157,11 @@ def _build_parser() -> argparse.ArgumentParser:
     p_build.add_argument("--offline", action="store_true", help="离线模式，仅使用缓存")
     p_build.add_argument(
         "--no-dns", action="store_true", help="不生成 DNS/hosts/domains 文件"
+    )
+    p_build.add_argument(
+        "--no-rulesets",
+        action="store_true",
+        help="不生成连接层规则集（mihomo / sing-box / Surge / Quantumult X）",
     )
     p_build.add_argument(
         "--redundant",

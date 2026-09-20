@@ -57,6 +57,30 @@
       "rules": 0
     },
     {
+      "name": "ruleset_clash",
+      "file": "rulesets/adblock_clash.yaml",
+      "format": "clash_ruleset",
+      "rules": 9
+    },
+    {
+      "name": "ruleset_singbox",
+      "file": "rulesets/adblock_singbox.json",
+      "format": "singbox_ruleset",
+      "rules": 9
+    },
+    {
+      "name": "ruleset_surge",
+      "file": "rulesets/adblock_surge.list",
+      "format": "surge_ruleset",
+      "rules": 9
+    },
+    {
+      "name": "ruleset_quanx",
+      "file": "rulesets/adblock_quanx.list",
+      "format": "quanx_ruleset",
+      "rules": 9
+    },
+    {
       "name": "adblock_collection_full_ads",
       "file": "adblock_collection_full_ads.txt",
       "format": "adblock",

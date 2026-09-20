@@ -99,15 +99,16 @@ print("三层并集 == 完整版:", net + cos == full, f"({net} + {cos} vs {full
 print("DNS 等价 == 单行域名:", abp == dom, f"({abp} vs {dom})")
 PY
 
-# ⑦ 增量产物已生成（DNS 白名单 / uBO 增强子集）
+# ⑦ 增量产物已生成（DNS 白名单 / uBO 增强子集 / 连接层规则集）
 test -s dist/dns_allow.txt && echo "dns_allow.txt OK"
 test -s dist/adblock_collection_ubo_enhance.txt && echo "ubo_enhance.txt OK"
+test -s dist/rulesets/adblock_clash.yaml && echo "rulesets OK"
 
 # ⑧ 本地规则语法/冲突校验（改动 local_rules.txt 后执行）
 python -m adblock_collection lint --config config/sources.yaml
 ```
 
-**完成判定**：①≥规则数、②=0、③<5 源、④passed=True、⑤已提交全部 dist 变更、⑥两个等式均为 True、⑦两个增量产物非空、⑧lint 无 error。
+**完成判定**：①≥规则数、②=0、③<5 源、④passed=True、⑤已提交全部 dist 变更、⑥两个等式均为 True、⑦增量产物非空（DNS 白名单 / uBO 增强 / 连接层规则集）、⑧lint 无 error。
 
 ---
 

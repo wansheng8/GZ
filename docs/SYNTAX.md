@@ -10,6 +10,7 @@
 | 元素层 | 浏览器扩展 | `adblock_collection_full_cosmetic.txt` | `##` 隐藏、`#@#` 取消隐藏、scriptlet、过程式选择器、HTML 过滤 |
 | 增强层 | uBO / AdGuard | `adblock_collection_ubo_enhance.txt` | `$redirect`/`$csp`/`$removeparam` 等网络修饰符，以及 `##+js`/`#?#`/`:remove()`/`#$#`/`##^` |
 | DNS 层 | AdGuard Home / Pi-hole / hosts | `_dns.txt`、`_domains.txt`、`dns_allow.txt` | 只能表达整域拦截/放行，单行一个域名 |
+| 连接层 | mihomo / sing-box / Surge / Quantumult X | `rulesets/adblock_clash.yaml`、`adblock_singbox.json`、`adblock_surge.list`、`adblock_quanx.list` | 与 DNS 域名集合同源；TUN 模式按 TLS/QUIC SNI 匹配域名拒绝，可穿透 App 的 HTTPDNS / IP 直连 |
 
 浏览器扩展兼容性：`full` 与 `_browser_network` / `_cosmetic` 以 ABP 通用子集为主，同时收录 uBO/AdGuard 扩展语法（ABP 会忽略无法识别的行）；增强层单独成文件，供支持高级能力的扩展订阅。
 

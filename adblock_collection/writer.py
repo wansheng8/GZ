@@ -266,6 +266,131 @@ def write_domain_rules(
     return len(domains)
 
 
+# 连接层规则集：把 DNS 可表达的整域拦截集合输出为代理内核（mihomo / sing-box /
+# Surge / Quantumult X）的规则集。这些内核在 TUN 模式下按 TLS/QUIC SNI 匹配域名，
+# 因此即便 App 用 HTTPDNS 或 IP 直连绕过系统 DNS，也能在连接层拒绝广告域名。
+RULESET_CLASH = "adblock_clash.yaml"
+RULESET_SINGBOX = "adblock_singbox.json"
+RULESET_SURGE = "adblock_surge.list"
+RULESET_QUANX = "adblock_quanx.list"
+RULESET_DIRNAME = "rulesets"
+
+
+def write_clash_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
+    """mihomo / Clash Meta ``behavior: domain`` 规则集（YAML）。
+
+    每条使用 ``+.domain``（等价 ``DOMAIN-SUFFIX``，匹配该域及其所有子域），
+    rule-provider 需配置 ``behavior: domain``、``format: yaml``。
+    """
+    domains = sorted(domains)
+    with path.open("w", encoding="utf-8") as fh:
+        fh.write(f"# {title}\n")
+        fh.write("# rule-providers: { type: http, behavior: domain, format: yaml }\n")
+        fh.write(f"# Total Domains: {len(domains)}\n")
+        fh.write("payload:\n")
+        for d in domains:
+            fh.write(f"  - '+.{d}'\n")
+    return len(domains)
+
+
+def write_singbox_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
+    """sing-box 源规则集（JSON，``domain_suffix``）。
+
+    使用前用 ``sing-box rule-set compile adblock_singbox.json`` 编译为 ``.srs``；
+    需 sing-box 1.11+（规则集格式 version 3）。
+    """
+    domains = sorted(domains)
+    payload = {"version": 3, "rules": [{"domain_suffix": domains}]}
+    path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+    return len(domains)
+
+
+def write_surge_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
+    """Surge 规则集（``DOMAIN-SUFFIX,domain,REJECT``）。"""
+    domains = sorted(domains)
+    with path.open("w", encoding="utf-8") as fh:
+        fh.write(f"# {title}\n")
+        fh.write(f"# Total Rules: {len(domains)}\n")
+        for d in domains:
+            fh.write(f"DOMAIN-SUFFIX,{d},REJECT\n")
+    return len(domains)
+
+
+def write_quanx_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
+    """Quantumult X 规则集（``host-suffix, domain, reject``）。"""
+    domains = sorted(domains)
+    with path.open("w", encoding="utf-8") as fh:
+        fh.write(f"# {title}\n")
+        fh.write(f"# Total Rules: {len(domains)}\n")
+        for d in domains:
+            fh.write(f"host-suffix, {d}, reject\n")
+    return len(domains)
+
+
+def split_text_list(path: Path, max_bytes: int = JSDELIVR_MAX_BYTES) -> list[str]:
+    """把超限的文本规则集按行拆分为 ``*_partNN.*`` 分片，返回分片文件名。
+
+    仅用于 Surge / Quantumult X 这类「一行一条、无 include 机制」的规则集：
+    jsDelivr 单文件有 20MB 上限，超限返回 403；拆分后订阅者把各分片全部加入即可。
+    ``#`` 开头的注释头会复制到每个分片。未超限时返回空列表。
+    """
+    if path.stat().st_size <= max_bytes:
+        return []
+    lines = path.read_text(encoding="utf-8").splitlines()
+    header = [ln for ln in lines if ln.startswith("#")]
+    body = [ln for ln in lines if not ln.startswith("#")]
+    header_bytes = sum(len(ln.encode("utf-8")) + 1 for ln in header)
+    chunks: list[list[str]] = []
+    current: list[str] = []
+    size = header_bytes
+    for ln in body:
+        line_bytes = len(ln.encode("utf-8")) + 1
+        if current and size + line_bytes > max_bytes:
+            chunks.append(current)
+            current = []
+            size = header_bytes
+        current.append(ln)
+        size += line_bytes
+    if current:
+        chunks.append(current)
+    names: list[str] = []
+    for index, chunk in enumerate(chunks, 1):
+        name = f"{path.stem}_part{index:02d}{path.suffix}"
+        with path.with_name(name).open("w", encoding="utf-8") as fh:
+            for ln in header:
+                fh.write(ln + "\n")
+            for ln in chunk:
+                fh.write(ln + "\n")
+        names.append(name)
+    return names
+
+
+def write_rulesets(
+    rules: Iterable[Rule],
+    output_dir: Path,
+    policy: dict | None = None,
+    title: str = "Adblock Rule Collection (connection-layer ruleset)",
+) -> dict[str, int]:
+    """生成四种代理内核规则集，返回各格式域名数。
+
+    与 hosts / domains 同源（同一 ``_blocked_domains`` 集合），保证 DNS 层与连接层
+    拦截范围一致：自定义白名单整域放行同样在规则集中生效。Surge / Quantumult X
+    文本规则集超过 jsDelivr 单文件上限时，额外输出 ``_partNN`` 分片。
+    """
+    domains = sorted(_blocked_domains(rules, policy))
+    target = output_dir / RULESET_DIRNAME
+    target.mkdir(parents=True, exist_ok=True)
+    counts = {
+        "clash": write_clash_ruleset(domains, target / RULESET_CLASH, title),
+        "singbox": write_singbox_ruleset(domains, target / RULESET_SINGBOX, title),
+        "surge": write_surge_ruleset(domains, target / RULESET_SURGE, title),
+        "quanx": write_quanx_ruleset(domains, target / RULESET_QUANX, title),
+    }
+    for fname in (RULESET_SURGE, RULESET_QUANX):
+        split_text_list(target / fname, JSDELIVR_MAX_BYTES)
+    return counts
+
+
 def write_manifest(entries: list[dict], output_dir: Path) -> None:
     """写入 dist/manifest.json，列出所有生成的输出文件，便于订阅者程序化读取。"""
     payload = {
