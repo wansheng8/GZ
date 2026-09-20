@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 138425
+! Total Rules: 138419
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -112002,12 +112002,6 @@ sabervivirtv.com##.ad-sidebar
 pcgames.de##.innerArticleModule:has-text(Anzeige)
 pcgames.de##.afBtn2
 adshrink.it##.active.dimmer.ui:has-text(/Wait|Skip/i)
-turkanime.*##div.col-xs-12:has-text(MMPORG OYUNLAR)
-turkanime.*###sponsored
-turkanime.*##.panel-title:has-text(REKLAM)
-turkanime.*##.AltkisimMenu
-video.sibnet.ru###vjs-overlayclip-box
-video.sibnet.ru##.vjs-overlayclip-box-close
 allcalidad.*##.table-hover.table > tbody > tr:has-text(Descargar Premium)
 123animes.*##div[id][style^="position: fixed; inset: 0px; z-index: 2147483647;"]
 news18.com##.ad-container

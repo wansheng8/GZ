@@ -288,14 +288,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "api-secure.solvemedia.com",
-    "winner": "@@||api-secure.solvemedia.com^$frame",
-    "losers": [
-      "||api-secure.solvemedia.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "api.ads.tvb.com",
     "winner": "@@||api.ads.tvb.com^",
     "losers": [
@@ -329,7 +321,7 @@
   },
   {
     "target": "autocomplete.clearbit.com",
-    "winner": "@@||autocomplete.clearbit.com^$xhr",
+    "winner": "@@||autocomplete.clearbit.com^",
     "losers": [
       "||autocomplete.clearbit.com^"
     ],
@@ -384,14 +376,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "cdn.intergient.com",
-    "winner": "@@||cdn.intergient.com^$1p",
-    "losers": [
-      "||cdn.intergient.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "cj.dotomi.com",
     "winner": "@@||cj.dotomi.com^",
     "losers": [
@@ -428,14 +412,6 @@
     "winner": "@@||corneey.com^$generichide",
     "losers": [
       "||corneey.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
-    "target": "data.bilibili.com",
-    "winner": "@@||data.bilibili.com^$ping,xhr",
-    "losers": [
-      "||data.bilibili.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },
@@ -552,14 +528,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "fundingchoicesmessages.google.com",
-    "winner": "@@||fundingchoicesmessages.google.com^$script,subdocument,xhr",
-    "losers": [
-      "||fundingchoicesmessages.google.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "g.tbcdn.cn",
     "winner": "@@||g.tbcdn.cn^",
     "losers": [
@@ -612,14 +580,6 @@
     "winner": "@@||hb.afl.rakuten.co.jp^",
     "losers": [
       "||hb.afl.rakuten.co.jp^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
-    "target": "identity.mparticle.com",
-    "winner": "@@||identity.mparticle.com^$xhr",
-    "losers": [
-      "||identity.mparticle.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },
@@ -692,14 +652,6 @@
     "winner": "@@||msn.wrating.com^",
     "losers": [
       "||msn.wrating.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
-    "target": "neobux.com",
-    "winner": "@@||neobux.com^$1p,css,script",
-    "losers": [
-      "||neobux.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },
@@ -848,14 +800,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "sgtm.farmasave.it",
-    "winner": "@@||sgtm.farmasave.it^$script,~third-party",
-    "losers": [
-      "||sgtm.farmasave.it^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "shrtfly.com",
     "winner": "@@||shrtfly.com^$generichide",
     "losers": [
@@ -888,14 +832,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "succeedscene.com",
-    "winner": "@@||succeedscene.com^$script",
-    "losers": [
-      "||succeedscene.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "sunbtc.space",
     "winner": "@@||sunbtc.space^$generichide",
     "losers": [
@@ -916,14 +852,6 @@
     "winner": "@@||tags.crwdcntrl.net^",
     "losers": [
       "||tags.crwdcntrl.net^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
-    "target": "target.microsoft.com",
-    "winner": "@@||target.microsoft.com^$1p,xhr",
-    "losers": [
-      "||target.microsoft.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },
@@ -992,26 +920,10 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "union2.50bang.org",
-    "winner": "@@||union2.50bang.org^$third-party",
-    "losers": [
-      "||union2.50bang.org^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "vd.l.qq.com",
     "winner": "@@||vd.l.qq.com^",
     "losers": [
       "||vd.l.qq.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
-    "target": "vid.connatix.com",
-    "winner": "@@||vid.connatix.com^$3p,media,xhr",
-    "losers": [
-      "||vid.connatix.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },

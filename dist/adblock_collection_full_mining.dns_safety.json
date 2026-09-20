@@ -10,7 +10,9 @@
   },
   "by_reason": {
     "pure_domain": 204,
-    "untranslatable": 11,
+    "untranslatable": 9,
+    "party_modifier": 1,
+    "resource_type_modifier": 1,
     "path_rule": 17,
     "regex_or_redirect_rule": 1,
     "scoped_modifier": 1

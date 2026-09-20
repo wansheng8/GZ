@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 152196
+! Total Rules: 152188
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -124254,14 +124254,6 @@ adshrink.it##+js(aopr, open)
 shrink-service.it##+js(aopr, open)
 adshrink.it##.active.dimmer.ui:has-text(/Wait|Skip/i)
 vipstand.*##+js(nowoif, //)
-turkanime.co##+js(aeld, , pop)
-turkanime.*##+js(nostif, blocked)
-turkanime.*##div.col-xs-12:has-text(MMPORG OYUNLAR)
-turkanime.*###sponsored
-turkanime.*##.panel-title:has-text(REKLAM)
-turkanime.*##.AltkisimMenu
-video.sibnet.ru###vjs-overlayclip-box
-video.sibnet.ru##.vjs-overlayclip-box-close
 allcalidad.*##+js(acs, doOnce)
 allcalidad.*##+js(aeld, , 0x)
 allcalidad.*##+js(aopw, smrtSB)

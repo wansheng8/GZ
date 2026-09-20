@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 500
+! Total Rules: 497
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -156,7 +156,7 @@ $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|l
 *$script,redirect-rule=noopjs,domain=ouo.*
 *expire=$media,redirect=noopmp3-0.1s,domain=viki.com
 ||propbigo.com/*.xml$xhr,redirect=nooptext
-||namethatporn.com/assets/imgs/1x1.gif$frame,redirect=noopframe
+||namethatporn.com/assets/imgs/1x1.gif$subdocument,redirect=noopframe
 *$script,redirect-rule=noopjs,domain=next-episode.net
 *$script,redirect-rule=noopjs,domain=aternos.org
 ||thebookee.net^$image,redirect-rule=1x1.gif,1p
@@ -171,7 +171,7 @@ $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|l
 *$image,redirect-rule=1x1.gif,domain=vipbox.*
 *$script,redirect-rule=noopjs,domain=animedao.*
 *$script,redirect-rule=noopjs,domain=youmath.it
-*$frame,redirect-rule=noopframe,domain=faucetcrypto.com
+*$subdocument,redirect-rule=noopframe,domain=faucetcrypto.com
 *$script,redirect-rule=noopjs,domain=duellinksmeta.com
 *$image,3p,redirect=1x1.gif,domain=rmdown.com
 *$script,domain=delcotimes.com|macombdaily.com|santacruzsentinel.com|saratogian.com|theoaklandpress.com|trentonian.com,redirect-rule=noopjs
@@ -232,7 +232,6 @@ $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|l
 ||amazonaws.com/homad-global-configs.schneevonmorgen.com/global_config.json$xhr,redirect=nooptext,domain=n-tv.de|golem.de
 ||damoh.gmx.*/*$media,redirect=noop-0.1s.mp3,1p
 *$media,redirect-rule=noop-0.1s.mp3,3p,domain=gmx.*|web.de
-*$script,redirect-rule=noopjs,domain=turkanime.*
 *$media,domain=stream1688.com,redirect=noopmp3-0.1s
 *$xhr,redirect-rule=nooptext,domain=freevocabulary.com
 *.mp4$media,redirect=noopmp3-0.1s,domain=cartoonth12.com
@@ -240,7 +239,7 @@ $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|l
 ||imdb.com/tr/*pageHit$xhr,redirect=noopjs,domain=imdb.com
 *$media,redirect=noopmp3-0.1s,domain=imdb.com,3p
 *$xhr,redirect-rule=nooptext,domain=btik.com
-*$frame,redirect-rule=noopframe,domain=camera.aeonax.com
+*$subdocument,redirect-rule=noopframe,domain=camera.aeonax.com
 ||nensaysubs.net/images/logonensay.ico$image,1p,redirect=1x1.gif
 *$script,redirect-rule=noopjs,domain=hausbau-forum.de
 *$script,redirect-rule=noopjs,domain=texviewer.herokuapp.com
@@ -268,7 +267,7 @@ $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|l
 *$script,redirect-rule=noop.js,domain=japscan.*
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{4,6}(?:\?[_a-z]=[-0-9a-z]+)?$/$script,3p,match-case,redirect=noop.js,important,domain=japscan.*
 *$script,3p,domain=poophq.com|veev.to|doods.to,redirect-rule=noopjs
-*$frame,redirect-rule=noopframe,3p,domain=poophq.com|veev.to
+*$subdocument,redirect-rule=noopframe,3p,domain=poophq.com|veev.to
 /^https:\/\/www\.igorslab\.de\/[0-9a-z]{7,}\/A[\/0-9A-Z_a-z-]{100,}$/$image,1p,match-case,redirect=2x2.png
 /^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g(?:\?[0-9A-Z_a-z-]{7,}=[0-9A-Z_a-z-]{7,})?$/$image,1p,match-case,redirect=2x2.png
 */b/ss/*&aqe=$image,redirect=1x1.gif
@@ -372,7 +371,6 @@ $stylesheet,redirect-rule=noop.css,domain=anisearch.*
 ||worldhistory.org/js/ay-ad-loader.js$script,redirect=noop.js
 ||citytv.com/wp-json/rsm-adutil/$xhr,redirect-rule=noop.json
 $xhr,redirect-rule=noop.txt,domain=kbjfree.com
-||fundingchoicesmessages.google.com/i/pub$script,redirect=noop.js,domain=now.gg|now.us
 ||tpc.googlesyndication.com/simgad/$image,redirect=2x2.png,domain=a2zapk.dev
 $script,redirect-rule=noop.js,domain=linkebr.com
 $script,redirect-rule=noop.js,domain=pentafaucet.com|simplebits.io|satoshilabs.net|hitbits.io
@@ -389,7 +387,6 @@ $script,xhr,redirect-rule=noop.js,domain=freesolana.top
 *$xhr,3p,redirect-rule=noop.js,domain=asiaon.top,script
 ||tpc.googlesyndication.com/safeframe/*/html/container.html$xhr,redirect=noop.txt,domain=megainteresting.com
 ||tpc.googlesyndication.com^$image,redirect=1x1.gif,domain=soranews24.com,important
-||fundingchoicesmessages.google.com^$script,redirect-rule=noop.js,domain=soranews24.com
 ||pagead2.googlesyndication.com/pagead/show_ads.js$script,redirect=noop.js,domain=scanner.thetimetube.com
 ||pagead2.googlesyndication.com/pagead/show_ads.js$script,redirect=noop.js,domain=driverename.iblogbox.com
 ||pagead2.googlesyndication.com/pagead/show_ads.js$script,redirect=noop.js,important,domain=panoramaviewer.1bestlink.net

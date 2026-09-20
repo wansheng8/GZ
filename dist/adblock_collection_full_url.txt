@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 25677
+! Total Rules: 25675
 ! ------------------------------------------
 -assets/ads.$~script
 .ar/ads/$~xhr
@@ -24350,7 +24350,7 @@ _stat.js*
 ||static.xx.fbcdn.net/rsrc.php/v*.js$script,replace=/return [a-zA-Z]\(JSON\.parse\(m\)\)/return false/
 ||static.xx.fbcdn.net/rsrc.php/v*.js$script,replace=/=document\.body\|\|document\.documentElement;/=document.body||document.documentElement;return false;/
 ||static.toiimg.com/ad-banner*/photo/*$image,redirect=2x2.png,domain=m.timesofindia.com
-||rule34.us/ad.html$frame
+||rule34.us/ad.html$subdocument
 ||rule34.xxx/static/fp/$image,1p
 ||rule34.xxx/images/clicker.png
 ||topxxxlist.net/eroclick.js
@@ -24379,33 +24379,33 @@ _stat.js*
 ||player.ooyala.com/*/ad-plugin/google_ima.min.js$script,important,redirect=noopjs,domain=nrl.com
 */adsid/integrator.js$script,redirect=noopjs,domain=dl.ccbluex.net
 ||fuckandcdn.com/*/ads/
-*$frame,script,3p,denyallow=bootstrapcdn.com|cloudflare.com|cloudflare.net|fastly.net|fastlylb.net|getbootstrap.com|google.com|googleapis.com|gstatic.com|hcaptcha.com|hwcdn.net|jquery.com|recaptcha.net|serverable.com|zencdn.net,domain=porcore.com|zazzybabes.com
+*$subdocument,script,3p,denyallow=bootstrapcdn.com|cloudflare.com|cloudflare.net|fastly.net|fastlylb.net|getbootstrap.com|google.com|googleapis.com|gstatic.com|hcaptcha.com|hwcdn.net|jquery.com|recaptcha.net|serverable.com|zencdn.net,domain=porcore.com|zazzybabes.com
 *$script,3p,denyallow=cloudflare.com|google.com|gstatic.com|recaptcha.net,domain=shrt10.com
 */wp-content/plugins/adunblocker/*$script,1p
 ||ashemaletube.*/ads/$xhr
 ||hotscope.tv/_next/static/chunks/pages/go-$script,1p
 ||uii.io^$csp=script-src 'self' 'unsafe-inline' 'unsafe-eval' data: *.gstatic.com *.google.com *.googletagmanager.com *.recaptcha.net
-||shidurlive.com/adz*.html$frame
+||shidurlive.com/adz*.html$subdocument
 */rellect/AdblockDetector/handler.min.js$script,important,redirect=noopjs
 ||cdn.rawgit.com^*/AdblockRampok.js$script
-||faucetcrypto.com/ads/$frame
+||faucetcrypto.com/ads/$subdocument
 *$script,3p,denyallow=cloudflare.com|cloudflare.net|google.com|gstatic.com|jsdelivr.net|recaptcha.net|tawk.to,domain=payskip.org
 ||pornvideotop.com/ads300x250.php
 ||young-porn-movie.com/adv.js
 *$script,3p,denyallow=google.com|gstatic.com|recaptcha.net,domain=cutpaid.com
 *$script,3p,denyallow=bootstrapcdn.com|cloudflare.net|google.com|googleapis.com|gstatic.com|recaptcha.net|tawk.to|jsdelivr.net,domain=leechpremium.link
 ||cdn.ptztv.live/*/ads/$image
-||short.es/adv/*$frame,1p
+||short.es/adv/*$subdocument,1p
 ||rte.ie/ads/*$media,redirect=noopmp4-1s,domain=rte.ie
 ||pradjadj.com^$csp=child-src *.google.com *.gstatic.com *.arc.io
-||siriusfiles.com/adframe.js$frame,redirect=noop.html
+||siriusfiles.com/adframe.js$subdocument,redirect=noop.html
 *$script,3p,denyallow=cloudflare.com|google.com|googleapis.com|gstatic.com,domain=za.gl
 ||earn-bitcoins.*/banner_
 ||fautsy.com/adblock.php$xhr,redirect=nooptext,1p
 ||static.xxxbunker.com/preroll/*$media,1p
 ||ads.exoclick.com^$script,redirect=noopjs,domain=uflash.tv
 ||atomohd.*/*/banners$image
-/adu.php$frame,3p
+/adu.php$subdocument,3p
 ||tpb.*/static/custom_ads.js
 *$script,3p,denyallow=cloudflare.com|google.com|gstatic.com|recaptcha.net,domain=shortearn.*
 *$script,3p,denyallow=cdn77.org|google.com|gstatic.com|recaptcha.net|smartsuppcdn.com|smartsuppchat.com,domain=pingit.*|~pingit.com
@@ -24433,7 +24433,7 @@ _stat.js*
 ||cdn.greenvideo.io/adapter/player/$script,replace=/window\.__gv_org_tfa.*?templateData\:\{embedId\:[a-z0-9]{1,3}\}\}\)\}\)\}\}//
 ||cinemaxxl.de/js/adblock.js$script
 ||rawgit.com/fahimraza/FK/master/ad-unblocker.js^$script
-||ytmp3.*/ad/$frame
+||ytmp3.*/ad/$subdocument
 ||mangahere.onl/adsbygoogle.js$script,redirect=noopjs,1p
 ||doofree88.com/storage/go/banner*.gif$image,1p
 *$xhr,redirect-rule=noopjs,domain=audioblog.com
@@ -24450,7 +24450,7 @@ _stat.js*
 *$script,3p,denyallow=gstatic.com|recaptcha.net,domain=shorteet.com
 *$3p,denyallow=google.com|googleapis.com|gstatic.com,domain=uplinkto.*
 *$script,3p,denyallow=google.com|gstatic.com|recaptcha.net,domain=miniurl.*
-||sledujserialy.*/theme/json/episode.ad.php^$frame
+||sledujserialy.*/theme/json/episode.ad.php^$subdocument
 ||pandora.com/static/ads/omsdk-$script,redirect=noop.js
 */ads$media,redirect-rule=noopmp3-0.1s,domain=podu.me
 ||podu.me/*/advertisement^$xhr,1p
@@ -24465,9 +24465,9 @@ _stat.js*
 ||static.veevcdn.co/assets/videoplayer/$script,3p,replace=/return new Promise\(function\(.{100,550}?\]\[\'on\'\].*?[a-zA-Z]\;\}\)\[/[/,domain=poophq.com|veev.to|doods.to
 ||static.veevcdn.co/assets/videoplayer/$script,3p,replace=/\'vavl\':\!0x0/'vavl':false/g,domain=poophq.com|veev.to|doods.to
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$xhr,important,domain=poophq.com|veev.to|doods.to
-$frame,3p,domain=8rm3l0i9.fun|iqksisgw.xyz|u6lyxl0w.skin|l1afav.net,replace='/^/<script>(()=>{window.open=new Proxy(window.open,{apply:(e,t,r)=>{}});const e=new WeakMap,t=(e,t)=>{try{e.dispatchEvent(new Event(t))}catch{}};XMLHttpRequest.prototype;self.XMLHttpRequest=class extends self.XMLHttpRequest{open(t,r,...n){if(e.delete(this),new URL(r).hostname.endsWith(".cdn255.com"))return super.open(t,r,...n);const s={method:t,url:r},a=Object.assign(s,{xhr:this,headers:{date:"","content-type":"","content-length":""},url:s.url,props:{response:{value:""},responseText:{value:""},responseXML:{value:null}}});return e.set(this,a),super.open(t,r,...n)}send(...r){const n=e.get(this);return void 0===n?super.send(...r):!1===n.defer?(n.headers["content-length"]=`${n.props.response.value}`.length,Object.defineProperties(n.xhr,{readyState:{value:4},responseURL:{value:n.url},status:{value:200},statusText:{value:"OK"}}),void Object.defineProperties(n.xhr,n.props)):void Promise.resolve("").then((()=>n)).then((e=>(Object.defineProperties(e.xhr,{readyState:{value:1,configurable:!0},responseURL:{value:n.url}}),t(e.xhr,"readystatechange"),e))).then((e=>(n.headers["content-length"]=`${e.props.response.value}`.length,Object.defineProperties(e.xhr,{readyState:{value:2,configurable:!0},status:{value:200},statusText:{value:"OK"}}),t(e.xhr,"readystatechange"),e))).then((e=>(Object.defineProperties(e.xhr,{readyState:{value:3,configurable:!0}}),Object.defineProperties(e.xhr,e.props),t(e.xhr,"readystatechange"),e))).then((e=>{Object.defineProperties(e.xhr,{readyState:{value:4}}),t(e.xhr,"readystatechange"),t(e.xhr,"load"),t(e.xhr,"loadend")}))}};let r=document.querySelector("script");r.innerHTML.includes("window.open")&&r.parentElement.removeChild(r)})();<\/script>/'
-*$frame,3p,replace=/adBlockDetected//,from=filemoon.*
-||g.doubleclick.net/pagead/ads?client=ca-pub-3497863494706299$frame,redirect=noop.html,domain=pvpoke-re.com
+$subdocument,3p,domain=8rm3l0i9.fun|iqksisgw.xyz|u6lyxl0w.skin|l1afav.net,replace='/^/<script>(()=>{window.open=new Proxy(window.open,{apply:(e,t,r)=>{}});const e=new WeakMap,t=(e,t)=>{try{e.dispatchEvent(new Event(t))}catch{}};XMLHttpRequest.prototype;self.XMLHttpRequest=class extends self.XMLHttpRequest{open(t,r,...n){if(e.delete(this),new URL(r).hostname.endsWith(".cdn255.com"))return super.open(t,r,...n);const s={method:t,url:r},a=Object.assign(s,{xhr:this,headers:{date:"","content-type":"","content-length":""},url:s.url,props:{response:{value:""},responseText:{value:""},responseXML:{value:null}}});return e.set(this,a),super.open(t,r,...n)}send(...r){const n=e.get(this);return void 0===n?super.send(...r):!1===n.defer?(n.headers["content-length"]=`${n.props.response.value}`.length,Object.defineProperties(n.xhr,{readyState:{value:4},responseURL:{value:n.url},status:{value:200},statusText:{value:"OK"}}),void Object.defineProperties(n.xhr,n.props)):void Promise.resolve("").then((()=>n)).then((e=>(Object.defineProperties(e.xhr,{readyState:{value:1,configurable:!0},responseURL:{value:n.url}}),t(e.xhr,"readystatechange"),e))).then((e=>(n.headers["content-length"]=`${e.props.response.value}`.length,Object.defineProperties(e.xhr,{readyState:{value:2,configurable:!0},status:{value:200},statusText:{value:"OK"}}),t(e.xhr,"readystatechange"),e))).then((e=>(Object.defineProperties(e.xhr,{readyState:{value:3,configurable:!0}}),Object.defineProperties(e.xhr,e.props),t(e.xhr,"readystatechange"),e))).then((e=>{Object.defineProperties(e.xhr,{readyState:{value:4}}),t(e.xhr,"readystatechange"),t(e.xhr,"load"),t(e.xhr,"loadend")}))}};let r=document.querySelector("script");r.innerHTML.includes("window.open")&&r.parentElement.removeChild(r)})();<\/script>/'
+*$subdocument,3p,replace=/adBlockDetected//,from=filemoon.*
+||g.doubleclick.net/pagead/ads?client=ca-pub-3497863494706299$subdocument,redirect=noop.html,domain=pvpoke-re.com
 ||bbci.co.uk^*/analytics.js$script,redirect=noopjs,domain=bbc.co.uk
 ||static.bbc.co.uk/bbcdotcom/*/adverts.js$script,1p,important,redirect=noopjs
 ||static.clmbtech.com^$script,redirect=noopjs,domain=businessinsider.in
@@ -24544,7 +24544,6 @@ $frame,3p,domain=8rm3l0i9.fun|iqksisgw.xyz|u6lyxl0w.skin|l1afav.net,replace='/^/
 ||pzfans.com/static/js/adblock-detector.js
 ||ticketmaster.sg/js/ads.js
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=googlesyndication_adsbygoogle.js,domain=pvpoke-re.com
-||g.doubleclick.net/pagead/ads?client=ca-pub-3497863494706299$subdocument,redirect=noop.html,domain=pvpoke-re.com
 ||g.doubleclick.net/pagead/ads?client=ca-pub-3497863494706299$xhr,redirect=noop.txt,domain=pvpoke-re.com
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=ijubes.com|beeduballs.com|15.235.145.185|bestbookbuddies.com|tech-guidance.com|girisheducation.in|pfionline.com
 ||3dzip.org/adblock/main.js
@@ -25370,7 +25369,6 @@ click?pid=*&sub2=Clickunder$all
 ||swncdn.com/zcast/oneplace/ads/
 ||jorpetz.com/kahitano/banner.gif
 ||cartoon.porn/wp-content/*/ads.js?
-||ytmp3.*/ad/$subdocument
 ||mrdeepfakes.com/static/js/pu.js
 ||flaanation.com/uploads/banners/
 ||hiphopza.com/wp-content/uploads/*/ad.gif

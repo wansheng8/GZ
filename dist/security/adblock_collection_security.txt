@@ -656,7 +656,7 @@
 ||adserver*/?sdomain=$document,popup
 /click.php?data=$document
 &adspot_id=*&cost=0.$document
-.xyz/video.php?=*&dating_xyz_0&&0$frame
+.xyz/video.php?=*&dating_xyz_0&&0$subdocument
 /click?pid=*&sub1=$document
 .php?key=*cost=$document,popup
 /?clck=*&sid=$document
@@ -786,8 +786,8 @@
 ^mh=*&mmid=$document,script
 /^https:\/\/[0-9a-z]{3,}\.[-a-z]{10,}\.(?:li[fv]e|top|xyz)\/[a-z]{8}\/(?:article\d{4}\.doc)?\?utm_campaign=\w{40,}/$document,match-case,to=life|live|top|xyz
 /^https:\/\/[a-z]{2,3}\d\.biz\/go\/[0-9a-z]{15,18}$/$document,to=biz
-/^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{3,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?u=[0-9a-z]{7}(?:&t=\d+)?&o=[0-9a-z]{7}/$document,frame,match-case
-/^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{3,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?o=[0-9a-z]{7}(?:&t=\d+)?&u=[0-9a-z]{7}/$document,frame,match-case
+/^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{3,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?u=[0-9a-z]{7}(?:&t=\d+)?&o=[0-9a-z]{7}/$document,subdocument,match-case
+/^https?:\/\/[0-9a-z]*\.?[-0-9a-z]{3,}\.[a-z]{2,11}\.?[a-z]{0,7}\/(?:[0-9a-z]{6,10}\/)?\/?(?:article\d{4}\.doc)?\?(?:cid=[0-9a-z]+&)?o=[0-9a-z]{7}(?:&t=\d+)?&u=[0-9a-z]{7}/$document,subdocument,match-case
 /?u1=*&o1=*&sid=t*~$document
 /^https:\/\/(?:www\d\.)?[-a-z]{6,}\.(?:club|com|info|net|org)\/(?=[-_a-zA-Z]{0,42}\d)(?=[-_0-9a-z]{0,42}[A-Z])[-_0-9a-zA-Z]{43}\/\?cid=[-_0-9a-zA-Z]{10,36}(?:&qs\d=\S+)?&(?:s|pub)id=[-_0-9a-z{}]{1,32}(?:&s=0\.\d+)?(?:#\S+)?$/$document,match-case,to=club|com|info|net|org
 /^https:\/\/(?:www\d\.)?[-a-z]{6,}\.(?:club|com|info|net|org)\/(?=[-_a-zA-Z]{0,42}\d)(?=[-_0-9a-z]{0,42}[A-Z])[-_0-9a-zA-Z]{43}\/\?(?:pub|s)id=[-_0-9a-z{}]{1,32}(?:&qs\d=\S+)?&cid=[-_0-9a-zA-Z]{10,36}(?:&s=0\.\d+)?(?:#\S+)?$/$document,match-case,to=club|com|info|net|org
@@ -1103,7 +1103,7 @@ $document,ipaddress=185.100.85.248
 /api/css.js^$3p,script
 ||cloudproxy.digital^$3p,xhr
 /static/verify-page.js?v=$script,1p
-/landing/windows.html?src=$frame,3p
+/landing/windows.html?src=$subdocument,3p
 -Verify-Cloudflare-$document
 /^https:\/\/[a-z]{7,}\.(com|icu)\/[Tt]raffic\/api$/$script,match-case,3p,to=com|icu
 ||biscottirbh.lol^$all
@@ -1128,7 +1128,7 @@ $document,ipaddress=185.100.85.248
 ||fitgirlrepacks.*^$all,domain=~fitgirl-repacks.site
 ||fitgirlrepack.*^$all,domain=~fitgirl-repacks.site
 ||fitgirls-repack.*^$all,domain=~fitgirl-repacks.site
-||fitgirl-repacks.$document,frame,xhr,script,css,to=~fitgirl-repacks.site
+||fitgirl-repacks.$document,subdocument,xhr,script,css,to=~fitgirl-repacks.site
 ||fitgirl-repacks.$all,from=~fitgirl-repacks.site,to=~fitgirl-repacks.site
 ||fitgirlrepackz.*^$all,domain=~fitgirl-repacks.site
 ||fitgirltorrent.*^$all,domain=~fitgirl-repacks.site
@@ -1220,7 +1220,7 @@ $document,ipaddress=185.100.85.248
 ||voice-ourtime.*.workers.dev^$document
 /^https:\/\/(?:[-a-z0-9]+\.){2}workers\.dev\/v3\/(?:forgotpassword|security|signup)\b/$document,to=workers.dev
 /\/wap\/api\/(?:activity\/)?[a-zA-Z]+![-_a-zA-Z]+\.action\?/$xhr,1p,strict1p,match-case
-||wetching.ru^$document,frame
+||wetching.ru^$document,subdocument
 ||griffithdds.com/*/madeinchina.com/$all
 ||r2.dev/made-in-china.com/$document
 /^https:\/\/(?:[a-z]+\.)?hotel-(?:id)?\d{3,8}\.eu\//$document,to=eu|~booking.com
@@ -1644,7 +1644,7 @@ $document,ipaddress=185.100.85.248
 ||sites.google.com/view/softs-download^$all
 ||sites.google.com/view/sora-ai-v2^$all
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/js\?t=[_a-z0-9]+&ns=[a-z]{2}$/$script,3p,strict3p,match-case,to=com|net
-/^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$frame,popup,3p,strict3p,match-case,to=com|net
+/^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$subdocument,popup,3p,strict3p,match-case,to=com|net
 /^https:\/\/[a-z]{6,19}\.(?:com|net)\/(?:static_)?file\/\?t=[_a-z0-9]+&ns=[a-z]{2}$/$document,match-case,to=com|net
 ||dropbox.com/*/crowdstrike-hotfix.zip^$all
 ||hkdk.events/8cjknac3yxdqk4^$all
@@ -1775,10 +1775,10 @@ $document,ipaddress=185.100.85.248
 /teamrepo?rnd=$script,xhr,3p
 *$xhr,3p,method=get,to=org|shop|win,ipaddress=178.16.53.137
 *$script,3p,ipaddress=158.94.211.92
-||icu^$document,frame,ipaddress=94.154.35.152
-||icu/captcha.html$document,frame
-/captcha.html$document,frame,ipaddress=94.154.35.152
-/?ref=$document,frame,ipaddress=94.154.35.152
+||icu^$document,subdocument,ipaddress=94.154.35.152
+||icu/captcha.html$document,subdocument
+/captcha.html$document,subdocument,ipaddress=94.154.35.152
+/?ref=$document,subdocument,ipaddress=94.154.35.152
 /captcha-loader.js?
 /^https:\/\/[0-9a-z]{7}\.([0-9a-z]{7})\.top\/[0-9a-z]{7}\?t=\1&cid=[0-9a-z]+/$document,to=top,match-case
 /^https?:\/\/[a-z0-9]{10,}\.[a-z]{9,}\.co\.in\//$all,to=co.in|~unitybank.co.in
@@ -1786,7 +1786,7 @@ $document,ipaddress=185.100.85.248
 ||inmotionhosting.com/~myapp/grass_air/$document
 ||sites.google.com/view/entteraccess^$all
 ||sites.google.com/view/helpp2k^$all
-||ads1.google.*.com^$document,frame
+||ads1.google.*.com^$document,subdocument
 ||thetollroads.texas-$all,to=~thetollroads.com
 /^https:\/\/thetollroads\.[a-z]+-[a-z]{4}\.[a-z]{3}\//$document,to=~thetollroads.com
 /^https:\/\/(?:[-a-z0-9]{2,}\.){1,2}(?:[a-z]{2,3}|click|online)\/(?:[-a-z0-9]+\/){1,4}[a-zA-Z0-9]{150}\/index\?a=/$document,xhr,match-case,method=get,to=~edu|~gov
@@ -1851,7 +1851,7 @@ $document,ipaddress=185.100.85.248
 ||live/click.php?key=$document
 ||pttavm.*.com.tr^$document
 ||z-library.cc^$document
-.com/assets/index_1.html?theme=$frame,1p
+.com/assets/index_1.html?theme=$subdocument,1p
 /^https:\/\/www\.[a-z]{12,}\.com\/[-a-z]*%E[%0-9A-F]{20,}-[-0-9a-z]{3,}%E[-%0-9A-Fa-z]{70,}-p-\d{3,5}\.html$/$document,match-case
 $document,ipaddress=185.216.143.121
 ||my-exodus.co.uk^$all

@@ -44416,6 +44416,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||cstm.baidu.com^
 ||ctrmi.cn/t/
 ||dap-cn.c.hihonor.com/dap/jssdk.js
+||data.bilibili.com^
 ||dcard.tw/v1/events
 ||df.huya.com^
 ||dig.lianjia.com^
@@ -52471,7 +52472,6 @@ $removeparam=igshid,domain=instagram.com|threads.net
 ||vpnmentor.com/jssdk/track/
 ||jiosaavn.com/stats.php^
 /\/[a-z]{8}\.js\?st=[0-9A-Z]{6,8}$/$script,1p,strict3p,match-case
-||fundingchoicesmessages.google.com/i/$script,domain=globo.com,important
 ||babia.to/index.php^
 ||babia.to/job.php^
 ||g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_gpt.js:5,domain=euronews.com,important

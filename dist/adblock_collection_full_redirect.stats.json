@@ -1,15 +1,15 @@
 {
   "name": "adblock_collection_full_redirect",
-  "total": 500,
+  "total": 497,
   "by_category": {
-    "redirect": 500
+    "redirect": 497
   },
   "by_kind": {
-    "network": 500
+    "network": 497
   },
   "by_source": {
-    "AdGuard – Ads": 144,
-    "uBO filters – Ads": 128,
+    "AdGuard – Ads": 142,
+    "uBO filters – Ads": 127,
     "ADrules AdRules": 109,
     "uBO filters – Unbreak": 84,
     "ADrules EasyListChina": 8,

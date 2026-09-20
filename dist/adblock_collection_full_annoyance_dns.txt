@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: hosts (0.0.0.0 domain), total 1003
+# Format: hosts (0.0.0.0 domain), total 977
 0.0.0.0 07c225f3.online
 0.0.0.0 1.sabs-push.xyz
 0.0.0.0 100push.com
@@ -13,7 +13,6 @@
 0.0.0.0 ad-survey.com
 0.0.0.0 ad4push.com
 0.0.0.0 admanager.pushfire.de
-0.0.0.0 adobe-campaign.com
 0.0.0.0 adpush.cn
 0.0.0.0 adpush.media
 0.0.0.0 adpushup.com
@@ -21,8 +20,6 @@
 0.0.0.0 ads.unipush.de
 0.0.0.0 adserving.unibet.com
 0.0.0.0 affiliates.fantasticbet.com
-0.0.0.0 agechecker.net
-0.0.0.0 ageverif.com
 0.0.0.0 aipsurveyschina.com
 0.0.0.0 airpush.com
 0.0.0.0 allowpush.com
@@ -41,7 +38,6 @@
 0.0.0.0 api-push.com
 0.0.0.0 api-push.in.meizu.com
 0.0.0.0 api-push.meizu.com
-0.0.0.0 api.branch.io
 0.0.0.0 api.growthpush.com
 0.0.0.0 api.push.le.com
 0.0.0.0 api.xmpush.global.xiaomi.com
@@ -81,13 +77,11 @@
 0.0.0.0 buyerparasitesurveying.com
 0.0.0.0 buysubscribers4u.com
 0.0.0.0 callback.xmpush.xiaomi.com
-0.0.0.0 canyoublockit.com
 0.0.0.0 cappushino.com
 0.0.0.0 careattmobile.surveysparrow.com
 0.0.0.0 cash4popup.de
 0.0.0.0 catapush.com
 0.0.0.0 cattepush.com
-0.0.0.0 ccmp.eu
 0.0.0.0 cdn.beaconpush.com
 0.0.0.0 cdnativepush.com
 0.0.0.0 cfpushsdevpw.com
@@ -97,7 +91,6 @@
 0.0.0.0 cleverpush.com
 0.0.0.0 click-push.com
 0.0.0.0 click.quk.com
-0.0.0.0 cliengo.com
 0.0.0.0 client.smartpushedm.com
 0.0.0.0 close.onlinesurveyblog.com
 0.0.0.0 cloudpush.iqiyi.com
@@ -111,10 +104,6 @@
 0.0.0.0 contactcenter.newsletter.verintsystemsinc.com
 0.0.0.0 contemplatepushed.com
 0.0.0.0 controlpush.com
-0.0.0.0 cookie.marketing
-0.0.0.0 cookiehub.net
-0.0.0.0 cookies.fo
-0.0.0.0 cookiethough.dev
 0.0.0.0 copush.com
 0.0.0.0 coronasurveys.com
 0.0.0.0 covid-survey.com
@@ -173,7 +162,6 @@
 0.0.0.0 fast-surveys.com
 0.0.0.0 fastpopunder.com
 0.0.0.0 fedapush.net
-0.0.0.0 feedburner.com
 0.0.0.0 fenacheaverage.com
 0.0.0.0 fgdgfdsgsfgfsfg.surveysparrow.com
 0.0.0.0 file-intl-push.heytapdl.com
@@ -273,8 +261,6 @@
 0.0.0.0 leadpushs.com
 0.0.0.0 leibundseele-matomo.push-dein-business.de
 0.0.0.0 lf3-reading.fqnovelpic.com
-0.0.0.0 licensebuttons.net
-0.0.0.0 lifteragecheck.com
 0.0.0.0 lifterpopup.com
 0.0.0.0 link.365av.net
 0.0.0.0 link.advancedsystemrepairpro.com
@@ -287,7 +273,6 @@
 0.0.0.0 luckypush.pro
 0.0.0.0 luckypushh.com
 0.0.0.0 m.gven.top
-0.0.0.0 mail.bonnier-subscriptions.com
 0.0.0.0 majorpushme1.com
 0.0.0.0 managedpush.com
 0.0.0.0 master-push.com
@@ -353,7 +338,6 @@
 0.0.0.0 on-push.com
 0.0.0.0 onepush.app
 0.0.0.0 onepush.query.yahoo.com
-0.0.0.0 onetrust.com
 0.0.0.0 online-survey-service.com
 0.0.0.0 ordinarilyrehearsenewsletter.com
 0.0.0.0 oulsools.com
@@ -375,7 +359,6 @@
 0.0.0.0 picturespushfulrookie.com
 0.0.0.0 pinuppopup.com
 0.0.0.0 pixel.pushground.com
-0.0.0.0 placehold.it
 0.0.0.0 pmc-surveys.co.uk
 0.0.0.0 politicalopinionsurvey.com
 0.0.0.0 popunder.bid
@@ -429,9 +412,6 @@
 0.0.0.0 posthog.talkpush.com
 0.0.0.0 postmaster.xpopup.com
 0.0.0.0 povfpushwn.com
-0.0.0.0 printfriendly.com
-0.0.0.0 privacidade.integra.global
-0.0.0.0 privally.global
 0.0.0.0 promo.pixelsee.app
 0.0.0.0 promote-subscribe.forbes.com
 0.0.0.0 promotionpopup.sapoapps.vn
@@ -440,7 +420,6 @@
 0.0.0.0 ptopseempushoa.net
 0.0.0.0 publpush.com
 0.0.0.0 pull.push.sogou.com
-0.0.0.0 purch.com
 0.0.0.0 push-ad.com
 0.0.0.0 push-ads-cn.heytapmobi.com
 0.0.0.0 push-android.myzaker.com
@@ -737,7 +716,6 @@
 0.0.0.0 qr-non-member-unsubscribe-landing-page.qr.test.ajo.adobe.com
 0.0.0.0 qsiyfgazubcu.top
 0.0.0.0 qualifiedsolarsurvey.com
-0.0.0.0 quantcast.mgr.consensu.org
 0.0.0.0 quarepush.com
 0.0.0.0 realpush.digital
 0.0.0.0 realpush.media
@@ -872,7 +850,6 @@
 0.0.0.0 suttonsurveyors.com.au
 0.0.0.0 swarmpush.com
 0.0.0.0 swwpush.com
-0.0.0.0 systeme.io
 0.0.0.0 targetpush.co.kr
 0.0.0.0 tear.beyondk12surveys.com
 0.0.0.0 tellculverscomsurvey.click
@@ -885,7 +862,6 @@
 0.0.0.0 theshemalesurvey.com
 0.0.0.0 thessurvey.com
 0.0.0.0 thewebpush.com
-0.0.0.0 tidiochat.com
 0.0.0.0 titanpush.com.br
 0.0.0.0 tjn.dein-push.de
 0.0.0.0 tjn.jouwpush.nl
@@ -931,7 +907,6 @@
 0.0.0.0 upushjxglaroiqnii.org
 0.0.0.0 urlpush.net
 0.0.0.0 user-subscribe.com
-0.0.0.0 usercentrics.eu
 0.0.0.0 userprofile.push.heytapmobi.com
 0.0.0.0 viapawniarda.com
 0.0.0.0 viapush.com
@@ -966,7 +941,6 @@
 0.0.0.0 wellmadesurvey.pro
 0.0.0.0 went.beyondsurveys.com
 0.0.0.0 went.onlinesurveyblog.com
-0.0.0.0 widget.pico.tools
 0.0.0.0 widget.push.forja.ma
 0.0.0.0 widget.surveymonkey.com
 0.0.0.0 windiagnosticpush.net

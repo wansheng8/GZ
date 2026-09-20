@@ -9,9 +9,10 @@
     "SAFE": 360
   },
   "by_reason": {
-    "untranslatable": 701,
+    "resource_type_modifier": 221,
     "pure_domain": 360,
-    "path_rule": 228,
+    "path_rule": 10,
+    "untranslatable": 698,
     "scoped_modifier": 358,
     "non_blocking_modifier": 12,
     "regex_or_redirect_rule": 1

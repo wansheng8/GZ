@@ -1,16 +1,16 @@
 {
   "name": "adblock_collection_full_scriptlet",
-  "total": 10781,
+  "total": 10779,
   "by_category": {
-    "scriptlet": 10781
+    "scriptlet": 10779
   },
   "by_kind": {
-    "scriptlet": 10781
+    "scriptlet": 10779
   },
   "by_source": {
     "ADrules AdRules": 4614,
     "Fanboy Annoyance": 2824,
-    "uBO filters – Ads": 2439,
+    "uBO filters – Ads": 2437,
     "uBO filters – Unbreak": 303,
     "uBO filters – Privacy": 290,
     "uBO filters – Quick fixes": 154,

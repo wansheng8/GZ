@@ -61987,7 +61987,6 @@ browsershots.org#@#.advert_area
 ||fls.doubleclick.net^
 ||g.doubleclick.net^
 ||ip-adress.com^$third-party
-||neobux.com^$third-party
 ||partner.googleadservices.com^$third-party
 ||partner.video.syndication.msn.com^$~object,third-party
 ||redventures.io^$script,subdocument,third-party,xhr
@@ -62796,7 +62795,6 @@ browsershots.org#@#.advert_area
 ||storage.googleapis.com/global-attribution/global_attribution.js
 ||storage.googleapis.com/vs-scripts/primis/primisSlide.js
 ||streambtwp.b-cdn.net/aclib.js
-||succeedscene.com/openads/
 ||sunflowerbright109.io/sdk.js
 ||supabase.co/rest/v1/promos_available
 ||supply.upjers.com^
@@ -121484,6 +121482,7 @@ aliexpress.com,aliexpress.ru,aliexpress.us##+js(set, navigator.bluetooth, undefi
 ||cstm.baidu.com^
 ||ctrmi.cn/t/
 ||dap-cn.c.hihonor.com/dap/jssdk.js
+||data.bilibili.com^
 ||dcard.tw/v1/events
 ||df.huya.com^
 ||dig.lianjia.com^
@@ -148443,6 +148442,7 @@ fqsousou.com,kengso.com#@#.user-share
 ||goodreviews.io^
 ||google-analytics.com^
 ||adsense.google.cn^
+||fundingchoicesmessages.google.com^
 ||ogads-pa.clients6.google.com^
 ||www-google-analytics.l.google.com^
 ||afd.l.google.com^
@@ -152264,6 +152264,7 @@ fqsousou.com,kengso.com#@#.user-share
 ||nelioabtesting.com^
 ||nelreports.net^
 ||nend.net^
+||neobux.com^
 ||neodatagroup.com^
 ||neoffic.com^
 ||neon.click^
@@ -186976,8 +186977,6 @@ zzztube.com,me-gay.com,gaysuperman.com##.mobile-random
 ||full.video/btn.js
 ||fumanhua88.info^
 ||fumeuseaudibly.com^
-||fundingchoicesmessages.google.com^$domain=video.repubblica.it|br0wsers.com|mathsspot.com|now.gg|aranzulla.it|3bmeteo.com
-||fundingchoicesmessages.google.com^$third-party
 ||funny-tooth.com^
 ||furrycdn.org/spns/$image,domain=furbooru.org
 ||furryhorses.com^
@@ -222858,6 +222857,7 @@ _box_ad_
 ||ae35oceb.eulerian.io^
 ||aea.tescobank.com^
 ||aeafrkms.laveen.nl^
+||aebbiydssbbkdo.com^
 ||aebpi.tiffany.es^
 ||aec.intuit.com^
 ||aedge.roche.com^
@@ -239849,6 +239849,7 @@ _box_ad_
 ||edcmktg.ashevillechamber.org^
 ||edcybh.urbannatural.com^
 ||edczrfj.veneera.com^
+||eddebbwhhdcor.space^
 ||eddy.noneto.com^
 ||edecideur.fr^
 ||edfaba3a.eulerian.io^
@@ -252702,6 +252703,7 @@ _box_ad_
 ||ingest.m2catalyst.com^
 ||ingest.metzler-electronics.com^
 ||ingest.webcol.sdp.peacocktv.com^
+||inglutpetum.com^
 ||inicio.villamuebles.com^
 ||init-kqt.com^
 ||init.izoa.fr^
@@ -262418,6 +262420,7 @@ _box_ad_
 ||marketron.com^
 ||markmedia.com^
 ||marktmen.best-solution.ae^
+||markwcwokwebt.space^
 ||marlin.firstline.org^
 ||marmoset.rocketlog.app^
 ||marmot.hippiemodernism.com^
@@ -267349,6 +267352,7 @@ _box_ad_
 ||oajkd.youngla.com^
 ||oak.brunobett.de^
 ||oakandfort.org^
+||oakjmuiqwgvpa.website^
 ||oakqa.apotekar24.com^
 ||oalselry.com^
 ||oapdi.deltoroshoes.com^
@@ -298100,6 +298104,7 @@ _box_ad_
 ||subsidies.pnoconsultants.com^
 ||subx.alpinawein.de^
 ||suc.aliqrashop.com^
+||succeedscene.com^
 ||success.catman.global^
 ||success.geocortex.com^
 ||success.lohfeldconsulting.com^
@@ -299889,6 +299894,7 @@ _box_ad_
 ||target.mca-insight.com^
 ||target.mercola.com^
 ||target.mercolamarket.com^
+||target.microsoft.com^
 ||target.myparliament.com^
 ||target.nissan.be^
 ||target.njoy.com^
@@ -314380,6 +314386,7 @@ fd3e:4f5a:5b81::1              dns.msftncsi.com
 ||api-live.outgrow.co^
 ||api-n.outgrow.co^
 ||api-p0.yksdks.com^
+||api-secure.solvemedia.com^
 ||api-telemetry.servers.getgo.com^
 ||api-upgrade.coocaa.ottcn.com^
 ||api-v2.zbet.tv^
@@ -357198,8 +357205,6 @@ fd3e:4f5a:5b81::1              dns.msftncsi.com
 .3.n.2.1.l50.js
 .3.n.2.2.l30.js
 vkcdnservice.appspot.com^
-||inglutpetum.com^
-||oakjmuiqwgvpa.website^
 ||bucksmein.com^
 ||byethost41.net^
 ||gmmads.com^
@@ -362491,12 +362496,13 @@ analytics-*.aasaam.com
 @@||track.rutarget.ru^|
 @@||5471782.fls.doubleclick.net^|
 @@||omniture.walmart.com^|
-||aebbiydssbbkdo.com^
-||markwcwokwebt.space^
 fapnado.xxx,some.porn,xcafe.com##.fluid_html_on_pause_container
 fapnado.xxx##.hqb-topbar
 4wank.com,fapnado.xxx##.plads
 fapnado.xxx##.text_link_holder
+||trewsweans.shop^
+||twhojkrvypvxv.online^
+||wonkierboca.com^
 -facebook-likeButton-
 -facebook-share.
 -facebook-widget.
@@ -384132,6 +384138,7 @@ ff02::3 ip6-allhosts
 ||cd.connatix.com^
 ||cds.connatix.com^
 ||img.connatix.com^
+||vid.connatix.com^
 ||static.criteo.net^
 ||impressions.crossinstall.io^
 ||step-service.crossinstall.io^
@@ -384185,6 +384192,7 @@ ff02::3 ip6-allhosts
 ||js-sec.indexww.com^
 ||ag.innovid.com^
 ||cdn.intergi.com^
+||cdn.intergient.com^
 ||fastg8.pool.iponweb.net^
 ||s.jsrdn.com^
 ||uts.kingoapp.com^
@@ -384213,6 +384221,7 @@ ff02::3 ip6-allhosts
 ||cdn.mobify.com^
 ||morgdm.ru^
 ||mozbar.moz.com^
+||identity.mparticle.com^
 ||sdkconf.msstatic.com^
 ||hb.mynativeplatform.com^
 ||mzbcdn.net^
@@ -441255,6 +441264,7 @@ fb_servpub-a.akamaihd.net
 ||tagging.farmaciasvivo.com^
 ||analytics.farmacloud.io^
 ||sgtm.farmaline.be^
+||sgtm.farmasave.it^
 ||sgtm.farmina.com^
 ||sgtm.farmrio.com^
 ||sgtm.farmrio.eu^
@@ -553378,6 +553388,7 @@ fb_servpub-a.akamaihd.net
 ||zzzmyl.com^
 ||zzzperform.com^
 ||zzzwowosss.com^
+||union2.50bang.org^
 ||lab.eu.amplitude.com^
 ||bdfrm.bidvertiser.com^
 ||quantcast.mgr.consensu.org^
@@ -664357,9 +664368,3 @@ fb_servpub-a.akamaihd.net
 ||stasiliste.de^
 ||stasislocked.com^
 ||staswiselka.pl^
-||stat-api-yndx.cloud.gismeteo.net^
-||stat.51buy.com^
-||stat.55bbs.com^
-||stat.api.4399.com^
-||stat.eol.cn^
-||stat.fdc.net.cn^
