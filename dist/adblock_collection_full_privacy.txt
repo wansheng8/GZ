@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55368
+! Total Rules: 55369
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -8830,6 +8830,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||x.babe.today^
 ||x.disq.us^
 ||x.weather.com^
+||xp.atlassian.com^
 ||xp2023-pix.s3.amazonaws.com^
 ||yandex.*/data?referrer=
 ||yandex.ru/an/rtbcount/
@@ -44459,6 +44460,8 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||kn007.net/snmp.php
 ||l.web.huya.com^
 ||le.com/op/
+||lego-tech.zhuanzhuan.com^
+||lego.zhuanzhuan.com^
 ||log-h5.imdada.cn^
 ||log-upload-os.hoyolab.com^
 ||log-upload-os.hoyoverse.com^
@@ -49486,8 +49489,6 @@ $removeparam=tracking_source
 ||tracking.realtor.com^
 ||tracking.shoptogether.buy.com^
 ||tracking.ustream.tv^
-||lego-tech.zhuanzhuan.com^
-||lego.zhuanzhuan.com^
 ||guide-rank.com/guiderank-tracking^
 ||api.blibili.com/x/pd-proxy/tracker
 /track.gif^
