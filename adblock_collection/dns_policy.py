@@ -91,9 +91,6 @@ WHOLE_DOMAIN_MODIFIERS = frozenset({"all", "important", "match-case"})
 # 规则按整域拦截处理，属于用户确认后的放宽策略。与其它类型/作用域选项混用时不算。
 NAVIGATION_DOMAIN_MODIFIERS = frozenset({"popup", "doc", "document"})
 
-# 可作为整域阻断的选项全集
-DNS_WHOLE_DOMAIN_MODIFIERS = WHOLE_DOMAIN_MODIFIERS | NAVIGATION_DOMAIN_MODIFIERS
-
 _OPTION_RE = re.compile(r"\$([^$]*)$")
 
 # 作用域限定选项：DNS 只能按整域拦截，无法表达「仅在某来源站点 / 某目标域名 /

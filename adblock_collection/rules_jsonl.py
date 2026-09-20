@@ -18,23 +18,6 @@ LOG = logging.getLogger("adblock_collection")
 
 DEFAULT_JSONL_PATH = Path(".cache/build/rules.jsonl")
 
-# 参与序列化的字段，覆盖 writer/provenance 所需的全部 Rule 属性
-RULE_FIELDS = (
-    "raw",
-    "norm",
-    "kind",
-    "category",
-    "is_exception",
-    "is_css",
-    "is_scriptlet",
-    "is_badfilter",
-    "is_important",
-    "domains",
-    "source",
-    "sources",
-    "options",
-)
-
 
 def rule_to_dict(rule: Rule) -> dict:
     return {

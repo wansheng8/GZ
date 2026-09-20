@@ -155,7 +155,6 @@ def detect_exception_conflicts(rules: Iterable[Rule]) -> dict[str, list[str]]:
 REL_PARENT_CHILD = "PARENT_CHILD"
 REL_CROSS_SOURCE = "CROSS_SOURCE_DUPLICATE"
 REL_EXCEPTION_CONFLICT = "EXCEPTION_CONFLICT"
-REL_EXACT = "EXACT_DUPLICATE"
 
 
 @dataclass

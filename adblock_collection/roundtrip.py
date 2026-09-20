@@ -20,7 +20,6 @@ from .writer import _blocked_domains
 
 # 完整版 adblock 列表逐条比对；其余四种按 DNS 域名集合比对
 ADBLOCK_FORMATS = ("adblock",)
-DOMAIN_FORMATS = ("hosts", "hosts_ipv6", "domains", "adblock_domains")
 
 _COMMENT_PREFIXES = {
     "adblock": ("!",),
@@ -100,19 +99,4 @@ def check_roundtrip(
                     f"{fmt} 往返多出 {len(extra)} 个域名: {_sample(extra)}"
                 )
     return issues
-
-
-class RoundTripError(Exception):
-    """解析-序列化往返不一致。"""
-
-
-def assert_roundtrip(
-    paths: dict[str, Path],
-    rules: Iterable[Rule],
-    policy: dict | None = None,
-) -> None:
-    """往返校验失败时抛出 ``RoundTripError``。"""
-    issues = check_roundtrip(paths, rules, policy)
-    if issues:
-        raise RoundTripError("往返校验失败: " + "; ".join(issues))
 

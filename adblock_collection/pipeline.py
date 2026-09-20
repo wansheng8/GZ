@@ -111,7 +111,7 @@ def parse_source_cached(
 ) -> list[Rule]:
     """带阶段缓存的解析入口。
 
-    use_stage_cache=False 时退化为原 parse_source 行为（离线/调试场景）。
+    use_stage_cache=False 时跳过阶段缓存、直接解析（离线/调试场景）。
     """
     if use_stage_cache and url:
         text = "\n".join(lines)

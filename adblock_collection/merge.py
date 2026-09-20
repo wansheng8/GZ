@@ -13,7 +13,7 @@ from pathlib import Path
 import requests
 
 from .pipeline import parse_source_cached
-from .rules import _ELEMENT_SEP_RE, _PURE_DOMAIN_RE, Rule, _option_start, parse_lines
+from .rules import _ELEMENT_SEP_RE, _PURE_DOMAIN_RE, Rule, _option_start
 
 LOG = logging.getLogger("adblock_collection")
 
@@ -89,10 +89,6 @@ def fetch_source(
         return cache.read_text(encoding="utf-8", errors="replace").splitlines()
     LOG.error("放弃下载 %s: %s", url, last_err)
     return []
-
-
-def parse_source(lines: Iterable[str], category_hint: str, source: str) -> list[Rule]:
-    return parse_lines(lines, category_hint=category_hint, source=source)
 
 
 def collect(
