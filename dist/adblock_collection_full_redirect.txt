@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 497
+! Total Rules: 499
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -155,6 +155,7 @@ $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|l
 *$script,redirect-rule=noopjs,domain=simply-hentai.com
 *$script,redirect-rule=noopjs,domain=ouo.*
 *expire=$media,redirect=noopmp3-0.1s,domain=viki.com
+$subdocument,1p,redirect=noop.html,domain=pussyspace.com|pussyspace.net
 ||propbigo.com/*.xml$xhr,redirect=nooptext
 ||namethatporn.com/assets/imgs/1x1.gif$subdocument,redirect=noopframe
 *$script,redirect-rule=noopjs,domain=next-episode.net
@@ -376,6 +377,7 @@ $script,redirect-rule=noop.js,domain=linkebr.com
 $script,redirect-rule=noop.js,domain=pentafaucet.com|simplebits.io|satoshilabs.net|hitbits.io
 *$image,redirect=1x1.gif,domain=proviralhost.com
 ||a.magsrv.com/video-slider.js$script,redirect=noop.js,domain=daemonanime.net
+$subdocument,~3p,redirect=noop.html,domain=pussyspace.com|pussyspace.net
 ||citynews.ca/*/get_ad_$xhr,redirect=noop.json,domain=citynews.ca,important
 ||cdn.bmcdn3.com/js/*aab.js$script,redirect=noop.js,important,domain=earnhub.net
 $~3p,xhr,script,redirect-rule=noop.txt,domain=zertalious.xyz|digworm.io

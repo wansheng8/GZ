@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3591
+! Total Rules: 3587
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -1001,6 +1001,7 @@ bytegoofy.com/goofy/*/push.js?
 ||widget.push.forja.ma^
 ||ws-goguardian.pusher.com^
 ||wstpush-mobile.terra.com^
+||www.popupad.net^
 ||xml-eu-v4.hillflippush.info^
 ||xml-eu.hillflippush.info^
 ||xml-v4.hillflippush.info^
@@ -1025,12 +1026,10 @@ bytegoofy.com/goofy/*/push.js?
 ||cstrespsurvey.ca^
 ||dornpush.com^
 ||popup.egyup.com^
-||pushs.euromsg.com^
 ||fedapush.net^
 ||promote-subscribe.forbes.com^
 ||www.fpcpopunder.com^
 ||pushwoosh.g5e.com^
-||getcashforsurveys.com^
 ||file-intl-push.heytapdl.com^
 ||push-ads-cn.heytapmobi.com^
 ||push-dc-us.heytapmobile.com^
@@ -1052,24 +1051,20 @@ bytegoofy.com/goofy/*/push.js?
 ||pmc-surveys.co.uk^
 ||popunder.com^
 ||popunder.net^
-||popupblocker.com^
 ||popupdl.ir^
 ||popupplus.ir^
-||newsletter.posthog.com^
 ||push2check.com^
 ||pushadv.biz^
 ||zebra.pushbullet.com^
 ||pushcode.jp^
 ||pushers.info^
 ||pushfilefind.click^
-||analytics.pushgrid.net^
 ||pushinkaa.com^
 ||pushit.work^
 ||pushmoose.com^
 ||pushq.ir^
 ||pushtrust.com^
 ||pushydialoguenoisy.com^
-||app.qpointsurvey.com^
 ||realpush.digital^
 ||rexpush.info^
 ||richpopup.com^
@@ -1077,8 +1072,6 @@ bytegoofy.com/goofy/*/push.js?
 ||smartpush0.info^
 ||subscribepage.com^
 ||subscribepage.io^
-||survey-analytics-slider.webflow.io^
-||survey-analytics.webflow.io^
 ||survey-smiles.com^
 ||surveygizmobeacon.s3.amazonaws.com^
 ||widget.surveymonkey.com^
@@ -1172,7 +1165,6 @@ push.qq.com^
 ||aipsurveyschina.com^
 ||ptopseempushoa.net^
 ||push-sender.com^
-||pusherism.com^
 ||wnt-some-push.net^
 ||overlay.aibuy.io^
 ||push.tf-cdn.net^
@@ -2494,6 +2486,7 @@ page_view_count
 ||support.xxx/cookie_consent.js
 ||tarteaucitron.io/load.js
 ||thisisdone.com/gdpr/$third-party
+||transcend.io^$third-party
 ||unpkg.com/cookie-though
 ||usercentrics.eu^$third-party
 ||privacy-mgmt.com^$domain=anisearch.com|anisearch.de|anisearch.es|anisearch.fr|anisearch.it|anisearch.jp|consent-manager.ft.com|economist.com|idealo.co.uk|marketwatch.com|popsci.com|startsiden.no|sussexexpress.co.uk|taz.de|wsj.com
@@ -2911,6 +2904,7 @@ page_view_count
 ||waterfordwhispersnews.com/wp-content/themes/therex-child/js/_newsletter-article-signup.js
 ||widgets.cpr.org/embeds/$domain=denverite.com
 follow-it-form-subscribe
+||api.pico.tools^$third-party
 ||appspot.com/newsletter/dhtml?
 ||astro-datamation.pages.dev/_astro/CardNewsletterSubscribe.$script
 ||blink.net/json/$xhr
@@ -3136,6 +3130,8 @@ follow-it-form-subscribe
 ||reportwpush.58.com^
 ||adrackpush.azurewebsites.net^
 ||pushlandings.b-cdn.net^
+||lbsonline.pushct.baidu.com^
+||statsonline.pushct.baidu.com^
 ||popups.bitespeed.co^
 ||pushmsg.camera360.com^
 ||crash-log.campushoy.com^
@@ -3148,6 +3144,7 @@ follow-it-form-subscribe
 ||push.detik.com^
 ||pushads.detik.com^
 ||overlay.ebu-uer.be^
+||pushs.euromsg.com^
 ||push-collector.happypointcard.com^
 ||img-intl-push.heytapimg.com^
 ||dcintl.push.heytapmobi.com^
@@ -3172,6 +3169,7 @@ follow-it-form-subscribe
 ||survey-metrics.platformrijksoverheid.nl^
 ||analytics.popup-records.de^
 ||log.popupglobal.ai^
+||newsletter.posthog.com^
 ||leibundseele-matomo.push-dein-business.de^
 ||matomo.push-dein-business.de^
 ||app.pushaja.com^
@@ -3183,7 +3181,6 @@ follow-it-form-subscribe
 ||um.pushtuhazara.com^
 ||popup.relinka.net^
 ||popup-service-767152501284.us-east4.run.app^
-||push.silversiri.com^
 ||survey.skyra.no^
 ||mixpanel.smartsurvey.io^
 ||push.my.tv.sohu.com^
@@ -3193,6 +3190,8 @@ follow-it-form-subscribe
 ||posthog.talkpush.com^
 ||sentry-v1.talkpush.com^
 ||ads.unipush.de^
+||survey-analytics.webflow.io^
+||survey-analytics-slider.webflow.io^
 ||pushlog.wsoft.ru^
 ||fr.feedback.xmpush.global.xiaomi.com^
 ||idmb.feedback.xmpush.global.xiaomi.com^
@@ -3227,6 +3226,7 @@ follow-it-form-subscribe
 ||facilitiessurvey.com^
 ||fortpush.com^
 ||get-my-push.xyz^
+||getcashforsurveys.com^
 ||got-push-notify.com^
 ||grid-push.com^
 ||haiyunpush.com^
@@ -3260,8 +3260,8 @@ follow-it-form-subscribe
 ||popundertotal.com^
 ||popunderzone.com^
 ||popup.su^
-||popupad.net^
 ||popupaval.com^
+||popupblocker.com^
 ||popupchat-live.com^
 ||popuper.com^
 ||popupha.com^
@@ -3270,7 +3270,6 @@ follow-it-form-subscribe
 ||povfpushwn.com^
 ||propushka.com^
 ||push.exchange^
-||push.io^
 ||push-me-once.com^
 ||push-notifs.com^
 ||push-plus.net^
@@ -3294,7 +3293,7 @@ follow-it-form-subscribe
 ||pushelf.info^
 ||pushere.info^
 ||pushering.info^
-||pushesvuggy.shop^
+||pusherism.com^
 ||pushfire.io^
 ||pushfullocks.com^
 ||pushina.info^
@@ -3339,7 +3338,6 @@ follow-it-form-subscribe
 ||pushup.at^
 ||pushy.io^
 ||pushyconsequence.com^
-||pushydress.pro^
 ||qualifiedsolarsurvey.com^
 ||rexpush.me^
 ||rexpush.net^
@@ -3377,6 +3375,7 @@ follow-it-form-subscribe
 ||2425216611652453186.xpopup.com^
 ||360popunder.com^
 ||app-log-survey.com^
+||app.qpointsurvey.com^
 ||attmanagementservicesuh.surveysparrow.com^
 ||bell.onlinesurveyblog.com^
 ||billingpaymentsubscribe.com^
@@ -3409,7 +3408,6 @@ follow-it-form-subscribe
 ||howtobypasssurveys.com^
 ||independent-popup-718824.framer.app^
 ||latestlyainewsletter.digital^
-||lbsonline.pushct.baidu.com^
 ||leadpushs.com^
 ||lion.beyondk12surveys.com^
 ||list.beyondsurveys.com^
@@ -3441,7 +3439,6 @@ follow-it-form-subscribe
 ||seven.beyondsurveys.com^
 ||shamesurvey.com^
 ||signage-survey.com^
-||statsonline.pushct.baidu.com^
 ||survey-ppl-log.com^
 ||survey-pulse-hub.com^
 ||survey.dolphin.com^
@@ -3592,7 +3589,6 @@ _clickunder&pb=$popup
 ||ipornia.com/scj/cgi/out.php?scheme_id=$popup,3p
 ||livehotty.com/landing/$popup,3p
 ||porngames.adult^*=$popup,3p
-||gluservices.s3.amazonaws.com/PushNotifications
 ||hoiplay.com/tm_popup.html$popup
 ||presselite.com/iphone/pushnotification/interstitiel_android.php
 ||renote.*/assets/sp_overlay_ad_

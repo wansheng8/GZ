@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (0.0.0.0 domain), total 1237
+# Format: hosts (0.0.0.0 domain), total 1222
 0.0.0.0 01.sharedsource.org
 0.0.0.0 01free-share.com
 0.0.0.0 03.sharedsource.org
@@ -110,9 +110,7 @@
 0.0.0.0 analytics.facebook.com
 0.0.0.0 analytics.ilook.ru
 0.0.0.0 analytics.onlyshare.io
-0.0.0.0 analytics.sharecare.com
 0.0.0.0 analytics.social.unity.com
-0.0.0.0 analytics.socialbakers.com
 0.0.0.0 analytics.socialbeat.io
 0.0.0.0 analytics.socialde.pt
 0.0.0.0 analytics.socialized.at
@@ -124,6 +122,7 @@
 0.0.0.0 analytics.wondershare.cc
 0.0.0.0 animalsandsocialjustice.org
 0.0.0.0 api.botafogofrsocialolimpico.com.br
+0.0.0.0 api.wifishare.jp
 0.0.0.0 api.wshareit.com
 0.0.0.0 api2.wshareit.com
 0.0.0.0 apifb.mustedu.com
@@ -237,7 +236,6 @@
 0.0.0.0 data.guide.nuancepowershare.com
 0.0.0.0 data.socialgolfaustralia.com.au
 0.0.0.0 date.assistentesocializando.com
-0.0.0.0 device-instagram.com
 0.0.0.0 dfdghrgb.bassosocial.no
 0.0.0.0 dfdghrgb.keysersocial.dk
 0.0.0.0 dfdghrgb.keysersocial.no
@@ -249,6 +247,7 @@
 0.0.0.0 dkwqivqnuavfb.com
 0.0.0.0 dmbfb.weebly.com
 0.0.0.0 dnbkjfihvakfb.store
+0.0.0.0 dns.facebook.com
 0.0.0.0 doc.google.share.pressurecookerindia.com
 0.0.0.0 doc.research-and-analytics.csfb.com
 0.0.0.0 doc.research-and-analytics.csfb.com.edgekey.net
@@ -257,7 +256,6 @@
 0.0.0.0 download-shares.com
 0.0.0.0 download.cdn.sharelive.net
 0.0.0.0 dts.ushareit.com
-0.0.0.0 dxmlxefb.com
 0.0.0.0 earnshare.net
 0.0.0.0 earthshare.myportfolio.com
 0.0.0.0 elladafb.grekisklivs.se
@@ -378,6 +376,7 @@
 0.0.0.0 facebookloginsignin.com
 0.0.0.0 facebookma.cn
 0.0.0.0 facebookmetapagelogin.weebly.com
+0.0.0.0 facebooknotify-noreply.com
 0.0.0.0 facebookofsex.com
 0.0.0.0 facebookpage-noreplycenter.com
 0.0.0.0 facebookprofile.info
@@ -442,7 +441,6 @@
 0.0.0.0 floeh.monatsocialshop.com
 0.0.0.0 flysfycwdazfb.website
 0.0.0.0 foc-share.com
-0.0.0.0 focpesofb.com
 0.0.0.0 fondssocial.barclays-bank.mc
 0.0.0.0 forms.direxionshares.com
 0.0.0.0 foryourinformation.c23073.shared.hc.ru
@@ -510,7 +508,7 @@
 0.0.0.0 i1.services.social.microsoft.com
 0.0.0.0 i1.services.social.microsoft.com.nsatc.net
 0.0.0.0 ianyshare.xyz
-0.0.0.0 icloud-sharedalbum.com
+0.0.0.0 id.sharedid.org
 0.0.0.0 idolized-share.pro
 0.0.0.0 iijjcjccbehabhajaafb.world
 0.0.0.0 imageshare.best
@@ -519,7 +517,6 @@
 0.0.0.0 instagram-cam.vercel.app
 0.0.0.0 instagram-cutequeen57.netlify.app
 0.0.0.0 instagram-e.com.cn
-0.0.0.0 instagram-g.com.cn
 0.0.0.0 instagram-login123.blogspot.com
 0.0.0.0 instagram-nameservers.com
 0.0.0.0 instagram-nepal.github.io
@@ -566,7 +563,6 @@
 0.0.0.0 jpegshare.net
 0.0.0.0 js.dsp-socialgameinfo.com
 0.0.0.0 juggler.services.disqus.com
-0.0.0.0 jumpyshare.pro
 0.0.0.0 jxljlmikdnsfb.store
 0.0.0.0 kafemayachok.ru
 0.0.0.0 kagxyvk.com
@@ -627,7 +623,6 @@
 0.0.0.0 logs.shared.medflex.de
 0.0.0.0 lovefacebook.comli.com
 0.0.0.0 lp.sharelive.net
-0.0.0.0 lpajochcfb.com
 0.0.0.0 lqtktmhwzbyfb.online
 0.0.0.0 lqvwbekhsnpfb.space
 0.0.0.0 lv-shared03.cpanelplatform.com
@@ -691,7 +686,6 @@
 0.0.0.0 nbkxkthwjeefb.site
 0.0.0.0 new-sh-3.newshared-access.workers.dev
 0.0.0.0 newsharecounts.com
-0.0.0.0 newsharecounts.s3-us-west-2.amazonaws.com
 0.0.0.0 newshared.com
 0.0.0.0 nftjgafb.com
 0.0.0.0 njgxjzvgsrzfb.website
@@ -712,7 +706,6 @@
 0.0.0.0 officefilesharepoints.myportfolio.com
 0.0.0.0 officesharepoints.myportfolio.com
 0.0.0.0 offline-pkg-api.wshareit.com
-0.0.0.0 oginstagram.com
 0.0.0.0 ohmysocial.com
 0.0.0.0 oitoeamtyhafb.site
 0.0.0.0 okeyfb.de
@@ -724,6 +717,7 @@
 0.0.0.0 opensharecount.com
 0.0.0.0 openx.4shared.com
 0.0.0.0 optimizesocial.com
+0.0.0.0 oqhbgxvk.com
 0.0.0.0 orasocial.com
 0.0.0.0 otzbazfb.shop
 0.0.0.0 ox-d.hulkshare.com
@@ -795,7 +789,6 @@
 0.0.0.0 rgdjfb.avh-outdoor.nl
 0.0.0.0 roblox-urlshare.com
 0.0.0.0 rs.wshareit.com
-0.0.0.0 rsgiafnwpmlffb.com
 0.0.0.0 rum-client-seo-production.shared.meliuz-internal.com
 0.0.0.0 rum-client-site-production.shared.meliuz-internal.com
 0.0.0.0 rum-extension-production.shared.meliuz-internal.com
@@ -814,7 +807,6 @@
 0.0.0.0 seashare.net
 0.0.0.0 seasonshare.net
 0.0.0.0 seatfreebook.ru
-0.0.0.0 secu-sociale.fr
 0.0.0.0 secure-cezarysakowskianwimadobe.securedocumentauthenticationrelay-sharedresourcesverification.workers.dev
 0.0.0.0 secure-facebook-login.com
 0.0.0.0 secure.c23073.shared.hc.ru
@@ -895,7 +887,6 @@
 0.0.0.0 shareddocs.net
 0.0.0.0 sharedez.com
 0.0.0.0 sharedfax815201376.wordpress.com
-0.0.0.0 sharedid.org
 0.0.0.0 sharedlogion.cyou
 0.0.0.0 sharedmovies.com
 0.0.0.0 sharedrop.io
@@ -932,7 +923,6 @@
 0.0.0.0 sharepointads.com
 0.0.0.0 sharepointfile.com
 0.0.0.0 shareresults.com
-0.0.0.0 sharersvoteen.shop
 0.0.0.0 sharervoder.qpon
 0.0.0.0 shares-cloud.com
 0.0.0.0 sharesceral.uno
@@ -1063,7 +1053,6 @@
 0.0.0.0 speadsheetshared-securedmss.com
 0.0.0.0 speedshare.app
 0.0.0.0 speedyshare.com
-0.0.0.0 sproutsocial.data.adobedc.net
 0.0.0.0 ss.grupovk.com
 0.0.0.0 ss.postofficesocial.com
 0.0.0.0 ss.sunshare.de
@@ -1110,7 +1099,6 @@
 0.0.0.0 target.vk.com
 0.0.0.0 tbqvmmfb.shop
 0.0.0.0 tckmj.shareably.net
-0.0.0.0 tcqbelfb.com
 0.0.0.0 tcwvvosfnvk.com
 0.0.0.0 techmshare.com
 0.0.0.0 tempest.services.disqus.com
@@ -1130,7 +1118,6 @@
 0.0.0.0 tongdaifacebook.online
 0.0.0.0 toolfb.com
 0.0.0.0 toolshare.com.tr
-0.0.0.0 top-instagram.info
 0.0.0.0 tqbfb.com
 0.0.0.0 tqzofb.polus-mind.jp
 0.0.0.0 tr.facebook.com
@@ -1141,7 +1128,6 @@
 0.0.0.0 turnsocial.com
 0.0.0.0 turnstilesocially.com
 0.0.0.0 tutmenafb.qpon
-0.0.0.0 twinesocial.com
 0.0.0.0 twitter-badges.s3.amazonaws.com
 0.0.0.0 twitter-circle.com
 0.0.0.0 twitter-x-analytics.streamlit.app
@@ -1151,7 +1137,6 @@
 0.0.0.0 twitter20.com
 0.0.0.0 twitterchest.com
 0.0.0.0 twittercounter.com
-0.0.0.0 twitterfav.com
 0.0.0.0 twitterfollowers.site
 0.0.0.0 twittermoms.s3.amazonaws.com
 0.0.0.0 twitteroverload.com

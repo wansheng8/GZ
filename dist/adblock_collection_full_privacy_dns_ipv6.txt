@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (privacy)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 44557
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 44543
 :: 0.myikas.com
 :: 0.net.easyjet.com
 :: 00bfd200-dpnb2uqcmx3g.edgeone.dev
@@ -1998,6 +1998,7 @@
 :: ac.livelty.com
 :: ac.prism-world.jp.net
 :: ac9kpxbans1l.staging.unstoppabledomains.com
+:: acaas-gateway-prod01-telemetry.geneteccloud.com
 :: academics.academicsuperstore.com
 :: acc-link-ccontact.focuscura.com
 :: acc.info.lumxpert.signify.com
@@ -2013,6 +2014,7 @@
 :: access2.ipro.net
 :: accessoutrageousimpetuous.com
 :: accessplug.com
+:: accingeodeon.cfd
 :: acclog001.shop-pro.jp
 :: acclog002.shop-pro.jp
 :: accommodateautotrack.com
@@ -3200,7 +3202,6 @@
 :: analytics.floridatravellife.com
 :: analytics.fnbfremont.com
 :: analytics.fnni.com
-:: analytics.foodtrack.net
 :: analytics.footballdb.com
 :: analytics.formstack.com
 :: analytics.freemake.com
@@ -3226,7 +3227,6 @@
 :: analytics.getlimy.ai
 :: analytics.getshogun.com
 :: analytics.getsnworks.com
-:: analytics.gettrackdata.one
 :: analytics.gewaterheater.com
 :: analytics.global.sky.com
 :: analytics.gokwik.co
@@ -3745,7 +3745,6 @@
 :: api.edgeoffer.microsoft.com
 :: api.elliehuxtable.com
 :: api.fuck.education
-:: api.production.telemetry.pubsdk.kabam.dev
 :: api.push-pigeon.com
 :: api.ryanyao.design
 :: api.sae.systems
@@ -4570,7 +4569,6 @@
 :: appgax.optica-optima.com
 :: appinfosoryz.carte-gr.total.fr
 :: applabztrack.com
-:: apple-support-track.info
 :: apple-track-location.hereweb.com
 :: apple.www.letv.com
 :: applicatifs.ricoh.fr
@@ -4945,7 +4943,6 @@
 :: auspost-tracking.com
 :: australiarevival.com
 :: autentitrack.com
-:: auth-webservice-dpficjo7wfgk.edgeone.cool
 :: auth.carte-gr.total.fr
 :: authsmtp.happ.social
 :: autoappearancetraining.com
@@ -4960,6 +4957,7 @@
 :: automotive-business.vodafone.com
 :: automotive.autodeskcommunications.com
 :: automotive.balluff.com
+:: autotrack.g.ebay.com
 :: autotrack.studyquicks.com
 :: autovista-fi.autovistagroup.com
 :: autovista-fr.autovistagroup.com
@@ -6024,7 +6022,6 @@
 :: bubblyaction.com
 :: bucketlistbob.com
 :: buddycanvas.com
-:: budgetracker.com
 :: budibu.saksfifthavenue.com
 :: buf.lemonde.fr
 :: bug-tracker.est.ai
@@ -6036,7 +6033,6 @@
 :: bugtrack.konami.com
 :: bugtracker.ac-systems.com
 :: bugtracker.arcengames.com
-:: bugtracker.ispconfig.org
 :: bugtracker.makehumancommunity.org
 :: bugtracker.pscs.co.uk
 :: bugtracker.stricted.net
@@ -6214,7 +6210,6 @@
 :: calibration.ni.com
 :: calin-georgescu-invest.live
 :: calingeorgescuinvest.com
-:: call-tracking-metrics.topseoscompanies.com
 :: call-tracking.by
 :: call-tracking.co.uk
 :: callousbrake.com
@@ -6926,6 +6921,7 @@
 :: cnameforitp.dermed.jp
 :: cnebis.chocola.com
 :: cnebis.eisai.jp
+:: cnebis.i-no-science.com
 :: cngbpl.directliquidation.com
 :: cnlbxi.zoopla.co.uk
 :: cnna.io
@@ -8318,6 +8314,7 @@
 :: data.carts.t-mobile.com
 :: data.charles-colby.com
 :: data.chelseafc.com
+:: data.circulate.com
 :: data.client-comms.nedbank.co.za
 :: data.cliente.clubeextra.com.br
 :: data.clientemais.paodeacucar.com
@@ -11304,7 +11301,6 @@
 :: eventtracker.videostrip.com
 :: eventtracking-ap1.hubapi.com
 :: eventtracking-eu1.hubapi.com
-:: eventtracking-log.services.video.ibm.com
 :: eventtracking-na2.hubapi.com
 :: eventtracking-na3.hubapi.com
 :: eventtracking.hubapi.com
@@ -11587,7 +11583,6 @@
 :: fdowic.hoiku.mynavi.jp
 :: fdt.kraken.com
 :: fdxtbs.meeters.org
-:: fe-telemetry.mycarrier.tech
 :: fea-cfd.simutechgroup.com
 :: fearfulfish.com
 :: fearfulmint.com
@@ -12535,7 +12530,6 @@
 :: geotargetly-api-2.com
 :: geotargetly-api-4.com
 :: geotargetly.co
-:: geotehnica.com
 :: geotg.jp
 :: geoticunbears.com
 :: geotmt.com
@@ -18142,7 +18136,6 @@
 :: locations.api.yle.fi
 :: locations.crocs.de
 :: locationserve.com
-:: locationsmart.com
 :: locationv16-normal-useastred.tiktokv.eu
 :: locolava.com
 :: locotrack.net
@@ -18210,6 +18203,7 @@
 :: log.zdnet.co.kr
 :: log.zongheng.com
 :: log000.goo.ne.jp
+:: log2.locationappphonetracker.com
 :: log2.locationshare.pro
 :: log2.sina.cn
 :: logapi.alza.cz
@@ -18493,6 +18487,7 @@
 :: lujaqg.e-blooming.com
 :: lujcig.modaforyou.pl
 :: lumberamount.com
+:: lumenfeel-funnel-telemetry.iqmetaspace.workers.dev
 :: luminati.io
 :: luminousboulevard.com
 :: luminouscatalyst.com
@@ -18762,7 +18757,6 @@
 :: mailtrack.fr
 :: mailtrack.io
 :: mailtrack.me
-:: mailtracker.hunter.io
 :: mailtracking.tf1.com
 :: mailtracking.tfou.com
 :: mailwilling-dp9gqao71lzl.edgeone.dev
@@ -20318,7 +20312,6 @@
 :: matomo.clanto.cloud
 :: matomo.fitness-tracker-test.info
 :: matomo.geowissenschaften-unterrichtsmaterial.de
-:: matomo.natgeokids.com
 :: matomo.racetracker.de
 :: matomo.trackle.de
 :: matomo.ttracker.app
@@ -22723,7 +22716,6 @@
 :: n4kb43cl2bsw.creatordrop.com
 :: na-pages.husqvarna.com
 :: na.groupondata.com
-:: na.telemetry.wolterskluwer.com
 :: na4-docusignv1-52fe74b0160e448ceb80dfbd0a1159128ace1fb4dc97c9b1.edgeone.dev
 :: naanalle.pl
 :: nadelle.wantsext.me
@@ -22756,6 +22748,7 @@
 :: navfja.answear.hu
 :: navigation-timing.meinestadt.de
 :: navigator-analytics.tweakwise.com
+:: nba2k25-telemetry-prod-elb-1504653255.us-east-1.elb.amazonaws.com
 :: nba2k26-telemetry-prod-elb-589225582.us-east-1.elb.amazonaws.com
 :: nbcnews.black.news
 :: nbfopy.jjshouse.com
@@ -23721,6 +23714,7 @@
 :: opentelemetry.divar.ir
 :: opentelemetry.hakasecurity.com
 :: opentelemetry.interactio.dev
+:: opentelemetry.prod.wwnorton.com
 :: opentelemetry.zpc.zebra.com
 :: opentracker.net
 :: opentracker.org
@@ -24261,7 +24255,6 @@
 :: pesaea.autoesa.cz
 :: pet-recycling.husky.ca
 :: petal.calyxflowers.com
-:: petite-fuchsia-kats8zhw.edgeone.dev
 :: petitechili.com
 :: peugeot-g10-server-side-tagging-prod-406671236336.europe-west9.run.app
 :: peugeotcuautitlan.com
@@ -27289,6 +27282,7 @@
 :: sdk-analytics-web.cloud.itau.com.br
 :: sdk-cdn-spt.push-pigeon.com
 :: sdk-metrics.privacy.unity3d.com
+:: sdk-track.66mobi.com
 :: sdk.stats-locations.com
 :: sdks.stats-locations.com
 :: sdlmaf.bestsecret.at
@@ -27595,7 +27589,6 @@
 :: securetracklink.com
 :: securewebhelp.govmint.com
 :: securityannex.net
-:: securitycenter-telemetry.tenable.com
 :: securityintelligence.verint.com
 :: securitytrackdevice.com
 :: sedge.aarp.org
@@ -31795,6 +31788,7 @@
 :: src.freshmarketer.in
 :: src.fwusercontent.com
 :: src.secmailtrackr.com
+:: sre-telemetry.betterme.world
 :: srepdata.12newsnow.com
 :: srepdata.13wmaz.com
 :: srepdata.app.com
@@ -33949,6 +33943,7 @@
 :: superficialsquare.com
 :: superimpose-empirical.task-tracker.live
 :: superpointlesshamsters.com
+:: superstarorganizer.com
 :: superstats.observepoint.com
 :: supertracker200.com
 :: supertracking.net
@@ -35130,6 +35125,7 @@
 :: telem.sre.gopuff.com
 :: telemetrics.klaviyo.com
 :: telemetry-2037.mordor.use.production.k8s.ikarem.io
+:: telemetry-access-log-prod-toolbox-request.s3.us-east-1.amazonaws.com
 :: telemetry-ack.incredibuild.com
 :: telemetry-afd-aks-prod-eun-gfdegnebgmg9evhe.b02.azurefd.net
 :: telemetry-americas.prod.di.paloaltonetworks.cloud
@@ -35141,7 +35137,6 @@
 :: telemetry-appgw-pub-prod-eun.infra.northeurope.production.swiftkey.com
 :: telemetry-au.docusign.net.akadns.net
 :: telemetry-backup.ch
-:: telemetry-browsing-sandbox.imedidata.net
 :: telemetry-browsing.imedidata.com
 :: telemetry-ca.docusign.net.akadns.net
 :: telemetry-cii.api.playstation.com
@@ -35161,7 +35156,6 @@
 :: telemetry-events.bydata.com
 :: telemetry-ext.observability.commbank.com.au
 :: telemetry-ext.observability.commbank.com.au.cdn.cloudflare.net
-:: telemetry-fra.colortokens.com
 :: telemetry-gateway-production.d2dragon.net
 :: telemetry-geo.docusign.net.akadns.net
 :: telemetry-geo.wac.trafficmanager.net
@@ -35172,7 +35166,6 @@
 :: telemetry-ingest-live-1065410817584.europe-west3.run.app
 :: telemetry-ingest-pmtl7ijarq-ew.a.run.app
 :: telemetry-ingestion.us-ashburn-1.oci.oraclecloud.net
-:: telemetry-int.pearson.com
 :: telemetry-ios.betterme.world
 :: telemetry-ipv6.fbx-mgt.fr
 :: telemetry-lcp.trafficmanager.net
@@ -35224,7 +35217,6 @@
 :: telemetry.algolia.com
 :: telemetry.alkami.com
 :: telemetry.am.pictet.com
-:: telemetry.analogtools.io
 :: telemetry.ando.cloud
 :: telemetry.antediluvianinteractive.com
 :: telemetry.anytype.io
@@ -35249,6 +35241,7 @@
 :: telemetry.assemblyai.com
 :: telemetry.astro.build
 :: telemetry.aterna.mx
+:: telemetry.atopileapi.com
 :: telemetry.attendium.com
 :: telemetry.attio.build
 :: telemetry.australiaeast.arcdataservices.com
@@ -35286,7 +35279,6 @@
 :: telemetry.cardfactory.co.uk
 :: telemetry.cchaxcess.com
 :: telemetry.cell-0.ap-northeast-1.prod.tangerinebox.console.aws.a2z.com
-:: telemetry.cell-0.ap-south-1.prod.tangerinebox.console.aws.a2z.com
 :: telemetry.cell-0.ap-southeast-1.prod.tangerinebox.console.aws.a2z.com
 :: telemetry.cell-0.ap-southeast-2.prod.tangerinebox.console.aws.a2z.com
 :: telemetry.cell-0.eu-central-1.prod.tangerinebox.console.aws.a2z.com
@@ -35300,9 +35292,11 @@
 :: telemetry.cell-0.us-east-1.prod.tangerinebox.console.aws.a2z.com
 :: telemetry.cell-0.us-east-2.prod.tangerinebox.console.aws.a2z.com
 :: telemetry.cell-0.us-west-2.prod.tangerinebox.console.aws.a2z.com
+:: telemetry.centralus.ame.arcdataservices.trafficmanager.net
 :: telemetry.centralus.arcdataservices.com
 :: telemetry.cevoid.com
 :: telemetry.cfraresearch.com
+:: telemetry.chamo-chat.com
 :: telemetry.chase.co.uk
 :: telemetry.chase.co.uk.edgekey.net
 :: telemetry.chillicream.com
@@ -35348,7 +35342,6 @@
 :: telemetry.desktopcommander.app
 :: telemetry.deswik.com
 :: telemetry.detmir.ru
-:: telemetry.dev.docusign.net
 :: telemetry.devicie.com
 :: telemetry.didkedah.gov.my
 :: telemetry.directus.io
@@ -35427,8 +35420,6 @@
 :: telemetry.humblegames.com
 :: telemetry.hytale.com
 :: telemetry.iaas.checkpoint.com
-:: telemetry.iadaax.snowflakecomputing.com
-:: telemetry.iadada.snowflakecomputing.com
 :: telemetry.iadzpr.snowflakecomputing.com
 :: telemetry.ibb-prod.istanbulsenin.kobil.com
 :: telemetry.idura.app
@@ -35442,13 +35433,11 @@
 :: telemetry.ipshipyard.dev
 :: telemetry.iptv.sky.it
 :: telemetry.jivo.ru
-:: telemetry.jmp.com
 :: telemetry.jrny.com
 :: telemetry.jumpspacegame.com
 :: telemetry.justo.cloud
 :: telemetry.kameleo.io
 :: telemetry.kamens.us
-:: telemetry.kantiv.com
 :: telemetry.kde.org
 :: telemetry.kerberus.com
 :: telemetry.kiro.aws.dev
@@ -35503,6 +35492,7 @@
 :: telemetry.nodered.org
 :: telemetry.nodered.org.leonetz.net
 :: telemetry.northcentralus.arcdataservices.com
+:: telemetry.northeurope.arcdataservices.com
 :: telemetry.notable.app
 :: telemetry.notateslaapp.com
 :: telemetry.novomedlink.com
@@ -35556,6 +35546,7 @@
 :: telemetry.ptc.com
 :: telemetry.ptc.com.cdn.cloudflare.net
 :: telemetry.pterodactyl.io
+:: telemetry.pubsdk.kabam.dev
 :: telemetry.pxt.amazon.dev
 :: telemetry.qdrant.io
 :: telemetry.raiffeisen.ru
@@ -35580,7 +35571,6 @@
 :: telemetry.seaweedfs.com
 :: telemetry.secure.roche.com
 :: telemetry.seelen.io
-:: telemetry.seeq.com
 :: telemetry.semgrep.dev
 :: telemetry.sentara.com
 :: telemetry.sentarahealthplans.com
@@ -35599,32 +35589,29 @@
 :: telemetry.simple.paltabrain.com
 :: telemetry.simplefixai.com
 :: telemetry.skillindiadigital.gov.in
-:: telemetry.smartenergysystems.gr
 :: telemetry.smartframe.io
 :: telemetry.sonarsource.com
 :: telemetry.sonatype.com
 :: telemetry.soundcloud.com
+:: telemetry.southcentralus.ame.arcdataservices.trafficmanager.net
 :: telemetry.southcentralus.arcdataservices.com
 :: telemetry.split.io
 :: telemetry.spotit.dev
-:: telemetry.status.im
 :: telemetry.steamos.cloud
 :: telemetry.stepsecurity.io
 :: telemetry.stlukes-stl.com
-:: telemetry.stratws.com
 :: telemetry.stream-bingo.com
 :: telemetry.stream247.media
 :: telemetry.streamology.tv
 :: telemetry.stryker.com
 :: telemetry.stytch.com
-:: telemetry.subspace.network
 :: telemetry.sury.org
 :: telemetry.svc.criipto.com
 :: telemetry.svc.transifex.net
 :: telemetry.swe.quicinc.com
-:: telemetry.synergysportstech.com
 :: telemetry.sys.truenas.net
 :: telemetry.sys.truenas.net.leonetz.net
+:: telemetry.sys.truenas.net.paul-reichenbacher.de
 :: telemetry.taada.top
 :: telemetry.tableausoftware.com
 :: telemetry.tcbs.com.vn
@@ -35632,12 +35619,12 @@
 :: telemetry.tezlabapp.com
 :: telemetry.threatdown.com
 :: telemetry.timescale.com
-:: telemetry.timseverien.com
 :: telemetry.tip.lync.com
 :: telemetry.topperpay.com
 :: telemetry.tradingview.com
 :: telemetry.trae.ai
 :: telemetry.trancite.com
+:: telemetry.transcend.io
 :: telemetry.truckersmp.com
 :: telemetry.ua.pearsonprd.tech
 :: telemetry.ucmgmt.cisco.com
@@ -35645,6 +35632,7 @@
 :: telemetry.undeadlabs.live
 :: telemetry.uphold.com
 :: telemetry.urs.microsoft.com
+:: telemetry.us.transcend.io
 :: telemetry.v.dropbox.com
 :: telemetry.v2.edudip.com
 :: telemetry.v3.influxdata.com
@@ -35660,7 +35648,6 @@
 :: telemetry.voxeet.com
 :: telemetry.vrclinking.com
 :: telemetry.vtex.com
-:: telemetry.w3f.community
 :: telemetry.wall-box.com
 :: telemetry.weaviate.io
 :: telemetry.webasto.com
@@ -35702,6 +35689,7 @@
 :: tercabilis.info
 :: terredgeom.site
 :: terriblethumb.com
+:: tesla-fleet-telemetry.standardfleet.com
 :: tesla-fortytwo.landing.ni.com
 :: test-ad.lucia-c.com
 :: test-ad.mens-lucia.com
@@ -37259,6 +37247,7 @@
 :: track-dmspush.com
 :: track-e.cypress.com
 :: track-e.infineon.com
+:: track-e.infineoncommunity.com
 :: track-ec.buzz
 :: track-ec.lol
 :: track-ec.xyz
@@ -37624,6 +37613,7 @@
 :: track.dracarolinecampos.com.br
 :: track.drapatriciazanutto.com
 :: track.drewintl.com
+:: track.dribunals.com
 :: track.duelbits.com
 :: track.dunedinincomegrowth.co.uk
 :: track.dunstan.media
@@ -38026,7 +38016,6 @@
 :: track.mittivo.it
 :: track.mituo.cn
 :: track.mlbshopeurope.com
-:: track.mlsend2.com
 :: track.mmsvc.io
 :: track.mobile-bt.com
 :: track.mobilevas152cr.com
@@ -38930,7 +38919,6 @@
 :: tracker.rtb-pinklion.io
 :: tracker.rtb-pubwise.io
 :: tracker.rtb-stellormedia.com
-:: tracker.rtbexchanges.com
 :: tracker.samplicio.us
 :: tracker.secretescapes.com
 :: tracker.selectivv.com
@@ -39836,7 +39824,6 @@
 :: tracking.haux.com
 :: tracking.have.you
 :: tracking.hawaiitours.com
-:: tracking.hawksearch.com
 :: tracking.hbl.fi
 :: tracking.hcltech.com
 :: tracking.hd.se
@@ -39857,7 +39844,6 @@
 :: tracking.hexilo.com
 :: tracking.heyai.de
 :: tracking.heyflow.cloud
-:: tracking.hgoldgroup.com
 :: tracking.hibu.com
 :: tracking.highscore-digital.de
 :: tracking.hireforce.io
@@ -40984,7 +40970,6 @@
 :: trackingmms.accenture.com
 :: trackingmore.net
 :: trackingmyadsas.com
-:: trackingnumbers.org
 :: trackingpackage.express
 :: trackingplan.com
 :: trackingprd.hwwt8.com
@@ -41854,6 +41839,7 @@
 :: tx-br-cdn.kwai.net.iberostar.com
 :: tx-pro-pull.kwai.net.iberostar.com
 :: txaxkc.dsc-nightstore.com
+:: txfra-adserver.istio-tracking.tec-delegate.com
 :: txfroe.decodoma.cz
 :: txfryh.terra.com.br
 :: txmmdl.lampy.pl
@@ -42188,6 +42174,7 @@
 :: urr.kumamoto-food.com
 :: urs.metacritic.com
 :: urxbvw.tui.nl
+:: us-ad-ssp-tracker-nlb-1f9e9f3e32d64555.elb.us-east-1.amazonaws.com
 :: us-central1-markuphero.cloudfunctions.net
 :: us-east-1.prod.telemetry.toolbox.builder-tools.aws.dev
 :: us-go.experian.com
@@ -42702,7 +42689,6 @@
 :: vatrack.hinet.net
 :: vault.gostatera.com
 :: vazulp.graniph.com
-:: vbc-telemetry-prod.s3.amazonaws.com
 :: vbe.voyage-prive.be
 :: vbkryy.pasonacareer.jp
 :: vbseje.stonehengehealth.com
@@ -42728,7 +42714,6 @@
 :: vectorshirt.com
 :: vedgeoffshore.com
 :: vedznh.cumhuriyet.com.tr
-:: vega-telemetry-apim-dev.azure-api.net
 :: velodatrack.site
 :: velvetquasar.com
 :: vengefulgrass.com
@@ -42827,6 +42812,7 @@
 :: view.nucorbuildingsystems.com
 :: viewer.pandasuite.io
 :: viewimageonline.com
+:: viewpackagetracking.com
 :: viewresource.com
 :: views.arabnews.com
 :: views.asurascans.com
@@ -43319,6 +43305,7 @@
 :: web.novunapersonalfinance.co.uk
 :: web.online.monnalisa.com
 :: web.orionpharma.com
+:: web.redazione.milanofinanza.it
 :: web.sensilab.com
 :: web.sensilab.cz
 :: web.sensilab.de
@@ -43377,7 +43364,6 @@
 :: webanalyticsssl.websense.com
 :: webapi.3cx.com
 :: webapp.e-post.smn.no
-:: webbugtrack.blogspot.ca
 :: webbugtrack.blogspot.co.uk
 :: webbyword.net
 :: webcasts.de.ni.com

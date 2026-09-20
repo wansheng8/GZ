@@ -1,21 +1,21 @@
 {
   "name": "adblock_collection_full_cookie",
-  "total": 1660,
+  "total": 1661,
   "by_category": {
-    "cookie": 1660
+    "cookie": 1661
   },
   "by_kind": {
-    "network": 1660
+    "network": 1661
   },
   "by_source": {
-    "ADrules I-Dont-Care-About-Cookies": 1300,
+    "ADrules I-Dont-Care-About-Cookies": 1301,
     "ADrules anti-AD": 138,
     "ADrules DNS": 108,
-    "Hagezi DNS Pro Plus": 42,
+    "Hagezi DNS Pro Plus": 43,
     "oisd": 16,
     "ADrules AdRules": 13,
     "AdGuard – Ads": 12,
-    "217heidai adblockdns": 11,
+    "217heidai adblockdns": 10,
     "banbendalao ADgk": 6,
     "ADrules Easylist": 5,
     "ADrules EasyListChina": 4,

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1660
+! Total Rules: 1661
 ! ------------------------------------------
 /gdpr-ad-script.js$script
 ||cookieless-data.com^
@@ -1158,6 +1158,7 @@ nanoGDPR.min.js^
 ||exm-medien.de/cman$script
 ||e2d-cms.de/cman$script
 /usercentrics-sdk/*
+||transcend.io/cm/$script,domain=~hubblecontacts.com
 /avisopcdidomi$domain=~as.com
 ||cdn.realpeoplemedia.co.uk^
 /assets-usercentrics/uc-version
@@ -1583,7 +1584,6 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 ||analytics.editcookie.com^
 ||a46e0368.forwarding-request-consent.pages.dev^
 ||collecting-consent.g5e.com^
-||ads.consents-management.prod.aws.statista.com^
 ||de-gdpr-err-up.vivoglobal.com^
 ||cookielawblog.wordpress.com^
 ||bdstaic.com/r/www/cache/static/plugins/every_cookie_*.js
@@ -1619,6 +1619,7 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 ||cookiezilla.redsolution.ru^
 ||sp-consent.schwarzwaelder-bote.de^
 ||cookie-jam.sgn.com^
+||ads.consents-management.prod.aws.statista.com^
 ||pcookie.tmall.com^
 ||consent-st.truste.com^
 ||tr-gdpr-vgc-datacenter.vivoglobal.com^

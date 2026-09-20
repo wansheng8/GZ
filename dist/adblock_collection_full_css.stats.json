@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full_css",
-  "total": 138419,
+  "total": 138423,
   "by_category": {
-    "css": 138419
+    "css": 138423
   },
   "by_kind": {
-    "css": 138419
+    "css": 138423
   },
   "by_source": {
-    "Fanboy Annoyance": 25970,
-    "ADrules Easylist": 24238,
+    "Fanboy Annoyance": 25972,
+    "ADrules Easylist": 24243,
     "ADrules I-Dont-Care-About-Cookies": 22893,
-    "AdGuard – Ads": 19695,
-    "ADrules AdRules": 14056,
+    "AdGuard – Ads": 19715,
+    "ADrules AdRules": 14035,
     "Fanboy Social": 13049,
     "ADrules EasyListChina": 6706,
     "AdGuard – Mobile Ads": 6128,
@@ -20,15 +20,14 @@
     "uBO filters – Ads": 1760,
     "ADrules HalfLife": 318,
     "uBO filters – Unbreak": 150,
-    "uBO filters – Badware risks": 111,
+    "uBO filters – Badware risks": 112,
     "ADrules ChengFeng": 100,
-    "uBO filters – Quick fixes": 76,
+    "uBO filters – Quick fixes": 77,
     "uBO filters – Privacy": 16,
     "LocalRules": 10,
     "Fanboy CookieMonster": 7,
     "ADrules EasyPrivacy": 6,
     "StevenBlack Hosts": 6,
-    "EasyList (ABP)": 4,
     "AdGuard/uBO – URL Tracking Protection": 1
   }
 }

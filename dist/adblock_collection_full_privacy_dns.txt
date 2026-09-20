@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (privacy)
-# Format: hosts (0.0.0.0 domain), total 44557
+# Format: hosts (0.0.0.0 domain), total 44543
 0.0.0.0 0.myikas.com
 0.0.0.0 0.net.easyjet.com
 0.0.0.0 00bfd200-dpnb2uqcmx3g.edgeone.dev
@@ -1998,6 +1998,7 @@
 0.0.0.0 ac.livelty.com
 0.0.0.0 ac.prism-world.jp.net
 0.0.0.0 ac9kpxbans1l.staging.unstoppabledomains.com
+0.0.0.0 acaas-gateway-prod01-telemetry.geneteccloud.com
 0.0.0.0 academics.academicsuperstore.com
 0.0.0.0 acc-link-ccontact.focuscura.com
 0.0.0.0 acc.info.lumxpert.signify.com
@@ -2013,6 +2014,7 @@
 0.0.0.0 access2.ipro.net
 0.0.0.0 accessoutrageousimpetuous.com
 0.0.0.0 accessplug.com
+0.0.0.0 accingeodeon.cfd
 0.0.0.0 acclog001.shop-pro.jp
 0.0.0.0 acclog002.shop-pro.jp
 0.0.0.0 accommodateautotrack.com
@@ -3200,7 +3202,6 @@
 0.0.0.0 analytics.floridatravellife.com
 0.0.0.0 analytics.fnbfremont.com
 0.0.0.0 analytics.fnni.com
-0.0.0.0 analytics.foodtrack.net
 0.0.0.0 analytics.footballdb.com
 0.0.0.0 analytics.formstack.com
 0.0.0.0 analytics.freemake.com
@@ -3226,7 +3227,6 @@
 0.0.0.0 analytics.getlimy.ai
 0.0.0.0 analytics.getshogun.com
 0.0.0.0 analytics.getsnworks.com
-0.0.0.0 analytics.gettrackdata.one
 0.0.0.0 analytics.gewaterheater.com
 0.0.0.0 analytics.global.sky.com
 0.0.0.0 analytics.gokwik.co
@@ -3745,7 +3745,6 @@
 0.0.0.0 api.edgeoffer.microsoft.com
 0.0.0.0 api.elliehuxtable.com
 0.0.0.0 api.fuck.education
-0.0.0.0 api.production.telemetry.pubsdk.kabam.dev
 0.0.0.0 api.push-pigeon.com
 0.0.0.0 api.ryanyao.design
 0.0.0.0 api.sae.systems
@@ -4570,7 +4569,6 @@
 0.0.0.0 appgax.optica-optima.com
 0.0.0.0 appinfosoryz.carte-gr.total.fr
 0.0.0.0 applabztrack.com
-0.0.0.0 apple-support-track.info
 0.0.0.0 apple-track-location.hereweb.com
 0.0.0.0 apple.www.letv.com
 0.0.0.0 applicatifs.ricoh.fr
@@ -4945,7 +4943,6 @@
 0.0.0.0 auspost-tracking.com
 0.0.0.0 australiarevival.com
 0.0.0.0 autentitrack.com
-0.0.0.0 auth-webservice-dpficjo7wfgk.edgeone.cool
 0.0.0.0 auth.carte-gr.total.fr
 0.0.0.0 authsmtp.happ.social
 0.0.0.0 autoappearancetraining.com
@@ -4960,6 +4957,7 @@
 0.0.0.0 automotive-business.vodafone.com
 0.0.0.0 automotive.autodeskcommunications.com
 0.0.0.0 automotive.balluff.com
+0.0.0.0 autotrack.g.ebay.com
 0.0.0.0 autotrack.studyquicks.com
 0.0.0.0 autovista-fi.autovistagroup.com
 0.0.0.0 autovista-fr.autovistagroup.com
@@ -6024,7 +6022,6 @@
 0.0.0.0 bubblyaction.com
 0.0.0.0 bucketlistbob.com
 0.0.0.0 buddycanvas.com
-0.0.0.0 budgetracker.com
 0.0.0.0 budibu.saksfifthavenue.com
 0.0.0.0 buf.lemonde.fr
 0.0.0.0 bug-tracker.est.ai
@@ -6036,7 +6033,6 @@
 0.0.0.0 bugtrack.konami.com
 0.0.0.0 bugtracker.ac-systems.com
 0.0.0.0 bugtracker.arcengames.com
-0.0.0.0 bugtracker.ispconfig.org
 0.0.0.0 bugtracker.makehumancommunity.org
 0.0.0.0 bugtracker.pscs.co.uk
 0.0.0.0 bugtracker.stricted.net
@@ -6214,7 +6210,6 @@
 0.0.0.0 calibration.ni.com
 0.0.0.0 calin-georgescu-invest.live
 0.0.0.0 calingeorgescuinvest.com
-0.0.0.0 call-tracking-metrics.topseoscompanies.com
 0.0.0.0 call-tracking.by
 0.0.0.0 call-tracking.co.uk
 0.0.0.0 callousbrake.com
@@ -6926,6 +6921,7 @@
 0.0.0.0 cnameforitp.dermed.jp
 0.0.0.0 cnebis.chocola.com
 0.0.0.0 cnebis.eisai.jp
+0.0.0.0 cnebis.i-no-science.com
 0.0.0.0 cngbpl.directliquidation.com
 0.0.0.0 cnlbxi.zoopla.co.uk
 0.0.0.0 cnna.io
@@ -8318,6 +8314,7 @@
 0.0.0.0 data.carts.t-mobile.com
 0.0.0.0 data.charles-colby.com
 0.0.0.0 data.chelseafc.com
+0.0.0.0 data.circulate.com
 0.0.0.0 data.client-comms.nedbank.co.za
 0.0.0.0 data.cliente.clubeextra.com.br
 0.0.0.0 data.clientemais.paodeacucar.com
@@ -11304,7 +11301,6 @@
 0.0.0.0 eventtracker.videostrip.com
 0.0.0.0 eventtracking-ap1.hubapi.com
 0.0.0.0 eventtracking-eu1.hubapi.com
-0.0.0.0 eventtracking-log.services.video.ibm.com
 0.0.0.0 eventtracking-na2.hubapi.com
 0.0.0.0 eventtracking-na3.hubapi.com
 0.0.0.0 eventtracking.hubapi.com
@@ -11587,7 +11583,6 @@
 0.0.0.0 fdowic.hoiku.mynavi.jp
 0.0.0.0 fdt.kraken.com
 0.0.0.0 fdxtbs.meeters.org
-0.0.0.0 fe-telemetry.mycarrier.tech
 0.0.0.0 fea-cfd.simutechgroup.com
 0.0.0.0 fearfulfish.com
 0.0.0.0 fearfulmint.com
@@ -12535,7 +12530,6 @@
 0.0.0.0 geotargetly-api-2.com
 0.0.0.0 geotargetly-api-4.com
 0.0.0.0 geotargetly.co
-0.0.0.0 geotehnica.com
 0.0.0.0 geotg.jp
 0.0.0.0 geoticunbears.com
 0.0.0.0 geotmt.com
@@ -18142,7 +18136,6 @@
 0.0.0.0 locations.api.yle.fi
 0.0.0.0 locations.crocs.de
 0.0.0.0 locationserve.com
-0.0.0.0 locationsmart.com
 0.0.0.0 locationv16-normal-useastred.tiktokv.eu
 0.0.0.0 locolava.com
 0.0.0.0 locotrack.net
@@ -18210,6 +18203,7 @@
 0.0.0.0 log.zdnet.co.kr
 0.0.0.0 log.zongheng.com
 0.0.0.0 log000.goo.ne.jp
+0.0.0.0 log2.locationappphonetracker.com
 0.0.0.0 log2.locationshare.pro
 0.0.0.0 log2.sina.cn
 0.0.0.0 logapi.alza.cz
@@ -18493,6 +18487,7 @@
 0.0.0.0 lujaqg.e-blooming.com
 0.0.0.0 lujcig.modaforyou.pl
 0.0.0.0 lumberamount.com
+0.0.0.0 lumenfeel-funnel-telemetry.iqmetaspace.workers.dev
 0.0.0.0 luminati.io
 0.0.0.0 luminousboulevard.com
 0.0.0.0 luminouscatalyst.com
@@ -18762,7 +18757,6 @@
 0.0.0.0 mailtrack.fr
 0.0.0.0 mailtrack.io
 0.0.0.0 mailtrack.me
-0.0.0.0 mailtracker.hunter.io
 0.0.0.0 mailtracking.tf1.com
 0.0.0.0 mailtracking.tfou.com
 0.0.0.0 mailwilling-dp9gqao71lzl.edgeone.dev
@@ -20318,7 +20312,6 @@
 0.0.0.0 matomo.clanto.cloud
 0.0.0.0 matomo.fitness-tracker-test.info
 0.0.0.0 matomo.geowissenschaften-unterrichtsmaterial.de
-0.0.0.0 matomo.natgeokids.com
 0.0.0.0 matomo.racetracker.de
 0.0.0.0 matomo.trackle.de
 0.0.0.0 matomo.ttracker.app
@@ -22723,7 +22716,6 @@
 0.0.0.0 n4kb43cl2bsw.creatordrop.com
 0.0.0.0 na-pages.husqvarna.com
 0.0.0.0 na.groupondata.com
-0.0.0.0 na.telemetry.wolterskluwer.com
 0.0.0.0 na4-docusignv1-52fe74b0160e448ceb80dfbd0a1159128ace1fb4dc97c9b1.edgeone.dev
 0.0.0.0 naanalle.pl
 0.0.0.0 nadelle.wantsext.me
@@ -22756,6 +22748,7 @@
 0.0.0.0 navfja.answear.hu
 0.0.0.0 navigation-timing.meinestadt.de
 0.0.0.0 navigator-analytics.tweakwise.com
+0.0.0.0 nba2k25-telemetry-prod-elb-1504653255.us-east-1.elb.amazonaws.com
 0.0.0.0 nba2k26-telemetry-prod-elb-589225582.us-east-1.elb.amazonaws.com
 0.0.0.0 nbcnews.black.news
 0.0.0.0 nbfopy.jjshouse.com
@@ -23721,6 +23714,7 @@
 0.0.0.0 opentelemetry.divar.ir
 0.0.0.0 opentelemetry.hakasecurity.com
 0.0.0.0 opentelemetry.interactio.dev
+0.0.0.0 opentelemetry.prod.wwnorton.com
 0.0.0.0 opentelemetry.zpc.zebra.com
 0.0.0.0 opentracker.net
 0.0.0.0 opentracker.org
@@ -24261,7 +24255,6 @@
 0.0.0.0 pesaea.autoesa.cz
 0.0.0.0 pet-recycling.husky.ca
 0.0.0.0 petal.calyxflowers.com
-0.0.0.0 petite-fuchsia-kats8zhw.edgeone.dev
 0.0.0.0 petitechili.com
 0.0.0.0 peugeot-g10-server-side-tagging-prod-406671236336.europe-west9.run.app
 0.0.0.0 peugeotcuautitlan.com
@@ -27289,6 +27282,7 @@
 0.0.0.0 sdk-analytics-web.cloud.itau.com.br
 0.0.0.0 sdk-cdn-spt.push-pigeon.com
 0.0.0.0 sdk-metrics.privacy.unity3d.com
+0.0.0.0 sdk-track.66mobi.com
 0.0.0.0 sdk.stats-locations.com
 0.0.0.0 sdks.stats-locations.com
 0.0.0.0 sdlmaf.bestsecret.at
@@ -27595,7 +27589,6 @@
 0.0.0.0 securetracklink.com
 0.0.0.0 securewebhelp.govmint.com
 0.0.0.0 securityannex.net
-0.0.0.0 securitycenter-telemetry.tenable.com
 0.0.0.0 securityintelligence.verint.com
 0.0.0.0 securitytrackdevice.com
 0.0.0.0 sedge.aarp.org
@@ -31795,6 +31788,7 @@
 0.0.0.0 src.freshmarketer.in
 0.0.0.0 src.fwusercontent.com
 0.0.0.0 src.secmailtrackr.com
+0.0.0.0 sre-telemetry.betterme.world
 0.0.0.0 srepdata.12newsnow.com
 0.0.0.0 srepdata.13wmaz.com
 0.0.0.0 srepdata.app.com
@@ -33949,6 +33943,7 @@
 0.0.0.0 superficialsquare.com
 0.0.0.0 superimpose-empirical.task-tracker.live
 0.0.0.0 superpointlesshamsters.com
+0.0.0.0 superstarorganizer.com
 0.0.0.0 superstats.observepoint.com
 0.0.0.0 supertracker200.com
 0.0.0.0 supertracking.net
@@ -35130,6 +35125,7 @@
 0.0.0.0 telem.sre.gopuff.com
 0.0.0.0 telemetrics.klaviyo.com
 0.0.0.0 telemetry-2037.mordor.use.production.k8s.ikarem.io
+0.0.0.0 telemetry-access-log-prod-toolbox-request.s3.us-east-1.amazonaws.com
 0.0.0.0 telemetry-ack.incredibuild.com
 0.0.0.0 telemetry-afd-aks-prod-eun-gfdegnebgmg9evhe.b02.azurefd.net
 0.0.0.0 telemetry-americas.prod.di.paloaltonetworks.cloud
@@ -35141,7 +35137,6 @@
 0.0.0.0 telemetry-appgw-pub-prod-eun.infra.northeurope.production.swiftkey.com
 0.0.0.0 telemetry-au.docusign.net.akadns.net
 0.0.0.0 telemetry-backup.ch
-0.0.0.0 telemetry-browsing-sandbox.imedidata.net
 0.0.0.0 telemetry-browsing.imedidata.com
 0.0.0.0 telemetry-ca.docusign.net.akadns.net
 0.0.0.0 telemetry-cii.api.playstation.com
@@ -35161,7 +35156,6 @@
 0.0.0.0 telemetry-events.bydata.com
 0.0.0.0 telemetry-ext.observability.commbank.com.au
 0.0.0.0 telemetry-ext.observability.commbank.com.au.cdn.cloudflare.net
-0.0.0.0 telemetry-fra.colortokens.com
 0.0.0.0 telemetry-gateway-production.d2dragon.net
 0.0.0.0 telemetry-geo.docusign.net.akadns.net
 0.0.0.0 telemetry-geo.wac.trafficmanager.net
@@ -35172,7 +35166,6 @@
 0.0.0.0 telemetry-ingest-live-1065410817584.europe-west3.run.app
 0.0.0.0 telemetry-ingest-pmtl7ijarq-ew.a.run.app
 0.0.0.0 telemetry-ingestion.us-ashburn-1.oci.oraclecloud.net
-0.0.0.0 telemetry-int.pearson.com
 0.0.0.0 telemetry-ios.betterme.world
 0.0.0.0 telemetry-ipv6.fbx-mgt.fr
 0.0.0.0 telemetry-lcp.trafficmanager.net
@@ -35224,7 +35217,6 @@
 0.0.0.0 telemetry.algolia.com
 0.0.0.0 telemetry.alkami.com
 0.0.0.0 telemetry.am.pictet.com
-0.0.0.0 telemetry.analogtools.io
 0.0.0.0 telemetry.ando.cloud
 0.0.0.0 telemetry.antediluvianinteractive.com
 0.0.0.0 telemetry.anytype.io
@@ -35249,6 +35241,7 @@
 0.0.0.0 telemetry.assemblyai.com
 0.0.0.0 telemetry.astro.build
 0.0.0.0 telemetry.aterna.mx
+0.0.0.0 telemetry.atopileapi.com
 0.0.0.0 telemetry.attendium.com
 0.0.0.0 telemetry.attio.build
 0.0.0.0 telemetry.australiaeast.arcdataservices.com
@@ -35286,7 +35279,6 @@
 0.0.0.0 telemetry.cardfactory.co.uk
 0.0.0.0 telemetry.cchaxcess.com
 0.0.0.0 telemetry.cell-0.ap-northeast-1.prod.tangerinebox.console.aws.a2z.com
-0.0.0.0 telemetry.cell-0.ap-south-1.prod.tangerinebox.console.aws.a2z.com
 0.0.0.0 telemetry.cell-0.ap-southeast-1.prod.tangerinebox.console.aws.a2z.com
 0.0.0.0 telemetry.cell-0.ap-southeast-2.prod.tangerinebox.console.aws.a2z.com
 0.0.0.0 telemetry.cell-0.eu-central-1.prod.tangerinebox.console.aws.a2z.com
@@ -35300,9 +35292,11 @@
 0.0.0.0 telemetry.cell-0.us-east-1.prod.tangerinebox.console.aws.a2z.com
 0.0.0.0 telemetry.cell-0.us-east-2.prod.tangerinebox.console.aws.a2z.com
 0.0.0.0 telemetry.cell-0.us-west-2.prod.tangerinebox.console.aws.a2z.com
+0.0.0.0 telemetry.centralus.ame.arcdataservices.trafficmanager.net
 0.0.0.0 telemetry.centralus.arcdataservices.com
 0.0.0.0 telemetry.cevoid.com
 0.0.0.0 telemetry.cfraresearch.com
+0.0.0.0 telemetry.chamo-chat.com
 0.0.0.0 telemetry.chase.co.uk
 0.0.0.0 telemetry.chase.co.uk.edgekey.net
 0.0.0.0 telemetry.chillicream.com
@@ -35348,7 +35342,6 @@
 0.0.0.0 telemetry.desktopcommander.app
 0.0.0.0 telemetry.deswik.com
 0.0.0.0 telemetry.detmir.ru
-0.0.0.0 telemetry.dev.docusign.net
 0.0.0.0 telemetry.devicie.com
 0.0.0.0 telemetry.didkedah.gov.my
 0.0.0.0 telemetry.directus.io
@@ -35427,8 +35420,6 @@
 0.0.0.0 telemetry.humblegames.com
 0.0.0.0 telemetry.hytale.com
 0.0.0.0 telemetry.iaas.checkpoint.com
-0.0.0.0 telemetry.iadaax.snowflakecomputing.com
-0.0.0.0 telemetry.iadada.snowflakecomputing.com
 0.0.0.0 telemetry.iadzpr.snowflakecomputing.com
 0.0.0.0 telemetry.ibb-prod.istanbulsenin.kobil.com
 0.0.0.0 telemetry.idura.app
@@ -35442,13 +35433,11 @@
 0.0.0.0 telemetry.ipshipyard.dev
 0.0.0.0 telemetry.iptv.sky.it
 0.0.0.0 telemetry.jivo.ru
-0.0.0.0 telemetry.jmp.com
 0.0.0.0 telemetry.jrny.com
 0.0.0.0 telemetry.jumpspacegame.com
 0.0.0.0 telemetry.justo.cloud
 0.0.0.0 telemetry.kameleo.io
 0.0.0.0 telemetry.kamens.us
-0.0.0.0 telemetry.kantiv.com
 0.0.0.0 telemetry.kde.org
 0.0.0.0 telemetry.kerberus.com
 0.0.0.0 telemetry.kiro.aws.dev
@@ -35503,6 +35492,7 @@
 0.0.0.0 telemetry.nodered.org
 0.0.0.0 telemetry.nodered.org.leonetz.net
 0.0.0.0 telemetry.northcentralus.arcdataservices.com
+0.0.0.0 telemetry.northeurope.arcdataservices.com
 0.0.0.0 telemetry.notable.app
 0.0.0.0 telemetry.notateslaapp.com
 0.0.0.0 telemetry.novomedlink.com
@@ -35556,6 +35546,7 @@
 0.0.0.0 telemetry.ptc.com
 0.0.0.0 telemetry.ptc.com.cdn.cloudflare.net
 0.0.0.0 telemetry.pterodactyl.io
+0.0.0.0 telemetry.pubsdk.kabam.dev
 0.0.0.0 telemetry.pxt.amazon.dev
 0.0.0.0 telemetry.qdrant.io
 0.0.0.0 telemetry.raiffeisen.ru
@@ -35580,7 +35571,6 @@
 0.0.0.0 telemetry.seaweedfs.com
 0.0.0.0 telemetry.secure.roche.com
 0.0.0.0 telemetry.seelen.io
-0.0.0.0 telemetry.seeq.com
 0.0.0.0 telemetry.semgrep.dev
 0.0.0.0 telemetry.sentara.com
 0.0.0.0 telemetry.sentarahealthplans.com
@@ -35599,32 +35589,29 @@
 0.0.0.0 telemetry.simple.paltabrain.com
 0.0.0.0 telemetry.simplefixai.com
 0.0.0.0 telemetry.skillindiadigital.gov.in
-0.0.0.0 telemetry.smartenergysystems.gr
 0.0.0.0 telemetry.smartframe.io
 0.0.0.0 telemetry.sonarsource.com
 0.0.0.0 telemetry.sonatype.com
 0.0.0.0 telemetry.soundcloud.com
+0.0.0.0 telemetry.southcentralus.ame.arcdataservices.trafficmanager.net
 0.0.0.0 telemetry.southcentralus.arcdataservices.com
 0.0.0.0 telemetry.split.io
 0.0.0.0 telemetry.spotit.dev
-0.0.0.0 telemetry.status.im
 0.0.0.0 telemetry.steamos.cloud
 0.0.0.0 telemetry.stepsecurity.io
 0.0.0.0 telemetry.stlukes-stl.com
-0.0.0.0 telemetry.stratws.com
 0.0.0.0 telemetry.stream-bingo.com
 0.0.0.0 telemetry.stream247.media
 0.0.0.0 telemetry.streamology.tv
 0.0.0.0 telemetry.stryker.com
 0.0.0.0 telemetry.stytch.com
-0.0.0.0 telemetry.subspace.network
 0.0.0.0 telemetry.sury.org
 0.0.0.0 telemetry.svc.criipto.com
 0.0.0.0 telemetry.svc.transifex.net
 0.0.0.0 telemetry.swe.quicinc.com
-0.0.0.0 telemetry.synergysportstech.com
 0.0.0.0 telemetry.sys.truenas.net
 0.0.0.0 telemetry.sys.truenas.net.leonetz.net
+0.0.0.0 telemetry.sys.truenas.net.paul-reichenbacher.de
 0.0.0.0 telemetry.taada.top
 0.0.0.0 telemetry.tableausoftware.com
 0.0.0.0 telemetry.tcbs.com.vn
@@ -35632,12 +35619,12 @@
 0.0.0.0 telemetry.tezlabapp.com
 0.0.0.0 telemetry.threatdown.com
 0.0.0.0 telemetry.timescale.com
-0.0.0.0 telemetry.timseverien.com
 0.0.0.0 telemetry.tip.lync.com
 0.0.0.0 telemetry.topperpay.com
 0.0.0.0 telemetry.tradingview.com
 0.0.0.0 telemetry.trae.ai
 0.0.0.0 telemetry.trancite.com
+0.0.0.0 telemetry.transcend.io
 0.0.0.0 telemetry.truckersmp.com
 0.0.0.0 telemetry.ua.pearsonprd.tech
 0.0.0.0 telemetry.ucmgmt.cisco.com
@@ -35645,6 +35632,7 @@
 0.0.0.0 telemetry.undeadlabs.live
 0.0.0.0 telemetry.uphold.com
 0.0.0.0 telemetry.urs.microsoft.com
+0.0.0.0 telemetry.us.transcend.io
 0.0.0.0 telemetry.v.dropbox.com
 0.0.0.0 telemetry.v2.edudip.com
 0.0.0.0 telemetry.v3.influxdata.com
@@ -35660,7 +35648,6 @@
 0.0.0.0 telemetry.voxeet.com
 0.0.0.0 telemetry.vrclinking.com
 0.0.0.0 telemetry.vtex.com
-0.0.0.0 telemetry.w3f.community
 0.0.0.0 telemetry.wall-box.com
 0.0.0.0 telemetry.weaviate.io
 0.0.0.0 telemetry.webasto.com
@@ -35702,6 +35689,7 @@
 0.0.0.0 tercabilis.info
 0.0.0.0 terredgeom.site
 0.0.0.0 terriblethumb.com
+0.0.0.0 tesla-fleet-telemetry.standardfleet.com
 0.0.0.0 tesla-fortytwo.landing.ni.com
 0.0.0.0 test-ad.lucia-c.com
 0.0.0.0 test-ad.mens-lucia.com
@@ -37259,6 +37247,7 @@
 0.0.0.0 track-dmspush.com
 0.0.0.0 track-e.cypress.com
 0.0.0.0 track-e.infineon.com
+0.0.0.0 track-e.infineoncommunity.com
 0.0.0.0 track-ec.buzz
 0.0.0.0 track-ec.lol
 0.0.0.0 track-ec.xyz
@@ -37624,6 +37613,7 @@
 0.0.0.0 track.dracarolinecampos.com.br
 0.0.0.0 track.drapatriciazanutto.com
 0.0.0.0 track.drewintl.com
+0.0.0.0 track.dribunals.com
 0.0.0.0 track.duelbits.com
 0.0.0.0 track.dunedinincomegrowth.co.uk
 0.0.0.0 track.dunstan.media
@@ -38026,7 +38016,6 @@
 0.0.0.0 track.mittivo.it
 0.0.0.0 track.mituo.cn
 0.0.0.0 track.mlbshopeurope.com
-0.0.0.0 track.mlsend2.com
 0.0.0.0 track.mmsvc.io
 0.0.0.0 track.mobile-bt.com
 0.0.0.0 track.mobilevas152cr.com
@@ -38930,7 +38919,6 @@
 0.0.0.0 tracker.rtb-pinklion.io
 0.0.0.0 tracker.rtb-pubwise.io
 0.0.0.0 tracker.rtb-stellormedia.com
-0.0.0.0 tracker.rtbexchanges.com
 0.0.0.0 tracker.samplicio.us
 0.0.0.0 tracker.secretescapes.com
 0.0.0.0 tracker.selectivv.com
@@ -39836,7 +39824,6 @@
 0.0.0.0 tracking.haux.com
 0.0.0.0 tracking.have.you
 0.0.0.0 tracking.hawaiitours.com
-0.0.0.0 tracking.hawksearch.com
 0.0.0.0 tracking.hbl.fi
 0.0.0.0 tracking.hcltech.com
 0.0.0.0 tracking.hd.se
@@ -39857,7 +39844,6 @@
 0.0.0.0 tracking.hexilo.com
 0.0.0.0 tracking.heyai.de
 0.0.0.0 tracking.heyflow.cloud
-0.0.0.0 tracking.hgoldgroup.com
 0.0.0.0 tracking.hibu.com
 0.0.0.0 tracking.highscore-digital.de
 0.0.0.0 tracking.hireforce.io
@@ -40984,7 +40970,6 @@
 0.0.0.0 trackingmms.accenture.com
 0.0.0.0 trackingmore.net
 0.0.0.0 trackingmyadsas.com
-0.0.0.0 trackingnumbers.org
 0.0.0.0 trackingpackage.express
 0.0.0.0 trackingplan.com
 0.0.0.0 trackingprd.hwwt8.com
@@ -41854,6 +41839,7 @@
 0.0.0.0 tx-br-cdn.kwai.net.iberostar.com
 0.0.0.0 tx-pro-pull.kwai.net.iberostar.com
 0.0.0.0 txaxkc.dsc-nightstore.com
+0.0.0.0 txfra-adserver.istio-tracking.tec-delegate.com
 0.0.0.0 txfroe.decodoma.cz
 0.0.0.0 txfryh.terra.com.br
 0.0.0.0 txmmdl.lampy.pl
@@ -42188,6 +42174,7 @@
 0.0.0.0 urr.kumamoto-food.com
 0.0.0.0 urs.metacritic.com
 0.0.0.0 urxbvw.tui.nl
+0.0.0.0 us-ad-ssp-tracker-nlb-1f9e9f3e32d64555.elb.us-east-1.amazonaws.com
 0.0.0.0 us-central1-markuphero.cloudfunctions.net
 0.0.0.0 us-east-1.prod.telemetry.toolbox.builder-tools.aws.dev
 0.0.0.0 us-go.experian.com
@@ -42702,7 +42689,6 @@
 0.0.0.0 vatrack.hinet.net
 0.0.0.0 vault.gostatera.com
 0.0.0.0 vazulp.graniph.com
-0.0.0.0 vbc-telemetry-prod.s3.amazonaws.com
 0.0.0.0 vbe.voyage-prive.be
 0.0.0.0 vbkryy.pasonacareer.jp
 0.0.0.0 vbseje.stonehengehealth.com
@@ -42728,7 +42714,6 @@
 0.0.0.0 vectorshirt.com
 0.0.0.0 vedgeoffshore.com
 0.0.0.0 vedznh.cumhuriyet.com.tr
-0.0.0.0 vega-telemetry-apim-dev.azure-api.net
 0.0.0.0 velodatrack.site
 0.0.0.0 velvetquasar.com
 0.0.0.0 vengefulgrass.com
@@ -42827,6 +42812,7 @@
 0.0.0.0 view.nucorbuildingsystems.com
 0.0.0.0 viewer.pandasuite.io
 0.0.0.0 viewimageonline.com
+0.0.0.0 viewpackagetracking.com
 0.0.0.0 viewresource.com
 0.0.0.0 views.arabnews.com
 0.0.0.0 views.asurascans.com
@@ -43319,6 +43305,7 @@
 0.0.0.0 web.novunapersonalfinance.co.uk
 0.0.0.0 web.online.monnalisa.com
 0.0.0.0 web.orionpharma.com
+0.0.0.0 web.redazione.milanofinanza.it
 0.0.0.0 web.sensilab.com
 0.0.0.0 web.sensilab.cz
 0.0.0.0 web.sensilab.de
@@ -43377,7 +43364,6 @@
 0.0.0.0 webanalyticsssl.websense.com
 0.0.0.0 webapi.3cx.com
 0.0.0.0 webapp.e-post.smn.no
-0.0.0.0 webbugtrack.blogspot.ca
 0.0.0.0 webbugtrack.blogspot.co.uk
 0.0.0.0 webbyword.net
 0.0.0.0 webcasts.de.ni.com

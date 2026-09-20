@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: hosts (0.0.0.0 domain), total 976
+# Format: hosts (0.0.0.0 domain), total 971
 0.0.0.0 07c225f3.online
 0.0.0.0 1.sabs-push.xyz
 0.0.0.0 100push.com
@@ -31,7 +31,6 @@
 0.0.0.0 analytics.networksurvey.app
 0.0.0.0 analytics.popup-records.de
 0.0.0.0 analytics.push-down-products.jediapps.com
-0.0.0.0 analytics.pushgrid.net
 0.0.0.0 analytics.surveys.com
 0.0.0.0 android.push.126.net
 0.0.0.0 annualconsumersurvey.com
@@ -383,7 +382,6 @@
 0.0.0.0 popup.sapoapps.vn
 0.0.0.0 popup.su
 0.0.0.0 popup2.lifterapps.com
-0.0.0.0 popupad.net
 0.0.0.0 popupaval.com
 0.0.0.0 popupbatmitzvah.com
 0.0.0.0 popupblocker.com
@@ -473,7 +471,6 @@
 0.0.0.0 push.ilan365.net
 0.0.0.0 push.ilovelanguages.com
 0.0.0.0 push.intreface.com
-0.0.0.0 push.io
 0.0.0.0 push.io.edgekey.net
 0.0.0.0 push.knd.ro
 0.0.0.0 push.lx.netease.com
@@ -497,7 +494,6 @@
 0.0.0.0 push.res.meizu.com
 0.0.0.0 push.rollout.io
 0.0.0.0 push.scloud.lfengmobile.com
-0.0.0.0 push.silversiri.com
 0.0.0.0 push.testabcd.top
 0.0.0.0 push.tf-cdn.net
 0.0.0.0 push.tv.sohu.com
@@ -584,7 +580,6 @@
 0.0.0.0 pushering.info
 0.0.0.0 pusherism.com
 0.0.0.0 pushers.info
-0.0.0.0 pushesvuggy.shop
 0.0.0.0 pushfilefind.click
 0.0.0.0 pushfire.io
 0.0.0.0 pushflow.net
@@ -709,7 +704,6 @@
 0.0.0.0 pushy.io
 0.0.0.0 pushyconsequence.com
 0.0.0.0 pushydialoguenoisy.com
-0.0.0.0 pushydress.pro
 0.0.0.0 pushyimmaculateinestimable.com
 0.0.0.0 puwpush.com
 0.0.0.0 qobuz.surveysparrow.com
@@ -960,6 +954,7 @@
 0.0.0.0 ws-goguardian.pusher.com
 0.0.0.0 wstpush-mobile.terra.com
 0.0.0.0 www.fpcpopunder.com
+0.0.0.0 www.popupad.net
 0.0.0.0 www.surveynetworks.com
 0.0.0.0 www.surveysite.com
 0.0.0.0 www.thepornsurvey.com

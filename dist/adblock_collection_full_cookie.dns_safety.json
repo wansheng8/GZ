@@ -3,9 +3,9 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "dns_eligible_network_rules": 360,
-  "dns_rejected_network_rules": 1300,
+  "dns_rejected_network_rules": 1301,
   "by_eligibility": {
-    "REJECT": 1300,
+    "REJECT": 1301,
     "SAFE": 360
   },
   "by_reason": {
@@ -13,7 +13,7 @@
     "pure_domain": 360,
     "path_rule": 10,
     "untranslatable": 698,
-    "scoped_modifier": 358,
+    "scoped_modifier": 359,
     "non_blocking_modifier": 12,
     "regex_or_redirect_rule": 1
   }
