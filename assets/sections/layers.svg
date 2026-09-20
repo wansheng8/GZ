@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="56" viewBox="0 0 1160 56" fill="none" role="img" aria-label="三层防护">
+  <defs>
+    <linearGradient id="bar" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ff00e5"/>
+      <stop offset="1" stop-color="#ff00e5" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff00e5" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#ff00e5" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="g" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.6" result="b"/>
+      <feMerge>
+        <feMergeNode in="b"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect x="0.75" y="0.75" width="1158.5" height="54.5" rx="10" fill="#0b0b16" stroke="#ff00e5" stroke-opacity="0.45" stroke-width="1.4"/>
+  <rect x="0" y="0" width="6" height="56" rx="3" fill="url(#bar)"/>
+  <text x="28" y="37" font-family="'Consolas','SFMono-Regular',monospace" font-size="23" font-weight="700" fill="#ff00e5" fill-opacity="0.85">&gt;</text>
+  <text x="50" y="37" font-family="'Consolas','SFMono-Regular',monospace" font-size="20" font-weight="700" letter-spacing="1" fill="#ff00e5" filter="url(#g)">02</text>
+  <text x="102" y="37" font-family="'Segoe UI','Helvetica Neue',Arial,sans-serif" font-size="17" font-weight="700" letter-spacing="6" fill="#f3efff">LAYERED DEFENSE</text>
+  <line x1="780" y1="28" x2="1096" y2="28" stroke="url(#fade)" stroke-width="1.2"/>
+  <circle cx="1068" cy="28" r="3.5" fill="#ff00e5"/>
+  <circle cx="1048" cy="28" r="3.5" fill="#ff00e5" fill-opacity="0.55"/>
+  <circle cx="1028" cy="28" r="3.5" fill="#ff00e5" fill-opacity="0.25"/>
+</svg>

@@ -25,14 +25,24 @@
 [![hosts](https://img.shields.io/badge/hosts-9d00ff?style=for-the-badge&labelColor=0d0d0d)]()
 [![Python](https://img.shields.io/badge/Python-3.8+-3776ab?style=for-the-badge&logo=python&logoColor=white&labelColor=0d0d0d)]()
 
+<br/>
+
 > **「 宁愿少拦截，不要误拦截 」**
 > `DNS 安全分级` ▸ `误杀回归库` ▸ `质量门禁`，构建失败 **自动中止发布**
+
+<br/>
+
+[订阅中心](#subscribe) &nbsp;·&nbsp; [三层防护](#layers) &nbsp;·&nbsp; [当前规模](#scale) &nbsp;·&nbsp; [常见问题](#faq) &nbsp;·&nbsp; [进阶与构建](#advanced)
 
 </div>
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
+<a name="subscribe"></a>
+
 <img src="assets/sections/subscribe.svg" width="100%" alt="订阅中心"/>
+
+## 订阅中心
 
 每日 `03:00 UTC` 自动构建 · **订阅一次，自动更新** · 链接长期有效
 
@@ -174,7 +184,13 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
-## 三层防护：按需选一层，或叠加使用
+<a name="layers"></a>
+
+<img src="assets/sections/layers.svg" width="100%" alt="三层防护"/>
+
+## 三层防护
+
+### 按需选一层，或叠加使用
 
 | 层级 | 拦什么 | 适合谁 |
 | :--- | :--- | :--- |
@@ -187,7 +203,11 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
+<a name="scale"></a>
+
 <img src="assets/sections/scale.svg" width="100%" alt="当前规模"/>
+
+## 当前规模
 
 <div align="center">
 
@@ -195,8 +215,7 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 </div>
 
-<details>
-<summary><code>规则类型构成与按类别订阅</code></summary>
+### 规则类型构成
 
 | 类型 | 数量 | 归属层 |
 | :--- | ---: | :--- |
@@ -204,6 +223,8 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 | css | 141,193 | 元素隐藏 |
 | scriptlet | 10,802 | 元素隐藏 |
 | html / js | 188 | 元素隐藏 |
+
+### 按类别订阅
 
 按类别拆分（`dist/adblock_collection_full_<类别>.txt`，均附 `_dns.txt` / `_domains.txt` 版本）：
 
@@ -218,14 +239,15 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 | malware | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt) |
 | whitelist | 例外规则（仅供审计） |
 
-</details>
-
 <img src="assets/divider.svg" width="100%" alt=""/>
+
+<a name="faq"></a>
+
+<img src="assets/sections/faq.svg" width="100%" alt="常见问题"/>
 
 ## 常见问题
 
-<details>
-<summary><b>导入了却不拦截？</b></summary>
+### 导入了却不拦截？
 
 先确认域名解析确实经过该 DNS：
 
@@ -235,19 +257,13 @@ nslookup doubleclick.net <你的 AdGuard Home / Pi-hole 地址>
 
 应返回 `0.0.0.0` 或 NXDOMAIN。若返回真实 IP，说明设备 / 浏览器走了 DoH（Chrome 或系统「安全 DNS」），关闭 DoH 后再测。
 
-</details>
-
-<details>
-<summary><b>App 开屏 / 信息流广告拦不住？</b></summary>
+### App 开屏 / 信息流广告拦不住？
 
 这类广告由 App 内嵌广告 SDK 拉取，常经 App 自身接口、共享核心域（`pstatp.com`、`kuaishou.com`、`gifshow.com`）或 HTTPDNS / IP 直连下发。DNS 层只能按独立广告域拦截整域，无法区分同一接口返回里的广告与正常内容；封掉共享核心域会直接弄坏对应 App。
 
 对策：订阅上方**连接层规则集**，代理内核开 TUN 后按 SNI 拒绝广告域，可穿透 HTTPDNS；接口级广告再配合 iOS 圈X MITM rewrite、Android AdGuard HTTPS 过滤或 LSPosed 去广告模块。
 
-</details>
-
-<details>
-<summary><b>怎么验证三层是否生效？</b></summary>
+### 怎么验证三层是否生效？
 
 1. 无痕窗口并清缓存，避免旧缓存干扰。
 2. **DNS 层**：`nslookup doubleclick.net <DNS地址>` 返回 `0.0.0.0` / NXDOMAIN，DNS 日志有拦截记录。
@@ -256,12 +272,13 @@ nslookup doubleclick.net <你的 AdGuard Home / Pi-hole 地址>
 
 > tryblock / d3ward 的测试项多是元素隐藏、脚本注入，**DNS 层天然拦不到**，得分偏低属预期；DNS 是否生效看广告网络域名（`googlesyndication.com`、`doubleclick.net`、`an.yandex.ru`）能否解析。
 
-</details>
-
 <img src="assets/divider.svg" width="100%" alt=""/>
 
-<details>
-<summary><code>本地构建 · 防误杀体系 · 自定义上游 · 项目结构</code></summary>
+<a name="advanced"></a>
+
+<img src="assets/sections/advanced.svg" width="100%" alt="进阶与构建"/>
+
+## 进阶与构建
 
 ### 本地构建
 
@@ -288,7 +305,7 @@ python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 - **来源血缘**：`provenance.json` 记录每条规则来源与置信度，`relation_graph.json` 识别父子域冗余 / 跨源重复 / 阻断与例外冲突。
 - `dns_allow.txt` 只收录 `config/lists/allowlist.txt` 的整域全局例外，白名单内容完全由维护者掌控。
 
-### 自定义上游 / 黑名单
+### 自定义上游与黑名单
 
 编辑 `config/sources.yaml` 添加上游：
 
@@ -334,11 +351,13 @@ tests/                    单元与端到端测试
 .github/workflows/build.yml   每日自动构建并推送
 ```
 
-</details>
-
 <img src="assets/divider.svg" width="100%" alt=""/>
 
-<img src="assets/sections/warning.svg" width="100%" alt="警告"/>
+<a name="warning"></a>
+
+<img src="assets/sections/warning.svg" width="100%" alt="使用须知"/>
+
+## 使用须知
 
 > [!CAUTION]
 > 本过滤器 **可能破坏某些网站功能**，或 **阻断部分成人 / 赌博站点**。
