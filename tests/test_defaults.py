@@ -25,6 +25,9 @@ def _args(tmp_path, **overrides):
         "per_rule_classify": True,
         "domain_fold": True,
         "dry_run": False,
+        "baseline": None,
+        "history": False,
+        "stale_days": 30,
     }
     base.update(overrides)
     return SimpleNamespace(**base)
@@ -90,6 +93,43 @@ def test_default_flags_enable_all_enhancements(tmp_path, monkeypatch):
     assert "||sub.c.com^" not in full
 
 
+def test_successful_build_advances_baseline(tmp_path, monkeypatch):
+    _write_cfg(tmp_path)
+    monkeypatch.setattr(merge, "fetch_source", lambda *a, **k: list(_LINES))
+    saved: list = []
+    monkeypatch.setattr(cli, "save_fingerprint", lambda *a, **k: saved.append("fp"))
+
+    assert cli.build(_args(tmp_path)) == 0
+    assert saved == ["fp"]
+
+
+def test_failed_gate_does_not_advance_baseline_or_history(tmp_path, monkeypatch):
+    _write_cfg(tmp_path)
+    monkeypatch.setattr(merge, "fetch_source", lambda *a, **k: list(_LINES))
+    saved: list = []
+    hist: list = []
+    monkeypatch.setattr(cli, "save_fingerprint", lambda *a, **k: saved.append("fp"))
+    monkeypatch.setattr(
+        cli, "update_history", lambda *a, **k: hist.append("h") or {}
+    )
+    monkeypatch.setattr(cli, "_run_quality_gate", lambda *a, **k: (True, {}))
+
+    assert cli.build(_args(tmp_path, history=True)) == 1
+    assert saved == []
+    assert hist == []
+
+
+def test_stale_days_rejects_non_positive():
+    import pytest
+
+    with pytest.raises(SystemExit):
+        _build_parser().parse_args(["build", "--stale-days", "0"])
+    with pytest.raises(SystemExit):
+        _build_parser().parse_args(["build", "--stale-days", "-5"])
+    ns = _build_parser().parse_args(["build", "--stale-days", "7"])
+    assert ns.stale_days == 7
+
+
 def test_opt_out_disables_all_enhancements(tmp_path, monkeypatch):
     _write_cfg(tmp_path)
     monkeypatch.setattr(merge, "fetch_source", lambda *a, **k: list(_LINES))
@@ -129,3 +169,4 @@ def test_redundant_compat_keeps_legacy_domain_fold(tmp_path, monkeypatch):
 
     full = (out / "adblock_collection_full.txt").read_text(encoding="utf-8").splitlines()
     assert "||sub.c.com^" not in full
+

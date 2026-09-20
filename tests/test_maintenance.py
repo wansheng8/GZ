@@ -58,3 +58,4 @@ def test_write_maintenance_report(tmp_path):
     assert report["stale_count"] == 2
     data = json.loads((tmp_path / "maintenance_report.json").read_text(encoding="utf-8"))
     assert data["stale_sample"] == ["x", "y"]
+    assert "generated_at" in data and "today" in data

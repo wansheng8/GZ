@@ -48,7 +48,7 @@ python3 -m adblock_collection build --out dist --split-by-category
 | 4 合并去重 | 各源 Rule 列表 | `merge.dedupe` / `apply_allowlist` / `apply_badfilter` | 白名单精确放行、badfilter 抵消 | 去重后规则集 | 逻辑错误 → 测试兜底（tests/） |
 | 4b 规则增强（默认开启） | 去重后规则 | `aliases.normalize_aliases` / `rules.classify_per_rule` / `arbitrate.arbitrate` / `domain_fold.fold_domains` | 四项默认开启，`--no-*` 可分别关闭；逐项写报告 | `arbitration.json` / `domain_fold.json`、`build_report.json#enhancements` | 仅记录增强结果，不阻断 |
 | 5 冗余消除 | 去重后规则 | `domain_fold.fold_domains`（例外感知）/ `remove_redundant_css` | 仅纯域名/纯类名归并；CSS 去重常开 | 精简规则集 | 仅记录移除数，不阻断 |
-| 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库） | 损坏 → `safe_load` 回退内存规则集 |
+| 6 中间产物 | 仲裁化简后规则 | `rules_jsonl.dump_rules_jsonl` | 每行一条规则，字段无损 | `.cache/build/rules.jsonl`（不入库；`--dry-run` 跳过落盘） | 损坏 → `safe_load` 回退内存规则集 |
 | 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `dns_allow.txt` / `*_ubo_enhance.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
 | 7b 维护跟踪（可选） | 去重后规则 | `cli.build` 调 `maintenance.update_history` | 末见日期、保留期清理 | `.cache/build/rule_history.tsv`、`maintenance_report.json` | 仅记录，不阻断（需 `--history`） |
 | 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
@@ -254,3 +254,21 @@ CSS 仅对「单域 + 纯类名」去重（`css_dedupe`，常开）。复杂选�
 **机制**：`previous_metrics.json` 记录上一次构建的基线，本次对比增长率。超出阈值 → 失败。
 
 **失败处置**：见 `docs/OPS.md` 第 5 节「门禁失败」。**关键**：`previous_metrics.json` 是门禁基线，删除/覆盖会导致误判（历史教训：一次离线测试把基线写成 10 条，导致门禁误报 1300 万倍增长）。
+
+---
+
+## 阶段 11：成功后的基准推进
+
+只有门禁与误杀回归均通过（退出码 0）、且未发生 `--baseline` 字节差异时，才推进跨批次状态：
+
+| 状态 | 文件 | 作用 |
+|------|------|------|
+| 规则指纹 | `.cache/build/previous_rules.txt` | 下次构建逐条差异（`build_diff.txt`）的比对基准 |
+| 维护历史 | `.cache/build/rule_history.tsv` | `--history` 时的首见/末见记录 |
+| 门禁基线 | `dist/previous_metrics.json` | 下次构建增长率对比基准（`quality_gate.evaluate`） |
+
+失败批次不写入上述状态，避免「回归/骤降批次成为下一次的基线」而把问题静默掩盖。规则指纹与维护历史仅在退出码 0、且未发生 `--baseline` 字节差异时推进；`previous_metrics.json` 在门禁自身通过时推进（误杀回归结果不影响增长率基线）。下次构建仍与最后一次通过的批次比对。
+
+`--dry-run` 不写任何产物（含 `rules.jsonl`、指纹、维护历史与 `dist/`）；与 `--history` /
+`--baseline` 同用时这些写盘动作会被跳过并输出告警。
+

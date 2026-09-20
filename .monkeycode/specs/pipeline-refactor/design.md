@@ -265,7 +265,25 @@ class FoldReport:
    避免站内例外被 DNS 层误当整域放行。
 3. 规则过期跟踪（增量 3）：`maintenance.py` 维护 `.cache/build/rule_history.tsv`（首见/末见），
    `--history` 开启后输出 `dist/maintenance_report.json`（`tracked`/`current`/`stale`/`stale_count`），
-   `--stale-days` 默认 30，缺席超过保留期（120 天）的条目在更新历史时清理。opt-in，CI 不生成。
+   `--stale-days` 默认 30，   缺席超过保留期（120 天）的条目在更新历史时清理。opt-in，CI 不生成。
+
+### M6 流程细节收口
+
+对 `cli.build` 的时序与状态推进做一轮细节修正：
+
+1. 成功门禁：新增产物不变量并入 dry-run 校验（P3 DNS 白名单域名合法、P4 uBO 增强仅网络层），
+   使 `--dry-run` 在不写盘的前提下覆盖全部内存不变量。
+2. 状态推进时点：`save_fingerprint` 与 `--history` 的 `update_history` 从门禁前移到
+   **门禁与误杀回归均通过、且字节基线无差异之后**；`previous_metrics.json` 仅在门禁通过时推进。
+   失败批次不再污染下一批比对基准与在册历史。
+3. dry-run 语义：`--dry-run` 跳过 `rules.jsonl` 落盘与指纹/历史写入，与 `--history` / `--baseline`
+   同用时输出「已跳过」告警；仲裁/折叠日志不再声称写盘。
+4. 参数校验：`--stale-days` 改为正整数（拒绝 0/负数），避免把全部规则判为过期。
+5. `regression` 命令优先只读 `adblock_collection_full.txt`，避免把三层/类别/uBO 增强产物重复读入。
+6. 维护报告补 `generated_at`（UTC）与 `today` 字段；CI 健康检查新增 `dns_allow.txt` /
+   `adblock_collection_ubo_enhance.txt` 的存在性与非空告警。
+
+
 
 ## 9. 参考
 

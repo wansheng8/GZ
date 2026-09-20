@@ -80,6 +80,10 @@ def test_cli_dry_run_writes_nothing(tmp_path, monkeypatch):
         merge, "fetch_source", lambda *a, **k: ["! t", "||a.example^", "@@||a.example^"]
     )
     out = tmp_path / "dist"
+    jsonl = tmp_path / "cache" / "rules.jsonl"
+    monkeypatch.setattr(cli, "DEFAULT_JSONL_PATH", jsonl)
+    saved: list = []
+    monkeypatch.setattr(cli, "save_fingerprint", lambda *a, **k: saved.append(1))
     args = SimpleNamespace(
         config=str(cfg),
         out=str(out),
@@ -96,6 +100,10 @@ def test_cli_dry_run_writes_nothing(tmp_path, monkeypatch):
         domain_fold=True,
         dry_run=True,
         baseline=None,
+        history=False,
+        stale_days=30,
     )
     assert cli.build(args) == 0
     assert not out.exists()
+    assert not jsonl.exists()
+    assert saved == []

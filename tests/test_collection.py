@@ -970,6 +970,35 @@ def test_quality_gate_via_cli_build(tmp_path):
     assert not gate2.passed
 
 
+def test_quality_gate_failure_preserves_baseline(tmp_path):
+    from adblock_collection.cli import _run_quality_gate
+    from adblock_collection.merge import source_stats
+    from adblock_collection.quality_gate import Metrics, load_previous, save_previous
+    from adblock_collection.rules import parse_line
+
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "name: x\nquality_gate:\n  total_rule_growth_percent: 10\n"
+        "sources:\n  - name: a\n    url: https://a\n",
+        encoding="utf-8",
+    )
+    out = tmp_path / "dist"
+    out.mkdir()
+    save_previous(Metrics(total_rules=10, dns_domains=10), out)
+
+    rules = [parse_line(f"||a{i}.example.com^") for i in range(100)]
+    failed, _ = _run_quality_gate(
+        rules,
+        source_stats(rules),
+        {},
+        {"domains": (out / "x.txt", 100)},
+        out,
+        cfg,
+    )
+    assert failed
+    assert load_previous(out).total_rules == 10
+
+
 def test_build_report_records_source_diff(tmp_path):
     from adblock_collection.quality_gate import GateResult, Metrics, write_build_report
 

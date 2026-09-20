@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import json
 import logging
+import time
 from collections.abc import Iterable
 from datetime import date
 from pathlib import Path
@@ -92,6 +93,7 @@ def update_history(
     }
     save_history(retained, path)
     return {
+        "today": iso,
         "tracked": len(retained),
         "current": len(current),
         "stale": stale,
@@ -104,6 +106,8 @@ def write_maintenance_report(output_dir: Path, result: dict) -> dict:
     """把维护结果写入 ``output_dir/maintenance_report.json``。"""
     stale = result.get("stale", [])
     report = {
+        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        "today": result.get("today", date.today().isoformat()),
         "tracked_rules": result.get("tracked", 0),
         "current_rules": result.get("current", 0),
         "stale_count": len(stale),

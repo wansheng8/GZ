@@ -81,6 +81,13 @@ jobs:
               print("WARNING: 三层产物缺失（browser_network / cosmetic / dns_abp）")
           elif total and net + cos != total:
               print(f"WARNING: 三层并集 {net + cos} != 完整版 {total}")
+          allow = entries.get("dns_allow.txt", 0)
+          ubo = entries.get("adblock_collection_ubo_enhance.txt", 0)
+          print(f"增量产物: DNS 白名单 {allow} / uBO 增强 {ubo}")
+          if not allow:
+              print("WARNING: DNS 白名单为空（dns_allow.txt）")
+          if not ubo:
+              print("WARNING: uBO 增强清单为空（adblock_collection_ubo_enhance.txt）")
           # 规则数骤降或大量源失败则标记异常（不阻断推送，但输出供审查）
           if total < 300000:
               print("WARNING: 完整版规则数异常偏低，可能上游大面积失败")

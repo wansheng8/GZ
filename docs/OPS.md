@@ -56,11 +56,12 @@ python3 -m adblock_collection build --out /tmp/dist-legacy --split-by-category \
   --no-alias-normalize --no-resolve-conflicts --no-per-rule-classify --no-domain-fold --redundant
 python3 -c "import json;print(json.load(open('/tmp/dist-legacy/build_report.json')).get('enhancements', {}))"
 
-# 5) 可选：dry-run 与字节基线（dry-run 不写产物；baseline 逐字节比对）
+# 5) 可选：dry-run 与字节基线（dry-run 不写任何产物，含 rules.jsonl/指纹/维护历史；baseline 逐字节比对）
 python3 -m adblock_collection build --out /tmp/dry --dry-run
 python3 -m adblock_collection build --out /tmp/dist-new --split-by-category --baseline dist
 
 # 6) 可选：规则过期跟踪（本地连续构建；复用 .cache/build/rule_history.tsv）
+# --stale-days 只接受正整数；仅当门禁与回归通过时才推进指纹与维护历史
 python3 -m adblock_collection build --out /tmp/dist-history --split-by-category --history --stale-days 30
 ```
 

@@ -76,6 +76,7 @@ from .rules_jsonl import DEFAULT_JSONL_PATH, dump_rules_jsonl, safe_load_rules_j
 from .writer import (
     JSDELIVR_MAX_BYTES,
     _blocked_domains,
+    _global_exception_domains,
     write_adblock,
     write_adblock_split,
     write_dns_allow,
@@ -90,6 +91,17 @@ from .writer import (
 )
 
 LOG = logging.getLogger("adblock_collection")
+
+
+def _positive_int(text: str) -> int:
+    """argparse 类型：只接受正整数，避免 0/负数把全部规则误判为过期。"""
+    try:
+        value = int(text)
+    except ValueError as exc:
+        raise argparse.ArgumentTypeError(f"需要正整数: {text!r}") from exc
+    if value <= 0:
+        raise argparse.ArgumentTypeError(f"需要正整数: {text!r}")
+    return value
 
 DEFAULT_HEADERS = {
     "full": (
@@ -454,6 +466,17 @@ def _validate_invariants(rules, dns_policy) -> list[str]:
     domains = _blocked_domains(rules, dns_policy)
     if any(not d or "." not in d for d in domains):
         problems.append("P2 DNS 等价: 域名集合含非法条目")
+    # P3 DNS 白名单：整域全局例外域名必须合法（供 AGH/Pi-hole 直接导入）
+    allow = _global_exception_domains(rules)
+    bad_allow = sorted(d for d in allow if not d or "." not in d or "*" in d)
+    if bad_allow:
+        problems.append(
+            f"P3 DNS 白名单: {len(bad_allow)} 个非法域名, 例: {bad_allow[:3]}"
+        )
+    # P4 uBO 增强清单：高级修饰符只应出现在网络层规则
+    enhanced = [r for r in rules if is_ubo_enhanced(r)]
+    if any(r.kind != "network" for r in enhanced):
+        problems.append("P4 uBO 增强: 含非网络层规则")
     return problems
 
 
@@ -550,6 +573,12 @@ def build(args: argparse.Namespace) -> int:
         flags=flags,
     )
 
+    # dry-run 不写盘，依赖写盘后动作的选项会被跳过；显式告警避免「给了参数却没效果」
+    if flags.dry_run and getattr(args, "history", False):
+        LOG.warning("--dry-run 与 --history 同时给出：dry-run 不写任何产物，维护跟踪已跳过")
+    if flags.dry_run and getattr(args, "baseline", None):
+        LOG.warning("--dry-run 与 --baseline 同时给出：dry-run 不写产物，字节基线比对已跳过")
+
     def collect_stage(rules, context):
         collected = collect(
             config_path,
@@ -628,9 +657,10 @@ def build(args: argparse.Namespace) -> int:
             "records": len(records),
         }
         LOG.info(
-            "冲突仲裁: 移除 %d 条, 记录 %d 条 -> arbitration.json",
+            "冲突仲裁: 移除 %d 条, 记录 %d 条 %s",
             removed,
             len(records),
+            "(dry-run 不写盘)" if context.flags.dry_run else "-> arbitration.json",
         )
         return out
 
@@ -646,9 +676,10 @@ def build(args: argparse.Namespace) -> int:
             "domains": len(report.domains),
         }
         LOG.info(
-            "域名层级折叠: 折叠 %d 条, 涉及 %d 个域名 -> domain_fold.json",
+            "域名层级折叠: 折叠 %d 条, 涉及 %d 个域名 %s",
             report.folded,
             len(report.domains),
+            "(dry-run 不写盘)" if context.flags.dry_run else "-> domain_fold.json",
         )
         return out
 
@@ -686,11 +717,15 @@ def build(args: argparse.Namespace) -> int:
         return 3
     enhancements = ctx.artifacts.get("enhancements", {})
 
-    # 中间产物：无条件落盘，输出阶段由其派生（可离线重建）
-    dump_rules_jsonl(deduped, DEFAULT_JSONL_PATH)
-    reloaded = safe_load_rules_jsonl(DEFAULT_JSONL_PATH)
-    if reloaded is not None:
-        deduped = reloaded
+    # 中间产物：无条件落盘，输出阶段由其派生（可离线重建）；
+    # dry-run 承诺不写任何产物，故跳过落盘，改用内存规则集继续校验
+    if flags.dry_run:
+        LOG.info("dry-run: 跳过中间产物落盘（.cache/build/rules.jsonl）")
+    else:
+        dump_rules_jsonl(deduped, DEFAULT_JSONL_PATH)
+        reloaded = safe_load_rules_jsonl(DEFAULT_JSONL_PATH)
+        if reloaded is not None:
+            deduped = reloaded
 
     if flags.dry_run:
         problems = _validate_invariants(deduped, dns_policy)
@@ -735,21 +770,6 @@ def build(args: argparse.Namespace) -> int:
         )
     else:
         LOG.info("无上一批规则指纹，跳过逐条构建差异（首次构建）")
-    save_fingerprint(deduped)
-
-    # 规则过期/维护跟踪（opt-in，本地连续构建场景）
-    if getattr(args, "history", False):
-        maint = update_history(
-            deduped, stale_days=getattr(args, "stale_days", 30) or 30
-        )
-        write_maintenance_report(output_dir, maint)
-        LOG.info(
-            "维护跟踪: 在册 %d 条, 其中 %d 条连续缺席 >= %d 天 -> %s",
-            maint["tracked"],
-            len(maint["stale"]),
-            maint["stale_days"],
-            "maintenance_report.json",
-        )
 
     # 写入上游健康报告（供订阅者判断数据完整性）
     status_path = output_dir / "sources_status.json"
@@ -806,7 +826,26 @@ def build(args: argparse.Namespace) -> int:
             continue
         for fmt, (path, cnt) in res.items():
             LOG.info("  %s %s: %s (%d)", label, fmt, path, cnt)
-    return 1 if (regression_failed or gate_failed) else 0
+
+    # 成功构建才推进下批基准与维护历史：失败批次的规则不应成为下次比对/在册的基线，
+    # 否则回归会在下一次构建被静默掩盖
+    if regression_failed or gate_failed:
+        LOG.warning("本次构建未通过回归/门禁，跳过更新规则指纹与维护历史")
+        return 1
+
+    save_fingerprint(deduped)
+
+    if getattr(args, "history", False):
+        maint = update_history(deduped, stale_days=getattr(args, "stale_days", 30))
+        write_maintenance_report(output_dir, maint)
+        LOG.info(
+            "维护跟踪: 在册 %d 条, 其中 %d 条连续缺席 >= %d 天 -> %s",
+            maint["tracked"],
+            len(maint["stale"]),
+            maint["stale_days"],
+            "maintenance_report.json",
+        )
+    return 0
 
 
 def _run_quality_gate(
@@ -823,7 +862,10 @@ def _run_quality_gate(
     report = write_build_report(
         output_dir, metrics, prev, gate, enhancements=enhancements
     )
-    save_previous(metrics, output_dir)
+    if gate.passed:
+        save_previous(metrics, output_dir)
+    else:
+        LOG.warning("门禁未通过，保留上一批 metrics 作为基线（不推进 previous_metrics.json）")
 
     if gate.failures:
         LOG.error("质量门禁失败：")
@@ -926,7 +968,17 @@ def regression_cmd(args: argparse.Namespace) -> int:
     from .rules import parse_line
 
     rules: list = []
-    for txt in output_dir.glob("adblock_collection_full*.txt"):
+    full_path = output_dir / "adblock_collection_full.txt"
+    if full_path.exists():
+        # 完整版已含全部子集，只读它即可；避免把三层/类别/uBO 增强产物重复读入
+        txt_files = [full_path]
+    else:
+        txt_files = [
+            p
+            for p in sorted(output_dir.glob("adblock_collection_full*.txt"))
+            if not p.name.endswith(("_ubo_enhance.txt", "_jsdelivr.txt"))
+        ]
+    for txt in txt_files:
         for line in txt.read_text(encoding="utf-8", errors="replace").splitlines():
             if line.startswith(("!", "#")):
                 continue
@@ -1043,9 +1095,9 @@ def _build_parser() -> argparse.ArgumentParser:
     )
     p_build.add_argument(
         "--stale-days",
-        type=int,
+        type=_positive_int,
         default=30,
-        help="规则连续缺席多少天后计入维护报告的过期清单（默认 30，需配合 --history）",
+        help="规则连续缺席多少天后计入维护报告的过期清单（正整数，默认 30，需配合 --history）",
     )
     p_build.set_defaults(func=build)
 
