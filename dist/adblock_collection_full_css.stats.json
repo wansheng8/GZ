@@ -1,14 +1,14 @@
 {
   "name": "adblock_collection_full_css",
-  "total": 138417,
+  "total": 138421,
   "by_category": {
-    "css": 138417
+    "css": 138421
   },
   "by_kind": {
-    "css": 138417
+    "css": 138421
   },
   "by_source": {
-    "Fanboy Annoyance": 25968,
+    "Fanboy Annoyance": 25970,
     "ADrules Easylist": 24236,
     "ADrules I-Dont-Care-About-Cookies": 22893,
     "AdGuard – Ads": 19696,
@@ -28,6 +28,7 @@
     "Fanboy CookieMonster": 7,
     "ADrules EasyPrivacy": 6,
     "StevenBlack Hosts": 6,
+    "EasyList (ABP)": 2,
     "AdGuard/uBO – URL Tracking Protection": 1
   }
 }

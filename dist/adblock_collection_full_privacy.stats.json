@@ -1,14 +1,14 @@
 {
   "name": "adblock_collection_full_privacy",
-  "total": 55365,
+  "total": 55368,
   "by_category": {
-    "privacy": 55365
+    "privacy": 55368
   },
   "by_kind": {
-    "network": 55365
+    "network": 55368
   },
   "by_source": {
-    "ADrules EasyPrivacy": 45293,
+    "ADrules EasyPrivacy": 45294,
     "ADrules DNS": 2715,
     "AdGuard/uBO – URL Tracking Protection": 2183,
     "Hagezi DNS Pro Plus": 1883,
@@ -31,6 +31,7 @@
     "ADrules HalfLife": 3,
     "KADhosts": 3,
     "ADrules ChengFeng": 2,
+    "EasyPrivacy (ABP)": 2,
     "Disconnect Simple Ad": 2,
     "AdAway Hosts": 1,
     "Firebog Easyprivacy Hosts": 1,

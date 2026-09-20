@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55365
+! Total Rules: 55368
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -6197,6 +6197,7 @@ omni.soundestlink.com$image
 ||spareapp.com^
 ||sparkgoal.com^
 ||sparklingshelf.com^
+||specialreview.net^
 ||specialscissors.com^
 ||specialtypin.com^
 ||spectacularstamp.com^
@@ -48536,24 +48537,24 @@ $removeparam=tracking_source
 ||www.tracking.nudgepay.in^
 ||ymtracking.com^
 ||zantracker.com^
-23.220.206.61                  hugeota.d.miui.com
-23.220.206.54                  hugeota.d.miui.com
-2600:1407:3c00:2b::1730:6396   hugeota.d.miui.com
-2600:1407:3c00:2b::1730:6392   hugeota.d.miui.com
+23.34.62.206                   hugeota.d.miui.com
+23.34.62.202                   hugeota.d.miui.com
+2600:1406:2e00:b01::170b:e869  hugeota.d.miui.com
+2600:1406:2e00:b03::170b:e80e  hugeota.d.miui.com
 208.54.110.9                   crl.geo.t-mobile.com
-208.54.26.163                  epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+208.54.39.195                  epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+44.218.73.213                  eulatracking-public-service-prod06.ol.epicgames.com
 100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
 50.17.4.167                    eulatracking-public-service-prod06.ol.epicgames.com
-44.218.73.213                  eulatracking-public-service-prod06.ol.epicgames.com
 172.67.71.137                  ip2location.com
-104.26.2.214                   ip2location.com
 104.26.3.214                   ip2location.com
+104.26.2.214                   ip2location.com
 2606:4700:20::ac43:4789        ip2location.com
 2606:4700:20::681a:3d6         ip2location.com
 2606:4700:20::681a:2d6         ip2location.com
-52.20.4.225                    tracking.epicgames.com
 184.192.132.151                tracking.epicgames.com
 100.63.121.43                  tracking.epicgames.com
+52.20.4.225                    tracking.epicgames.com
 43.159.0.230                   weighted-zh-eulatracking-public-service-prod06.ol.epicgames.com
 ||ad.track.66mobi.com^
 ||ads.boardtracker.com^
@@ -49485,6 +49486,8 @@ $removeparam=tracking_source
 ||tracking.realtor.com^
 ||tracking.shoptogether.buy.com^
 ||tracking.ustream.tv^
+||lego-tech.zhuanzhuan.com^
+||lego.zhuanzhuan.com^
 ||guide-rank.com/guiderank-tracking^
 ||api.blibili.com/x/pd-proxy/tracker
 /track.gif^

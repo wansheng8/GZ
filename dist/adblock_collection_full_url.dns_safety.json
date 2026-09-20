@@ -2,17 +2,17 @@
   "policy_level": "safe",
   "min_confidence": 0.8,
   "allow_modifier": true,
-  "dns_eligible_network_rules": 21326,
-  "dns_rejected_network_rules": 4323,
+  "dns_eligible_network_rules": 21338,
+  "dns_rejected_network_rules": 4339,
   "by_eligibility": {
-    "REJECT": 4323,
-    "SAFE": 21321,
+    "REJECT": 4339,
+    "SAFE": 21333,
     "CONDITIONAL": 5
   },
   "by_reason": {
-    "untranslatable": 1143,
+    "untranslatable": 1159,
     "scoped_modifier": 306,
-    "pure_domain": 21319,
+    "pure_domain": 21331,
     "path_rule": 2534,
     "domain_modifier": 5,
     "regex_or_redirect_rule": 298,

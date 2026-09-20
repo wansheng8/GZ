@@ -1,14 +1,14 @@
 {
   "name": "adblock_collection_full_phishing",
-  "total": 36623,
+  "total": 36702,
   "by_category": {
-    "phishing": 36623
+    "phishing": 36702
   },
   "by_kind": {
-    "network": 36623
+    "network": 36702
   },
   "by_source": {
-    "Phishing URL Blocklist": 36454,
+    "Phishing URL Blocklist": 36533,
     "oisd": 41,
     "Hagezi DNS Pro Plus": 36,
     "ADrules DNS": 20,
