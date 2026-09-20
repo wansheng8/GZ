@@ -29,7 +29,7 @@ LOG = logging.getLogger("adblock_collection")
 # 依赖解析阶段产出的 kind 与分类阶段的 category，故同步递增使旧解析缓存失效。
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
 PARSER_VERSION = "1.5.0"
-NORMALIZER_VERSION = "1.1.0"
+NORMALIZER_VERSION = "1.2.0"
 CLASSIFIER_VERSION = "1.7.0"
 
 STAGE_DIR = Path(".cache/parsed")

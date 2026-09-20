@@ -346,9 +346,62 @@ UBO_ENHANCED_MODIFIERS = frozenset(
 )
 
 
+# 过程式选择器伪类：ABP 与原生 CSS 不识别，仅在支持过程式外观过滤的 uBO/AdGuard
+# 中生效。带这些伪类的 ## 规则同样属于「扩展增强」能力。
+PROCEDURAL_PSEUDOS = (
+    ":remove()",
+    ":remove-attr(",
+    ":remove-class(",
+    ":has-text(",
+    ":matches-css(",
+    ":matches-css-after(",
+    ":matches-css-before(",
+    ":matches-attr(",
+    ":matches-path(",
+    ":matches-media(",
+    ":matches-prop(",
+    ":min-text-length(",
+    ":upward(",
+    ":xpath(",
+    ":watch-attr(",
+    ":others(",
+    ":subject(",
+    ":if(",
+    ":if-not(",
+    ":style(",
+    ":shadow(",
+    ":shadow-contains(",
+)
+# uBO/AdGuard 专有元素/脚本分隔符：过程式选择器 #?# / #@?#，AdGuard CSS 注入 #$# / #@$#
+PROCEDURAL_SEPARATORS = ("#?#", "#@?#", "#$#", "#@$#")
+
+
+def is_ubo_only_cosmetic(rule: Rule) -> bool:
+    """元素/脚本类规则是否使用 ABP 不支持、仅 uBO/AdGuard 可用的语法。
+
+    覆盖三类：scriptlet 注入（``##+js`` / ``#%#``）、HTML 过滤（``##^`` / ``$$``）、
+    过程式选择器与 AdGuard CSS 注入（``#?#`` / ``#$#`` 分隔符，或 ``:remove()`` /
+    ``:has-text()`` 等扩展伪类）。
+    """
+    if rule.kind in ("scriptlet", "js", "html"):
+        return True
+    if rule.kind != "css":
+        return False
+    if any(sep in rule.raw for sep in PROCEDURAL_SEPARATORS):
+        return True
+    return any(pseudo in rule.raw for pseudo in PROCEDURAL_PSEUDOS)
+
+
 def is_ubo_enhanced(rule: Rule) -> bool:
-    """规则是否使用了 uBO/AdGuard 高级修饰符（ABP 不支持的增强能力）。"""
-    return bool(UBO_ENHANCED_MODIFIERS & set(rule.options))
+    """规则是否使用 uBO/AdGuard 独有增强能力（ABP 不支持）。
+
+    包含两类：网络层高级修饰符（``$redirect`` / ``$csp`` / ``$removeparam`` 等），
+    以及元素/脚本类的 uBO/AdGuard 专有语法（scriptlet 注入、HTML 过滤、过程式
+    选择器、DOM 移除）。``###id`` 属于 ``##`` 加 ``#id`` 选择器，是通用语法。
+    """
+    if UBO_ENHANCED_MODIFIERS & set(rule.options):
+        return True
+    return is_ubo_only_cosmetic(rule)
 
 
 

@@ -8,15 +8,17 @@ hosts / domains 文件。目的是在「宁愿少拦截、不要误拦截」原�
 分级依据（参考 Adblock 语义）：
 
 - REJECT  : CSS 元素隐藏、脚本注入、正则、重定向、含路径的网络规则，
-            以及带动作/修饰选项（$csp/$removeparam/$replace…）或作用域限定选项
-            （$domain/$from/$to/$denyallow/$ipaddress/$method）的规则。
-            DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
+            以及带动作/修饰选项（$csp/$removeparam/$replace…）、作用域限定选项
+            （$domain/$from/$to/$denyallow/$ipaddress/$method）、资源类型选项
+            （$script/$image/$websocket/$fetch…）或第一/第三方限定（$third-party）
+            的规则。DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
 - SAFE    : 纯域名网络规则（||ads.example.com^），整域拦截语义等价，confidence=1.0。
             仅带「整域语义」修饰（$all/$important/$match-case，不限定类型与作用域）
             的规则语义等价于纯域名，同样归为 SAFE。仅带导航/弹窗修饰
             （$popup/$doc/$document）的单域名规则在用户确认放宽后按整域拦截输出。
-- CONDITIONAL: 带修饰符的单域名规则（如 ||example.com^$third-party），作用域受限，
-            confidence=0.8，是否进入 DNS 由策略的 allow_modifier 决定。
+- CONDITIONAL: 单域名规则带未识别修饰符时的保守回退档，confidence=0.8，
+            是否进入 DNS 由策略的 allow_modifier 决定。资源类型/作用域/动作类
+            选项已被 REJECT，因此该档实际只覆盖未知选项组合。
 
 策略等级（config 的 dns_policy.level）：
 
@@ -107,6 +109,49 @@ SCOPED_MODIFIERS = frozenset(
     }
 )
 
+# 资源类型选项：限定规则只对某类请求生效（$script / $image / $websocket / $fetch …）。
+# DNS 只能整域拦截，无法区分请求类型，升级会波及同域下的其它正常请求，属于误拦截，
+# 因此硬拒绝。$popup/$doc/$document 属导航语义，单独由 NAVIGATION_DOMAIN_MODIFIERS
+# 处理，不在此列。
+RESOURCE_TYPE_MODIFIERS = frozenset(
+    {
+        "script",
+        "image",
+        "stylesheet",
+        "css",
+        "font",
+        "media",
+        "audio",
+        "video",
+        "object",
+        "object-subrequest",
+        "xmlhttprequest",
+        "xhr",
+        "fetch",
+        "websocket",
+        "webrtc",
+        "ping",
+        "beacon",
+        "other",
+        "subdocument",
+        "frame",
+        "inline-script",
+        "inline-font",
+    }
+)
+
+# 第一/第三方限定选项：DNS 无法区分请求来源关系，升级会误伤同域的合法请求，硬拒绝。
+PARTY_MODIFIERS = frozenset(
+    {
+        "third-party",
+        "first-party",
+        "strict1p",
+        "strict3p",
+        "1p",
+        "3p",
+    }
+)
+
 
 @dataclass
 class DnsVerdict:
@@ -140,6 +185,12 @@ def classify_dns(rule: Rule) -> DnsVerdict:
         # 作用域限定选项无法在 DNS 层表达，禁止升级为整域拦截
         if any(k in rule.options for k in SCOPED_MODIFIERS):
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "scoped_modifier")
+        # 资源类型限定选项（$script/$websocket/$fetch…）无法在 DNS 层表达，硬拒绝
+        if any(k in rule.options for k in RESOURCE_TYPE_MODIFIERS):
+            return DnsVerdict(DNS_REJECT, CONF_REJECT, "resource_type_modifier")
+        # 第一/第三方限定选项无法在 DNS 层表达，硬拒绝
+        if any(k in rule.options for k in PARTY_MODIFIERS):
+            return DnsVerdict(DNS_REJECT, CONF_REJECT, "party_modifier")
 
     # 含路径的网络规则：DNS 只能看到域名，整域拦截会误伤，拒绝
     m = _NET_DOMAIN_RE.search(rule.raw)

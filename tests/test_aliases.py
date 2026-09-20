@@ -23,6 +23,21 @@ def test_doc_normalized_to_document():
     assert "document" in rules[0].options
 
 
+def test_frame_normalized_to_subdocument():
+    rules, report = normalize_aliases([_rule("||a.com^$frame")])
+    assert rules[0].raw == "||a.com^$subdocument"
+    assert "subdocument" in rules[0].options
+    assert report.by_alias == {"frame": 1}
+
+
+def test_frame_and_subdocument_collapse():
+    rules, report = normalize_aliases(
+        [_rule("||a.com^$frame"), _rule("||a.com^$subdocument")]
+    )
+    assert len(rules) == 1
+    assert report.collapsed == 1
+
+
 def test_generichide_aliases_collapse():
     for alias in ("ghide", "ehide", "elemhide"):
         rules, _ = normalize_aliases([_rule(f"||a.com^${alias}")])

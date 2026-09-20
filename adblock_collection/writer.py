@@ -19,6 +19,8 @@ from pathlib import Path
 
 from .dns_policy import (
     DNS_REJECT,
+    PARTY_MODIFIERS,
+    RESOURCE_TYPE_MODIFIERS,
     SCOPED_MODIFIERS,
     classify_dns,
     is_dns_eligible,
@@ -130,15 +132,16 @@ def _is_global_domain_exception(rule: Rule) -> bool:
 
     - 网络规则、单域名，且模式为纯域名（``@@||a.com^`` / ``@@||a.com``，无路径/通配）；
     - 不含作用域修饰符（``$domain`` / ``$from`` / ``$to`` / ``$denyallow`` /
-      ``$ipaddress`` / ``$method``）。
+      ``$ipaddress`` / ``$method``），也不含资源类型（``$script`` / ``$websocket`` …）
+      与第一/第三方限定（``$third-party``）。
 
-    这样 ``@@||a.com^$domain=x.com`` 这类站点作用域例外、以及 ``@@||a.com^*/path``
-    这类路径例外都不会把 a.com 从整域阻断集合中移除，避免「某站点的局部放行导致整个
-    广告域名在全球范围被放行」。
+    这样 ``@@||a.com^$domain=x.com`` 这类站点作用域例外、``@@||a.com^$script`` 这类
+    资源类型例外、以及 ``@@||a.com^*/path`` 这类路径例外都不会把 a.com 从整域阻断
+    集合中移除，避免「某站点的局部放行导致整个广告域名在全球范围被放行」。
     """
     if not (rule.kind == "network" and rule.is_exception and len(rule.domains) == 1):
         return False
-    if set(rule.options) & SCOPED_MODIFIERS:
+    if set(rule.options) & (SCOPED_MODIFIERS | RESOURCE_TYPE_MODIFIERS | PARTY_MODIFIERS):
         return False
     idx = _option_start(rule.raw)
     pattern = rule.raw if idx is None else rule.raw[:idx]

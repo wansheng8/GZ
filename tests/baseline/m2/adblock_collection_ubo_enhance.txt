@@ -1,8 +1,10 @@
 [Adblock Plus 2.0]
 ! Title: Adblock Rule Collection (uBO enhance)
-! Description: uBlock Origin / AdGuard 高级增强规则：$redirect / $csp / $removeparam 等，ABP 不识别
+! Description: uBlock Origin / AdGuard 高级增强规则：$redirect/$csp/$removeparam 与 scriptlet/HTML 过滤/过程式选择器，ABP 不识别
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 0
+! Total Rules: 2
 ! ------------------------------------------
+example.com#?#.promo
+example.com##+js(noop)

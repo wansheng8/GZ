@@ -5,15 +5,14 @@
   "dns_eligible_network_rules": 9,
   "dns_rejected_network_rules": 7,
   "by_eligibility": {
-    "REJECT": 6,
-    "SAFE": 9,
-    "CONDITIONAL": 1
+    "REJECT": 7,
+    "SAFE": 9
   },
   "by_reason": {
     "path_rule": 1,
     "pure_domain_modifier": 1,
     "pure_domain": 8,
-    "domain_modifier": 1,
+    "resource_type_modifier": 1,
     "untranslatable": 2,
     "css_rule": 2,
     "script_rule": 1

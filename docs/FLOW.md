@@ -105,6 +105,8 @@ PY
 
 **失败处置**：删除/修正违规行，改用精确选择器后重试。
 
+**独立校验（可选）**：`python -m adblock_collection lint` 在构建之外检查语法笔误、阻断/例外冲突、`$badfilter` 悬空与重复行，并输出可进 DNS 的域名与仅浏览器可用的规则；`--split-dir` 可把两类结果分别落盘。语法错误返回 2。
+
 ---
 
 ## 阶段 3：上游收集（并行下载）
@@ -201,7 +203,7 @@ CSS 仅对「单域 + 纯类名」去重（`css_dedupe`，常开）。复杂选�
 | `*_dns_ipv6.txt` | hosts（`:: domain`） |
 | `*_domains.txt` | 每行一域名（AdGuard DNS/Home） |
 | `dns_allow.txt` | DNS 层整域白名单（`@@||domain^` 全局例外放行域名，供 DNS 允许清单） |
-| `adblock_collection_ubo_enhance.txt` | uBO 增强子集（含 `$redirect` / `$csp` / `$removeparam` 等高级修饰符，ABP 不识别） |
+| `adblock_collection_ubo_enhance.txt` | uBO 增强子集（网络高级修饰符 `$redirect` / `$csp` / `$removeparam`，以及 scriptlet `##+js`、过程式 `#?#`、`:remove()`、AdGuard `#$#` 与 HTML 过滤 `##^`，ABP 不识别） |
 | `*.stats.txt` / `*.stats.json` | 分类/来源统计 |
 | `*.dns_safety.json` | DNS 安全分级分布 |
 | `security/adblock_collection_security*.txt` | 安全类独立发行 |

@@ -277,10 +277,12 @@ def _emit_layers(rules, output_dir, base_prefix, manifest, gen_dns, policy) -> N
 
 
 def _emit_ubo_enhance(rules, output_dir, manifest) -> None:
-    """uBO/AdGuard 高级增强清单：聚合 $redirect/$csp/$removeparam 等规则。
+    """uBO/AdGuard 高级增强清单：聚合 ABP 不识别的增强规则。
 
-    ABP 与原生 hosts/domains 不识别这些修饰符，单独成一份便于支持该能力的扩展订阅；
-    文件名为 ``adblock_collection_ubo_enhance.txt``，不参与类别并集不变量。
+    含两类：网络层高级修饰符（``$redirect`` / ``$csp`` / ``$removeparam`` …），以及
+    元素/脚本类专有语法（``##+js`` scriptlet、``##^`` HTML 过滤、``#?#`` 过程式选择器、
+    ``:remove()`` DOM 移除）。单独成一份便于支持该能力的扩展订阅；文件名为
+    ``adblock_collection_ubo_enhance.txt``，不参与类别并集不变量。
     """
     rules = list(rules)
     enhanced = [r for r in rules if is_ubo_enhanced(r)]
@@ -289,7 +291,7 @@ def _emit_ubo_enhance(rules, output_dir, manifest) -> None:
         enhanced,
         path,
         "Adblock Rule Collection (uBO enhance)",
-        "uBlock Origin / AdGuard 高级增强规则：$redirect / $csp / $removeparam 等，ABP 不识别",
+        "uBlock Origin / AdGuard 高级增强规则：$redirect/$csp/$removeparam 与 scriptlet/HTML 过滤/过程式选择器，ABP 不识别",
     )
     manifest.append(
         {
@@ -473,10 +475,12 @@ def _validate_invariants(rules, dns_policy) -> list[str]:
         problems.append(
             f"P3 DNS 白名单: {len(bad_allow)} 个非法域名, 例: {bad_allow[:3]}"
         )
-    # P4 uBO 增强清单：高级修饰符只应出现在网络层规则
+    # P4 uBO 增强清单：只应包含网络层高级修饰符与元素/脚本类专有语法，
+    # 不允许出现无法归入网络或元素层的规则。
     enhanced = [r for r in rules if is_ubo_enhanced(r)]
-    if any(r.kind != "network" for r in enhanced):
-        problems.append("P4 uBO 增强: 含非网络层规则")
+    allowed_kinds = {"network", *_COSMETIC_KINDS}
+    if any(r.kind not in allowed_kinds for r in enhanced):
+        problems.append("P4 uBO 增强: 含既非网络层也非元素层的规则")
     return problems
 
 
@@ -990,6 +994,61 @@ def regression_cmd(args: argparse.Namespace) -> int:
     return 1 if failed else 0
 
 
+def lint_cmd(args: argparse.Namespace) -> int:
+    """校验规则文件的语法与冲突，并拆分 DNS 域名与浏览器规则（不修改输入）。"""
+    from .dns_policy import DNS_LEVELS
+    from .lint import lint_text
+
+    rules_path = Path(args.rules)
+    if not rules_path.exists():
+        LOG.error("规则文件不存在: %s", rules_path)
+        return 1
+    if args.dns_policy:
+        policy = dict(DNS_LEVELS[args.dns_policy])
+        policy["level"] = args.dns_policy
+    else:
+        config_path = Path(args.config)
+        policy = load_dns_policy(config_path) if config_path.exists() else None
+
+    text = rules_path.read_text(encoding="utf-8", errors="replace")
+    report = lint_text(text, source=str(rules_path), policy=policy)
+    for issue in report.issues:
+        LOG.info(
+            "%s:%d: %s: %s | %s",
+            rules_path,
+            issue.line,
+            issue.level,
+            issue.message,
+            issue.text,
+        )
+    LOG.info(
+        "lint 完成: %d error / %d warning; DNS 域名 %d 条, 浏览器规则 %d 条",
+        len(report.errors),
+        len(report.warnings),
+        len(report.dns_domains),
+        len(report.browser_rules),
+    )
+    if args.split_dir:
+        split_dir = Path(args.split_dir)
+        split_dir.mkdir(parents=True, exist_ok=True)
+        dns_path = split_dir / "lint_dns_domains.txt"
+        browser_path = split_dir / "lint_browser_rules.txt"
+        dns_path.write_text(
+            "# lint 拆分：可安全进入 DNS 的整域阻断域名\n"
+            + "".join(f"{d}\n" for d in report.dns_domains),
+            encoding="utf-8",
+        )
+        browser_path.write_text(
+            "# lint 拆分：仅浏览器扩展可用的规则\n"
+            + "".join(f"{r}\n" for r in report.browser_rules),
+            encoding="utf-8",
+        )
+        LOG.info("拆分产物: %s, %s", dns_path, browser_path)
+    if report.errors or (args.strict and report.warnings):
+        return 2
+    return 0
+
+
 def _build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         prog="adblock-rule-collection",
@@ -1113,6 +1172,29 @@ def _build_parser() -> argparse.ArgumentParser:
     p_reg.add_argument("--config", default="config/sources.yaml")
     p_reg.add_argument("--out", default="dist", help="已构建输出目录")
     p_reg.set_defaults(func=regression_cmd)
+
+    p_lint = sub.add_parser(
+        "lint", help="校验规则语法/冲突，并拆分 DNS 域名与浏览器规则"
+    )
+    p_lint.add_argument(
+        "--rules", default="config/local_rules.txt", help="待校验的规则文件"
+    )
+    p_lint.add_argument(
+        "--config", default="config/sources.yaml", help="读取 dns_policy 的配置文件"
+    )
+    p_lint.add_argument(
+        "--dns-policy",
+        default=None,
+        choices=["all", "safe", "strict-safe"],
+        help="DNS 分层策略（覆盖 config 中的 dns_policy.level）",
+    )
+    p_lint.add_argument(
+        "--split-dir", default=None, help="把 DNS 域名与浏览器规则分别写入该目录"
+    )
+    p_lint.add_argument(
+        "--strict", action="store_true", help="警告也视为失败（退出码 2）"
+    )
+    p_lint.set_defaults(func=lint_cmd)
 
     return parser
 

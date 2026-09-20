@@ -258,7 +258,8 @@ class FoldReport:
 ### M5 三层方案增量（1+2+3）
 
 1. uBO 增强子集（增量 1）：`rules.UBO_ENHANCED_MODIFIERS` 与 `is_ubo_enhanced(rule)` 识别含
-   `$redirect` / `$rewrite` / `$csp` / `$removeparam` / `$replace` / `$permissions` 等高级修饰符的规则；
+   `$redirect` / `$rewrite` / `$csp` / `$removeparam` / `$replace` / `$permissions` 等高级修饰符的规则，
+   以及 uBO/AdGuard 专有元素语法（见 M7）；
    `cli._emit_ubo_enhance` 输出 `dist/adblock_collection_ubo_enhance.txt`（ABP 不识别，独立订阅）。
 2. DNS 白名单（增量 2）：`writer.write_dns_allow`/`_global_exception_domains` 从整域全局例外
    （无作用域、无路径）提取放行域名，输出 `dist/dns_allow.txt`，供 AdGuard Home / Pi-hole 允许清单，
@@ -271,7 +272,7 @@ class FoldReport:
 
 对 `cli.build` 的时序与状态推进做一轮细节修正：
 
-1. 成功门禁：新增产物不变量并入 dry-run 校验（P3 DNS 白名单域名合法、P4 uBO 增强仅网络层），
+1. 成功门禁：新增产物不变量并入 dry-run 校验（P3 DNS 白名单域名合法、P4 uBO 增强仅限网络层与元素层规则），
    使 `--dry-run` 在不写盘的前提下覆盖全部内存不变量。
 2. 状态推进时点：`save_fingerprint` 与 `--history` 的 `update_history` 从门禁前移到
    **门禁与误杀回归均通过、且字节基线无差异之后**；`previous_metrics.json` 仅在门禁通过时推进。
@@ -282,6 +283,23 @@ class FoldReport:
 5. `regression` 命令优先只读 `adblock_collection_full.txt`，避免把三层/类别/uBO 增强产物重复读入。
 6. 维护报告补 `generated_at`（UTC）与 `today` 字段；CI 健康检查新增 `dns_allow.txt` /
    `adblock_collection_ubo_enhance.txt` 的存在性与非空告警。
+
+### M7 语法覆盖补全与 DNS 收紧
+
+1. uBO 增强范围扩展：`rules.is_ubo_only_cosmetic(rule)` 识别 scriptlet（`##+js` / `#%#`）、
+   HTML 过滤（`##^` / `$$`）、过程式选择器（`#?#` 或 `:remove()` / `:has-text()` 等扩展伪类）、
+   AdGuard CSS 注入（`#$#`）；`is_ubo_enhanced` 合并该类规则，`adblock_collection_ubo_enhance.txt`
+   同时收录网络高级修饰符与上述元素/脚本语法。`###id` 按 `##` 加 `#id` 选择器处理，属通用语法。
+2. DNS 收紧：`dns_policy.RESOURCE_TYPE_MODIFIERS` 与 `PARTY_MODIFIERS` 使带 `$script` /
+   `$websocket` / `$fetch` / `$subdocument` / `$third-party` 等限定的单域名规则在任何档位都
+   REJECT，不升级为整域拦截；`writer._is_global_domain_exception` 同步把这些限定排除出
+   `dns_allow.txt`，DNS 白名单只保留整域全局例外。
+3. 选项别名：`aliases.OPTION_ALIASES` 增 `frame` -> `subdocument`；`NORMALIZER_VERSION` 递增至 1.2.0。
+4. 新增 `lint` 子命令：`adblock_collection/lint.py` 校验元素规则空选择器、`$` 空选项、未知选项、
+   `$badfilter` 悬空、重复行与同模式阻断/例外冲突，并按 `dns_policy` 拆分 DNS 域名与浏览器规则；
+   `--split-dir` 落盘，语法错误返回 2，`--strict` 使警告同样失败。
+5. 知识库：新增 `docs/SYNTAX.md`，覆盖三层语法、资源类型、修饰符分组、优先级、元素隐藏与
+   scriptlet、DNS 载体差异、常见陷阱与调试方法。
 
 
 

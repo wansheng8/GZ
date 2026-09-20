@@ -14,6 +14,14 @@
 # example.com##.ad-banner
 # example.com##div[class*="feed-ad"]
 # ||ad.douyin.com^
+#
+# 网络层常用写法（可精确限定，避免整域误伤）：
+# ||ad.example.com^$script,xhr,fetch,third-party     # 仅拦第三方脚本与接口
+# ||ws.example.com^$websocket,third-party            # 拦 WebSocket 追踪
+# ||pop.example.com^$subdocument,popup,third-party   # 拦 iframe 与弹窗
+# 说明：带资源类型/第三方限定的规则不会进入 DNS 产物（DNS 无法区分请求类型），
+#       由 lint 子命令自动拆分；本地规则改动后请运行：
+# python -m adblock_collection lint --config config/sources.yaml
 
 # ---- 网页版直播广告元素隐藏（基于平台已知稳定容器，零误伤优先，必要时用更精确选择器） ----
 

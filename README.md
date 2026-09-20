@@ -67,7 +67,7 @@
 | **浏览器全量** | **`[浏览器专用]`** 网络 + 元素隐藏 | uBlock Origin · AdGuard · AdBlock Plus | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-ff00e5?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_jsdelivr.txt) |
 | **安全** | **`[安全专项]`** 恶意 + 钓鱼 · 低误杀 | 只需安全拦截的设备 | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-39ff14?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_security.txt) |
 | **DNS 白名单** | **`[DNS 白名单]`** 整域放行域名 | AdGuard Home · Pi-hole 允许清单 | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/dns_allow.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-00f0ff?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/dns_allow.txt) |
-| **uBO 增强** | **`[uBO 增强]`** `$redirect` / `$csp` / `$removeparam` | uBlock Origin · AdGuard（ABP 不识别） | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_ubo_enhance.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-c70f0f?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_ubo_enhance.txt) |
+| **uBO 增强** | **`[uBO 增强]`** `$redirect` / `$csp` / `$removeparam` / scriptlet / `:remove()` | uBlock Origin · AdGuard（ABP 不识别） | [![订阅 GitHub](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_ubo_enhance.txt) [![订阅 jsDelivr](https://img.shields.io/badge/%E8%AE%A2%E9%98%85-jsDelivr-c70f0f?style=for-the-badge&logo=jsdelivr&logoColor=white)](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_ubo_enhance.txt) |
 
 ```console
 >_ 按层选文件
@@ -129,7 +129,7 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_s
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/dns_allow.txt
 https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/dns_allow.txt
 
-[uBO 增强 · redirect / csp / removeparam]
+[uBO 增强 · redirect / csp / removeparam / scriptlet]
 https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_ubo_enhance.txt
 https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_ubo_enhance.txt
 ```
@@ -223,6 +223,7 @@ python -m adblock_collection build --out dist --split-by-category
 # 常用子命令
 python -m adblock_collection sources               # 列出上游列表
 python -m adblock_collection regression            # 误杀回归校验
+python -m adblock_collection lint                  # 校验本地规则语法/冲突，并拆分 DNS 与浏览器规则
 python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 ```
 
@@ -241,8 +242,10 @@ DNS 规则在解析层生效、无法限定上下文，误杀代价最高，故�
 | 级别 | 行为 | 误杀风险 |
 | :--- | :--- | :---: |
 | ![all](https://img.shields.io/badge/all-default-ff9c39?style=flat-square&labelColor=0d0d0d) | 纳入所有纯域名网络规则 | 中 |
-| ![safe](https://img.shields.io/badge/safe-00f0ff?style=flat-square&labelColor=0d0d0d) | 仅纯域名 + 带 `$third-party` 等修饰符规则 | 低 |
+| ![safe](https://img.shields.io/badge/safe-00f0ff?style=flat-square&labelColor=0d0d0d) | 纯域名 + 仅带导航语义修饰（`$popup`/`$document`）的规则 | 低 |
 | ![strict-safe](https://img.shields.io/badge/strict--safe-39ff14?style=flat-square&labelColor=0d0d0d) | 仅最不易误杀的纯域名规则 | 最低 |
+
+资源类型（`$script`/`$websocket`/`$fetch`）、第一/第三方（`$third-party`）与作用域（`$domain`）等限定在 DNS 层无法表达，一律拒绝升级为整域拦截；整域全局例外之外的局部例外也不会写入 DNS 白名单。
 
 ### ├─ `[2]` 误杀回归库 · regression
 
@@ -252,7 +255,7 @@ DNS 规则在解析层生效、无法限定上下文，误杀代价最高，故�
 ### ├─ `[3]` 质量门禁 · quality_gate
 
 构建对比上一轮基线 `previous_metrics.json`，下列异常直接失败：
-单源规则数骤降 `>50%` · 规则总量骤降 `>50%` · DNS 域名骤降 `>50%`。报告写入 `dist/build_report.json`。
+单源规则数骤降 `>50%` · 规则总量骤增 `>20%` · DNS 域名骤增 `>15%`。报告写入 `dist/build_report.json`。
 
 ### └─ `[4]` 来源血缘 · provenance
 
@@ -290,6 +293,7 @@ adblock_collection/
   writer.py       多格式输出（adblock / hosts / domains / ||domain^ / stats）
   dns_policy.py   DNS 安全分级
   regression.py   误杀回归校验
+  lint.py         规则语法/冲突校验与 DNS·浏览器分层
   quality_gate.py 质量门禁与基线
   pipeline.py     阶段缓存与算法版本常量
   provenance.py   来源血缘与语义关系图

@@ -1,8 +1,9 @@
 """选项别名归一化。
 
 把 AdGuard / uBlock Origin 明确定义为同义的旧选项名折叠为规范名，使「同一规则
-的不同别名写法」在去重时合并。仅处理语义等价的别名；语义可能不同的旧修饰符
-（``popup`` / ``other`` / ``websocket`` / ``app`` / ``csp`` / ``genericblock``）保持原样。
+的不同别名写法」在去重时合并。仅处理语义等价的别名（含 ``frame`` -> ``subdocument``）；
+语义可能不同的旧修饰符（``popup`` / ``other`` / ``websocket`` / ``app`` / ``csp`` /
+``genericblock``）保持原样。
 
 默认关闭，由 ``build --alias-normalize`` 开启。关闭时产物与开启前逐字节一致。
 """
@@ -18,6 +19,7 @@ from .rules import Rule, _normalize, _option_start, _split_options, parse_option
 OPTION_ALIASES: dict[str, str] = {
     "xmlhttprequest": "xhr",
     "doc": "document",
+    "frame": "subdocument",
     "ghide": "generichide",
     "ehide": "generichide",
     "elemhide": "generichide",

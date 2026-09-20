@@ -345,12 +345,31 @@ def test_ubo_enhanced_rule_selection():
     assert not is_ubo_enhanced(parse_line("||a.com^"))
 
 
+def test_ubo_enhanced_includes_ubo_only_cosmetic():
+    from adblock_collection.rules import is_ubo_enhanced
+
+    # uBO/AdGuard 专有元素/脚本语法归入增强清单
+    assert is_ubo_enhanced(parse_line("example.com##+js(noop)"))
+    assert is_ubo_enhanced(parse_line("example.com#?#.promo:has-text(Ad)"))
+    assert is_ubo_enhanced(parse_line("example.com##.ad:remove()"))
+    assert is_ubo_enhanced(parse_line("example.com##.ad:remove-attr(hidden)"))
+    assert is_ubo_enhanced(parse_line("example.com##^script:has-text(ad)"))
+    assert is_ubo_enhanced(parse_line("example.com#$#.ad{display:none}"))
+    assert is_ubo_enhanced(parse_line("example.com#%#window.x=1"))
+    # ABP/uBO/AdGuard 通用语法留在基础清单
+    assert not is_ubo_enhanced(parse_line("example.com##.ad-banner"))
+    assert not is_ubo_enhanced(parse_line("example.com###ad"))
+    assert not is_ubo_enhanced(parse_line("example.com#@#.ad-banner"))
+
+
 def test_write_dns_allow_lists_global_exceptions(tmp_path):
     from adblock_collection import writer
 
     rules = [
         parse_line("@@||allowed.example^"),
         parse_line("@@||scoped.example^$domain=x.com"),
+        parse_line("@@||typed.example^$script"),
+        parse_line("@@||party.example^$third-party"),
         parse_line("||blocked.example^"),
     ]
     path = tmp_path / "dns_allow.txt"
@@ -359,6 +378,9 @@ def test_write_dns_allow_lists_global_exceptions(tmp_path):
     assert count == 1
     assert "allowed.example" in text
     assert "scoped.example" not in text
+    # 资源类型/第三方限定的例外是局部放行，不得升级为整域 DNS 白名单
+    assert "typed.example" not in text
+    assert "party.example" not in text
 
 
 def test_adblock_split_builds_include_master(tmp_path):
@@ -599,7 +621,7 @@ def test_classify_pure_domain_is_safe():
 
 
 def test_classify_path_rule_is_reject():
-    v = classify_dns(parse_line("||example.com/ads^$script"))
+    v = classify_dns(parse_line("||example.com/ads^"))
     assert v.eligibility == DNS_REJECT
     assert v.reason == "path_rule"
 
@@ -609,8 +631,21 @@ def test_classify_css_is_reject():
     assert v.eligibility == DNS_REJECT
 
 
-def test_classify_modifier_rule_is_conditional():
+def test_classify_resource_type_rule_is_reject():
+    # 资源类型限定无法在 DNS 层表达，任何档位都不得升级为整域拦截
+    v = classify_dns(parse_line("||example.com^$script"))
+    assert v.eligibility == DNS_REJECT
+    assert v.reason == "resource_type_modifier"
+
+
+def test_classify_party_rule_is_reject():
     v = classify_dns(parse_line("||example.com^$third-party"))
+    assert v.eligibility == DNS_REJECT
+    assert v.reason == "party_modifier"
+
+
+def test_classify_unknown_modifier_rule_is_conditional():
+    v = classify_dns(parse_line("||example.com^$some-unknown-opt"))
     assert v.eligibility == "CONDITIONAL"
     assert v.reason == "domain_modifier"
 
@@ -650,16 +685,19 @@ def test_classify_addheader_is_reject():
     assert is_dns_eligible(r, {"level": "safe"}) is False
 
 
-def test_safe_level_promotes_type_modifier():
+def test_type_and_party_modifiers_never_promoted_to_dns():
+    # 资源类型与第一/第三方限定在 safe 档也不得升级为整域 DNS 拦截
     for raw in (
         "||ads.example.com^$third-party",
         "||ads.example.com^$script",
         "||ads.example.com^$subdocument",
+        "||ads.example.com^$websocket",
+        "||ads.example.com^$fetch",
         "||ads.example.com^$ping",
     ):
         r = parse_line(raw)
         assert is_dns_eligible(r, {"level": "all"}) is False, raw
-        assert is_dns_eligible(r, {"level": "safe"}) is True, raw
+        assert is_dns_eligible(r, {"level": "safe"}) is False, raw
         assert is_dns_eligible(r, {"level": "strict-safe"}) is False, raw
 
 
@@ -680,27 +718,28 @@ def test_classify_navigation_modifier_is_dns_eligible():
 
 
 def test_classify_navigation_modifier_scope_still_rejected():
-    # 与作用域/其它类型混用时保持保守
+    # 与作用域/资源类型/第三方限定混用时保持保守
     assert classify_dns(parse_line("||ads.example.com^$popup,domain=x.com")).reason == (
         "scoped_modifier"
     )
     assert classify_dns(parse_line("||ads.example.com^$popup,third-party")).reason == (
-        "domain_modifier"
+        "party_modifier"
     )
     assert (
         classify_dns(parse_line("||ads.example.com^$document,subdocument")).reason
-        == "domain_modifier"
+        == "resource_type_modifier"
     )
 
 
 def test_policy_all_rejects_modifier():
-    r = parse_line("||example.com^$third-party")
+    # 未知修饰符是 CONDITIONAL 回退档：all 档拒绝、safe 档接受
+    r = parse_line("||example.com^$some-unknown-opt")
     assert is_dns_eligible(r, {"level": "all"}) is False
     assert is_dns_eligible(r, {"level": "safe"}) is True
 
 
 def test_policy_strict_safe_rejects_modifier():
-    r = parse_line("||example.com^$third-party")
+    r = parse_line("||example.com^$some-unknown-opt")
     assert is_dns_eligible(r, {"level": "strict-safe"}) is False
 
 
@@ -1337,8 +1376,14 @@ def test_redirect_rule_rejected_from_dns():
     assert is_dns_eligible(r, {"level": "safe"}) is False
 
 
-def test_third_party_modifier_still_conditional_at_safe_policy():
+def test_third_party_modifier_never_eligible():
     r = parse_line("||example.com^$third-party")
+    assert is_dns_eligible(r, {"level": "safe"}) is False
+    assert is_dns_eligible(r, {"level": "all"}) is False
+
+
+def test_unknown_modifier_conditional_at_safe_policy():
+    r = parse_line("||example.com^$some-unknown-opt")
     assert is_dns_eligible(r, {"level": "safe"}) is True
     assert is_dns_eligible(r, {"level": "all"}) is False
 
