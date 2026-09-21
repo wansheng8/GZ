@@ -600,11 +600,15 @@ def _parse_adblock_line(
     options: dict[str, str] = {}
     is_badfilter = False
     is_important = False
-    m = _option_start(stripped)
-    if m is not None:
-        options = parse_options(stripped[m + 1 :])
-        is_badfilter = "badfilter" in options
-        is_important = "important" in options
+    # 仅网络规则有真正的选项段；元素/脚本规则（##、#$#、##+js(…)）里的 `$` 属于
+    # 选择器或脚本参数（如 `abort-current-inline-script $ popup`），不能当选项解析，
+    # 否则会凭空造出 tieE3/adblock/delay 之类的伪选项并污染去重键。
+    if kind == "network":
+        m = _option_start(stripped)
+        if m is not None:
+            options = parse_options(stripped[m + 1 :])
+            is_badfilter = "badfilter" in options
+            is_important = "important" in options
 
     domains = _extract_domains(stripped)
     cat = _classify(stripped, category_hint, kind, is_exception)

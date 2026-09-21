@@ -59,9 +59,9 @@
 | `$important` | 通用 | 提升优先级，可覆盖例外之外的规则 |
 | `$match-case` | uBO/AdGuard | 路径区分大小写 |
 | `$all` | AdGuard | 等价于不限类型的整域阻断 |
-| `$popup` | uBO/AdGuard | 拦截弹窗 |
+| `$popup` / `$popunder` | uBO/AdGuard | 拦截弹窗 / 弹后窗 |
 | `$badfilter` | uBO/AdGuard | 停用上游同名规则 |
-| `$cname` | uBO/AdGuard | 按 CNAME 记录匹配 |
+| `$cname` | uBO/AdGuard | 按 CNAME 记录匹配，与整域拦截语义不等价 |
 
 动作/内容型（改写请求或响应，不新增整域拦截）：
 
@@ -72,11 +72,15 @@
 | `$csp` | uBO/AdGuard | 注入 Content-Security-Policy |
 | `$permissions` | uBO/AdGuard | 注入 Permissions-Policy |
 | `$removeheader` / `$addheader` / `$header` | uBO/AdGuard | 改写请求/响应头 |
-| `$redirect` / `$redirect-rule` / `$rewrite` | uBO/AdGuard | 重定向到空资源或替换资源 |
-| `$urltransform` / `$urlskip` | AdGuard | URL 改写 |
+| `$redirect` / `$redirect-rule` / `$rewrite` / `$empty` | uBO/AdGuard | 重定向到空资源或替换资源 |
+| `$urltransform` / `$uritransform` / `$urlskip` | AdGuard | URL 改写 |
 | `$cookie` / `$set-cookie` | uBO | 改写 Cookie |
 
-作用域型（限定规则在哪些来源站点生效）：`$domain`、`$from`、`$to`、`$denyallow`、`$ipaddress`、`$method`。
+作用域型（限定规则在哪些来源站点 / 目标 / 请求类型下生效）：`$domain`、`$from`、`$to`、`$denyallow`、`$ipaddress`、`$method`、`$app`（App 限定）、`$dnstype`（DNS 记录类型限定）。
+
+注解型：`$reason=...` 只是规则来源/原因注解，不改变匹配与拦截语义，分类与去重时忽略。
+
+取反形式（`$~third-party`、`$~script`、`$~image` 等）同样是**限定**：只对补集请求生效。带取反类型/第三方限定的规则不得升级为整域拦截。
 
 ## 5. 优先级
 

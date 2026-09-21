@@ -271,6 +271,20 @@ def test_badfilter_target_with_options():
     assert kept[0].raw == "||keep.com^"
 
 
+def test_badfilter_pure_token_cancels_target():
+    # 只有 badfilter 一个选项时，去掉后需连同 $ 一同丢弃才能匹配无选项规则
+    target = _rule("||ads.com^", is_badfilter=False)
+    bad = _rule("||ads.com^$badfilter", is_badfilter=True)
+    kept = apply_badfilter([target, bad, _rule("||keep.com^")])
+    assert [r.raw for r in kept] == ["||keep.com^"]
+
+
+def test_badfilter_ignores_comma_inside_value():
+    target = _rule("||ads.com^$removeparam=/x{1,3}/", is_badfilter=False)
+    bad = _rule("||ads.com^$removeparam=/x{1,3}/,badfilter", is_badfilter=True)
+    assert apply_badfilter([target, bad]) == []
+
+
 def test_source_stats_counts():
     rules = [
         _rule("||a.com^", source="X"),
@@ -761,6 +775,78 @@ def test_classify_navigation_modifier_scope_still_rejected():
         classify_dns(parse_line("||ads.example.com^$document,subdocument")).reason
         == "resource_type_modifier"
     )
+
+
+def test_classify_app_scoped_rule_is_reject():
+    # $app= 是 App 作用域限定，DNS 无法表达，任何档位都不得升级为整域拦截
+    for raw in (
+        "||snssdk.com^$app=com.dragon.read,important",
+        "||fvedio.kuwo.cn^$app=cn.kuwo.player",
+    ):
+        v = classify_dns(parse_line(raw))
+        assert v.eligibility == DNS_REJECT, raw
+        assert v.reason == "scoped_modifier", raw
+        assert is_dns_eligible(parse_line(raw), {"level": "safe"}) is False, raw
+
+
+def test_classify_dnstype_scoped_rule_is_reject():
+    r = parse_line("||wo.com.cn^$dnstype=A|CNAME")
+    assert classify_dns(r).reason == "scoped_modifier"
+    assert is_dns_eligible(r, {"level": "safe"}) is False
+
+
+def test_classify_cname_rule_is_reject():
+    r = parse_line("||example.com^$cname")
+    assert classify_dns(r).reason == "match_method_modifier"
+    assert is_dns_eligible(r, {"level": "safe"}) is False
+
+
+def test_classify_negated_type_and_party_are_reject():
+    # 取反形式同样限定了作用范围，不得当作未知修饰而放宽
+    cases = {
+        "||example.com^$~third-party": "party_modifier",
+        "||example.com^$~3p": "party_modifier",
+        "||example.com^$~script": "resource_type_modifier",
+        "||example.com^$~image": "resource_type_modifier",
+    }
+    for raw, reason in cases.items():
+        v = classify_dns(parse_line(raw))
+        assert v.reason == reason, raw
+        assert is_dns_eligible(parse_line(raw), {"level": "safe"}) is False, raw
+
+
+def test_classify_reason_annotation_is_ignored():
+    # $reason= 只是注解，不改变拦截语义
+    v = classify_dns(parse_line("||ads.example.com^$all,reason=malicious"))
+    assert v.eligibility == DNS_SAFE
+    assert v.reason == "pure_domain_modifier"
+    v = classify_dns(parse_line("||ads.example.com^$document,reason=malicious"))
+    assert v.reason == "navigation_domain_modifier"
+
+
+def test_classify_popunder_is_navigation():
+    v = classify_dns(parse_line("||ads.example.com^$popunder"))
+    assert v.reason == "navigation_domain_modifier"
+
+
+def test_classify_empty_and_uritransform_are_non_blocking():
+    assert (
+        classify_dns(parse_line("||ads.example.com^$empty")).reason
+        == "non_blocking_modifier"
+    )
+    assert (
+        classify_dns(parse_line("||ads.example.com^$uritransform=/a//")).reason
+        == "non_blocking_modifier"
+    )
+
+
+def test_cosmetic_rule_dollar_not_parsed_as_options():
+    # 元素/脚本规则里的 $ 属于选择器或脚本参数，不能当选项解析
+    css = parse_line("example.com#$#abort-current-inline-script $ popup")
+    assert css.kind == "css"
+    assert css.options == {}
+    js = parse_line("example.com##+js(set-constant, $tieE3, true)")
+    assert js.options == {}
 
 
 def test_policy_all_rejects_modifier():

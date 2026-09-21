@@ -13,7 +13,13 @@ from pathlib import Path
 import requests
 
 from .pipeline import parse_source_cached
-from .rules import _ELEMENT_SEP_RE, _PURE_DOMAIN_RE, Rule, _option_start
+from .rules import (
+    _ELEMENT_SEP_RE,
+    _PURE_DOMAIN_RE,
+    Rule,
+    _option_start,
+    _split_options,
+)
 
 LOG = logging.getLogger("adblock_collection")
 
@@ -255,26 +261,44 @@ def dedupe(rules: Iterable[Rule]) -> list[Rule]:
     return [seen[k] for k in order]
 
 
+def _badfilter_target(norm: str) -> str | None:
+    """从 badfilter 规则的规范化键还原其要抵消的目标键。
+
+    规范化键形如 ``prefix$opt1,opt2``（选项已排序）。需按 ``_split_options`` 切分，
+    避免取值内逗号被误拆；去掉 badfilter 后若已无其它选项，需连同 ``$`` 一起丢弃，
+    才能匹配无选项规则 ``prefix``（如 ``||ads.com^$badfilter`` 抵消 ``||ads.com^``）。
+    """
+    idx = _option_start(norm)
+    if idx is None:
+        return None
+    parts = [
+        p
+        for p in _split_options(norm[idx + 1 :])
+        if p.lstrip("~").split("=", 1)[0].strip().lower() != "badfilter"
+    ]
+    if not parts:
+        return norm[:idx]
+    return norm[:idx] + "$" + ",".join(parts)
+
+
 def apply_badfilter(rules: Iterable[Rule]) -> list[Rule]:
     """移除被 badfilter 标记抵消的规则。
 
     badfilter 规则格式为与目标规则完全相同但追加了 ,badfilter 选项，
     用于让订阅者停用上游某条规则。
     """
-    badfilters: set[str] = set()
-    for r in rules:
-        if r.is_badfilter:
-            # 选项已按字母排序，badfilter 可能位于开头或结尾，去掉该 token 即可还原目标键
-            target = r.norm.replace(",badfilter", "").replace("badfilter,", "")
-            if target.endswith("$badfilter"):
-                target = target[: -len("badfilter")]
-            badfilters.add(target)
+    rule_list = list(rules)
+    badfilters: set[str] = {
+        target
+        for r in rule_list
+        if r.is_badfilter and (target := _badfilter_target(r.norm))
+    }
 
     if not badfilters:
-        return list(rules)
+        return rule_list
     kept: list[Rule] = []
     removed = 0
-    for r in rules:
+    for r in rule_list:
         if r.is_badfilter:
             removed += 1
             continue

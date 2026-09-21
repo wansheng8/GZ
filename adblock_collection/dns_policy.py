@@ -8,10 +8,11 @@ hosts / domains 文件。目的是在「宁愿少拦截、不要误拦截」原�
 分级依据（参考 Adblock 语义）：
 
 - REJECT  : CSS 元素隐藏、脚本注入、正则、重定向、含路径的网络规则，
-            以及带动作/修饰选项（$csp/$removeparam/$replace…）、作用域限定选项
-            （$domain/$from/$to/$denyallow/$ipaddress/$method）、资源类型选项
-            （$script/$image/$websocket/$fetch…）或第一/第三方限定（$third-party）
-            的规则。DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
+            以及带动作/修饰选项（$csp/$removeparam/$replace/$empty…）、作用域限定选项
+            （$domain/$from/$to/$denyallow/$ipaddress/$method/$app/$dnstype）、匹配方式
+            限定（$cname）、资源类型选项（$script/$image/$websocket/$fetch…）或
+            第一/第三方限定（$third-party）的规则，取反形式（$~script/$~third-party）
+            同理。DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
 - SAFE    : 纯域名网络规则（||ads.example.com^），整域拦截语义等价，confidence=1.0。
             仅带「整域语义」修饰（$all/$important/$match-case，不限定类型与作用域）
             的规则语义等价于纯域名，同样归为 SAFE。仅带导航/弹窗修饰
@@ -68,7 +69,9 @@ NON_BLOCKING_MODIFIERS = frozenset(
         "removeheader",
         "addheader",
         "urltransform",
+        "uritransform",
         "urlskip",
+        "empty",
         "generichide",
         "specifichide",
         "elemhide",
@@ -88,16 +91,28 @@ NON_BLOCKING_MODIFIERS = frozenset(
 # 因而可归入 SAFE 而不是被当成作用域受限的 CONDITIONAL 丢弃。
 WHOLE_DOMAIN_MODIFIERS = frozenset({"all", "important", "match-case"})
 
-# 导航/弹窗语义修饰：$popup 拦截弹窗，$doc/$document 拦截页面加载。二者都只针对
-# 「打开页面」这一动作，常见于广告与跳转域；DNS 无法区分请求类型，把这类单域名
-# 规则按整域拦截处理，属于用户确认后的放宽策略。与其它类型/作用域选项混用时不算。
-NAVIGATION_DOMAIN_MODIFIERS = frozenset({"popup", "doc", "document"})
+# 导航/弹窗语义修饰：$popup 拦截弹窗，$doc/$document 拦截页面加载，$popunder 为
+# AdGuard 同义的旧写法。它们都只针对「打开页面」这一动作，常见于广告与跳转域；
+# DNS 无法区分请求类型，把这类单域名规则按整域拦截处理，属于用户确认后的放宽策略。
+# 与其它类型/作用域选项混用时不算。
+NAVIGATION_DOMAIN_MODIFIERS = frozenset(
+    {"popup", "popunder", "doc", "document"}
+)
 
 _OPTION_RE = re.compile(r"\$([^$]*)$")
 
+# 元数据/注解类选项：仅标注规则来源或拦截原因，不改变匹配与拦截语义，分类时忽略。
+# 例如 `||x^$all,reason=malicious` 语义等同于 `||x^$all`。
+METADATA_OPTIONS = frozenset({"reason"})
+
+# 正则 / 重定向类选项：规则无法翻译为域名语义，硬拒绝。
+_REGEX_REDIRECT_MODIFIERS = frozenset(
+    {"regexp", "redirect", "redirect-rule", "rewrite"}
+)
+
 # 作用域限定选项：DNS 只能按整域拦截，无法表达「仅在某来源站点 / 某目标域名 /
-# 某 IP / 某请求方法下生效」。带这些选项的规则一旦升级为 DNS 拦截，会波及作用域
-# 之外的全部正常流量，属于误拦截，因此必须硬拒绝（而不只是降为 CONDITIONAL）。
+# 某 IP / 某请求方法 / 某 App / 某 DNS 记录类型下生效」。带这些选项的规则一旦升级
+# 为 DNS 拦截，会波及作用域之外的全部正常流量，属于误拦截，因此必须硬拒绝。
 SCOPED_MODIFIERS = frozenset(
     {
         "domain",
@@ -106,8 +121,14 @@ SCOPED_MODIFIERS = frozenset(
         "denyallow",
         "ipaddress",
         "method",
+        "app",
+        "dnstype",
     }
 )
+
+# 匹配方式限定选项：$cname 依据 CNAME 链而非请求 URL 匹配目标，与整域拦截语义不
+# 等价（同一 IP/域名的正常流量会被误伤），硬拒绝。
+MATCH_METHOD_MODIFIERS = frozenset({"cname"})
 
 # 资源类型选项：限定规则只对某类请求生效（$script / $image / $websocket / $fetch …）。
 # DNS 只能整域拦截，无法区分请求类型，升级会波及同域下的其它正常请求，属于误拦截，
@@ -172,24 +193,31 @@ def classify_dns(rule: Rule) -> DnsVerdict:
     if rule.kind != "network":
         return DnsVerdict(DNS_REJECT, CONF_REJECT, "non_network_rule")
 
-    # 正则 / 重定向类规则无法转 DNS（白名单例外也转不出域名语义）
-    if rule.options:
-        if any(
-            k in rule.options
-            for k in ("regexp", "redirect", "redirect-rule", "rewrite")
-        ):
+    # 选项名统一去掉取反前缀并忽略纯注解（$reason=）后再比对：$~third-party /
+    # $~script 这类「排除某类型」同样限定了作用范围，不能当作未知修饰而放宽。
+    sem = {
+        k.lstrip("~").lower()
+        for k in rule.options
+        if k.lstrip("~").lower() not in METADATA_OPTIONS
+    }
+    if sem:
+        # 正则 / 重定向类规则无法转 DNS（白名单例外也转不出域名语义）
+        if sem & _REGEX_REDIRECT_MODIFIERS:
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "regex_or_redirect_rule")
         # 动作/修饰型选项不阻断域名，禁止升级为整域拦截
-        if any(k in rule.options for k in NON_BLOCKING_MODIFIERS):
+        if sem & NON_BLOCKING_MODIFIERS:
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "non_blocking_modifier")
         # 作用域限定选项无法在 DNS 层表达，禁止升级为整域拦截
-        if any(k in rule.options for k in SCOPED_MODIFIERS):
+        if sem & SCOPED_MODIFIERS:
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "scoped_modifier")
+        # 匹配方式限定选项（$cname）无法在 DNS 层表达，硬拒绝
+        if sem & MATCH_METHOD_MODIFIERS:
+            return DnsVerdict(DNS_REJECT, CONF_REJECT, "match_method_modifier")
         # 资源类型限定选项（$script/$websocket/$fetch…）无法在 DNS 层表达，硬拒绝
-        if any(k in rule.options for k in RESOURCE_TYPE_MODIFIERS):
+        if sem & RESOURCE_TYPE_MODIFIERS:
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "resource_type_modifier")
         # 第一/第三方限定选项无法在 DNS 层表达，硬拒绝
-        if any(k in rule.options for k in PARTY_MODIFIERS):
+        if sem & PARTY_MODIFIERS:
             return DnsVerdict(DNS_REJECT, CONF_REJECT, "party_modifier")
 
     # 含路径的网络规则：DNS 只能看到域名，整域拦截会误伤，拒绝
@@ -204,21 +232,26 @@ def classify_dns(rule: Rule) -> DnsVerdict:
         return DnsVerdict(DNS_SAFE, CONF_PURE_DOMAIN, "pure_domain")
 
     # 仅带整域语义修饰（$all/$important/$match-case）的纯域名规则
-    if rule.options and set(rule.options) <= WHOLE_DOMAIN_MODIFIERS:
+    if sem and sem <= WHOLE_DOMAIN_MODIFIERS:
         if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
             return DnsVerdict(DNS_SAFE, CONF_PURE_DOMAIN, "pure_domain_modifier")
 
-    # 仅带导航/弹窗修饰（$popup/$doc/$document）的纯域名规则：用户确认放宽，
+    # 仅带注解选项（$reason=…）的纯域名规则：注解不改变拦截语义
+    if rule.options and not sem:
+        if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
+            return DnsVerdict(DNS_SAFE, CONF_PURE_DOMAIN, "pure_domain_modifier")
+
+    # 仅带导航/弹窗修饰（$popup/$popunder/$doc/$document）的纯域名规则：用户确认放宽，
     # 按整域拦截输出；置信度略低，strict-safe 档仍会排除。
-    if rule.options and set(rule.options) <= NAVIGATION_DOMAIN_MODIFIERS:
+    if sem and sem <= NAVIGATION_DOMAIN_MODIFIERS:
         if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
             return DnsVerdict(
                 DNS_SAFE, CONF_DOMAIN_MODIFIER, "navigation_domain_modifier"
             )
 
-    # 带修饰符的单域名规则（如 $third-party）：作用域受限，保守处理。
-    # 仅当模式仍是纯域名时才可进入 CONDITIONAL；带通配/查询串等模式限定
-    # （如 ||bet365.com^*affiliate=$popup）不构成整域语义，仍按不可翻译拒绝。
+    # 带未识别修饰符的单域名规则：保守回退到 CONDITIONAL，是否进入 DNS 由策略决定。
+    # 仅当模式仍是纯域名时才可进入；带通配/查询串等模式限定（如
+    # ||bet365.com^*affiliate=$popup）不构成整域语义，仍按不可翻译拒绝。
     if rule.domains and len(rule.domains) == 1 and rule.options:
         if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
             return DnsVerdict(DNS_CONDITIONAL, CONF_DOMAIN_MODIFIER, "domain_modifier")
