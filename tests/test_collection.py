@@ -849,6 +849,15 @@ def test_cosmetic_rule_dollar_not_parsed_as_options():
     assert js.options == {}
 
 
+def test_cosmetic_rule_norm_not_mangled_by_dollar():
+    # 不同规则不得因 $ 被当作选项重排而折叠成同一去重键
+    spaced = parse_line("example.com#$#abort-current-inline-script $ popup")
+    joined = parse_line("example.com#$#abort-current-inline-script $popup")
+    assert spaced.norm != joined.norm
+    assert "$ popup" in spaced.norm
+    assert spaced.norm == spaced.raw
+
+
 def test_policy_all_rejects_modifier():
     # 未知修饰符是 CONDITIONAL 回退档：all 档拒绝、safe 档接受
     r = parse_line("||example.com^$some-unknown-opt")

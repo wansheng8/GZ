@@ -454,17 +454,25 @@ def classify_per_rule(rules: Iterable[Rule]) -> list[Rule]:
     return out
 
 
-def _normalize(raw: str) -> str:
-    """生成去重键：折叠空白、统一选项顺序、剔除无关空白。"""
+def _normalize(raw: str, kind: str | None = None) -> str:
+    """生成去重键：折叠空白、统一选项顺序、剔除无关空白。
+
+    仅网络规则存在真正的 ``$options`` 段；元素/脚本规则里的 ``$`` 属于选择器或脚本
+    参数（如 ``#$#abort-current-inline-script $ popup``），若按选项重排会把两条不同
+    规则折叠成同一去重键而丢规则，故这类规则只折叠空白。
+    """
     r = raw.strip()
     if not r:
         return r
-    idx = _option_start(r)
-    if idx is not None:
-        opts = _split_options(r[idx + 1 :])
-        # badfilter 单独保留其语义位置，但仍是选项之一
-        opts_sorted = ",".join(sorted(opts))
-        r = r[:idx] + "$" + opts_sorted
+    if kind is None:
+        kind = _detect_kind(r)
+    if kind == "network":
+        idx = _option_start(r)
+        if idx is not None:
+            opts = _split_options(r[idx + 1 :])
+            # badfilter 单独保留其语义位置，但仍是选项之一
+            opts_sorted = ",".join(sorted(opts))
+            r = r[:idx] + "$" + opts_sorted
     r = re.sub(r"\s+", " ", r)
     return r
 
@@ -585,7 +593,7 @@ def _parse_adblock_line(
         return None
 
     kind = _detect_kind(stripped)
-    norm = _normalize(stripped)
+    norm = _normalize(stripped, kind)
     if not norm:
         return None
 

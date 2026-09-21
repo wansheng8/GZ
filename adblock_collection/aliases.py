@@ -60,6 +60,10 @@ def _canonical_option(part: str) -> str:
 
 def _canonicalize(rule: Rule, report: AliasReport) -> Rule:
     """改写单条规则的 raw / norm / options；无别名时原样返回。"""
+    # 选项别名只适用于网络规则；元素/脚本规则里的 `$` 属于选择器或脚本参数，
+    # 若按选项改写会把脚本实参（如 `$frame` / `$doc`）替换成别名，破坏规则。
+    if rule.kind != "network":
+        return rule
     idx = _option_start(rule.raw)
     if idx is None:
         return rule

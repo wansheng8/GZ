@@ -63,6 +63,17 @@ def test_non_alias_options_untouched():
     assert report.normalized == 0
 
 
+def test_cosmetic_rule_body_not_canonicalized():
+    # 元素/脚本规则里的 $frame / $doc 是脚本实参，不得被别名改写
+    for line in (
+        "example.com#$#abort-current-inline-script $ frame",
+        "example.com##+js(set, $doc, 1)",
+    ):
+        rules, report = normalize_aliases([_rule(line)])
+        assert rules[0].raw == line, line
+        assert report.normalized == 0, line
+
+
 def test_rule_without_options_untouched():
     line = "||a.com^"
     rules, report = normalize_aliases([_rule(line)])
