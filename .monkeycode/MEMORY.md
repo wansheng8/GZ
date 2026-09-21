@@ -68,3 +68,11 @@ Entries discovered by the Agent during task execution should follow this format:
   - DNS 客户端（AdGuard Home / Pi-hole）报「0 拦截」时，先确认解析流量是否真的经过该 DNS，而不是列表问题：`nslookup doubleclick.net <DNS地址>` 应返回 `0.0.0.0`/NXDOMAIN；返回真实 IP 说明设备或浏览器走了 DoH（Chrome/系统「安全 DNS」）绕过了本地 DNS。
   - 浏览器测试站（d3ward、AdBlock Tester、CanYouBlockIt 等）大量测试项是元素隐藏/脚本/脚本注入，DNS 层天然无法拦截；用 DNS 列表去测这些站点得分低属预期，不代表列表失效。验证 DNS 是否生效应看广告网络域名（googlesyndication.com、doubleclick.net、an.yandex.ru）是否被解析拦截。
   - 订阅链接按客户端区分：浏览器用 `adblock_collection_full.txt`；DNS 用 `_dns.txt`（hosts，Pi-hole/AdGuard Home/dnsmasq）或 `_domains.txt`（纯域名，AdGuard Home/AdGuard DNS），两者内容等价、只导一个即可。
+
+[Project Knowledge Summary]
+- Date: 2026-09-21
+- Context: Discovered by Agent while performing 推送 DNS 判定修复并等待 CI 构建
+- Category: Workflow & Collaboration
+- Instructions:
+  - CI workflow（`.github/workflows/build.yml`，Build Filters）推送后约 7-8 分钟完成，成功后由 bot 自动提交 dist 产物（commit message 带 `[skip ci]`）。校验 CI 结果用 `git fetch origin && git log --oneline -2 origin/main` 看是否出现新的 `auto update filter lists` 提交，比 GitHub API 可靠（未认证 API 易触发 403 rate limit）；构建是否通过看 `dist/build_report.json` 的 `passed` 与 `metrics`。
+  - 解析/分类逻辑变更需递增 `adblock_collection/pipeline.py` 的 `PARSER_VERSION` / `CLASSIFIER_VERSION`，`.cache/parsed` 旧缓存才会失效重建。
