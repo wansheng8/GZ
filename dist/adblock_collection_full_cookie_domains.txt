@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (cookie)
-# Format: one domain per line (AdGuard DNS / AdGuard Home), total 360
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 370
 a46e0368.forwarding-request-consent.pages.dev
 acconsento.click
 acookie.alibaba.com
@@ -38,7 +38,6 @@ ccpa.sp-prod.net
 ccpaysducraonnais.fr
 cdn.cookie.pii.ai
 cdn.cookiecode.nl
-cdn.cookielaw.org
 cdn.opencmp.net
 cdn.realpeoplemedia.co.uk
 choices.consentframework.com
@@ -66,7 +65,6 @@ consent.berliner-kurier.de
 consent.boerse-online.de
 consent.canalboat.co.uk
 consent.clarosgvas.mobicare.com.br
-consent.cookiefirst.com
 consent.dadoslegais.com
 consent.dadoslegais.com.br
 consent.dermogrup.com
@@ -117,6 +115,7 @@ consentlog.cookieyes.com
 consentlogapi.cookieyes.com
 consentmanager.net
 consentrenovate.com
+consentserve.mgr.consensu.org
 consenttool.haendlerbund.de
 controlcookies.com
 cookie-accept.com
@@ -268,13 +267,16 @@ cookiesmaster.pl
 cookiespool.com
 cookiesregister.deltacommerce.com
 cookiesuit.com
+cookiesync.mparticle.com
 cookietagmanager.net
 cookietractor.com
 cookiewarden-content.teb.com.tr
 cookiewarden.teb.com.tr
 cookiewidget.eu
 cookiezilla.redsolution.ru
+dan.mgr.consensu.org
 de-gdpr-err-up.vivoglobal.com
+digitrust.mgr.consensu.org
 directory.cookieyes.com
 dormouse.consentkit.com
 dse-cookiebanner.ford.com
@@ -286,6 +288,7 @@ ecookie.nl
 editthiscookies.com
 elqfscookie.penetrator.jp
 elqfscookie.test-pe.com
+etarget.mgr.consensu.org
 eu-cookie-law.info
 eurocookie.galilcloud.wixapps.net
 falconcookie.de
@@ -307,11 +310,13 @@ gdpr.laxd.com
 gdpr.studybreakmedia.com
 gdprcdn.b-cdn.net
 gdprice.co.uk
+gemius.mgr.consensu.org
 gloomy-cookie.com
 hamster.consentkit.io
 homecookies.at
 hrabos-gdpr.aira.cz
 httjs.davidscookies.com
+inforpl.mgr.consensu.org
 jp-chase.updecookies.netau.net
 load.analytics.cookiebot.dev
 login.cookies.digital
@@ -327,6 +332,8 @@ nexus.ensighten.com
 northcookie.xyz
 notice.sp-prod.net
 odeg-matomo.cookiefy.com
+ogury.mgr.consensu.org
+optad360.mgr.consensu.org
 pcookie.aliexpress.com
 pcookie.taobao.com
 pcookie.tmall.com
@@ -340,7 +347,9 @@ recogerconsentimiento.com
 sandbox-collector-sdk.consent.in
 sandbox-collector.consent.in
 scookies-adobe.kbclease.lu
+sddan.mgr.consensu.org
 sgtm.goodbyecookies.it
+shinystat.mgr.consensu.org
 smartcookies.it
 smarteucookiebanner.upsell-apps.com
 sp-consent.schwarzwaelder-bote.de
@@ -356,6 +365,7 @@ ucookie.app
 ucookie.com.tr
 uniconsent.com
 up-cookiemon.wavecdn.net
+webads.mgr.consensu.org
 webanalytics.cookie3.co
 xinge3344.cccpan.com
 yerbalist.cookiesdispensary.com

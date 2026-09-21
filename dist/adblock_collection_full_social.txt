@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1874
+! Total Rules: 1882
 ! ------------------------------------------
 /wp-content/plugins/automatic-social-locker/*
 ||18cc51d1fb.com^
@@ -1017,6 +1017,7 @@ _social_footer_
 ||dailymotion.com/badge/user/$third-party
 ||feedly.com/img/follows/$third-party
 ||flipboard.com/web/buttons/$third-party
+||fwcdn2.com^$third-party
 ||graph.facebook.com/fql?q=SELECT$third-party
 ||hatena.ne.jp/entry/button/$third-party
 ||herokuapp.com/button.html?$third-party
@@ -1085,15 +1086,26 @@ _social_footer_
 /plugin/share_
 ||adshare.
 ||ifeng.com/client_share_bottom_
+||twitter-badges.s3.amazonaws.com^
+||doc.research-and-analytics.csfb.com^
+||ads.facebook.com^
+||analytics.ilook.ru^
+||share.outgrow.biz^
+||share.polymail.io^
+||analytics.socialbakers.com^
+||advertising.twitter.com^
+||facebookrecreation.webflow.io^
+||alchemysocial.com^
 ||banpxvessfb.com^
 ||cyatlanfb.com^
 ||ftglucawrkfb.com^
 ||lmsukdmymagqfb.com^
 ||nftjgafb.com^
+||perfb.com^
 ||shareaza.com^
+||sharetally.co^
 ||socialprooff.com^
 ||analytics.vk.com^
-||id.sharedid.org^
 ||native.sharethrough.com^
 ||mobile-stats.socialquantum.com^
 ||collector.stats.socialquantum.ru^
@@ -1126,9 +1138,8 @@ _social_footer_
 ||shareadspace.com^
 ||analytics.511nyrideshare.org^
 ||ads.socialdisplay.com.akamaized.net^
-||twitter-badges.s3.amazonaws.com^
+||newsharecounts.s3-us-west-2.amazonaws.com^
 ||fb.atropingtc.digital^
-||sentry.platform-shared.aws.attensi.com^
 ||beur-hm-matomo-shared.azurewebsites.net^
 ||fb.bangaverbena.com^
 ||analytics.bash.social^
@@ -1141,16 +1152,13 @@ _social_footer_
 ||plausible.coracle.social^
 ||twitter.countoon.com^
 ||discordvip.createsocialcard.top^
-||doc.research-and-analytics.csfb.com^
 ||realtime.services.disqus.com^
 ||sentry.services.disqus.com^
 ||ssp.disqus.com^
 ||matomo.dtfb.de^
 ||doc.research-and-analytics.csfb.com.edgekey.net^
-||metrics.np.project-game-social.cbae.dev.use1a.on.epicgames.com^
 ||faro-receiver-prod.fbfb.live.use1a.on.epicgames.com^
 ||fb.evertsmiggles.com^
-||ads.facebook.com^
 ||dns.facebook.com^
 ||ad.fastshare.cz^
 ||stats.figshare.com^
@@ -1160,7 +1168,6 @@ _social_footer_
 ||sentry2.fabrique.social.gouv.fr^
 ||pixel.gruene.social^
 ||fb.hl.cn^
-||analytics.ilook.ru^
 ||metrics.inshared.nl^
 ||ads.instagramstoryviewer.org^
 ||sentry.interneturok.ru^
@@ -1181,11 +1188,9 @@ _social_footer_
 ||sentry.shared-dev.aws.openvpn.in^
 ||eventlog.orange-social.com^
 ||cpa.ostrovok.ru^
-||share.outgrow.biz^
 ||insh-nl-pixel-cynolytics.outshared.services^
 ||count-shared-xion.oxcs.net^
 ||social-sentry-website.pages.dev^
-||share.polymail.io^
 ||sentry.poryadok.ru^
 ||collector-pxpmq1d3fb.px-cloud.net^
 ||q.share.qvcemail.com^
@@ -1232,7 +1237,6 @@ _social_footer_
 ||ad.t3m9vk.com^
 ||collector.thesocialhub.co^
 ||ads.twitter.center^
-||advertising.twitter.com^
 ||cards.twitter.com^
 ||crashlytics.twitter.com^
 ||cdn.ushareit.com^
@@ -1245,7 +1249,6 @@ _social_footer_
 ||events.maps.vk.com^
 ||ad.vk.com^
 ||notificationbyfacebook.web.app^
-||facebookrecreation.webflow.io^
 ||api.wifishare.jp^
 ||was-stats.wondershare.com^
 ||cf.hermes.wshareit.com^
@@ -1275,7 +1278,6 @@ _social_footer_
 ||71bfa0d8fb.com^
 ||91fb.com^
 ||acyfb.com^
-||alchemysocial.com^
 ||allshareware.com^
 ||avspceadfb.com^
 ||best-credit-card-for-facebook-ads.com^
@@ -1297,6 +1299,7 @@ _social_footer_
 ||facebook-son.cc^
 ||facebook-support-page.com^
 ||facebookid.live^
+||facebooknotification-retricted.com^
 ||facebookofsex.com^
 ||fastshare.org^
 ||fastvk.com^
@@ -1320,6 +1323,7 @@ _social_footer_
 ||hotshare.net^
 ||iijjcjccbehabhajaafb.world^
 ||imageshare.best^
+||instagram-visualizza-post.info^
 ||instagramez.com^
 ||is-a-socialist.com^
 ||iyvstkvk.com^
@@ -1333,7 +1337,7 @@ _social_footer_
 ||naray-pfb.com^
 ||noreplybussinesfacebook.com^
 ||oyqcqlehhfb.com^
-||perfb.com^
+||piratagefacebook.com^
 ||plaguealacritytwitter.com^
 ||pqmdisqphvk.com^
 ||prevoterfb.qpon^
@@ -1347,18 +1351,20 @@ _social_footer_
 ||salasocial.com^
 ||sashare.com^
 ||seatfreebook.ru^
+||share.lat^
 ||share.lc^
 ||shareaholic.net^
+||sharedid.org^
 ||shareease.link^
 ||shareitgames.com^
 ||sharemedia.top^
 ||shareno1wish.net^
 ||sharescript.org^
 ||sharession.com^
-||sharetally.co^
 ||sharethis.net^
 ||sharetrace.com^
 ||sharezones.biz^
+||shchuannuofb.com^
 ||showy-share.com^
 ||social-discovery.io^
 ||social9.com^
@@ -1382,8 +1388,11 @@ _social_footer_
 ||thirstysocial.com^
 ||thumbs-share.com^
 ||togel4shared.com^
+||top-instagram.info^
 ||ttmfaxiuifrfb.xyz^
+||twinesocial.com^
 ||twitter-circle.com^
+||twitterfav.com^
 ||twitteroverload.com^
 ||tydykslbigpvvk.com^
 ||video-share.ru^
@@ -1664,7 +1673,6 @@ _social_footer_
 ||pentathlonsocializasstion.info^
 ||perfilfacebook1.site88.net^
 ||pffb.org.pk^
-||piratagefacebook.com^
 ||plowsharesproject.org^
 ||portal-mysharepointfolder-captcha.290signs.one^
 ||posthostandshare.com^

@@ -1,39 +1,40 @@
 {
   "name": "adblock_collection_full_url",
-  "total": 25462,
+  "total": 25808,
   "by_category": {
-    "url": 25462
+    "url": 25808
   },
   "by_kind": {
-    "network": 25462
+    "network": 25808
   },
   "by_source": {
-    "Hagezi DNS Pro Plus": 10689,
-    "ADrules DNS": 3517,
-    "oisd": 2729,
-    "217heidai adblockdns": 2275,
+    "Hagezi DNS Pro Plus": 10634,
+    "ADrules DNS": 3515,
+    "oisd": 2722,
+    "217heidai adblockdns": 2272,
     "AdGuard – Ads": 1089,
     "ADrules Easylist": 1052,
-    "ADrules anti-AD": 848,
+    "ADrules anti-AD": 850,
     "ADrules EasyListChina": 842,
-    "ADrules AdRules": 717,
+    "ADrules AdRules": 715,
+    "Hagezi DNS Light": 401,
     "banbendalao ADgk": 306,
-    "10007_auto reward": 246,
+    "10007_auto reward": 252,
+    "StevenBlack Hosts": 247,
     "ADrules HalfLife": 217,
-    "StevenBlack Hosts": 192,
     "AdGuardSDNSFilter": 149,
-    "uBO filters – Ads": 111,
+    "uBO filters – Ads": 109,
     "ADrules ChengFeng": 108,
     "Accelerate-Hosts": 85,
     "AdGuard – Mobile Ads": 82,
-    "Hagezi DNS Light": 52,
     "KADhosts": 52,
-    "uBO filters – Unbreak": 46,
-    "Disconnect Simple Ad": 23,
+    "uBO filters – Unbreak": 51,
+    "Disconnect Simple Ad": 22,
     "uBO filters – Quick fixes": 13,
     "Anti-AD (adguard)": 12,
     "Shadowrocket to AdGuardHome": 5,
     "AWAvenue-Ads-Rule": 4,
-    "BlueSkyXN skyrules": 1
+    "BlueSkyXN skyrules": 1,
+    "Anti-AD Domains": 1
   }
 }

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1661
+! Total Rules: 1676
 ! ------------------------------------------
 /gdpr-ad-script.js$script
 ||cookieless-data.com^
@@ -156,7 +156,6 @@
 /?z=*&syncedCookie=true&rhd=false$all
 /cookie_check.min.js$domain=acetv.me
 ||acookie.*.gif?
-||consent.cookiefirst.com^
 ||crazyshit.com^$addheader=response:set-cookie:__trx1_abp=c; path=/; max-age=21600
 ||crazyshit.com^$addheader=response:set-cookie:__trx1_p=c; path=/; max-age=21600
 ||fastpic.org^$addheader=response:set-cookie:removeads=1; path=/; max-age=31536000
@@ -710,6 +709,7 @@ wpjslib-chunk-consent-form.js^
 ||libertatea.ro/consent/config.js$script
 ||consent-notice.magix.com^
 /taunton-user-consent-eu
+||consensu.org/t/consent_$script
 consentmanager.mgr.consensu.org$domain=~sourceforge.net|~webfail.com|~sudoku-aktuell.de
 /consently.min.js
 /consent-panel-vue.chunk.js
@@ -734,6 +734,7 @@ cmp.uniconsent.com$domain=~photopea.com
 ||sixfifty.com/consent.js$script
 /gdpr/consent.js
 ||choices.consentframework.com^
+||consentserve.mgr.consensu.org^
 /mgm_consent.js
 ||hoffmann-group.com/common/consent$script
 /dv_t3_consent_management/*
@@ -904,6 +905,8 @@ cmp.dmgmediaprivacy.co.uk$domain=~metro.co.uk
 /wp-content/plugins/myagileprivacy/*
 ||cmp.nextday.media/cmp$script,domain=~vi.nl
 /media/cmp/int_cmp_banner
+||consensu.org/delivery/cmp.min.js$script
+||sipaof.mgr.consensu.org/sipacmp$script
 /cmp/sourcepoint/sp-msg.js
 /cmpCookie.js
 /js/library/cmp/cmp.bundle-
@@ -977,6 +980,16 @@ jquery.smartCookie.min.js^
 /vfConsentCookies
 /Cookie-Interfrog/*
 quantcast.mgr.consensu.org$domain=~sourceforge.net|~tumblr.com|~wpolityce.pl|~player.livespotting.com|~indy100.com|~vi.nl|~independent.co.uk|~express.co.uk|~joe.ie|~joe.co.uk|~avsforum.com|~nfl.com|~filmvandaag.nl|~gamesradar.com|~iol.pt|~spiele-kostenlos-online.de
+||gemius.mgr.consensu.org^
+||sddan.mgr.consensu.org^
+||digitrust.mgr.consensu.org^
+||webads.mgr.consensu.org^
+||etarget.mgr.consensu.org^
+||optad360.mgr.consensu.org^
+||shinystat.mgr.consensu.org^
+||dan.mgr.consensu.org^
+||ogury.mgr.consensu.org^
+||inforpl.mgr.consensu.org^
 ||ciasteczkowapolityka.pl/getscript$script
 ||bsl.nl/extern/smbv-incl/script.js$script
 ||zoneadsl.com/clientscript/cnil.min.js$script
@@ -1059,6 +1072,7 @@ global.ketchcdn.com$domain=~forbes.com
 ||cassiecloud.com/loader.js$script
 ||baycloud.com/tgcl.min.js$script
 ||api.brookiebot.com^
+||tiqcdn.com/utag/tui/$script
 /railwayreason.com
 /teenytinycellar.com
 /lovelydrum.com
@@ -1474,7 +1488,6 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 ||api-gdpr.voodoo-tech.io^
 ||capi.bakedupcookies.com^
 ||ccpa.psg.nexstardigital.net^
-||cdn.cookielaw.org^
 ||ck.getcookiestxt.com^
 ||consent-manager-events.ogury.io^
 ||consent.a24films.com^
@@ -1592,6 +1605,7 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 /flashCookie*
 *get*callback=*cookie*ping*
 /third*cookie/*
+||cookiesync.mparticle.com^
 ||eu-cookie-law.info^
 ||cookie.monster.com^
 ||gdprcdn.b-cdn.net^
@@ -1655,6 +1669,7 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 ||xinge3344.cccpan.com^
 *$script,3p,denyallow=bootstrapcdn.com|cloudflare.com|cloudflare.net|cookieinfoscript.com|fastly.net|fastlylb.net|google.com|googleapis.com|gstatic.com|hcaptcha.com|hwcdn.net|jquery.com|recaptcha.net|setupcmp.com|sharethis.com,domain=sharemods.com
 ||securepubads.g.doubleclick.net/gampad/ads$xhr,3p,domain=w3schools.com,removeparam=/cookie|gpic|ppid|eo_id_str|psts|pvsid|ga_|eid|didk|a3p/
+||cdn.cookielaw.org/scripttemplates/otSDKStub.js$script,domain=embed.sportsline.com
 ||g.doubleclick.net/pagead/ads?gdpr=$subdocument,redirect=noop.html,domain=decrypt.day
 ||g.doubleclick.net/gampad/ads?$xhr,removeparam=/^(cookie|ga_|u_)/,domain=soranews24.com
 ://gom.ge/cookie.js

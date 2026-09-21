@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (0.0.0.0 domain), total 1222
+# Format: hosts (0.0.0.0 domain), total 1229
 0.0.0.0 01.sharedsource.org
 0.0.0.0 01free-share.com
 0.0.0.0 03.sharedsource.org
@@ -110,6 +110,7 @@
 0.0.0.0 analytics.ilook.ru
 0.0.0.0 analytics.onlyshare.io
 0.0.0.0 analytics.social.unity.com
+0.0.0.0 analytics.socialbakers.com
 0.0.0.0 analytics.socialbeat.io
 0.0.0.0 analytics.socialde.pt
 0.0.0.0 analytics.socialized.at
@@ -376,6 +377,7 @@
 0.0.0.0 facebookloginsignin.com
 0.0.0.0 facebookma.cn
 0.0.0.0 facebookmetapagelogin.weebly.com
+0.0.0.0 facebooknotification-retricted.com
 0.0.0.0 facebooknotify-noreply.com
 0.0.0.0 facebookofsex.com
 0.0.0.0 facebookpage-noreplycenter.com
@@ -508,7 +510,6 @@
 0.0.0.0 i1.services.social.microsoft.com
 0.0.0.0 i1.services.social.microsoft.com.nsatc.net
 0.0.0.0 ianyshare.xyz
-0.0.0.0 id.sharedid.org
 0.0.0.0 idolized-share.pro
 0.0.0.0 iijjcjccbehabhajaafb.world
 0.0.0.0 imageshare.best
@@ -529,6 +530,7 @@
 0.0.0.0 instagram-uson.vercel.app
 0.0.0.0 instagram-verification.com
 0.0.0.0 instagram-viperesport.4dq.com
+0.0.0.0 instagram-visualizza-post.info
 0.0.0.0 instagram.astv.ru
 0.0.0.0 instagram.com.account.login.security.yesil.xyz
 0.0.0.0 instagram.irancell-10g-free.rf.gd
@@ -654,7 +656,6 @@
 0.0.0.0 meta-ads-manager-facebook-support-business-id100019655719.vercel.app
 0.0.0.0 meta-ads-manager-facebook-support-business-id200056679982.vercel.app
 0.0.0.0 metrics.inshared.nl
-0.0.0.0 metrics.np.project-game-social.cbae.dev.use1a.on.epicgames.com
 0.0.0.0 metrics.semanadpesocial.com.br
 0.0.0.0 metrics.socialcatfish.com
 0.0.0.0 metrics.timeshares.com
@@ -686,6 +687,7 @@
 0.0.0.0 nbkxkthwjeefb.site
 0.0.0.0 new-sh-3.newshared-access.workers.dev
 0.0.0.0 newsharecounts.com
+0.0.0.0 newsharecounts.s3-us-west-2.amazonaws.com
 0.0.0.0 newshared.com
 0.0.0.0 nftjgafb.com
 0.0.0.0 njgxjzvgsrzfb.website
@@ -820,7 +822,6 @@
 0.0.0.0 sentry.fabrique.social.gouv.fr
 0.0.0.0 sentry.interneturok.ru
 0.0.0.0 sentry.mvk.com
-0.0.0.0 sentry.platform-shared.aws.attensi.com
 0.0.0.0 sentry.poryadok.ru
 0.0.0.0 sentry.services.disqus.com
 0.0.0.0 sentry.shared-dev.aws.openvpn.in
@@ -858,6 +859,7 @@
 0.0.0.0 share.gzdsw.com
 0.0.0.0 share.itraffic.su
 0.0.0.0 share.kz
+0.0.0.0 share.lat
 0.0.0.0 share.lc
 0.0.0.0 share.notizie.it
 0.0.0.0 share.outgrow.biz
@@ -887,6 +889,7 @@
 0.0.0.0 shareddocs.net
 0.0.0.0 sharedez.com
 0.0.0.0 sharedfax815201376.wordpress.com
+0.0.0.0 sharedid.org
 0.0.0.0 sharedlogion.cyou
 0.0.0.0 sharedmovies.com
 0.0.0.0 sharedrop.io
@@ -948,6 +951,7 @@
 0.0.0.0 sharezones.biz
 0.0.0.0 sharing.clrshare.store
 0.0.0.0 sharp-shares.com
+0.0.0.0 shchuannuofb.com
 0.0.0.0 shining-shares.com
 0.0.0.0 short-share.com
 0.0.0.0 shortfb.com
@@ -1118,6 +1122,7 @@
 0.0.0.0 tongdaifacebook.online
 0.0.0.0 toolfb.com
 0.0.0.0 toolshare.com.tr
+0.0.0.0 top-instagram.info
 0.0.0.0 tqbfb.com
 0.0.0.0 tqzofb.polus-mind.jp
 0.0.0.0 tr.facebook.com
@@ -1128,6 +1133,7 @@
 0.0.0.0 turnsocial.com
 0.0.0.0 turnstilesocially.com
 0.0.0.0 tutmenafb.qpon
+0.0.0.0 twinesocial.com
 0.0.0.0 twitter-badges.s3.amazonaws.com
 0.0.0.0 twitter-circle.com
 0.0.0.0 twitter-x-analytics.streamlit.app
@@ -1137,6 +1143,7 @@
 0.0.0.0 twitter20.com
 0.0.0.0 twitterchest.com
 0.0.0.0 twittercounter.com
+0.0.0.0 twitterfav.com
 0.0.0.0 twitterfollowers.site
 0.0.0.0 twittermoms.s3.amazonaws.com
 0.0.0.0 twitteroverload.com

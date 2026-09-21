@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 152250
+! Total Rules: 152249
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -132749,9 +132749,6 @@ bmcservers.com##.block-sticky-bar__element
 bmcservers.com##.transition--root-hidden
 bbato.com##.pages > .notice-page
 filespayouts.com##a.zb
-football.london##div[class^="Header_mastheadwebstrip-container"]
-football.london##div[data-testid^="ncu-within-group-"]
-football.london##div[data-testid^="ncu-within-group-"]:remove()
 mangabats.com,mangakakalot.gg,mangakakalove.com,manganato.gg,natomanga.com,nelomanga.net##div[data-banner-ai-init]
 mangabats.com,mangakakalot.gg,mangakakalove.com,manganato.gg,natomanga.com,nelomanga.net##a[href^="https://bit.ly/"]
 mid-day.com##div[class^="top-"][class*="-add"]
@@ -132873,10 +132870,6 @@ www.google.com###center_col > #gevUs > #topstuff:has(> div[class] > div[class] >
 pv-magazine.com##.advert-block__container
 kotaku.com##.bluesky-embed
 pokde.net##.ai-dynamic > a[href^="https://my.asus.click/"]
-ok.co.uk##div[data-tmdatatrack-type="commercial"]
-ok.co.uk##div[class*="BoxStyles_commercial__"]
-ok.co.uk##header[class^="Header_header__"]:style(top: 0 !important;)
-ok.co.uk##div[data-testid="commercial-label-gpt"]
 okmagazine.com##div[class^="sc-"]:has(> div.lngtd_dynamic_leaderboard)
 soonersports.com###headerAdWrapper
 the-race.com##.tr-header-side-ad
@@ -134220,7 +134213,6 @@ beincrypto.com##.before-author-block-bio:contains(Реклама)
 ryuugames.com##div:not([id]):has(> center > a[href^="https://lkfjoiers.cfd/"])
 movieparadise.*##.module_home_rg
 movieparadise.*###text-3:has(a[href*="rapidgator-premium"])
-devonlive.com##header:style(top: 0 !important;)
 allout-gaming.com##header:style(top: 0px !important;)
 kare11.com##.grid__cell:not(:has(> .grid__module[data-analytics-name])):has(> .grid__module > .grid__module-sizer_name_ad)
 oppai.stream##.rm-c
@@ -134298,9 +134290,6 @@ free-proxy-list.net##.alert-fpl:has(> a:not([href^="https://free-proxy-list.net/
 lbc.co.uk##.dac__mpu-card
 embedsports.me##.bg-dark.position-absolute
 nu-bay.com##div[class^="sp_block_300-"]
-examinerlive.co.uk,dailyrecord.co.uk##.sticky ~ header:style(top: 0 !important;)
-examinerlive.co.uk##div[data-tmdatatrack-id="placeholder"]
-examinerlive.co.uk##div[data-tmdatatrack-type="commercial"][data-tmdatatrack-id="gpt"]
 investorgain.com###footer > .row.ch-main:has(table.table-borderless > tbody > tr > td > div[id^="div-gpt-ad"])
 liveworksheets.com##.video-ad-desktop
 fappis.com##.simg
@@ -145389,6 +145378,16 @@ circleofcricket.com###myModal:style(display: none !important;)
 circleofcricket.com##div.container-full.add:has(> a[href]:first-child)
 financeguidz.com,srnky.com,clksz.com##+js(no-window-open-if)
 srnky.com,clksz.com,payskip.org,oii.la,tpi.li,tvi.la,oei.la,tii.la,cutw.in##.box-main > a[target="_blank"] > img
+football.london##div[class^="Header_mastheadwebstrip-container"]
+football.london##div[data-testid^="ncu-within-group-"]
+football.london##div[data-testid^="ncu-within-group-"]:remove()
+examinerlive.co.uk,dailyrecord.co.uk##.sticky ~ header:style(top: 0 !important;)
+devonlive.com##header:style(top: 0 !important;)
+ok.co.uk##div[class*="BoxStyles_commercial__"]
+ok.co.uk##header[class^="Header_header__"]:style(top: 0 !important;)
+ok.co.uk,cheshire-live.co.uk##div[data-testid="commercial-label-gpt"]
+examinerlive.co.uk,lancs.live,examinerlive.co.uk,devonlive.com,allout-gaming.com,themirror.com,ok.co.uk,football.london##div[data-tmdatatrack-type="commercial"]
+dailyrecord.co.uk,football.london,devonlive.com,allout-gaming.com,themirror.com,gloucestershirelive.co.uk,rsvplive.ie,lancs.live,dailystar.co.uk,birminghammail.co.uk,mirror.co.uk,manchestereveningnews.co.uk,liverpoolecho.co.uk##div[data-testid^="commercial-"]
 mxdrop.top,miixdrop.top,miiixdrop.net,miiixdrop.com,miixdrop.net,vinovo.to,xpornium.net,mdy48tn97.com##+js(no-window-open-if)
 chatgpt.com##.wm-app-threadContent aside[aria-label^="Sponsored"]
 chatgpt.com##div[data-testid] div[class^="max-"] > div[data-testid="image-card-v2"]:has(button[aria-label="Sponsored options"])

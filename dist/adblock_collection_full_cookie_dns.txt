@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (cookie)
-# Format: hosts (0.0.0.0 domain), total 360
+# Format: hosts (0.0.0.0 domain), total 370
 0.0.0.0 a46e0368.forwarding-request-consent.pages.dev
 0.0.0.0 acconsento.click
 0.0.0.0 acookie.alibaba.com
@@ -38,7 +38,6 @@
 0.0.0.0 ccpaysducraonnais.fr
 0.0.0.0 cdn.cookie.pii.ai
 0.0.0.0 cdn.cookiecode.nl
-0.0.0.0 cdn.cookielaw.org
 0.0.0.0 cdn.opencmp.net
 0.0.0.0 cdn.realpeoplemedia.co.uk
 0.0.0.0 choices.consentframework.com
@@ -66,7 +65,6 @@
 0.0.0.0 consent.boerse-online.de
 0.0.0.0 consent.canalboat.co.uk
 0.0.0.0 consent.clarosgvas.mobicare.com.br
-0.0.0.0 consent.cookiefirst.com
 0.0.0.0 consent.dadoslegais.com
 0.0.0.0 consent.dadoslegais.com.br
 0.0.0.0 consent.dermogrup.com
@@ -117,6 +115,7 @@
 0.0.0.0 consentlogapi.cookieyes.com
 0.0.0.0 consentmanager.net
 0.0.0.0 consentrenovate.com
+0.0.0.0 consentserve.mgr.consensu.org
 0.0.0.0 consenttool.haendlerbund.de
 0.0.0.0 controlcookies.com
 0.0.0.0 cookie-accept.com
@@ -268,13 +267,16 @@
 0.0.0.0 cookiespool.com
 0.0.0.0 cookiesregister.deltacommerce.com
 0.0.0.0 cookiesuit.com
+0.0.0.0 cookiesync.mparticle.com
 0.0.0.0 cookietagmanager.net
 0.0.0.0 cookietractor.com
 0.0.0.0 cookiewarden-content.teb.com.tr
 0.0.0.0 cookiewarden.teb.com.tr
 0.0.0.0 cookiewidget.eu
 0.0.0.0 cookiezilla.redsolution.ru
+0.0.0.0 dan.mgr.consensu.org
 0.0.0.0 de-gdpr-err-up.vivoglobal.com
+0.0.0.0 digitrust.mgr.consensu.org
 0.0.0.0 directory.cookieyes.com
 0.0.0.0 dormouse.consentkit.com
 0.0.0.0 dse-cookiebanner.ford.com
@@ -286,6 +288,7 @@
 0.0.0.0 editthiscookies.com
 0.0.0.0 elqfscookie.penetrator.jp
 0.0.0.0 elqfscookie.test-pe.com
+0.0.0.0 etarget.mgr.consensu.org
 0.0.0.0 eu-cookie-law.info
 0.0.0.0 eurocookie.galilcloud.wixapps.net
 0.0.0.0 falconcookie.de
@@ -307,11 +310,13 @@
 0.0.0.0 gdpr.studybreakmedia.com
 0.0.0.0 gdprcdn.b-cdn.net
 0.0.0.0 gdprice.co.uk
+0.0.0.0 gemius.mgr.consensu.org
 0.0.0.0 gloomy-cookie.com
 0.0.0.0 hamster.consentkit.io
 0.0.0.0 homecookies.at
 0.0.0.0 hrabos-gdpr.aira.cz
 0.0.0.0 httjs.davidscookies.com
+0.0.0.0 inforpl.mgr.consensu.org
 0.0.0.0 jp-chase.updecookies.netau.net
 0.0.0.0 load.analytics.cookiebot.dev
 0.0.0.0 login.cookies.digital
@@ -327,6 +332,8 @@
 0.0.0.0 northcookie.xyz
 0.0.0.0 notice.sp-prod.net
 0.0.0.0 odeg-matomo.cookiefy.com
+0.0.0.0 ogury.mgr.consensu.org
+0.0.0.0 optad360.mgr.consensu.org
 0.0.0.0 pcookie.aliexpress.com
 0.0.0.0 pcookie.taobao.com
 0.0.0.0 pcookie.tmall.com
@@ -340,7 +347,9 @@
 0.0.0.0 sandbox-collector-sdk.consent.in
 0.0.0.0 sandbox-collector.consent.in
 0.0.0.0 scookies-adobe.kbclease.lu
+0.0.0.0 sddan.mgr.consensu.org
 0.0.0.0 sgtm.goodbyecookies.it
+0.0.0.0 shinystat.mgr.consensu.org
 0.0.0.0 smartcookies.it
 0.0.0.0 smarteucookiebanner.upsell-apps.com
 0.0.0.0 sp-consent.schwarzwaelder-bote.de
@@ -356,6 +365,7 @@
 0.0.0.0 ucookie.com.tr
 0.0.0.0 uniconsent.com
 0.0.0.0 up-cookiemon.wavecdn.net
+0.0.0.0 webads.mgr.consensu.org
 0.0.0.0 webanalytics.cookie3.co
 0.0.0.0 xinge3344.cccpan.com
 0.0.0.0 yerbalist.cookiesdispensary.com

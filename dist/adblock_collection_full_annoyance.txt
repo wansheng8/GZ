@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3587
+! Total Rules: 3597
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -234,10 +234,12 @@
 ||di7stero.com^$popup
 ||dyptanaza.com^$popup
 ||encouragedmemistress.com^$popup
+||exoclick.com^$popup
 ||fenacheaverage.com^$popup
 ||gamdom.com/?utm_source=$popup
 ||go-to-website.com^$popup
 ||greewepi.net^$popup
+||linksprf.com^$popup
 ||nabauxou.net^$popup
 ||nereu-gdr.com^$popup
 ||opera.com^*admaven$popup
@@ -247,6 +249,7 @@
 ||s.id^$popup
 ||shuffle.com/*&clickID=$popup
 ||telyn610zoanthropy.com^$popup
+||totaladblock.com^$popup
 ||viapawniarda.com^$popup
 ||wargaming-aff.com^$popup
 ||wizslots.com*&utm_campaign=$popup
@@ -397,7 +400,6 @@
 ||lbank.com/partner_seo/$popup
 ||link.365av.net^$popup
 ||promo.pixelsee.app^$popup
-||s.click.aliexpress.com/e/*?dp=$popup
 ||teenfinder.com/landing/$popup,third-party
 ||werbestandard.de/out2/$popup
 ||faptrex.com/fire/popup.js
@@ -443,7 +445,6 @@
 ||rentalcars.com/?affiliateCode=$popup,domain=seatguru.com
 ||routeumber.com^$popup,domain=hltv.org
 ||rx.link^$popup,domain=uploadgig.com
-||s.click.aliexpress.com^$popup,domain=dzapk.com|up-4ever.net
 ||sendspace.com/defaults/sendspace-pop.html$popup
 ||skycheats.com^$popup,domain=elitepvpers.com
 ||thesurferprotector.com^$popup,domain=piratebay.live
@@ -664,7 +665,6 @@ $popup,third-party,domain=76fengyun.com|avsdown.com|downdv.com|downdvs.com|downh
 ||pushcrew.com^
 ||pushdealer.com^
 ||pushe.co^
-||pushengage.com^
 ||pusherapp.com^
 ||pushible.com^
 ||pushify.com^
@@ -1001,7 +1001,6 @@ bytegoofy.com/goofy/*/push.js?
 ||widget.push.forja.ma^
 ||ws-goguardian.pusher.com^
 ||wstpush-mobile.terra.com^
-||www.popupad.net^
 ||xml-eu-v4.hillflippush.info^
 ||xml-eu.hillflippush.info^
 ||xml-v4.hillflippush.info^
@@ -1009,6 +1008,7 @@ bytegoofy.com/goofy/*/push.js?
 ||yourofficialsurveysplace.store^
 ||zealous-push.surge.sh^
 ||api.growthpush.com^
+||clients-api.pushengage.com^
 ||paas-push-api.immomo.com^
 ||push.lx.netease.com^
 ||survey.g.doubleclick.net^
@@ -1097,6 +1097,7 @@ bytegoofy.com/goofy/*/push.js?
 ||popunder.
 ||popupclick.
 ||popuptraf.
+||clientcdn.pushengage.com^
 ||sonarsurveyof.cfd^
 ||popunder.ir^
 ||popupme.net^
@@ -1162,11 +1163,18 @@ push.qq.com^
 ||torrentkitty.*/js/jquery.bpopup.
 ||api.weibo.cn/2/push/active?$replace=/(feed_redpacket|weibo_pic_banner|wbnote_infos|guest_fast_reg|loginconfig)//
 ||push.heytapmobile.com^
+||analytics-push.msccruises.com^
+||analytics.pushgrid.net^
+||app.qpointsurvey.com^
 ||aipsurveyschina.com^
+||getcashforsurveys.com^
+||popupblocker.com^
 ||ptopseempushoa.net^
 ||push-sender.com^
+||pusherism.com^
 ||wnt-some-push.net^
 ||overlay.aibuy.io^
+||anandabazar.pushengage.com^
 ||push.tf-cdn.net^
 ||popunder.fpctraffic.com^
 ||selfsurveys.com^
@@ -1355,6 +1363,7 @@ _backToTop.
 ||api.producthunt.com/widgets/$third-party
 ||api.search.live.net^$third-party,domain=~bing.com
 ||bing.com*/bootstrap.js$third-party
+||blogtopsites.com^$third-party
 ||bunnycdn.ru/assets/_bnx/
 ||cdn-1.tstatic.net/js/copy.js
 ||cdn.to2.net/sdk/$third-party
@@ -1421,6 +1430,7 @@ _backToTop.
 ||webme.com/designs/globals/snow2.js
 ||widget.gleamjs.io^$script,third-party,domain=~gleam.io
 ||widget.pico.tools^$third-party
+||wisepops.com^$third-party
 ||wishpond.com^$third-party,domain=~markanthonywineandspirits.ca
 ||wp.com/www.feedburner.com/fb/$image
 ||wvc_resources.william-reed.com/copyright/copyright_tg.js
@@ -2439,6 +2449,7 @@ page_view_count
 ||civiccomputing.com^*/cookieControl-
 ||civiccomputing.com^*=cookie$third-party
 ||cloudstorage.secureserver.net/recomm-apps-upm/
+||consensu.org/gdpr/$third-party
 ||consent.trustarc.com/get?name=$subdocument,domain=avantiwestcoast.co.uk|oracle.com
 ||consent.trustarc.com^$domain=authy.com|makerworld.com|nejm.org|pedialyte.com|sap.com|twilio.com
 ||cookie.marketing^$third-party
@@ -2456,6 +2467,7 @@ page_view_count
 ||hu-manity.co/hu-banner.min.js
 ||illow.io/public/cookies/
 ||incomaker.b-cdn.net/wpjcz.js
+||inmobi.com^$third-party
 ||jimstatic.com/ckies.js
 ||jsdelivr.net/gh/accept-all/cdn/banner-2024.js
 ||jsdelivr.net/gh/accept-all/cdn/banner.js
@@ -2465,6 +2477,7 @@ page_view_count
 ||kookiecheck.cz/static/script/
 ||lawwwing.com/widgets/$third-party
 ||live.mrf.io/statics/1w/$script,xhr
+||mgr.consensu.org/iframe.html
 ||monsido-consent.com^$third-party,domain=~vejdirektoratet.dk
 ||msoft.it/msoftcookiewarn.js
 ||o.alicdn.com/cone-group/cookie-consent-sdk/
@@ -2477,7 +2490,6 @@ page_view_count
 ||privacy.condenastdigital.com/fides.js
 ||privally.global^$third-party
 ||q4app.com/widgets/q4.cookiemonster.$script
-||quantcast.mgr.consensu.org^$third-party
 ||rndtech.de/cmp/
 ||s.yimg.com/oa/consent.js
 ||securiti.ai/consent/
@@ -2487,6 +2499,7 @@ page_view_count
 ||tarteaucitron.io/load.js
 ||thisisdone.com/gdpr/$third-party
 ||transcend.io^$third-party
+||uniconsent.mgr.consensu.org^*.cmp.js$third-party
 ||unpkg.com/cookie-though
 ||usercentrics.eu^$third-party
 ||privacy-mgmt.com^$domain=anisearch.com|anisearch.de|anisearch.es|anisearch.fr|anisearch.it|anisearch.jp|consent-manager.ft.com|economist.com|idealo.co.uk|marketwatch.com|popsci.com|startsiden.no|sussexexpress.co.uk|taz.de|wsj.com
@@ -2894,6 +2907,7 @@ page_view_count
 ||nscreenmedia.com/wp-content/uploads/subscribe-nscreen-newsletter.jpg
 ||omniform1.com^$domain=yourcelebritymagazines.com
 ||p2a.co/embed/widget/app/$domain=thefire.org
+||piano.io^$domain=artnews.com|bbc.com|bbcgoodfood.com|billboard.com|brusselstimes.com|connexionfrance.com|deadline.com|hollywoodreporter.com|nationalobserver.com|npr.org|outsideonline.com|prospectmagazine.co.uk|rawstory.com|refinery29.com|rollingstone.com|sifted.eu|stuff.co.nz|telegraph.co.uk|the42.ie|thedailybeast.com|thelogic.co|thenation.com|variety.com|wwd.com
 ||researchnews.cc/subscribe.html
 ||scmp.com/misc/inkstone_sub_widget/
 ||sibforms.com/serve/$domain=maidenhead-advertiser.co.uk|sloughexpress.co.uk
@@ -2903,8 +2917,8 @@ page_view_count
 ||tinypass.com^$domain=artnews.com|bbc.com|bbcgoodfood.com|billboard.com|brusselstimes.com|businessinsider.com.pl|connexionfrance.com|deadline.com|hollywoodreporter.com|nationalobserver.com|npr.org|outsideonline.com|prospectmagazine.co.uk|rawstory.com|refinery29.com|rollingstone.com|sifted.eu|stuff.co.nz|telegraph.co.uk|the42.ie|thedailybeast.com|thelogic.co|thenation.com|variety.com|wwd.com
 ||waterfordwhispersnews.com/wp-content/themes/therex-child/js/_newsletter-article-signup.js
 ||widgets.cpr.org/embeds/$domain=denverite.com
+||wisepops.com^$domain=grist.org|prospect.org
 follow-it-form-subscribe
-||api.pico.tools^$third-party
 ||appspot.com/newsletter/dhtml?
 ||astro-datamation.pages.dev/_astro/CardNewsletterSubscribe.$script
 ||blink.net/json/$xhr
@@ -3161,7 +3175,6 @@ follow-it-form-subscribe
 ||push.meitu.com^
 ||api-push.in.meizu.com^
 ||push.migu.cn^
-||analytics-push.msccruises.com^
 ||analytics.networksurvey.app^
 ||surveyserver.nextcloud.com^
 ||push.oppomobile.com^
@@ -3226,7 +3239,6 @@ follow-it-form-subscribe
 ||facilitiessurvey.com^
 ||fortpush.com^
 ||get-my-push.xyz^
-||getcashforsurveys.com^
 ||got-push-notify.com^
 ||grid-push.com^
 ||haiyunpush.com^
@@ -3260,8 +3272,8 @@ follow-it-form-subscribe
 ||popundertotal.com^
 ||popunderzone.com^
 ||popup.su^
+||popupad.net^
 ||popupaval.com^
-||popupblocker.com^
 ||popupchat-live.com^
 ||popuper.com^
 ||popupha.com^
@@ -3270,13 +3282,13 @@ follow-it-form-subscribe
 ||povfpushwn.com^
 ||propushka.com^
 ||push.exchange^
+||push.io^
 ||push-me-once.com^
 ||push-notifs.com^
 ||push-plus.net^
 ||push-sdk.site^
 ||push-services.com^
 ||push-webapi.site^
-||push4free.com^
 ||pusha.se^
 ||pushails.com^
 ||pushame.com^
@@ -3293,7 +3305,6 @@ follow-it-form-subscribe
 ||pushelf.info^
 ||pushere.info^
 ||pushering.info^
-||pusherism.com^
 ||pushfire.io^
 ||pushfullocks.com^
 ||pushina.info^
@@ -3375,7 +3386,6 @@ follow-it-form-subscribe
 ||2425216611652453186.xpopup.com^
 ||360popunder.com^
 ||app-log-survey.com^
-||app.qpointsurvey.com^
 ||attmanagementservicesuh.surveysparrow.com^
 ||bell.onlinesurveyblog.com^
 ||billingpaymentsubscribe.com^

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 499
+! Total Rules: 504
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -280,6 +280,7 @@ $subdocument,1p,redirect=noop.html,domain=pussyspace.com|pussyspace.net
 ||computerworld.com/*/gpt_includes.js$script,redirect-rule=googletagservices_gpt.js
 *$3p,script,redirect=noopjs,domain=lolalytics.com
 *$script,domain=abcya.com,redirect-rule=noopjs
+||clustrmaps.com^$image,redirect=32x32.png,domain=motls.blogspot.com
 */videoplayback?expire$media,redirect=noopmp3-0.1s,domain=webmd.com
 ||adtech.redventures.io/lib/*/bidbarrel-techrepublic-$script,important,redirect=noop.js,domain=techrepublic.com|zdnet.com
 ||streamtheworld.com/ondemand/creative?cat=cm-preroll$xhr,redirect=nooptext,domain=los40.com
@@ -303,6 +304,7 @@ $subdocument,1p,redirect=noop.html,domain=pussyspace.com|pussyspace.net
 ||epimg.net/t.gif$image,redirect-rule=1x1.gif,domain=as.com
 ||news38.de/resources/*$image,1p,redirect-rule=1x1.gif
 *$script,redirect-rule=noopjs,domain=animalchannel.co|homehacks.co|parentingisnteasy.co|seeitlive.co|spotlightstories.co
+||clustrmaps.com^$image,redirect-rule=1x1.gif
 ||natureetdecouvertes.com^$1p,image,redirect-rule=2x2.png
 ||sammobile.com^*/newrelic.js$script,1p,redirect=noop.js,important
 *$script,redirect-rule=noopjs,domain=sammobile.com
@@ -384,6 +386,7 @@ $~3p,xhr,script,redirect-rule=noop.txt,domain=zertalious.xyz|digworm.io
 $script,redirect-rule=noop.js,domain=zeroupload.com
 ||sellthing.co/?advertiserId=&platform=$important,redirect=noop.js,script
 $script,xhr,redirect-rule=noop.js,domain=freesolana.top
+||cxense.com/cx.$script,domain=japannews.yomiuri.co.jp,redirect=noop.js,important
 ||bluemediafile*.*/imgads/$image,redirect=1x1.gif,domain=bluemediafiles.*|bluemediafile.*|bluemediadownload.*|urlbluemedia.*|bluedownload.*
 ||redirector.gvt1.com/videoplayback/id/*/source/gfp_video_ads/$media,redirect=noop-1s.mp4,domain=poki-gdn.com|repuls.io,important
 *$xhr,3p,redirect-rule=noop.js,domain=asiaon.top,script
@@ -411,6 +414,7 @@ $script,redirect-rule=noop.js,domain=173.249.8.3
 ||vgc.no/cdn/js/libs/homad-config.json$xhr,redirect=noop.json
 ||lib.wtg-ads.com/prebid/prebid_*.js$xhr,redirect=noop.txt
 ||player.nadmorski24.pl/video_file/$media,redirect=noop-0.1s.mp3
+||smartadserver.com/config.js$script,redirect=noop.js,domain=synonimy.pl
 ||tkchopin.pl/cams/video_file/*.mp4$media,redirect=noop-1s.mp4
 ||get.optad360.io/*/plugin.min.js$script,redirect=noop.js,important,domain=legia.net
 ||lib.wtg-ads.com/lib.min.js$script,redirect=noop.js,important,domain=legia.net
@@ -419,6 +423,7 @@ $script,redirect-rule=noop.js,domain=173.249.8.3
 ||oas.wpcdn.pl/*.mp4$media,redirect=noop-1s.mp4,domain=dobreprogramy.pl|money.pl|o2.pl|pudelek.pl|wp.pl
 ||v.wpimg.pl^$media,redirect=noop-1s.mp4,domain=autocentrum.pl|autokult.pl|abczdrowie.pl|gadzetomania.pl|fotoblogia.pl|parenting.pl|komorkomania.pl|o2.pl|pudelek.pl|money.pl|wp.pl|videostar.pl|polygamia.pl|genialne.pl|pysznosci.pl
 ||mdsglvod-a.akamaihd.net/vod/2.0/progressive/*/x.mp4$redirect=noop-1s.mp4,domain=ttv.pl,media
+||smartadserver.com/ac$script,redirect=noop.js,domain=shinden.pl,important
 ||redcdn.pl/*/TVN-Adserver/*.mp4$media,redirect=noop-1s.mp4,domain=player.pl
 ||aftonbladet.ooul.tv/nocache/se-aftonbladet/aab/aftonbladet_config.js$script,redirect=noop.js,domain=aftonbladet.se
 ||schedule.hunter-news.com^$media,redirect=noop-0.1s.mp3,domain=blackboxsys.net

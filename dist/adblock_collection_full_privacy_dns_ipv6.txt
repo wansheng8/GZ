@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (privacy)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 44541
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 44595
 :: 0.myikas.com
 :: 0.net.easyjet.com
 :: 00bfd200-dpnb2uqcmx3g.edgeone.dev
@@ -229,6 +229,7 @@
 :: a.ekero.se
 :: a.electerious.com
 :: a.emea01.idio.episerver.net
+:: a.evergage.com
 :: a.fchp.org
 :: a.fox.com
 :: a.foxsports.com
@@ -2088,6 +2089,7 @@
 :: activity-flow.vtex.com
 :: activity.fiverr.com
 :: activity.newlook.com
+:: activity.wisepops.com
 :: activos.contacto.promerica.fi.cr
 :: acton.ajmfg.com
 :: acton.altep.com
@@ -2484,6 +2486,7 @@
 :: ads-trk.vidible.tv
 :: ads.17track.net
 :: ads.boardtracker.com
+:: ads.bridgetrack.com
 :: ads.bridgetrack.com.edgesuite.net
 :: ads.btrackhub.com
 :: ads.dandelionchocolate.jp
@@ -3202,6 +3205,7 @@
 :: analytics.floridatravellife.com
 :: analytics.fnbfremont.com
 :: analytics.fnni.com
+:: analytics.foodtrack.net
 :: analytics.footballdb.com
 :: analytics.formstack.com
 :: analytics.freemake.com
@@ -3290,6 +3294,7 @@
 :: analytics.livesense.marketing
 :: analytics.livestream.com
 :: analytics.loadweb.com
+:: analytics.logsss.com
 :: analytics.lombardo-geosystems.it
 :: analytics.lunaweb.cloud
 :: analytics.lunge.de
@@ -3724,6 +3729,7 @@
 :: aphxav.green-acres.it
 :: api-events.eventstracker.io
 :: api-hotmart-tracking-manager.hotmart.com
+:: api-js.mixpanel.com
 :: api-metric.gosweb.gosuslugi.ru
 :: api-ocm-de-prod-tracking.rossmann.net
 :: api-secure.carrottrack.app
@@ -4684,6 +4690,7 @@
 :: apptest.truveiculos.com
 :: apptrack.shine.com
 :: apptracker-365817445341.us-west1.run.app
+:: apptracker.jobelephant.com
 :: apptracker.stream
 :: apptracker.torob.com
 :: apptracking.irancell.ir
@@ -5922,7 +5929,6 @@
 :: brice-test.nawar.io
 :: brickworks.viessmann.sg
 :: bridgeoos.com
-:: bridgetrack.com
 :: bridgetrack.speedera.r3h.net
 :: brighttoe.com
 :: bringmethehats.com
@@ -6020,6 +6026,7 @@
 :: bubblyaction.com
 :: bucketlistbob.com
 :: buddycanvas.com
+:: budgetracker.com
 :: budibu.saksfifthavenue.com
 :: buf.lemonde.fr
 :: bug-tracker.est.ai
@@ -6031,6 +6038,7 @@
 :: bugtrack.konami.com
 :: bugtracker.ac-systems.com
 :: bugtracker.arcengames.com
+:: bugtracker.ispconfig.org
 :: bugtracker.makehumancommunity.org
 :: bugtracker.pscs.co.uk
 :: bugtracker.stricted.net
@@ -6208,6 +6216,7 @@
 :: calibration.ni.com
 :: calin-georgescu-invest.live
 :: calingeorgescuinvest.com
+:: call-tracking-metrics.topseoscompanies.com
 :: call-tracking.by
 :: call-tracking.co.uk
 :: callousbrake.com
@@ -6388,6 +6397,7 @@
 :: cbudbs.tirendo.de
 :: cbuvhv.desertcart.ae
 :: cc.anytrack.de
+:: cc.bridgetrack.com
 :: cc.calltracking.ru
 :: cc.conforama.es
 :: cc.conforama.pt
@@ -6586,6 +6596,7 @@
 :: ciszhp.finanzfrage.net
 :: ciszhp.gesundheitsfrage.net
 :: ciszhp.motorradfrage.net
+:: citi.bridgetrack.com
 :: citi.bridgetrack.com.edgesuite.net
 :: citizengo-express-telemetry.web.app
 :: citizenship.quantresear.ch
@@ -6604,6 +6615,7 @@
 :: cjlekm.correiodopovo.com.br
 :: cjnbqe.glamira.com.mx
 :: cjulor.marimekko.jp
+:: ck.connatix.com
 :: ck123.io
 :: ckies.net
 :: ckpxtt.justfly.com
@@ -6919,7 +6931,6 @@
 :: cnameforitp.dermed.jp
 :: cnebis.chocola.com
 :: cnebis.eisai.jp
-:: cnebis.i-no-science.com
 :: cngbpl.directliquidation.com
 :: cnlbxi.zoopla.co.uk
 :: cnna.io
@@ -6951,6 +6962,7 @@
 :: code.geonamebase.com
 :: code.randomhouse.com
 :: codingunlocked.com
+:: coffeeandjoy-tracking.s3.sa-east-1.amazonaws.com
 :: coffeefire.net
 :: coffeesidehustle.com
 :: cogxmr.travelplanet.pl
@@ -7986,7 +7998,6 @@
 :: cx.quadient.com
 :: cxalid.turtlebeach.com
 :: cxasci.sprzedajemy.pl
-:: cxense.com
 :: cxm.ingeniux.com
 :: cxrfns.gu-global.com
 :: cxrptu.danland.dk
@@ -8290,7 +8301,6 @@
 :: data.b2bmail.adobe.com
 :: data.babista.de
 :: data.barry-callebaut.com
-:: data.bilibili.com
 :: data.bioplanet.be
 :: data.bless.blesscollectionhotels.com
 :: data.boletin.super99.com
@@ -8312,7 +8322,6 @@
 :: data.carts.t-mobile.com
 :: data.charles-colby.com
 :: data.chelseafc.com
-:: data.circulate.com
 :: data.client-comms.nedbank.co.za
 :: data.cliente.clubeextra.com.br
 :: data.clientemais.paodeacucar.com
@@ -10119,6 +10128,7 @@
 :: edge.seriesplus.com
 :: edge.sheffieldfinancial.com
 :: edge.stacktv.ca
+:: edge.staging.fullstory.com
 :: edge.sterlingcapital.com
 :: edge.teletoonplus.ca
 :: edge.treehousetv.com
@@ -10682,6 +10692,7 @@
 :: emails.verishop.com
 :: emails.watchown.tv
 :: emailtracker.website
+:: emailtracking.appsflyer.com
 :: emarketing.landisgyr.com
 :: emarketing.moveo.com
 :: emarketing.zulkiepartners.com
@@ -11038,6 +11049,7 @@
 :: etrack.ext.arubanetworks.com
 :: etrack.ext.hpe.com
 :: etrack.it4med.at
+:: etrack1.com
 :: etracker.alex-gross.com
 :: etracker.cjd.de
 :: etracker.com
@@ -11340,6 +11352,7 @@
 :: exd4.destinia.com.au
 :: exdmarketing.smu.edu.sg
 :: execgroup.convio.com
+:: execreps.actonsoftware.com
 :: executeknowledge.com
 :: execution-ci360.rai.it
 :: exhibit.coteriefashionevents.com
@@ -11384,6 +11397,7 @@
 :: experiences.simplii.com
 :: experiencia.coopecaja.fi.cr
 :: experiment-allocation.yelp.com
+:: experiments.parsely.com
 :: experiments.sparanoid.net
 :: expertise.logarithmicsolutions.com
 :: experts.cutter.com
@@ -11403,7 +11417,6 @@
 :: explore.revenera.com
 :: explore.waldenu.edu
 :: expo.nada.org
-:: export.newscube.de
 :: exportdialog.com
 :: exprealty377.myre.io
 :: exr-mms.expertreviews.co.uk
@@ -12366,6 +12379,7 @@
 :: geobeacon.ign.com
 :: geobytes.com
 :: geocean.co.id
+:: geoced.smartadserver.com
 :: geocomply.net
 :: geocompteur.com
 :: geocontatore.com
@@ -14162,6 +14176,7 @@
 :: hzymxd.nocibe.fr
 :: hzzyhl.jobs.ch
 :: i-dev.villa.ge
+:: i-l-uac-inmobicdnnet-gcp-cdn.geoservice.inmobi.com
 :: i-ready.curriculumassociates.com
 :: i-staging.villa.ge
 :: i.airtel.in
@@ -14226,6 +14241,7 @@
 :: iconmediapixel.com
 :: iconnode.com
 :: icptrack.com
+:: icslearn.actonsoftware.com
 :: ictrjw.barcastores.com
 :: icy-brown-yrznyes4.edgeone.dev
 :: icywinter.com
@@ -14901,6 +14917,7 @@
 :: impossibleexpansion.com
 :: impress.vcita.com
 :: impression-tracker-service-5eimuebuhq-lz.a.run.app
+:: impression.appsflyer.com
 :: impressions.svc.abillion.com
 :: improve.tempest.com
 :: improving.wuzhuiso.com
@@ -15394,7 +15411,6 @@
 :: info.navitassys.com
 :: info.navitor.com
 :: info.ncoi.nl
-:: info.neg.co.jp
 :: info.neosllc.com
 :: info.nepsisadvisors.com
 :: info.neptune-software.com
@@ -15746,6 +15762,7 @@
 :: inqueritos.cp.pt
 :: inquisitive-teal-omezr4ob.edgeone.dev
 :: inquisitiveinvention.com
+:: ins.connatix.com
 :: ins.leavitt.com
 :: ins.wolterskluwerfs.com
 :: insanetrack.com
@@ -16402,6 +16419,7 @@
 :: jweqai.amen.fr
 :: jwlvlo.icaniwill.dk
 :: jwmhqs.fsk.ru
+:: jwpepper.actonsoftware.com
 :: jwtnmo.promovacances.com
 :: jwvazl.mansurgavriel.com
 :: jwxqmj.thediamondstore.co.uk
@@ -17903,6 +17921,7 @@
 :: listing-a8-itp.hello-storage.com
 :: lists-tracking.komando.com
 :: lists.ccmbg.com
+:: lit.connatix.com
 :: literally-analytics.appspot.com
 :: littlegeese.com
 :: littlesun.net
@@ -18133,6 +18152,7 @@
 :: locations.api.yle.fi
 :: locations.crocs.de
 :: locationserve.com
+:: locationsmart.com
 :: locationv16-normal-useastred.tiktokv.eu
 :: locolava.com
 :: locotrack.net
@@ -18259,6 +18279,7 @@
 :: logtrackback.com
 :: logtracker.orange.pl
 :: logx-experimentation.iherb.com
+:: logx.optimizely.com
 :: lojaurbantrack.com
 :: lokalwerben.t-online.de
 :: lonelyflavor.com
@@ -18286,6 +18307,7 @@
 :: lovesbooks.com
 :: loveseashore.com
 :: lowercases.com
+:: lowermybills.actonsoftware.com
 :: lowerthewatts.net
 :: lowgxl.yokumoku.jp
 :: lowkeypalmtree.com
@@ -18391,7 +18413,6 @@
 :: lp.sophos.com
 :: lp.strayer.edu
 :: lp.svenskapostkodlotteriet.se
-:: lp.tfd-corp.co.jp
 :: lp.tix.lehigh.edu
 :: lp.to-lipton.com
 :: lp3.dentsplysirona.com
@@ -18639,6 +18660,7 @@
 :: ma.kyloepartners.com
 :: ma.lekab.com
 :: ma.lexicon.se
+:: ma.logsss.com
 :: ma.meritgo.se
 :: ma.meritmind.se
 :: ma.moblrn.com
@@ -18754,6 +18776,7 @@
 :: mailtrack.fr
 :: mailtrack.io
 :: mailtrack.me
+:: mailtracker.hunter.io
 :: mailtracking.tf1.com
 :: mailtracking.tfou.com
 :: mailwilling-dp9gqao71lzl.edgeone.dev
@@ -22670,7 +22693,6 @@
 :: myhotelbook.pegs.com
 :: myinfo.borland.com
 :: myinfo.eaton.com
-:: mylead-tracking.tracknow.info
 :: mymix.mixdevelopment.com
 :: mymix.mixtel.com
 :: mymix.mixtelematics.com
@@ -23622,6 +23644,7 @@
 :: onedropocean.com
 :: onekindmarket.com
 :: onelink.taptalk.io
+:: onelinksmartscript.appsflyer.com
 :: onem.marketing.onemarketinguxp.com
 :: onemorebump.com
 :: onenet.gakujutsu.com
@@ -23709,9 +23732,12 @@
 :: opentelemetry-python-contrib.readthedocs.io
 :: opentelemetry-python.readthedocs.io
 :: opentelemetry.aisec.us1.catonetworks.com
+:: opentelemetry.connpass.com
+:: opentelemetry.devstats.cncf.io
 :: opentelemetry.divar.ir
 :: opentelemetry.hakasecurity.com
 :: opentelemetry.interactio.dev
+:: opentelemetry.lightstep.com
 :: opentelemetry.prod.wwnorton.com
 :: opentelemetry.zpc.zebra.com
 :: opentracker.net
@@ -24004,6 +24030,7 @@
 :: page.email.key.com
 :: page.email.trinity-health.org
 :: page.ephesus.cooperlighting.com
+:: page.evergage.com
 :: page.ggled.net
 :: page.griffinshockey.com
 :: page.health.tmcaz.com
@@ -24382,9 +24409,6 @@
 :: pipadvance.com
 :: pipe-collect.ebu.io
 :: pipedream.wistia.com
-:: pipeline.balkstercourant.nl
-:: pipeline.dvhn.nl
-:: pipeline.lc.nl
 :: pipeline.nachtkastje.nl
 :: piper.amocrm.ru
 :: pippio.com
@@ -24505,6 +24529,7 @@
 :: pl.astro.fi
 :: pl.carbon-tab.ethan.link
 :: pl.codetheweb.blog
+:: pl.connatix.com
 :: pl.ethan.link
 :: pl.fashmoms.com
 :: pl.getfamealy.com
@@ -24910,7 +24935,6 @@
 :: primary-app.hotdoc.com.au
 :: primary.hasegawa.jp
 :: prime.net.jumia.co.tz
-:: prime.rambler.ru
 :: princessbeak.com
 :: print.khingtracking.com
 :: printtestpageonline.com
@@ -26302,6 +26326,7 @@
 :: rum.layer0.co
 :: rum.marquardmedia.hu
 :: rum.mauve.eu
+:: rum.optimizely.com
 :: rum.perfops.net
 :: rum.uptime.com
 :: rumstat.cdnvideo.ru
@@ -26412,6 +26437,7 @@
 :: s.lenovo.com
 :: s.leolabs.org
 :: s.lexusfinancial.com
+:: s.logsss.com
 :: s.mannes.tech
 :: s.maxrozen.com
 :: s.metroland.com
@@ -27281,6 +27307,7 @@
 :: sdk-cdn-spt.push-pigeon.com
 :: sdk-metrics.privacy.unity3d.com
 :: sdk-track.66mobi.com
+:: sdk.appsflyer.com
 :: sdk.stats-locations.com
 :: sdks.stats-locations.com
 :: sdlmaf.bestsecret.at
@@ -27306,6 +27333,7 @@
 :: seatsmoke.com
 :: sebotr.rizeclinic.com
 :: sec-analytics.panasonic.co.uk
+:: sec-citi.bridgetrack.com
 :: sec.wolterskluwerfs.com
 :: secmetrics.bkb.ch
 :: secmetrics.friendscout24.it
@@ -31931,6 +31959,7 @@
 :: ssa.stepstone.com
 :: ssa.tlc.com
 :: ssac.suning.com
+:: ssbsync-geo.smartadserver.com
 :: ssc.alhurra.com
 :: ssc.amerikaninsesi.org
 :: ssc.amerikaovozi.com
@@ -34319,6 +34348,7 @@
 :: t.ao.argyleforum.com
 :: t.ao.consumerfinancereport.com
 :: t.ao.walletjoy.com
+:: t.appsflyer.com
 :: t.appstatesports.com
 :: t.arizonawildcats.com
 :: t.arkansasrazorbacks.com
@@ -35187,6 +35217,7 @@
 :: telemetry-router.eu02.qa.onstackit.cloud
 :: telemetry-s.autofinancebank.ru
 :: telemetry-sdk-inmobi-comtm.trafficmanager.net
+:: telemetry-service.services.cloud.signiant.com
 :: telemetry-splkmobile.dataeng.splunk.com
 :: telemetry-staging.elastic.co
 :: telemetry-stevedore.confluence.api.staging.dashboard.unity3d.com
@@ -35253,6 +35284,7 @@
 :: telemetry.battle.net
 :: telemetry.bawaggroup.com
 :: telemetry.bitpin.ir
+:: telemetry.bitpin.org
 :: telemetry.bluebottle.gg
 :: telemetry.bluedot.io
 :: telemetry.blueos.cloud
@@ -35569,6 +35601,7 @@
 :: telemetry.seaweedfs.com
 :: telemetry.secure.roche.com
 :: telemetry.seelen.io
+:: telemetry.seeq.com
 :: telemetry.semgrep.dev
 :: telemetry.sentara.com
 :: telemetry.sentarahealthplans.com
@@ -35587,6 +35620,7 @@
 :: telemetry.simple.paltabrain.com
 :: telemetry.simplefixai.com
 :: telemetry.skillindiadigital.gov.in
+:: telemetry.smartenergysystems.gr
 :: telemetry.smartframe.io
 :: telemetry.sonarsource.com
 :: telemetry.sonatype.com
@@ -35603,6 +35637,7 @@
 :: telemetry.streamology.tv
 :: telemetry.stryker.com
 :: telemetry.stytch.com
+:: telemetry.subspace.network
 :: telemetry.sury.org
 :: telemetry.svc.criipto.com
 :: telemetry.svc.transifex.net
@@ -35617,6 +35652,7 @@
 :: telemetry.tezlabapp.com
 :: telemetry.threatdown.com
 :: telemetry.timescale.com
+:: telemetry.timseverien.com
 :: telemetry.tip.lync.com
 :: telemetry.topperpay.com
 :: telemetry.tradingview.com
@@ -35646,6 +35682,7 @@
 :: telemetry.voxeet.com
 :: telemetry.vrclinking.com
 :: telemetry.vtex.com
+:: telemetry.w3f.community
 :: telemetry.wall-box.com
 :: telemetry.weaviate.io
 :: telemetry.webasto.com
@@ -36268,6 +36305,7 @@
 :: tqvacq.intrend.it
 :: tqxpnv.bauhaus.info
 :: tr-business.vodafone.com
+:: tr-experiments.parsely.com
 :: tr-ms.bosch-home.com
 :: tr-ms.profilo.com
 :: tr-ms.siemens-home.bsh-group.com
@@ -37245,7 +37283,6 @@
 :: track-dmspush.com
 :: track-e.cypress.com
 :: track-e.infineon.com
-:: track-e.infineoncommunity.com
 :: track-ec.buzz
 :: track-ec.lol
 :: track-ec.xyz
@@ -37376,6 +37413,7 @@
 :: track.applicaster.com
 :: track.appsbytes.xyz
 :: track.appsclub.mobi
+:: track.appsflyer.com
 :: track.aprila.no
 :: track.aptitudemedia.co
 :: track.aqara.com
@@ -37882,6 +37920,7 @@
 :: track.ipricegroup.com
 :: track.iqgroup.pl
 :: track.ironyhome.com
+:: track.itash.ru
 :: track.itemkg.de
 :: track.ivia.com
 :: track.jinnyjoes.ch
@@ -38014,6 +38053,7 @@
 :: track.mittivo.it
 :: track.mituo.cn
 :: track.mlbshopeurope.com
+:: track.mlsend2.com
 :: track.mmsvc.io
 :: track.mobile-bt.com
 :: track.mobilevas152cr.com
@@ -39062,6 +39102,7 @@
 :: tracking-live.kr3m.com
 :: tracking-module.api.dpgmedia.cloud
 :: tracking-na.hawksearch.com
+:: tracking-nativesdks.mparticle.com
 :: tracking-nc.chamaeleon.de
 :: tracking-orbs.pages.dev
 :: tracking-polska-support.fccdesign.org
@@ -39485,6 +39526,7 @@
 :: tracking.coxcable-online.com
 :: tracking.cpa.qa.web.visa.com
 :: tracking.cranepi.com
+:: tracking.crazyegg.com
 :: tracking.creamchargerswarehouse.co.uk
 :: tracking.creditacceptance.com
 :: tracking.crewfare.com
@@ -39842,6 +39884,7 @@
 :: tracking.hexilo.com
 :: tracking.heyai.de
 :: tracking.heyflow.cloud
+:: tracking.hgoldgroup.com
 :: tracking.hibu.com
 :: tracking.highscore-digital.de
 :: tracking.hireforce.io
@@ -39918,6 +39961,7 @@
 :: tracking.instantcheckmate.com
 :: tracking.intelius.com
 :: tracking.internetstores.de
+:: tracking.intertop.ua
 :: tracking.interweave.com
 :: tracking.inthechair.dk
 :: tracking.intimaterose.com
@@ -40010,6 +40054,7 @@
 :: tracking.lailiveevents.com
 :: tracking.laivideo.com
 :: tracking.lambdamarketingdigital.com.br
+:: tracking.lan.go.id
 :: tracking.landauer.com
 :: tracking.lanxess.com
 :: tracking.laredoute.fr
@@ -40856,6 +40901,7 @@
 :: tracking.winecoolerdirect.com
 :: tracking.wings.hs-wismar.de
 :: tracking.wirtschaftsdienst.hamburg
+:: tracking.wisepops.com
 :: tracking.wissenmedia.de
 :: tracking.witte-perel.nl
 :: tracking.wlscripts.net
@@ -40954,6 +41000,8 @@
 :: trackingclick.net
 :: trackingdesks.com
 :: trackingeloqua.tec.mx
+:: trackingengine-eu-west-1.adswizz.com
+:: trackingengine-us-west-2.adswizz.com
 :: trackingfindups.com
 :: trackingflaregames.net
 :: trackinghome.de
@@ -40968,6 +41016,7 @@
 :: trackingmms.accenture.com
 :: trackingmore.net
 :: trackingmyadsas.com
+:: trackingnumbers.org
 :: trackingpackage.express
 :: trackingplan.com
 :: trackingprd.hwwt8.com
@@ -41163,6 +41212,7 @@
 :: trackni.com
 :: tracknium.com
 :: tracknotify.com
+:: tracknow.info
 :: tracknow.io
 :: trackocean.com
 :: trackocity.io
@@ -42793,6 +42843,7 @@
 :: video.funnelbox.com
 :: video.verintsystemsinc.com
 :: video.vitcord.com
+:: videodiff-geo.smartadserver.com
 :: videoplayerhub.com
 :: videos.adp.ca
 :: videos.personneltoday.com
@@ -42860,6 +42911,7 @@
 :: visitor.novartisoncology.us
 :: visitorcenter.ioafw.com
 :: visitorcenter.srwild.com
+:: visitorlando.actonsoftware.com
 :: visitors.gigianddavid.com
 :: visitortracking.com
 :: visitortracklog.com
@@ -43362,6 +43414,7 @@
 :: webanalyticsssl.websense.com
 :: webapi.3cx.com
 :: webapp.e-post.smn.no
+:: webbugtrack.blogspot.ca
 :: webbugtrack.blogspot.co.uk
 :: webbyword.net
 :: webcasts.de.ni.com
@@ -43401,6 +43454,7 @@
 :: webprivacycontrol.com
 :: webrtc-telemetry.next.xcloudphone.com
 :: webs.hammacher.com
+:: websdk.appsflyer.com
 :: websdkmetrics.blackrock.com
 :: webservices.websitepros.com
 :: website-security.geotrust.com

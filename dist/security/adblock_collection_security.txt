@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 46656
+! Total Rules: 46548
 ! ------------------------------------------
 ||acidoiddefraudfloody.qpon^
 ||adscampaign.net^
@@ -240,6 +240,14 @@
 ||booklng.com-*
 ||avito.avito.www.avito.
 ||booking.com-id*
+||bjmining.com^
+||coronavirusandthechurch.com^
+||coronavirusecuador.com^
+||malwareprotectionlive.com^
+||michoacancoronavirus.com^
+||miningrace.com^
+||miningrid.com^
+||paxmining.com^
 ||howtocleanacomputervirus.com^
 ||informazionicoronavirus.it^
 ||scampvisnu.click^
@@ -281,7 +289,7 @@
 ||antmineroutlet.com^
 ||antminertech.com^
 ||astcorphishor.com^
-||bjmining.com^
+||bestantivirus.com^
 ||bp-mineraloel.de^
 ||btcminer.website^
 ||callminer.net^
@@ -292,8 +300,6 @@
 ||consejominero.cl^
 ||coronavirus-realtime.com^
 ||coronavirus-statistiques.com^
-||coronavirusandthechurch.com^
-||coronavirusecuador.com^
 ||cryptonight.net^
 ||crystalmining.com^
 ||divascam.com^
@@ -304,6 +310,7 @@
 ||examinerashtrayquizmaster.com^
 ||examinerreachpigeons.com^
 ||examplemalwaredomain.com^
+||exploitenterprise.com^
 ||fraudbreakdown.com^
 ||fraudfree.net^
 ||fraudlogix.com^
@@ -314,22 +321,17 @@
 ||incorphishor.com^
 ||malwarebyes.com^
 ||malwarecrusher.com^
-||malwareprotectionlive.com^
 ||megafraud.com^
-||michoacancoronavirus.com^
 ||mineralsglobal.com^
 ||mineralsolutions.de^
 ||mineralt.io^
 ||minercircle.com^
 ||miningdesirablespirits.com^
-||miningrace.com^
-||miningrid.com^
 ||miningshun.com^
 ||monerohash.com^
 ||moneropool.com^
 ||motominer.com^
 ||ntminers.com^
-||paxmining.com^
 ||peakminer.app^
 ||relativefraudulentprop.com^
 ||scamwebsite.com^
@@ -641,7 +643,6 @@
 ||zeus-mining.com^
 *$script,redirect-rule=noopjs,domain=acusports.com|atlantic10.com|big12sports.com|bigten.org|cmumavericks.com|conferenceusa.com|dartmouthsports.com|daytonflyers.com|dbupatriots.com|dbusports.com|fduknights.com|floridagators.com|friscofighters.com|gamecocksonline.com|gobobcats.com|gocreighton.com|goetbutigers.com|golobos.com|gophersports.com|gopsusports.com|goracers.com|goshockers.com|goterriers.com|gotigersgo.com|gousfbulls.com|govandals.com|gowyo.com|goxavier.com|gozags.com|gozips.com|griffinathletics.com|guhoyas.com|gwusports.com|hailstate.com|hamptonpirates.com|hawaiiathletics.com|hokiesports.com|huskers.com|icgaels.com|iuhoosiers.com|jsugamecocksports.com|longbeachstate.com|loyolaramblers.com|lrtrojans.com|lsusports.net|morrisvillemustangs.com|msuspartans.com|muleriderathletics.com|mutigers.com|navysports.com|nevadawolfpack.com|niuhuskies.com|nulakers.ca|nkunorse.com|nuhuskies.com|nusports.com|oceanbreezenyc.org|okstate.com|olemisssports.com|omavs.com|ovcsports.com|owlsports.com|purduesports.com|redstormsports.com|richmondspiders.com|sfajacks.com|shupirates.com|siusalukis.com|smcgaels.com|smumustangs.com|soconsports.com|soonersports.com|themw.com|tulsahurricane.com|txst.com|txstatebobcats.com|ubbulls.com|ucfknights.com|ucirvinesports.com|uconnhuskies.com|uhcougars.com|uicflames.com|umterps.com|uncwsports.com|unipanthers.com|unlvrebels.com|uoflsports.com|usdtoreros.com|utahstateaggies.com|utepathletics.com|utrockets.com|uvmathletics.com|uwbadgers.com|villanova.com|wkusports.com|wmubroncos.com|woffordterriers.com|1pack1goal.com|bcuathletics.com|bubraves.com|goblackbears.com|golightsgo.com|gomcpanthers.com|goutsa.com|mercerbears.com|pirateblue.com|pirateblue.net|pirateblue.org|quinnipiacbobcats.com|towsontigers.com|tribeathletics.com|tribeclub.com|utepminermaniacs.com|utepminers.com|wkutickets.com|aopathletics.org|atlantichockeyonline.com|bigsouthnetwork.com|bigsouthsports.com|chawomenshockey.com|dbupatriots.org|drakerelays.org|ecac.org|ecacsports.com|emueagles.com|emugameday.com|gculopes.com|godrakebulldog.com|godrakebulldogs.com|godrakebulldogs.net|goeags.com|goislander.com|goislanders.com|gojacks.com|gomacsports.com|gseagles.com|hubison.com|iowaconference.com|ksuowls.com|lonestarconference.org|mascac.org|midwestconference.org|mountaineast.org|niu-pack.com|niuhuskies.com|oswegolakers.com|ovcdigitalnetwork.com|pacersports.com|rmacsports.org|rollrivers.com|samfordsports.com|uncpbraves.com|usfdons.com|wiacsports.com|alaskananooks.com|broncathleticfund.com|cameronaggies.com|columbiacougars.com|etownbluejays.com|gobadgers.ca|golancers.ca|gometrostate.com|gothunderbirds.ca|kentstatesports.com|lehighsports.com|lopers.com|lycoathletics.com|lycomingathletics.com|maraudersports.com|mauiinvitational.com|msumavericks.com|nauathletics.com|nueagles.com|nwusports.com|patriotathleticfund.com|pittband.com|principiaathletics.com|roadrunnersathletics.com|sidearmsocial.com|snhupenmen.com|stablerarena.com|stoutbluedevils.com|uwlathletics.com|yumacs.com|collegefootballplayoff.com|csurams.com|cubuffs.com|gobearcats.com|gohuskies.com|mgoblue.com|osubeavers.com|pittsburghpanthers.com|rolltide.com|texassports.com|thesundevils.com|uclabruins.com|wvuathletics.com|wvusports.com|arizonawildcats.com|calbears.com|cuse.com|georgiadogs.com|goducks.com|goheels.com|insidekstatesports.com|insidekstatesports.info|insidekstatesports.net|insidekstatesports.org|k-stateathletics.com|k-statefootball.net|k-statefootball.org|k-statesports.com|k-statesports.net|k-statesports.org|k-statewomenshoops.com|k-statewomenshoops.net|k-statewomenshoops.org|kstateathletics.com|kstatefootball.net|kstatefootball.org|kstatesports.com|kstatewomenshoops.com|kstatewomenshoops.net|kstatewomenshoops.org|ksuathletics.com|ksusports.com|scarletknights.com|showdownforrelief.com|syracusecrunch.com|texastech.com|theacc.com|ukathletics.com|usctrojans.com|utahutes.com|utsports.com|wsucougars.com
 ||01net.com/telecharger/$document
-||newsharecounts.s3-us-west-2.amazonaws.com/nsc.js$script
 ||majorgeeks.com/images/icons/red_icon_18x17px.png$image
 ||s3blog.org^$3p
 /?track=*&key=$all
@@ -900,85 +901,8 @@
 ||suzuri.jp/kinunhado^$document
 ||play.google.com/store/apps/details?id=com.miruau^$document
 ||sma-lita.site^$document
-||fullth-loto.com^$document
-||fast-mm.com^$document
-||int-minint.com^$document
-||jipso.jp^$document
-||okanenokami.com^$document
-||lovers-line.com^$document
-||q0-b5u.com^$document
-||qjmesdjrgznq.net^$document
-||sherondeaau.com^$document
-||shiarondea.com^$document
-||shirondeau.com^$document
-||sirondeauu.com^$document
-||hitotsuma.net^$document
-||lot.love-linkage.com^$document
-||availautomobile.com^$document
-||beneficial-blanket.com^$document
-||browserbuilding.com^$document
-||classicalchurch.com^$document
-||departdelivery.com^$document
-||exploitenterprise.com^$document
-||finefixation.com^$document
-||ability-acceptable.com^$document
-||arcticlobe.com^$document
-||basically-balk.com^$document
-||brakenormally.com^$document
-||dedicate-decade.com^$document
-||dreamer-story.com^$document
-||dubiousserene.com^$document
-||exilestrict.com^$document
-||fukutema.com^$document
-||unmei-shinpi.jp^$document
-||auto-run.info^$document
-||box-ben.com^$document
-||dom-dom.info^$document
-||doune41758.biz^$document
-||greatson1211.site^$document
-||help-back.info^$document
-||honem41147.biz^$document
-||nova-argo.com^$document
-||yjeija5121.biz^$document
-||goo-riki.com$document
-||menokurage.com^$document
-||info777-6.com^$document
-||kum.cloudpost-letter2185.com^$document
-||kamiwatari.com^$document
-||lotostics.com^$document
-||dreamy-catch.com^$document
-||dream-catch.net^$document
-||yume-kanaee.com^$document
-||anemone.blue^$document
-||calm-connect.blue^$document
-||your-connect.blue^$document
-||eco-splp.com^$document
-||ecosoc-gov.com^$document
 ||himitumatch.com^$document
-||quickcheck-pay.com^$document
-||su-hk.com^$document
-||prime-vp.com^$document
-||click-pay.net^$document
-||ezpay-service.com^$document
-||ytgfrgffgf.com^$document
-||fizlee.jp^$document
-||xexxngbeuz.net^$document
-||lili-life-style.com^$document
-||aquo.online^$document
-||zuisaidou021926.com^$document
-||ureluv.com^$document
 ||play.google.com/store/apps/details?id=com.ureluv.pwa^$document
-||pri-vate.org^$document
-||private-offer.com^$document
-||huubm.jp^$document
-||huuba.jp^$document
-||famine-afeg.com^$document
-||fabbe6r.com^$document
-||faeww8j.com^$document
-||fak1yt7.com^$document
-||fapr3i.com^$document
-||fawl4vx.com^$document
-||tendresse.shop^$document
 ||xn--80affa3aj0al.xn--80asehdb^$all
 ||telegr.am/user_mgt/login$all
 ||telegramm.site^$all
@@ -10232,7 +10156,6 @@ $document,ipaddress=185.216.143.121
 ||3672108.com^
 ||36918574.xyz^
 ||36wt63.skin^
-||370472.xyz^
 ||37jeyr4.top^
 ||3865zrt.top^
 ||38670549.xyz^
@@ -10558,7 +10481,6 @@ $document,ipaddress=185.216.143.121
 ||92671385.xyz^
 ||926wte3.top^
 ||92ai.mobi^
-||936578.xyz^
 ||936etg.top^
 ||93jneuy.ink^
 ||94hggr4.top^
@@ -10664,12 +10586,8 @@ $document,ipaddress=185.216.143.121
 ||aciansouris.tempurl.host^
 ||ackkenyattaroad.co.ke^
 ||acoustic.how-toplayguitar-today.com^
-||acselwk.cfd^
 ||acshzgaa.cfd^
 ||acsne.bracessodar.digital^
-||acsrozj.cfd^
-||acswlewa.cfd^
-||acswlzis.cfd^
 ||action-sante.site^
 ||activacion-suscripcion.com^
 ||activadigital-1.com^
@@ -13537,7 +13455,6 @@ $document,ipaddress=185.216.143.121
 ||apple0d76cd38f0534778a97f4b98af49f6b3.4g7f9p.cn^
 ||apple204797a7901743bf88326c2be2d7806e.4fvj23.cn^
 ||apple6b9d2d28c045413a97dcffe33c170e2a.4s4dc3.cn^
-||appleidmapa.com^
 ||applemymusic.com^
 ||applesoporte.services^
 ||application.colibriathenas.com.br^
@@ -14301,7 +14218,6 @@ bridge_trezo-cdn.teachable.com
 ||cmffunding.com^
 ||cmllog.com^
 ||cmobile19.info^
-||cn-feed-whatsapp.com.cn^
 ||cn-wap-fengniaogame.com^
 ||cn-web-yoolive.com^
 ||cncinsure.com^
@@ -15107,7 +15023,6 @@ cuuibase_prou_logi.godaddysites.com
 ||einloggen-2kunden7c3-elstr.my-app-kunden.com^
 ||eiuhfasdcioknd.z20.web.core.windows.net^
 ||ekacmilherdtoopo.gq^
-||ekingumpc.com^
 ||el-change.net^
 ||elavution-login-ck-856213879846734125851.tk^
 ||elavution-login-ck-856213879846734125852.tk^
@@ -15413,7 +15328,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||florida.gov-yhnj.help^
 ||fluidrock.cfd^
 ||flverr.feepoint.digital^
-||fml-clouds-app.help^
 ||fmpqwyp.cn^
 ||fmqby.buzz^
 ||fnacspectacle.shop^
@@ -15421,7 +15335,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||focojuridico.com.br^
 ||focototal.lat^
 ||focusedsecondaryregression--five-nine.repl.co^
-||folio-pass-cloud.help^
 ||folio-service.life^
 ||folioconcepts.top^
 ||follow-secure-admin-support.my.id^
@@ -15442,7 +15355,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||form8899533.pro^
 ||formanovalimit.s3.us-east-005.backblazeb2.com^
 ||formulaire-mon-espace.com^
-||fortgrind.com^
 ||fortuixagentfrance.shop^
 ||forum.albiononline.com-i.pw^
 ||foshangongjijin.com^
@@ -15501,7 +15413,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||gb.gindero.online^
 ||gbadagni.liv-536801.pro^
 ||gbdnejodsg.top^
-||gcdctz.shop^
 ||gdubeyle.com^
 ||geamingfhfilougine.gitbook.io^
 ||gecab.wbb.it^
@@ -15781,7 +15692,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||goyalsassociates.com^
 ||gpmpnf.fnjsbkt.cn^
 ||gpppw.top^
-||gps-help-fmi.info^
 ||graciousfabulousmass--five-nine.repl.co^
 ||grafeno-siteapp.digital^
 ||grandhoreb.com^
@@ -15946,7 +15856,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||hostpoint.ch.121c0291.net2care.com^
 ||hostpoint.ch.148002bf.net2care.com^
 ||hostpoint.ch.14ec02c0.net2care.com^
-||hostvipxfl.com^
 ||hotdoc-rf-pending.com^
 ||hotfreelaptops.com^
 ||hotlilk.link^
@@ -16105,7 +16014,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||il-online.org^
 ||iletaitunefoisunmasque.us2.list-manage.com^
 ||iloveanimals.shop^
-||im-token-hk-cdn.xyz^
 ||img.maplejournal.co.in^
 ||immediateedge.online^
 ||immunetlabs.com^
@@ -16150,7 +16058,6 @@ ffnnbb_js_loader.rukkibospa5287.workers.dev
 ||inspirefinance.tv^
 ||insta-support.org^
 ||instagram-login-support.vercel.app^
-||instagram-visualizza-post.info^
 ||instagram.callidoralk.com^
 ||instanttowncarservice.com^
 ||instargam.kz^
@@ -16555,7 +16462,6 @@ kukoin_logiusaa.godaddysites.com
 ||leadingrepentantmicrostation--five-nine.repl.co^
 ||learn-en-suitetrezr-ioi.pages.dev^
 ||leavia.pt^
-||ledger-app.my^
 ||ledger-security-checker.com^
 ||ledger.com.af^
 ||ledger.setupterms.com^
@@ -17279,7 +17185,6 @@ metamsk_us_logi.godaddysites.com
 ||myclick-vip.quest^
 ||myclnbe.com^
 ||mycmbank.click^
-||mycsskundapp.com^
 ||mydhl-express-dhl-login.baixingdajiudian.com^
 ||myee-securelogin.com^
 ||mygloboltsb-online.icu^
@@ -18180,7 +18085,6 @@ metamsk_us_logi.godaddysites.com
 ||program-orlen.com^
 ||programationlivraisoncartesante.com^
 ||projectterrain.com^
-||promegaofers.com^
 ||promisesmanualsimplementations.fr^
 ||pronoskills.com^
 ||proto.xperti.io^
@@ -18397,7 +18301,6 @@ metamsk_us_logi.godaddysites.com
 ||restauramariana.com.br^
 ||restrict-mypayee.com^
 ||retr9284003.pro^
-||retractations-service.com^
 ||review-corporation-term-of-service-pages-manager.my.id^
 ||review-corportions-term-of-serviice-page.my.id^
 ||revolut.1-kyc.com^
@@ -18674,7 +18577,6 @@ metamsk_us_logi.godaddysites.com
 ||seufinanciamento.fun^
 ||seuportalcredito.fun^
 ||sexmerla.click^
-||seydbi.shop^
 ||sezzz.top^
 ||sfdsdfbgbgf.kangganghk.com^
 ||sfr-cloud-business-pro.ddns-ip.net^
@@ -18687,7 +18589,6 @@ metamsk_us_logi.godaddysites.com
 ||shadowcape.online^
 ||shan5wu.com^
 ||shandongjushi.com^
-||share.lat^
 ||sharpsport.mypi.co^
 ||shashank32001.github.io^
 ||sheknowsbiz.com^
@@ -18816,7 +18717,6 @@ site-exouds_webs.teachable.com
 ||solemark.cfd^
 ||soliciinternacionalec.z13.web.core.windows.net^
 ||solution-analytics.com^
-||soportemaps.click^
 ||soulsisterssunday.com^
 ||sourabh-prajapat.github.io^
 ||souscription-prim.com^
@@ -19042,7 +18942,6 @@ site-exouds_webs.teachable.com
 ||tech.chickletsinthekitchen.com^
 ||techsupport.servicelloyds.com^
 ||teksvevs.sbs^
-||telclcel.sbs^
 ||teleafni.sbs^
 ||teleaqqj.com^
 ||teleeiuc.com^
@@ -19112,9 +19011,6 @@ site-exouds_webs.teachable.com
 ||tofedowawu.z32.web.core.windows.net^
 ||toicfijb.sbs^
 ||token-activation.darklight.it^
-||tokenim.bid^
-||tokenim.date^
-||tokenim.gripe^
 ||tokibasv3urdumunnngeldi.xyz^
 ||tomorrowisourpermanentaddress.com^
 ||topazatualizeappempresa.com^
@@ -19629,7 +19525,6 @@ verify-att.app.
 ||web.tegzye.top^
 ||web.tegzyq.top^
 ||web.tegzzc.top^
-||web3-cryptogate.com^
 ||web3assetbackupledger.vercel.app^
 ||web7portaalkunden.bolojas.pt^
 ||webappaseureaccntswkuyhkljdfhj.dfi457yhfdg45ydj.com^
@@ -19758,7 +19653,6 @@ verify-att.app.
 ||ww.rjvs4571248.pro^
 ||ww.serv5781698.pro^
 ||ww.tjcr5781135.pro^
-||wwapplecloud.help^
 ||www-aruba-fatturazione.myauthlogin.com^
 ||www-boxberry-trackcode.ru^
 ||www-google-vip.com^
@@ -20305,6 +20199,7 @@ xn--d1aqfkf.xn--p1ai
 ||away.vk.com/away.php?rh=f32c7c8e-9447-43fc-9aa4-9265c1e14af9^$all
 ||away.vk.com/away.php?rh=fc25f3c9-e21a-4f53-85f9-016640519205^$all
 ||awin1.com/cread.php?awinmid=10178&awinaffid=346289&clickref&p=https://qrco.de/server-side^$all
+||banei-keiba.or.jp/xhhUzuN^$all
 ||beacons.ai/aprkf^$all
 ||beacons.ai/ckina^$all
 ||beacons.ai/getprolicense^$all
@@ -43858,7 +43753,6 @@ xn--d1aqfkf.xn--p1ai
 ||share.google/xQA9E3de15Xi2pVBg^$all
 ||share.google/xtRMWMdLUs9bstSgj^$all
 ||shared.outlook.inky.com/link?domain=winmarkethinfos.com&amp;t=h.eJxVjssOgjAURH_FdG1o7-0LWPErBW4pKRRTaowx_rt24cLtnJmcebF73lh_YaGU29lz_ljT7nKkEtbkj7OZjp1dLyzWTqJy5AWERKsA-UwuJTeMIZzBRcrktvKsA65UNyGhMoCz1mjQeD8KL1tvWilb4GCNsgatsM0XagtYJVQlxWWK0HVaGIHDsrt1-52YK_9LSv0O7w-v6Dmk.MEUCIQCBRa6UbPU85LKrLM0CayMNkOhN5E5mejPQ7IRZFOnahQIgd747kx99OQmt2_WXc9BSWpPscAHAywSJvavz69-zgNg^$all
-||shchuannuofb.com/dWfHiNLsNObOL/view^$all
 ||shoppy.gg/product/H5zibDT^$all
 ||shorten.is/2DUxg^$all
 ||shorten.is/G0GTQ^$all
@@ -45719,8 +45613,6 @@ xn--d1aqfkf.xn--p1ai
 ||trader.dev/wp-login.php?redirect_to=https://trader.dev/^$all
 ||transferwise.com/invite/u/alexandrub336^$all
 ||tray.com.br/shopee/?utm_campaign=newsletter&amp;utm_content=lancamento-shopee-05042023&amp;utm_medium=email&amp;utm_source=rd-t^$all
-||trqr.link/3VHRH8YC^$all
-||trqr.link/8MLTLQ6F^$all
 ||u.to/FMrdIA^$all
 ||u.to/JG53Ig^$all
 ||u.to/O0vcIA^$all

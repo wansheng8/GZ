@@ -1,32 +1,32 @@
 {
   "name": "adblock_collection_full_annoyance",
-  "total": 3587,
+  "total": 3597,
   "by_category": {
-    "annoyance": 3587
+    "annoyance": 3597
   },
   "by_kind": {
-    "network": 3587
+    "network": 3597
   },
   "by_source": {
-    "Fanboy Annoyance": 1949,
-    "ADrules Easylist": 470,
-    "Hagezi DNS Pro Plus": 246,
-    "ADrules anti-AD": 207,
-    "ADrules DNS": 154,
+    "Fanboy Annoyance": 1955,
+    "ADrules Easylist": 471,
+    "Hagezi DNS Pro Plus": 243,
+    "ADrules anti-AD": 206,
+    "ADrules DNS": 153,
     "AdGuard – Ads": 94,
     "ADrules AdRules": 92,
-    "oisd": 90,
+    "oisd": 89,
     "217heidai adblockdns": 80,
     "ADrules EasyListChina": 63,
     "banbendalao ADgk": 32,
     "fqnovel adrules": 29,
     "uBO filters – Ads": 29,
+    "Hagezi DNS Light": 11,
+    "StevenBlack Hosts": 11,
     "ADrules HalfLife": 10,
-    "StevenBlack Hosts": 10,
-    "AdGuardSDNSFilter": 7,
+    "AdGuardSDNSFilter": 8,
     "ADrules ChengFeng": 6,
-    "10007_auto reward": 5,
-    "Hagezi DNS Light": 5,
+    "10007_auto reward": 6,
     "uBO filters – Quick fixes": 5,
     "AdGuard – Mobile Ads": 4
   }
