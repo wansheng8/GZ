@@ -1,5 +1,10 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539991
+# Total Rules: 539996
+DOMAIN-SUFFIX,systembackup.ddns.net,REJECT
+DOMAIN-SUFFIX,systembright.club,REJECT
+DOMAIN-SUFFIX,systemdoctor.com,REJECT
+DOMAIN-SUFFIX,systeme-business.online,REJECT
+DOMAIN-SUFFIX,systemeu.data.adobedc.net,REJECT
 DOMAIN-SUFFIX,systemforum.ru,REJECT
 DOMAIN-SUFFIX,systemgmx.weebly.com,REJECT
 DOMAIN-SUFFIX,systemgooglegooglegooglegooglegooglegoole.warzonedns.com,REJECT

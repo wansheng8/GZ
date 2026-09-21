@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539991
+# Total Rules: 539996
 DOMAIN-SUFFIX,0--4.com,REJECT
 DOMAIN-SUFFIX,0--d.com,REJECT
 DOMAIN-SUFFIX,0--foodwarez.da.ru,REJECT
@@ -77587,6 +77587,7 @@ DOMAIN-SUFFIX,berrypax.com,REJECT
 DOMAIN-SUFFIX,berryplaytime.com,REJECT
 DOMAIN-SUFFIX,berrys-bikes.at,REJECT
 DOMAIN-SUFFIX,bersastabi.online,REJECT
+DOMAIN-SUFFIX,berseemkidvidpizazz.qpon,REJECT
 DOMAIN-SUFFIX,berserkhydrant.com,REJECT
 DOMAIN-SUFFIX,bershka-france.fr,REJECT
 DOMAIN-SUFFIX,bershka-sales.com,REJECT
@@ -181016,6 +181017,7 @@ DOMAIN-SUFFIX,frightfulmascara.com,REJECT
 DOMAIN-SUFFIX,frightfulvisitorimportant.com,REJECT
 DOMAIN-SUFFIX,frightguards.com,REJECT
 DOMAIN-SUFFIX,frigid-wait.pro,REJECT
+DOMAIN-SUFFIX,frigidgenson.shop,REJECT
 DOMAIN-SUFFIX,frigidzymases.cyou,REJECT
 DOMAIN-SUFFIX,frigoesplo.cyou,REJECT
 DOMAIN-SUFFIX,frigpixyish.com,REJECT
@@ -190130,6 +190132,7 @@ DOMAIN-SUFFIX,gkpohvff.com,REJECT
 DOMAIN-SUFFIX,gkqllczmsa.data.adobedc.net,REJECT
 DOMAIN-SUFFIX,gkrrqstvdyxdxk.xyz,REJECT
 DOMAIN-SUFFIX,gkrtmc.com,REJECT
+DOMAIN-SUFFIX,gkrycdtueicc.com,REJECT
 DOMAIN-SUFFIX,gkryjuqq3.com,REJECT
 DOMAIN-SUFFIX,gkskdrikvrelx.website,REJECT
 DOMAIN-SUFFIX,gksqdt.reitmans.com,REJECT
@@ -287014,6 +287017,7 @@ DOMAIN-SUFFIX,megyar-post.web.app,REJECT
 DOMAIN-SUFFIX,mehadi.cosyneeds.shop,REJECT
 DOMAIN-SUFFIX,mehandihomeskc.com,REJECT
 DOMAIN-SUFFIX,mehanoid.pro,REJECT
+DOMAIN-SUFFIX,meharisxenicus.qpon,REJECT
 DOMAIN-SUFFIX,mehcleverly.com,REJECT
 DOMAIN-SUFFIX,mehdidaghai.shop,REJECT
 DOMAIN-SUFFIX,meheartlove.net,REJECT
@@ -354710,6 +354714,7 @@ DOMAIN-SUFFIX,punosy.com,REJECT
 DOMAIN-SUFFIX,punotours.com.pe,REJECT
 DOMAIN-SUFFIX,punsong.com,REJECT
 DOMAIN-SUFFIX,punt-casino.fr,REJECT
+DOMAIN-SUFFIX,puntalgros.shop,REJECT
 DOMAIN-SUFFIX,puntcasino.fr,REJECT
 DOMAIN-SUFFIX,puntingglister.cyou,REJECT
 DOMAIN-SUFFIX,puntoblancoshop.com,REJECT
@@ -456063,8 +456068,3 @@ DOMAIN-SUFFIX,systemads.net,REJECT
 DOMAIN-SUFFIX,systemakademi.com,REJECT
 DOMAIN-SUFFIX,systemallianceinnovation.weebly.com,REJECT
 DOMAIN-SUFFIX,systematixinfotech.fr,REJECT
-DOMAIN-SUFFIX,systembackup.ddns.net,REJECT
-DOMAIN-SUFFIX,systembright.club,REJECT
-DOMAIN-SUFFIX,systemdoctor.com,REJECT
-DOMAIN-SUFFIX,systeme-business.online,REJECT
-DOMAIN-SUFFIX,systemeu.data.adobedc.net,REJECT
