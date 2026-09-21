@@ -3,9 +3,9 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "dns_eligible_network_rules": 1222,
-  "dns_rejected_network_rules": 651,
+  "dns_rejected_network_rules": 652,
   "by_eligibility": {
-    "REJECT": 651,
+    "REJECT": 652,
     "SAFE": 1222
   },
   "by_reason": {
@@ -14,7 +14,7 @@
     "path_rule": 86,
     "party_modifier": 40,
     "resource_type_modifier": 20,
-    "scoped_modifier": 53,
+    "scoped_modifier": 54,
     "non_blocking_modifier": 26,
     "regex_or_redirect_rule": 12
   }

@@ -1,31 +1,31 @@
 {
   "name": "adblock_collection_security",
-  "total": 46571,
+  "total": 46656,
   "by_category": {
-    "phishing": 36674,
-    "malware": 9663,
-    "mining": 234
+    "phishing": 36796,
+    "malware": 9627,
+    "mining": 233
   },
   "by_kind": {
-    "network": 46571
+    "network": 46656
   },
   "by_source": {
-    "Phishing URL Blocklist": 36506,
-    "Online Malicious URL Blocklist": 7972,
-    "uBO filters – Badware risks": 1458,
-    "oisd": 297,
+    "Phishing URL Blocklist": 36618,
+    "Online Malicious URL Blocklist": 7939,
+    "uBO filters – Badware risks": 1455,
+    "oisd": 298,
     "Hagezi DNS Pro Plus": 97,
     "ADrules DNS": 69,
-    "217heidai adblockdns": 38,
+    "217heidai adblockdns": 37,
     "ADrules anti-AD": 35,
     "ADrules EasyPrivacy": 28,
     "ADrules Easylist": 27,
-    "ScamBlocklist (adguard)": 10,
+    "ScamBlocklist (adguard)": 20,
     "AdGuard – Ads": 9,
     "ADrules AdRules": 6,
     "AdGuardSDNSFilter": 6,
     "10007_auto reward": 4,
-    "StevenBlack Hosts": 4,
+    "StevenBlack Hosts": 3,
     "ADrules ChengFeng": 1,
     "banbendalao ADgk": 1,
     "Fanboy Annoyance": 1,

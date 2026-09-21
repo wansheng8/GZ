@@ -26,6 +26,7 @@ $script,redirect-rule=noop.js,domain=oko.sh|tii.la
 $script,redirect-rule=noop.js,domain=vidmoly.biz|vidmoly.me|vidmoly.net|vidmoly.to
 $script,redirect-rule=noop.js,domain=xfreehd.com
 $script,redirect-rule=prebid-ads.js,domain=read.amazon.*
+$subdocument,~3p,redirect=noop.html,domain=pussyspace.com|pussyspace.net
 $xhr,3p,redirect-rule=noop.js,domain=bizjournals.com,script
 $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|linegee.net|clksz.com|srnky.com|lnbz.la
 *$script,redirect-rule=noop.js,domain=cuttlinks.com|exe-links.com|cuttty.com|cuttyy.com|cutynow.com|exnion.com|cutyion.com|jixo.online|exe-urls.com|evernia.site|ijvam.com|mrgec.com|emxaw.com|cety.app|cutnet.net
@@ -377,7 +378,6 @@ $script,redirect-rule=noop.js,domain=linkebr.com
 $script,redirect-rule=noop.js,domain=pentafaucet.com|simplebits.io|satoshilabs.net|hitbits.io
 *$image,redirect=1x1.gif,domain=proviralhost.com
 ||a.magsrv.com/video-slider.js$script,redirect=noop.js,domain=daemonanime.net
-$subdocument,~3p,redirect=noop.html,domain=pussyspace.com|pussyspace.net
 ||citynews.ca/*/get_ad_$xhr,redirect=noop.json,domain=citynews.ca,important
 ||cdn.bmcdn3.com/js/*aab.js$script,redirect=noop.js,important,domain=earnhub.net
 $~3p,xhr,script,redirect-rule=noop.txt,domain=zertalious.xyz|digworm.io

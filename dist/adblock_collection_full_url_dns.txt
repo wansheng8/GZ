@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (url)
-# Format: hosts (0.0.0.0 domain), total 21127
+# Format: hosts (0.0.0.0 domain), total 21120
 0.0.0.0 00466628383.click
 0.0.0.0 0099866g8g.click
 0.0.0.0 0123movies.click
@@ -216,6 +216,7 @@
 0.0.0.0 558484431.click
 0.0.0.0 5623.web-stats.org
 0.0.0.0 56clicks.com
+0.0.0.0 57715892.click
 0.0.0.0 58.red-80-34-98.staticip.rima-tde.net
 0.0.0.0 58.red-81-47-136.staticip.rima-tde.net
 0.0.0.0 5815613.click
@@ -256,6 +257,7 @@
 0.0.0.0 858158512.click
 0.0.0.0 85818518251.click
 0.0.0.0 85818521.click
+0.0.0.0 8591525982.click
 0.0.0.0 8593044.click
 0.0.0.0 85analytics.com
 0.0.0.0 874553.click
@@ -286,9 +288,6 @@
 0.0.0.0 9000-firebase-storage-1781018389150.cluster-r7kbxfo3fnev2vskbkhhphetq6.cloudworkstations.dev
 0.0.0.0 9000-firebase-tels-1780054135955.cluster-zti5ytzhlffjiqj6bp4giuli3u.cloudworkstations.dev
 0.0.0.0 9000-firebase-verify-1781672856551.cluster-axf5tvtfjjfekvhwxwkkkzsk2y.cloudworkstations.dev
-0.0.0.0 9260425109827.click
-0.0.0.0 9260435109817.click
-0.0.0.0 9360425109827.click
 0.0.0.0 941-analytics.analytics-941.workers.dev
 0.0.0.0 94320324.click
 0.0.0.0 94853.click
@@ -646,6 +645,7 @@
 0.0.0.0 allegro-lokalnie.9g394g34.click
 0.0.0.0 allegro.0239128gh0.click
 0.0.0.0 allegro.0908456495868888.click
+0.0.0.0 allegro.123010h8hh45g.click
 0.0.0.0 allegro.12301209.click
 0.0.0.0 allegro.252352352hh.click
 0.0.0.0 allegro.2836329394730822598.click
@@ -653,8 +653,10 @@
 0.0.0.0 allegro.38904778345043.click
 0.0.0.0 allegro.552183.click
 0.0.0.0 allegro.75995.click
+0.0.0.0 allegro.oferta293484pl.click
 0.0.0.0 allegro.oferta5080146pl.click
 0.0.0.0 allegro.oferta828331pl.click
+0.0.0.0 allegro.pl-oferta6027980.click
 0.0.0.0 allegro.pl-oferta6482538.click
 0.0.0.0 allegro.q0e0120129.click
 0.0.0.0 allegro.smart-4098jj7.click
@@ -681,6 +683,7 @@
 0.0.0.0 allegrolokalnie.894129019041.click
 0.0.0.0 allegrolokalnie.9125125.click
 0.0.0.0 allegrolokalnie.ab776123121.click
+0.0.0.0 allegrolokalnie.c87ax.click
 0.0.0.0 allegrolokalnie.com-ogloszenie-18339662-dla-ciebie.click
 0.0.0.0 allegrolokalnie.kup-teraz51672pl.click
 0.0.0.0 allegrolokalnie.lato-2026-55932.click
@@ -689,6 +692,7 @@
 0.0.0.0 allegrolokalnie.lokalne-ofety5906.click
 0.0.0.0 allegrolokalnie.oferta1851712.click
 0.0.0.0 allegrolokalnie.oferta2305925494037493058.click
+0.0.0.0 allegrolokalnie.oferta293484pl.click
 0.0.0.0 allegrolokalnie.oferta294852694.click
 0.0.0.0 allegrolokalnie.oferta384bs2pj.click
 0.0.0.0 allegrolokalnie.oferta384hw2nd8.click
@@ -767,6 +771,7 @@
 0.0.0.0 allegrolokalnie.pl-oferta5829024.click
 0.0.0.0 allegrolokalnie.pl-oferta593850.click
 0.0.0.0 allegrolokalnie.pl-oferta6010778.click
+0.0.0.0 allegrolokalnie.pl-oferta6027980.click
 0.0.0.0 allegrolokalnie.pl-oferta62859900.click
 0.0.0.0 allegrolokalnie.pl-oferta6345344.click
 0.0.0.0 allegrolokalnie.pl-oferta6380009.click
@@ -814,6 +819,7 @@
 0.0.0.0 allegrolokalnie.pl655383454.click
 0.0.0.0 allegrolokalnie.pq8b9.click
 0.0.0.0 allegrolokalnie.px279oferta39572938.click
+0.0.0.0 allegrolokalnie.rezerwacja49228.click
 0.0.0.0 allegrolokalnie.rezerwacja5274.click
 0.0.0.0 allegrolokalnie.rezerwacja544125.click
 0.0.0.0 allegrolokalnie.rezerwacja5962.click
@@ -9504,7 +9510,6 @@
 0.0.0.0 c1-stats.shopifysvc.com
 0.0.0.0 c1.dstatbots.win
 0.0.0.0 c1a9awfv-analytics.convkit.com
-0.0.0.0 c87ax.click
 0.0.0.0 ca-prestationssante.fr
 0.0.0.0 caanalytics.com
 0.0.0.0 caanalyticsdobs.com
@@ -10369,7 +10374,6 @@
 0.0.0.0 creative-analytics.corsairs.network
 0.0.0.0 creative-analytics.crossinstall.io
 0.0.0.0 creative-stat1.com
-0.0.0.0 creatormonetizationsupportsolutionsmetaai.click
 0.0.0.0 crediclick-bhd-snowy.vercel.app
 0.0.0.0 credolano.click
 0.0.0.0 cresnovasoftware.click
@@ -10392,6 +10396,7 @@
 0.0.0.0 crypto-o.click
 0.0.0.0 cryptobetwin.click
 0.0.0.0 cryptoblog.biz
+0.0.0.0 cryptolithinvest-click.pages.dev
 0.0.0.0 cryptolithinvest.click
 0.0.0.0 cshallows.click
 0.0.0.0 csi-stock-analytics-dev.codelayer.io
@@ -10593,7 +10598,6 @@
 0.0.0.0 diwpqhzya.click
 0.0.0.0 djupfondstad.click
 0.0.0.0 dk-psa.staticcom.edgekey.net.easyjet.com
-0.0.0.0 dkkownstaters.info
 0.0.0.0 dl.unicron-dl.click
 0.0.0.0 dllpgd.click
 0.0.0.0 dlog.perfectworldgames.com
@@ -10623,7 +10627,6 @@
 0.0.0.0 domainanalytics.net
 0.0.0.0 domarevixvalix.click
 0.0.0.0 domclickext.xyz
-0.0.0.0 domustattooroma.mom
 0.0.0.0 dontradezipsoft.click
 0.0.0.0 doorsign.click
 0.0.0.0 doorzfold.click
@@ -10662,7 +10665,6 @@
 0.0.0.0 dpd-site-analytics-backend-api-prod.dpd.ru
 0.0.0.0 dpd.iflowcore-expres.click
 0.0.0.0 dpdpaczka.danazlawka64.click
-0.0.0.0 dpdroup.click
 0.0.0.0 dr-estate.com
 0.0.0.0 drainmayhem.click
 0.0.0.0 dravexil.click
@@ -10777,7 +10779,6 @@
 0.0.0.0 electriclicking.com
 0.0.0.0 electricshadow.click
 0.0.0.0 electroclearance.click
-0.0.0.0 electrodeals.click
 0.0.0.0 electrooutlet.click
 0.0.0.0 electrosale.click
 0.0.0.0 eleve-vextera.click
@@ -11161,8 +11162,8 @@
 0.0.0.0 fusestats.com
 0.0.0.0 fustgo.click
 0.0.0.0 futucraft.click
-0.0.0.0 futurecodex.click
 0.0.0.0 futurecoreai.click
+0.0.0.0 futurixedgeai-click.pages.dev
 0.0.0.0 futurixedgeai.click
 0.0.0.0 fwpixel.com
 0.0.0.0 fynbex.click
@@ -11582,6 +11583,7 @@
 0.0.0.0 id09648.click
 0.0.0.0 id11963211556.click
 0.0.0.0 id127838541.click
+0.0.0.0 id13438294.click
 0.0.0.0 id1739273.click
 0.0.0.0 id197310.click
 0.0.0.0 id2994348454.click
@@ -11592,6 +11594,7 @@
 0.0.0.0 id356783456334.click
 0.0.0.0 id3677213569.click
 0.0.0.0 id4527391156.click
+0.0.0.0 id5106579.click
 0.0.0.0 id523367882.click
 0.0.0.0 id5618282.click
 0.0.0.0 id57564632332.click
@@ -13251,7 +13254,6 @@
 0.0.0.0 met.werkstatt-betrieb.de
 0.0.0.0 meta-ad-account-support.statichost.page
 0.0.0.0 meta-analytics.jdsports.co.uk
-0.0.0.0 metacreatormonetizationsupportonline.click
 0.0.0.0 metadata-static-files.sfo2.cdn.digitaloceanspaces.com
 0.0.0.0 metatrckpixel.com
 0.0.0.0 mete-bella.click
@@ -13548,7 +13550,6 @@
 0.0.0.0 nedstat.s0.nl
 0.0.0.0 nedstatbasic.net
 0.0.0.0 nedstatpro.net
-0.0.0.0 needjweb.click
 0.0.0.0 needle-engine-analytics-v2-r26roub2hq-lz.a.run.app
 0.0.0.0 neiwa.click
 0.0.0.0 neltrivo.click
@@ -13618,7 +13619,6 @@
 0.0.0.0 nexorentis.click
 0.0.0.0 next.clickvipbrasil.com
 0.0.0.0 nextclick.pl
-0.0.0.0 nextgendata.click
 0.0.0.0 nextgenstats.com
 0.0.0.0 nextstat.com
 0.0.0.0 nexuscapitalai.click
@@ -13759,7 +13759,6 @@
 0.0.0.0 oferta-numer-1682672-pl.click
 0.0.0.0 oferta1758691.click
 0.0.0.0 oferta271638pl.click
-0.0.0.0 oferta293484pl.click
 0.0.0.0 oferta389212.click
 0.0.0.0 oferta390841.click
 0.0.0.0 oferta39472.click
@@ -13795,7 +13794,6 @@
 0.0.0.0 oferta893720.click
 0.0.0.0 oferta9358392.click
 0.0.0.0 oferta9837201.click
-0.0.0.0 oferta986124pl.click
 0.0.0.0 oferty-status-6428.beer
 0.0.0.0 oferty-status.casa
 0.0.0.0 offer24id26.click
@@ -14523,6 +14521,7 @@
 0.0.0.0 pixelmator.us
 0.0.0.0 pixelmind.click
 0.0.0.0 pixelmodu.com
+0.0.0.0 pixelmoonstudio.com
 0.0.0.0 pixelnara.com
 0.0.0.0 pixelnestsqq.shop
 0.0.0.0 pixelnexo.com
@@ -14653,7 +14652,6 @@
 0.0.0.0 pl-oferta56757.click
 0.0.0.0 pl-oferta5737974.click
 0.0.0.0 pl-oferta57844.click
-0.0.0.0 pl-oferta6027980.click
 0.0.0.0 pl-oferta6301892.click
 0.0.0.0 pl-oferta64457.click
 0.0.0.0 pl-oferta6514922141.click
@@ -15700,7 +15698,6 @@
 0.0.0.0 signallexapro.click
 0.0.0.0 signals-analytics.com
 0.0.0.0 signedtostatistics.net
-0.0.0.0 silberstatic.com
 0.0.0.0 silenk.click
 0.0.0.0 simanalytics.nl
 0.0.0.0 simple-analytics-495.vercel.app
@@ -19450,7 +19447,6 @@
 0.0.0.0 tagstaticx.com
 0.0.0.0 taiseijyutaku.click
 0.0.0.0 taituranite.click
-0.0.0.0 taizi.fdstat.vip
 0.0.0.0 talentper.click
 0.0.0.0 tallulahestates.com
 0.0.0.0 talog.wayagame.com
@@ -19529,6 +19525,7 @@
 0.0.0.0 teleitepro.click
 0.0.0.0 teleitypro.click
 0.0.0.0 teleknowle.click
+0.0.0.0 teleltyxus.click
 0.0.0.0 telelunarl.click
 0.0.0.0 teleluxtio.click
 0.0.0.0 telelypros.click
@@ -19633,7 +19630,6 @@
 0.0.0.0 tevefxqlrn.click
 0.0.0.0 tevegqtrnt.click
 0.0.0.0 tevehivex.click
-0.0.0.0 tevehxplrv.click
 0.0.0.0 tevehyvix.click
 0.0.0.0 tevehyvra.click
 0.0.0.0 tevehyzel.click
@@ -19834,7 +19830,6 @@
 0.0.0.0 tj-analytics.techjockey.com
 0.0.0.0 tj.bingoputlog.shop
 0.0.0.0 tk-plkfdpl.click
-0.0.0.0 tk-wyprzedapl.click
 0.0.0.0 tlgrm.click
 0.0.0.0 tm-analytics-pr.trafficmanager.net
 0.0.0.0 tm-analytics.bluevine.com
@@ -20489,7 +20484,6 @@
 0.0.0.0 webanalytics2.cfapps.eu10.hana.ondemand.com
 0.0.0.0 webanalytics2.ucy.ac.cy
 0.0.0.0 webanalyticsnossl.websense.com
-0.0.0.0 webbeacon.pages.dev
 0.0.0.0 webclickengine.com
 0.0.0.0 webclickmanager.com
 0.0.0.0 webdat.mai-estate.com
@@ -20841,7 +20835,6 @@
 0.0.0.0 womenclick.ru
 0.0.0.0 wompanalytics.azurewebsites.net
 0.0.0.0 wonderful-grass-088f1e203.7.azurestaticapps.net
-0.0.0.0 wonderstate.mom
 0.0.0.0 workerhome.click
 0.0.0.0 workerstats.net
 0.0.0.0 workflow-analytics.system.floqast.app
