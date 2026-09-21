@@ -3,11 +3,11 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 778267,
-    "dns_domains": 539858,
+    "total_rules": 778402,
+    "dns_domains": 539991,
     "source_counts": {
       "Hagezi DNS Pro Plus": 254846,
-      "oisd": 246109,
+      "oisd": 246242,
       "217heidai adblockdns": 210559,
       "ADrules DNS": 200810,
       "ADrules DNS (gp mirror)": 200810,
@@ -20,8 +20,8 @@
       "ADrules anti-AD": 94581,
       "Anti-AD Easylist": 94581,
       "Anti-AD (easylist)": 94581,
-      "EasyList (ABP)": 82803,
-      "EasyList (easylist.to)": 82803,
+      "EasyList (ABP)": 82804,
+      "EasyList (easylist.to)": 82804,
       "ADrules Easylist": 82701,
       "StevenBlack Hosts": 76241,
       "Phishing URL Blocklist": 67643,
@@ -44,7 +44,7 @@
       "10007_auto reward": 12491,
       "Online Malicious URL Blocklist": 9287,
       "banbendalao ADgk": 9153,
-      "AdGuard – Mobile Ads": 7869,
+      "AdGuard – Mobile Ads": 7871,
       "AdAway Hosts": 6540,
       "uBO filters – Ads": 6120,
       "217heidai adblockdnslite": 5189,
@@ -69,11 +69,11 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 479661,
-      "css": 138451,
+      "network": 479777,
+      "css": 138453,
       "privacy": 55434,
       "phishing": 36764,
-      "url": 25808,
+      "url": 25825,
       "whitelist": 13714,
       "scriptlet": 10807,
       "malware": 9551,
@@ -85,22 +85,22 @@
       "html": 184,
       "js": 1
     },
-    "root_domain_blocks": 319958,
+    "root_domain_blocks": 320068,
     "local_blocklist_rules": 0,
     "local_allowlist_rules": 0
   },
   "diff": {
     "total_rules": {
-      "current": 778267,
-      "previous": 776675,
-      "delta": 1592,
-      "percent": 0.2
+      "current": 778402,
+      "previous": 778267,
+      "delta": 135,
+      "percent": 0.02
     },
     "dns_domains": {
-      "current": 539858,
-      "previous": 538372,
-      "delta": 1486,
-      "percent": 0.28
+      "current": 539991,
+      "previous": 539858,
+      "delta": 133,
+      "percent": 0.02
     },
     "sources": {
       "10007_auto reward": {
@@ -224,10 +224,10 @@
         "percent": 0.0
       },
       "AdGuard – Mobile Ads": {
-        "current": 7869,
+        "current": 7871,
         "previous": 7869,
-        "delta": 0,
-        "percent": 0.0
+        "delta": 2,
+        "percent": 0.03
       },
       "AdGuard/uBO – URL Tracking Protection": {
         "current": 2663,
@@ -237,9 +237,9 @@
       },
       "AdGuardSDNSFilter": {
         "current": 181470,
-        "previous": 181453,
-        "delta": 17,
-        "percent": 0.01
+        "previous": 181470,
+        "delta": 0,
+        "percent": 0.0
       },
       "Anti-AD (adguard)": {
         "current": 100173,
@@ -290,22 +290,22 @@
         "percent": 0.0
       },
       "EasyList (ABP)": {
-        "current": 82803,
-        "previous": 82774,
-        "delta": 29,
-        "percent": 0.04
+        "current": 82804,
+        "previous": 82803,
+        "delta": 1,
+        "percent": 0.0
       },
       "EasyList (easylist.to)": {
-        "current": 82803,
-        "previous": 82777,
-        "delta": 26,
-        "percent": 0.03
+        "current": 82804,
+        "previous": 82803,
+        "delta": 1,
+        "percent": 0.0
       },
       "EasyList China (ABP)": {
         "current": 19011,
-        "previous": 19010,
-        "delta": 1,
-        "percent": 0.01
+        "previous": 19011,
+        "delta": 0,
+        "percent": 0.0
       },
       "EasyPrivacy (ABP)": {
         "current": 53503,
@@ -345,15 +345,15 @@
       },
       "Hagezi DNS Light": {
         "current": 39461,
-        "previous": 33818,
-        "delta": 5643,
-        "percent": 16.69
+        "previous": 39461,
+        "delta": 0,
+        "percent": 0.0
       },
       "Hagezi DNS Pro Plus": {
         "current": 254846,
-        "previous": 252873,
-        "delta": 1973,
-        "percent": 0.78
+        "previous": 254846,
+        "delta": 0,
+        "percent": 0.0
       },
       "HalfLife list (jsdelivr)": {
         "current": 22333,
@@ -428,10 +428,10 @@
         "percent": 0.0
       },
       "oisd": {
-        "current": 246109,
-        "previous": 246178,
-        "delta": -69,
-        "percent": -0.03
+        "current": 246242,
+        "previous": 246109,
+        "delta": 133,
+        "percent": 0.05
       },
       "uBO filters – Ads": {
         "current": 6120,
@@ -472,15 +472,15 @@
     }
   },
   "previous": {
-    "total_rules": 776675,
-    "dns_domains": 538372,
+    "total_rules": 778267,
+    "dns_domains": 539858,
     "source_counts": {
-      "Hagezi DNS Pro Plus": 252873,
-      "oisd": 246178,
+      "Hagezi DNS Pro Plus": 254846,
+      "oisd": 246109,
       "217heidai adblockdns": 210559,
       "ADrules DNS": 200810,
       "ADrules DNS (gp mirror)": 200810,
-      "AdGuardSDNSFilter": 181453,
+      "AdGuardSDNSFilter": 181470,
       "ADrules AdRules": 137863,
       "AdGuard – Ads": 136456,
       "Anti-AD Domains": 108350,
@@ -489,8 +489,8 @@
       "ADrules anti-AD": 94581,
       "Anti-AD Easylist": 94581,
       "Anti-AD (easylist)": 94581,
-      "EasyList (easylist.to)": 82777,
-      "EasyList (ABP)": 82774,
+      "EasyList (ABP)": 82803,
+      "EasyList (easylist.to)": 82803,
       "ADrules Easylist": 82701,
       "StevenBlack Hosts": 76241,
       "Phishing URL Blocklist": 67643,
@@ -500,13 +500,13 @@
       "Firebog Easylist Hosts": 48061,
       "Firebog Easyprivacy Hosts": 43058,
       "KADhosts": 42683,
-      "Hagezi DNS Light": 33818,
+      "Hagezi DNS Light": 39461,
       "Fanboy CookieMonster": 25208,
       "ADrules I-Dont-Care-About-Cookies": 24319,
       "ADrules HalfLife": 22333,
       "HalfLife list (jsdelivr)": 22333,
       "AdGuard – Chinese": 22022,
-      "EasyList China (ABP)": 19010,
+      "EasyList China (ABP)": 19011,
       "ADrules EasyListChina": 19007,
       "Fanboy Social": 13841,
       "Dan Pollock's hosts": 13087,
@@ -538,23 +538,23 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 478418,
-      "css": 138452,
-      "privacy": 55358,
-      "phishing": 36796,
-      "url": 25462,
-      "whitelist": 13716,
+      "network": 479661,
+      "css": 138451,
+      "privacy": 55434,
+      "phishing": 36764,
+      "url": 25808,
+      "whitelist": 13714,
       "scriptlet": 10807,
-      "malware": 9627,
-      "annoyance": 3587,
-      "social": 1874,
-      "cookie": 1661,
-      "redirect": 499,
+      "malware": 9551,
+      "annoyance": 3597,
+      "social": 1882,
+      "cookie": 1676,
+      "redirect": 504,
       "mining": 233,
       "html": 184,
       "js": 1
     },
-    "root_domain_blocks": 319479,
+    "root_domain_blocks": 319958,
     "local_blocklist_rules": 0,
     "local_allowlist_rules": 0
   },
@@ -571,15 +571,15 @@
       }
     },
     "per_rule_classify": {
-      "reclassified": 196373
+      "reclassified": 196392
     },
     "resolve_conflicts": {
       "removed": 117,
       "records": 117
     },
     "domain_fold": {
-      "folded": 96055,
-      "domains": 90941
+      "folded": 96056,
+      "domains": 90942
     }
   }
 }

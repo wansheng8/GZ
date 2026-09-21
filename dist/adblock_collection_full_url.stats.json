@@ -1,16 +1,16 @@
 {
   "name": "adblock_collection_full_url",
-  "total": 25808,
+  "total": 25825,
   "by_category": {
-    "url": 25808
+    "url": 25825
   },
   "by_kind": {
-    "network": 25808
+    "network": 25825
   },
   "by_source": {
     "Hagezi DNS Pro Plus": 10634,
     "ADrules DNS": 3515,
-    "oisd": 2722,
+    "oisd": 2739,
     "217heidai adblockdns": 2272,
     "AdGuard – Ads": 1089,
     "ADrules Easylist": 1052,
