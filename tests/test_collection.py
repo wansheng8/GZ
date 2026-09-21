@@ -285,6 +285,19 @@ def test_badfilter_ignores_comma_inside_value():
     assert apply_badfilter([target, bad]) == []
 
 
+def test_legacy_badfilter_cancels_target():
+    # 遗留写法 `||domain^,badfilter` 应与 `$badfilter` 同义
+    bad = _rule("||ads.com^,badfilter")
+    assert bad.is_badfilter
+    kept = apply_badfilter([_rule("||ads.com^"), bad, _rule("||keep.com^")])
+    assert [r.raw for r in kept] == ["||keep.com^"]
+
+
+def test_legacy_badfilter_without_target_is_dropped():
+    # 悬空的 badfilter 自身绝不应作为普通阻断规则保留
+    assert apply_badfilter([_rule("||lone.com^,badfilter")]) == []
+
+
 def test_source_stats_counts():
     rules = [
         _rule("||a.com^", source="X"),

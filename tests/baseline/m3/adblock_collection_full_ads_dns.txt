@@ -1,7 +1,6 @@
 # Adblock Rule Collection (Full) (ads)
-# Format: hosts (0.0.0.0 domain), total 5
+# Format: hosts (0.0.0.0 domain), total 4
 0.0.0.0 ads.example
 0.0.0.0 bare.example
-0.0.0.0 gone.example
 0.0.0.0 hosts.example
 0.0.0.0 shared.example

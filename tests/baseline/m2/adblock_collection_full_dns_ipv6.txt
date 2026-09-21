@@ -1,11 +1,10 @@
 # Adblock Rule Collection (Full)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 9
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 8
 :: ads.example
 :: analytics.example
 :: badmalware.example
 :: bare.example
 :: evil-phish.example
-:: gone.example
 :: hosts.example
 :: shared.example
 :: tracker.example

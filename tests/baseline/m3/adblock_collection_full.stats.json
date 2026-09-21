@@ -1,8 +1,8 @@
 {
   "name": "adblock_collection_full",
-  "total": 16,
+  "total": 15,
   "by_category": {
-    "ads": 7,
+    "ads": 6,
     "whitelist": 2,
     "css": 2,
     "privacy": 2,
@@ -11,7 +11,7 @@
     "scriptlet": 1
   },
   "by_kind": {
-    "network": 13,
+    "network": 12,
     "css": 2,
     "scriptlet": 1
   },

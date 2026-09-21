@@ -1,11 +1,10 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 9
+# Total Rules: 8
 host-suffix, ads.example, reject
 host-suffix, analytics.example, reject
 host-suffix, badmalware.example, reject
 host-suffix, bare.example, reject
 host-suffix, evil-phish.example, reject
-host-suffix, gone.example, reject
 host-suffix, hosts.example, reject
 host-suffix, shared.example, reject
 host-suffix, tracker.example, reject

@@ -60,7 +60,7 @@
 | `$match-case` | uBO/AdGuard | 路径区分大小写 |
 | `$all` | AdGuard | 等价于不限类型的整域阻断 |
 | `$popup` / `$popunder` | uBO/AdGuard | 拦截弹窗 / 弹后窗 |
-| `$badfilter` | uBO/AdGuard | 停用上游同名规则 |
+| `$badfilter` | uBO/AdGuard | 停用上游同名规则（亦兼容遗留写法 `,badfilter`） |
 | `$cname` | uBO/AdGuard | 按 CNAME 记录匹配，与整域拦截语义不等价 |
 
 动作/内容型（改写请求或响应，不新增整域拦截）：

@@ -615,8 +615,11 @@ def _parse_adblock_line(
         m = _option_start(stripped)
         if m is not None:
             options = parse_options(stripped[m + 1 :])
-            is_badfilter = "badfilter" in options
-            is_important = "important" in options
+        # 同时兼容遗留写法 `||domain^,badfilter`（无 `$` 选项段）
+        is_badfilter = "badfilter" in options or stripped.rstrip().endswith(
+            ",badfilter"
+        )
+        is_important = "important" in options
 
     domains = _extract_domains(stripped)
     cat = _classify(stripped, category_hint, kind, is_exception)

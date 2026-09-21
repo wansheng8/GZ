@@ -1,1 +1,1 @@
-{"version": 3, "rules": [{"domain_suffix": ["ads.example", "analytics.example", "badmalware.example", "bare.example", "evil-phish.example", "gone.example", "hosts.example", "shared.example", "tracker.example"]}]}
+{"version": 3, "rules": [{"domain_suffix": ["ads.example", "analytics.example", "badmalware.example", "bare.example", "evil-phish.example", "hosts.example", "shared.example", "tracker.example"]}]}

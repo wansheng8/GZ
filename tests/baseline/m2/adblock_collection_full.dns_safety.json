@@ -2,16 +2,16 @@
   "policy_level": "all",
   "min_confidence": 0.0,
   "allow_modifier": false,
-  "dns_eligible_network_rules": 9,
+  "dns_eligible_network_rules": 8,
   "dns_rejected_network_rules": 7,
   "by_eligibility": {
     "REJECT": 7,
-    "SAFE": 9
+    "SAFE": 8
   },
   "by_reason": {
     "path_rule": 1,
     "pure_domain_modifier": 1,
-    "pure_domain": 8,
+    "pure_domain": 7,
     "resource_type_modifier": 1,
     "untranslatable": 2,
     "css_rule": 2,

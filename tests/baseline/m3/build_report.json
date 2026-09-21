@@ -3,14 +3,14 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 16,
-    "dns_domains": 9,
+    "total_rules": 15,
+    "dns_domains": 8,
     "source_counts": {
       "FixtureAds": 17,
       "FixturePrivacy": 4
     },
     "category_counts": {
-      "ads": 7,
+      "ads": 6,
       "whitelist": 2,
       "css": 2,
       "privacy": 2,
@@ -18,19 +18,19 @@
       "phishing": 1,
       "scriptlet": 1
     },
-    "root_domain_blocks": 11,
+    "root_domain_blocks": 10,
     "local_blocklist_rules": 0,
     "local_allowlist_rules": 0
   },
   "diff": {
     "total_rules": {
-      "current": 16,
+      "current": 15,
       "previous": null,
       "delta": null,
       "percent": null
     },
     "dns_domains": {
-      "current": 9,
+      "current": 8,
       "previous": null,
       "delta": null,
       "percent": null
@@ -54,8 +54,8 @@
       "records": 1
     },
     "domain_fold": {
-      "folded": 3,
-      "domains": 3
+      "folded": 2,
+      "domains": 2
     }
   }
 }

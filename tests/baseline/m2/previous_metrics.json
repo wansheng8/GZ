@@ -1,16 +1,16 @@
 {
-  "total_rules": 16,
-  "dns_domains": 9,
+  "total_rules": 15,
+  "dns_domains": 8,
   "source_counts": {
     "FixtureAds": 17,
     "FixturePrivacy": 4
   },
   "category_counts": {
-    "ads": 12,
+    "ads": 11,
     "whitelist": 2,
     "privacy": 2
   },
-  "root_domain_blocks": 11,
+  "root_domain_blocks": 10,
   "local_blocklist_rules": 0,
   "local_allowlist_rules": 0
 }

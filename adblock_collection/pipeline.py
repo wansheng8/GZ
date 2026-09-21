@@ -28,12 +28,13 @@ LOG = logging.getLogger("adblock_collection")
 # 1.5.0 / 1.6.0：发行按规则类型划分的三层产物（网络拦截 / 元素隐藏 / DNS 等价），
 # 依赖解析阶段产出的 kind 与分类阶段的 category，故同步递增使旧解析缓存失效。
 # parser 1.6.0：仅网络规则解析 `$` 选项，避免元素/脚本规则里的 `$` 造出伪选项。
+# parser 1.7.0：兼容遗留 badfilter 写法 `||domain^,badfilter`，与 `$badfilter` 同义。
 # normalizer 1.3.0：去重键仅对网络规则重排 `$` 选项；元素/脚本规则里的 `$` 属选择器
 #   或脚本参数，不再参与选项归一，避免不同规则折叠碰撞。
 # classifier 1.8.0：DNS 分级识别取反类型/作用域（`$~script`/`$~third-party`）与
 #   `$app`/`$dnstype`/`$cname`，并忽略 `$reason=` 注解，收紧整域拦截升级。
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
-PARSER_VERSION = "1.6.0"
+PARSER_VERSION = "1.7.0"
 NORMALIZER_VERSION = "1.3.0"
 CLASSIFIER_VERSION = "1.8.0"
 

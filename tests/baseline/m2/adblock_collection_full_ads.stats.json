@@ -1,15 +1,15 @@
 {
   "name": "adblock_collection_full_ads",
-  "total": 12,
+  "total": 11,
   "by_category": {
-    "ads": 12
+    "ads": 11
   },
   "by_kind": {
-    "network": 9,
+    "network": 8,
     "css": 2,
     "scriptlet": 1
   },
   "by_source": {
-    "FixtureAds": 12
+    "FixtureAds": 11
   }
 }

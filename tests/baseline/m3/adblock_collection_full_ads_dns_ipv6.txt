@@ -1,7 +1,6 @@
 # Adblock Rule Collection (Full) (ads)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 5
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 4
 :: ads.example
 :: bare.example
-:: gone.example
 :: hosts.example
 :: shared.example

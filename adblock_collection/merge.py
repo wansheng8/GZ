@@ -267,7 +267,10 @@ def _badfilter_target(norm: str) -> str | None:
     规范化键形如 ``prefix$opt1,opt2``（选项已排序）。需按 ``_split_options`` 切分，
     避免取值内逗号被误拆；去掉 badfilter 后若已无其它选项，需连同 ``$`` 一起丢弃，
     才能匹配无选项规则 ``prefix``（如 ``||ads.com^$badfilter`` 抵消 ``||ads.com^``）。
+    同时兼容遗留写法 ``||domain^,badfilter``（无 ``$`` 选项段）。
     """
+    if norm.endswith(",badfilter"):
+        return norm[: -len(",badfilter")]
     idx = _option_start(norm)
     if idx is None:
         return None

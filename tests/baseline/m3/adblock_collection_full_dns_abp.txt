@@ -4,14 +4,13 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 9
+! Total Rules: 8
 ! ------------------------------------------
 ||ads.example^
 ||analytics.example^
 ||badmalware.example^
 ||bare.example^
 ||evil-phish.example^
-||gone.example^
 ||hosts.example^
 ||shared.example^
 ||tracker.example^
