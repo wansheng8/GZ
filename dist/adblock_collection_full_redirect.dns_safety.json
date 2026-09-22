@@ -3,12 +3,12 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "dns_eligible_network_rules": 0,
-  "dns_rejected_network_rules": 504,
+  "dns_rejected_network_rules": 506,
   "by_eligibility": {
-    "REJECT": 504
+    "REJECT": 506
   },
   "by_reason": {
-    "regex_or_redirect_rule": 499,
+    "regex_or_redirect_rule": 501,
     "non_blocking_modifier": 5
   }
 }

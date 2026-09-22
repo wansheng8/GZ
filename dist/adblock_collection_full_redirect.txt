@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 504
+! Total Rules: 506
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -46,10 +46,12 @@ $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|l
 /ima3.js$script,redirect=google-ima.js,domain=mixfreegames.com|gamemonetize.com|gamemonetize.video|gamemonetize.co|playjolt.com|gamessumo.com|ubestgames.com|myfreegames.net
 ||*.$image,redirect=1x1.gif,3p,domain=rmdown.com
 ||*/api.js^$script,rewrite=abp-resource:blank-js,domain=fandom.com
+||*/api.js|$script,rewrite=abp-resource:blank-js,domain=tibiopedia.pl
 ||*/app.js|$script,rewrite=abp-resource:blank-js,domain=calculatorsoup.com
 ||*/app.js|$script,rewrite=abp-resource:blank-js,domain=hna.de
 ||*/app.js|$script,rewrite=abp-resource:blank-js,domain=scribd.com
 ||*/bundle.js^$script,rewrite=abp-resource:blank-js,domain=fandom.com
+||*/cdn.js^$script,rewrite=abp-resource:blank-js,domain=dictionary.cambridge.org
 ||*/cdn.js^$script,rewrite=abp-resource:blank-js,domain=fandom.com
 ||*/core.js|$script,rewrite=abp-resource:blank-js,domain=hna.de
 ||*/core.js|$script,rewrite=abp-resource:blank-js,domain=meteovista.be

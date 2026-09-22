@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 1229
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 1230
 :: 01.sharedsource.org
 :: 01free-share.com
 :: 03.sharedsource.org
@@ -311,7 +311,6 @@
 :: facebook-profile.5v.pl
 :: facebook-proxy.hi5.com
 :: facebook-repto1040s2.ahlamountada.com
-:: facebook-sage-tau.vercel.app
 :: facebook-son.cc
 :: facebook-support-page.com
 :: facebook-support-team-980.pages.med.br
@@ -518,6 +517,7 @@
 :: instagram-cam.vercel.app
 :: instagram-cutequeen57.netlify.app
 :: instagram-e.com.cn
+:: instagram-login-support.vercel.app
 :: instagram-login123.blogspot.com
 :: instagram-nameservers.com
 :: instagram-nepal.github.io
@@ -798,10 +798,10 @@
 :: s.viiqvmfb.com
 :: safeshare.myportfolio.com
 :: safeshare6.myportfolio.com
+:: sage-reef-7741.hosted.pageshare.ai
 :: salasocial.com
 :: salesonfb.shop
 :: samplel-ks6yxvur5-instagramm.vercel.app
-:: sansanfb.de
 :: sashare.com
 :: sc-events-apis.sharechat.com
 :: screenshare.pics
@@ -1105,6 +1105,7 @@
 :: tckmj.shareably.net
 :: tcwvvosfnvk.com
 :: techmshare.com
+:: tejxthyxavhfb.site
 :: tempest.services.disqus.com
 :: tenorshare.ai
 :: tepshared.tep.test.ajo.adobe.com

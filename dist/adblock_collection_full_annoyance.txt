@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3597
+! Total Rules: 3598
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -766,6 +766,7 @@ $removeparam=ml_subscriber_hash
 /cpro.$popup,3p
 /hndxweb/push$popup,3p
 /indexpc.html?agent=$popup,3p
+/js/popunder.js$3p
 /poptest.js|$popup,domain=thepiratebay.sx|pirateproxy.se|unblocked.co|piratesniper.net|pirateproxy.net|piratebaybyproxy.com|proxybay.eu|tpbunion.com|quluxingba.info|tpb.ducke.co|piratebayunion.com|tpb.piraten.lu|tpb.ipredator.se|tpb.pirati.cz|theproxybay.biz|51tsj.com|bay.alanaktion.net|tpbpirate.tk
 /popup/adblocker
 /pushportal/PushPortalServer$popup,3p
@@ -996,7 +997,6 @@ bytegoofy.com/goofy/*/push.js?
 ||webpush.vn^
 ||webpushcloud.top^
 ||webpushdirect.biz^
-||webpushstat-sgp.engagelab.com^
 ||websurvey.spa-mr.com^
 ||widget.push.forja.ma^
 ||ws-goguardian.pusher.com^
@@ -1030,6 +1030,7 @@ bytegoofy.com/goofy/*/push.js?
 ||promote-subscribe.forbes.com^
 ||www.fpcpopunder.com^
 ||pushwoosh.g5e.com^
+||getcashforsurveys.com^
 ||file-intl-push.heytapdl.com^
 ||push-ads-cn.heytapmobi.com^
 ||push-dc-us.heytapmobile.com^
@@ -1041,30 +1042,35 @@ bytegoofy.com/goofy/*/push.js?
 ||push.scloud.lfengmobile.com^
 ||luckypush.pro^
 ||push.mobilefonex.com^
+||analytics-push.msccruises.com^
 ||mycleverpush.com^
 ||mypush.io^
 ||n1gopush.com^
 ||sch-map.norstatsurveys.com^
-||push.onestore.co.kr^
 ||overlay.top^
 ||paypopup.com^
 ||pmc-surveys.co.uk^
 ||popunder.com^
 ||popunder.net^
+||popupblocker.com^
 ||popupdl.ir^
 ||popupplus.ir^
+||newsletter.posthog.com^
 ||push2check.com^
 ||pushadv.biz^
 ||zebra.pushbullet.com^
 ||pushcode.jp^
+||pusherism.com^
 ||pushers.info^
 ||pushfilefind.click^
+||analytics.pushgrid.net^
 ||pushinkaa.com^
 ||pushit.work^
 ||pushmoose.com^
 ||pushq.ir^
 ||pushtrust.com^
 ||pushydialoguenoisy.com^
+||app.qpointsurvey.com^
 ||realpush.digital^
 ||rexpush.info^
 ||richpopup.com^
@@ -1072,6 +1078,8 @@ bytegoofy.com/goofy/*/push.js?
 ||smartpush0.info^
 ||subscribepage.com^
 ||subscribepage.io^
+||survey-analytics-slider.webflow.io^
+||survey-analytics.webflow.io^
 ||survey-smiles.com^
 ||surveygizmobeacon.s3.amazonaws.com^
 ||widget.surveymonkey.com^
@@ -1163,15 +1171,9 @@ push.qq.com^
 ||torrentkitty.*/js/jquery.bpopup.
 ||api.weibo.cn/2/push/active?$replace=/(feed_redpacket|weibo_pic_banner|wbnote_infos|guest_fast_reg|loginconfig)//
 ||push.heytapmobile.com^
-||analytics-push.msccruises.com^
-||analytics.pushgrid.net^
-||app.qpointsurvey.com^
 ||aipsurveyschina.com^
-||getcashforsurveys.com^
-||popupblocker.com^
 ||ptopseempushoa.net^
 ||push-sender.com^
-||pusherism.com^
 ||wnt-some-push.net^
 ||overlay.aibuy.io^
 ||anandabazar.pushengage.com^
@@ -3150,6 +3152,7 @@ follow-it-form-subscribe
 ||pushmsg.camera360.com^
 ||crash-log.campushoy.com^
 ||analytics.click4survey.com^
+||push.onestore.co.kr^
 ||pushpro.co.za^
 ||newsurvey.ebit.com.br^
 ||newsletter.contact.sky^
@@ -3182,7 +3185,6 @@ follow-it-form-subscribe
 ||survey-metrics.platformrijksoverheid.nl^
 ||analytics.popup-records.de^
 ||log.popupglobal.ai^
-||newsletter.posthog.com^
 ||leibundseele-matomo.push-dein-business.de^
 ||matomo.push-dein-business.de^
 ||app.pushaja.com^
@@ -3203,8 +3205,6 @@ follow-it-form-subscribe
 ||posthog.talkpush.com^
 ||sentry-v1.talkpush.com^
 ||ads.unipush.de^
-||survey-analytics.webflow.io^
-||survey-analytics-slider.webflow.io^
 ||pushlog.wsoft.ru^
 ||fr.feedback.xmpush.global.xiaomi.com^
 ||idmb.feedback.xmpush.global.xiaomi.com^
@@ -3438,6 +3438,7 @@ follow-it-form-subscribe
 ||pushdigit.com^
 ||pushedconcede.com^
 ||pushedresponse.com^
+||pushkerwebs.github.io^
 ||pushky.com^
 ||pushland.ru^
 ||pushot.com^
@@ -3452,6 +3453,7 @@ follow-it-form-subscribe
 ||survey-ppl-log.com^
 ||survey-pulse-hub.com^
 ||survey.dolphin.com^
+||survey.zohopublic.eu^
 ||surveybypass.com^
 ||surveybypass.net^
 ||surveyedstrings.com^
@@ -3583,7 +3585,6 @@ _clickunder&pb=$popup
 ||turbobiyt.net/fd1/js/brinpopup.js
 /^https?:\/\/(?:[a-z]{2}\.)?[0-9a-z]{5,16}\.[a-z]{3,7}\/[a-z](?=[a-z]{0,25}[0-9A-Z])[0-9a-zA-Z]{3,26}\/\d{3,6}(?:[&?][0-9_a-z]=[0-9A-Za-z-]+)*$/$popup,3p,match-case
 /popup1000.js|$domain=manga1000.com
-/js/popunder.js$3p
 /push/p.js?$3p
 /v2/a/push/js/*$3p
 &fp_sid=pop$popup,3p
