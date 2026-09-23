@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (privacy)
-# Format: hosts (0.0.0.0 domain), total 44666
+# Format: hosts (0.0.0.0 domain), total 44680
 0.0.0.0 0.myikas.com
 0.0.0.0 0.net.easyjet.com
 0.0.0.0 00bfd200-dpnb2uqcmx3g.edgeone.dev
@@ -3349,6 +3349,7 @@
 0.0.0.0 analytics.myhermes.de
 0.0.0.0 analytics.mystream.com
 0.0.0.0 analytics.natgeokids.com
+0.0.0.0 analytics.national-lottery.co.uk
 0.0.0.0 analytics.naturequant.com
 0.0.0.0 analytics.navyfederal.org
 0.0.0.0 analytics.ncaa.com
@@ -5564,6 +5565,7 @@
 0.0.0.0 biznews.oregon.gov
 0.0.0.0 biztoolsbrief.com
 0.0.0.0 bizz.cochraneco.com
+0.0.0.0 bj.ad.track.66mobi.com
 0.0.0.0 bja2.destinia.cz
 0.0.0.0 bjdqbl.nippn-kenko.net
 0.0.0.0 bjfbac.hyundaivaudreuil.com
@@ -6153,6 +6155,7 @@
 0.0.0.0 c.autozen.tv
 0.0.0.0 c.bazo.io
 0.0.0.0 c.corriere.it
+0.0.0.0 c.f5mtrack.com
 0.0.0.0 c.fingerprint.com
 0.0.0.0 c.gazetevatan.com
 0.0.0.0 c.gmtrack.com
@@ -7650,6 +7653,7 @@
 0.0.0.0 counters.freewebs.com
 0.0.0.0 counters.libertaddigital.com
 0.0.0.0 countertracker.com
+0.0.0.0 countly.mail.163.com
 0.0.0.0 couponrail.com
 0.0.0.0 courageou.live
 0.0.0.0 courageous-biscotti-f04b01.netlify.app
@@ -12336,6 +12340,7 @@
 0.0.0.0 geo-fort.ru
 0.0.0.0 geo-targetly.com
 0.0.0.0 geo.adobe.com
+0.0.0.0 geo.atlassbx.com
 0.0.0.0 geo.bananastand.io
 0.0.0.0 geo.bandlab.io
 0.0.0.0 geo.bluedot.io
@@ -26420,6 +26425,7 @@
 0.0.0.0 s-sitecatalyst.work.shiseido.co.jp
 0.0.0.0 s-t.topya.com
 0.0.0.0 s-unoadsrv-com.geodns.me
+0.0.0.0 s.360.cn
 0.0.0.0 s.agava.ru
 0.0.0.0 s.airgoat.com
 0.0.0.0 s.allbootdisks.com
@@ -32793,6 +32799,7 @@
 0.0.0.0 stat.ws.126.net
 0.0.0.0 stat.y.qq.com
 0.0.0.0 stat.yellowtracker.com
+0.0.0.0 stat.youpin.mi.com
 0.0.0.0 stat.zol.com.cn
 0.0.0.0 statdynamic.com
 0.0.0.0 static-tracking.klaviyo.com
@@ -36277,6 +36284,7 @@
 0.0.0.0 tongdun-fingerprint.walmartmobile.cn
 0.0.0.0 tongji-res.meizu.com
 0.0.0.0 tongji.mafengwo.cn
+0.0.0.0 tongji.meizu.com
 0.0.0.0 tongji.techweb.com.cn
 0.0.0.0 tongji.xinmin.cn
 0.0.0.0 tongkhohangnhat.abphotos.link
@@ -43953,16 +43961,22 @@
 0.0.0.0 www.aptracking1.com
 0.0.0.0 www.communications.kra.go.ke
 0.0.0.0 www.dicarlotrack.com
+0.0.0.0 www.drivotracker.com
+0.0.0.0 www.event-tracking.com
+0.0.0.0 www.geoaran.site
 0.0.0.0 www.geodeep.org
 0.0.0.0 www.geolocation.performgroup.com
 0.0.0.0 www.georgewatson.plus.com
 0.0.0.0 www.leadtrackgo.com
 0.0.0.0 www.mftracking.com
+0.0.0.0 www.nbrtrack.com
 0.0.0.0 www.pixeltrack66.com
+0.0.0.0 www.trackadsb1.com
 0.0.0.0 www.trackbacksecure.com
 0.0.0.0 www.tracking.hvd-bb.de
 0.0.0.0 www.tracking.nudgepay.in
 0.0.0.0 www.trackingstatalytics.com
+0.0.0.0 www.utopia-privacy.com
 0.0.0.0 www.xy7track.com
 0.0.0.0 www1.cynergysolutions.net
 0.0.0.0 www1.discountautomirrors.com

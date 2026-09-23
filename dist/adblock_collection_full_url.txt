@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 26254
+! Total Rules: 26356
 ! ------------------------------------------
 -assets/ads.$~script
 .ar/ads/$~xhr
@@ -631,6 +631,7 @@ _images/ad.$image
 ||cdn-academy.akamaized.net/letras/ads/
 ||cdn.jsdelivr.net/npm/@get-advantage/advantage$script
 ||cdn.statically.io/gh/ad-shield/
+||click.alibaba.com^$subdocument,third-party
 ||click.aliexpress.com^$subdocument,third-party
 ||clicknplay.to/api/spots/
 ||cloudbet.com/ad/
@@ -1260,6 +1261,7 @@ _images/ad.$image
 ||3397ys.com/e/public/onclick/
 ||33dav.com/static/js/banner.js
 ||33dav.com/static/js/bottom.js
+||360.cn/apis/qss/soweb/ad_proxy/internal/
 ||360doc.com/ad/
 ||36img.com/ad/
 ||3987.com/statics/tow_skin/new_img/20
@@ -1499,6 +1501,7 @@ _images/ad.$image
 ||fulibac.com/images/upload/ad/
 ||fwsir.com/static/cpt/
 ||fzbm.com/bbs/static/js/bma.js
+||galaxymedia.xyz/app/images/banner.gif
 ||gamemale.com/static/js/valida.js
 ||ganjistatic1.com^*/adm/
 ||gavbus*.com/assets/common/js/ad.js
@@ -1921,6 +1924,7 @@ $domain=googleads.g.doubleclick.net
 ||static.1j1j.com^
 ||2xclick.ru^
 ||static.3001.net^
+||stat.m.360.cn^
 ||stat.360safe.com^
 ||statics.3987.com^
 ||3dlivestats.com^
@@ -2432,7 +2436,6 @@ $domain=googleads.g.doubleclick.net
 ||pageview.click^
 ||panger-top.click^
 ||static.parsely.com^
-||14-0-204-188.static.pccw-hkt.com^
 ||stat.pchome.net^
 ||persianstat.com^
 ||persianstat.ir^
@@ -2616,6 +2619,8 @@ $domain=googleads.g.doubleclick.net
 ||t2click.com^
 ||tagstaticx.com^
 ||talpa-analytics.com^
+||click.tanx.com^
+||rdstat.tanx.com^
 ||click.mz.simba.taobao.com^
 ||click.tz.simba.taobao.com^
 ||g.click.taobao.com^
@@ -7457,6 +7462,7 @@ _ad.php?
 ||api-analytics-cn.huami.com^
 ||api.beaconsinspace.com^
 ||api.exoclick.com^
+||api.mb-click.jp^
 ||aspivethx-click.pages.dev^
 ||auronixpro-click.pages.dev^
 ||auvrikensolmireth-click.pages.dev^
@@ -7494,6 +7500,7 @@ _ad.php?
 ||click.email.microsoftemail.com^
 ||click.emails.argos.co.uk^
 ||click.emails.tuclothing.sainsburys.co.uk^
+||click.gds.tanx.com^
 ||click.gospect.com^
 ||click.hookupinyourcity.com^
 ||click.i.southwesternrailway.com^
@@ -7508,6 +7515,7 @@ _ad.php?
 ||click.nvgaming.nvidia.com^
 ||click.sakuralive.com^
 ||click.searchnation.net^
+||click.sellmeyourtraffic.com^
 ||click.speee-ad.jp^
 ||click.suning.cn^
 ||click.top10sites.com^
@@ -7595,6 +7603,7 @@ _ad.php?
 ||pubads.g.doubleclick.net^
 ||qa-analytics.com^
 ||ravelizia-click.pages.dev^
+||rt.analytics.anvato.net^
 ||s.click.aliexpress.com^
 ||s3a.pstatp.com^
 ||sauletradevo-click.pages.dev^
@@ -7628,8 +7637,10 @@ _ad.php?
 ||wertkernix-click.pages.dev^
 ||wielunkapitektron-click.pages.dev^
 ||ws.mmstat.com^
+||www.4clicker.pro^
 ||www.adclickservice.com^
 ||www.dropped-click.com^
+||www.payperclickadvertising.org.uk^
 ||zeqvornixai-click.pages.dev^
 ||zulvoriax-click.pages.dev^
 ||zykanordrift-click.pages.dev^
@@ -7637,6 +7648,7 @@ _ad.php?
 ||webstats.100procent.com^
 ||log.111percent.net^
 ||log.uu.163.com^
+||vstlog.17u.cn^
 ||analytics.1clickvpn.com^
 ||analytics-toolbar.1clickvpn.com^
 ||1stat.ru^
@@ -7650,6 +7662,7 @@ _ad.php?
 ||analytics.2gis.com^
 ||analytics.2n.cz^
 ||log.321moviesfree.com^
+||stat.sd.360.cn^
 ||api-log.3bmeteo.com^
 ||analytics.3dcloud.io^
 ||analytics.3dexperience.3ds.com^
@@ -9168,7 +9181,6 @@ _ad.php?
 ||methodpayment.click^
 ||analytics.metrobyt-mobile.com^
 ||mhmarkets.click^
-||stat.youpin.mi.com^
 ||analytics.michaelkors.com^
 ||analyticspixel.microsoft.com^
 ||ld-analytics.micyjz.com^
@@ -10685,6 +10697,7 @@ analytics-*.aasaam.com
 ||atax.gamestats.com^
 ||beacon.indieclicktv.com^
 ||click.mmosite.com^
+||clicks.traffictrader.net^
 ||clientlog.portal.office.com^
 ||log.data.disney.com^
 ||log.deutschegrammophon.com^
@@ -10810,6 +10823,7 @@ analytics-*.aasaam.com
 ||nyaso.net/static/js/nya.js
 ||qqtz.com/ad$document
 ||resource.tompda.com/static/img/$object
+||s3a.pstatp.com/toutiao/picc_mig/dist/img.min.js
 ||s3b.pstatp.com/growth/video_mobile_detail/js/xigua_video_$script
 ||sobt8.com/Public/static/js/home-common-v2.js?v=
 ||static.115img.com/static/115tj.js$script
@@ -11127,7 +11141,9 @@ _stat.js*
 ||static.dynamicyield.com^
 ||stats.mediaforge.com.edgekey.net^
 ||clicktale.net.edgekey.net^
+||cdn-dsa.clicktale.net.edgekey.net^
 ||c.ftstats.com^
+||stat.hasmobi.net^
 ||cdn.heapanalytics.com^
 ||s4i.histats.com^
 ||static.hotjar.com^
@@ -11152,10 +11168,14 @@ _stat.js*
 ||static.retirementcommunitiesfyi.com^
 ||unlimiclick.com^
 ||www.jmp2click.com^
+||www.unlimiclick.com^
 ||clicktshirtprinting.co.uk^
+||www.clicktshirtprinting.co.uk^
 ||19blog.com^
 ||companies-catalog.com^
+||www.companies-catalog.com^
 ||freshestate.com.pl^
+||www.freshestate.com.pl^
 ||abbrasghig.click^
 ||abdominach.click^
 ||accucgufer.click^
@@ -11217,6 +11237,7 @@ _stat.js*
 ||officdendr.click^
 ||oltrereper.click^
 ||olx.id8639.click^
+||olx.oferta837412.click^
 ||orthozampe.click^
 ||overhantip.click^
 ||paczzkaa453238.click^
@@ -11256,7 +11277,22 @@ _stat.js*
 ||unideguani.click^
 ||unpatsemip.click^
 ||unviltrco.click^
+||vinted.pl-53421.click^
 ||welcomedashboardoppeservicesptclientstationonlinespotionline.bisnu.com.np^
+||www.auth.metacreatormonetizationsupportcare.click^
+||www.booking.prearrival-stay-status.com^
+||www.booking.prearviallstatus-guest.com^
+||www.center.metacreatormonetizationsupportcare.click^
+||www.center.supportblueidentitycheckbusiness.click^
+||www.mniamblog.polnda.asckat.com^
+||www.oferta837412.click^
+||www.olx.id8639.click^
+||www.olx.oferta837412.click^
+||www.paczzkaa453238.click^
+||www.pl-53421.click^
+||www.teleistymo.click^
+||www.tk-plkfdpl.click^
+||www.vinted.pl-53421.click^
 ||beacon.quiltmc.org^
 ||abcstats.com^
 ||blog.byethost.com^
@@ -11338,6 +11374,9 @@ _stat.js*
 ||c46.statcounter.com^
 ||my.statcounter.com^
 ||my8.statcounter.com^
+||clicks2.traffictrader.net^
+||clicks3.traffictrader.net^
+||clicks.eutopia.traffictrader.net^
 ||network.clickconversion.net^
 ||stats.twistage.com^
 ||stat.delo.ua^
@@ -11362,16 +11401,33 @@ _stat.js*
 ||log.so.hunantv.com^
 ||web-stat.fr^
 ||4537654.click^
+||aiebilet.pl-53421.click^
+||aiebilet.pl-ogloszenie-prywatne7584645.click^
 ||aldi.axiostat.shop^
 ||aldieu.arpixelcloud.shop^
+||alebilet.pl-53421.click^
+||alebilet.pl-ogloszenie-prywatne7584645.click^
+||allebilet.pl-53421.click^
+||allebilet.pl-ogloszenie-prywatne7584645.click^
+||allegro-lokalnie.pl-53421.click^
+||allegro-lokalnie.pl-ogloszenie-prywatne7584645.click^
 ||allegro.123010h8hh45g.click^
 ||allegro.12301209.click^
+||allegro.oferta837412.click^
+||allegro.pl-53421.click^
+||allegro.pl-oferta68902840231235.click^
+||allegro.pl-ogloszenie-prywatne7584645.click^
+||allegrolokainie.pl-53421.click^
 ||allegrolokalinie.com-384932.click^
+||allegrolokalne.pl-53421.click^
+||allegrolokalne.pl-ogloszenie-prywatne7584645.click^
 ||allegrolokalnie.letnie-okazje4332131.click^
 ||allegrolokalnie.oferta384bs2pj.click^
 ||allegrolokalnie.oferta384hw2nd8.click^
 ||allegrolokalnie.oferta384wb0ks2.click^
 ||allegrolokalnie.oferta65487.click^
+||allegrolokalnie.oferta837412.click^
+||allegrolokalnie.pl-53421.click^
 ||allegrolokalnie.pl-62353.click^
 ||allegrolokalnie.pl-23480442.click^
 ||allegrolokalnie.pl-31595175.click^
@@ -11385,11 +11441,13 @@ _stat.js*
 ||allegrolokalnie.pl-oferta6345344.click^
 ||allegrolokalnie.pl-oferta7573649.click^
 ||allegrolokalnie.pl-oferta73654223.click^
+||allegrolokalnie.pl-oferta68902840231235.click^
 ||allegrolokalnie.pl-oferta-lokalna5894398543.click^
 ||allegrolokalnie.pl-oferta-prywatna7584634.click^
 ||allegrolokalnie.pl-oferta-prywatna738483629.click^
 ||allegrolokalnie.pl-ogloszenie8818448965.click^
 ||allegrolokalnie.pl-ogloszenie-adriankucinski1-19.click^
+||allegrolokalnie.pl-ogloszenie-prywatne7584645.click^
 ||allegrolokalnie.rezerwacja5274.click^
 ||allegrolokalnie.rezerwacja8529.click^
 ||allegrolokalnie.rezerwacja8669.click^
@@ -11407,6 +11465,9 @@ _stat.js*
 ||id5106579.click^
 ||id13438294.click^
 ||id8715471983.click^
+||olx.pl-53421.click^
+||olx.pl-oferta68902840231235.click^
+||olx.pl-ogloszenie-prywatne7584645.click^
 ||pl-oferta87344537.click^
 ||pl-oferta68902840231235.click^
 ||pl-ogloszenie-pawelwisniewski9-29.click^
@@ -11418,6 +11479,45 @@ _stat.js*
 ||pl-ogloszenie-prywatne7584645345532.click^
 ||pl-ogloszenie-tadeuszkaraszewski-93.click^
 ||pl-ogloszenie-tomaszkaraszewski-52.click^
+||www.aiebilet.pl-53421.click^
+||www.aiebilet.pl-ogloszenie-prywatne7584645.click^
+||www.alebilet.pl-53421.click^
+||www.alebilet.pl-ogloszenie-prywatne7584645.click^
+||www.allebilet.pl-53421.click^
+||www.allebilet.pl-ogloszenie-prywatne7584645.click^
+||www.allegro-lokalnie.pl-53421.click^
+||www.allegro-lokalnie.pl-ogloszenie-prywatne7584645.click^
+||www.allegro.oferta837412.click^
+||www.allegro.pl-53421.click^
+||www.allegro.pl-oferta68902840231235.click^
+||www.allegro.pl-ogloszenie-prywatne7584645.click^
+||www.allegrolokainie.pl-53421.click^
+||www.allegrolokalne.pl-53421.click^
+||www.allegrolokalne.pl-ogloszenie-prywatne7584645.click^
+||www.allegrolokalnie.oferta384hw2nd8.click^
+||www.allegrolokalnie.oferta837412.click^
+||www.allegrolokalnie.pl-53421.click^
+||www.allegrolokalnie.pl-746483745.click^
+||www.allegrolokalnie.pl-oferta2191290.click^
+||www.allegrolokalnie.pl-oferta2989028.click^
+||www.allegrolokalnie.pl-oferta6345344.click^
+||www.allegrolokalnie.pl-oferta7573649.click^
+||www.allegrolokalnie.pl-oferta73654223.click^
+||www.allegrolokalnie.pl-oferta68902840231235.click^
+||www.allegrolokalnie.pl-oferta-lokalna5894398543.click^
+||www.allegrolokalnie.pl-ogloszenie8818448965.click^
+||www.allegrolokalnie.pl-ogloszenie-adriankucinski1-19.click^
+||www.allegrolokalnie.pl-ogloszenie-prywatne7584645.click^
+||www.allegrolokalnie.rezerwacja8711.click^
+||www.allegrolokalnie.rezerwacja81258.click^
+||www.allegrolokalnie.rezerwacja82452.click^
+||www.olx.pl-53421.click^
+||www.olx.pl-oferta68902840231235.click^
+||www.olx.pl-ogloszenie-prywatne7584645.click^
+||www.pl-oferta68902840231235.click^
+||www.pl-ogloszenie-prywatne7584645.click^
+||www.xn--albilet-b9a.pl-53421.click^
+||xn--albilet-b9a.pl-53421.click^
 ||zabezpiecz.click^
 ||zenpixelsstaging.com^
 ||asimplyblog.blogspot.com^
@@ -11475,6 +11575,7 @@ _stat.js*
 ||log.17173.com^
 ||analytics.1789.fr^
 ||log.17tcw.com^
+||webstat.17u.cn^
 ||vstlog.17usoft.com^
 ||log.17zuoye.cn^
 ||log.17zuoye.net^
@@ -26172,6 +26273,7 @@ securepubads.g.doubleclick.net/tag/js/gpt.js$script,redirect=googletagservices_g
 ||allprivatekeys.com/static/banners/$3p
 ||betclever.com/wp-admin/admin-ajax.php?action=coupons_widget_iframe&id=$3p
 ||blogatus.com/images/banner/$3p
+||click.alibaba.com^$subdocument,3p
 ||free-btc.org/banner/$3p
 ||siteground.com/static/affiliate/$3p
 ||amarotic.com/Banner/$3p

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3693
+! Total Rules: 3701
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -400,6 +400,7 @@
 ||lbank.com/partner_seo/$popup
 ||link.365av.net^$popup
 ||promo.pixelsee.app^$popup
+||s.click.aliexpress.com/e/*?dp=$popup
 ||teenfinder.com/landing/$popup,third-party
 ||werbestandard.de/out2/$popup
 ||faptrex.com/fire/popup.js
@@ -445,6 +446,7 @@
 ||rentalcars.com/?affiliateCode=$popup,domain=seatguru.com
 ||routeumber.com^$popup,domain=hltv.org
 ||rx.link^$popup,domain=uploadgig.com
+||s.click.aliexpress.com^$popup,domain=dzapk.com|up-4ever.net
 ||sendspace.com/defaults/sendspace-pop.html$popup
 ||skycheats.com^$popup,domain=elitepvpers.com
 ||thesurferprotector.com^$popup,domain=piratebay.live
@@ -520,6 +522,7 @@ $popup,third-party,domain=76fengyun.com|avsdown.com|downdv.com|downdvs.com|downh
 ||yy18.info^*thanks$popup
 ||17173.com/api/video/PlayerPopup?
 ||189.cn^*/push/$third-party
+||360.cn/popup/popinfo/
 ||3dmgame.com/page/js/push_browser.js
 ||ali213.net/Pics/*/down_popup_
 ||cnplugins.com/templets/cnplugins/pushbox1.js
@@ -1143,6 +1146,7 @@ bytegoofy.com/goofy/*/push.js?
 ||mobile.campushoy.com/*/ad^
 *-stats.jpush.cn^
 ||api.weibo.cn/2/push/daily?
+||dp.push.dc.360.cn/v1/list/ip?
 $popup,third-party,domain=downdv.com|rmdown.com|soyunpan.com|youtubeto.com
 ||api.browser.miui.com/bsr/resource/popup?
 ||sl.sogoucdn.com/semob$empty,popup
@@ -1181,6 +1185,7 @@ push.qq.com^
 ||push.tf-cdn.net^
 ||popunder.fpctraffic.com^
 ||selfsurveys.com^
+||www.selfsurveys.com^
 ||compushive.store^
 ||my.surveypopups.com^
 ||www2.survey-poll.com^
@@ -2452,6 +2457,7 @@ page_view_count
 ||civiccomputing.com^*/cookieControl-
 ||civiccomputing.com^*=cookie$third-party
 ||cloudstorage.secureserver.net/recomm-apps-upm/
+||cmp.quantcast.com/choice/*/www.themoneytizer.com/choice.js
 ||consensu.org/gdpr/$third-party
 ||consent.trustarc.com/get?name=$subdocument,domain=avantiwestcoast.co.uk|oracle.com
 ||consent.trustarc.com^$domain=authy.com|makerworld.com|nejm.org|pedialyte.com|sap.com|twilio.com
@@ -2493,6 +2499,7 @@ page_view_count
 ||privacy.condenastdigital.com/fides.js
 ||privally.global^$third-party
 ||q4app.com/widgets/q4.cookiemonster.$script
+||quantcast.mgr.consensu.org^$third-party
 ||rndtech.de/cmp/
 ||s.yimg.com/oa/consent.js
 ||securiti.ai/consent/
@@ -2703,6 +2710,7 @@ page_view_count
 ||tmgonlinemedia.nl/cc$script
 ||wijchensnieuws.nl/js/cookie.js
 ||a-lehdet.fi^*/cmp.js
+||browser-consent-front.coco.s-cloud.fi/js/$script
 ||cookielaw.org/scripttemplates/*/assets/*.json$xhr,domain=elisa.fi
 ||cookielaw.org/scripttemplates/*/assets/otCommonStyles.css$xhr,domain=elisa.fi
 ||elisa.fi/consent-management/

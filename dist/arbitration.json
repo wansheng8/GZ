@@ -800,14 +800,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "shrtfly.com",
-    "winner": "@@||shrtfly.com^$generichide",
-    "losers": [
-      "||shrtfly.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "sobot.com",
     "winner": "@@||sobot.com^",
     "losers": [

@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (cookie)
-# Format: hosts (0.0.0.0 domain), total 370
+# Format: hosts (0.0.0.0 domain), total 372
 0.0.0.0 a46e0368.forwarding-request-consent.pages.dev
 0.0.0.0 acconsento.click
 0.0.0.0 acookie.alibaba.com
@@ -335,6 +335,7 @@
 0.0.0.0 ogury.mgr.consensu.org
 0.0.0.0 optad360.mgr.consensu.org
 0.0.0.0 pcookie.aliexpress.com
+0.0.0.0 pcookie.tanx.com
 0.0.0.0 pcookie.taobao.com
 0.0.0.0 pcookie.tmall.com
 0.0.0.0 plausible.cookiebox.pro
@@ -344,6 +345,7 @@
 0.0.0.0 private.dmscookie.com
 0.0.0.0 procookie.by.nf
 0.0.0.0 recogerconsentimiento.com
+0.0.0.0 ressource.gdpr-banner.awsmpsa.com
 0.0.0.0 sandbox-collector-sdk.consent.in
 0.0.0.0 sandbox-collector.consent.in
 0.0.0.0 scookies-adobe.kbclease.lu

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1680
+! Total Rules: 1682
 ! ------------------------------------------
 /gdpr-ad-script.js$script
 ||cookieless-data.com^
@@ -21,6 +21,7 @@
 ||cookie.aerostatonet.it^
 ||gdpr-settings.s3.amazonaws.com^
 ||appconsent.io^
+||ressource.gdpr-banner.awsmpsa.com^
 ||cookies.bakehouse.at^
 ||gdpr.api.bcdn.jp^
 ||gdpr-legal-cookie.beeclever.app^
@@ -135,6 +136,7 @@
 ||consent.stuff.tv^
 ||consent.t-mobile.cz^
 ||cookies.tanke-guenstig.de^
+||pcookie.tanx.com^
 ||cookies.teraz.sk^
 ||consent.thecountrysmallholder.com^
 ||consent.thegreatoutdoorsmag.com^

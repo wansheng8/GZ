@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 999
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 1000
 :: 07c225f3.online
 :: 1.sabs-push.xyz
 :: 100push.com
@@ -981,6 +981,7 @@
 :: ws-goguardian.pusher.com
 :: wstpush-mobile.terra.com
 :: www.fpcpopunder.com
+:: www.selfsurveys.com
 :: www.surveynetworks.com
 :: www.surveysite.com
 :: www.thepornsurvey.com

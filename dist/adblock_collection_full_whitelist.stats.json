@@ -1,17 +1,17 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 14822,
+  "total": 14821,
   "by_category": {
-    "whitelist": 14822
+    "whitelist": 14821
   },
   "by_kind": {
-    "network": 11866,
+    "network": 11865,
     "css": 2905,
     "scriptlet": 48,
     "html": 3
   },
   "by_source": {
-    "ADrules AdRules": 4591,
+    "ADrules AdRules": 4590,
     "uBO filters – Ads": 1909,
     "AdGuard – Ads": 1847,
     "uBO filters – Unbreak": 1382,

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 14822
+! Total Rules: 14821
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -5721,7 +5721,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||showup.tv/js/core/Advertisement.js$xhr,domain=showup.tv
 @@||shqip-tv.info/webmasters/adblock.js$script
 @@||shreemaruticourier.com/banners/$~3p
-@@||shrtfly.com^$generichide
 @@||shukitv.ucoz.com/script/ads.js$script,domain=passimtv.xyz
 @@||shutterbug.com^$elemhide
 @@||siamfishing.com/_js/adsbygoogle.js$script

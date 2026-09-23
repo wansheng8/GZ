@@ -1,14 +1,14 @@
 {
   "name": "adblock_collection_full_redirect",
-  "total": 871,
+  "total": 872,
   "by_category": {
-    "redirect": 871
+    "redirect": 872
   },
   "by_kind": {
-    "network": 871
+    "network": 872
   },
   "by_source": {
-    "uBO filters – Ads": 497,
+    "uBO filters – Ads": 498,
     "AdGuard – Ads": 144,
     "ADrules AdRules": 111,
     "uBO filters – Unbreak": 85,

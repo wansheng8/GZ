@@ -1,15 +1,15 @@
 {
   "name": "adblock_collection_full_cookie",
-  "total": 1680,
+  "total": 1682,
   "by_category": {
-    "cookie": 1680
+    "cookie": 1682
   },
   "by_kind": {
-    "network": 1680
+    "network": 1682
   },
   "by_source": {
     "ADrules I-Dont-Care-About-Cookies": 1316,
-    "ADrules anti-AD": 138,
+    "ADrules anti-AD": 140,
     "ADrules DNS": 107,
     "Hagezi DNS Pro Plus": 41,
     "oisd": 16,

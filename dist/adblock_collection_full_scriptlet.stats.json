@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_scriptlet",
-  "total": 17451,
+  "total": 17448,
   "by_category": {
-    "scriptlet": 17451
+    "scriptlet": 17448
   },
   "by_kind": {
-    "scriptlet": 17451
+    "scriptlet": 17448
   },
   "by_source": {
     "uBO filters – Ads": 9078,
@@ -18,7 +18,6 @@
     "ADrules EasyPrivacy": 28,
     "uBO filters – Badware risks": 22,
     "ADrules HalfLife": 12,
-    "ADrules ChengFeng": 3,
-    "AdGuard – Ads": 3
+    "ADrules ChengFeng": 3
   }
 }

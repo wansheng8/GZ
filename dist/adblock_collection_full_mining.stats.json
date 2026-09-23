@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_mining",
-  "total": 234,
+  "total": 235,
   "by_category": {
-    "mining": 234
+    "mining": 235
   },
   "by_kind": {
-    "network": 234
+    "network": 235
   },
   "by_source": {
     "oisd": 62,
@@ -20,9 +20,9 @@
     "ADrules Easylist": 3,
     "ADrules AdRules": 2,
     "10007_auto reward": 2,
+    "Fanboy Annoyance": 2,
     "ADrules ChengFeng": 1,
     "banbendalao ADgk": 1,
-    "Fanboy Annoyance": 1,
     "uBO filters – Ads": 1
   }
 }

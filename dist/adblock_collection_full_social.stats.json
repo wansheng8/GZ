@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_social",
-  "total": 1940,
+  "total": 1948,
   "by_category": {
-    "social": 1940
+    "social": 1948
   },
   "by_kind": {
-    "network": 1940
+    "network": 1948
   },
   "by_source": {
     "Fanboy Social": 479,
@@ -17,12 +17,12 @@
     "uBO filters – Ads": 83,
     "ADrules anti-AD": 71,
     "ADrules AdRules": 64,
-    "AdGuard – Ads": 34,
+    "AdGuard – Ads": 33,
     "AdGuardSDNSFilter": 23,
+    "StevenBlack Hosts": 23,
     "ADrules EasyListChina": 21,
-    "StevenBlack Hosts": 15,
+    "10007_auto reward": 11,
     "banbendalao ADgk": 11,
-    "10007_auto reward": 10,
     "KADhosts": 10,
     "Hagezi DNS Light": 7,
     "Disconnect Simple Ad": 6,

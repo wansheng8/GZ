@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 143157
+! Total Rules: 143155
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -37918,6 +37918,7 @@ katitube.com##.linkvideo
 katitube.com##.video > div.header:has(> h2:contains(/Kati AI Porn|Kinky Webcam/g))
 katitube.com##.video > div.header:has(> h2:contains(/Kati AI Porn|Kinky Webcam/g)) + div#similar
 katitube.com##li > a[href][target="_blank"]
+kawai-jav.com##.box-header:has(> ins[data-zoneid])
 kawaii-anime.com#$#prevent-window-open _blank 1000 iframe
 kayak.*#$#hide-if-matches-xpath './/div[contains(@class,"c_3eP-pres-default")]/ancestor::div[@role][@tabindex="0"]'
 kaztorka.org,ontivi.net#$#abort-current-inline-script document.createElement Math.random
@@ -38088,7 +38089,9 @@ krx18.com###image-container:has(> a#image-link[href^="https://bit.ly/"])
 krx18.com##.alert.info
 krx18.com##.content.right > center:has(input.MyButton)
 krx18.com##aside.widget_text:has(script[class^="__clb-"])
+kshow123.tv###ads-top-player
 kshow123.tv###sidebar > div.sound[style="margin-bottom: 10px;"]
+kshow123.tv##.ads-middle-fix
 kuaibao.qq.com##.slider-box
 kuakao.com##.addTQBar
 kubadownload.com##.adsbygoogle
@@ -39232,6 +39235,7 @@ modfyp.com,prothomalo.com##body .adsBox
 modrinth.com##div[type="banner"]
 mods.to##.main-download-content center:has(> small + div[id^="mods_to_"])
 mods.to,download4.cc###side-banner
+modsfire.com##mf-offer
 moegirl.org.cn##.capsule-card:has(.n-tag)
 moegirl.org.cn##.moeautotrans-side-ad
 moegirl.org.cn##[class^='stevrhgmNo']
@@ -41027,6 +41031,7 @@ proboards.com##.content > .list > tbody > tr:not([id^="thread-"],[id^="board-"],
 proboards.com##tbody[class^="lm-content-"] > #ProBoards_com_InThread:empty
 proboards.com,freeforums.net,boards.net###support-message
 proceedflow.info##a[href^="https://proceedflow.info/click?key="]
+producthunt.com##article:contains(Promoted)
 productreview.com.au##div[data-sticky-ad-container]
 professorweb.ru###submain > div[class^="a"][style]
 programme-tv.net#$#prevent-element-src-loading script /bundle/
@@ -41850,7 +41855,6 @@ shojoscans.com,en-thunderscans.com##.lm-adblock-notfic-container
 shortflix.net,linkedprofileviewer.com,triathlete.com,open.spotify.com##div[aria-label="Advertisement"]
 shortnest.com###dl-bbtn
 showboxmovies.net,up4stream.*,uqload.*,xprime.tv#$#abort-current-inline-script document.createElement /String\\.fromCharCode.*[0-9]{2,3}/
-shrtfly.com##.adsbygoogle
 shua.leyz.top,virscan.org##div[class^="ad_"]
 shuba.life##.md\:u-block
 shuba.life##img[height][src^="https://shuba.life/static/banners/placeholders/"]
@@ -87607,7 +87611,6 @@ applesencia.com,capitalibre.com,frenomotor.com,placeralplato.com,sportadictos.co
 gardrops.com##.callToRegister2
 gardrops.com##.callToRegisterPopupWrapper
 milliyet.com.tr##.sticky
-tomshardware.com##.flexisites-social
 clubic.com#?#[style="position: sticky; top: 55px;"]:has-text(Inscrivez-vous Ã  notre newsletter quotidienne !)
 metro.co.uk###share-buttons-bottom
 metro.co.uk###share-buttons-top
@@ -123870,10 +123873,6 @@ hentai-id.tv###floatLayer2
 animecorner.me,zarabiajprzez24.pl,watchhentai.xxx,app-how-to-use-it.com,linuxcapable.com,designcorral.com,thecustomrom.com,digitalthinkerhelp.com,browserhow.com,sqlserveregitimleri.com,udemycourses.me,eckovation.com##.ai_widget
 pawastreams.*,nflbite.to,footybite.to,sportschamp.fun,afly.pro,topsporter.net,soccerstreams.football,mysocceraustralia.com,rayinfosports.com,hesgoals.top,sequencecard.xyz,totalsportek.soccer,metaporky.site,nbabite.to,cyfostreams.com,gamerarcades.com,bestreamsports.org,footy.to,mcrypto.club,greaterkashmir.com###id-custom_banner
 pawastreams.*,groundedtechs.com,rayinfosports.com,sequencecard.xyz,matchtime.co,sportspellz.com,bestreamsports.org,silverspoon.site###dismiss-btn
-modsfire.com##mf-offer
-kshow123.tv###ads-top-player
-kshow123.tv##.ads-middle-fix
-kawai-jav.com##.box-header:has(> ins[data-zoneid])
 coinsimulator.online##center:has(> ins[style^="display:inline-block;"][style*="width:"][style*="height:"]:first-child + script:last-child)
 animextv.tech##.w-full > div.flex:has(> div#ad-banner-placement)
 adultswim.com##.tui-ad-slate
@@ -136943,7 +136942,6 @@ nzherald.co.nz##section.section-chain--triple-image:contains(Property news from 
 pexels.com##[data-testid="column"] [data-testid="item"]:contains(Sponsored)
 producthunt.com##.cursor-pointer:contains(Promoted)
 producthunt.com##.text-12:contains(Promoted)
-producthunt.com##article:contains(Promoted)
 producthunt.com##div[class="flex cursor-pointer items-start gap-4 rounded-lg bg-gray-50 p-4"]:contains(Promoted)
 property24.com##.p24_tileContainer:contains(Sponsored)
 provigo.ca##.css-1nhzth8:contains(/sponsorisé|sponsored/)

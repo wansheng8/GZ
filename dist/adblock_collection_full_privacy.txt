@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55532
+! Total Rules: 55581
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -3447,6 +3447,7 @@ _WebVitalsReporter_
 /gate.amnesty-international.*/open.php?
 /github.com/notifications/beacon=$image
 /global-cdm.net:443/sap/public/cuan/*/pixel.gif
+/go.email.fly.io/e/o/*$image
 /go.news.fly.io/e/o/*$image
 /gp/r.html?$image
 /gridinbound.blob.core.
@@ -7005,6 +7006,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||aolcdn.com/js/mg2.js
 ||aolcdn.com/omniunih_int.js
 ||ape-tagit.timeinc.net^
+||api-iam.intercom.io/messenger/web/metrics
 ||api-pf.nw18.com/cdp-api/api/data
 ||api-v3.findify.io/v3/feedback
 ||api.autopilothq.com^
@@ -7996,6 +7998,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||myprivacy.dpgmedia.net/audits
 ||mysdcc.sdccd.edu^*/.log/
 ||mysociety.org/track/
+||mzbcdn.net/mngr/mtm.js
 ||native-ads-events-api.c4s-rd.services^
 ||native-ads-events-api2.c4s-rd.services^
 ||navattic.com/api/events/
@@ -8224,6 +8227,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||qualtrics.com/WRSiteInterceptEngine/$third-party
 ||qualtrics.com^*/metrics
 ||quantcast.com/?log
+||quantcast.mgr.consensu.org/?log
 ||qubitanalytics.appspot.com^
 ||quora.com/_/ad/
 ||quora.com/qevents.js
@@ -9391,6 +9395,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||120.132.57.41/pjk/pag/ys.php
 ||163.com/sn.gif?
 ||3.cn/cesu/r?
+||360.cn/mapping_service?
 ||4399logs.4399doc.com^
 ||4gtv.tv/js/ga_
 ||66hao.cc^
@@ -9463,6 +9468,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||sohu.com/stat/
 ||ssac.suning.com^
 ||stat.ws.126.net^
+||stat.youpin.mi.com^
 ||sugs.m.sm.cn^
 ||t.rainide.com^
 ||tce.alicdn.com^
@@ -11369,6 +11375,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||personalize-edge.contentstack.com/events
 ||pf.newegg.com^
 ||pftk.temu.com^
+||phonearena.com/_track.php
 ||pi.ai/proxy/api/event
 ||pics-view.com/ad-track
 ||pie.org/g/collect?
@@ -11644,6 +11651,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||spanishdict.com/page-view-metadata
 ||spectrum.gettyimages.com^
 ||speed.cloudflare.com/__log
+||spin.bergfreunde.*/wt?$image
 ||sportsmansguide.com/scripts/vendor/at_
 ||spotifycdn.com/cdn/js/retargeting-pixels.
 ||spt.ahram.org.eg^
@@ -15668,6 +15676,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||analytics.mondotv.jp^
 ||analytics.myapstore.com^
 ||analytics.mystream.com^
+||analytics.national-lottery.co.uk^
 ||analytics.navyfederal.org^
 ||analytics.ncaa.com^
 ||analytics.nordea.com^
@@ -44514,6 +44523,8 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||count.candou.com^
 ||count5.pconline.com.cn^
 ||counter.people.cn^
+||countly.mail.163.com^
+||cstaticdun.126.net^
 ||cstm.baidu.com^
 ||ctrmi.cn/t/
 ||dap-cn.c.hihonor.com/dap/jssdk.js
@@ -44630,6 +44641,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||retcode.taobao.com^
 ||reurl.cc/javascripts/tagtoo.js
 ||rlogs.youdao.com^
+||s.360.cn^
 ||s.pixfs.net/js/pixlogger.min.js
 ||s.pixfs.net/visitor.pixplug.in/
 ||sbeacon.sina.com.cn^
@@ -44680,6 +44692,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||tj.img4399.com^
 ||tk.d.mi.com^
 ||tongji.mafengwo.cn^
+||tongji.meizu.com^
 ||tongji.techweb.com.cn^
 ||tongji.xinmin.cn^
 ||top.baidu.com/js/nsclick.js
@@ -45081,6 +45094,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||rakuten.co.jp/gw.js
 ||rat.rakuten.co.jp^
 ||rebuyengine.com/api/*/analytics/event/
+||rec1.smt.docomo.ne.jp/bcn_access_log/
 ||recv-entry.tbs.co.jp^
 ||recv-jnn.tbs.co.jp^
 ||recv.tbs.co.jp^
@@ -45582,6 +45596,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||adgeo.corp.163.com^
 ||4mythtracker.xyz^
 ||track.58.com^
+||sdk-track.66mobi.com^
 ||a4b-tracking.com^
 ||actiontracking.jp^
 ||active-tracking.de^
@@ -48644,7 +48659,6 @@ $removeparam=tracking_source
 ||www.tracking.nudgepay.in^
 ||ymtracking.com^
 ||zantracker.com^
-||sdk-track.66mobi.com^
 23.219.89.164                  hugeota.d.miui.com
 23.219.89.166                  hugeota.d.miui.com
 2600:1404:ec00:240a::1735:7fce hugeota.d.miui.com
@@ -48664,6 +48678,7 @@ $removeparam=tracking_source
 184.192.132.151                tracking.epicgames.com
 100.63.121.43                  tracking.epicgames.com
 43.159.0.230                   weighted-zh-eulatracking-public-service-prod06.ol.epicgames.com
+||bj.ad.track.66mobi.com^
 ||ad.track.66mobi.com^
 ||ads.boardtracker.com^
 ||ads.bridgetrack.com^
@@ -48685,6 +48700,7 @@ $removeparam=tracking_source
 ||track.wesdk.co^
 ||trackadsb1.com^
 ||tracker.mca-analytics.com^
+||www.trackadsb1.com^
 110.43.121.13 hugeota.d.miui.com
 110.43.121.249 hugeota.d.miui.com
 123.6.13.6 hugeota.d.miui.com
@@ -49597,9 +49613,6 @@ $removeparam=tracking_source
 ||tracking.realtor.com^
 ||tracking.shoptogether.buy.com^
 ||tracking.ustream.tv^
-/go.email.fly.io/e/o/*$image
-||spin.bergfreunde.*/wt?$image
-||cstaticdun.126.net^
 ||guide-rank.com/guiderank-tracking^
 ||api.blibili.com/x/pd-proxy/tracker
 /track.gif^
@@ -49650,6 +49663,7 @@ $removeparam=tracking_source
 ||track.adtraction.com^
 ||adn-tktracking-virginia-621472495.us-east-1.elb.amazonaws.com^
 ||tracking-1611167402.us-east-1.elb.amazonaws.com^
+||geo.atlassbx.com^
 ||sec-citi.bridgetrack.com^
 ||tracking.crazyegg.com^
 ||production-adkviewtrackingtagserver.ap-northeast-1.elasticbeanstalk.com^
@@ -49666,13 +49680,18 @@ $removeparam=tracking_source
 ||securetracking2.com^
 ||track.freemmo2017.com^
 ||tracking.pickyourplum.com^
+||www.drivotracker.com^
+||www.nbrtrack.com^
 ||alanstrack.com^
 ||anolysis.privacy.cliqz.com^
 ||event-tracking.com^
 ||utopia-privacy.com^
+||www.event-tracking.com^
+||www.utopia-privacy.com^
 ||geoaran.site^
 ||geogntangh.store^
 ||marcageomy.autos^
+||www.geoaran.site^
 ||tracker.brainsins.com^
 ||cc.bridgetrack.com^
 ||citi.bridgetrack.com^
@@ -49690,6 +49709,7 @@ $removeparam=tracking_source
 ||track.written.com^
 ||www.mftracking.com^
 ||track.scrillaspace.com^
+||c.f5mtrack.com^
 ||go.tracksz.co^
 ||tracker.freecharge.in^
 ||track.moreniche.com^
@@ -52388,6 +52408,7 @@ fb_servpub-a.akamaihd.net
 ||c.pc.qq.com^$urlskip=?url
 ||c.pc.qq.com^$urlskip=?pfurl
 /^https:\/\/link\.theverge\.com\/click\/[0-9]+\.[0-9]+\/aHR0c/$document,urlskip=/(aHR0c[a-zA-Z0-9%_-]+)/ -base64
+||s.click.aliexpress.com/deep_link.*^dl_target_url=http$document,urlskip=?dl_target_url
 /vp/player/to/?u=http$document,urlskip=?u
 /vp/download/goto/?u=http$document,urlskip=?u
 ||go.isclix.com/deep_link/*?url=http$document,urlskip=?url
@@ -52433,6 +52454,12 @@ fb_servpub-a.akamaihd.net
 ||paypal.com/v1/r/d/b/$image
 &ii=fingerprintjs-pro-react
 ||browser.events.data.microsoft.com^$domain=apps.microsoft.com
+||api.cxense.com/public/widget/data?$removeparam=experienceId
+||api.cxense.com/public/widget/data?$removeparam=experienceActionId
+||api.cxense.com/public/widget/data?$removeparam=sid
+||api.cxense.com/public/widget/data?$removeparam=trackingId
+||api.cxense.com/public/widget/data?$removeparam=tzo
+||api.cxense.com/public/widget/data?$removeparam=widgetId
 ||adobedtm.com^$important,domain=aamulehti.fi
 ||s73cloud.com/metrics/
 /api/trpc/event.tracking|$xhr
@@ -52576,6 +52603,17 @@ $removeparam=igshid,domain=instagram.com|threads.net
 ||msn.com^$document,removeparam=vid
 ||open.spotify.com^$removeparam=referral
 ||open.spotify.com^$removeparam=si
+||api.cxense.com/public/widget/data^$removeparam=eid0
+||api.cxense.com/public/widget/data^$removeparam=eit0
+||api.cxense.com/public/widget/data^$removeparam=media
+||api.cxense.com/public/widget/data^$removeparam=prnd
+||api.cxense.com/public/widget/data^$removeparam=rnd
+||api.cxense.com/public/widget/data^$removeparam=sid
+||api.cxense.com/public/widget/data^$removeparam=usi
+||api.cxense.com/public/widget/data^$removeparam=widgetId
+||api.cxense.com/public/widget/data^$removeparam=experienceId
+||api.cxense.com/public/widget/data^$removeparam=experienceActionId
+||api.cxense.com/public/widget/data^$removeparam=trackingId
 ||sonar.viously.com^$removeparam=c
 ||sonar.viously.com^$removeparam=r
 /dp/*/ref=$document,uritransform=/\/ref=[^\/?#]+//,to=www.amazon.*|www.amazon.ae|www.amazon.ca|www.amazon.cn|www.amazon.co.jp|www.amazon.co.uk|www.amazon.com|www.amazon.com.au|www.amazon.de|www.amazon.es|www.amazon.fr|www.amazon.in|www.amazon.nl|www.amazon.sg
@@ -53119,6 +53157,7 @@ newsletter.adnz.co%2F*$image
 ||px.a8.net/svt/ejp?*&a8ejpredirect=$document,urlskip=?a8ejpredirect -uricomponent
 ||affiliate.suruga-ya.jp/modules/af/af_jump.php?*&goods_url=$document,urlskip=?goods_url
 ||al.fanza.co.jp/?lurl=$document,urlskip=?lurl
+||ck.jp.ap.valuecommerce.com/servlet/referral?*&vc_url=$document,urlskip=?vc_url
 ||hb.afl.rakuten.co.jp/hgc/*/?pc=$document,urlskip=?pc
 ||buttondown.com/ladybird/subscribers/*/archive/$document,uritransform=/\/subscribers\/[-0-9a-f]+\/archive\//\/archive\//
 ||myanimelist.net/ux/
@@ -55039,6 +55078,13 @@ $removeparam=ref,domain=jin115.com|bipblog.com|animember.net|sbbit.jp|blog.lived
 ||ameblo.jp^$removeparam=adxarea
 ||ameblo.jp^$removeparam=frm_id
 ||cancanlah.com^$removeparam=click_id
+||api.cxense.com/public/widget/data?json=$script,removeparam=sid
+||api.cxense.com/public/widget/data?json=$script,removeparam=experienceId
+||api.cxense.com/public/widget/data?json=$script,removeparam=trackingId
+||api.cxense.com/public/widget/data?json=$script,removeparam=prnd
+||api.cxense.com/public/widget/data?json=$script,removeparam=getId
+||api.cxense.com/public/widget/data?json=$script,removeparam=usi
+||api.cxense.com/public/widget/data?json=$script,removeparam=widgetId
 ||player.theplatform.com^$removeparam=playeranalytics
 ||player.theplatform.com^$removeparam=targetedlink
 ||zalando.$removeparam=wmc
@@ -55110,6 +55156,8 @@ $removeparam=union_lens,domain=tmall.com|taobao.com
 ||agoda.com^$removeparam=tag
 ||editor.flixier.com^$removeparam=/fx_(source|medium|campaign)/
 ||tradingview.com^$removeparam=source
+||api.cxense.com^$removeparam=/^cx_/
+||api.cxense.com^$removeparam=/^pickup_list_click/
 $removeparam=l-id,domain=nikki.ne.jp|rakuten.co.jp|rebates.jp
 $removeparam=scid,domain=rakuten.co.jp|rakuten-wallet.co.jp
 ||rakuten.co.jp^$removeparam=sc2id
@@ -55138,6 +55186,7 @@ $removeparam=n_cid,to=nikkei.com|nikkei.co.jp
 ||dmm.co.jp^$removeparam=i3_ord
 ||dmm.co.jp^$removeparam=i3_ref
 ||livedoor.biz^$removeparam=ref
+||data.alexa.com/data/$xhr,removeparam=/cdt|ref/
 ||comodo.com^$removeparam=key5sk1
 ||comodo.com^$removeparam=track
 ||comodo.com^$removeparam=af

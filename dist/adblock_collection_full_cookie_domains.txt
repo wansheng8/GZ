@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (cookie)
-# Format: one domain per line (AdGuard DNS / AdGuard Home), total 370
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 372
 a46e0368.forwarding-request-consent.pages.dev
 acconsento.click
 acookie.alibaba.com
@@ -335,6 +335,7 @@ odeg-matomo.cookiefy.com
 ogury.mgr.consensu.org
 optad360.mgr.consensu.org
 pcookie.aliexpress.com
+pcookie.tanx.com
 pcookie.taobao.com
 pcookie.tmall.com
 plausible.cookiebox.pro
@@ -344,6 +345,7 @@ privacy-policy.u-lab.nl
 private.dmscookie.com
 procookie.by.nf
 recogerconsentimiento.com
+ressource.gdpr-banner.awsmpsa.com
 sandbox-collector-sdk.consent.in
 sandbox-collector.consent.in
 scookies-adobe.kbclease.lu
