@@ -66,6 +66,22 @@ def test_exception_rule_never_removed():
     assert report.folded == 0
 
 
+def test_exact_rule_is_not_a_parent():
+    """hosts/domains-only 的精确规则不覆盖子域，不能作为整域父规则。"""
+    rules = _rules("0.0.0.0 a.com", "||sub.a.com^")
+    kept, report = fold_domains(rules)
+    assert {r.raw for r in kept} == {"||a.com^", "||sub.a.com^"}
+    assert report.folded == 0
+
+
+def test_suffix_parent_folds_same_domain_exact_rule():
+    """同域已存在含子域整域拦截时，精确规则冗余被折叠。"""
+    rules = _rules("||a.com^", "0.0.0.0 a.com")
+    kept, report = fold_domains(rules)
+    assert {r.raw for r in kept} == {"||a.com^"}
+    assert report.folded == 1
+
+
 def test_fold_is_idempotent():
     rules = _rules("||a.com^", "||sub.a.com^", "||x.sub.a.com^")
     once, _ = fold_domains(rules)

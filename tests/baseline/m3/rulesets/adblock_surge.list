@@ -5,6 +5,6 @@ DOMAIN-SUFFIX,analytics.example,REJECT
 DOMAIN-SUFFIX,badmalware.example,REJECT
 DOMAIN-SUFFIX,bare.example,REJECT
 DOMAIN-SUFFIX,evil-phish.example,REJECT
-DOMAIN-SUFFIX,hosts.example,REJECT
 DOMAIN-SUFFIX,shared.example,REJECT
 DOMAIN-SUFFIX,tracker.example,REJECT
+DOMAIN,hosts.example,REJECT

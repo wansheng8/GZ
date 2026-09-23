@@ -80,6 +80,7 @@ from .writer import (
     JSDELIVR_MAX_BYTES,
     _blocked_domains,
     _custom_allow_domains,
+    _scan_dns_domains,
     write_adblock,
     write_adblock_split,
     write_dns_allow,
@@ -339,11 +340,14 @@ def _emit_dns_allow(rules, output_dir, manifest) -> None:
     LOG.info("DNS 白名单: %d 个域名 -> %s", n, path.name)
 
 
-def _emit_rulesets(rules, output_dir, manifest, policy, domains=None) -> None:
+def _emit_rulesets(
+    rules, output_dir, manifest, policy, domains=None, exact_domains=None
+) -> None:
     """连接层规则集：mihomo / sing-box / Surge / Quantumult X。
 
     内容与 DNS 域名集合完全一致，供 TUN 模式按 TLS/QUIC SNI 在连接层拒绝广告域，
-    从而绕过 App 的 HTTPDNS / IP 直连。
+    从而绕过 App 的 HTTPDNS / IP 直连。含子域来源（``||domain^``）用后缀算子；精确
+    来源（hosts / domains-only 行）用精确算子（DOMAIN / domain / host）。
     """
     counts = write_rulesets(
         rules,
@@ -351,6 +355,7 @@ def _emit_rulesets(rules, output_dir, manifest, policy, domains=None) -> None:
         policy,
         "Adblock Rule Collection (connection-layer ruleset)",
         domains=domains,
+        exact_domains=exact_domains,
     )
     for fmt, fname in (
         ("clash", "adblock_clash.yaml"),
@@ -471,8 +476,14 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
     title, desc = DEFAULT_HEADERS["full"]
     manifest: list = []
     # 完整版规则的拦截域名集合只结算一次，供 hosts / domains / DNS 等价 / 连接层规则集共享，
-    # 避免对同一份 78 万条规则重复全量扫描。
-    blocked = _blocked_domains(rules, ctx.dns_policy) if gen_dns else None
+    # 避免对同一份 78 万条规则重复全量扫描。同时区分「含子域」与「精确」两条来源：
+    # hosts / domains 文本层本身就是精确匹配，连接层规则集则按来源选择算子。
+    if gen_dns:
+        split_suffix, split_exact = _scan_dns_domains(rules, ctx.dns_policy)
+        blocked = split_suffix | split_exact
+    else:
+        split_exact = None
+        blocked = None
     full_results = _emit(
         rules,
         target,
@@ -499,7 +510,14 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
     if gen_dns:
         _emit_dns_allow(rules, target, manifest)
     if gen_dns and ctx.flags.gen_rulesets:
-        _emit_rulesets(rules, target, manifest, ctx.dns_policy, domains=blocked)
+        _emit_rulesets(
+            rules,
+            target,
+            manifest,
+            ctx.dns_policy,
+            domains=blocked,
+            exact_domains=split_exact,
+        )
     if ctx.flags.split_by_category:
         _emit_by_category(
             rules,

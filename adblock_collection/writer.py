@@ -148,15 +148,21 @@ def _is_global_domain_exception(rule: Rule) -> bool:
     return bool(_PURE_DOMAIN_RE.search(pattern))
 
 
-def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[str]:
-    """从规则集提取「应拦截的纯域名」集合，并抵消自定义白名单放行的域名。
+def _scan_dns_domains(
+    rules: Iterable[Rule], policy: dict | None = None
+) -> tuple[set[str], set[str]]:
+    """扫描规则集，返回 ``(suffix_domains, exact_domains)`` 两个不相交集合。
 
-    仅统计满足 dns_policy 安全分级的单域名网络阻断规则（``||a.com^`` 或策略允许的
-    修饰符规则）。DNS 层的例外来源收敛为自定义白名单：只有来源为 ``LocalAllowlist``
-    的整域全局例外（``@@||a.com^``）会从拦截集中剔除；上游例外规则与作用域/路径例外
-    均不影响 DNS 判定，避免上游白名单内容参与本地放行决策。
+    - ``suffix_domains``：来自 ``||domain^`` 等含子域语义的规则，连接层用
+      ``DOMAIN-SUFFIX`` / ``domain_suffix`` / ``host-suffix`` 匹配域名及其子域。
+    - ``exact_domains``：来自 hosts 行或 domains-only 行（``Rule.exact``），按 AdGuard
+      语义仅匹配域名本体、不含子域，连接层用 ``DOMAIN`` / ``domain`` / ``host``。
+
+    同一域名若同时存在两种语义，并入 ``suffix_domains``（更宽，覆盖精确语义）。
+    自定义白名单整域放行从两个集合中一并剔除。
     """
-    blocked: set[str] = set()
+    suffix: set[str] = set()
+    exact: set[str] = set()
     allowed: set[str] = set()
     for r in rules:
         if r.kind != "network" or not r.domains or len(r.domains) != 1:
@@ -172,9 +178,26 @@ def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[s
             continue
         if not is_dns_eligible(r, policy):
             continue
-        blocked.add(domain)
-    blocked -= allowed
-    return blocked
+        (exact if r.exact else suffix).add(domain)
+    suffix -= allowed
+    exact -= allowed
+    exact -= suffix
+    return suffix, exact
+
+
+def _blocked_domains(rules: Iterable[Rule], policy: dict | None = None) -> set[str]:
+    """从规则集提取「应拦截的纯域名」集合，并抵消自定义白名单放行的域名。
+
+    仅统计满足 dns_policy 安全分级的单域名网络阻断规则（``||a.com^`` 或策略允许的
+    修饰符规则）。DNS 层的例外来源收敛为自定义白名单：只有来源为 ``LocalAllowlist``
+    的整域全局例外（``@@||a.com^``）会从拦截集中剔除；上游例外规则与作用域/路径例外
+    均不影响 DNS 判定，避免上游白名单内容参与本地放行决策。
+
+    该集合是 hosts / domains / 往返校验共用的「DNS 域名全集」；含子域与精确两条来源
+    在此合并，二者的算子差异只在连接层规则集中体现（见 ``_scan_dns_domains``）。
+    """
+    suffix, exact = _scan_dns_domains(rules, policy)
+    return suffix | exact
 
 
 def _custom_allow_domains(rules: Iterable[Rule]) -> set[str]:
@@ -289,55 +312,90 @@ RULESET_QUANX = "adblock_quanx.list"
 RULESET_DIRNAME = "rulesets"
 
 
-def write_clash_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
+def write_clash_ruleset(
+    domains: Iterable[str],
+    path: Path,
+    title: str,
+    exact_domains: Iterable[str] | None = None,
+) -> int:
     """mihomo / Clash Meta ``behavior: domain`` 规则集（YAML）。
 
-    每条使用 ``+.domain``（等价 ``DOMAIN-SUFFIX``，匹配该域及其所有子域），
-    rule-provider 需配置 ``behavior: domain``、``format: yaml``。
+    ``+.domain`` 等价 ``DOMAIN-SUFFIX``（匹配该域及其所有子域）；精确域名用裸
+    ``domain``（等价 ``DOMAIN``，仅匹配域名本体）。rule-provider 需配置
+    ``behavior: domain``、``format: yaml``。
     """
-    domains = sorted(domains)
+    suffix = sorted(domains)
+    exact = sorted(exact_domains or ())
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write("# rule-providers: { type: http, behavior: domain, format: yaml }\n")
-        fh.write(f"# Total Domains: {len(domains)}\n")
+        fh.write(f"# Total Domains: {len(suffix) + len(exact)}\n")
         fh.write("payload:\n")
-        for d in domains:
+        for d in suffix:
             fh.write(f"  - '+.{d}'\n")
-    return len(domains)
+        for d in exact:
+            fh.write(f"  - '{d}'\n")
+    return len(suffix) + len(exact)
 
 
-def write_singbox_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
-    """sing-box 源规则集（JSON，``domain_suffix``）。
+def write_singbox_ruleset(
+    domains: Iterable[str],
+    path: Path,
+    title: str,
+    exact_domains: Iterable[str] | None = None,
+) -> int:
+    """sing-box 源规则集（JSON，``domain_suffix`` + 精确 ``domain``）。
 
-    使用前用 ``sing-box rule-set compile adblock_singbox.json`` 编译为 ``.srs``；
-    需 sing-box 1.11+（规则集格式 version 3）。
+    ``domain_suffix`` 匹配域名及其子域；精确域名用 ``domain``（仅匹配本体）。使用前
+    用 ``sing-box rule-set compile adblock_singbox.json`` 编译为 ``.srs``；需
+    sing-box 1.11+（规则集格式 version 3）。
     """
-    domains = sorted(domains)
-    payload = {"version": 3, "rules": [{"domain_suffix": domains}]}
+    suffix = sorted(domains)
+    exact = sorted(exact_domains or ())
+    rules: list[dict] = [{"domain_suffix": suffix}]
+    if exact:
+        rules.append({"domain": exact})
+    payload = {"version": 3, "rules": rules}
     path.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
-    return len(domains)
+    return len(suffix) + len(exact)
 
 
-def write_surge_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
-    """Surge 规则集（``DOMAIN-SUFFIX,domain,REJECT``）。"""
-    domains = sorted(domains)
+def write_surge_ruleset(
+    domains: Iterable[str],
+    path: Path,
+    title: str,
+    exact_domains: Iterable[str] | None = None,
+) -> int:
+    """Surge 规则集（``DOMAIN-SUFFIX,domain,REJECT``，精确用 ``DOMAIN,domain,REJECT``）。"""
+    suffix = sorted(domains)
+    exact = sorted(exact_domains or ())
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
-        fh.write(f"# Total Rules: {len(domains)}\n")
-        for d in domains:
+        fh.write(f"# Total Rules: {len(suffix) + len(exact)}\n")
+        for d in suffix:
             fh.write(f"DOMAIN-SUFFIX,{d},REJECT\n")
-    return len(domains)
+        for d in exact:
+            fh.write(f"DOMAIN,{d},REJECT\n")
+    return len(suffix) + len(exact)
 
 
-def write_quanx_ruleset(domains: Iterable[str], path: Path, title: str) -> int:
-    """Quantumult X 规则集（``host-suffix, domain, reject``）。"""
-    domains = sorted(domains)
+def write_quanx_ruleset(
+    domains: Iterable[str],
+    path: Path,
+    title: str,
+    exact_domains: Iterable[str] | None = None,
+) -> int:
+    """Quantumult X 规则集（``host-suffix``，精确用 ``host``）。"""
+    suffix = sorted(domains)
+    exact = sorted(exact_domains or ())
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
-        fh.write(f"# Total Rules: {len(domains)}\n")
-        for d in domains:
+        fh.write(f"# Total Rules: {len(suffix) + len(exact)}\n")
+        for d in suffix:
             fh.write(f"host-suffix, {d}, reject\n")
-    return len(domains)
+        for d in exact:
+            fh.write(f"host, {d}, reject\n")
+    return len(suffix) + len(exact)
 
 
 def split_text_list(path: Path, max_bytes: int = JSDELIVR_MAX_BYTES) -> list[str]:
@@ -384,23 +442,32 @@ def write_rulesets(
     policy: dict | None = None,
     title: str = "Adblock Rule Collection (connection-layer ruleset)",
     domains: Iterable[str] | None = None,
+    exact_domains: Iterable[str] | None = None,
 ) -> dict[str, int]:
     """生成四种代理内核规则集，返回各格式域名数。
 
     与 hosts / domains 同源（同一 ``_blocked_domains`` 集合），保证 DNS 层与连接层
-    拦截范围一致：自定义白名单整域放行同样在规则集中生效。Surge / Quantumult X
-    文本规则集超过 jsDelivr 单文件上限时，额外输出 ``_partNN`` 分片。
+    拦截范围一致：自定义白名单整域放行同样在规则集中生效。含子域来源
+    （``||domain^``）用 ``DOMAIN-SUFFIX`` / ``domain_suffix`` / ``host-suffix``；精确
+    来源（hosts / domains-only 行）用 ``DOMAIN`` / ``domain`` / ``host``，忠实于 AdGuard
+    的 hosts / domains-only 语义（仅匹配域名本体）。Surge / Quantumult X 文本规则集
+    超过 jsDelivr 单文件上限时，额外输出 ``_partNN`` 分片。
     """
-    domains = sorted(domains) if domains is not None else sorted(
-        _blocked_domains(rules, policy)
-    )
+    if domains is None:
+        suffix, exact = _scan_dns_domains(rules, policy)
+    else:
+        suffix = set(domains)
+        exact = set(exact_domains or ()) & suffix
+        suffix -= exact
     target = output_dir / RULESET_DIRNAME
     target.mkdir(parents=True, exist_ok=True)
     counts = {
-        "clash": write_clash_ruleset(domains, target / RULESET_CLASH, title),
-        "singbox": write_singbox_ruleset(domains, target / RULESET_SINGBOX, title),
-        "surge": write_surge_ruleset(domains, target / RULESET_SURGE, title),
-        "quanx": write_quanx_ruleset(domains, target / RULESET_QUANX, title),
+        "clash": write_clash_ruleset(suffix, target / RULESET_CLASH, title, exact),
+        "singbox": write_singbox_ruleset(
+            suffix, target / RULESET_SINGBOX, title, exact
+        ),
+        "surge": write_surge_ruleset(suffix, target / RULESET_SURGE, title, exact),
+        "quanx": write_quanx_ruleset(suffix, target / RULESET_QUANX, title, exact),
     }
     for fname in (RULESET_SURGE, RULESET_QUANX):
         split_text_list(target / fname, JSDELIVR_MAX_BYTES)

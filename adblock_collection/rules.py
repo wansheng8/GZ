@@ -80,6 +80,10 @@ class Rule:
     is_scriptlet: bool = False
     is_badfilter: bool = False
     is_important: bool = False
+    # 精确域名语义：由 hosts 行（``0.0.0.0 a.com``）或 domains-only 行（``a.com``）
+    # 规范化而来，仅匹配域名本体、不含子域；``||domain^`` 为 False（含子域）。
+    # 连接层规则集据此选择 DOMAIN / DOMAIN-SUFFIX 等算子。
+    exact: bool = False
     # 该规则作用到的域名（网络规则为 blocked domain，元素规则为限定域名）
     domains: list[str] = field(default_factory=list)
     source: str | None = None
@@ -542,7 +546,18 @@ def expand_line(line: str) -> list[str]:
     - hosts 注释 / 空行 / [header] / 纯 IP 占位行 -> []
     - 已是标准 adblock 的行原样返回
 
-    返回 [] 表示该行应被跳过。
+    返回 [] 表示该行应被跳过。精确域名语义由 ``_expand_line`` 一并给出，本函数
+    仅返回文本，供只需文本的调用方使用。
+    """
+    return [text for text, _exact in _expand_line(line)]
+
+
+def _expand_line(line: str) -> list[tuple[str, bool]]:
+    """``expand_line`` 的内部实现：同时返回每行是否为精确域名语义。
+
+    返回 ``(规范化文本, exact)``；``exact`` 为 True 表示来源是 hosts 行或
+    domains-only 行（仅匹配域名本体），False 表示标准 adblock 规则（``||domain^``
+    含子域）。
     """
     stripped = line.strip()
     if not stripped:
@@ -553,7 +568,7 @@ def expand_line(line: str) -> list[str]:
         return []
     hosts = _hosts_line_domains(stripped)
     if hosts is not None:
-        return [f"||{d}^" for d in hosts]
+        return [(f"||{d}^", True) for d in hosts]
     if _IP_ONLY_RE.match(stripped):
         return []
     if stripped.startswith("#") and not _COSMETIC_START_RE.match(stripped):
@@ -561,8 +576,8 @@ def expand_line(line: str) -> list[str]:
     if _BARE_DOMAIN_RE.match(stripped):
         dom = stripped.lower().rstrip(".")
         if _VALID_DOMAIN_RE.match(dom):
-            return [f"||{dom}^"]
-    return [stripped]
+            return [(f"||{dom}^", True)]
+    return [(stripped, False)]
 
 
 def parse_line(
@@ -573,10 +588,13 @@ def parse_line(
     注意：一条 hosts 行可能含多个域名，此时仅取第一个域名。需要完整展开请使用
     parse_lines（构建主流程使用它）。
     """
-    expanded = expand_line(line)
+    expanded = _expand_line(line)
     if not expanded:
         return None
-    return _parse_adblock_line(expanded[0], category_hint=category_hint, source=source)
+    text, exact = expanded[0]
+    return _parse_adblock_line(
+        text, category_hint=category_hint, source=source, exact=exact
+    )
 
 
 def parse_lines(
@@ -585,9 +603,9 @@ def parse_lines(
     """逐行解析并把 hosts/纯域名行完整展开为多条 Rule（构建主流程入口）。"""
     parsed: list[Rule] = []
     for line in lines:
-        for normalized in expand_line(line):
+        for normalized, exact in _expand_line(line):
             rule = _parse_adblock_line(
-                normalized, category_hint=category_hint, source=source
+                normalized, category_hint=category_hint, source=source, exact=exact
             )
             if rule is not None:
                 parsed.append(rule)
@@ -595,7 +613,10 @@ def parse_lines(
 
 
 def _parse_adblock_line(
-    stripped: str, category_hint: str = "other", source: str | None = None
+    stripped: str,
+    category_hint: str = "other",
+    source: str | None = None,
+    exact: bool = False,
 ) -> Rule | None:
     raw = stripped.rstrip("\n")
     stripped = raw.strip()
@@ -648,6 +669,7 @@ def _parse_adblock_line(
         is_scriptlet=is_scriptlet,
         is_badfilter=is_badfilter,
         is_important=is_important,
+        exact=exact,
         domains=domains,
         source=source,
         sources=[source] if source else [],

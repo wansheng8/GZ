@@ -132,7 +132,7 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02
 <details>
 <summary><code>连接层规则集用法（穿透 HTTPDNS，拦 App 内广告）</code></summary>
 
-四种格式内容一致（与 DNS 域名集合同源），每条为「域名 + 其所有子域」拒绝，并同样尊重 `config/lists/allowlist.txt` 的自定义放行。TUN 模式下由内核读取 TLS/QUIC SNI 匹配，App 用 HTTPDNS 或 IP 直连也无法绕过。
+四种格式内容一致（与 DNS 域名集合同源），并同样尊重 `config/lists/allowlist.txt` 的自定义放行。来源为 `||domain^` 的域名按「域名 + 其所有子域」拒绝（`DOMAIN-SUFFIX` / `domain_suffix` / `host-suffix`）；来源为 hosts 行 / 纯域名行的域名按 AdGuard 语义仅拒绝域名本体（`DOMAIN` / `domain` / `host`），不误伤其子域。TUN 模式下由内核读取 TLS/QUIC SNI 匹配，App 用 HTTPDNS 或 IP 直连也无法绕过。
 
 **mihomo / Clash Meta**
 

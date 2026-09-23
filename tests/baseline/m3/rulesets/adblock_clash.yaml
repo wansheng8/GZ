@@ -7,6 +7,6 @@ payload:
   - '+.badmalware.example'
   - '+.bare.example'
   - '+.evil-phish.example'
-  - '+.hosts.example'
   - '+.shared.example'
   - '+.tracker.example'
+  - 'hosts.example'

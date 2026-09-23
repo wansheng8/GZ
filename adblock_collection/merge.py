@@ -268,6 +268,10 @@ def dedupe(rules: Iterable[Rule]) -> list[Rule]:
             prev = seen[rule.norm]
             if rule.source and rule.source not in prev.sources:
                 prev.sources.append(rule.source)
+            # 同 norm 合并时，只要有一条是含子域语义（exact=False），就按含子域处理，
+            # 避免 hosts/domains-only 行的精确语义覆盖显式 `||domain^` 的整域拦截。
+            if not rule.exact:
+                prev.exact = False
     return [seen[k] for k in order]
 
 
@@ -336,11 +340,13 @@ def _pattern_part(raw: str) -> str:
 def _is_full_domain_block(r: Rule) -> bool:
     """该规则是否拦截目标域名的**全部**请求（可安全覆盖其子域）。
 
-    必须是「纯域名」模式（``||domain^`` / ``||domain``）。带路径的规则
-    （``||domain/path``）只拦截部分请求，既不能覆盖子域、也不能顶替同域纯域名规则，
-    否则会把 ``||doubleclick.net^`` 之类的整域封锁误删，导致该域名彻底失守。
+    必须是「纯域名」模式（``||domain^`` / ``||domain``），且为含子域语义（``exact``
+    为 False）。精确域名规则（来自 hosts / domains-only 行）只匹配域名本体、不覆盖
+    子域，不能作为整域父规则。带路径的规则（``||domain/path``）只拦截部分请求，既不能
+    覆盖子域、也不能顶替同域纯域名规则，否则会把 ``||doubleclick.net^`` 之类的整域封锁
+    误删，导致该域名彻底失守。
     """
-    if r.kind != "network" or r.is_exception:
+    if r.kind != "network" or r.is_exception or r.exact:
         return False
     if set(r.options) - _FULL_BLOCK_OPTIONS:
         return False

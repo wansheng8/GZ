@@ -1529,6 +1529,13 @@ def test_bare_domain_line_normalized():
     assert parse_line("notadomain").domains == []
 
 
+def test_hosts_and_bare_domain_flagged_exact():
+    """hosts/domains-only 行按 AdGuard 语义仅匹配域名本体，标 exact=True。"""
+    assert parse_line("0.0.0.0 ads.example.com").exact is True
+    assert parse_line("ads.example.com").exact is True
+    assert parse_line("||ads.example.com^").exact is False
+
+
 def test_parse_lines_expands_multi_domain_hosts_line():
     rules = parse_lines(["0.0.0.0 a.example.com b.example.com", "||c.example.com^"])
     assert {r.raw for r in rules} == {

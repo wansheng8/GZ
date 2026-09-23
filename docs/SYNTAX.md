@@ -10,7 +10,7 @@
 | 元素层 | 浏览器扩展 | `adblock_collection_full_cosmetic.txt` | `##` 隐藏、`#@#` 取消隐藏、scriptlet、过程式选择器、HTML 过滤 |
 | 增强层 | uBO / AdGuard | `adblock_collection_ubo_enhance.txt` | `$redirect`/`$csp`/`$removeparam` 等网络修饰符，以及 `##+js`/`#?#`/`:remove()`/`#$#`/`##^` |
 | DNS 层 | AdGuard Home / Pi-hole / hosts | `_dns.txt`、`_domains.txt`、`dns_allow.txt` | 只能表达整域拦截/放行，单行一个域名 |
-| 连接层 | mihomo / sing-box / Surge / Quantumult X | `rulesets/adblock_clash.yaml`、`adblock_singbox.json`、`adblock_surge.list`、`adblock_quanx.list` | 与 DNS 域名集合同源；TUN 模式按 TLS/QUIC SNI 匹配域名拒绝，可穿透 App 的 HTTPDNS / IP 直连 |
+| 连接层 | mihomo / sing-box / Surge / Quantumult X | `rulesets/adblock_clash.yaml`、`adblock_singbox.json`、`adblock_surge.list`、`adblock_quanx.list` | 与 DNS 域名集合同源；按来源分别用含子域算子（`DOMAIN-SUFFIX`/`domain_suffix`/`host-suffix`）与精确算子（`DOMAIN`/`domain`/`host`）；TUN 模式按 TLS/QUIC SNI 匹配域名拒绝，可穿透 App 的 HTTPDNS / IP 直连 |
 
 浏览器扩展兼容性：`full` 与 `_browser_network` / `_cosmetic` 以 ABP 通用子集为主，同时收录 uBO/AdGuard 扩展语法（ABP 会忽略无法识别的行）；增强层单独成文件，供支持高级能力的扩展订阅。
 
@@ -26,6 +26,17 @@
 | `domain.com#@#selector` | 取消该站点的某条元素隐藏 |
 
 `^` 是分隔符，匹配域名结束位置以及 `/`、`:`、`?`、`=` 等字符，也匹配字符串结尾。
+
+AdGuard / uBO 的三种基础写法语义不同，尤其是**子域是否命中**：
+
+| 写法 | 命中范围 |
+| :--- | :--- |
+| `\|\|example.com^` | `example.com` 及其**所有子域**（如 `www.example.com`） |
+| `0.0.0.0 example.com`（hosts 行） | 仅 `example.com` 本体，**不含**子域 |
+| `example.com`（domains-only 行） | 仅 `example.com` 本体，**不含**子域 |
+| `/REGEX/` | 与正则匹配的域名 |
+
+本项目在解析阶段为 hosts 行 / domains-only 行打上「精确」标记（`Rule.exact`）。`_dns.txt` / `_domains.txt` / `_dns_abp.txt` 文本产物本身就是单域名形态，天然只匹配域名本体；连接层规则集则按来源分别输出——精确来源用 `DOMAIN` / `domain` / `host`，含子域来源用 `DOMAIN-SUFFIX` / `domain_suffix` / `host-suffix`。同一域名同时存在两种来源时按更宽的含子域语义处理。
 
 `###id` 的准确含义是 `##` 分隔符加 `#id` 选择器，即隐藏 `id` 为该值的元素，三家引擎通用。DOM 层面的彻底移除由过程式选择器 `:remove()`、`:remove-attr()`、`:remove-class()` 或 scriptlet `##+js(ra.js,...)` 完成，这些属于增强层。
 
@@ -132,7 +143,7 @@ DNS 分级采用 fail-closed：只有纯域名规则，或仅带整域语义（`
 | Pi-hole domains | `example.com` 或 `*.example.com` | 支持 | 不支持 |
 | AdGuard Home domains | `example.com`、`*.example.com`、`/.+\.example\.com$/` | 支持 | 支持 |
 
-hosts 行只接受完整域名，不支持路径、修饰符与通配；本项目统一输出 `0.0.0.0` 形式。本项目 `_domains.txt` 逐主机输出，天然兼容三家 DNS 端。
+hosts 行只接受完整域名，不支持路径、修饰符与通配；本项目统一输出 `0.0.0.0` 形式。本项目 `_domains.txt` 逐主机输出，天然兼容三家 DNS 端。hosts 行与 domains-only 行的语义都是**仅匹配域名本体、不含子域**，本项目据此在连接层用精确算子输出；`||domain^` 来源才按含子域算子输出。
 
 ## 9. 常见陷阱
 

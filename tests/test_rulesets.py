@@ -56,6 +56,46 @@ def test_write_rulesets_empty_is_valid(tmp_path):
     }
 
 
+def test_hosts_and_bare_domain_sources_use_exact_operators(tmp_path):
+    """hosts 行 / domains-only 行仅匹配域名本体，连接层用精确算子。"""
+    rules = [
+        parse_line("||ads.example.com^"),
+        parse_line("0.0.0.0 hosts.example.com"),
+        parse_line("bare.example.com"),
+    ]
+    writer.write_rulesets(rules, tmp_path, {"level": "all"}, "T")
+    rdir = tmp_path / "rulesets"
+    clash = (rdir / "adblock_clash.yaml").read_text(encoding="utf-8")
+    assert "  - '+.ads.example.com'" in clash
+    assert "  - 'hosts.example.com'" in clash
+    assert "  - 'bare.example.com'" in clash
+    assert "  - '+.hosts.example.com'" not in clash
+
+    singbox = json.loads((rdir / "adblock_singbox.json").read_text(encoding="utf-8"))
+    assert singbox["rules"] == [
+        {"domain_suffix": ["ads.example.com"]},
+        {"domain": ["bare.example.com", "hosts.example.com"]},
+    ]
+
+    surge = (rdir / "adblock_surge.list").read_text(encoding="utf-8")
+    assert "DOMAIN-SUFFIX,ads.example.com,REJECT" in surge
+    assert "DOMAIN,hosts.example.com,REJECT" in surge
+    assert "DOMAIN,bare.example.com,REJECT" in surge
+
+    quanx = (rdir / "adblock_quanx.list").read_text(encoding="utf-8")
+    assert "host-suffix, ads.example.com, reject" in quanx
+    assert "host, hosts.example.com, reject" in quanx
+    assert "host, bare.example.com, reject" in quanx
+
+
+def test_suffix_semantics_dominate_when_both_present():
+    """同一域名同时有精确与含子域来源时，按更宽的含子域处理。"""
+    rules = [parse_line("0.0.0.0 dup.example"), parse_line("||dup.example^")]
+    suffix, exact = writer._scan_dns_domains(rules, {"level": "all"})
+    assert suffix == {"dup.example"}
+    assert exact == set()
+
+
 def test_emit_rulesets_appends_manifest(tmp_path):
     from adblock_collection import cli
 

@@ -170,21 +170,26 @@ def build_relation_graph(
     """构建规则间的语义关系图。
 
     - PARENT_CHILD：纯域名阻断规则中，父域已存在阻断规则时，子域规则标记为子关系。
+      仅含子域语义的规则（``||domain^``）可作为父域；hosts/domains-only 行的精确规则
+      只匹配域名本体，不覆盖子域，不作为父域。
     - EXCEPTION_CONFLICT：阻断与例外作用于同域名。
     - CROSS_SOURCE_DUPLICATE：同一 norm 出现在多个独立源组。
     """
     # 父/子域关系与跨源重复基于阻断型单域名规则
     rules = [r for r in rules if r.domains and len(r.domains) == 1]
-    blocked: dict[str, Rule] = {}
+    children: dict[str, Rule] = {}
+    parents: set[str] = set()
     for r in rules:
         if r.kind == "network" and not r.is_exception:
-            blocked.setdefault(r.domains[0], r)
+            children.setdefault(r.domains[0], r)
+            if not r.exact:
+                parents.add(r.domains[0])
     relations: list[Relation] = []
-    for domain in blocked:
+    for domain in children:
         parts = domain.split(".")
         for i in range(1, len(parts)):
             parent = ".".join(parts[i:])
-            if parent in blocked and parent != domain:
+            if parent in parents and parent != domain:
                 relations.append(Relation(REL_PARENT_CHILD, parent, domain))
                 break
 

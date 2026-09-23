@@ -205,10 +205,10 @@ CSS 仅对「单域 + 纯类名」去重（`css_dedupe`，常开）。复杂选�
 | `*_dns_ipv6.txt` | hosts（`:: domain`） |
 | `*_domains.txt` | 每行一域名（AdGuard DNS/Home） |
 | `dns_allow.txt` | DNS 层整域白名单（仅来自 `config/lists/allowlist.txt` 的 `@@\|\|domain^` 整域全局例外，供 DNS 允许清单；`manifest.json` 标记 `source=custom_allowlist`） |
-| `rulesets/adblock_clash.yaml` | 连接层·mihomo/Clash Meta 规则集（`behavior: domain`，`+.domain`） |
-| `rulesets/adblock_singbox.json` | 连接层·sing-box 源规则集（`domain_suffix`，`version: 3`） |
-| `rulesets/adblock_surge.list` | 连接层·Surge 规则集（`DOMAIN-SUFFIX,domain,REJECT`） |
-| `rulesets/adblock_quanx.list` | 连接层·Quantumult X 规则集（`host-suffix, domain, reject`） |
+| `rulesets/adblock_clash.yaml` | 连接层·mihomo/Clash Meta 规则集（`behavior: domain`；`+.domain` 含子域，`domain` 精确） |
+| `rulesets/adblock_singbox.json` | 连接层·sing-box 源规则集（`domain_suffix` + 精确 `domain`，`version: 3`） |
+| `rulesets/adblock_surge.list` | 连接层·Surge 规则集（含子域 `DOMAIN-SUFFIX,domain,REJECT`，精确 `DOMAIN,domain,REJECT`） |
+| `rulesets/adblock_quanx.list` | 连接层·Quantumult X 规则集（含子域 `host-suffix, domain, reject`，精确 `host, domain, reject`） |
 | `adblock_collection_ubo_enhance.txt` | uBO 增强子集（网络高级修饰符 `$redirect` / `$csp` / `$removeparam`，以及 scriptlet `##+js`、过程式 `#?#`、`:remove()`、AdGuard `#$#` 与 HTML 过滤 `##^`，ABP 不识别） |
 | `*.stats.txt` / `*.stats.json` | 分类/来源统计 |
 | `*.dns_safety.json` | DNS 安全分级分布 |

@@ -31,6 +31,8 @@ LOG = logging.getLogger("adblock_collection")
 # parser 1.7.0：兼容遗留 badfilter 写法 `||domain^,badfilter`，与 `$badfilter` 同义。
 # parser 1.8.0：下载阶段解析 uBO/AdGuard 预处理器指令——内联 `!#include` 子列表、
 #   按目标环境求值 `!#if/!#else/!#endif`，生效行集合变化，旧解析缓存自动失效。
+# parser 1.9.0：区分精确域名语义——hosts 行/domains-only 行（仅匹配域名本体）与
+#   `||domain^`（含子域）分别打标 `Rule.exact`，连接层规则集据此选择算子。
 # normalizer 1.3.0：去重键仅对网络规则重排 `$` 选项；元素/脚本规则里的 `$` 属选择器
 #   或脚本参数，不再参与选项归一，避免不同规则折叠碰撞。
 # classifier 1.8.0：DNS 分级识别取反类型/作用域（`$~script`/`$~third-party`）与
@@ -42,7 +44,7 @@ LOG = logging.getLogger("adblock_collection")
 #   （前者关闭全部外观过滤，语义不同），并补齐 `shide`/`css`/`strict-first-party`
 #   等别名；别名归一化产物随语义变化。
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
-PARSER_VERSION = "1.8.0"
+PARSER_VERSION = "1.9.0"
 NORMALIZER_VERSION = "1.4.0"
 CLASSIFIER_VERSION = "1.9.0"
 
@@ -84,6 +86,7 @@ def load_parsed(url: str, src_sha: str) -> list[Rule] | None:
             is_scriptlet=item.get("is_scriptlet", False),
             is_badfilter=item.get("is_badfilter", False),
             is_important=item.get("is_important", False),
+            exact=item.get("exact", False),
             domains=item.get("domains", []),
             source=item.get("source"),
             options=item.get("options", {}),
@@ -106,6 +109,7 @@ def save_parsed(url: str, src_sha: str, rules: Iterable[Rule]) -> None:
             "is_scriptlet": r.is_scriptlet,
             "is_badfilter": r.is_badfilter,
             "is_important": r.is_important,
+            "exact": r.exact,
             "domains": r.domains,
             "source": r.source,
             "options": r.options,
