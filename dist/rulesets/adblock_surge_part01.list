@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 545779
+# Total Rules: 545785
 DOMAIN-SUFFIX,0--4.com,REJECT
 DOMAIN-SUFFIX,0--d.com,REJECT
 DOMAIN-SUFFIX,0--foodwarez.da.ru,REJECT
@@ -39583,6 +39583,7 @@ DOMAIN-SUFFIX,allegrolokalnie.oferta056538354.sbs,REJECT
 DOMAIN-SUFFIX,allegrolokalnie.oferta1044814.rest,REJECT
 DOMAIN-SUFFIX,allegrolokalnie.oferta104814.rest,REJECT
 DOMAIN-SUFFIX,allegrolokalnie.oferta1851712.click,REJECT
+DOMAIN-SUFFIX,allegrolokalnie.oferta194759385.cfd,REJECT
 DOMAIN-SUFFIX,allegrolokalnie.oferta198273129.cfd,REJECT
 DOMAIN-SUFFIX,allegrolokalnie.oferta2305925494037493058.click,REJECT
 DOMAIN-SUFFIX,allegrolokalnie.oferta233823.cfd,REJECT
@@ -207764,6 +207765,7 @@ DOMAIN-SUFFIX,housingtrap.com,REJECT
 DOMAIN-SUFFIX,housingwarriorsexecuted.com,REJECT
 DOMAIN-SUFFIX,housitba5.firebaseapp.com,REJECT
 DOMAIN-SUFFIX,housitba5.web.app,REJECT
+DOMAIN-SUFFIX,housqqebreak.info,REJECT
 DOMAIN-SUFFIX,houston-academy.com,REJECT
 DOMAIN-SUFFIX,houston-analytics.com,REJECT
 DOMAIN-SUFFIX,houston-content.cresa.com,REJECT
@@ -323182,6 +323184,7 @@ DOMAIN-SUFFIX,pepcoeu.shop,REJECT
 DOMAIN-SUFFIX,pepcoonline.shop,REJECT
 DOMAIN-SUFFIX,pepcooutletpl.shop,REJECT
 DOMAIN-SUFFIX,pepcopl.info,REJECT
+DOMAIN-SUFFIX,pepcoplsale.shop,REJECT
 DOMAIN-SUFFIX,pepcopolsskaa.blogspot.com,REJECT
 DOMAIN-SUFFIX,pepcosadamesapl.shop,REJECT
 DOMAIN-SUFFIX,pepcosale.shop,REJECT
@@ -349985,6 +349988,7 @@ DOMAIN-SUFFIX,rad.live.com,REJECT
 DOMAIN-SUFFIX,rad.microsoft.com,REJECT
 DOMAIN-SUFFIX,rad.msn.com,REJECT
 DOMAIN-SUFFIX,radaperla-germany.sbs,REJECT
+DOMAIN-SUFFIX,radaperla-spain.sbs,REJECT
 DOMAIN-SUFFIX,radar.alaimtiaz.com,REJECT
 DOMAIN-SUFFIX,radar.bayan.ir,REJECT
 DOMAIN-SUFFIX,radar.brendaviglioni.com.br,REJECT
@@ -402370,6 +402374,7 @@ DOMAIN-SUFFIX,solidolucravita-it.com,REJECT
 DOMAIN-SUFFIX,solidolucravita.com,REJECT
 DOMAIN-SUFFIX,solidpowerenergy.net,REJECT
 DOMAIN-SUFFIX,solidreturn-pro.com,REJECT
+DOMAIN-SUFFIX,solidreturnsystem.com,REJECT
 DOMAIN-SUFFIX,solidrockccc.com,REJECT
 DOMAIN-SUFFIX,solidshields.net,REJECT
 DOMAIN-SUFFIX,solidsub.com,REJECT
@@ -457063,9 +457068,3 @@ DOMAIN-SUFFIX,thu-iphone-07.cfd,REJECT
 DOMAIN-SUFFIX,thu.heli-union.it,REJECT
 DOMAIN-SUFFIX,thuafchfrny.com,REJECT
 DOMAIN-SUFFIX,thuanjiglike.qpon,REJECT
-DOMAIN-SUFFIX,thubanoa.com,REJECT
-DOMAIN-SUFFIX,thubnqtrwmmdl.com,REJECT
-DOMAIN-SUFFIX,thucduongbaoan.com,REJECT
-DOMAIN-SUFFIX,thucphamvandong.com,REJECT
-DOMAIN-SUFFIX,thuekhachsan.com.vn,REJECT
-DOMAIN-SUFFIX,thuetong.com,REJECT

@@ -1,5 +1,11 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 545779
+# Total Rules: 545785
+host-suffix, thubanoa.com, reject
+host-suffix, thubnqtrwmmdl.com, reject
+host-suffix, thucduongbaoan.com, reject
+host-suffix, thucphamvandong.com, reject
+host-suffix, thuekhachsan.com.vn, reject
+host-suffix, thuetong.com, reject
 host-suffix, thugincompatibleme.com, reject
 host-suffix, thuis.nl, reject
 host-suffix, thujaskoroa.cyou, reject
@@ -32868,6 +32874,7 @@ host-suffix, vinted.delivery-post.com, reject
 host-suffix, vinted.deliveryinformationform.com, reject
 host-suffix, vinted.form83613.cfd, reject
 host-suffix, vinted.formupdate.help, reject
+host-suffix, vinted.id209382293.top, reject
 host-suffix, vinted.id2453321432.help, reject
 host-suffix, vinted.id375829.cfd, reject
 host-suffix, vinted.id45221454.link, reject
@@ -61877,6 +61884,7 @@ host-suffix, yuliblandon.com, reject
 host-suffix, yuliff.com, reject
 host-suffix, yulonginvest.com.cn, reject
 host-suffix, yulqor.shop, reject
+host-suffix, yulrknhzufvql.space, reject
 host-suffix, yuluhub.com, reject
 host-suffix, yulveratik.info, reject
 host-suffix, yumaburys.cfd, reject
@@ -73061,7 +73069,6 @@ host, allegrolokalnie.oferta1206527.shop, reject
 host, allegrolokalnie.oferta129517.click, reject
 host, allegrolokalnie.oferta1414124412.shop, reject
 host, allegrolokalnie.oferta183052.click, reject
-host, allegrolokalnie.oferta194759385.cfd, reject
 host, allegrolokalnie.oferta19922.cfd, reject
 host, allegrolokalnie.oferta20492649502747.shop, reject
 host, allegrolokalnie.oferta204936294926484.shop, reject

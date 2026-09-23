@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 635382
+! Total Rules: 635388
 ! ------------------------------------------
 &rb=&uuid=$third-party
 &subaffid=%$subdocument,third-party
@@ -287696,6 +287696,7 @@ analytics-*.aasaam.com
 @@||5471782.fls.doubleclick.net^|
 @@||omniture.walmart.com^|
 ||ejxaihnkjwwce.space^
+||yulrknhzufvql.space^
 -facebook-likeButton-
 -facebook-share.
 -facebook-widget.
@@ -442616,6 +442617,7 @@ fb_servpub-a.akamaihd.net
 ||allegrolokalnie.oferta1044814.rest^
 ||allegrolokalnie.oferta104814.rest^
 ||allegrolokalnie.oferta1851712.click^
+||allegrolokalnie.oferta194759385.cfd^
 ||allegrolokalnie.oferta2305925494037493058.click^
 ||allegrolokalnie.oferta27198703.shop^
 ||allegrolokalnie.oferta27631623.cfd^
@@ -490365,6 +490367,7 @@ fb_servpub-a.akamaihd.net
 ||housingpot.com^
 ||housitba5.firebaseapp.com^
 ||housitba5.web.app^
+||housqqebreak.info^
 ||houston-academy.com^
 ||houstondiamondbuyers.net^
 ||houstonfightscovid.com^
@@ -522110,6 +522113,7 @@ fb_servpub-a.akamaihd.net
 ||pepco.kfea.help^
 ||pepcoeu.shop^
 ||pepcopl.info^
+||pepcoplsale.shop^
 ||pepcosadamesapl.shop^
 ||pepcosale.shop^
 ||pepcozaka.com^
@@ -531278,6 +531282,7 @@ fb_servpub-a.akamaihd.net
 ||racodes.com^
 ||racspace12.weebly.com^
 ||radaperla-germany.sbs^
+||radaperla-spain.sbs^
 ||radarpichincha.webcindario.com^
 ||radarutara.id^
 ||radcliffehouse.eu^
@@ -542690,6 +542695,7 @@ fb_servpub-a.akamaihd.net
 ||solidolucravita.com^
 ||solidpowerenergy.net^
 ||solidreturn-pro.com^
+||solidreturnsystem.com^
 ||solidrockccc.com^
 ||solidtogood.github.io^
 ||solidwastepal.org^
@@ -561491,6 +561497,7 @@ fb_servpub-a.akamaihd.net
 ||vinted.deliveryinformationform.com^
 ||vinted.form83613.cfd^
 ||vinted.formupdate.help^
+||vinted.id209382293.top^
 ||vinted.id2453321432.help^
 ||vinted.id375829.cfd^
 ||vinted.id5431.click^
@@ -601002,7 +601009,6 @@ $removeparam=s,domain=twitter.com|x.com
 ||allegrolokalnie.oferta129517.click^
 ||allegrolokalnie.oferta1414124412.shop^
 ||allegrolokalnie.oferta183052.click^
-||allegrolokalnie.oferta194759385.cfd^
 ||allegrolokalnie.oferta19922.cfd^
 ||allegrolokalnie.oferta20492649502747.shop^
 ||allegrolokalnie.oferta204936294926484.shop^

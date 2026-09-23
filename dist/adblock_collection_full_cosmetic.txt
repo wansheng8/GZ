@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 164065
+! Total Rules: 164067
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -136068,6 +136068,8 @@ yesporn.vip##.asside-link
 theherta.com##+js(trusted-set-attr, script, data-archive-probe, 'loaded')
 theherta.com##+js(no-fetch-if, ads-prebid)
 theherta.com##+js(set, HTMLScriptElement.prototype.onerror, undefined)
+0123movie.space##+js(nowoif)
+mfw09.org##+js(nowoif)
 sanadegreecollege.in,powergam.online,qrixpe.com##center, .main-content, .myTimerDiv, .myTimer, .SmileyBanner, .myWaitingDiv:others()
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(set, document.hidden, false)
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(aopw, AdBDetected)

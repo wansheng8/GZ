@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 545779
+# Total Rules: 545785
 host-suffix, 0--4.com, reject
 host-suffix, 0--d.com, reject
 host-suffix, 0--foodwarez.da.ru, reject
@@ -39583,6 +39583,7 @@ host-suffix, allegrolokalnie.oferta056538354.sbs, reject
 host-suffix, allegrolokalnie.oferta1044814.rest, reject
 host-suffix, allegrolokalnie.oferta104814.rest, reject
 host-suffix, allegrolokalnie.oferta1851712.click, reject
+host-suffix, allegrolokalnie.oferta194759385.cfd, reject
 host-suffix, allegrolokalnie.oferta198273129.cfd, reject
 host-suffix, allegrolokalnie.oferta2305925494037493058.click, reject
 host-suffix, allegrolokalnie.oferta233823.cfd, reject
@@ -207764,6 +207765,7 @@ host-suffix, housingtrap.com, reject
 host-suffix, housingwarriorsexecuted.com, reject
 host-suffix, housitba5.firebaseapp.com, reject
 host-suffix, housitba5.web.app, reject
+host-suffix, housqqebreak.info, reject
 host-suffix, houston-academy.com, reject
 host-suffix, houston-analytics.com, reject
 host-suffix, houston-content.cresa.com, reject
@@ -323182,6 +323184,7 @@ host-suffix, pepcoeu.shop, reject
 host-suffix, pepcoonline.shop, reject
 host-suffix, pepcooutletpl.shop, reject
 host-suffix, pepcopl.info, reject
+host-suffix, pepcoplsale.shop, reject
 host-suffix, pepcopolsskaa.blogspot.com, reject
 host-suffix, pepcosadamesapl.shop, reject
 host-suffix, pepcosale.shop, reject
@@ -349985,6 +349988,7 @@ host-suffix, rad.live.com, reject
 host-suffix, rad.microsoft.com, reject
 host-suffix, rad.msn.com, reject
 host-suffix, radaperla-germany.sbs, reject
+host-suffix, radaperla-spain.sbs, reject
 host-suffix, radar.alaimtiaz.com, reject
 host-suffix, radar.bayan.ir, reject
 host-suffix, radar.brendaviglioni.com.br, reject
@@ -402370,6 +402374,7 @@ host-suffix, solidolucravita-it.com, reject
 host-suffix, solidolucravita.com, reject
 host-suffix, solidpowerenergy.net, reject
 host-suffix, solidreturn-pro.com, reject
+host-suffix, solidreturnsystem.com, reject
 host-suffix, solidrockccc.com, reject
 host-suffix, solidshields.net, reject
 host-suffix, solidsub.com, reject
@@ -457063,9 +457068,3 @@ host-suffix, thu-iphone-07.cfd, reject
 host-suffix, thu.heli-union.it, reject
 host-suffix, thuafchfrny.com, reject
 host-suffix, thuanjiglike.qpon, reject
-host-suffix, thubanoa.com, reject
-host-suffix, thubnqtrwmmdl.com, reject
-host-suffix, thucduongbaoan.com, reject
-host-suffix, thucphamvandong.com, reject
-host-suffix, thuekhachsan.com.vn, reject
-host-suffix, thuetong.com, reject

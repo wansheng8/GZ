@@ -1,5 +1,11 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 545779
+# Total Rules: 545785
+DOMAIN-SUFFIX,thubanoa.com,REJECT
+DOMAIN-SUFFIX,thubnqtrwmmdl.com,REJECT
+DOMAIN-SUFFIX,thucduongbaoan.com,REJECT
+DOMAIN-SUFFIX,thucphamvandong.com,REJECT
+DOMAIN-SUFFIX,thuekhachsan.com.vn,REJECT
+DOMAIN-SUFFIX,thuetong.com,REJECT
 DOMAIN-SUFFIX,thugincompatibleme.com,REJECT
 DOMAIN-SUFFIX,thuis.nl,REJECT
 DOMAIN-SUFFIX,thujaskoroa.cyou,REJECT
@@ -32868,6 +32874,7 @@ DOMAIN-SUFFIX,vinted.delivery-post.com,REJECT
 DOMAIN-SUFFIX,vinted.deliveryinformationform.com,REJECT
 DOMAIN-SUFFIX,vinted.form83613.cfd,REJECT
 DOMAIN-SUFFIX,vinted.formupdate.help,REJECT
+DOMAIN-SUFFIX,vinted.id209382293.top,REJECT
 DOMAIN-SUFFIX,vinted.id2453321432.help,REJECT
 DOMAIN-SUFFIX,vinted.id375829.cfd,REJECT
 DOMAIN-SUFFIX,vinted.id45221454.link,REJECT
@@ -61877,6 +61884,7 @@ DOMAIN-SUFFIX,yuliblandon.com,REJECT
 DOMAIN-SUFFIX,yuliff.com,REJECT
 DOMAIN-SUFFIX,yulonginvest.com.cn,REJECT
 DOMAIN-SUFFIX,yulqor.shop,REJECT
+DOMAIN-SUFFIX,yulrknhzufvql.space,REJECT
 DOMAIN-SUFFIX,yuluhub.com,REJECT
 DOMAIN-SUFFIX,yulveratik.info,REJECT
 DOMAIN-SUFFIX,yumaburys.cfd,REJECT
@@ -73061,7 +73069,6 @@ DOMAIN,allegrolokalnie.oferta1206527.shop,REJECT
 DOMAIN,allegrolokalnie.oferta129517.click,REJECT
 DOMAIN,allegrolokalnie.oferta1414124412.shop,REJECT
 DOMAIN,allegrolokalnie.oferta183052.click,REJECT
-DOMAIN,allegrolokalnie.oferta194759385.cfd,REJECT
 DOMAIN,allegrolokalnie.oferta19922.cfd,REJECT
 DOMAIN,allegrolokalnie.oferta20492649502747.shop,REJECT
 DOMAIN,allegrolokalnie.oferta204936294926484.shop,REJECT

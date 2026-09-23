@@ -1,6 +1,6 @@
 # Adblock Rule Collection (connection-layer ruleset)
 # rule-providers: { type: http, behavior: domain, format: yaml }
-# Total Domains: 545779
+# Total Domains: 545785
 payload:
   - '+.0--4.com'
   - '+.0--d.com'
@@ -39585,6 +39585,7 @@ payload:
   - '+.allegrolokalnie.oferta1044814.rest'
   - '+.allegrolokalnie.oferta104814.rest'
   - '+.allegrolokalnie.oferta1851712.click'
+  - '+.allegrolokalnie.oferta194759385.cfd'
   - '+.allegrolokalnie.oferta198273129.cfd'
   - '+.allegrolokalnie.oferta2305925494037493058.click'
   - '+.allegrolokalnie.oferta233823.cfd'
@@ -207766,6 +207767,7 @@ payload:
   - '+.housingwarriorsexecuted.com'
   - '+.housitba5.firebaseapp.com'
   - '+.housitba5.web.app'
+  - '+.housqqebreak.info'
   - '+.houston-academy.com'
   - '+.houston-analytics.com'
   - '+.houston-content.cresa.com'
@@ -323184,6 +323186,7 @@ payload:
   - '+.pepcoonline.shop'
   - '+.pepcooutletpl.shop'
   - '+.pepcopl.info'
+  - '+.pepcoplsale.shop'
   - '+.pepcopolsskaa.blogspot.com'
   - '+.pepcosadamesapl.shop'
   - '+.pepcosale.shop'
@@ -349987,6 +349990,7 @@ payload:
   - '+.rad.microsoft.com'
   - '+.rad.msn.com'
   - '+.radaperla-germany.sbs'
+  - '+.radaperla-spain.sbs'
   - '+.radar.alaimtiaz.com'
   - '+.radar.bayan.ir'
   - '+.radar.brendaviglioni.com.br'
@@ -402372,6 +402376,7 @@ payload:
   - '+.solidolucravita.com'
   - '+.solidpowerenergy.net'
   - '+.solidreturn-pro.com'
+  - '+.solidreturnsystem.com'
   - '+.solidrockccc.com'
   - '+.solidshields.net'
   - '+.solidsub.com'
@@ -489939,6 +489944,7 @@ payload:
   - '+.vinted.deliveryinformationform.com'
   - '+.vinted.form83613.cfd'
   - '+.vinted.formupdate.help'
+  - '+.vinted.id209382293.top'
   - '+.vinted.id2453321432.help'
   - '+.vinted.id375829.cfd'
   - '+.vinted.id45221454.link'
@@ -518948,6 +518954,7 @@ payload:
   - '+.yuliff.com'
   - '+.yulonginvest.com.cn'
   - '+.yulqor.shop'
+  - '+.yulrknhzufvql.space'
   - '+.yuluhub.com'
   - '+.yulveratik.info'
   - '+.yumaburys.cfd'
@@ -530132,7 +530139,6 @@ payload:
   - 'allegrolokalnie.oferta129517.click'
   - 'allegrolokalnie.oferta1414124412.shop'
   - 'allegrolokalnie.oferta183052.click'
-  - 'allegrolokalnie.oferta194759385.cfd'
   - 'allegrolokalnie.oferta19922.cfd'
   - 'allegrolokalnie.oferta20492649502747.shop'
   - 'allegrolokalnie.oferta204936294926484.shop'

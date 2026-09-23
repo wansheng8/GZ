@@ -1,4 +1,12 @@
 ! Adblock Rule Collection (Full) (jsDelivr part 02)
+||sodo12.com^
+||sodo13.com^
+||sodo15.com^
+||sodo3839.com^
+||sodo668.net^
+||soeder-internal.com^
+||soemaliegroup.com^
+||soerterfik.com^
 ||sofabrew.com^
 ||sofaclearance.shop^
 ||sofaprivateawarderysj.shop^
@@ -334,6 +342,7 @@
 ||solidolucravita.com^
 ||solidpowerenergy.net^
 ||solidreturn-pro.com^
+||solidreturnsystem.com^
 ||solidrockccc.com^
 ||solidtogood.github.io^
 ||solidwastepal.org^
@@ -19135,6 +19144,7 @@
 ||vinted.deliveryinformationform.com^
 ||vinted.form83613.cfd^
 ||vinted.formupdate.help^
+||vinted.id209382293.top^
 ||vinted.id2453321432.help^
 ||vinted.id375829.cfd^
 ||vinted.id5431.click^
@@ -49700,6 +49710,8 @@ yesporn.vip##.asside-link
 theherta.com##+js(trusted-set-attr, script, data-archive-probe, 'loaded')
 theherta.com##+js(no-fetch-if, ads-prebid)
 theherta.com##+js(set, HTMLScriptElement.prototype.onerror, undefined)
+0123movie.space##+js(nowoif)
+mfw09.org##+js(nowoif)
 @@*$generichide,domain=gplinks.*|qrixpe.com|powergam.online|sanadegreecollege.in
 sanadegreecollege.in,powergam.online,qrixpe.com##center, .main-content, .myTimerDiv, .myTimer, .SmileyBanner, .myWaitingDiv:others()
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(set, document.hidden, false)
@@ -102033,7 +102045,6 @@ adguard.info,adguard.com,adguard.app##.hello_from_adguard_tracking_params
 ||allegrolokalnie.oferta129517.click^
 ||allegrolokalnie.oferta1414124412.shop^
 ||allegrolokalnie.oferta183052.click^
-||allegrolokalnie.oferta194759385.cfd^
 ||allegrolokalnie.oferta19922.cfd^
 ||allegrolokalnie.oferta20492649502747.shop^
 ||allegrolokalnie.oferta204936294926484.shop^

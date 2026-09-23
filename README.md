@@ -5,8 +5,8 @@
 <br/>
 
 [![Build](https://github.com/wansheng8/GZ/actions/workflows/build.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/build.yml)
-[![Rules](https://img.shields.io/badge/Total_Rules-799%2C447-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
-[![DNS](https://img.shields.io/badge/DNS_Domains-545%2C779-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
+[![Rules](https://img.shields.io/badge/Total_Rules-799%2C455-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
+[![DNS](https://img.shields.io/badge/DNS_Domains-545%2C785-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
 [![Sources](https://img.shields.io/badge/Upstream-60_sources-9d00ff?style=for-the-badge&labelColor=0d0d0d)](config/sources.yaml)
 [![License](https://img.shields.io/badge/License-MIT-39ff14?style=for-the-badge&labelColor=0d0d0d)](LICENSE)
 [![Update](https://img.shields.io/badge/Update-Daily-ff9c39?style=for-the-badge&labelColor=0d0d0d)]()
@@ -211,7 +211,7 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 <div align="center">
 
-<img src="assets/stats.svg" width="100%" alt="799,447 rules · 545,779 domains · 60 sources · 33.8万+ deduplicated"/>
+<img src="assets/stats.svg" width="100%" alt="799,455 rules · 545,785 domains · 60 sources · 33.8万+ deduplicated"/>
 
 </div>
 

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 30719
+! Total Rules: 30721
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -23336,6 +23336,8 @@ yesporn.vip##+js(nostif, .innerText, 2000)
 theherta.com##+js(trusted-set-attr, script, data-archive-probe, 'loaded')
 theherta.com##+js(no-fetch-if, ads-prebid)
 theherta.com##+js(set, HTMLScriptElement.prototype.onerror, undefined)
+0123movie.space##+js(nowoif)
+mfw09.org##+js(nowoif)
 sanadegreecollege.in,powergam.online,qrixpe.com##center, .main-content, .myTimerDiv, .myTimer, .SmileyBanner, .myWaitingDiv:others()
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(set, document.hidden, false)
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(aopw, AdBDetected)
