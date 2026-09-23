@@ -76,3 +76,11 @@ Entries discovered by the Agent during task execution should follow this format:
 - Instructions:
   - CI workflow（`.github/workflows/build.yml`，Build Filters）推送后约 7-8 分钟完成，成功后由 bot 自动提交 dist 产物（commit message 带 `[skip ci]`）。校验 CI 结果用 `git fetch origin && git log --oneline -2 origin/main` 看是否出现新的 `auto update filter lists` 提交，比 GitHub API 可靠（未认证 API 易触发 403 rate limit）；构建是否通过看 `dist/build_report.json` 的 `passed` 与 `metrics`。
   - 解析/分类逻辑变更需递增 `adblock_collection/pipeline.py` 的 `PARSER_VERSION` / `CLASSIFIER_VERSION`，`.cache/parsed` 旧缓存才会失效重建。
+
+[Project Knowledge Summary]
+- Date: 2026-09-23
+- Context: Discovered by Agent while performing 清理 Actions 历史运行（仅保留最新 3 条）
+- Category: Workflow & Collaboration
+- Instructions:
+  - `.github/workflows/cleanup-runs.yml`（Cleanup Runs）每日 04:00 清理 Actions 历史 run，仅保留最新 3 条；`push` 本文件时也会立即执行一次。它调用 `gh api` 删除非进行中的 run，需 `permissions: actions: write`；删除 run 会连同其日志与产物一起移除。
+  - 未认证访问 GitHub REST API（`api.github.com`）会 403 rate limit，但 `https://github.com/<owner>/<repo>/actions?query=branch%3Amain` 的 HTML 页面可正常读取：抓取后统计 `/actions/runs/<id>` 去重数量即可核实 run 条数，比 API 可靠。
