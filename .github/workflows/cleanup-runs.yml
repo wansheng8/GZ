@@ -1,0 +1,78 @@
+name: Cleanup Runs
+
+# GitHub 没有「仅保留最近 N 次运行」的原生设置，这里用轻量工作流定期清理历史 run
+# （连同其日志与产物），只保留最新 3 条，避免 Actions 列表无限增长。
+# 注意：这只删除 run 记录；产物/日志的保留天数由各上传步骤的 retention-days 控制。
+on:
+  # 每日 04:00（UTC）执行，晚于 03:00 的构建，避开进行中的任务
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+  # 本文件变更时立即清理一次，便于首次上线时清掉既有的大量历史 run
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cleanup-runs.yml"
+
+permissions:
+  actions: write
+  contents: read
+
+# 串行化，避免多次清理并发删除时相互竞争
+concurrency:
+  group: cleanup-runs
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      KEEP: "3"
+      CURRENT_RUN_ID: ${{ github.run_id }}
+    steps:
+      - name: Delete all but the newest runs
+        run: |
+          set -euo pipefail
+
+          # 分页拉取全部 workflow run，逐行输出 "<created_at>\t<id>\t<status>"
+          runs=$(gh api --paginate \
+            -H "Accept: application/vnd.github+json" \
+            "/repos/${REPO}/actions/runs?per_page=100" \
+            --jq '.workflow_runs[] | "\(.created_at)\t\(.id)\t\(.status)"')
+
+          total=$(printf '%s\n' "$runs" | grep -c . || true)
+          # created_at 为同格式 UTC 时间戳，字典序倒排即为时间倒序
+          keep=$(printf '%s\n' "$runs" | sort -r | head -n "${KEEP}" | cut -f2 || true)
+          echo "共 ${total} 条 run，保留最新 ${KEEP} 条："
+          printf '  %s\n' ${keep}
+
+          deleted=0
+          skipped=0
+          while IFS=$'\t' read -r created id status; do
+            [ -n "${id:-}" ] || continue
+            # 进行中/排队中的 run 无法删除，留待下次清理
+            case "$status" in
+              in_progress|queued|waiting|requested|pending)
+                skipped=$((skipped + 1))
+                continue
+                ;;
+            esac
+            # 绝不删除当前这次清理自身的 run
+            [ "$id" = "${CURRENT_RUN_ID}" ] && continue
+            if printf '%s\n' "$keep" | grep -qx "$id"; then
+              continue
+            fi
+            echo "删除 run ${id}（${status}, ${created}）"
+            if gh api -X DELETE "/repos/${REPO}/actions/runs/${id}" >/dev/null 2>&1; then
+              deleted=$((deleted + 1))
+            else
+              echo "  删除失败（可能已被清理或触发限流），跳过"
+            fi
+            # 轻微限速，避免批量删除触发 secondary rate limit
+            sleep 0.3
+          done <<< "$runs"
+
+          echo "已删除 ${deleted} 条历史 run，跳过 ${skipped} 条进行中 run"
