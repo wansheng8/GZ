@@ -84,3 +84,13 @@ Entries discovered by the Agent during task execution should follow this format:
 - Instructions:
   - `.github/workflows/cleanup-runs.yml`（Cleanup Runs）每日 04:00 清理 Actions 历史 run，仅保留最新 3 条；`push` 本文件时也会立即执行一次。它调用 `gh api` 删除非进行中的 run，需 `permissions: actions: write`；删除 run 会连同其日志与产物一起移除。
   - 未认证访问 GitHub REST API（`api.github.com`）会 403 rate limit，但 `https://github.com/<owner>/<repo>/actions?query=branch%3Amain` 的 HTML 页面可正常读取：抓取后统计 `/actions/runs/<id>` 去重数量即可核实 run 条数，比 API 可靠。
+
+<!-- build-metrics:start -->
+## 构建指标快照（CI 自动生成）
+
+> 由 `python -m adblock_collection.memory_metrics` 在每次构建后更新，最新记录置顶、仅保留最近 10 次；数值取自 `dist/build_report.json` 与 `dist/manifest.json`。
+
+| 生成时间(UTC) | 提交 | 结果 | 总规则数 | DNS 域名 | 网络拦截 | 元素隐藏 | uBO 增强 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-09-23 03:07 | `2742f46` | 通过 | 799,445 | 545,777 | 635,380 | 164,065 | 30,719 |
+<!-- build-metrics:end -->
