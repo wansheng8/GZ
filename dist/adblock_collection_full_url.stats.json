@@ -1,17 +1,17 @@
 {
   "name": "adblock_collection_full_url",
-  "total": 26356,
+  "total": 26362,
   "by_category": {
-    "url": 26356
+    "url": 26362
   },
   "by_kind": {
-    "network": 26356
+    "network": 26362
   },
   "by_source": {
-    "Hagezi DNS Pro Plus": 10406,
+    "Hagezi DNS Pro Plus": 10405,
     "ADrules DNS": 3516,
     "217heidai adblockdns": 2928,
-    "oisd": 2724,
+    "oisd": 2719,
     "ADrules Easylist": 1053,
     "AdGuard – Ads": 1051,
     "ADrules anti-AD": 852,
@@ -22,12 +22,12 @@
     "StevenBlack Hosts": 271,
     "10007_auto reward": 258,
     "ADrules HalfLife": 208,
-    "AdGuardSDNSFilter": 149,
+    "AdGuardSDNSFilter": 150,
     "KADhosts": 125,
     "ADrules ChengFeng": 108,
+    "Accelerate-Hosts": 89,
     "Hagezi DNS Light": 82,
     "AdGuard – Mobile Ads": 82,
-    "Accelerate-Hosts": 78,
     "uBO filters – Unbreak": 51,
     "Disconnect Simple Ad": 22,
     "Anti-AD (adguard)": 12,

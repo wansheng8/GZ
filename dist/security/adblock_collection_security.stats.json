@@ -1,13 +1,13 @@
 {
   "name": "adblock_collection_security",
-  "total": 47083,
+  "total": 47090,
   "by_category": {
-    "phishing": 37157,
+    "phishing": 37164,
     "malware": 9691,
     "mining": 235
   },
   "by_kind": {
-    "network": 47083
+    "network": 47090
   },
   "by_source": {
     "Phishing URL Blocklist": 36988,
@@ -20,7 +20,7 @@
     "ADrules anti-AD": 35,
     "ADrules EasyPrivacy": 28,
     "ADrules Easylist": 27,
-    "ScamBlocklist (adguard)": 10,
+    "ScamBlocklist (adguard)": 17,
     "AdGuard – Ads": 9,
     "ADrules AdRules": 6,
     "AdGuardSDNSFilter": 6,

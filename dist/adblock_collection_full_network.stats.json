@@ -1,30 +1,30 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 486315,
+  "total": 486736,
   "by_category": {
-    "network": 486315
+    "network": 486736
   },
   "by_kind": {
-    "network": 486315
+    "network": 486736
   },
   "by_source": {
-    "oisd": 133357,
+    "oisd": 133727,
     "Hagezi DNS Pro Plus": 114717,
     "ADrules DNS": 85184,
     "ADrules Easylist": 50986,
-    "217heidai adblockdns": 36197,
+    "217heidai adblockdns": 36218,
     "ADrules anti-AD": 15899,
     "ADrules EasyListChina": 9512,
     "ADrules AdRules": 9461,
     "StevenBlack Hosts": 7972,
-    "AdGuardSDNSFilter": 4991,
-    "AdGuard – Ads": 3306,
+    "AdGuardSDNSFilter": 5030,
+    "AdGuard – Ads": 3309,
     "10007_auto reward": 2651,
     "KADhosts": 2529,
     "uBO filters – Ads": 2103,
     "banbendalao ADgk": 1879,
     "Hagezi DNS Light": 1789,
-    "Accelerate-Hosts": 1730,
+    "Accelerate-Hosts": 1723,
     "ADrules ChengFeng": 767,
     "Disconnect Simple Ad": 417,
     "AdGuard – Mobile Ads": 217,
@@ -37,9 +37,8 @@
     "AWAvenue-Ads-Rule": 31,
     "uBO filters – Quick fixes": 15,
     "Anti-AD Domains": 13,
-    "EasyList (easylist.to)": 12,
+    "EasyList (ABP)": 12,
     "AdAway Hosts": 11,
-    "EasyList (ABP)": 5,
     "Peter Lowe's Blocklist": 5,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1

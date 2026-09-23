@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 26356
+! Total Rules: 26362
 ! ------------------------------------------
 -assets/ads.$~script
 .ar/ads/$~xhr
@@ -7308,80 +7308,91 @@ _ad.php?
 108.138.159.33                 synostatic.synology.com
 108.138.159.88                 synostatic.synology.com
 108.138.159.104                synostatic.synology.com
-13.225.222.53                  hkrpg-sdk-os-static.hoyoverse.com
 13.225.222.23                  hkrpg-sdk-os-static.hoyoverse.com
-13.225.222.2                   hkrpg-sdk-os-static.hoyoverse.com
 13.225.222.66                  hkrpg-sdk-os-static.hoyoverse.com
-18.238.152.9                   sg-hkrpg-api-static.hoyoverse.com
+13.225.222.53                  hkrpg-sdk-os-static.hoyoverse.com
+13.225.222.2                   hkrpg-sdk-os-static.hoyoverse.com
 18.238.152.2                   sg-hkrpg-api-static.hoyoverse.com
-18.238.152.55                  sg-hkrpg-api-static.hoyoverse.com
+18.238.152.9                   sg-hkrpg-api-static.hoyoverse.com
 18.238.152.43                  sg-hkrpg-api-static.hoyoverse.com
-18.161.170.34                  sg-public-api-static.hoyoverse.com
+18.238.152.55                  sg-hkrpg-api-static.hoyoverse.com
 18.161.170.41                  sg-public-api-static.hoyoverse.com
 18.161.170.89                  sg-public-api-static.hoyoverse.com
 18.161.170.19                  sg-public-api-static.hoyoverse.com
-52.84.199.128                  sdk-common-static.hoyoverse.com
+18.161.170.34                  sg-public-api-static.hoyoverse.com
 52.84.199.22                   sdk-common-static.hoyoverse.com
+52.84.199.128                  sdk-common-static.hoyoverse.com
 52.84.199.2                    sdk-common-static.hoyoverse.com
 52.84.199.116                  sdk-common-static.hoyoverse.com
-163.181.60.225                 sdk-os-static.hoyoverse.com
+163.181.60.204                 sdk-os-static.hoyoverse.com
+163.181.60.205                 sdk-os-static.hoyoverse.com
+163.181.60.207                 sdk-os-static.hoyoverse.com
+163.181.60.208                 sdk-os-static.hoyoverse.com
+163.181.60.206                 sdk-os-static.hoyoverse.com
+163.181.60.202                 sdk-os-static.hoyoverse.com
+163.181.60.203                 sdk-os-static.hoyoverse.com
+163.181.60.201                 sdk-os-static.hoyoverse.com
+151.101.3.6                    is1-ssl.mzstatic.com
 151.101.67.6                   is1-ssl.mzstatic.com
 151.101.131.6                  is1-ssl.mzstatic.com
 151.101.195.6                  is1-ssl.mzstatic.com
-151.101.3.6                    is1-ssl.mzstatic.com
+2a04:4e42:400::774             is1-ssl.mzstatic.com
 2a04:4e42:600::774             is1-ssl.mzstatic.com
 2a04:4e42::774                 is1-ssl.mzstatic.com
 2a04:4e42:200::774             is1-ssl.mzstatic.com
-2a04:4e42:400::774             is1-ssl.mzstatic.com
-151.101.131.6                  is2-ssl.mzstatic.com
-151.101.195.6                  is2-ssl.mzstatic.com
 151.101.3.6                    is2-ssl.mzstatic.com
 151.101.67.6                   is2-ssl.mzstatic.com
-2a04:4e42:200::774             is2-ssl.mzstatic.com
+151.101.131.6                  is2-ssl.mzstatic.com
+151.101.195.6                  is2-ssl.mzstatic.com
 2a04:4e42:400::774             is2-ssl.mzstatic.com
 2a04:4e42:600::774             is2-ssl.mzstatic.com
 2a04:4e42::774                 is2-ssl.mzstatic.com
+2a04:4e42:200::774             is2-ssl.mzstatic.com
 151.101.195.6                  is3-ssl.mzstatic.com
 151.101.3.6                    is3-ssl.mzstatic.com
 151.101.67.6                   is3-ssl.mzstatic.com
 151.101.131.6                  is3-ssl.mzstatic.com
-2a04:4e42:200::774             is3-ssl.mzstatic.com
-2a04:4e42:400::774             is3-ssl.mzstatic.com
-2a04:4e42:600::774             is3-ssl.mzstatic.com
-2a04:4e42::774                 is3-ssl.mzstatic.com
+2600:1404:1200:da7::2a1        is3-ssl.mzstatic.com
+2600:1404:1200:da5::2a1        is3-ssl.mzstatic.com
+2600:1404:1200:d9a::2a1        is3-ssl.mzstatic.com
+2600:1404:1200:d96::2a1        is3-ssl.mzstatic.com
+2600:1404:1200:d8f::2a1        is3-ssl.mzstatic.com
+151.101.195.6                  is4-ssl.mzstatic.com
 151.101.3.6                    is4-ssl.mzstatic.com
 151.101.67.6                   is4-ssl.mzstatic.com
 151.101.131.6                  is4-ssl.mzstatic.com
-151.101.195.6                  is4-ssl.mzstatic.com
+2a04:4e42:400::774             is4-ssl.mzstatic.com
 2a04:4e42:600::774             is4-ssl.mzstatic.com
 2a04:4e42::774                 is4-ssl.mzstatic.com
 2a04:4e42:200::774             is4-ssl.mzstatic.com
-2a04:4e42:400::774             is4-ssl.mzstatic.com
-151.101.131.6                  is5-ssl.mzstatic.com
 151.101.195.6                  is5-ssl.mzstatic.com
 151.101.3.6                    is5-ssl.mzstatic.com
 151.101.67.6                   is5-ssl.mzstatic.com
-2a04:4e42:8a::774              is5-ssl.mzstatic.com
-142.251.116.110                connectivitycheck.gstatic.cn
-2607:f8b0:4023:1017::6e        connectivitycheck.gstatic.cn
-23.215.55.133                  cdn.akamai.steamstatic.com
-23.215.55.138                  cdn.akamai.steamstatic.com
-23.213.185.172                 community.akamai.steamstatic.com
-23.213.185.178                 community.akamai.steamstatic.com
-185.199.110.153                githubstatus.com
-185.199.109.153                githubstatus.com
+151.101.131.6                  is5-ssl.mzstatic.com
+2a04:4e42::774                 is5-ssl.mzstatic.com
+2a04:4e42:200::774             is5-ssl.mzstatic.com
+2a04:4e42:400::774             is5-ssl.mzstatic.com
+2a04:4e42:600::774             is5-ssl.mzstatic.com
+172.253.135.110                connectivitycheck.gstatic.cn
+2607:f8b0:4023:1004::6e        connectivitycheck.gstatic.cn
+23.47.48.102                   cdn.akamai.steamstatic.com
+23.47.48.80                    cdn.akamai.steamstatic.com
+23.47.49.115                   community.akamai.steamstatic.com
+23.47.49.88                    community.akamai.steamstatic.com
 185.199.108.153                githubstatus.com
+185.199.109.153                githubstatus.com
 185.199.111.153                githubstatus.com
-104.18.15.62                   static-assets-prod.epicgames.com
+185.199.110.153                githubstatus.com
 104.18.14.62                   static-assets-prod.epicgames.com
+104.18.15.62                   static-assets-prod.epicgames.com
 104.18.20.177                  static-assets-prod.unrealengine.com
 104.18.21.177                  static-assets-prod.unrealengine.com
 140.82.112.18                  status.github.com
-23.213.185.162                 store.akamai.steamstatic.com
-23.213.185.179                 store.akamai.steamstatic.com
+23.47.52.24                    store.akamai.steamstatic.com
+23.47.52.23                    store.akamai.steamstatic.com
 23.4.62.212                    store-site-backend-static.ak.epicgames.com
-2600:1404:1200:118f::3b63      store-site-backend-static.ak.epicgames.com
-2600:1404:1200:1182::3b63      store-site-backend-static.ak.epicgames.com
+2600:1404:ec00:c84::3b63       store-site-backend-static.ak.epicgames.com
+2600:1404:ec00:c87::3b63       store-site-backend-static.ak.epicgames.com
 ||beacons.gvt2.com^
 ||googleads.g.doubleclick.net^
 ||securepubads.g.doubleclick.net^
@@ -10589,6 +10600,7 @@ _ad.php?
 ||iwstats.com^
 ||wstatslive.com^
 ||crypto-o.click^
+||analytics.sportigio.com^
 ||stats.dulo.
 ||log.api-maps.yandex.
 ||datadog-log.clovergames.io
@@ -19239,7 +19251,6 @@ _stat.js*
 ||analytics.sport24.dk^
 ||analytics.sport24-shop.com^
 ||analytics.sportcorico.com^
-||analytics.sportigio.com^
 ||analytics.sportisimo.bg^
 ||analytics.sportisimo.com^
 ||analytics.sportisimo.cz^
@@ -22048,7 +22059,6 @@ _stat.js*
 ||232.red-88-31-15.staticip.rima-tde.net^
 ||233.red-83-63-229.staticip.rima-tde.net^
 ||23304.click^
-||234873.click^
 ||23887g364.click^
 ||23i04jio2z.click^
 ||242.red-88-19-32.staticip.rima-tde.net^
@@ -22088,7 +22098,6 @@ _stat.js*
 ||45.red-88-30-0.staticip.rima-tde.net^
 ||457843.click^
 ||458975.click^
-||459853.click^
 ||46.red-88-30-26.staticip.rima-tde.net^
 ||48.red-88-7-112.staticip.rima-tde.net^
 ||4928579285-pl.click^
@@ -22097,7 +22106,6 @@ _stat.js*
 ||52.red-88-23-128.staticip.rima-tde.net^
 ||54.red-80-35-69.staticip.rima-tde.net^
 ||543874.click^
-||558484431.click^
 ||5623.web-stats.org^
 ||56clicks.com^
 ||58.red-80-34-98.staticip.rima-tde.net^
@@ -22123,12 +22131,10 @@ _stat.js*
 ||858158512.click^
 ||85818518251.click^
 ||85818521.click^
-||8593044.click^
 ||874553.click^
 ||87543-oferta.click^
 ||875493.click^
 ||875712512.click^
-||876503.click^
 ||87839h04402.click^
 ||884777742.click^
 ||8958915981.click^
@@ -22227,6 +22233,9 @@ _stat.js*
 ||allegro.oferta828331pl.click^
 ||allegro.pl-oferta6027980.click^
 ||allegro.pl-oferta6482538.click^
+||allegro.pl-ogloszenie-firmowe-84792192.click^
+||allegro.pl-ogloszenie9347235437.click^
+||allegro.pl-ogloszenie9783245612.click^
 ||allegro.pl-ssid38673.click^
 ||allegro.q0e0120129.click^
 ||allegro.smart-4098jj7.click^
@@ -22246,6 +22255,7 @@ _stat.js*
 ||allegrolokalnie.6143897201.click^
 ||allegrolokalnie.757185151.click^
 ||allegrolokalnie.8588912591.click^
+||allegrolokalnie.876503.click^
 ||allegrolokalnie.8897587181.click^
 ||allegrolokalnie.894129019041.click^
 ||allegrolokalnie.9125125.click^
@@ -22295,6 +22305,7 @@ _stat.js*
 ||allegrolokalnie.pl-682186982.click^
 ||allegrolokalnie.pl-7382196.click^
 ||allegrolokalnie.pl-firmowe-28491.click^
+||allegrolokalnie.pl-ld8382929.click^
 ||allegrolokalnie.pl-oferta182054.click^
 ||allegrolokalnie.pl-oferta186524.click^
 ||allegrolokalnie.pl-oferta1866815.click^
@@ -22359,6 +22370,7 @@ _stat.js*
 ||allegrolokalnie.pl-ogloszenie6789233412.click^
 ||allegrolokalnie.pl-ogloszenie6789233491.click^
 ||allegrolokalnie.pl-ogloszenie7489834822.click^
+||allegrolokalnie.pl-ogloszenie9347235437.click^
 ||allegrolokalnie.pl-ogloszenie9384323147.click^
 ||allegrolokalnie.pl344381639.click^
 ||allegrolokalnie.pl655383454.click^
@@ -22398,6 +22410,7 @@ _stat.js*
 ||analytics.wedobroadcast.live^
 ||anders-static.smartertravel.com^
 ||aphrosestates.net^
+||app-open.click^
 ||app.biaprogramadepontos.click^
 ||app.cliente-resgate.click^
 ||app.clientepresent.click^
@@ -22458,7 +22471,6 @@ _stat.js*
 ||axonix-core365.click^
 ||ayudas-gestion-anulares.infy.click^
 ||baden-online.click^
-||bagboutique.click^
 ||balancedmglobal.click^
 ||bankaccountopening.click^
 ||bannerlog.speedbank.co.kr^
@@ -22937,7 +22949,6 @@ _stat.js*
 ||financialgrowthfreedom.click^
 ||financialoconpichincha-web.infy.click^
 ||finanzamaestra.click^
-||finestsurge.click^
 ||finxorgpt.click^
 ||firepers.click^
 ||firmesolution.click^
@@ -23020,6 +23031,7 @@ _stat.js*
 ||gleinort.click^
 ||glidestatepro.com^
 ||globalpandemicstatus.com^
+||globaltradeai-click.pages.dev^
 ||globaltradeai.click^
 ||glombrix.click^
 ||glurvextopin.click^
@@ -23210,6 +23222,7 @@ _stat.js*
 ||kortmode.click^
 ||kotlinaveltena.click^
 ||krelvin.click^
+||krevalitonix-click.pages.dev^
 ||krevalitonix.click^
 ||krevolt.click^
 ||krevpixelon-es.live^
@@ -23697,7 +23710,6 @@ _stat.js*
 ||pl-9853-oferta.click^
 ||pl-firmowe12324.click^
 ||pl-firmowe485fh57f.click^
-||pl-ld8382929.click^
 ||pl-odbior-platnosci-7321.click^
 ||pl-oferta-6930432.click^
 ||pl-oferta027428.click^
@@ -23754,17 +23766,10 @@ _stat.js*
 ||pl-ogloszenia-frimowe-82388238.click^
 ||pl-ogloszenia-frimowe-82388249.click^
 ||pl-ogloszenie-firmowe-83681867.click^
-||pl-ogloszenie-firmowe-84792192.click^
 ||pl-ogloszenie-firmowe-86231867.click^
 ||pl-ogloszenie1298510263.click^
-||pl-ogloszenie5932678397.click^
-||pl-ogloszenie5934856237.click^
-||pl-ogloszenie5937388292.click^
-||pl-ogloszenie5967233473.click^
 ||pl-ogloszenie683240140.click^
 ||pl-ogloszenie83725.click^
-||pl-ogloszenie9347235437.click^
-||pl-ogloszenie9783245612.click^
 ||pl-ssid56342.click^
 ||pl.invstoracl.click^
 ||pl558274592.click^
@@ -24232,9 +24237,11 @@ _stat.js*
 ||tejesilverte.click^
 ||tejevectorne.click^
 ||tekqmvzlpw.click^
+||telefxsdyn.click^
 ||telegram-ai.click^
 ||telegsahia.click^
 ||teleoryptu.click^
+||telesgoldr.click^
 ||telmox.click^
 ||telvxqpnla.click^
 ||tempoquayx.click^
@@ -24642,7 +24649,6 @@ _stat.js*
 ||yb842190123.click^
 ||yellowblog.flnet.org^
 ||yewfra.click^
-||yoffo.click^
 ||yosekastationery.live^
 ||yosenfedbbvsteamwor666c4.myclickfunnels.com^
 ||youneedablog.com^
