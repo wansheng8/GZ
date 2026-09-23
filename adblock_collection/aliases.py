@@ -21,8 +21,14 @@ OPTION_ALIASES: dict[str, str] = {
     "doc": "document",
     "frame": "subdocument",
     "ghide": "generichide",
-    "ehide": "generichide",
-    "elemhide": "generichide",
+    # uBO 的 elemhide（关闭全部外观过滤）与 generichide（仅关闭通用外观过滤）
+    # 语义不同，不能互相折叠；ehide 只是 elemhide 的别名。
+    "ehide": "elemhide",
+    "shide": "specifichide",
+    "css": "stylesheet",
+    # uBO 短名与 AdGuard 长名同义
+    "strict-first-party": "strict1p",
+    "strict-third-party": "strict3p",
 }
 
 

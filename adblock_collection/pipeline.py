@@ -29,14 +29,22 @@ LOG = logging.getLogger("adblock_collection")
 # 依赖解析阶段产出的 kind 与分类阶段的 category，故同步递增使旧解析缓存失效。
 # parser 1.6.0：仅网络规则解析 `$` 选项，避免元素/脚本规则里的 `$` 造出伪选项。
 # parser 1.7.0：兼容遗留 badfilter 写法 `||domain^,badfilter`，与 `$badfilter` 同义。
+# parser 1.8.0：下载阶段解析 uBO/AdGuard 预处理器指令——内联 `!#include` 子列表、
+#   按目标环境求值 `!#if/!#else/!#endif`，生效行集合变化，旧解析缓存自动失效。
 # normalizer 1.3.0：去重键仅对网络规则重排 `$` 选项；元素/脚本规则里的 `$` 属选择器
 #   或脚本参数，不再参与选项归一，避免不同规则折叠碰撞。
 # classifier 1.8.0：DNS 分级识别取反类型/作用域（`$~script`/`$~third-party`）与
 #   `$app`/`$dnstype`/`$cname`，并忽略 `$reason=` 注解，收紧整域拦截升级。
+# classifier 1.9.0：未知修饰符改为 fail-closed 一律 REJECT（不再回退 CONDITIONAL），
+#   并补齐 `$top`/`$extension`/`$hls`/`$mp4`/`$stealth`/`$strict-first-party` 等
+#   作用域/类型/动作修饰符，从根上杜绝遗漏修饰符导致 DNS 误杀。
+# normalizer 1.4.0：修正选项别名语义——`elemhide`/`ehide` 不再折叠为 `generichide`
+#   （前者关闭全部外观过滤，语义不同），并补齐 `shide`/`css`/`strict-first-party`
+#   等别名；别名归一化产物随语义变化。
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
-PARSER_VERSION = "1.7.0"
-NORMALIZER_VERSION = "1.3.0"
-CLASSIFIER_VERSION = "1.8.0"
+PARSER_VERSION = "1.8.0"
+NORMALIZER_VERSION = "1.4.0"
+CLASSIFIER_VERSION = "1.9.0"
 
 STAGE_DIR = Path(".cache/parsed")
 

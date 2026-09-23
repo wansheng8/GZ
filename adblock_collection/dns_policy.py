@@ -1,31 +1,36 @@
 """DNS 输出安全分级。
 
-把每条规则按 DNS 可表达性分为 REJECT（绝不进 DNS）、SAFE、CONDITIONAL 三档，
-并给出 confidence（0~1）。再结合 config 中的 dns_policy.level 决定最终是否进入
-hosts / domains 文件。目的是在「宁愿少拦截、不要误拦截」原则下，避免把只应阻断某
-路径或带作用域限制（如 $third-party）的规则错误地升级成整域拦截。
+把每条规则按 DNS 可表达性分为 REJECT（绝不进 DNS）、SAFE 与 CONDITIONAL 三档
+（CONDITIONAL 已不再产出，保留常量仅为向后兼容），并给出 confidence（0~1）。
+再结合 config 中的 dns_policy.level 决定最终是否进入 hosts / domains 文件。目的是在
+「宁愿少拦截、不要误拦截」原则下，避免把只应阻断某路径或带作用域限制（如
+$third-party）的规则错误地升级成整域拦截。
 
 分级依据（参考 Adblock 语义）：
 
 - REJECT  : CSS 元素隐藏、脚本注入、正则、重定向、含路径的网络规则，
             以及带动作/修饰选项（$csp/$removeparam/$replace/$empty…）、作用域限定选项
-            （$domain/$from/$to/$denyallow/$ipaddress/$method/$app/$dnstype）、匹配方式
-            限定（$cname）、资源类型选项（$script/$image/$websocket/$fetch…）或
-            第一/第三方限定（$third-party）的规则，取反形式（$~script/$~third-party）
-            同理。DNS 只能看到域名，整域拦截会严重误伤，直接拒绝。
+            （$domain/$from/$to/$top/$denyallow/$ipaddress/$method/$app/$dnstype）、
+            匹配方式限定（$cname）、资源类型选项（$script/$image/$websocket/$fetch…）、
+            第一/第三方限定（$third-party）或任何未识别修饰符的规则，取反形式
+            （$~script/$~third-party）同理。DNS 只能看到域名，整域拦截会严重误伤，
+            直接拒绝。
 - SAFE    : 纯域名网络规则（||ads.example.com^），整域拦截语义等价，confidence=1.0。
             仅带「整域语义」修饰（$all/$important/$match-case，不限定类型与作用域）
             的规则语义等价于纯域名，同样归为 SAFE。仅带导航/弹窗修饰
             （$popup/$doc/$document）的单域名规则在用户确认放宽后按整域拦截输出。
-- CONDITIONAL: 单域名规则带未识别修饰符时的保守回退档，confidence=0.8，
-            是否进入 DNS 由策略的 allow_modifier 决定。资源类型/作用域/动作类
-            选项已被 REJECT，因此该档实际只覆盖未知选项组合。
+
+未知修饰符采用「失败即拒绝（fail-closed）」：可升级为整域拦截的修饰符是一份显式
+白名单（整域语义 + 导航语义 + 注解），任何不在白名单中的选项都按不可翻译拒绝。
+这样新增或遗漏的修饰符（如 uBO `$top`、AdGuard `$stealth`/`$strict-first-party`）
+不会因为「未识别」而被误升级成整域拦截。早期版本会把未知修饰符回退为 CONDITIONAL
+并在 safe 档接受，属于 fail-open，已废弃。
 
 策略等级（config 的 dns_policy.level）：
 
-- all        : 仅接受 SAFE（纯域名）。与旧版行为一致，最保守的向后兼容默认。
-- safe       : 接受 SAFE + CONDITIONAL（min_confidence=0.8, allow_modifier=True）。
-- strict-safe: 仅接受 SAFE（min_confidence=0.9, allow_modifier=False），最不易误杀。
+- all        : 仅接受纯域名 SAFE（含整域语义修饰）。最保守的向后兼容默认。
+- safe       : 接受 SAFE；导航/弹窗类置信度 0.8，strict-safe 档下被排除。
+- strict-safe: 仅接受置信度 >= 0.9 的纯域名 SAFE，最不易误杀。
 """
 
 from __future__ import annotations
@@ -79,6 +84,15 @@ NON_BLOCKING_MODIFIERS = frozenset(
         "inline-script",
         "inline-font",
         "genericblock",
+        # AdGuard 追踪保护/请求改写类修饰符：只改写行为，不阻断请求
+        "stealth",
+        "jsinject",
+        "jsonprune",
+        "xmlprune",
+        "referrerpolicy",
+        "urlblock",
+        # uBO 旧名：$queryprune 等价于 $removeparam
+        "queryprune",
         # uBO/AdGuard 短别名，等价于上面的非阻断选项
         "ghide",
         "shide",
@@ -99,6 +113,10 @@ NAVIGATION_DOMAIN_MODIFIERS = frozenset(
     {"popup", "popunder", "doc", "document"}
 )
 
+# 可整域表达的修饰符白名单：整域语义 + 导航语义的并集。规则只带这些选项时按整域
+# 拦截输出；其余任何选项（作用域/类型/动作/未知）都 fail-closed 拒绝。
+DNS_TRANSLATABLE_MODIFIERS = WHOLE_DOMAIN_MODIFIERS | NAVIGATION_DOMAIN_MODIFIERS
+
 _OPTION_RE = re.compile(r"\$([^$]*)$")
 
 # 元数据/注解类选项：仅标注规则来源或拦截原因，不改变匹配与拦截语义，分类时忽略。
@@ -111,13 +129,14 @@ _REGEX_REDIRECT_MODIFIERS = frozenset(
 )
 
 # 作用域限定选项：DNS 只能按整域拦截，无法表达「仅在某来源站点 / 某目标域名 /
-# 某 IP / 某请求方法 / 某 App / 某 DNS 记录类型下生效」。带这些选项的规则一旦升级
-# 为 DNS 拦截，会波及作用域之外的全部正常流量，属于误拦截，因此必须硬拒绝。
+# 某 IP / 某请求方法 / 某 App / 某 DNS 记录类型 / 某顶层文档下生效」。带这些选项的
+# 规则一旦升级为 DNS 拦截，会波及作用域之外的全部正常流量，属于误拦截，必须硬拒绝。
 SCOPED_MODIFIERS = frozenset(
     {
         "domain",
         "from",
         "to",
+        "top",
         "denyallow",
         "ipaddress",
         "method",
@@ -158,6 +177,10 @@ RESOURCE_TYPE_MODIFIERS = frozenset(
         "frame",
         "inline-script",
         "inline-font",
+        # AdGuard 内容类型修饰符
+        "extension",
+        "hls",
+        "mp4",
     }
 )
 
@@ -168,6 +191,8 @@ PARTY_MODIFIERS = frozenset(
         "first-party",
         "strict1p",
         "strict3p",
+        "strict-first-party",
+        "strict-third-party",
         "1p",
         "3p",
     }
@@ -241,21 +266,21 @@ def classify_dns(rule: Rule) -> DnsVerdict:
         if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
             return DnsVerdict(DNS_SAFE, CONF_PURE_DOMAIN, "pure_domain_modifier")
 
-    # 仅带导航/弹窗修饰（$popup/$popunder/$doc/$document）的纯域名规则：用户确认放宽，
-    # 按整域拦截输出；置信度略低，strict-safe 档仍会排除。
-    if sem and sem <= NAVIGATION_DOMAIN_MODIFIERS:
+    # 仅带整域/导航语义修饰（$all/$important/$match-case/$popup/$doc/$document 及其
+    # 组合）的纯域名规则：整域拦截语义等价，用户确认放宽后输出；含导航修饰时置信度
+    # 略低，strict-safe 档仍会排除。
+    if sem and sem <= DNS_TRANSLATABLE_MODIFIERS:
         if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
             return DnsVerdict(
                 DNS_SAFE, CONF_DOMAIN_MODIFIER, "navigation_domain_modifier"
             )
 
-    # 带未识别修饰符的单域名规则：保守回退到 CONDITIONAL，是否进入 DNS 由策略决定。
-    # 仅当模式仍是纯域名时才可进入；带通配/查询串等模式限定（如
-    # ||bet365.com^*affiliate=$popup）不构成整域语义，仍按不可翻译拒绝。
-    if rule.domains and len(rule.domains) == 1 and rule.options:
-        if _PURE_DOMAIN_RE.match(_OPTION_RE.sub("", rule.raw)):
-            return DnsVerdict(DNS_CONDITIONAL, CONF_DOMAIN_MODIFIER, "domain_modifier")
-        return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
+    # 含未识别修饰符的规则一律拒绝（fail-closed）：可升级为整域拦截的修饰符是
+    # 一份显式白名单（上面的整域语义 + 导航语义），任何不在白名单中的选项都可能
+    # 限定类型/作用域/动作（如 $top、$stealth、$strict-first-party…），DNS 无法
+    # 表达，升级成整域拦截会导致误杀。宁可漏收，也不因遗漏新修饰符而误拦截。
+    if sem:
+        return DnsVerdict(DNS_REJECT, CONF_REJECT, "unknown_modifier")
 
     return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
 
@@ -277,13 +302,16 @@ def resolve_policy(policy: dict | None) -> dict:
 
 
 def is_dns_eligible(rule: Rule, policy: dict | None = None) -> bool:
-    """阻塞型规则是否应进入 DNS/Hosts/Domains 输出。"""
+    """阻塞型规则是否应进入 DNS/Hosts/Domains 输出。
+
+    未知修饰符已在 classify_dns 阶段按 fail-closed 归入 REJECT，因此这里只需判断
+    置信度是否达到策略阈值。``allow_modifier`` 字段仍保留在策略字典中以兼容既有
+    配置与审计报告，但不再影响分级。
+    """
     verdict = classify_dns(rule)
     if not verdict.eligible:
         return False
     policy = resolve_policy(policy)
-    if verdict.reason == "domain_modifier" and not policy.get("allow_modifier", False):
-        return False
     return verdict.confidence >= policy.get("min_confidence", 0.0)
 
 

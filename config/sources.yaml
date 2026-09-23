@@ -1,11 +1,11 @@
 name: Adblock Rule Collection
 description: "上游广告过滤规则列表配置。compatible 字段表示该列表兼容的语法，category 字段用于统计与按类型拆分。"
 dns_policy:
-  # safe: 接受 SAFE + CONDITIONAL。SAFE 为纯域名，或仅带整域/导航语义修饰
-  # （$all/$important/$match-case/$popup/$doc/$document）的规则；CONDITIONAL 为
-  # 单域名纯域名模式带未知修饰符的保守档（allow_modifier=true），相比 all 多收这一类。
-  # 资源类型（$script/$websocket/$fetch…）、第一/第三方（$third-party）与作用域
-  # （$domain/$from/$to…）限定一律 REJECT，不因等级放宽进入 DNS，避免整域误杀。
+  # safe: 接受纯域名 SAFE，以及仅带整域/导航语义修饰（$all/$important/$match-case/
+  # $popup/$popunder/$doc/$document 及其组合）的规则。资源类型（$script/$websocket/
+  # $fetch…）、第一/第三方（$third-party/$strict1p…）与作用域（$domain/$from/$to/$top…）
+  # 限定一律 REJECT。未知/未识别修饰符采用 fail-closed，一律 REJECT，不因等级放宽
+  # 进入 DNS，避免遗漏新修饰符导致整域误杀。
   level: safe
 quality_gate:
   total_rule_growth_percent: 20

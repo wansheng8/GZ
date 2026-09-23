@@ -39,9 +39,27 @@ def test_frame_and_subdocument_collapse():
 
 
 def test_generichide_aliases_collapse():
-    for alias in ("ghide", "ehide", "elemhide"):
-        rules, _ = normalize_aliases([_rule(f"||a.com^${alias}")])
-        assert rules[0].raw == "||a.com^$generichide", alias
+    rules, _ = normalize_aliases([_rule("||a.com^$ghide")])
+    assert rules[0].raw == "||a.com^$generichide"
+    # ehide 只是 elemhide 的别名，且 elemhide 与 generichide 语义不同，不得互折
+    rules, _ = normalize_aliases([_rule("||a.com^$ehide")])
+    assert rules[0].raw == "||a.com^$elemhide"
+    rules, _ = normalize_aliases([_rule("||a.com^$elemhide")])
+    assert rules[0].raw == "||a.com^$elemhide"
+
+
+def test_specifichide_and_css_aliases_collapse():
+    rules, _ = normalize_aliases([_rule("||a.com^$shide")])
+    assert rules[0].raw == "||a.com^$specifichide"
+    rules, _ = normalize_aliases([_rule("||a.com^$css")])
+    assert rules[0].raw == "||a.com^$stylesheet"
+
+
+def test_strict_party_long_alias_collapse():
+    rules, _ = normalize_aliases([_rule("||a.com^$strict-first-party")])
+    assert rules[0].raw == "||a.com^$strict1p"
+    rules, _ = normalize_aliases([_rule("||a.com^$strict-third-party")])
+    assert rules[0].raw == "||a.com^$strict3p"
 
 
 def test_negation_prefix_preserved():

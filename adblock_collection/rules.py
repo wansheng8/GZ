@@ -341,7 +341,21 @@ UBO_ENHANCED_MODIFIERS = frozenset(
         "set-cookie",
         "cookie",
         "urltransform",
+        "uritransform",
         "urlskip",
+        # AdGuard 独有修饰符（ABP 不识别）
+        "stealth",
+        "jsinject",
+        "jsonprune",
+        "xmlprune",
+        "referrerpolicy",
+        "urlblock",
+        "extension",
+        "hls",
+        "mp4",
+        "top",
+        "strict-first-party",
+        "strict-third-party",
     }
 )
 

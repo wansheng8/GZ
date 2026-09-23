@@ -452,7 +452,7 @@ def write_dns_safety_report(
 ) -> dict:
     """统计 DNS 安全分级分布，输出 *dns_safety.json 并返回汇总。
 
-    对每条网络规则做 classify_dns 分级，区分 SAFE / CONDITIONAL / REJECT，
+    对每条网络规则做 classify_dns 分级，区分 SAFE / REJECT，
     以及被策略允许或拒绝的原因计数，便于审计 DNS 误杀风险。
     """
     policy = resolve_policy(policy)
@@ -465,11 +465,6 @@ def write_dns_safety_report(
         counts[verdict.eligibility] += 1
         reason_counts[verdict.reason] += 1
         if verdict.eligibility == DNS_REJECT:
-            rejected += 1
-            continue
-        if verdict.reason == "domain_modifier" and not policy.get(
-            "allow_modifier", False
-        ):
             rejected += 1
             continue
         if verdict.confidence >= policy.get("min_confidence", 0.0):

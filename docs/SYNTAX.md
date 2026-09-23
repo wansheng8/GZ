@@ -46,6 +46,7 @@
 | `ping` / `beacon` | 埋点上报 |
 | `object` / `object-subrequest` | 插件对象 |
 | `other` | 其它 |
+| `extension` / `hls` / `mp4` | AdGuard 扩展请求 / 流媒体清单 / MP4 分片 |
 
 限定资源类型的规则只对该类请求生效。DNS 层无法区分请求类型，因此带资源类型限定的规则一律不升级为整域拦截。
 
@@ -56,6 +57,7 @@
 | 修饰符 | 引擎 | 说明 |
 | :--- | :--- | :--- |
 | `$third-party` / `$~third-party` | 通用 | 限定第一/第三方请求 |
+| `$strict1p` / `$strict3p` / `$strict-first-party` / `$strict-third-party` | uBO/AdGuard | 第一/第三方限定，按主机名精确比较 |
 | `$important` | 通用 | 提升优先级，可覆盖例外之外的规则 |
 | `$match-case` | uBO/AdGuard | 路径区分大小写 |
 | `$all` | AdGuard | 等价于不限类型的整域阻断 |
@@ -73,14 +75,22 @@
 | `$permissions` | uBO/AdGuard | 注入 Permissions-Policy |
 | `$removeheader` / `$addheader` / `$header` | uBO/AdGuard | 改写请求/响应头 |
 | `$redirect` / `$redirect-rule` / `$rewrite` / `$empty` | uBO/AdGuard | 重定向到空资源或替换资源 |
-| `$urltransform` / `$uritransform` / `$urlskip` | AdGuard | URL 改写 |
+| `$urltransform` | AdGuard | URL 改写 |
+| `$uritransform` / `$urlskip` | uBO | URL 改写 |
 | `$cookie` / `$set-cookie` | uBO | 改写 Cookie |
+| `$stealth` | AdGuard | 关闭跟踪保护（仅改写行为） |
+| `$urlblock` / `$genericblock` | AdGuard | 关闭该站点的网络层拦截 |
+| `$jsinject` | AdGuard | 关闭该站点的 JS 注入 |
+| `$jsonprune` / `$xmlprune` | AdGuard | 删除响应 JSON/XML 中的节点 |
+| `$referrerpolicy` | AdGuard | 改写 Referrer-Policy |
 
-作用域型（限定规则在哪些来源站点 / 目标 / 请求类型下生效）：`$domain`、`$from`、`$to`、`$denyallow`、`$ipaddress`、`$method`、`$app`（App 限定）、`$dnstype`（DNS 记录类型限定）。
+作用域型（限定规则在哪些来源站点 / 目标 / 请求类型下生效）：`$domain`、`$from`、`$to`、`$top`、`$denyallow`、`$ipaddress`、`$method`、`$app`（App 限定）、`$dnstype`（DNS 记录类型限定）、`$network`（按 IP 匹配）。
 
 注解型：`$reason=...` 只是规则来源/原因注解，不改变匹配与拦截语义，分类与去重时忽略。
 
 取反形式（`$~third-party`、`$~script`、`$~image` 等）同样是**限定**：只对补集请求生效。带取反类型/第三方限定的规则不得升级为整域拦截。
+
+DNS 分级采用 fail-closed：只有纯域名规则，或仅带整域语义（`$all`/`$important`/`$match-case`）与导航语义（`$popup`/`$popunder`/`$doc`/`$document`）修饰的规则，才允许升级为整域拦截；任何其它修饰符（含上表所有作用域/类型/动作型）以及**未识别/新增修饰符**一律按不可翻译拒绝，避免漏判导致整域误杀。外观过滤开关（`$elemhide`/`$ehide`/`$generichide`/`$ghide`/`$specifichide`/`$shide`）仅在例外规则中使用，不阻断网络请求。
 
 ## 5. 优先级
 
@@ -133,6 +143,8 @@ hosts 行只接受完整域名，不支持路径、修饰符与通配；本项�
 - 全局规则 `||*$image` 匹配面过宽，性能开销大，避免使用。
 - 全局元素隐藏 `##.ad` 会在每个站点持续扫描 DOM；限定域名 `site##.ad` 性能更好。
 - 全局 `$removeparam=utm_source` 会改写所有站点 URL，属于高影响规则；本项目不产出该类无作用域规则。
+- `$elemhide`（别名 `$ehide`）关闭**全部**外观过滤，`$generichide`（别名 `$ghide`）只关闭**通用**外观过滤，`$specifichide`（别名 `$shide`）只关闭**特定**外观过滤，三者语义不同，不可互相折叠。
+- 预处理器指令 `!#include` 会就地引入相对/绝对地址的子列表，`!#if` / `!#else` / `!#endif` 按目标环境 token 条件编译；本项目在下载阶段解析并内联，条件 token 见 `adblock_collection/preprocess.py` 的 `TARGET_TOKENS`（通用桌面 + HTML 过滤，不纳入移动端/特定内核分支），未知 token 视为 False。
 - DNS 黑名单混入大量失效域名会抬高内存占用。
 
 ## 10. 调试

@@ -39,6 +39,8 @@ from adblock_collection.quality_gate import (
 from adblock_collection.regression import check_allow, check_block, load_false_positives
 from adblock_collection.rules import Rule, parse_line, parse_lines, parse_options
 
+SAFE_POLICY = {"level": "safe"}
+
 
 def _rule(raw: str, **kw) -> Rule:
     base = parse_line(raw)
@@ -703,10 +705,34 @@ def test_classify_party_rule_is_reject():
     assert v.reason == "party_modifier"
 
 
-def test_classify_unknown_modifier_rule_is_conditional():
+def test_classify_unknown_modifier_rule_is_reject():
+    # fail-closed：未知修饰符不得回退为可进 DNS 的 CONDITIONAL，任何档位都拒绝
     v = classify_dns(parse_line("||example.com^$some-unknown-opt"))
-    assert v.eligibility == "CONDITIONAL"
-    assert v.reason == "domain_modifier"
+    assert v.eligibility == DNS_REJECT
+    assert v.reason == "unknown_modifier"
+    assert is_dns_eligible(parse_line("||example.com^$some-unknown-opt"), SAFE_POLICY) is False
+
+
+def test_classify_newly_known_scoped_and_type_modifiers_are_reject():
+    # 补齐的修饰符必须归入正确的拒绝原因，不得因未识别而 fail-open 进 DNS
+    cases = {
+        "||ads.example.com^$top=example.com": "scoped_modifier",
+        "||ads.example.com^$extension": "resource_type_modifier",
+        "||ads.example.com^$hls": "resource_type_modifier",
+        "||ads.example.com^$mp4": "resource_type_modifier",
+        "||ads.example.com^$strict-first-party": "party_modifier",
+        "||ads.example.com^$strict-third-party": "party_modifier",
+        "||ads.example.com^$stealth": "non_blocking_modifier",
+        "||ads.example.com^$queryprune=utm_source": "non_blocking_modifier",
+        "||ads.example.com^$jsinject": "non_blocking_modifier",
+        "||ads.example.com^$urlblock": "non_blocking_modifier",
+        "||ads.example.com^$referrerpolicy=no-referrer": "non_blocking_modifier",
+    }
+    for raw, reason in cases.items():
+        v = classify_dns(parse_line(raw))
+        assert v.eligibility == DNS_REJECT, raw
+        assert v.reason == reason, raw
+        assert is_dns_eligible(parse_line(raw), SAFE_POLICY) is False, raw
 
 
 def test_classify_whole_domain_modifier_is_safe():
@@ -766,6 +792,8 @@ def test_classify_navigation_modifier_is_dns_eligible():
         "||ads.example.com^$doc",
         "||ads.example.com^$document",
         "||ads.example.com^$doc,popup",
+        "||ads.example.com^$document,important",
+        "||ads.example.com^$popup,match-case",
     ):
         r = parse_line(raw)
         v = classify_dns(r)
@@ -872,10 +900,10 @@ def test_cosmetic_rule_norm_not_mangled_by_dollar():
 
 
 def test_policy_all_rejects_modifier():
-    # 未知修饰符是 CONDITIONAL 回退档：all 档拒绝、safe 档接受
+    # 未知修饰符 fail-closed：所有档位一律拒绝
     r = parse_line("||example.com^$some-unknown-opt")
     assert is_dns_eligible(r, {"level": "all"}) is False
-    assert is_dns_eligible(r, {"level": "safe"}) is True
+    assert is_dns_eligible(r, {"level": "safe"}) is False
 
 
 def test_policy_strict_safe_rejects_modifier():
@@ -1584,9 +1612,10 @@ def test_third_party_modifier_never_eligible():
     assert is_dns_eligible(r, {"level": "all"}) is False
 
 
-def test_unknown_modifier_conditional_at_safe_policy():
+def test_unknown_modifier_rejected_at_safe_policy():
+    # fail-closed：未知修饰符在 safe 档也不再进入 DNS
     r = parse_line("||example.com^$some-unknown-opt")
-    assert is_dns_eligible(r, {"level": "safe"}) is True
+    assert is_dns_eligible(r, {"level": "safe"}) is False
     assert is_dns_eligible(r, {"level": "all"}) is False
 
 

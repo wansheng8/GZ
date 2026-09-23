@@ -13,6 +13,7 @@ from pathlib import Path
 import requests
 
 from .pipeline import parse_source_cached
+from .preprocess import preprocess
 from .rules import (
     _ELEMENT_SEP_RE,
     _PURE_DOMAIN_RE,
@@ -202,6 +203,13 @@ def collect(
     # 并行下载所有上游（下载是最大的耗时瓶颈，顺序下载会让失败源的重试超时拖垮整体）
     from concurrent.futures import ThreadPoolExecutor, as_completed
 
+    def _resolve_include(target: str) -> tuple[list[str], str] | None:
+        """``!#include`` 回调：按 URL 抓取子列表（复用缓存/离线/镜像回退）。"""
+        sub = fetch_source(target, use_cache=use_cache, offline=offline)
+        if not sub:
+            return None
+        return sub, target
+
     def _fetch(src):
         name = src.get("name", "unknown")
         url = src.get("url")
@@ -211,6 +219,8 @@ def collect(
             lines = fetch_source(
                 url, use_cache=use_cache, offline=offline, mirror=src.get("mirror")
             )
+            # 解析 !#if/!#else/!#endif 条件编译并内联 !#include 子列表
+            lines = preprocess(lines, base_url=url, resolve_include=_resolve_include)
         except Exception as exc:  # noqa: BLE001 - 单源异常不应中断整体构建
             LOG.warning("源处理异常 %s: %s", name, exc)
             return name, None
