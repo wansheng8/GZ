@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 46802
+! Total Rules: 46786
 ! ------------------------------------------
 ||acidoiddefraudfloody.qpon^
 ||adscampaign.net^
@@ -1098,7 +1098,6 @@ $document,ipaddress=185.100.85.248
 /images/script.mp3|$media,1p
 /images/bip.mp3|$media,1p
 /^https:\/\/[0-9a-z]{4}\.[a-z]{15,}\.monster\/\?[0-9a-f]{16,}$/$document
-/^https:\/\/[0-9a-z][0-9a-z][0-9a-z][0-9a-z]\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]+\.monster\/\?[0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f][0-9a-f]$/$document
 /api.php?s=*&_v=$script
 /api.php?k=*&d=$xhr,redirect=noop.txt
 .monster/index*.php?flow_id=$document
@@ -1132,7 +1131,6 @@ $document,ipaddress=185.100.85.248
 ||fitgirlrepacks.*^$all,domain=~fitgirl-repacks.site
 ||fitgirlrepack.*^$all,domain=~fitgirl-repacks.site
 ||fitgirls-repack.*^$all,domain=~fitgirl-repacks.site
-||fitgirl-repacks.$document,subdocument,xhr,script,css,to=~fitgirl-repacks.site
 ||fitgirl-repacks.$all,from=~fitgirl-repacks.site,to=~fitgirl-repacks.site
 ||fitgirlrepackz.*^$all,domain=~fitgirl-repacks.site
 ||fitgirltorrent.*^$all,domain=~fitgirl-repacks.site
@@ -1358,7 +1356,6 @@ $document,ipaddress=185.100.85.248
 ||instagram0639.blogspot.$document
 ||instagram-$document,ipaddress=43.135.101.145
 /^https?:\/\/instagram-[a-z]{5,}\.[a-z]{2,4}\//$document,to=cc|top|help
-/^https?:\/\/instagram-[a-z][a-z][a-z][a-z][a-z]+\.[a-z]+\//$document,to=cc|top|help
 ||notificationbyfacebook.$document
 ||business-facebook-*.pages.dev^$all
 ||www-mfacebook.$document
@@ -1466,9 +1463,6 @@ $document,ipaddress=185.100.85.248
 ||sbs^$document,ipaddress=166.117.237.67
 ||sbs:$document,ipaddress=166.117.237.67
 /^https?:\/\/[a-f0-9]{32}\.[a-z]{7}\.sbs\b/$document,to=sbs
-/^https?:\/\/[a-f0-9]{29,}\.[a-z]{7}\.sbs\b/$document,to=sbs
-/^https?:\/\/[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.sbs:/$document,to=sbs
-/^https?:\/\/[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z]\.sbs\//$document,to=sbs
 /^https:\/\/usps\.[-a-z]{6,}\.(?:com|top)\/(?:address\.html|information|verify)\b/$document,to=com|top|~usps.com
 .top/pg?do=$document,to=top
 ||wrc-gh.org/redelivery$document
@@ -1766,7 +1760,6 @@ $document,ipaddress=185.100.85.248
 /unsub/unsub^$document
 /unsub_sent.php|$document,method=post
 /^https?:\/\/www\.[a-z]{9,20}\.com\/o-[a-z]{4}-[a-z]\d{2}-[a-f0-9]{32}\b/$document,match-case,to=com
-/^https?:\/\/www\.[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?[a-z]?\.com\/o-[a-z][a-z][a-z][a-z]-[a-z][0-9][0-9]-[a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9][a-f0-9]$/$document,match-case,to=com
 /^https?:\/\/[a-z]+\.[a-z]{4,}\/oop\/\d+_md(?:\/\d+){5}\b/$document,match-case
 ||editproai.$all,to=editproai.org|editproai.pro
 ||usps-packages-*.com^$document
@@ -1812,9 +1805,6 @@ $document,ipaddress=185.100.85.248
 /^https:\/\/help-\d{8}\.[a-z0-9]{6}-\d{2}\.click\//$document,to=click|~facebook.com
 ||govuk.*.top^$document
 ||e-navy*.weebly.com^$document
-/^https:\/\/(?:[a-z]{3,5}|[ej][ac])\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9A-Za-z]{10}|\d{8}|[0-9a-f]{32})\.html$/$document,match-case,to=art|autos|baby|best|boats|buzz|cards|cfd|click|cyou|eu|fit|fun|guru|hair|homes|ink|lat|lol|mom|my|pics|qpon|quest|rest|sale|sbs|skin|today|top|wiki|work|world|xyz
-/^https:\/\/(?:[a-z]{4,5}|[ej][ac])\.[a-z]{4,10}\.[a-z]{2,6}\/item-(?:[0-9A-Za-z]{10}|\d{8}|[0-9a-f]{32})\.html$/$document,match-case,to=biz|blog|cc|cloud|club|info|life|live|me|one|online|shop|site|space|store
-/^https:\/\/([a-vx-z][a-z]{2,}\.)?[0-9a-z-]{3,}\.(com|net|org)\/index\.php\?main_page=product_info(&stl=\d)?&(cPath|products_id)=/$document
 ||zoom.us*web.us^$document
 ||e-zpass.com-$document
 /n/ax4mqlu25efi/b/*$document
@@ -1829,10 +1819,6 @@ $document,ipaddress=185.100.85.248
 /^https?:\/\/[-a-z]{4,}\.com[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$document,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/[-a-z]{4,}\.org[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$document,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 /^https?:\/\/(?:[-a-z]{4,}\.)?gov[-.][-a-z0-9]{2,}\.[a-z]{2,6}\//$document,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.com[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$document,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.org[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$document,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/[-a-z][-a-z][-a-z][-a-z]+\.gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$document,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
-/^https?:\/\/gov[-.][-a-z0-9][-a-z0-9]+\.[a-z]+\//$document,to=bid|cc|cfd|cyou|icu|live|online|shop|top|vip|win|world|xin
 ||secure.mygov.$document
 ||dhl.de-$document,to=store
 ||org.gov-$document
@@ -1892,8 +1878,6 @@ $document,ipaddress=185.216.143.121
 ||spotify*.ct.ws^$document
 /^https:\/\/d[0-9a-z]{19}\.[a-z]{3,4}-[a-z]{7,8}(?:\.[a-z]{2})?\.[a-z]{2,3}\/xm\/xm\d\/\?/$document,to=co.in|pro|sbs
 /^https:\/\/d[0-9a-z]{19}\.[a-z]{3,4}-adguard(?:\.[a-z]{2})?\.[a-z]{2,3}\/[a-z]{4}\/[a-z]{4}\/\?/$document,to=co.in|pro|sbs
-/^https:\/\/d[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]\.[a-z][a-z][a-z][a-z]?-[a-z][a-z][a-z][a-z][a-z][a-z][a-z][a-z]?\.[cps][bor][os]?\.?i?n?\/xm\/xm[0-9]\/\?/$document
-/^https:\/\/d[0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z][0-9a-z]\.[a-z][a-z][a-z][a-z]?-adguard\.[cps][bor][os]?\.?i?n?\/[a-z][a-z][a-z][a-z]\/[a-z][a-z][a-z][a-z]\/\?/$document
 ||simpleswap.cyou^$document
 ||simplesvvap.lol^$document
 ||changelly.casa^$document

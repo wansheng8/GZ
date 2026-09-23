@@ -16,6 +16,14 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
+    "target": "25cineframes.com",
+    "winner": "@@||25cineframes.com^$generichide",
+    "losers": [
+      "||25cineframes.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
     "target": "79423.analytics.edgekey.net",
     "winner": "@@||79423.analytics.edgekey.net^",
     "losers": [
@@ -208,6 +216,14 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
+    "target": "adserver.inflightinternet.com",
+    "winner": "||adserver.inflightinternet.com^$important",
+    "losers": [
+      "||adserver.inflightinternet.com^"
+    ],
+    "reason": "$important 阻断优先于普通阻断"
+  },
+  {
     "target": "adshnk.com",
     "winner": "@@||adshnk.com^$generichide",
     "losers": [
@@ -304,6 +320,14 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
+    "target": "appnee.com",
+    "winner": "@@||appnee.com^$generichide",
+    "losers": [
+      "||appnee.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
     "target": "autocomplete.clearbit.com",
     "winner": "@@||autocomplete.clearbit.com^",
     "losers": [
@@ -344,6 +368,14 @@
     "reason": "$important 阻断优先于普通阻断"
   },
   {
+    "target": "bondagevalley.cc",
+    "winner": "@@||bondagevalley.cc^$generichide",
+    "losers": [
+      "||bondagevalley.cc^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
     "target": "cj.dotomi.com",
     "winner": "@@||cj.dotomi.com^",
     "losers": [
@@ -380,6 +412,14 @@
     "winner": "@@||corneey.com^$generichide",
     "losers": [
       "||corneey.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "dash3.cashvib.com",
+    "winner": "@@||dash3.cashvib.com^$generichide",
+    "losers": [
+      "||dash3.cashvib.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },
@@ -468,6 +508,14 @@
     "winner": "@@||ens.nzz.ch^$~third-party",
     "losers": [
       "||ens.nzz.ch^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "expertvn.com",
+    "winner": "@@||expertvn.com^$generichide",
+    "losers": [
+      "||expertvn.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },
@@ -900,6 +948,14 @@
     "winner": "@@||widget.weibo.com^",
     "losers": [
       "||widget.weibo.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "wintub.com",
+    "winner": "@@||wintub.com^$generichide",
+    "losers": [
+      "||wintub.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },

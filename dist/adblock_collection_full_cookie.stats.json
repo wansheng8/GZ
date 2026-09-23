@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_cookie",
-  "total": 1676,
+  "total": 1680,
   "by_category": {
-    "cookie": 1676
+    "cookie": 1680
   },
   "by_kind": {
-    "network": 1676
+    "network": 1680
   },
   "by_source": {
     "ADrules I-Dont-Care-About-Cookies": 1316,
@@ -15,14 +15,14 @@
     "oisd": 16,
     "ADrules AdRules": 12,
     "217heidai adblockdns": 12,
-    "AdGuard – Ads": 12,
+    "AdGuard – Ads": 11,
     "banbendalao ADgk": 6,
+    "uBO filters – Ads": 6,
     "ADrules Easylist": 5,
     "ADrules EasyListChina": 4,
     "StevenBlack Hosts": 2,
     "uBO filters – Unbreak": 2,
     "10007_auto reward": 1,
-    "Hagezi DNS Light": 1,
-    "uBO filters – Ads": 1
+    "Hagezi DNS Light": 1
   }
 }

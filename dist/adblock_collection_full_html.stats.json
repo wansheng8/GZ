@@ -1,15 +1,15 @@
 {
   "name": "adblock_collection_full_html",
-  "total": 184,
+  "total": 505,
   "by_category": {
-    "html": 184
+    "html": 505
   },
   "by_kind": {
-    "html": 184
+    "html": 505
   },
   "by_source": {
+    "uBO filters – Ads": 349,
     "banbendalao ADgk": 112,
-    "uBO filters – Ads": 28,
     "uBO filters – Unbreak": 18,
     "uBO filters – Privacy": 14,
     "uBO filters – Quick fixes": 8,

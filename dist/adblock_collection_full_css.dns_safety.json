@@ -3,11 +3,11 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "dns_eligible_network_rules": 0,
-  "dns_rejected_network_rules": 138486,
+  "dns_rejected_network_rules": 143157,
   "by_eligibility": {
-    "REJECT": 138486
+    "REJECT": 143157
   },
   "by_reason": {
-    "css_rule": 138486
+    "css_rule": 143157
   }
 }
