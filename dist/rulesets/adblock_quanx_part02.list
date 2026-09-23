@@ -1,5 +1,6 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 545777
+# Total Rules: 545779
+host-suffix, thugincompatibleme.com, reject
 host-suffix, thuis.nl, reject
 host-suffix, thujaskoroa.cyou, reject
 host-suffix, thuk8hg48.com, reject
@@ -16807,6 +16808,7 @@ host-suffix, tvneljqtotb.com, reject
 host-suffix, tvnews.or.kr, reject
 host-suffix, tvnewsjdapp.firebaseapp.com, reject
 host-suffix, tvnewsjdapp.web.app, reject
+host-suffix, tvnfoipaskoru.website, reject
 host-suffix, tvnonlinetelewizja.blogspot.com, reject
 host-suffix, tvnowprotab.net, reject
 host-suffix, tvnqr.budgecovers.com, reject

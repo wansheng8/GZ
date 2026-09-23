@@ -1,6 +1,6 @@
 # Adblock Rule Collection (connection-layer ruleset)
 # rule-providers: { type: http, behavior: domain, format: yaml }
-# Total Domains: 545777
+# Total Domains: 545779
 payload:
   - '+.0--4.com'
   - '+.0--d.com'
@@ -148595,6 +148595,7 @@ payload:
   - '+.ejuytkjuquo.com'
   - '+.ejwieykw.com'
   - '+.ejwxlplhgzzhf.store'
+  - '+.ejxaihnkjwwce.space'
   - '+.ejxhiitnxgwun.site'
   - '+.ejyotish.com'
   - '+.ejywxd.mynavi.agentsearch.jp'
@@ -473878,6 +473879,7 @@ payload:
   - '+.tvnews.or.kr'
   - '+.tvnewsjdapp.firebaseapp.com'
   - '+.tvnewsjdapp.web.app'
+  - '+.tvnfoipaskoru.website'
   - '+.tvnonlinetelewizja.blogspot.com'
   - '+.tvnowprotab.net'
   - '+.tvnqr.budgecovers.com'

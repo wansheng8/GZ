@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 545777
+# Total Rules: 545779
 DOMAIN-SUFFIX,0--4.com,REJECT
 DOMAIN-SUFFIX,0--d.com,REJECT
 DOMAIN-SUFFIX,0--foodwarez.da.ru,REJECT
@@ -148593,6 +148593,7 @@ DOMAIN-SUFFIX,ejusdemfarin.web.app,REJECT
 DOMAIN-SUFFIX,ejuytkjuquo.com,REJECT
 DOMAIN-SUFFIX,ejwieykw.com,REJECT
 DOMAIN-SUFFIX,ejwxlplhgzzhf.store,REJECT
+DOMAIN-SUFFIX,ejxaihnkjwwce.space,REJECT
 DOMAIN-SUFFIX,ejxhiitnxgwun.site,REJECT
 DOMAIN-SUFFIX,ejyotish.com,REJECT
 DOMAIN-SUFFIX,ejywxd.mynavi.agentsearch.jp,REJECT
@@ -457068,4 +457069,3 @@ DOMAIN-SUFFIX,thucduongbaoan.com,REJECT
 DOMAIN-SUFFIX,thucphamvandong.com,REJECT
 DOMAIN-SUFFIX,thuekhachsan.com.vn,REJECT
 DOMAIN-SUFFIX,thuetong.com,REJECT
-DOMAIN-SUFFIX,thugincompatibleme.com,REJECT

@@ -1,5 +1,6 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 545777
+# Total Rules: 545779
+DOMAIN-SUFFIX,thugincompatibleme.com,REJECT
 DOMAIN-SUFFIX,thuis.nl,REJECT
 DOMAIN-SUFFIX,thujaskoroa.cyou,REJECT
 DOMAIN-SUFFIX,thuk8hg48.com,REJECT
@@ -16807,6 +16808,7 @@ DOMAIN-SUFFIX,tvneljqtotb.com,REJECT
 DOMAIN-SUFFIX,tvnews.or.kr,REJECT
 DOMAIN-SUFFIX,tvnewsjdapp.firebaseapp.com,REJECT
 DOMAIN-SUFFIX,tvnewsjdapp.web.app,REJECT
+DOMAIN-SUFFIX,tvnfoipaskoru.website,REJECT
 DOMAIN-SUFFIX,tvnonlinetelewizja.blogspot.com,REJECT
 DOMAIN-SUFFIX,tvnowprotab.net,REJECT
 DOMAIN-SUFFIX,tvnqr.budgecovers.com,REJECT
