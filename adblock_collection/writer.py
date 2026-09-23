@@ -207,9 +207,13 @@ def write_dns_allow(
 
 
 def write_hosts(
-    rules: Iterable[Rule], path: Path, title: str, policy: dict | None = None
+    rules: Iterable[Rule],
+    path: Path,
+    title: str,
+    policy: dict | None = None,
+    domains: Iterable[str] | None = None,
 ) -> int:
-    domains = _blocked_domains(rules, policy)
+    domains = set(domains) if domains is not None else _blocked_domains(rules, policy)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(f"# Format: hosts (0.0.0.0 domain), total {len(domains)}\n")
@@ -219,9 +223,13 @@ def write_hosts(
 
 
 def write_hosts_ipv6(
-    rules: Iterable[Rule], path: Path, title: str, policy: dict | None = None
+    rules: Iterable[Rule],
+    path: Path,
+    title: str,
+    policy: dict | None = None,
+    domains: Iterable[str] | None = None,
 ) -> int:
-    domains = _blocked_domains(rules, policy)
+    domains = set(domains) if domains is not None else _blocked_domains(rules, policy)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(f"# Format: hosts (:: domain, IPv6 NXDOMAIN), total {len(domains)}\n")
@@ -231,9 +239,13 @@ def write_hosts_ipv6(
 
 
 def write_domains(
-    rules: Iterable[Rule], path: Path, title: str, policy: dict | None = None
+    rules: Iterable[Rule],
+    path: Path,
+    title: str,
+    policy: dict | None = None,
+    domains: Iterable[str] | None = None,
 ) -> int:
-    domains = _blocked_domains(rules, policy)
+    domains = set(domains) if domains is not None else _blocked_domains(rules, policy)
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(
@@ -250,6 +262,7 @@ def write_domain_rules(
     title: str,
     desc: str,
     policy: dict | None = None,
+    domains: Iterable[str] | None = None,
 ) -> int:
     """生成「DNS 等价」纯域名 adblock 清单，每行 ``||domain^``。
 
@@ -257,7 +270,7 @@ def write_domain_rules(
     与元素隐藏规则。用途：不搭 DNS 的用户可用它把域名阻断层直接导入浏览器扩展；
     由于输出是纯 adblock 语法，也可作为 DNS 端「域名规则」形态导入 AdGuard Home。
     """
-    domains = _blocked_domains(rules, policy)
+    domains = set(domains) if domains is not None else _blocked_domains(rules, policy)
     with path.open("w", encoding="utf-8") as fh:
         for line in _adblock_header(title, desc, len(domains)):
             fh.write(line + "\n")
@@ -370,6 +383,7 @@ def write_rulesets(
     output_dir: Path,
     policy: dict | None = None,
     title: str = "Adblock Rule Collection (connection-layer ruleset)",
+    domains: Iterable[str] | None = None,
 ) -> dict[str, int]:
     """生成四种代理内核规则集，返回各格式域名数。
 
@@ -377,7 +391,9 @@ def write_rulesets(
     拦截范围一致：自定义白名单整域放行同样在规则集中生效。Surge / Quantumult X
     文本规则集超过 jsDelivr 单文件上限时，额外输出 ``_partNN`` 分片。
     """
-    domains = sorted(_blocked_domains(rules, policy))
+    domains = sorted(domains) if domains is not None else sorted(
+        _blocked_domains(rules, policy)
+    )
     target = output_dir / RULESET_DIRNAME
     target.mkdir(parents=True, exist_ok=True)
     counts = {

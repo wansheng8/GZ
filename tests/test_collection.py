@@ -1089,6 +1089,57 @@ def test_evaluate_flags_dns_surge():
     assert any("DNS" in f for f in gate.failures)
 
 
+def test_evaluate_security_source_uses_looser_threshold():
+    from adblock_collection.quality_gate import Metrics
+
+    # 安全源骤降 60%：全局阈值 50% 会失败，但其专用阈值 80% 应放行
+    prev = Metrics(
+        total_rules=1000,
+        dns_domains=100,
+        source_counts={"MalwareFeed": 500, "Ads": 500},
+        category_counts={},
+    )
+    cur = Metrics(
+        total_rules=800,
+        dns_domains=100,
+        source_counts={"MalwareFeed": 200, "Ads": 500},
+        category_counts={},
+    )
+    thresholds = _default_thresholds()
+    thresholds["security_source_drop_percent"] = 80.0
+    gate = evaluate(cur, prev, thresholds, security_sources={"MalwareFeed"})
+    assert gate.passed, gate.failures
+
+    # 同一骤降若发生在非安全源，则仍然失败
+    prev2 = Metrics(
+        total_rules=1000,
+        dns_domains=100,
+        source_counts={"MalwareFeed": 500, "Ads": 500},
+        category_counts={},
+    )
+    cur2 = Metrics(
+        total_rules=800,
+        dns_domains=100,
+        source_counts={"MalwareFeed": 500, "Ads": 200},
+        category_counts={},
+    )
+    gate2 = evaluate(cur2, prev2, thresholds, security_sources={"MalwareFeed"})
+    assert not gate2.passed
+    assert any("Ads" in f for f in gate2.failures)
+
+
+def test_load_thresholds_reads_security_drop(tmp_path):
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text(
+        "name: x\nquality_gate:\n  source_drop_percent: 50\n"
+        "security_policy:\n  source_drop_percent: 80\nsources: []\n",
+        encoding="utf-8",
+    )
+    t = load_thresholds(cfg)
+    assert t["source_drop_percent"] == 50.0
+    assert t["security_source_drop_percent"] == 80.0
+
+
 def test_load_thresholds_from_config(tmp_path):
     cfg = tmp_path / "sources.yaml"
     cfg.write_text(

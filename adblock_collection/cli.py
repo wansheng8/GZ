@@ -151,7 +151,16 @@ def _emit_adblock_file(
 
 
 def _emit(
-    rules, output_dir, prefix, title, desc, gen_dns, source_counts, manifest, policy
+    rules,
+    output_dir,
+    prefix,
+    title,
+    desc,
+    gen_dns,
+    source_counts,
+    manifest,
+    policy,
+    domains=None,
 ):
     rules = list(rules)
     results = {}
@@ -168,8 +177,11 @@ def _emit(
         src_counts,
     )
     if gen_dns:
+        # 域名集合在 hosts / ipv6 / domains 三份产物间共享，只结算一次
+        if domains is None:
+            domains = _blocked_domains(rules, policy)
         hp = output_dir / f"{prefix}_dns.txt"
-        nh = write_hosts(rules, hp, title, policy)
+        nh = write_hosts(rules, hp, title, policy, domains=domains)
         results["hosts"] = (hp, nh)
         manifest.append(
             {
@@ -180,7 +192,7 @@ def _emit(
             }
         )
         ipv6p = output_dir / f"{prefix}_dns_ipv6.txt"
-        n6 = write_hosts_ipv6(rules, ipv6p, title, policy)
+        n6 = write_hosts_ipv6(rules, ipv6p, title, policy, domains=domains)
         results["hosts_ipv6"] = (ipv6p, n6)
         manifest.append(
             {
@@ -191,7 +203,7 @@ def _emit(
             }
         )
         dp = output_dir / f"{prefix}_domains.txt"
-        nd = write_domains(rules, dp, title, policy)
+        nd = write_domains(rules, dp, title, policy, domains=domains)
         results["domains"] = (dp, nd)
         manifest.append(
             {
@@ -232,7 +244,9 @@ def _emit_by_category(
 _COSMETIC_KINDS = ("css", "scriptlet", "html", "js")
 
 
-def _emit_layers(rules, output_dir, base_prefix, manifest, gen_dns, policy) -> None:
+def _emit_layers(
+    rules, output_dir, base_prefix, manifest, gen_dns, policy, domains=None
+) -> None:
     """按「规则类型」产出三层防护清单，对应 DNS / 扩展网络 / 扩展元素隐藏。
 
     - 扩展网络拦截层：``kind=network``，请求阻断规则（含修饰符与站点例外）
@@ -268,6 +282,7 @@ def _emit_layers(rules, output_dir, base_prefix, manifest, gen_dns, policy) -> N
             "Adblock Rule Collection (DNS-domain rules)",
             "DNS 等价域名阻断：整域 ||domain^ 纯域名规则，无修饰符，浏览器与 DNS 端均可导入",
             policy,
+            domains=domains,
         )
         manifest.append(
             {
@@ -324,14 +339,18 @@ def _emit_dns_allow(rules, output_dir, manifest) -> None:
     LOG.info("DNS 白名单: %d 个域名 -> %s", n, path.name)
 
 
-def _emit_rulesets(rules, output_dir, manifest, policy) -> None:
+def _emit_rulesets(rules, output_dir, manifest, policy, domains=None) -> None:
     """连接层规则集：mihomo / sing-box / Surge / Quantumult X。
 
     内容与 DNS 域名集合完全一致，供 TUN 模式按 TLS/QUIC SNI 在连接层拒绝广告域，
     从而绕过 App 的 HTTPDNS / IP 直连。
     """
     counts = write_rulesets(
-        rules, output_dir, policy, "Adblock Rule Collection (connection-layer ruleset)"
+        rules,
+        output_dir,
+        policy,
+        "Adblock Rule Collection (connection-layer ruleset)",
+        domains=domains,
     )
     for fmt, fname in (
         ("clash", "adblock_clash.yaml"),
@@ -451,6 +470,9 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
     gen_dns = ctx.flags.gen_dns
     title, desc = DEFAULT_HEADERS["full"]
     manifest: list = []
+    # 完整版规则的拦截域名集合只结算一次，供 hosts / domains / DNS 等价 / 连接层规则集共享，
+    # 避免对同一份 78 万条规则重复全量扫描。
+    blocked = _blocked_domains(rules, ctx.dns_policy) if gen_dns else None
     full_results = _emit(
         rules,
         target,
@@ -461,6 +483,7 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
         source_counts=ctx.artifacts.get("source_counts"),
         manifest=manifest,
         policy=ctx.dns_policy,
+        domains=blocked,
     )
     _emit_layers(
         rules,
@@ -469,13 +492,14 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
         manifest,
         gen_dns=gen_dns,
         policy=ctx.dns_policy,
+        domains=blocked,
     )
     _check_layers_invariant(manifest)
     _emit_ubo_enhance(rules, target, manifest)
     if gen_dns:
         _emit_dns_allow(rules, target, manifest)
     if gen_dns and ctx.flags.gen_rulesets:
-        _emit_rulesets(rules, target, manifest, ctx.dns_policy)
+        _emit_rulesets(rules, target, manifest, ctx.dns_policy, domains=blocked)
     if ctx.flags.split_by_category:
         _emit_by_category(
             rules,
@@ -597,6 +621,14 @@ def build(args: argparse.Namespace) -> int:
             dns_policy = dict(DNS_LEVELS[args.dns_policy])
             dns_policy["level"] = args.dns_policy
     security_policy = load_security_policy(config_path)
+    # 安全类源名单：门禁对其使用更宽松的 security_policy.source_drop_percent，
+    # 与 _emit_security 的独立发行策略保持一致。
+    sec_cats = set(security_policy.get("categories", []))
+    security_sources = {
+        src.get("name")
+        for src in load_sources(config_path)
+        if src.get("category") in sec_cats
+    }
 
     # 本地增强规则静态校验：禁止通配误伤规则，违规则阻断构建，落实「宁愿少拦截」
     lr_violations = validate_local_rules(config_path)
@@ -865,6 +897,7 @@ def build(args: argparse.Namespace) -> int:
         output_dir,
         config_path,
         enhancements=enhancements,
+        security_sources=security_sources,
     )
 
     write_manifest(manifest, output_dir)
@@ -915,7 +948,14 @@ def build(args: argparse.Namespace) -> int:
 
 
 def _run_quality_gate(
-    rules, src_counts, cat_counts, full_results, output_dir, config_path, enhancements=None
+    rules,
+    src_counts,
+    cat_counts,
+    full_results,
+    output_dir,
+    config_path,
+    enhancements=None,
+    security_sources=None,
 ):
     """执行质量门禁与构建变化检测，写 build_report.json 并返回 (失败标记, 报告)。"""
     dns_domains = 0
@@ -924,7 +964,7 @@ def _run_quality_gate(
     thresholds = load_thresholds(config_path)
     metrics = collect_metrics(rules, dns_domains, src_counts, cat_counts)
     prev = load_previous(output_dir)
-    gate = evaluate(metrics, prev, thresholds)
+    gate = evaluate(metrics, prev, thresholds, security_sources=security_sources)
     report = write_build_report(
         output_dir, metrics, prev, gate, enhancements=enhancements
     )

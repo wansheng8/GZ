@@ -106,17 +106,38 @@ def load_thresholds(config_path: Path) -> dict:
     for k in DEFAULT_THRESHOLDS:
         if k in raw:
             spec[k] = float(raw[k])
+    # 安全类源沿用 security_policy.source_drop_percent：安全列表（malware/phishing）
+    # 的误报容忍度与更新节奏不同，允许比普通源更宽松的骤降阈值，避免临时失效阻断整条发行。
+    sec = data.get("security_policy", {}) or {}
+    if "source_drop_percent" in sec:
+        spec["security_source_drop_percent"] = float(sec["source_drop_percent"])
     return spec
 
 
-def evaluate(metrics: Metrics, prev: Metrics | None, thresholds: dict) -> GateResult:
+def _drop_limit(src: str, thresholds: dict, security_sources: set[str]) -> float:
+    """返回该源适用的骤降阈值；安全类源使用更宽松的 security_source_drop_percent。"""
+    if src in security_sources:
+        return thresholds.get(
+            "security_source_drop_percent", thresholds["source_drop_percent"]
+        )
+    return thresholds["source_drop_percent"]
+
+
+def evaluate(
+    metrics: Metrics,
+    prev: Metrics | None,
+    thresholds: dict,
+    security_sources: set[str] | None = None,
+) -> GateResult:
+    security_sources = security_sources or set()
     res = GateResult(passed=True)
 
     # 1. 单源突然减少
     if prev is not None:
         for src, cnt in prev.source_counts.items():
             now = metrics.source_counts.get(src, 0)
-            if cnt > 0 and _pct_change(now, cnt) <= -thresholds["source_drop_percent"]:
+            limit = _drop_limit(src, thresholds, security_sources)
+            if cnt > 0 and _pct_change(now, cnt) <= -limit:
                 res.add_failure(
                     f"上游 {src} 规则数骤降 {abs(_pct_change(now, cnt)):.1f}% ({cnt} -> {now})"
                 )
@@ -149,7 +170,7 @@ def evaluate(metrics: Metrics, prev: Metrics | None, thresholds: dict) -> GateRe
             old = prev.source_counts.get(src, 0)
             if old > 0:
                 sg = _pct_change(cnt, old)
-                if sg >= thresholds["source_drop_percent"]:
+                if sg >= _drop_limit(src, thresholds, security_sources):
                     res.warnings.append(
                         f"上游 {src} 规则数增长 {sg:.1f}% ({old} -> {cnt})"
                     )

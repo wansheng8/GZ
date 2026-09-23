@@ -24,6 +24,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    # 单次构建约 7-9 分钟；给足余量同时避免网络/构建挂起长时间占用 runner
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
         with:
@@ -31,15 +33,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      - name: Cache source downloads
+      - name: Cache source downloads and parse stage
         uses: actions/cache@v4
         with:
-          path: .cache/sources
+          # sources: 原始文本；parsed: 解析阶段缓存（key = 源内容 sha256 + 算法版本），
+          # 上游未变化时直接复用已解析规则，跳过全量重解析。
+          path: |
+            .cache/sources
+            .cache/parsed
           key: sources-cache-${{ github.run_id }}
           restore-keys: |
             sources-cache-
       - name: Install dependencies
         run: pip install -r requirements-dev.txt
+      - name: Lint (ruff)
+        run: ruff check .
       - name: Run tests
         run: python -m pytest -q
       - name: Clean stale dist
@@ -77,22 +85,30 @@ jobs:
           cos = entries.get("adblock_collection_full_cosmetic.txt", 0)
           abp = entries.get("adblock_collection_full_dns_abp.txt", 0)
           print(f"三层产物: 网络拦截 {net} / 元素隐藏 {cos} / DNS 等价 {abp}")
-          if not net or not cos or not abp:
-              print("WARNING: 三层产物缺失（browser_network / cosmetic / dns_abp）")
-          elif total and net + cos != total:
-              print(f"WARNING: 三层并集 {net + cos} != 完整版 {total}")
           allow = entries.get("dns_allow.txt", 0)
           ubo = entries.get("adblock_collection_ubo_enhance.txt", 0)
           print(f"增量产物: DNS 白名单 {allow} / uBO 增强 {ubo}")
-          if not allow:
-              print("WARNING: DNS 白名单为空（dns_allow.txt）")
+
+          # 硬失败：产物结构性缺失、绝对量异常偏低、大量上游失败，均阻断推送以待人工介入
+          errors = []
+          if not net or not cos or not abp:
+              errors.append("三层产物缺失（browser_network / cosmetic / dns_abp）")
+          elif total and net + cos != total:
+              errors.append(f"三层并集 {net + cos} != 完整版 {total}")
           if not ubo:
-              print("WARNING: uBO 增强清单为空（adblock_collection_ubo_enhance.txt）")
-          # 规则数骤降或大量源失败则标记异常（不阻断推送，但输出供审查）
+              errors.append("uBO 增强清单为空（adblock_collection_ubo_enhance.txt）")
           if total < 300000:
-              print("WARNING: 完整版规则数异常偏低，可能上游大面积失败")
+              errors.append(f"完整版规则数异常偏低：{total}（可能上游大面积失败）")
           if len(failed) >= 5:
-              print("WARNING: 超过 5 个上游源下载失败")
+              errors.append(f"{len(failed)} 个上游源下载失败")
+          # 白名单为空属正常（自定义白名单可能不含整域全局例外），仅提示
+          if not allow:
+              print("WARNING: DNS 白名单为空（dns_allow.txt），若自定义白名单无整域全局例外则属正常")
+
+          if errors:
+              for e in errors:
+                  print(f"ERROR: {e}")
+              sys.exit(1)
           PY
       - name: Verify default enhancement reports
         run: |
