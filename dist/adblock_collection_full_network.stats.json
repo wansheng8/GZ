@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 486300,
+  "total": 486315,
   "by_category": {
-    "network": 486300
+    "network": 486315
   },
   "by_kind": {
-    "network": 486300
+    "network": 486315
   },
   "by_source": {
     "oisd": 133357,
@@ -37,9 +37,10 @@
     "AWAvenue-Ads-Rule": 31,
     "uBO filters – Quick fixes": 15,
     "Anti-AD Domains": 13,
+    "EasyList (easylist.to)": 12,
     "AdAway Hosts": 11,
+    "EasyList (ABP)": 5,
     "Peter Lowe's Blocklist": 5,
-    "EasyList (ABP)": 2,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
   }
