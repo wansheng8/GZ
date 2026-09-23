@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
@@ -42,6 +43,10 @@ _NOTE = (
     f"最新记录置顶、仅保留最近 {KEEP} 次；数值取自 `dist/build_report.json` "
     "与 `dist/manifest.json`。"
 )
+# 标记必须是「独占一行」的 HTML 注释；行内的同名文本（例如记忆条目里的说明）
+# 不会被误判为区块边界。
+_START_RE = re.compile(rf"^{re.escape(START)}\s*$", re.MULTILINE)
+_END_RE = re.compile(rf"^{re.escape(END)}\s*$", re.MULTILINE)
 
 
 def _short_sha() -> str:
@@ -105,9 +110,12 @@ def _render_block(rows: list[str]) -> str:
 def update_memory(path: Path, row: str, keep: int = KEEP) -> None:
     """把 ``row`` 置顶写入 ``path`` 的指标快照区块，并裁剪到 ``keep`` 条。"""
     text = path.read_text(encoding="utf-8") if path.exists() else ""
-    if START in text and END in text:
-        pre, rest = text.split(START, 1)
-        block, post = rest.split(END, 1)
+    start = _START_RE.search(text)
+    end = _END_RE.search(text)
+    if start and end and start.end() < end.start():
+        pre = text[: start.start()]
+        block = text[start.end() : end.start()]
+        post = text[end.end() :]
         rows = _data_rows(block)
         if not rows or rows[0] != row:
             rows.insert(0, row)

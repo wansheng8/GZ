@@ -90,15 +90,7 @@ Entries discovered by the Agent during task execution should follow this format:
 - Context: Discovered by Agent while performing 把每次构建的规则条数同步到 MEMORY.md
 - Category: Workflow & Collaboration
 - Instructions:
-  - 文件末尾 `<!-- build-metrics:start -->
-## 构建指标快照（CI 自动生成）
-
-> 由 `python -m adblock_collection.memory_metrics` 在每次构建后更新，最新记录置顶、仅保留最近 10 次；数值取自 `dist/build_report.json` 与 `dist/manifest.json`。
-
-| 生成时间(UTC) | 提交 | 结果 | 总规则数 | DNS 域名 | 网络拦截 | 元素隐藏 | uBO 增强 |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 2026-09-23 03:21 | `4f0b6e1` | 通过 | 799,455 | 545,785 | 635,388 | 164,067 | 30,721 |
-<!-- build-metrics:end -->` 之间的「构建指标快照」区块由 CI 自动维护：`build.yml` 在构建后运行 `python -m adblock_collection.memory_metrics`，把总规则数/DNS 域名/各层条数写入该区块（最新置顶、保留最近 10 次，`KEEP` 在 `adblock_collection/memory_metrics.py`），并随 dist 一起自动提交。
+  - 文件末尾由 `build-metrics` HTML 注释标记包围的「构建指标快照」区块由 CI 自动维护：`build.yml` 在构建后运行 `python -m adblock_collection.memory_metrics`，把总规则数/DNS 域名/各层条数写入该区块（最新置顶、保留最近 10 次，`KEEP` 在 `adblock_collection/memory_metrics.py`），并随 dist 一起自动提交。
   - 手工编辑 MEMORY.md 时只在标记区块之外增删记忆条目，不要改动区块内容；否则下次构建会被覆盖。
 
 <!-- build-metrics:start -->
@@ -108,6 +100,7 @@ Entries discovered by the Agent during task execution should follow this format:
 
 | 生成时间(UTC) | 提交 | 结果 | 总规则数 | DNS 域名 | 网络拦截 | 元素隐藏 | uBO 增强 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| 2026-09-23 03:21 | `4f0b6e1` | 通过 | 799,455 | 545,785 | 635,388 | 164,067 | 30,721 |
 | 2026-09-23 03:17 | `fcc238d` | 通过 | 799,455 | 545,785 | 635,388 | 164,067 | 30,721 |
 | 2026-09-23 03:07 | `2742f46` | 通过 | 799,445 | 545,777 | 635,380 | 164,065 | 30,719 |
 <!-- build-metrics:end -->

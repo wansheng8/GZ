@@ -37,6 +37,19 @@ def test_duplicate_top_row_is_not_repeated(tmp_path):
     assert mm._data_rows(path.read_text(encoding="utf-8")) == ["| same |"]
 
 
+def test_inline_marker_in_prose_does_not_confuse_boundaries(tmp_path):
+    path = tmp_path / "MEMORY.md"
+    prose = f"- 说明：`{mm.START}` 与 `{mm.END}` 之间由 CI 维护。\n"
+    path.write_text("# Memory\n\n" + prose, encoding="utf-8")
+
+    mm.update_memory(path, "| r0 |", keep=3)
+    mm.update_memory(path, "| r1 |", keep=3)
+
+    text = path.read_text(encoding="utf-8")
+    assert prose.strip() in text
+    assert mm._data_rows(text) == ["| r1 |", "| r0 |"]
+
+
 def test_build_row_reads_report_and_manifest(tmp_path):
     import json
     from datetime import datetime, timezone
