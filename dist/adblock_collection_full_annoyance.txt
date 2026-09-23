@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3598
+! Total Rules: 3601
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -1026,6 +1026,7 @@ bytegoofy.com/goofy/*/push.js?
 ||cstrespsurvey.ca^
 ||dornpush.com^
 ||popup.egyup.com^
+||pushs.euromsg.com^
 ||fedapush.net^
 ||promote-subscribe.forbes.com^
 ||www.fpcpopunder.com^
@@ -1042,7 +1043,6 @@ bytegoofy.com/goofy/*/push.js?
 ||push.scloud.lfengmobile.com^
 ||luckypush.pro^
 ||push.mobilefonex.com^
-||analytics-push.msccruises.com^
 ||mycleverpush.com^
 ||mypush.io^
 ||n1gopush.com^
@@ -1060,7 +1060,6 @@ bytegoofy.com/goofy/*/push.js?
 ||pushadv.biz^
 ||zebra.pushbullet.com^
 ||pushcode.jp^
-||pusherism.com^
 ||pushers.info^
 ||pushfilefind.click^
 ||analytics.pushgrid.net^
@@ -1101,6 +1100,7 @@ bytegoofy.com/goofy/*/push.js?
 ||api.xmpush.xiaomi.com^
 ||api.xmpush.global.xiaomi.com^
 ||register.xmpush.global.xiaomi.com^
+||survey.zohopublic.eu^
 ||targetpush.co.kr^
 ||popunder.
 ||popupclick.
@@ -1174,6 +1174,7 @@ push.qq.com^
 ||aipsurveyschina.com^
 ||ptopseempushoa.net^
 ||push-sender.com^
+||pusherism.com^
 ||wnt-some-push.net^
 ||overlay.aibuy.io^
 ||anandabazar.pushengage.com^
@@ -3161,7 +3162,6 @@ follow-it-form-subscribe
 ||push.detik.com^
 ||pushads.detik.com^
 ||overlay.ebu-uer.be^
-||pushs.euromsg.com^
 ||push-collector.happypointcard.com^
 ||img-intl-push.heytapimg.com^
 ||dcintl.push.heytapmobi.com^
@@ -3178,9 +3178,12 @@ follow-it-form-subscribe
 ||push.meitu.com^
 ||api-push.in.meizu.com^
 ||push.migu.cn^
+||analytics-push.msccruises.com^
 ||analytics.networksurvey.app^
 ||surveyserver.nextcloud.com^
 ||push.oppomobile.com^
+||survey-cache.platformrijksoverheid.nl^
+||survey-collect.platformrijksoverheid.nl^
 ||survey-deploy.platformrijksoverheid.nl^
 ||survey-metrics.platformrijksoverheid.nl^
 ||analytics.popup-records.de^
@@ -3196,6 +3199,7 @@ follow-it-form-subscribe
 ||um.pushtuhazara.com^
 ||popup.relinka.net^
 ||popup-service-767152501284.us-east4.run.app^
+||push.silversiri.com^
 ||survey.skyra.no^
 ||mixpanel.smartsurvey.io^
 ||push.my.tv.sohu.com^
@@ -3438,7 +3442,6 @@ follow-it-form-subscribe
 ||pushdigit.com^
 ||pushedconcede.com^
 ||pushedresponse.com^
-||pushkerwebs.github.io^
 ||pushky.com^
 ||pushland.ru^
 ||pushot.com^
@@ -3453,7 +3456,6 @@ follow-it-form-subscribe
 ||survey-ppl-log.com^
 ||survey-pulse-hub.com^
 ||survey.dolphin.com^
-||survey.zohopublic.eu^
 ||surveybypass.com^
 ||surveybypass.net^
 ||surveyedstrings.com^
@@ -3600,6 +3602,7 @@ _clickunder&pb=$popup
 ||ipornia.com/scj/cgi/out.php?scheme_id=$popup,3p
 ||livehotty.com/landing/$popup,3p
 ||porngames.adult^*=$popup,3p
+||gluservices.s3.amazonaws.com/PushNotifications
 ||hoiplay.com/tm_popup.html$popup
 ||presselite.com/iphone/pushnotification/interstitiel_android.php
 ||renote.*/assets/sp_overlay_ad_

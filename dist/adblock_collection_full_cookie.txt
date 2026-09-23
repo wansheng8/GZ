@@ -1597,6 +1597,8 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 ||analytics.editcookie.com^
 ||a46e0368.forwarding-request-consent.pages.dev^
 ||collecting-consent.g5e.com^
+||cookiebar.ideasoft.dev^
+||ads.consents-management.prod.aws.statista.com^
 ||de-gdpr-err-up.vivoglobal.com^
 ||cookielawblog.wordpress.com^
 ||bdstaic.com/r/www/cache/static/plugins/every_cookie_*.js
@@ -1625,7 +1627,6 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 ||cookie-cutter.dsch.ie^
 ||stape.facesconsent.com^
 ||consent2.gladbachlive.de^
-||cookiebar.ideasoft.dev^
 ||consent.lexpress.fr^
 ||matomo.luckycookie.be^
 ||matomo-sans-consentement.monuments-nationaux.fr^
@@ -1633,7 +1634,6 @@ privacy-mgmt.com$domain=immobilien.derstandard.at
 ||cookiezilla.redsolution.ru^
 ||sp-consent.schwarzwaelder-bote.de^
 ||cookie-jam.sgn.com^
-||ads.consents-management.prod.aws.statista.com^
 ||pcookie.tmall.com^
 ||consent-st.truste.com^
 ||tr-gdpr-vgc-datacenter.vivoglobal.com^

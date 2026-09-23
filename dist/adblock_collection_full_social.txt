@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1882
+! Total Rules: 1886
 ! ------------------------------------------
 /wp-content/plugins/automatic-social-locker/*
 ||18cc51d1fb.com^
@@ -456,10 +456,10 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||www.sociallypublish.com^
 ||www2.shareswiss.de^
 ||xvid.social-previews.top^
-3.168.51.9                     epic-social-social-modules-prod.ol.epicgames.com
-3.168.51.60                    epic-social-social-modules-prod.ol.epicgames.com
-3.168.51.18                    epic-social-social-modules-prod.ol.epicgames.com
-3.168.51.82                    epic-social-social-modules-prod.ol.epicgames.com
+18.245.113.24                  epic-social-social-modules-prod.ol.epicgames.com
+18.245.113.25                  epic-social-social-modules-prod.ol.epicgames.com
+18.245.113.37                  epic-social-social-modules-prod.ol.epicgames.com
+18.245.113.8                   epic-social-social-modules-prod.ol.epicgames.com
 ||1-free-share-buttons.com^
 ||ads.socialreach.com^
 ||adshare.toutiao.com^
@@ -477,9 +477,9 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||facebook-login.5v.pl^
 ||facebook-profile.5v.pl^
 ||7fb.ru^
+||sproutsocial.data.adobedc.net^
 ||adshares.net^
 ||akusherok.ru^
-||alchemysocial.com^
 ||apoyosocialsoftware-com.pages.dev^
 ||bannerbook.ru^
 ||bearshare-music-downloads.com^
@@ -506,13 +506,12 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||facebookrecreation.webflow.io^
 ||facebooktotranscript.com^
 ||facebookvideo87.blogspot.com^
+||stats.figshare.com^
 ||file-share365.com^
 ||freakshare.net^
 ||facebook-proxy.hi5.com^
 ||analytics.ilook.ru^
 ||ads.impulsosocial.online^
-||instagram-e.com.cn^
-||instagram-visualizza-post.info^
 ||iqok.ru^
 ||iversonsharedspace.com^
 ||stats.jibber.social^
@@ -524,10 +523,8 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||m-fb.com^
 ||beacon.flexera-prod.aws.metafb.cloud^
 ||mfacebook.vn^
-||mydoctorok.ru^
 ||new-sh-3.newshared-access.workers.dev^
 ||noodshare.pics^
-||ads.ok.ru^
 ||share.outgrow.biz^
 ||bright-reef-7510.hosted.pageshare.ai^
 ||slate-peak-3998.hosted.pageshare.ai^
@@ -542,17 +539,17 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||q.share.qvcemail.com^
 ||revsharecash.com^
 ||socialstat.rt.com^
+||gtm.rvshare.com^
 ||screenshare.pics^
 ||euvicperformance-securesharedocument.securedocumentauthenticationrelay-sharedresourcesverification.workers.dev^
 ||mysharepoint-clickpacksecurefolderauth.securedocumentauthenticationrelay-sharedresourcesverification.workers.dev^
 ||share-links.biz^
 ||share.kz^
-||share.lat^
 ||sharebutton.net^
+||analytics.sharecare.com^
 ||sharecash.org^
 ||ads.sharechat.com^
 ||shared-prd-1752266577.us-west-2.elb.amazonaws.com^
-||sharedid.org^
 ||sharedrop.io^
 ||lp.sharelive.net^
 ||sharemedia.rs^
@@ -1110,13 +1107,13 @@ _social_footer_
 /plugin/share_
 ||adshare.
 ||ifeng.com/client_share_bottom_
+||alchemysocial.com^
 ||banpxvessfb.com^
 ||cyatlanfb.com^
 ||ftglucawrkfb.com^
 ||lmsukdmymagqfb.com^
 ||nftjgafb.com^
 ||shareaza.com^
-||socialprooff.com^
 ||analytics.vk.com^
 ||native.sharethrough.com^
 ||mobile-stats.socialquantum.com^
@@ -1153,6 +1150,7 @@ _social_footer_
 ||ads.socialdisplay.com.akamaized.net^
 ||newsharecounts.s3-us-west-2.amazonaws.com^
 ||fb.atropingtc.digital^
+||sentry.platform-shared.aws.attensi.com^
 ||beur-hm-matomo-shared.azurewebsites.net^
 ||fb.bangaverbena.com^
 ||analytics.bash.social^
@@ -1160,6 +1158,7 @@ _social_footer_
 ||social.cleverbot.com^
 ||d2ipj36xbzyufb.cloudfront.net^
 ||ad-afb.club-t.com^
+||instagram-e.com.cn^
 ||vww-facebook.com.vn^
 ||www-facebooks.com.vn^
 ||plausible.coracle.social^
@@ -1170,11 +1169,10 @@ _social_footer_
 ||ssp.disqus.com^
 ||matomo.dtfb.de^
 ||doc.research-and-analytics.csfb.com.edgekey.net^
+||metrics.np.project-game-social.cbae.dev.use1a.on.epicgames.com^
 ||faro-receiver-prod.fbfb.live.use1a.on.epicgames.com^
 ||fb.evertsmiggles.com^
-||dns.facebook.com^
 ||ad.fastshare.cz^
-||stats.figshare.com^
 ||notificationbyfacebook.firebaseapp.com^
 ||matomo.fabrique.social.gouv.fr^
 ||sentry.fabrique.social.gouv.fr^
@@ -1184,6 +1182,7 @@ _social_footer_
 ||metrics.inshared.nl^
 ||ads.instagramstoryviewer.org^
 ||sentry.interneturok.ru^
+||analytics.twitter.com.mobil.isw18.de^
 ||fb.knolledhard.com^
 ||logs.shared.medflex.de^
 ||rum-client-seo-production.shared.meliuz-internal.com^
@@ -1194,6 +1193,7 @@ _social_footer_
 ||instagram-cutequeen57.netlify.app^
 ||data.guide.nuancepowershare.com^
 ||v-ads-dp.europewest-wg95.stgtest.ok.ru^
+||ads.ok.ru^
 ||adv.ok.ru^
 ||analytics.onlyshare.io^
 ||social.opendesktop.org^
@@ -1208,7 +1208,6 @@ _social_footer_
 ||instagram.irancell-10g-free.rf.gd^
 ||social.roadfm.fr^
 ||facebook-europewest1-tagging-bsxp2kecxa-ew.a.run.app^
-||gtm.rvshare.com^
 ||data-e807969afb.scinexx.de^
 ||a.share-dns.com^
 ||sc-events-apis.sharechat.com^
@@ -1257,7 +1256,6 @@ _social_footer_
 ||events.maps.vk.com^
 ||ad.vk.com^
 ||notificationbyfacebook.web.app^
-||api.wifishare.jp^
 ||was-stats.wondershare.com^
 ||cf.hermes.wshareit.com^
 ||cmd.hermes.wshareit.com^
@@ -1331,6 +1329,7 @@ _social_footer_
 ||hotshare.net^
 ||iijjcjccbehabhajaafb.world^
 ||imageshare.best^
+||instagram-visualizza-post.info^
 ||instagramez.com^
 ||is-a-socialist.com^
 ||iyvstkvk.com^
@@ -1340,6 +1339,7 @@ _social_footer_
 ||letshareus.com^
 ||me88social1.com^
 ||mgshareware.com^
+||mydoctorok.ru^
 ||naray-pfb.com^
 ||noreplybussinesfacebook.com^
 ||oyqcqlehhfb.com^
@@ -1359,6 +1359,7 @@ _social_footer_
 ||seatfreebook.ru^
 ||share.lc^
 ||shareaholic.net^
+||sharedid.org^
 ||shareease.link^
 ||shareitgames.com^
 ||sharemedia.top^
@@ -1380,6 +1381,7 @@ _social_footer_
 ||socialmediakanzlei.com^
 ||socialnetworkllc.com^
 ||socialnetworkstore.com^
+||socialprooff.com^
 ||socialsend.ru^
 ||socialsignin.net^
 ||socialsmp.com^
@@ -1537,7 +1539,6 @@ _social_footer_
 ||facebooklnstagram.com^
 ||facebookma.cn^
 ||facebookmetapagelogin.weebly.com^
-||facebooknotify-noreply.com^
 ||facebookpage-noreplycenter.com^
 ||facebookprofile.info^
 ||facebooks-logins.onrender.com^
@@ -1582,6 +1583,7 @@ _social_footer_
 ||instagram-login123.blogspot.com^
 ||instagram-nameservers.com^
 ||instagram-nepal.github.io^
+||instagram-new-version.vercel.app^
 ||instagram-online.mcdir.ru.mcpre.ru^
 ||instagram-password-recovery.vercel.app^
 ||instagram-reset-password.vercel.app^
@@ -1816,6 +1818,7 @@ _social_footer_
 ||winshare0901.mywire.org^
 ||wisetobesocial.com^
 ||www-facebook.com.vn^
+||wwwinstagram.vercel.app^
 ||xn--scurit-sociale-bkbf.fr^
 ||yfb.net^
 ||yoursocialconnections.com^
@@ -1864,6 +1867,7 @@ _social_footer_
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=sharelinkgamepc.blogspot.com
 ||storage.fshare.vn/support/*-300x600-
 ||storage.fshare.vn/images/congtruongit.com_960x128.gif
+$xhr,3p,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|x.com|pp.ua|discord.com,_,domain=everia.club|projectfreetv.cyou|skidrowreloaded.com|kickassanime.*|dlhd.*|nxbrew.net|ziperto.com|lilymanga.net|bentomanga.top|bigcomics.bid|brmangas.top|cmoa1.top|janime.top|jpraw.xyz|kakuyomu.in|kkraw.com|komiku.win|lectormanga.top|lermanga.top|manga1000.top|manga1001.win|manga1001.xyz|mangajp.top|mangakl.su|mangaraw.bid|mangavy.com|mangaz.win|scanita.top|shinigami-id.top|sushiscan.top|worldsports.me|poscitechs.xyz|harimanga.com|movieshubweb.com|animeflv.net|techcabal.net|nextgencloudtools.com|soap2day.day|flixrave.me|audioz.download|playdede.link|canna-power.to|canna.to|filecrypt.cc|dlhd.dad|3isk.icu|3isk.info|animesrbija.com|yts.lt|totalsportek.*|totalsportek.army|ext.to|eztvx.to|bypass.city|fileditchfiles.me|furry34.com|filecrypt.co|yts.*|yts.gg|yts.bz|streamtape.net
 $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 ||cache.sgvafs.top/base/aHR0cHM6Ly9pY28uZGFnZS50b3Avc3RvcmFnZS91cGxvYWQvMjAyNTEwMTQvNjhlZDg3NWU2NTM2Zi53ZWJw.cache$image,domain=missav81.top|mj859.com|avx21.com|qmtrd.com|blog.cdsnb.com|frivk.com|formosafresh.com|artlabaichi.com|zhenbole.com|air886.com
 $script,3p,denyallow=googlvideo.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|googleoptimize.com|vuukle.com|chatango.com|twimg.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|cloudflare.net|rabbitstream.net|x.com|ssl.p.jwpcdn.com,_,domain=aniwave.se

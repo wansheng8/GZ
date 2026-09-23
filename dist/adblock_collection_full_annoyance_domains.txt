@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: one domain per line (AdGuard DNS / AdGuard Home), total 974
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 976
 07c225f3.online
 1.sabs-push.xyz
 100push.com
@@ -499,6 +499,7 @@ push.reamaze.com
 push.res.meizu.com
 push.rollout.io
 push.scloud.lfengmobile.com
+push.silversiri.com
 push.testabcd.top
 push.tf-cdn.net
 push.tv.sohu.com
@@ -610,7 +611,6 @@ pushkahouse.com
 pushkaplus.com
 pushkapro.com
 pushkav.com
-pushkerwebs.github.io
 pushking.net
 pushkite.com
 pushkov.info
@@ -801,6 +801,8 @@ subscribers.com
 supapush.net
 survey-analytics-slider.webflow.io
 survey-analytics.webflow.io
+survey-cache.platformrijksoverheid.nl
+survey-collect.platformrijksoverheid.nl
 survey-deploy.platformrijksoverheid.nl
 survey-metrics.platformrijksoverheid.nl
 survey-ppl-log.com

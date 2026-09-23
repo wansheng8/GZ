@@ -30,7 +30,6 @@ $subdocument,~3p,redirect=noop.html,domain=pussyspace.com|pussyspace.net
 $xhr,3p,redirect-rule=noop.js,domain=bizjournals.com,script
 $xhr,redirect-rule=noop.txt,domain=oko.sha|aii.sh|pahe.plus|intercelestial.com|linegee.net|clksz.com|srnky.com|lnbz.la
 *$script,redirect-rule=noop.js,domain=cuttlinks.com|exe-links.com|cuttty.com|cuttyy.com|cutynow.com|exnion.com|cutyion.com|jixo.online|exe-urls.com|evernia.site|ijvam.com|mrgec.com|emxaw.com|cety.app|cutnet.net
-*$script,redirect-rule=noop.js,domain=financemonk.net|rtxkeeda.com|houseofblogger.com|dropgalaxy.com|djxmaza.in
 .js^$redirect=noop.txt,xhr,domain=files.darkarmy.eu.org
 /?oo=1&aab=1|$script,3p,xhr,redirect=noop.js
 /\/[0-9a-f]{32}\/invoke\.js/$script,3p,redirect-rule=noop.js
@@ -400,6 +399,7 @@ $script,xhr,redirect-rule=noop.js,domain=freesolana.top
 ||ad.a-ads.com/*?size=$xhr,redirect=noop.txt,domain=pentafaucet.com
 *$subdocument,redirect-rule=noop.html,domain=financemonk.net|rtxkeeda.com|houseofblogger.com|dropgalaxy.com|djxmaza.in
 *$xhr,redirect-rule=noop.txt,domain=financemonk.net|rtxkeeda.com|houseofblogger.com|dropgalaxy.com|djxmaza.in
+*$script,redirect-rule=noop.js,domain=financemonk.net|rtxkeeda.com|houseofblogger.com|dropgalaxy.com|djxmaza.in
 *$image,redirect-rule=32x32.png,domain=financemonk.net|rtxkeeda.com|houseofblogger.com|dropgalaxy.com|djxmaza.in
 ||pagead2.googlesyndication.com/pagead/show_ads.js$script,redirect=noop.js,important,domain=flashplayer.fullstacks.net
 ||tpc.googlesyndication.com/simgad/$domain=a2zupload.com|a2zapk.co,redirect=1x1.gif,important,image

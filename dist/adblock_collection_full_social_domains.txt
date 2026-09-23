@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: one domain per line (AdGuard DNS / AdGuard Home), total 1230
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 1233
 01.sharedsource.org
 01free-share.com
 03.sharedsource.org
@@ -109,6 +109,7 @@ analytics.bash.social
 analytics.facebook.com
 analytics.ilook.ru
 analytics.onlyshare.io
+analytics.sharecare.com
 analytics.social.unity.com
 analytics.socialbakers.com
 analytics.socialbeat.io
@@ -118,11 +119,11 @@ analytics.socialscentury.com
 analytics.socialshaker.com
 analytics.socialtechnova.com
 analytics.twitter.com
+analytics.twitter.com.mobil.isw18.de
 analytics.vk.com
 analytics.wondershare.cc
 animalsandsocialjustice.org
 api.botafogofrsocialolimpico.com.br
-api.wifishare.jp
 api.wshareit.com
 api2.wshareit.com
 apifb.mustedu.com
@@ -248,7 +249,6 @@ diyifb.com
 dkwqivqnuavfb.com
 dmbfb.weebly.com
 dnbkjfihvakfb.store
-dns.facebook.com
 doc.google.share.pressurecookerindia.com
 doc.research-and-analytics.csfb.com
 doc.research-and-analytics.csfb.com.edgekey.net
@@ -377,7 +377,6 @@ facebookloginsignin.com
 facebookma.cn
 facebookmetapagelogin.weebly.com
 facebooknotification-retricted.com
-facebooknotify-noreply.com
 facebookofsex.com
 facebookpage-noreplycenter.com
 facebookprofile.info
@@ -521,6 +520,7 @@ instagram-login-support.vercel.app
 instagram-login123.blogspot.com
 instagram-nameservers.com
 instagram-nepal.github.io
+instagram-new-version.vercel.app
 instagram-nextjs-three.vercel.app
 instagram-online.mcdir.ru.mcpre.ru
 instagram-password-recovery.vercel.app
@@ -656,6 +656,7 @@ messenger-facebook.fr
 meta-ads-manager-facebook-support-business-id100019655719.vercel.app
 meta-ads-manager-facebook-support-business-id200056679982.vercel.app
 metrics.inshared.nl
+metrics.np.project-game-social.cbae.dev.use1a.on.epicgames.com
 metrics.semanadpesocial.com.br
 metrics.socialcatfish.com
 metrics.timeshares.com
@@ -822,6 +823,7 @@ sentry-relay.surf.social
 sentry.fabrique.social.gouv.fr
 sentry.interneturok.ru
 sentry.mvk.com
+sentry.platform-shared.aws.attensi.com
 sentry.poryadok.ru
 sentry.services.disqus.com
 sentry.shared-dev.aws.openvpn.in
@@ -859,7 +861,6 @@ share.gree.jp
 share.gzdsw.com
 share.itraffic.su
 share.kz
-share.lat
 share.lc
 share.notizie.it
 share.outgrow.biz
@@ -1057,6 +1058,7 @@ someshare.appspot.com
 speadsheetshared-securedmss.com
 speedshare.app
 speedyshare.com
+sproutsocial.data.adobedc.net
 ss.grupovk.com
 ss.postofficesocial.com
 ss.sunshare.de
@@ -1210,6 +1212,7 @@ www.nx.socialhabitmarketing.com
 www.sociallypublish.com
 www2.shareswiss.de
 wwwfacebook.com
+wwwinstagram.vercel.app
 xhdxoyupdowfb.space
 xhvfteujanefb.website
 xing-share.com

@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (0.0.0.0 domain), total 1230
+# Format: hosts (0.0.0.0 domain), total 1233
 0.0.0.0 01.sharedsource.org
 0.0.0.0 01free-share.com
 0.0.0.0 03.sharedsource.org
@@ -109,6 +109,7 @@
 0.0.0.0 analytics.facebook.com
 0.0.0.0 analytics.ilook.ru
 0.0.0.0 analytics.onlyshare.io
+0.0.0.0 analytics.sharecare.com
 0.0.0.0 analytics.social.unity.com
 0.0.0.0 analytics.socialbakers.com
 0.0.0.0 analytics.socialbeat.io
@@ -118,11 +119,11 @@
 0.0.0.0 analytics.socialshaker.com
 0.0.0.0 analytics.socialtechnova.com
 0.0.0.0 analytics.twitter.com
+0.0.0.0 analytics.twitter.com.mobil.isw18.de
 0.0.0.0 analytics.vk.com
 0.0.0.0 analytics.wondershare.cc
 0.0.0.0 animalsandsocialjustice.org
 0.0.0.0 api.botafogofrsocialolimpico.com.br
-0.0.0.0 api.wifishare.jp
 0.0.0.0 api.wshareit.com
 0.0.0.0 api2.wshareit.com
 0.0.0.0 apifb.mustedu.com
@@ -248,7 +249,6 @@
 0.0.0.0 dkwqivqnuavfb.com
 0.0.0.0 dmbfb.weebly.com
 0.0.0.0 dnbkjfihvakfb.store
-0.0.0.0 dns.facebook.com
 0.0.0.0 doc.google.share.pressurecookerindia.com
 0.0.0.0 doc.research-and-analytics.csfb.com
 0.0.0.0 doc.research-and-analytics.csfb.com.edgekey.net
@@ -377,7 +377,6 @@
 0.0.0.0 facebookma.cn
 0.0.0.0 facebookmetapagelogin.weebly.com
 0.0.0.0 facebooknotification-retricted.com
-0.0.0.0 facebooknotify-noreply.com
 0.0.0.0 facebookofsex.com
 0.0.0.0 facebookpage-noreplycenter.com
 0.0.0.0 facebookprofile.info
@@ -521,6 +520,7 @@
 0.0.0.0 instagram-login123.blogspot.com
 0.0.0.0 instagram-nameservers.com
 0.0.0.0 instagram-nepal.github.io
+0.0.0.0 instagram-new-version.vercel.app
 0.0.0.0 instagram-nextjs-three.vercel.app
 0.0.0.0 instagram-online.mcdir.ru.mcpre.ru
 0.0.0.0 instagram-password-recovery.vercel.app
@@ -656,6 +656,7 @@
 0.0.0.0 meta-ads-manager-facebook-support-business-id100019655719.vercel.app
 0.0.0.0 meta-ads-manager-facebook-support-business-id200056679982.vercel.app
 0.0.0.0 metrics.inshared.nl
+0.0.0.0 metrics.np.project-game-social.cbae.dev.use1a.on.epicgames.com
 0.0.0.0 metrics.semanadpesocial.com.br
 0.0.0.0 metrics.socialcatfish.com
 0.0.0.0 metrics.timeshares.com
@@ -822,6 +823,7 @@
 0.0.0.0 sentry.fabrique.social.gouv.fr
 0.0.0.0 sentry.interneturok.ru
 0.0.0.0 sentry.mvk.com
+0.0.0.0 sentry.platform-shared.aws.attensi.com
 0.0.0.0 sentry.poryadok.ru
 0.0.0.0 sentry.services.disqus.com
 0.0.0.0 sentry.shared-dev.aws.openvpn.in
@@ -859,7 +861,6 @@
 0.0.0.0 share.gzdsw.com
 0.0.0.0 share.itraffic.su
 0.0.0.0 share.kz
-0.0.0.0 share.lat
 0.0.0.0 share.lc
 0.0.0.0 share.notizie.it
 0.0.0.0 share.outgrow.biz
@@ -1057,6 +1058,7 @@
 0.0.0.0 speadsheetshared-securedmss.com
 0.0.0.0 speedshare.app
 0.0.0.0 speedyshare.com
+0.0.0.0 sproutsocial.data.adobedc.net
 0.0.0.0 ss.grupovk.com
 0.0.0.0 ss.postofficesocial.com
 0.0.0.0 ss.sunshare.de
@@ -1210,6 +1212,7 @@
 0.0.0.0 www.sociallypublish.com
 0.0.0.0 www2.shareswiss.de
 0.0.0.0 wwwfacebook.com
+0.0.0.0 wwwinstagram.vercel.app
 0.0.0.0 xhdxoyupdowfb.space
 0.0.0.0 xhvfteujanefb.website
 0.0.0.0 xing-share.com

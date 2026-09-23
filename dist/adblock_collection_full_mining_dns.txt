@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (mining)
-# Format: hosts (0.0.0.0 domain), total 203
+# Format: hosts (0.0.0.0 domain), total 204
 0.0.0.0 10xbtcmining.com
 0.0.0.0 2miners.com
 0.0.0.0 a.localmonero.co
@@ -155,6 +155,7 @@
 0.0.0.0 pbkminer.com
 0.0.0.0 peakminer.app
 0.0.0.0 pixel-miner.com
+0.0.0.0 plausible.minerstat.com
 0.0.0.0 plugins.soclminer.com.br
 0.0.0.0 prominersblock.com
 0.0.0.0 qqmining.com

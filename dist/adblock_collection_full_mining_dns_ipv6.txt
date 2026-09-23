@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (mining)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 203
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 204
 :: 10xbtcmining.com
 :: 2miners.com
 :: a.localmonero.co
@@ -155,6 +155,7 @@
 :: pbkminer.com
 :: peakminer.app
 :: pixel-miner.com
+:: plausible.minerstat.com
 :: plugins.soclminer.com.br
 :: prominersblock.com
 :: qqmining.com

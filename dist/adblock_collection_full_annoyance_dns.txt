@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: hosts (0.0.0.0 domain), total 974
+# Format: hosts (0.0.0.0 domain), total 976
 0.0.0.0 07c225f3.online
 0.0.0.0 1.sabs-push.xyz
 0.0.0.0 100push.com
@@ -499,6 +499,7 @@
 0.0.0.0 push.res.meizu.com
 0.0.0.0 push.rollout.io
 0.0.0.0 push.scloud.lfengmobile.com
+0.0.0.0 push.silversiri.com
 0.0.0.0 push.testabcd.top
 0.0.0.0 push.tf-cdn.net
 0.0.0.0 push.tv.sohu.com
@@ -610,7 +611,6 @@
 0.0.0.0 pushkaplus.com
 0.0.0.0 pushkapro.com
 0.0.0.0 pushkav.com
-0.0.0.0 pushkerwebs.github.io
 0.0.0.0 pushking.net
 0.0.0.0 pushkite.com
 0.0.0.0 pushkov.info
@@ -801,6 +801,8 @@
 0.0.0.0 supapush.net
 0.0.0.0 survey-analytics-slider.webflow.io
 0.0.0.0 survey-analytics.webflow.io
+0.0.0.0 survey-cache.platformrijksoverheid.nl
+0.0.0.0 survey-collect.platformrijksoverheid.nl
 0.0.0.0 survey-deploy.platformrijksoverheid.nl
 0.0.0.0 survey-metrics.platformrijksoverheid.nl
 0.0.0.0 survey-ppl-log.com
