@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 872
+! Total Rules: 871
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -641,7 +641,6 @@ $script,redirect-rule=noopjs,to=~googletagmanager.com,from=boote-magazin.de
 *$script,3p,domain=poophq.com|veev.to|doods.to,redirect-rule=noopjs
 *$subdocument,redirect-rule=noopframe,3p,domain=poophq.com|veev.to
 /^https:\/\/www\.igorslab\.de\/[0-9a-z]{7,}\/A[\/0-9A-Z_a-z-]{100,}$/$image,1p,match-case,redirect=2x2.png
-/^https:\/\/www\.igorslab\.de\/wp-content\/uploads\/202\d\/\d{2}\/(?=[a-z]*\d)(?=\d*[a-z])[0-9a-z]{7,15}\.(?:pn|jp)g(?:\?[0-9A-Z_a-z-]{7,}=[0-9A-Z_a-z-]{7,})?$/$image,1p,match-case,redirect=2x2.png
 */b/ss/*&aqe=$image,redirect=1x1.gif
 ||oakley.com/_ui/dist/scripts/vendor/tealium.js$script,1p,redirect=noopjs,important
 ||oakleysi.com/_ui/dist/scripts/vendor/tealium.js$redirect=noopjs,important

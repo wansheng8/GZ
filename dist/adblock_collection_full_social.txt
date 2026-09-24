@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1948
+! Total Rules: 1947
 ! ------------------------------------------
 /wp-content/plugins/automatic-social-locker/*
 ||18cc51d1fb.com^
@@ -265,6 +265,7 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||afafb.com^
 ||affiliate.socialni-site-specialista.cz^
 ||affiliate.socialsprinters.cz^
+||analytics.facebook.com^
 ||analytics.twitter.com^
 ||analytics.wondershare.cc^
 ||api.botafogofrsocialolimpico.com.br^
@@ -457,9 +458,9 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||www2.shareswiss.de^
 ||xvid.social-previews.top^
 18.245.113.37                  epic-social-social-modules-prod.ol.epicgames.com
+18.245.113.24                  epic-social-social-modules-prod.ol.epicgames.com
 18.245.113.8                   epic-social-social-modules-prod.ol.epicgames.com
 18.245.113.25                  epic-social-social-modules-prod.ol.epicgames.com
-18.245.113.24                  epic-social-social-modules-prod.ol.epicgames.com
 ||1-free-share-buttons.com^
 ||ads.socialreach.com^
 ||adshare.toutiao.com^
@@ -493,7 +494,6 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||cusok.ru^
 ||facebook-case-business.com^
 ||ads.facebook.com^
-||analytics.facebook.com^
 ||tr.facebook.com^
 ||facebook10002158.blogspot.com^
 ||facebook111258.blogspot.com^
@@ -502,10 +502,8 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||facebook60118.blogspot.com^
 ||facebook62747.blogspot.com^
 ||facebook92288.blogspot.com^
-||facebooknotification-retricted.com^
 ||facebookqq.vip^
 ||facebookrecreation.webflow.io^
-||facebooktotranscript.com^
 ||facebookvideo87.blogspot.com^
 ||stats.figshare.com^
 ||file-share365.com^
@@ -528,6 +526,7 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||noodshare.pics^
 ||share.outgrow.biz^
 ||bright-reef-7510.hosted.pageshare.ai^
+||sage-reef-7741.hosted.pageshare.ai^
 ||slate-peak-3998.hosted.pageshare.ai^
 ||pavoshare.com^
 ||perfb.com^
@@ -540,7 +539,6 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||q.share.qvcemail.com^
 ||revsharecash.com^
 ||socialstat.rt.com^
-||gtm.rvshare.com^
 ||screenshare.pics^
 ||euvicperformance-securesharedocument.securedocumentauthenticationrelay-sharedresourcesverification.workers.dev^
 ||mysharepoint-clickpacksecurefolderauth.securedocumentauthenticationrelay-sharedresourcesverification.workers.dev^
@@ -573,6 +571,7 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||ad.socialhootz.com^
 ||widget.socialmart.ru^
 ||socialnettraffic.com^
+||socialprooff.com^
 ||socialsex.biz^
 ||socialsex.com^
 ||speedyshare.com^
@@ -1131,15 +1130,12 @@ _social_footer_
 ||fb.metacreatormonetizationsupportplatform.click^
 ||fb.supportbluepolicyreviewbusiness.cfd^
 ||prosocial69.com^
-||sharing.clrshare.store^
 ||www.fb.metacreatormonetizationsupportplatform.click^
 ||www.fb.supportbluepolicyreviewbusiness.cfd^
 ||www.prosocial69.com^
-||www.sharing.clrshare.store^
 ||helper-stats.wondershare.com^
 ||js.dsp-socialgameinfo.com^
 ||social-runner.net^
-||sage-reef-7741.hosted.pageshare.ai^
 ||aktualizacjafacebooka.blogspot.com^
 ||facebookaplikacje.blogspot.com^
 ||facebookcolors24.blogspot.com^
@@ -1167,7 +1163,6 @@ _social_footer_
 ||social.cleverbot.com^
 ||d2ipj36xbzyufb.cloudfront.net^
 ||ad-afb.club-t.com^
-||instagram-e.com.cn^
 ||vww-facebook.com.vn^
 ||www-facebooks.com.vn^
 ||plausible.coracle.social^
@@ -1178,9 +1173,10 @@ _social_footer_
 ||ssp.disqus.com^
 ||matomo.dtfb.de^
 ||doc.research-and-analytics.csfb.com.edgekey.net^
-||metrics.np.project-game-social.cbae.dev.use1a.on.epicgames.com^
+||metrics.np.project-edfb.cbae.dev.use1a.on.epicgames.com^
 ||faro-receiver-prod.fbfb.live.use1a.on.epicgames.com^
 ||fb.evertsmiggles.com^
+||dns.facebook.com^
 ||ad.fastshare.cz^
 ||notificationbyfacebook.firebaseapp.com^
 ||matomo.fabrique.social.gouv.fr^
@@ -1199,6 +1195,7 @@ _social_footer_
 ||rum-extension-production.shared.meliuz-internal.com^
 ||i1.services.social.microsoft.com^
 ||sentry.mvk.com^
+||matomo.myofb.de^
 ||instagram-cutequeen57.netlify.app^
 ||data.guide.nuancepowershare.com^
 ||v-ads-dp.europewest-wg95.stgtest.ok.ru^
@@ -1217,6 +1214,7 @@ _social_footer_
 ||instagram.irancell-10g-free.rf.gd^
 ||social.roadfm.fr^
 ||facebook-europewest1-tagging-bsxp2kecxa-ew.a.run.app^
+||gtm.rvshare.com^
 ||data-e807969afb.scinexx.de^
 ||a.share-dns.com^
 ||sc-events-apis.sharechat.com^
@@ -1338,7 +1336,6 @@ _social_footer_
 ||hotshare.net^
 ||iijjcjccbehabhajaafb.world^
 ||imageshare.best^
-||instagram-visualizza-post.info^
 ||instagramez.com^
 ||is-a-socialist.com^
 ||iyvstkvk.com^
@@ -1384,13 +1381,11 @@ _social_footer_
 ||socialadscout.com^
 ||socialdistancewithme.com^
 ||socialentropy.com^
-||socialgameshelp.com^
 ||socialmed.info^
 ||socialmedia-careers-office.com^
 ||socialmediakanzlei.com^
 ||socialnetworkllc.com^
 ||socialnetworkstore.com^
-||socialprooff.com^
 ||socialsend.ru^
 ||socialsignin.net^
 ||socialsmp.com^
@@ -1528,6 +1523,7 @@ _social_footer_
 ||facebook.popstudios.com.sv^
 ||facebook.security.formatinc.com^
 ||facebook.selvatica.knowmonitor.com^
+||facebook.thietkewebdep.net^
 ||facebook0067.webnode.com^
 ||facebook1029.github.io^
 ||facebook1749.webnode.com^
@@ -1588,6 +1584,7 @@ _social_footer_
 ||hungry-shares-864425.framer.app^
 ||instagram-account-verification.monikariecke.de^
 ||instagram-cam.vercel.app^
+||instagram-clone-psi-one.vercel.app^
 ||instagram-login-support.vercel.app^
 ||instagram-login123.blogspot.com^
 ||instagram-nameservers.com^
@@ -1627,6 +1624,7 @@ _social_footer_
 ||lbpiaccesss-mobilesph.shares.zrok.io^
 ||lfacebook.za.pl^
 ||likelikefacebookfanpage.blogspot.com^
+||littleheartscare-com.eolani.shared.1984.is^
 ||ljnzqwfujzvk.com^
 ||lnstagram-facebook-help.com^
 ||lnstagram-facebook-service.com^
@@ -1729,6 +1727,7 @@ _social_footer_
 ||sharedfax815201376.wordpress.com^
 ||sharedmovies.com^
 ||sharedsecurely.myportfolio.com^
+||sharefast572.tumblr.com^
 ||sharefile-demo.s3.ap-southeast-2.amazonaws.com^
 ||sharefileworld.com^
 ||sharegroup.info^
@@ -1827,7 +1826,7 @@ _social_footer_
 ||winshare0901.mywire.org^
 ||wisetobesocial.com^
 ||www-facebook.com.vn^
-||wwwinstagram.vercel.app^
+||xn--btpanda-rfb.com^
 ||xn--scurit-sociale-bkbf.fr^
 ||yfb.net^
 ||yoursocialconnections.com^

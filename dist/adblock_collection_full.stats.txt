@@ -1,17 +1,17 @@
 # adblock_collection_full 规则分类统计
-# 总规则数: 799907
-network: 486736
-css: 143158
-privacy: 55581
-phishing: 37164
-url: 26362
-scriptlet: 17450
-whitelist: 14821
-malware: 9691
-annoyance: 3701
-social: 1948
+# 总规则数: 800813
+network: 487394
+css: 143196
+privacy: 55591
+phishing: 37220
+url: 26468
+scriptlet: 17462
+whitelist: 14832
+malware: 9707
+annoyance: 3702
+social: 1947
 cookie: 1682
-redirect: 872
+redirect: 871
 html: 505
 mining: 235
 js: 1

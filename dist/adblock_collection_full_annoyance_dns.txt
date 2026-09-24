@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (annoyance)
-# Format: hosts (0.0.0.0 domain), total 1000
+# Format: hosts (0.0.0.0 domain), total 1001
 0.0.0.0 07c225f3.online
 0.0.0.0 1.sabs-push.xyz
 0.0.0.0 100push.com
@@ -72,6 +72,7 @@
 0.0.0.0 brazzerssurvey.com
 0.0.0.0 browserpusher.com
 0.0.0.0 btconnectupdateformplan01.surveysparrow.com
+0.0.0.0 buildingcompliancesurveys.com
 0.0.0.0 bulkypush.pro
 0.0.0.0 bump-me-push.com
 0.0.0.0 burningpushing.info
@@ -374,6 +375,7 @@
 0.0.0.0 pixel.pushground.com
 0.0.0.0 pmc-surveys.co.uk
 0.0.0.0 politicalopinionsurvey.com
+0.0.0.0 poll.push-na.fsapi.com
 0.0.0.0 popunder.bid
 0.0.0.0 popunder.com
 0.0.0.0 popunder.fpctraffic.com
@@ -838,7 +840,6 @@
 0.0.0.0 survey.skyra.no
 0.0.0.0 survey.transaction.giftcards.com
 0.0.0.0 survey.zigpoll.com
-0.0.0.0 survey.zohopublic.eu
 0.0.0.0 surveybindgeneration.com
 0.0.0.0 surveybypass.com
 0.0.0.0 surveybypass.net

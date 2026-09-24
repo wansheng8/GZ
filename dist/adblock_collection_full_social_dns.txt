@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (0.0.0.0 domain), total 1244
+# Format: hosts (0.0.0.0 domain), total 1243
 0.0.0.0 01.sharedsource.org
 0.0.0.0 01free-share.com
 0.0.0.0 03.sharedsource.org
@@ -249,6 +249,7 @@
 0.0.0.0 dkwqivqnuavfb.com
 0.0.0.0 dmbfb.weebly.com
 0.0.0.0 dnbkjfihvakfb.store
+0.0.0.0 dns.facebook.com
 0.0.0.0 doc.google.share.pressurecookerindia.com
 0.0.0.0 doc.research-and-analytics.csfb.com
 0.0.0.0 doc.research-and-analytics.csfb.com.edgekey.net
@@ -338,6 +339,7 @@
 0.0.0.0 facebook.pt
 0.0.0.0 facebook.security.formatinc.com
 0.0.0.0 facebook.selvatica.knowmonitor.com
+0.0.0.0 facebook.thietkewebdep.net
 0.0.0.0 facebook0067.webnode.com
 0.0.0.0 facebook10002158.blogspot.com
 0.0.0.0 facebook1029.github.io
@@ -376,7 +378,6 @@
 0.0.0.0 facebookloginsignin.com
 0.0.0.0 facebookma.cn
 0.0.0.0 facebookmetapagelogin.weebly.com
-0.0.0.0 facebooknotification-retricted.com
 0.0.0.0 facebookofsex.com
 0.0.0.0 facebookpage-noreplycenter.com
 0.0.0.0 facebookprofile.info
@@ -386,7 +387,6 @@
 0.0.0.0 facebooks.com.vn
 0.0.0.0 facebooksupport.gear.host
 0.0.0.0 facebookteste.comunidades.net
-0.0.0.0 facebooktotranscript.com
 0.0.0.0 facebookunblocking.com
 0.0.0.0 facebookupdates.reviews
 0.0.0.0 facebookvideo87.blogspot.com
@@ -515,8 +515,8 @@
 0.0.0.0 insh-nl-pixel-cynolytics.outshared.services
 0.0.0.0 instagram-account-verification.monikariecke.de
 0.0.0.0 instagram-cam.vercel.app
+0.0.0.0 instagram-clone-psi-one.vercel.app
 0.0.0.0 instagram-cutequeen57.netlify.app
-0.0.0.0 instagram-e.com.cn
 0.0.0.0 instagram-login-support.vercel.app
 0.0.0.0 instagram-login123.blogspot.com
 0.0.0.0 instagram-nameservers.com
@@ -531,7 +531,6 @@
 0.0.0.0 instagram-uson.vercel.app
 0.0.0.0 instagram-verification.com
 0.0.0.0 instagram-viperesport.4dq.com
-0.0.0.0 instagram-visualizza-post.info
 0.0.0.0 instagram.astv.ru
 0.0.0.0 instagram.com.account.login.security.yesil.xyz
 0.0.0.0 instagram.irancell-10g-free.rf.gd
@@ -593,6 +592,7 @@
 0.0.0.0 links.services.disqus.com
 0.0.0.0 linkshare.com
 0.0.0.0 linkshare.ne.jp
+0.0.0.0 littleheartscare-com.eolani.shared.1984.is
 0.0.0.0 ljnzqwfujzvk.com
 0.0.0.0 lmsukdmymagqfb.com
 0.0.0.0 lmufb.theswellscore.com
@@ -646,6 +646,7 @@
 0.0.0.0 matomo-shared-04.hosting.stucki.io
 0.0.0.0 matomo.dtfb.de
 0.0.0.0 matomo.fabrique.social.gouv.fr
+0.0.0.0 matomo.myofb.de
 0.0.0.0 matomo.sharemagazines.de
 0.0.0.0 mcds.wshareit.com
 0.0.0.0 me-fb.site
@@ -657,7 +658,7 @@
 0.0.0.0 meta-ads-manager-facebook-support-business-id100019655719.vercel.app
 0.0.0.0 meta-ads-manager-facebook-support-business-id200056679982.vercel.app
 0.0.0.0 metrics.inshared.nl
-0.0.0.0 metrics.np.project-game-social.cbae.dev.use1a.on.epicgames.com
+0.0.0.0 metrics.np.project-edfb.cbae.dev.use1a.on.epicgames.com
 0.0.0.0 metrics.semanadpesocial.com.br
 0.0.0.0 metrics.socialcatfish.com
 0.0.0.0 metrics.timeshares.com
@@ -898,6 +899,7 @@
 0.0.0.0 sharedrop.io
 0.0.0.0 sharedsecurely.myportfolio.com
 0.0.0.0 shareease.link
+0.0.0.0 sharefast572.tumblr.com
 0.0.0.0 sharefb.cnnd.vn
 0.0.0.0 sharefile-demo.s3.ap-southeast-2.amazonaws.com
 0.0.0.0 sharefile-us.com
@@ -952,7 +954,6 @@
 0.0.0.0 sharexy.com
 0.0.0.0 sharezips.net
 0.0.0.0 sharezones.biz
-0.0.0.0 sharing.clrshare.store
 0.0.0.0 sharp-shares.com
 0.0.0.0 shchuannuofb.com
 0.0.0.0 shining-shares.com
@@ -1014,7 +1015,6 @@
 0.0.0.0 socialentropy.com
 0.0.0.0 socialfacebook.com
 0.0.0.0 socialgamerhelpers.com
-0.0.0.0 socialgameshelp.com
 0.0.0.0 socialhot24.com
 0.0.0.0 socialleadssolutions.com
 0.0.0.0 sociallist.org
@@ -1218,15 +1218,14 @@
 0.0.0.0 www.nx.socialhabitmarketing.com
 0.0.0.0 www.prosocial69.com
 0.0.0.0 www.salesonfb.shop
-0.0.0.0 www.sharing.clrshare.store
 0.0.0.0 www.sociallypublish.com
 0.0.0.0 www.unblockfacebook.co.uk
 0.0.0.0 www2.shareswiss.de
 0.0.0.0 wwwfacebook.com
-0.0.0.0 wwwinstagram.vercel.app
 0.0.0.0 xhdxoyupdowfb.space
 0.0.0.0 xhvfteujanefb.website
 0.0.0.0 xing-share.com
+0.0.0.0 xn--btpanda-rfb.com
 0.0.0.0 xn--scurit-sociale-bkbf.fr
 0.0.0.0 xsharenode.com
 0.0.0.0 xtpwfb.xyz

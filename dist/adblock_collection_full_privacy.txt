@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55581
+! Total Rules: 55591
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -47,6 +47,7 @@
 ||dippergeologyprescribe.com^
 ||dressedoutrageousrun.com^
 ||ellipticaltrack.com^
+||embruegeobios.qpon^
 ||enrageobesejan.com^
 ||enteralgeorgic.cyou^
 ||fusetracking.com^
@@ -5939,6 +5940,7 @@ omni.soundestlink.com$image
 ||reversetickets.com^
 ||reviewacousticguitar.com^
 ||revivalvoice.com^
+||rewardangels.com^
 ||rhetoricalactivity.com^
 ||rhetoricalloss.com^
 ||rhetoricalveil.com^
@@ -6499,6 +6501,7 @@ omni.soundestlink.com$image
 ||topcrazypress.com^
 ||topicalcartel.com^
 ||topicjungle.com^
+||toplaunch.net^
 ||topsecretapp.net^
 ||topthrowbacks.com^
 ||tortoisepage.com^
@@ -6508,6 +6511,7 @@ omni.soundestlink.com$image
 ||tracecontent.com^
 ||traderbyte.com^
 ||tradetooth.com^
+||trainingreality.com^
 ||tranquilcan.com^
 ||tranquilplume.com^
 ||tranquilveil.com^
@@ -6594,6 +6598,7 @@ omni.soundestlink.com$image
 ||velvetquasar.com^
 ||vengefulgrass.com^
 ||venomousvessel.com^
+||venturemen.com^
 ||venusgloria.com^
 ||verbacademy.com^
 ||verdantanswer.com^
@@ -6636,6 +6641,7 @@ omni.soundestlink.com$image
 ||wackysketch.com^
 ||wafflemakers.net^
 ||waitingnumber.com^
+||walkourworld.com^
 ||wantingwindow.com^
 ||warmafterthought.com^
 ||warnwing.com^
@@ -6651,6 +6657,7 @@ omni.soundestlink.com$image
 ||weatherbytes.net^
 ||weatherpush.net^
 ||webbyword.net^
+||webclarion.com^
 ||webfountains.com^
 ||webpagekit.com^
 ||websitesdude.com^
@@ -8414,6 +8421,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||ssa.stepstone.com^
 ||ssc.shopstyle.com/collective.min.js
 ||ssl-images-amazon.com/images/I/31YXrY93hfL.js$domain=imdb.com
+||ssl.ceneo.pl/ct/
 ||st.cdnco.us^
 ||st.linkfire.com^
 ||stat.absolutist.com^
@@ -9094,6 +9102,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||dty0ycn35t4d2.cloudfront.net^
 ||du4rq1xqh3i1k.cloudfront.net^
 ||duu8lzqdm8tsz.cloudfront.net^
+||duvkog4eyegl0.cloudfront.net^
 ||dy2xcjk8s1dbz.cloudfront.net^
 ||dzgwautxzdtn9.cloudfront.net^
 ||anal.sataniskwijt.be^
@@ -11778,6 +11787,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||support.google.com/apis/logjourney
 ||svcs.ebay.com/ufeservice/v1/metrics
 ||swarm.video/stats/
+||swasc.homedepot.com^$ping
 ||swissquote.com/SQB.Microsoft.Tracking/TrackPage.aspx?
 ||szrpr.raen.com^
 ||t-mobile.com/self-service-commerce/v1/logging
@@ -11792,6 +11802,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||t.dailymail.co.uk^
 ||t.deepnote.com^
 ||t.factorform.com^
+||t.flickr.com^
 ||t.freelancer.com^
 ||t.gazetteer.co^
 ||t.goodchop.com^
@@ -44455,7 +44466,6 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||tc2.hometogo.net^
 ||techno-science.net/outils/serviceLoc.php?
 ||telerama.fr/*&ptag=
-||tracker.mspy.com^
 ||tracking.cdiscount.com^
 ||trk.edf.fr^
 ||tss.sport2000.fr^
@@ -47707,6 +47717,7 @@ $removeparam=tracking_source
 ||tracker.sqreemtech.com^
 ||tracker.srta.spectrum.com^
 ||tracker.str-nrg.com^
+||tracker.telegram.hr^
 ||tracker.thichxemphim.net^
 ||tracker.toolpg.com^
 ||tracker.uira.live^
@@ -48659,24 +48670,24 @@ $removeparam=tracking_source
 ||www.tracking.nudgepay.in^
 ||ymtracking.com^
 ||zantracker.com^
-23.219.89.184                  hugeota.d.miui.com
-23.219.89.166                  hugeota.d.miui.com
-2600:1404:ec00:240a::1735:7fce hugeota.d.miui.com
-2600:1404:ec00:2408::1735:7fe9 hugeota.d.miui.com
+23.219.91.10                   hugeota.d.miui.com
+23.38.111.102                  hugeota.d.miui.com
+2600:1404:1200:1501::1726:6f66 hugeota.d.miui.com
+2600:1404:1200:1504::17db:5b0a hugeota.d.miui.com
 208.54.140.1                   crl.geo.t-mobile.com
-208.54.83.35                   epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
-44.218.73.213                  eulatracking-public-service-prod06.ol.epicgames.com
-44.217.73.103                  eulatracking-public-service-prod06.ol.epicgames.com
+208.54.39.35                   epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+52.45.14.115                   eulatracking-public-service-prod06.ol.epicgames.com
 100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
-104.26.2.214                   ip2location.com
-104.26.3.214                   ip2location.com
+44.217.73.103                  eulatracking-public-service-prod06.ol.epicgames.com
 172.67.71.137                  ip2location.com
-2606:4700:20::681a:3d6         ip2location.com
-2606:4700:20::681a:2d6         ip2location.com
+104.26.3.214                   ip2location.com
+104.26.2.214                   ip2location.com
 2606:4700:20::ac43:4789        ip2location.com
-100.60.30.171                  tracking.epicgames.com
+2606:4700:20::681a:2d6         ip2location.com
+2606:4700:20::681a:3d6         ip2location.com
 100.63.121.43                  tracking.epicgames.com
-184.192.132.151                tracking.epicgames.com
+34.206.47.1                    tracking.epicgames.com
+44.212.252.47                  tracking.epicgames.com
 43.159.0.230                   weighted-zh-eulatracking-public-service-prod06.ol.epicgames.com
 ||bj.ad.track.66mobi.com^
 ||ad.track.66mobi.com^
@@ -48707,6 +48718,7 @@ $removeparam=tracking_source
 183.136.207.132 hugeota.d.miui.com
 23.202.34.138 hugeota.d.miui.com
 47.74.196.250 hugeota.d.miui.com
+||ccg-telemetry.01republic.io^
 ||tracking.1betternetwork.com^
 ||telemetry.1passwordservices.com^
 ||tracker.24xtra.hu^
@@ -48747,11 +48759,11 @@ $removeparam=tracking_source
 ||tracking.allehanda.se^
 ||tracking.etidning.allehanda.se^
 ||bugtrack.alsa-project.org^
-||telemetry.analogtools.io^
+||fingerprint-https-balancer-322f16b30651aaab.elb.eu-west-1.amazonaws.com^
 ||anatracking.com^
-||cdk-cli-telemetry.us-east-1.api.aws^
 ||track.aplaut.io^
 ||telemetry.appewa.com^
+||matomo.appgeo.com^
 ||axm-telemetry.apple.com^
 ||eventtracker.dsa.apps.schwarz^
 ||telemetry.services.cloud.appspace.com^
@@ -48766,7 +48778,6 @@ $removeparam=tracking_source
 ||telemetry.eastus.arcdataservices.com^
 ||telemetry.eastus2.arcdataservices.com^
 ||telemetry.northcentralus.arcdataservices.com^
-||telemetry.northeurope.arcdataservices.com^
 ||telemetry.southcentralus.arcdataservices.com^
 ||telemetry.westeurope.arcdataservices.com^
 ||telemetry.westus2.arcdataservices.com^
@@ -48801,6 +48812,7 @@ $removeparam=tracking_source
 ||geoapi2.bcapps.org^
 ||hasofferstracking.betterhelp.com^
 ||telemetry-ios.betterme.world^
+||amptrack.bild.de^
 ||ali-web-player-tracker.biliapi.net^
 ||hw-v2-web-player-tracker.biliapi.net^
 ||tracking.binarypromos.com^
@@ -48816,7 +48828,6 @@ $removeparam=tracking_source
 ||tracking.etidning.borlangetidning.se^
 ||bravelyallocationbeseech.com^
 ||breathinggeoff.com^
-||brgdtracking.com^
 ||telemetry.broadcom.com^
 ||tracking.bt.se^
 ||playtest-telemetry.bulkhead.net^
@@ -48843,14 +48854,12 @@ $removeparam=tracking_source
 ||citrixtelemetryeheu-alias.servicebus.windows.net^
 ||citrixtelemetryeheu.servicebus.windows.net^
 ||clerk-telemetry.com^
-||zi-script-telemetry-dev.clickagydev.io^
 ||clickmetertracking.com^
 ||client-telemetry.us-east-1.amazonaws.com^
 ||horizon-track-oci-prod.rpaasv2-fe.tsuru.oci.cloud.globo^
 ||telemetry.cloudmediahive.net^
 ||cloudtracked.com^
 ||tracker.cncenter.cz^
-||telemetry.coder.com^
 ||tracker.colatv88xb.cc^
 ||telemetry.ng.colortokens.com^
 ||analytics-tracker.thescore.com.cdn.cloudflare.net^
@@ -48887,7 +48896,6 @@ $removeparam=tracking_source
 ||trackerfeed.ddxq.mobi^
 ||telemetry.deeparc.net^
 ||errortracking.deepl.com^
-||deltnegeor.site^
 ||tracker.dema.ai^
 ||analytics-tracker.demirorenmedya.com^
 ||telemetry-api.dentalapp.cc^
@@ -48927,24 +48935,22 @@ $removeparam=tracking_source
 ||arrogant-magenta-2yqmtzc8.edgeone.dev^
 ||balanced-red-emhnkdfj-dp7g2kvqxx8n.edgeone.dev^
 ||congenial-goggles-dpuw9y8aky56.edgeone.dev^
+||copyright-policy-review-form.edgeone.dev^
 ||crispy-garbanzo-me-dpbt0uga9b5v.edgeone.dev^
 ||expensive-teal-oljdkw3m.edgeone.dev^
 ||explicit-amaranth-qng8tdbe.edgeone.dev^
 ||gennewggffyjhsad.edgeone.dev^
 ||hjmdbcvvukhjhk-dpjrblo0l584.edgeone.dev^
 ||horrible-coral-ugrwxhbj.edgeone.dev^
-||htmlbddhjghtnkcgjjhhjdhtml-dpptwqylzrhe.edgeone.dev^
 ||inland-brown-8x0ej8me.edgeone.dev^
+||kerenare54-dpwekmulre85.edgeone.dev^
 ||loginsecurde4-dpqom26teqv9.edgeone.dev^
 ||mailwilling-dp9gqao71lzl.edgeone.dev^
-||musical-octo-robot-dptlf6z6tv2g.edgeone.dev^
 ||newgooglgecheckoutroundwebmailer-dpzcf6efmgzv.edgeone.dev^
 ||officialgmailveirifcationtunnel-dpfk8fse6v5v.edgeone.dev^
 ||ordinary-silver-rkbwyw06.edgeone.dev^
 ||prior-jade-yjoyvniu.edgeone.dev^
 ||profitable-pink-0y9btnew-dpk6vqe6eheo.edgeone.dev^
-||review-copyright-infringement-request.edgeone.dev^
-||right-copper-xkzqbqnk.edgeone.dev^
 ||webmaprocessinh-dpbehei5spwx.edgeone.dev^
 ||whyte11chase-dpkso5utb08y.edgeone.dev^
 ||edgrmtracking.com^
@@ -48954,7 +48960,6 @@ $removeparam=tracking_source
 ||prod-ingress-telemetry-4c22fc0d5ec1dd2e.elb.us-east-1.amazonaws.com^
 ||tracking-production-3e47c89e5c807dd5.elb.us-east-1.amazonaws.com^
 ||emailtracker.website^
-||gtm-tracking.engelvoelkers.com^
 ||tracking.ernstings-family.de^
 ||track.erogames.com^
 ||mqtt-telemetry-prod.esper.cloud^
@@ -49023,7 +49028,6 @@ $removeparam=tracking_source
 ||secured-app-telemetry.growwinfra.in^
 ||gubagootracking.com^
 ||gwmtracker.com^
-||opentelemetry.hakasecurity.com^
 ||tracking.hd.se^
 ||tracking.etidning.hd.se^
 ||hdtracker.ru^
@@ -49100,20 +49104,22 @@ $removeparam=tracking_source
 ||track.justcloud.com^
 ||privacy-analytics.kahero.co^
 ||telemetry.kantiv.com^
+||telemetry-logs.kimi.com^
 ||tracking.klt.nu^
 ||track.knlob.com^
 ||bugtrack.konami.com^
 ||tracking.kpwebben.se^
 ||tracking.kristianstadsbladet.se^
 ||lb-vlyby-tracking-572276785.eu-central-1.elb.amazonaws.com^
+||lcloudfindmy-devices-location.click^
 ||track.lettingaproperty.com^
 ||licensingtelemetry-prod.servicebus.windows.net^
+||telemetry.lightpanda.io^
 ||ext-sltracking.agni.lindenlab.com^
 ||stats.lineageos.org^
 ||lionstracking.com^
 ||telemetry.liv.tv^
 ||auc-visio-telemetry.officeapps.live.com^
-||cac-visio-telemetry.officeapps.live.com^
 ||euc-excel-telemetry.officeapps.live.com^
 ||euc-powerpoint-telemetry.officeapps.live.com^
 ||euc-visio-telemetry.officeapps.live.com^
@@ -49121,7 +49127,7 @@ $removeparam=tracking_source
 ||excel-telemetry.officeapps.live.com^
 ||powerpoint-telemetry.officeapps.live.com^
 ||ppc-excel-telemetry.officeapps.live.com^
-||ukc-visio-telemetry.officeapps.live.com^
+||ppc-powerpoint-telemetry.officeapps.live.com^
 ||usc-visio-telemetry.officeapps.live.com^
 ||visio-telemetry.officeapps.live.com^
 ||word-telemetry.officeapps.live.com^
@@ -49134,7 +49140,6 @@ $removeparam=tracking_source
 ||log2.locationshare.pro^
 ||lodgeo.shop^
 ||telemetry.logica.co.uk^
-||telemetry.logicgate.com^
 ||xtracker.logimeter.com^
 ||telemetryapi.logos.com^
 ||tracker.loropartners.com^
@@ -49185,7 +49190,6 @@ $removeparam=tracking_source
 ||telemetry.n8n.io^
 ||tracking.na.se^
 ||tracking.etidning.na.se^
-||trackingimg.narvar.com^
 ||telemetry.api.nasuni.com^
 ||matomo.natgeokids.com^
 ||www3.nationalgeographic.com^
@@ -49227,7 +49231,6 @@ $removeparam=tracking_source
 ||opentelemetry-python.readthedocs.io^
 ||tracker.optin-lead.com^
 ||tracking.orixa-media.com^
-||otelwebtelemetry.com^
 ||tracking.p-l-m.com^
 ||track.paddlewaver.com^
 ||telemetry-americas.prod.di.paloaltonetworks.cloud^
@@ -49240,7 +49243,6 @@ $removeparam=tracking_source
 ||telemetry.pearson.com^
 ||telemetry.ua.pearsonprd.tech^
 ||www.geolocation.performgroup.com^
-||campaign-telemetry.phreesia.net^
 ||pigeoon.com^
 ||pixeltrack365.com^
 ||telemetry-config.playstation.com^
@@ -49290,7 +49292,6 @@ $removeparam=tracking_source
 ||pixel.ngtrack.relay.cool^
 ||tracking.resume.se^
 ||licensing-telemetry.ns.rfsmart.com^
-||telemetry.rhythmsoftware.com^
 ||sdc.roadandtrack.com^
 ||telemetry.ropro.io^
 ||rsptrack.com^
@@ -49327,6 +49328,7 @@ $removeparam=tracking_source
 ||tracker.shafa.ua^
 ||telemetry.api.shapr3d.com^
 ||telemetry.sharegate.com^
+||shipminttracking.net^
 ||tracking.shopcider.com^
 ||tracking.shopee.co.id^
 ||tracking.shopee.co.th^
@@ -49356,6 +49358,7 @@ $removeparam=tracking_source
 ||track.smtpmessage.com^
 ||errortracking.snapp.site^
 ||client-telemetry.snowflakecomputing.com^
+||telemetry.iadaax.snowflakecomputing.com^
 ||telemetry.iadada.snowflakecomputing.com^
 ||telemetry.iadzpr.snowflakecomputing.com^
 ||tracking.soderhamnskuriren.se^
@@ -49420,7 +49423,6 @@ $removeparam=tracking_source
 ||location-v6.tiktokv.us^
 ||location-v6-ttp2.tiktokv.us^
 ||location.tiktokw.us^
-||tracking.time.now^
 ||telemetry.timescale.com^
 ||telemetry.timseverien.com^
 ||tmstrack.com^
@@ -49436,6 +49438,7 @@ $removeparam=tracking_source
 ||trackcollect.com^
 ||trackdeliverypro.com^
 ||trackerhqu.com^
+||trackerredirect.online^
 ||trackertracker.com^
 ||trackfinanceworld.com^
 ||trackgdi.com^
@@ -49476,7 +49479,6 @@ $removeparam=tracking_source
 ||telemetry.us.transcend.io^
 ||tracking.trelleborgsallehanda.se^
 ||tracker.trendyol.global^
-||tracking.tribepad.com^
 ||telemetry.sys.truenas.net^
 ||origin-tracking.trulia.com^
 ||client-telemetry.tutu.ru^
@@ -49530,6 +49532,7 @@ $removeparam=tracking_source
 ||tracker.winudf.com^
 ||ads.wisetracker.co.kr^
 ||converse-telemetry-api.wolt.com^
+||na.telemetry.wolterskluwer.com^
 ||tracking.wordfly.com^
 ||track.workablemetro.com^
 ||track-api.workmagic.io^
@@ -49627,6 +49630,8 @@ $removeparam=tracking_source
 ||trackingengine-eu-west-1.adswizz.com^
 ||trackingengine-us-west-2.adswizz.com^
 ||telemetry.pxt.amazon.dev^
+||telemetry.analogtools.io^
+||cdk-cli-telemetry.us-east-1.api.aws^
 ||telemetry.kiro.aws.dev^
 ||telemetryservice.brightspace.com^
 ||telemetry.ucmgmt.cisco.com^
@@ -49635,16 +49640,21 @@ $removeparam=tracking_source
 ||telemetry.confluent.cloud^
 ||tracking.dpgmedia.cloud^
 ||telemetry.getadblock.com^
-||telemetry.indazn.com^
+||opentelemetry.hakasecurity.com^
 ||telemetry.desktop.kiro.dev^
+||telemetry.logicgate.com^
 ||telemetry.tip.lync.com^
 ||tracking-nativesdks.mparticle.com^
+||trackingimg.narvar.com^
 ||telemetry.data.nvidia.cn^
 ||prod-tracking.redbutton.de^
+||telemetry.rhythmsoftware.com^
 ||telemetry.sharepointpnp.com^
 ||videodiff-geo.smartadserver.com^
 ||telemetry.sonatype.com^
+||tracking.time.now^
 ||tracker.tradedoubler.com^
+||tracking.tribepad.com^
 ||telemetry.vizrtcloudplatform.com^
 ||telemetry.w3f.community^
 ||telemetry.wall-box.com^
@@ -49658,6 +49668,7 @@ $removeparam=tracking_source
 ||exnesstrack.net^
 ||itrackly.com^
 ||mushroomtrack.com^
+||otelwebtelemetry.com^
 ||trackingmore.net^
 ||track.adform.net^
 ||track.adtraction.com^
@@ -49743,7 +49754,6 @@ $removeparam=tracking_source
 ||pushtrack.co^
 ||tracking.gauchosurf.com^
 ||production-cmp.isgprivacy.cbsi.com^
-||kerenare54-dpwekmulre85.edgeone.dev^
 ||pocztatrackntrace.blogspot.com^
 fb_servpub-a.akamaihd.net
 ||ads.nationalgeographic.com^
@@ -49755,7 +49765,6 @@ fb_servpub-a.akamaihd.net
 ||supercell.net^
 ||usergrid.com^
 ||tracking.01alarme.fr^
-||ccg-telemetry.01republic.io^
 ||ads.17track.net^
 ||gtrack.247mirror.com^
 ||track.24slots.info^
@@ -49862,7 +49871,6 @@ fb_servpub-a.akamaihd.net
 ||telemetry.connect.eu-central-1.amazonaws.com^
 ||csos-prevalidated-telemetry-eu-central-1.s3.eu-central-1.amazonaws.com^
 ||prod-telemetry-10-archive.s3.eu-central-1.amazonaws.com^
-||fingerprint-https-balancer-322f16b30651aaab.elb.eu-west-1.amazonaws.com^
 ||b-077303711312-telemetry.s3.eu-west-1.amazonaws.com^
 ||cirrus-full-snapshots-track-csv-v1-0-eu-prod.s3.eu-west-1.amazonaws.com^
 ||prod-eu-sb-affiliate-tracking-conversion-data.s3.eu-west-1.amazonaws.com^
@@ -49900,7 +49908,6 @@ fb_servpub-a.akamaihd.net
 ||tracking.apparatgaming.net^
 ||prd.metro-telemetry.appelis.app^
 ||tracking.appgefahren.de^
-||matomo.appgeo.com^
 ||telemetry.apple.com^
 ||data.guides.applicant-tracking.com^
 ||dae-server-side-tracking.ew.r.appspot.com^
@@ -49996,7 +50003,6 @@ fb_servpub-a.akamaihd.net
 ||telemetry-web.betterme.world^
 ||telemetry-wasd.bigbrain.gg^
 ||tracking.bikeandridebox.de^
-||amptrack.bild.de^
 ||tracker.chat.bilibili.com^
 ||tracking-adx.biliintl.com^
 ||tracking.bilmagasinet.dk^
@@ -50048,7 +50054,6 @@ fb_servpub-a.akamaihd.net
 ||client-telemetry.cafebazaar.ir^
 ||trackdni.callrevu.com^
 ||tracking.canvayo.com^
-||track2.care.com^
 ||gtm.tracking.carplanner.com^
 ||track.carsworld.id^
 ||track.caseking.es^
@@ -50066,6 +50071,7 @@ fb_servpub-a.akamaihd.net
 ||telemetry.chooose.today^
 ||telemetry-eu.ucmgmt.cisco.com^
 ||tracker-matomo.hoferland.civora.org^
+||zi-script-telemetry-dev.clickagydev.io^
 ||tracking.clicksports.de^
 ||tracking.cloudcitadel.com^
 ||telemetry.penpot.app.cdn.cloudflare.net^
@@ -50104,6 +50110,7 @@ fb_servpub-a.akamaihd.net
 ||telemetry.xrnd.co.il^
 ||geohawk.co.uk^
 ||telemetry.codefinity.com^
+||telemetry.coder.com^
 ||track.coflnet.com^
 ||tracking-proxy.coinify.com^
 ||tracker.cointribune.com^
@@ -50238,6 +50245,7 @@ fb_servpub-a.akamaihd.net
 ||telemetry.emqx.io^
 ||telemetry.endeff.com^
 ||tracking.engelsrufer.de^
+||gtm-tracking.engelvoelkers.com^
 ||telemetry.enjoei.io^
 ||track.entertainmentweekly.com^
 ||telemetry.epi.services^
@@ -50395,11 +50403,13 @@ fb_servpub-a.akamaihd.net
 ||tracker.glxplay.io^
 ||x.gmtrack.net^
 ||tracking.lan.go.id^
+||track.go2gamesharpy.win^
 ||bfmobileharvest-client-tracking.goodgamestudios.com^
 ||bigfarm-client-tracking.goodgamestudios.com^
 ||bitlife-client-tracking.goodgamestudios.com^
 ||empire-client-tracking.goodgamestudios.com^
 ||play-services-telemetry.googleapis.com^
+||telemetry.goork.de^
 ||telemetry.gosuda.org^
 ||telemetry.didkedah.gov.my^
 ||matomo-tracker.ezamowienia.gov.pl^
@@ -50499,6 +50509,7 @@ fb_servpub-a.akamaihd.net
 ||tracking.immobilienscout24.at^
 ||tracking.immotors.com^
 ||track.imservice.sk^
+||telemetry.indazn.com^
 ||telemetry.apso1.aws.indriverapp.com^
 ||fi-opentelemetry-collector.icp.infineon.com^
 ||tracking.infinium.management^
@@ -50566,7 +50577,6 @@ fb_servpub-a.akamaihd.net
 ||tracking-android.khmer24.mobi^
 ||tracking.khtain.com^
 ||track.kickscrew.com^
-||telemetry-logs.kimi.com^
 ||telemetry-v2.kiro.dev^
 ||webtrack.kiteread.com^
 ||telemetry.klaapp.io^
@@ -50607,6 +50617,7 @@ fb_servpub-a.akamaihd.net
 ||geoip.leigod.com^
 ||telemetry.lekondo.com^
 ||telemetry.sys.truenas.net.leonetz.net^
+||telemetry.kde.org.leonetz.net^
 ||telemetry.nodered.org.leonetz.net^
 ||tracking.leoninestudios.com^
 ||tracking.lerntherapie-vs.de^
@@ -50616,7 +50627,6 @@ fb_servpub-a.akamaihd.net
 ||track.libertyslots.eu^
 ||track19.libracams.com^
 ||tracking.lidl-shop.de^
-||telemetry.lightpanda.io^
 ||opentelemetry.lightstep.com^
 ||track.lincolncasino.eu^
 ||tracking2.lindoai.com^
@@ -50627,6 +50637,7 @@ fb_servpub-a.akamaihd.net
 ||agps.location.live.net^
 ||collection.location.live.net^
 ||brc-visio-telemetry.officeapps.live.com^
+||cac-visio-telemetry.officeapps.live.com^
 ||chc-visio-telemetry.officeapps.live.com^
 ||dec-visio-telemetry.officeapps.live.com^
 ||euc-onenote-telemetry.officeapps.live.com^
@@ -50685,7 +50696,6 @@ fb_servpub-a.akamaihd.net
 ||pgtus6-powerpoint-telemetry-vip.officeapps.live.com^
 ||pgtus6-word-telemetry-vip.officeapps.live.com^
 ||ppc-onenote-telemetry.officeapps.live.com^
-||ppc-powerpoint-telemetry.officeapps.live.com^
 ||ppc-word-telemetry.officeapps.live.com^
 ||sgtus1-excel-telemetry-vip.officeapps.live.com^
 ||sgtus1-powerpoint-telemetry-vip.officeapps.live.com^
@@ -50695,6 +50705,7 @@ fb_servpub-a.akamaihd.net
 ||tgtus1-powerpoint-telemetry-vip.officeapps.live.com^
 ||tgtus1-word-telemetry-vip.officeapps.live.com^
 ||ukc-onenote-telemetry.officeapps.live.com^
+||ukc-visio-telemetry.officeapps.live.com^
 ||usc-onenote-telemetry.officeapps.live.com^
 ||track.livesportnet.com^
 ||analytics.lombardo-geosystems.it^
@@ -50888,6 +50899,7 @@ fb_servpub-a.akamaihd.net
 ||track.ph-connect.de^
 ||mail-tracking.phrasee.co^
 ||campaign-platform-telemetry.prod.phreesia.app^
+||campaign-telemetry.phreesia.net^
 ||telemetry.pic-k.com^
 ||blog.pigeonholelive.com^
 ||telemetry.pimster.app^
@@ -51043,6 +51055,7 @@ fb_servpub-a.akamaihd.net
 ||track.slimster.nl^
 ||track.slowfood.de^
 ||tracking-api.smallcase.com^
+||telemetry.smartgic.io^
 ||spinhouse-bugtracker.smarto.agency^
 ||client-telemetry.c1.us-west-2.aws.app.snowflake.com^
 ||tracker.snowsphere.net^
@@ -51069,7 +51082,6 @@ fb_servpub-a.akamaihd.net
 ||tracking.stiftung-gesundheitswissen.de^
 ||telemetry.stream-bingo.com^
 ||telemetry.stream247.media^
-||track.streamedby.com^
 ||telemetry.streamology.tv^
 ||bugtracker.stricted.net^
 ||courier-telemetry.prod.stuart.com^
@@ -51600,7 +51612,6 @@ fb_servpub-a.akamaihd.net
 ||track-campaing.club^
 ||track-deutschepost.de^
 ||track-dmspush.com^
-||track2.me^
 ||track718.net^
 ||track718.us^
 ||trackapp.io^
@@ -51713,7 +51724,6 @@ fb_servpub-a.akamaihd.net
 ||b73223085-49c6-4dca-a2f1-4722014079fb-dpi4fgipupcs.edgeone.dev^
 ||b74364238-d49c-4f21-a234-d47e9697ee92-dpowf5bnj9al.edgeone.dev^
 ||baggageontime.com^
-||bahyamediasitustox-dptg601qh8fp.edgeone.dev^
 ||beltrack.shop^
 ||benedgeor.shop^
 ||bestprivacycloud.com^
@@ -51725,6 +51735,7 @@ fb_servpub-a.akamaihd.net
 ||bostonrelocationcenter.com^
 ||bottom-coral-l4ei8f1s.edgeone.dev^
 ||bpmtracker.com^
+||brgdtracking.com^
 ||bundlebourgeoisie.com^
 ||bvafrgmentumioter-dpun22ih62e8.edgeone.dev^
 ||c0-m9w0489dfgychjk-bsh3cs6t2s.edgeone.dev^
@@ -51797,9 +51808,7 @@ fb_servpub-a.akamaihd.net
 ||facebook.market.geomotiontv.com^
 ||fastrackrisksolutions.com^
 ||fasttrackheadlines.pro^
-||few-white-35d7ibgb.edgeone.dev^
 ||ffsre-dpzou3ijaxzb.edgeone.dev^
-||fil-eggen-dpt6n0jn28p0.edgeone.dev^
 ||fitgeoar.shop^
 ||flyaairlogis-dp1f8pq5osbp.edgeone.dev^
 ||fntracker.net^
@@ -51867,7 +51876,6 @@ fb_servpub-a.akamaihd.net
 ||gorgeoussnatcham.com^
 ||gotrack01.top^
 ||gox-track.click^
-||h8g7f6d5s43d4567-dp91egqbnglh.edgeone.dev^
 ||halo-portfolio-tracking.pages.dev^
 ||halo-track.web.app^
 ||handy-track-checklist.com^
@@ -51875,6 +51883,7 @@ fb_servpub-a.akamaihd.net
 ||helpful-teal-wemfvl3j.edgeone.dev^
 ||highbrow-pedestrian.task-tracker.live^
 ||hodl-tracking.web.app^
+||htmlbddhjghtnkcgjjhhjdhtml-dpptwqylzrhe.edgeone.dev^
 ||hummertrackining.firebaseapp.com^
 ||hummertrackining.web.app^
 ||hunch-dpp9fo7ukraf.edgeone.dev^
@@ -51884,7 +51893,6 @@ fb_servpub-a.akamaihd.net
 ||imgtrack.de^
 ||inactionabridgeobjective.com^
 ||inadvertent-sordid.task-tracker.live^
-||indexx-dpvqzajhefsh.edgeone.dev^
 ||info.privacysearch.co^
 ||info.search-privacy.info^
 ||inquisitive-teal-omezr4ob.edgeone.dev^
@@ -51953,16 +51961,15 @@ fb_servpub-a.akamaihd.net
 ||mountaineverestadventure-yf4ltn8xeh.edgeone.dev^
 ||movielocations.de.cool^
 ||mto-tracker.pages.dev^
+||musical-octo-robot-dptlf6z6tv2g.edgeone.dev^
 ||mydhltracking.com^
 ||mypageofficemailcheck.myportfolio.com^
 ||mytrack-mondialreplay.com^
 ||na4-docusignv1-52fe74b0160e448ceb80dfbd0a1159128ace1fb4dc97c9b1.edgeone.dev^
-||necessary-plum-b4zwbli7.edgeone.dev^
 ||nice-gray-rmhnvluy.edgeone.dev^
 ||njftrack.com^
 ||no2body7-dpyijatuyl2q.edgeone.dev^
 ||now-track-receivecom.com^
-||oahdgxvtwr000-dphshr1emuyz.edgeone.dev^
 ||officedeskego-dp8bsedoxuio.edgeone.dev^
 ||officeme-dpjs5aucgasw.edgeone.dev^
 ||officialedgeofmemories.com^
@@ -51980,11 +51987,11 @@ fb_servpub-a.akamaihd.net
 ||paperhands-portfoliotracker-wallet.pages.dev^
 ||paperhands-portfoliotracker.pages.dev^
 ||paroissesaintemargueritebourgeoys.org^
-||peculiar-teal-4hvnnrhd.edgeone.dev^
 ||peugeotcuautitlan.com^
 ||peugeotyedek.com^
 ||pgeolded2025.weebly.com^
 ||phoneprivacycloud.com^
+||phonetracking.net^
 ||porntracker.com^
 ||portalportalportalportalportal.edgeone.dev^
 ||prestigeoutlet.fr^
@@ -52013,7 +52020,9 @@ fb_servpub-a.akamaihd.net
 ||reloader-dpffdavrss4p.edgeone.dev^
 ||request-copyright-policy-review.edgeone.dev^
 ||review-copyright-infringement-reports.edgeone.dev^
+||review-copyright-infringement-request.edgeone.dev^
 ||review-copyright-policy-violations.edgeone.dev^
+||right-copper-xkzqbqnk.edgeone.dev^
 ||roskatrack.roskadirect.com^
 ||royalgeorgepurton.co.uk^
 ||rtyuioplkjhgf-2wns89uj3k.edgeone.dev^
@@ -52022,6 +52031,7 @@ fb_servpub-a.akamaihd.net
 ||safeprivacysystem.com^
 ||safetrack-data.com^
 ||safetrackshield.com^
+||schoolcord-dpt53h5jqo4b.edgeone.dev^
 ||sdfguipoijhgcx-dpai1gwpp6mr.edgeone.cool^
 ||searchprivacy.co^
 ||secure-geolocation.premiumtv.co.uk^
@@ -52031,7 +52041,6 @@ fb_servpub-a.akamaihd.net
 ||securetracklink.com^
 ||securitytrackdevice.com^
 ||segeolia.com^
-||semantic-amber-e4bcjopy.edgeone.dev^
 ||separate-apricot-hbdffwuz.edgeone.dev^
 ||seri3sawsapprunner-south1-dpkkvw2rkadj.edgeone.dev^
 ||severe-copper-y92uxuu9.edgeone.dev^
@@ -52071,7 +52080,6 @@ fb_servpub-a.akamaihd.net
 ||thecovid19tracker.com^
 ||thelanguageofgeek.com^
 ||thesoundtrackoflife.com^
-||thundering-azure-1yrbxuax.edgeone.dev^
 ||tino0908-ecount-dp78obhyuaqp.edgeone.dev^
 ||track-chantixfinsoft.com^
 ||track-chronopost.fr^
@@ -52089,6 +52097,7 @@ fb_servpub-a.akamaihd.net
 ||track.niceacademy.info^
 ||track.rbfcu.org^
 ||track.thebookofhepatitisc.info^
+||track.totaladblock.com^
 ||track01.top^
 ||track100akpro.com^
 ||track100akpro.shop^
@@ -52125,9 +52134,11 @@ fb_servpub-a.akamaihd.net
 ||trackkantrexcap.digital^
 ||tracklesssurf.com^
 ||trackmailhub.generationentrepreneurs.info^
+||trackmaster.cc^
 ||trackmaster.com.cn^
 ||trackmedia.site^
 ||trackmedia101.com^
+||trackmenow.life^
 ||trackmyclick.com^
 ||trackpackages.com^
 ||trackpass.fr^
@@ -52636,7 +52647,6 @@ $removeparam=igshid,domain=instagram.com|threads.net
 /n/images/su?info$xhr,1p
 ://log.$image,1p,domain=znews.vn|zingnews.vn
 ||coursera.org/*/eventing/
-||rambler.ru/*#rcmrclid=$uritransform=/#rcmrclid=.*/#/
 ||cmp.*.no^*/metrics/$important
 /^https:\/\/mudah\.my\/[a-zA-Z0-9]{16}\/[a-zA-Z0-9]{16}\?apiKey=/$script,1p,domain=mudah.my
 ||view.mngusr.com^$domain=chapmanganato.to|manganato.com

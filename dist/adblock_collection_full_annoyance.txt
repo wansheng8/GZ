@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3701
+! Total Rules: 3702
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -1023,6 +1023,7 @@ bytegoofy.com/goofy/*/push.js?
 ||cdn.beaconpush.com^
 ||server1.beaconpush.com^
 ||brazzerssurvey.com^
+||buildingcompliancesurveys.com^
 ||burningpushing.info^
 ||cfpushsdevpw.com^
 ||push.connecto.io^
@@ -1052,7 +1053,6 @@ bytegoofy.com/goofy/*/push.js?
 ||sch-map.norstatsurveys.com^
 ||overlay.top^
 ||paypopup.com^
-||pmc-surveys.co.uk^
 ||popunder.com^
 ||popunder.net^
 ||popupblocker.com^
@@ -1103,7 +1103,6 @@ bytegoofy.com/goofy/*/push.js?
 ||api.xmpush.xiaomi.com^
 ||api.xmpush.global.xiaomi.com^
 ||register.xmpush.global.xiaomi.com^
-||survey.zohopublic.eu^
 ||targetpush.co.kr^
 ||popunder.
 ||popupclick.
@@ -3170,6 +3169,7 @@ follow-it-form-subscribe
 ||push.detik.com^
 ||pushads.detik.com^
 ||overlay.ebu-uer.be^
+||poll.push-na.fsapi.com^
 ||push-collector.happypointcard.com^
 ||img-intl-push.heytapimg.com^
 ||dcintl.push.heytapmobi.com^
@@ -3441,6 +3441,7 @@ follow-it-form-subscribe
 ||online-survey-service.com^
 ||paid-surveys-online.com^
 ||pinuppopup.com^
+||pmc-surveys.co.uk^
 ||popupbatmitzvah.com^
 ||post.onlinesurveyblog.com^
 ||postmaster.xpopup.com^
@@ -3600,7 +3601,7 @@ follow-it-form-subscribe
 *$popup,domain=promo-visits.site|shorterall.com
 |about:blank$popup,domain=satoshi-win.xyz
 ||funuzai.ru^$popup
-*$3p,popup,to=~com|~io|~net|~org|~to|~co|~mixdrop.ag|~vik1ngfile.site,from=1cloudfile.com|akirabox.com|akirabox.to|bowfile.com|buzzheavier.com|bzzhr.co|bzzhr.to|cg-gamespc.net|datavaults.co|dodi-repacks.site|file-me.top|file-upload.org|filemirage.com|fuckingfast.*|game-repack.site|gamedrive.*|getfreegames.net|go.zovo.ink|koramaup.com|mirrored.to|multiup.io|nathanmichaelphoto.com|ranoz.gg|repack-games.com|reloadedsteam.com|rootz.so|steam-repacks.net|steamgg.net|steamunderground.net|swiftuploads.com|torupload.com|up-4ever.net|uploadrar.*|usersdrive.com|vik1ngfile.site|worldofpcgames.com|zeilink.net|zovo2.top|zpaste.net|fileq.net
+*$3p,popup,to=~com|~io|~net|~org|~to|~co|~mixdrop.ag|~vik1ngfile.site,from=1cloudfile.com|akirabox.com|akirabox.to|bowfile.com|buzzheavier.com|bzzhr.co|bzzhr.to|cg-gamespc.net|datavaults.co|devuploads.com|dodi-repacks.site|file-me.top|file-upload.org|filemirage.com|fuckingfast.*|game-repack.site|gamedrive.*|getfreegames.net|go.zovo.ink|koramaup.com|mirrored.to|multiup.io|nathanmichaelphoto.com|ranoz.gg|repack-games.com|reloadedsteam.com|rootz.so|steam-repacks.net|steamgg.net|steamunderground.net|swiftuploads.com|torupload.com|up-4ever.net|uploadrar.*|usersdrive.com|vik1ngfile.site|worldofpcgames.com|zeilink.net|zovo2.top|zpaste.net|fileq.net
 /^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z][a-z][a-z]+\/\?&?[a-z]+=[a-zA-Z0-9+\/%=:_-]+[$&]/$3p,popup,domain=gg|ink|site|so|to|top
 /^https:\/\/[a-z0-9]+\.[a-z0-9]+\.[a-z][a-z][a-z]+\/\?&?[a-z]+=[a-zA-Z0-9+\/%=:_-]+[$&]/$3p,popup,match-case,to=cfd|cyou|sbs|shop|space|website
 /^https:\/\/link[0-9]+\.[a-z0-9]+\.[a-z][a-z][a-z]+\/\?&?data=[a-zA-Z0-9+\/%=:_-]+[$&]/$3p,popup,match-case,to=~com|~edu|~gov|~net|~org

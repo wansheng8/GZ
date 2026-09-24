@@ -832,6 +832,14 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
+    "target": "swasc.homedepot.com",
+    "winner": "@@||swasc.homedepot.com^",
+    "losers": [
+      "||swasc.homedepot.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
     "target": "tagmanager.google.com",
     "winner": "@@||tagmanager.google.com^$document",
     "losers": [
