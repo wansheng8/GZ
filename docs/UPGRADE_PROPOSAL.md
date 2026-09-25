@@ -336,6 +336,8 @@ PROCEDURAL_PSEUDOS = (
 
 ### A3（P3）未知 `!#` 指令块体未排除
 
+> **复核结论（2026-09-25）：不实施。** AdGuard 官方语法为 `!#safari_cb_affinity(<content_blockers>)` … `!#safari_cb_affinity`（结束为裸指令），块内是**正常规则**（如 `@@||example.org^`、`example.org#@#.adBanner`），只是被标注归入哪些 Safari 内容拦截器。排除块体会丢掉真实的放行/拦截规则。正确行为是：指令行按注释剔除、块内规则保留（即当前实现）。本节的 `(block)/(unblock)` 假设不成立，仅作历史记录保留；现状与测试见 §0.1 与 `tests/test_preprocess.py::test_preprocess_safari_cb_affinity_keeps_body`。
+
 #### 现状
 
 `preprocess.preprocess`（`preprocess.py:174-225`）只识别 `if`/`else`/`endif`/`include`；其它 `!#` 指令在 `preprocess.py:225` 按注释忽略，但**不改变 `stack`**，因此其后的规则行仍处于 `active()` 状态被原样保留。
