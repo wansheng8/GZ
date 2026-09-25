@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (0.0.0.0 domain), total 1240
+# Format: hosts (0.0.0.0 domain), total 1239
 0.0.0.0 01.sharedsource.org
 0.0.0.0 01free-share.com
 0.0.0.0 03.sharedsource.org
@@ -110,6 +110,7 @@
 0.0.0.0 analytics.ilook.ru
 0.0.0.0 analytics.onlyshare.io
 0.0.0.0 analytics.sharecare.com
+0.0.0.0 analytics.shareholders.dk
 0.0.0.0 analytics.social.unity.com
 0.0.0.0 analytics.socialbeat.io
 0.0.0.0 analytics.socialde.pt
@@ -148,9 +149,9 @@
 0.0.0.0 bearshare-music-downloads.com
 0.0.0.0 beesocial.me
 0.0.0.0 besocial.online
-0.0.0.0 best-credit-card-for-facebook-ads.com
 0.0.0.0 bestfb.de
 0.0.0.0 beur-hm-matomo-shared.azurewebsites.net
+0.0.0.0 bluetick-service-fb.vercel.app
 0.0.0.0 blumenausocial.org
 0.0.0.0 bndzjphiabefb.site
 0.0.0.0 bright-reef-7510.hosted.pageshare.ai
@@ -315,7 +316,6 @@
 0.0.0.0 facebook-support-team-980.pages.med.br
 0.0.0.0 facebook-support-team.com
 0.0.0.0 facebook-suspend-account.com
-0.0.0.0 facebook-trial.vercel.app
 0.0.0.0 facebook-verification-badge.com
 0.0.0.0 facebook-verified-center.com
 0.0.0.0 facebook-verify-business.com
@@ -515,6 +515,7 @@
 0.0.0.0 insh-nl-pixel-cynolytics.outshared.services
 0.0.0.0 instagram-account-verification.monikariecke.de
 0.0.0.0 instagram-cam.vercel.app
+0.0.0.0 instagram-clone-five-delta.vercel.app
 0.0.0.0 instagram-cutequeen57.netlify.app
 0.0.0.0 instagram-login-support.vercel.app
 0.0.0.0 instagram-login123.blogspot.com
@@ -531,6 +532,7 @@
 0.0.0.0 instagram-viperesport.4dq.com
 0.0.0.0 instagram.astv.ru
 0.0.0.0 instagram.com.account.login.security.yesil.xyz
+0.0.0.0 instagram.hantech.so
 0.0.0.0 instagram.irancell-10g-free.rf.gd
 0.0.0.0 instagram.shia.com.au
 0.0.0.0 instagram.signalhut.com
@@ -695,7 +697,6 @@
 0.0.0.0 noreplybusinessfacebook.com
 0.0.0.0 noreplybussinesfacebook.com
 0.0.0.0 northcountrysocial.com
-0.0.0.0 note-base-zz43.p-9m7daefb.workers.dev
 0.0.0.0 notificationbyfacebook.firebaseapp.com
 0.0.0.0 notificationbyfacebook.web.app
 0.0.0.0 nulledshare.com
@@ -920,7 +921,6 @@
 0.0.0.0 sharemefiles.ru
 0.0.0.0 sharementor.org
 0.0.0.0 sharempeg.com
-0.0.0.0 sharemyads.com
 0.0.0.0 sharenice.org
 0.0.0.0 shareno1wish.net
 0.0.0.0 sharepenknife.com
@@ -1125,7 +1125,6 @@
 0.0.0.0 tongdaifacebook.online
 0.0.0.0 toolfb.com
 0.0.0.0 toolshare.com.tr
-0.0.0.0 top-instagram.info
 0.0.0.0 tqbfb.com
 0.0.0.0 tqzofb.polus-mind.jp
 0.0.0.0 tr.facebook.com

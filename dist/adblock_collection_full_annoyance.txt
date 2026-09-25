@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3708
+! Total Rules: 3705
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -223,7 +223,6 @@
 ||172.255.103.171^$popup
 ||23.109.82.222^$popup
 ||adserving.unibet.com^$popup
-||awempire.com^$popup
 ||betvictor.com*&utm_campaign=$popup
 ||bongacams10.com^$popup
 ||cams.com/go/$popup
@@ -401,7 +400,6 @@
 ||link.365av.net^$popup
 ||promo.pixelsee.app^$popup
 ||s.click.aliexpress.com/e/*?dp=$popup
-||spinforluck.blog^$popup
 ||teenfinder.com/landing/$popup,third-party
 ||werbestandard.de/out2/$popup
 ||faptrex.com/fire/popup.js
@@ -1063,11 +1061,11 @@ bytegoofy.com/goofy/*/push.js?
 ||popunder.net^
 ||popup.su^
 ||popupdl.ir^
+||log.popupglobal.ai^
 ||popupplus.ir^
 ||popuptools.com^
 ||push2check.com^
 ||pushadv.biz^
-||pushbasitop.ru^
 ||zebra.pushbullet.com^
 ||pushcode.jp^
 ||pushers.info^
@@ -1082,6 +1080,7 @@ bytegoofy.com/goofy/*/push.js?
 ||rexpush.info^
 ||richpopup.com^
 ||rocket-push.com^
+||silverpush.com^
 ||smartpush0.info^
 ||subscribepage.com^
 ||subscribepage.io^
@@ -1090,6 +1089,8 @@ bytegoofy.com/goofy/*/push.js?
 ||widget.surveymonkey.com^
 ||www.surveynetworks.com^
 ||www.surveysite.com^
+||posthog.talkpush.com^
+||sentry-v1.talkpush.com^
 ||theshemalesurvey.com^
 ||toppopup.com^
 ||upushjxglaroiqnii.org^
@@ -2946,6 +2947,7 @@ follow-it-form-subscribe
 ||nordiskemedier.dk/remodal/
 ||outpostpublishingcoop.com/assets/v2/js/outpost-pub.js
 ||pico.tools/load/build.js
+||powr.io/popup/u/
 ||promio-connect.com/register/
 ||sixriversmedia.com/gfembed/$subdocument
 ||bnamic.com/newsletter-subscription.js
@@ -3180,7 +3182,6 @@ follow-it-form-subscribe
 ||device-ups.push.heytapmobi.com^
 ||id.push.heytapmobi.com^
 ||userprofile.push.heytapmobi.com^
-||analytics-survey.indeed.com^
 ||jpushsc.m.jd.com^
 ||popup.laybuy.com^
 ||popup.lifterapps.com^
@@ -3197,7 +3198,6 @@ follow-it-form-subscribe
 ||survey-deploy.platformrijksoverheid.nl^
 ||survey-metrics.platformrijksoverheid.nl^
 ||analytics.popup-records.de^
-||log.popupglobal.ai^
 ||newsletter.posthog.com^
 ||leibundseele-matomo.push-dein-business.de^
 ||matomo.push-dein-business.de^
@@ -3217,8 +3217,6 @@ follow-it-form-subscribe
 ||matomo.sportssurvey.de^
 ||gtm.surveymonkey.com^
 ||analytics.surveys.com^
-||posthog.talkpush.com^
-||sentry-v1.talkpush.com^
 ||ads.unipush.de^
 ||survey-analytics.webflow.io^
 ||survey-analytics-slider.webflow.io^
@@ -3313,6 +3311,7 @@ follow-it-form-subscribe
 ||pushanert.com^
 ||pushanishe.com^
 ||pushapp.org^
+||pushbasitop.ru^
 ||pushbroker.com^
 ||pushclk-10416.com^
 ||pushdelone.com^
@@ -3338,7 +3337,6 @@ follow-it-form-subscribe
 ||pushlycdn.com^
 ||pushmart.net^
 ||pushmaster.xyz^
-||pushmobile.info^
 ||pushmode.com^
 ||pushnative.com^
 ||pushnest.com^
@@ -3374,7 +3372,6 @@ follow-it-form-subscribe
 ||richpush.com^
 ||rocketpush.io^
 ||sendmepush.com^
-||silverpush.com^
 ||smpush.com^
 ||snapsurveys.com^
 ||sofinpushpile.com^

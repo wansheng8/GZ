@@ -1,23 +1,23 @@
 {
   "name": "adblock_collection_full_annoyance",
-  "total": 3708,
+  "total": 3705,
   "by_category": {
-    "annoyance": 3708
+    "annoyance": 3705
   },
   "by_kind": {
-    "network": 3708
+    "network": 3705
   },
   "by_source": {
-    "Fanboy Annoyance": 1959,
-    "ADrules Easylist": 474,
-    "Hagezi DNS Pro Plus": 247,
+    "Fanboy Annoyance": 1960,
+    "ADrules Easylist": 472,
+    "Hagezi DNS Pro Plus": 242,
     "ADrules anti-AD": 206,
     "ADrules DNS": 153,
     "uBO filters – Ads": 123,
     "ADrules AdRules": 93,
     "AdGuard – Ads": 92,
+    "217heidai adblockdns": 91,
     "oisd": 89,
-    "217heidai adblockdns": 88,
     "ADrules EasyListChina": 64,
     "banbendalao ADgk": 33,
     "fqnovel adrules": 29,

@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 1240
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 1239
 :: 01.sharedsource.org
 :: 01free-share.com
 :: 03.sharedsource.org
@@ -110,6 +110,7 @@
 :: analytics.ilook.ru
 :: analytics.onlyshare.io
 :: analytics.sharecare.com
+:: analytics.shareholders.dk
 :: analytics.social.unity.com
 :: analytics.socialbeat.io
 :: analytics.socialde.pt
@@ -148,9 +149,9 @@
 :: bearshare-music-downloads.com
 :: beesocial.me
 :: besocial.online
-:: best-credit-card-for-facebook-ads.com
 :: bestfb.de
 :: beur-hm-matomo-shared.azurewebsites.net
+:: bluetick-service-fb.vercel.app
 :: blumenausocial.org
 :: bndzjphiabefb.site
 :: bright-reef-7510.hosted.pageshare.ai
@@ -315,7 +316,6 @@
 :: facebook-support-team-980.pages.med.br
 :: facebook-support-team.com
 :: facebook-suspend-account.com
-:: facebook-trial.vercel.app
 :: facebook-verification-badge.com
 :: facebook-verified-center.com
 :: facebook-verify-business.com
@@ -515,6 +515,7 @@
 :: insh-nl-pixel-cynolytics.outshared.services
 :: instagram-account-verification.monikariecke.de
 :: instagram-cam.vercel.app
+:: instagram-clone-five-delta.vercel.app
 :: instagram-cutequeen57.netlify.app
 :: instagram-login-support.vercel.app
 :: instagram-login123.blogspot.com
@@ -531,6 +532,7 @@
 :: instagram-viperesport.4dq.com
 :: instagram.astv.ru
 :: instagram.com.account.login.security.yesil.xyz
+:: instagram.hantech.so
 :: instagram.irancell-10g-free.rf.gd
 :: instagram.shia.com.au
 :: instagram.signalhut.com
@@ -695,7 +697,6 @@
 :: noreplybusinessfacebook.com
 :: noreplybussinesfacebook.com
 :: northcountrysocial.com
-:: note-base-zz43.p-9m7daefb.workers.dev
 :: notificationbyfacebook.firebaseapp.com
 :: notificationbyfacebook.web.app
 :: nulledshare.com
@@ -920,7 +921,6 @@
 :: sharemefiles.ru
 :: sharementor.org
 :: sharempeg.com
-:: sharemyads.com
 :: sharenice.org
 :: shareno1wish.net
 :: sharepenknife.com
@@ -1125,7 +1125,6 @@
 :: tongdaifacebook.online
 :: toolfb.com
 :: toolshare.com.tr
-:: top-instagram.info
 :: tqbfb.com
 :: tqzofb.polus-mind.jp
 :: tr.facebook.com

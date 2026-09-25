@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 14858
+! Total Rules: 14856
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -1271,6 +1271,7 @@ browsershots.org#@#.advert_area
 @@||fdi.fiduciarydecisions.com/v/app/components/*/Analytics.js$script,~third-party
 @@||fichub.com/plugins/adobe/lib/AppMeasurement.js$domain=natgeotv.com
 @@||fichub.com/plugins/adobe/lib/VisitorAPI.js$domain=natgeotv.com
+@@||files.fm/js/analytics_events.js$~third-party
 @@||filme.imyfone.com/assets/js/gatrack.js$~third-party
 @@||firebase.google.com/docs/analytics/$~third-party
 @@||forum.djicdn.com/static/js/sensorsdata.min.js$script,domain=forum.dji.com
@@ -2310,8 +2311,8 @@ android-doc.com,apk.tw,chaojizhibo.net,chtoen.com,dizhishengcheng.com,doitwell.t
 @@||cbjs.baidu.com/js/m.js$domain=fxpan.com|iyingdi.com|pic.tiexue.net
 @@||ccb.com^*^ad
 @@||ccllaa.com^$generichide
-@@||cdn.jsdelivr.net^$script,domain=movieffm.net
-@@||cdn.staticfile.org^$script,domain=movieffm.net
+@@||cdn.jsdelivr.net^$script,domain=mvffm.net
+@@||cdn.staticfile.org^$script,domain=mvffm.net
 @@||cdnjs.cloudflare.com/ajax/libs/videojs-contrib-ads/*/videojs.ads.min.js$domain=linetv.tw
 @@||chaintv.xyz/homestatic/js/adjs.js
 @@||changyou.com^$generichide
@@ -3397,7 +3398,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@|http://$xhr,image,domain=cbsnews.com
 @@|http://*.net/*/$subdocument,third-party,domain=allanalpass.com|amy.gs|any.gs|cash4files.com|cash4links.co|deb.gs|drstickyfingers.com|dyo.gs|eafyfsuh.net|fapoff.com|filesonthe.net|freean.us|freegaysitepass.com|galleries.bz|goneviral.com|hornywood.tv|linkbabes.com|linkbucks.com|megaline.co|miniurls.co|picbucks.com|poontown.net|qqc.co|rqq.co|sasontnwc.net|seriousdeals.net|sexpalace.gs|theseblogs.com|theseforums.com|tinylinks.co|tnabucks.com|tubeviral.com|ultrafiles.net|urlbeat.net|whackyvidz.com|youfap.me|yyv.co|zatnawqy.net|zff.co
 @@|http://*adv$image,domain=naasongs.com|nsongs.com
-@@|http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html|$document
 @@|https://$image,domain=socketloop.com
 @@|https://$script,domain=sport1.de
 @@|https://$xhr,domain=depositfiles.com|depositfiles.org|dfiles.eu|dfiles.ru
@@ -3760,7 +3760,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||avclub.com^*/adManager.$script,~3p
 @@||avmask.com/eroex.js$script
 @@||avpgalaxy.net/gpt.js
-@@||awempire.com/*/css/*.css$domain=awempire.com
 @@||awempire.com^$generichide
 @@||awin1.com^$domain=bradsdeals.com|coupons.com|dealigg.com|dealnews.com|goodsearch.com|groupon.com|hotukdeals.com|moneysavingexpert.com|offers.com|retailmenot.com|slickdeals.net
 @@||ay.gy^$generichide
@@ -3817,7 +3816,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||blockadblock.com^$generichide
 @@||blocket.se/annonser^
 @@||blogthetech.com^$generichide
-@@||bloominc.jp/adtool/$~3p
 @@||book.com.tw/image/getImage?
 @@||bookwalker.com.tw/images/p_img/pc_ad*.png$~3p
 @@||boxfaucet.com/banner.gif$image
@@ -3872,7 +3870,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cash4files.com/intermission/loadTargetUrl$xhr
 @@||cash4links.co/intermission/loadTargetUrl$xhr
 @@||cashbackmonitor.com/js/prebid3.21.21.js$domain=cashbackmonitor.com
-@@||cbsistatic.com/*/js/compiled/siteAdsBidBarrel.js$domain=gamespot.com
 @@||ccm*.res.meizu.com/fileserver/operation/ad/img/*.png
 @@||cd.connatix.com/connatix.playspace.js$domain=inc.com
 @@||cd.connatix.com/connatix.playspace.js$domain=theverge.com
@@ -3931,6 +3928,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||cdn.lib.getjad.io/prebid/$domain=purepeople.com
 @@||cdn.maskinbladet.dk/*assets/templates/*/img/adblocker/ads.png
 @@||cdn.membrana.media/ntp/ym.js$domain=ntvspor.net
+@@||cdn.membrana.media/pub_scripts/common/videojs/videojs.ima.mod.min.js$domain=ntvspor.net
 @@||cdn.membrana.media/video/video.js$domain=ntvspor.net
 @@||cdn.needrom.com/advert3.js$script
 @@||cdn.optimizely.com/js/$domain=account.microsoft.com
@@ -5008,7 +5006,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||microsoft.com/*research/redirect$removeparam
 @@||mid-day.com/*/ads.js$script
 @@||milanworld.net^$generichide
-@@||milfzr.com^$generichide! url: https://raw.githubusercontent.com/DandelionSprout/adfilt/master/ClearURLs%20for%20uBo/clear_urls_uboified.txt
 @@||mimaletadepeliculas.blogspot.com^$generichide
 @@||minecraftbuildinginc.com^$generichide
 @@||minigame.aeriagames.jp/*/ae-tpgs-$~3p
@@ -5044,7 +5041,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||mp.mmvideocdn.com/mini-player/prod/voltax_mp.js$domain=si.com
 @@||mp4upload.com/embed-*.html$popup
 @@||ms.dzen.ru/?rn=$domain=mail.ru
-@@||msn.com/advertisement.ad.js
 @@||mssl.fwmrm.net/crossdomain.xml$domain=vplayer.nbcsports.com
 @@||mssl.fwmrm.net/libs/adm/*/AdManager.js$domain=southpark.*|southparkstudios.*
 @@||mssl.fwmrm.net/libs/adm/*/LinkTag2.js$domain=play.tv3.lt
@@ -6407,6 +6403,7 @@ bluedownload.*,urlbluemedia.*,bluemediadownload.*,bluemediafile.*,bluemediafiles
 bmvc2020-conference.com#@#div[id][style="width: 100%;"] > iframe[scrolling="no"][src^="http"][src*="?"][src*="="][src*="&"][width][height][frameborder="0"]
 bmw-club.cz#@#.reklama
 boatsandoutboards.co.uk#@#.ads-list
+bold.dk#@##ad_container
 bootdey.com#@##ads-banner
 brandbuffet.in.th#@#.category-advertorial
 bricozone.fr#@#.adsbygoogle
@@ -7069,6 +7066,7 @@ metacritic.com#@#.esite_list
 mfa.gov.cn,fmprc.gov.cn#@#.adbox2
 miasto.in#@#.adunit
 microsoftsecurityinsights.com#@#iframe[width="100%"][height="90"]
+minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
 minkch.com#@#.header-ad
 minorpatch.com#@#.AdBox
 mirrorace.com#@#.uk-margin-bottom
@@ -7834,6 +7832,8 @@ zol.com.cn#@##search_ad
 @@||union.video.qq.com/fcgi-bin/$script,domain=qq.com
 @@||tb.mgtv.com/sdk/*/ad-sdk.js^$script
 @@||js.tv.itc.cn/gg.seed.js
+@@||cdn.jsdelivr.net^$script,domain=movieffm.net
+@@||cdn.staticfile.org^$script,domain=movieffm.net
 tgfcer.com#@##content_adv
 @@||cctv.com/js/cntv_Advertise.js
 @@||alllaw.112.2o7.net^
@@ -11312,7 +11312,7 @@ cmp.tek.no,cmp.e24.no,minmote.no,cmp.vg.no#@#+js(trusted-click-element, .message
 akirabox.com,akirabox.to,bowfile.com,buzzheavier.com,bzzhr.co,bzzhr.to,datavaults.co,fuckingfast.*,multiup.io,rootz.so,usersdrive.com,vik1ngfile.site,zpaste.net#@#+js(set, Document.prototype.createElement.call, noopFunc)
 flipkart.com#@#div[data-id][style]:has([width][height][fill])
 @@/^https:\/\/www\.igorslab\.de\/wp-content\/themes\/igor\/js\/jquery-\d\.\d{1,2}\.\d{1,2}\.min\.js\?ver=/$script,1p,match-case
-@@||www.igorslab.de/community/$script,xhr,1p
+@@||www.igorslab.de/community/$script,xhr
 @@||www.igorslab.de/cdn-cgi/challenge-platform/$script,xhr
 @@||www.igorslab.de/cdn-cgi/scripts/*/cloudflare-static/rocket-loader.min.js
 @@||www.igorslab.de/wp-content/plugins/XFWP/assets/js/xfwp-admin.js
@@ -11330,10 +11330,10 @@ flipkart.com#@#div[data-id][style]:has([width][height][fill])
 @@||www.igorslab.de/wp-content/themes/herald/assets/js/min.js
 @@||www.igorslab.de/wp-includes/js/utils.min.js
 @@||www.igorslab.de/wp-includes/js/imagesloaded.min.js
-@@||www.igorslab.de/wp-admin/admin-ajax.php$xhr
+@@||www.igorslab.de/wp-admin/admin-ajax.php
 igorslab.de/community/#@#a[href^="/"][rel][target]
 igorslab.de/community/#@#img:remove-attr(/data-.+/)
-igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-tabbed:first-of-type:others()
+igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .widget-title, .xfwp-tabbed:first-of-type:others()
 wolt.com#@#div:has(> div > div > div > div > div > div > p:has-text(Sponsored))
 wolt.com#@#div:has(> div > div > div > div > div > p:has-text(Sponsored))
 sulpanaro.net#@#div[class^="sulpa-"]
@@ -12755,7 +12755,6 @@ alltransistors.com#@##reklama
 @@/dh-anti-adblocker/assets/js/prebid-ads-
 @@/dh-anti-adblocker/public/js/adex.js
 @@/libs/advertisement.js$domain=getfree.co.in|bagi.co.in|aztecafaucet.space|multifaucet.org|dogestar.website|claimbits.io|i-bits.io|gobits.io|faucet.shorterall.com|simplyfaucet.xyz|tv3.lv
-minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
 @@||claimlite.club/static/js/noadblock.js$domain=claimlite.club
 @@||api.poki.com/ads/houseads/video/$domain=vectaria.io
 @@||v.poki-cdn.com^$domain=vectaria.io
@@ -13327,6 +13326,7 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||cam-archive.com/js/fuckadblock.js
 @@||cam-archive.com^$generichide
 @@||hdliveextra-a.akamaihd.net/*/showads*.js
+@@||msn.com/advertisement.ad.js
 @@||traffichaus.com/scripts/*ad*.js$domain=hdzog.com
 @@||ad.atdmt.com/m/*account_id=*&source=cm&step=1^$domain=facebook.com|facebookwkhpilnemxj7asaniu7vnjjbiltxjqhye3mhbshg7kx5tfyd.onion
 @@||dato.porn/js/pop.js|
@@ -13659,7 +13659,6 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||airfind.com^$image,domain=headlinelogic.com
 @@||cdn.membrana.media/video/video.css$domain=ntvspor.net
 @@||cdn.membrana.media/video/ntp/desktop/videoSources.json$domain=ntvspor.net
-@@||cdn.membrana.media/pub_scripts/common/videojs/videojs.ima.mod.min.js$domain=ntvspor.net
 @@||simpforselti.com/captcha.js$domain=simpcity.cr
 @@||fourfourtwo.com/vite/assets/Ads/Ads.ts-BXJqYWBm.js$domain=fourfourtwo.com
 @@||dt.adsafeprotected.com/dt?adspot_id=$domain=247sports.com
@@ -13691,9 +13690,6 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||c.amazon-adsystem.com/aax2/apstag.js$domain=independentespanol.com
 @@||rmbooru.org/data/image/$domain=rmbooru.org
 @@||cdn.flashtalking.com/*.mp4?cb=$media,domain=safeframe.googlesyndication.com
-@@||securepubads.g.doubleclick.net/tag/js/gpt.js$domain=fifetoday.co.uk
-@@||securepubads.g.doubleclick.net/pagead/managed/js/gpt/$domain=fifetoday.co.uk
-@@||c.amazon-adsystem.com/aax2/apstag.js$domain=fifetoday.co.uk
 @@||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$domain=cercopes-z.com
 @@||t.fadijo.uno/redirect/$domain=winporn.net
 @@||embed.sendtonews.com/player*.php$domain=earth.com
@@ -13759,8 +13755,8 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||app.titsx.com*/search$domain=porn-plus.com
 @@||animeland.tv/pa.js$domain=animeland.tv
 @@||crbmpurga.ru/files/files/ads/$image
-@@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=thestar.co.uk
 @@||api.adguard-dns.io/api/
+@@||awempire.com/*/css/*.css$domain=awempire.com
 @@||theverge.com/_next/data/*.json
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=paroles2chansons.lemonde.fr
 @@||coinpayu.com/assets/ads_$domain=coinpayu.com
@@ -13795,7 +13791,6 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||betterads.org/hubfs/Mobile-Web-Ad-Experiences-Ranking-*.jpg
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=workandmoney.com
 @@||at.adtech.redventures.io/lib/dist/prod/bidbarrel-techrepublic-ta.min.js$domain=techrepublic.com
-@@||googletagservices.com/tag/js/gpt.js$domain=falkirkherald.co.uk
 @@||d13nu0oomnx5ti.cloudfront.net^$domain=rethmic.com
 @@||jmap.io/*/libs/Overture.js
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=topuniversities.com
@@ -13845,6 +13840,7 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||pubads.g.doubleclick.net/ssai/event/$xhr,domain=timesnownews.com
 @@||ads.adthrive.com/core/*/js/adthrive.min.js$domain=mediaite.com
 @@||ads.adthrive.com/core/gdpr/vendor/prebid/prebid.min.js$domain=mediaite.com
+@@||cbsistatic.com/*/js/compiled/siteAdsBidBarrel.js$domain=gamespot.com
 @@||ajax.cloudflare.com/cdn-cgi/scripts/*/cloudflare-static/rocket-loader.min.js$domain=cloudvideo.tv
 @@||googletagservices.com/tag/js/gpt.js$domain=xn--allestrungen-9ib.de
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_*.js$domain=xn--allestrungen-9ib.de
@@ -14495,6 +14491,7 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||s-plugins.wordpress.org
 @@||content.newegg.com$document
 @@weather.gov/xml/$document
+@@|http://ie.microsoft.com/testdrive/Performance/FishBowl/Default.html|$document
 @@||acid2.acidtests.org^$document
 @@||cargocollective.com/designs/$document
 @@||i-funbox.com/images/
@@ -14551,6 +14548,7 @@ minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_
 @@||api.friends.ponta.jp/api/$~3p
 @@||arukikata.com/images_ad/$image,~3p
 @@||bihoku-minpou.co.jp/img/ad_top.jpg$~3p
+@@||bloominc.jp/adtool/$~3p
 @@||candidate.hr-manager.net/Advertisement/PreviewAdvertisement.aspx$subdocument,~3p
 @@||catchapp.net/ad/img/$~3p
 @@||freeride.se/img/admarket/$~3p

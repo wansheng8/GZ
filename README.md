@@ -5,8 +5,8 @@
 <br/>
 
 [![Build](https://github.com/wansheng8/GZ/actions/workflows/build.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/build.yml)
-[![Rules](https://img.shields.io/badge/Total_Rules-800%2C370-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
-[![DNS](https://img.shields.io/badge/DNS_Domains-546%2C621-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
+[![Rules](https://img.shields.io/badge/Total_Rules-793%2C553-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
+[![DNS](https://img.shields.io/badge/DNS_Domains-539%2C764-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
 [![Sources](https://img.shields.io/badge/Upstream-60_sources-9d00ff?style=for-the-badge&labelColor=0d0d0d)](config/sources.yaml)
 [![License](https://img.shields.io/badge/License-MIT-39ff14?style=for-the-badge&labelColor=0d0d0d)](LICENSE)
 [![Update](https://img.shields.io/badge/Update-Daily-ff9c39?style=for-the-badge&labelColor=0d0d0d)]()
@@ -218,7 +218,7 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 <div align="center">
 
-<img src="assets/stats.svg" width="100%" alt="800,370 rules · 546,621 domains · 60 sources · 33.8万+ deduplicated"/>
+<img src="assets/stats.svg" width="100%" alt="793,553 rules · 539,764 domains · 60 sources · 33.8万+ deduplicated"/>
 
 </div>
 
@@ -227,12 +227,12 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 <!-- kind-stats:start -->
 | 类型 | 数量 | 归属层 |
 | :--- | ---: | :--- |
-| network | 636,201 | 网络拦截（DNS 从中提取纯域名） |
-| css | 146,147 | 元素隐藏 |
-| scriptlet | 17,513 | 元素隐藏 |
+| network | 629,400 | 网络拦截（DNS 从中提取纯域名） |
+| css | 146,129 | 元素隐藏 |
+| scriptlet | 17,515 | 元素隐藏 |
 | html | 508 | 元素隐藏 |
 | js | 1 | 元素隐藏 |
-| **合计** | 800,370 | — |
+| **合计** | 793,553 | — |
 <!-- kind-stats:end -->
 
 ### 按类别订阅
@@ -242,22 +242,22 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 <!-- category-stats:start -->
 | 类别 | 数量 | 订阅 |
 | :--- | ---: | :--- |
-| network | 486,796 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_network.txt) |
-| css | 143,239 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_css.txt) |
-| privacy | 55,584 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_privacy.txt) |
-| phishing | 37,477 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_phishing.txt) |
-| url | 26,342 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_url.txt) |
-| scriptlet | 17,465 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_scriptlet.txt) |
-| whitelist | 14,858 | 例外规则（仅供审计） |
-| malware | 9,657 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt) |
-| annoyance | 3,708 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_annoyance.txt) |
-| social | 1,945 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_social.txt) |
+| network | 480,101 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_network.txt) |
+| css | 143,220 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_css.txt) |
+| privacy | 55,595 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_privacy.txt) |
+| phishing | 37,309 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_phishing.txt) |
+| url | 26,390 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_url.txt) |
+| scriptlet | 17,467 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_scriptlet.txt) |
+| whitelist | 14,856 | 例外规则（仅供审计） |
+| malware | 9,675 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt) |
+| annoyance | 3,705 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_annoyance.txt) |
+| social | 1,943 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_social.txt) |
 | cookie | 1,682 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_cookie.txt) |
-| redirect | 870 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_redirect.txt) |
+| redirect | 869 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_redirect.txt) |
 | html | 505 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_html.txt) |
 | mining | 235 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_mining.txt) |
 | js | 1 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_js.txt) |
-| **合计** | 800,364 | — |
+| **合计** | 793,553 | — |
 <!-- category-stats:end -->
 
 <img src="assets/divider.svg" width="100%" alt=""/>

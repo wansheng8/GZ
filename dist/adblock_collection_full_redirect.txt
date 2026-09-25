@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 870
+! Total Rules: 869
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -394,7 +394,6 @@ host-cdn.net^$image,redirect-rule=32x32.png,domain=maxstream.video
 *$script,domain=wyze.com,redirect-rule=noopjs
 *$xhr,redirect-rule=nooptext,domain=zwielkopolski24.pl
 *$script,redirect-rule=noopjs,domain=coin-free.com|chinhnhacoban.com|95news.com
-||advertising.yahoo.com/favicon.ico$image,3p,redirect=32x32.png
 /prebid-ads.js$script,redirect=prebid-ads.js,domain=~exey.io
 /prebid-article-ad-ad-300x250.js$script,redirect=prebid-ads.js
 ||ads.youtube.com/|$xhr,3p,redirect=noop.txt

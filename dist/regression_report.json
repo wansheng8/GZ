@@ -1,4 +1,9 @@
 {
   "allow_violations": [],
-  "block_missing": []
+  "block_missing": [
+    {
+      "domain": "ads.microsoft.com"
+    }
+  ],
+  "block_missing_strict": false
 }
