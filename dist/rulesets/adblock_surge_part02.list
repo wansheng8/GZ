@@ -1,6 +1,10 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 546615
+# Total Rules: 546621
 # Part 2/2
+DOMAIN-SUFFIX,thqcrrmvtcnxx.online,REJECT
+DOMAIN-SUFFIX,thqvlqht.com,REJECT
+DOMAIN-SUFFIX,thr.hochzeitsrausch.com,REJECT
+DOMAIN-SUFFIX,thr.hotel-roduna.com,REJECT
 DOMAIN-SUFFIX,thrad-ad-server-alb-893608254.us-east-1.elb.amazonaws.com,REJECT
 DOMAIN-SUFFIX,thragmoth.com,REJECT
 DOMAIN-SUFFIX,thraittidz.com,REJECT
@@ -60360,6 +60364,7 @@ DOMAIN-SUFFIX,yldmgrimg.net,REJECT
 DOMAIN-SUFFIX,yldr.io,REJECT
 DOMAIN-SUFFIX,yldxtcgvchrck.site,REJECT
 DOMAIN-SUFFIX,yle-recommender-front.api.yle.fi,REJECT
+DOMAIN-SUFFIX,ylediftrvcae.com,REJECT
 DOMAIN-SUFFIX,yleqglofwg6ifb2tft92mn8.rest,REJECT
 DOMAIN-SUFFIX,ylesomur.pro,REJECT
 DOMAIN-SUFFIX,ylfhok.com,REJECT

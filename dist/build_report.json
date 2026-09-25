@@ -3,15 +3,15 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 800364,
-    "dns_domains": 546615,
+    "total_rules": 800370,
+    "dns_domains": 546621,
     "source_counts": {
       "Hagezi DNS Pro Plus": 255616,
       "oisd": 244119,
       "217heidai adblockdns": 214014,
       "ADrules DNS": 202169,
       "ADrules DNS (gp mirror)": 202169,
-      "AdGuardSDNSFilter": 182777,
+      "AdGuardSDNSFilter": 182797,
       "ADrules AdRules": 138451,
       "AdGuard – Ads": 137762,
       "Anti-AD Domains": 109081,
@@ -20,8 +20,8 @@
       "ADrules anti-AD": 95301,
       "Anti-AD Easylist": 95301,
       "Anti-AD (easylist)": 95301,
-      "EasyList (ABP)": 84025,
-      "EasyList (easylist.to)": 84025,
+      "EasyList (ABP)": 84028,
+      "EasyList (easylist.to)": 84028,
       "ADrules Easylist": 83958,
       "StevenBlack Hosts": 76522,
       "Phishing URL Blocklist": 68152,
@@ -69,7 +69,7 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 486796,
+      "network": 486802,
       "css": 143239,
       "privacy": 55584,
       "phishing": 37477,
@@ -85,21 +85,21 @@
       "mining": 235,
       "js": 1
     },
-    "root_domain_blocks": 322237,
+    "root_domain_blocks": 322242,
     "local_blocklist_rules": 0,
     "local_allowlist_rules": 0
   },
   "diff": {
     "total_rules": {
-      "current": 800364,
+      "current": 800370,
       "previous": 801455,
-      "delta": -1091,
+      "delta": -1085,
       "percent": -0.14
     },
     "dns_domains": {
-      "current": 546615,
+      "current": 546621,
       "previous": 547614,
-      "delta": -999,
+      "delta": -993,
       "percent": -0.18
     },
     "sources": {
@@ -236,10 +236,10 @@
         "percent": 0.0
       },
       "AdGuardSDNSFilter": {
-        "current": 182777,
+        "current": 182797,
         "previous": 182724,
-        "delta": 53,
-        "percent": 0.03
+        "delta": 73,
+        "percent": 0.04
       },
       "Anti-AD (adguard)": {
         "current": 100895,
@@ -290,15 +290,15 @@
         "percent": 0.0
       },
       "EasyList (ABP)": {
-        "current": 84025,
+        "current": 84028,
         "previous": 83968,
-        "delta": 57,
+        "delta": 60,
         "percent": 0.07
       },
       "EasyList (easylist.to)": {
-        "current": 84025,
+        "current": 84028,
         "previous": 83969,
-        "delta": 56,
+        "delta": 59,
         "percent": 0.07
       },
       "EasyList China (ABP)": {

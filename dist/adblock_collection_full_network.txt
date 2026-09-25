@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 486796
+! Total Rules: 486802
 ! ------------------------------------------
 &rb=&uuid=$third-party
 &subaffid=%$subdocument,third-party
@@ -217423,6 +217423,7 @@ fd3e:4f5a:5b81::1              dns.msftncsi.com
 ||zzrcz.com^
 ||zzux.com^
 ||tr.zzztube.com^
+||fairycarboys.qpon^
 ||dtvyyf.com^
 ||dtxudj.com^
 ||dtzgbt.com^
@@ -218001,6 +218002,7 @@ vkcdnservice.appspot.com^
 *ad.durasite.net^
 ||bar*.shinobi.jp^
 ||ad.jp.ap.valuecommerce.com^
+||app.bxapi.de^
 ||*.libaishuo.com^
 ||gwrtdp-tn690BFAdt.tclclouds.com^
 /^https:\/\/(a|c)\.[0-9a-f]{56}\.com$/
@@ -218147,6 +218149,7 @@ dlsdk.appsflyer.com^
 ||register.appsflyer.com^
 ||validate.appsflyer.com^
 ||wa.appsflyer.com^
+||metrics.li^
 ||w.inmobi.com^
 ||pbs.inmobi.com^
 -datareceiver.aki-game.net^
@@ -218346,37 +218349,53 @@ dlsdk.appsflyer.com^
 -pentaslot.
 -tototix.gif
 ||agfdjgyupbu.com^
+||aqauxyubsvtwg.space^
 ||azghddpyjgdss.website^
 ||biberonambler.qpon^
 ||bracessummery.cyou^
 ||chouanmiliolacarlet.qpon^
+||crooklesagunlax.qpon^
 ||czardasshammas.qpon^
 ||damselsslacken.cyou^
+||dgrtccqbovu.com^
 ||dogmantilers.qpon^
+||dvfcrgxzbqexm.online^
+||eahxyvlt.com^
+||espartocourtin.com^
 ||f89mnmlqrkpj3uk82v.cfd^
-||fairycarboys.qpon^
 ||gauntedgroszy.cfd^
 ||gumwclrwfrvit.site^
+||hottiecopygjedost.cfd^
 ||iewhqbogrxwbocs.com^
+||isfnapooafrxs.online^
+||jgchbqqejehmo.site^
+||jhwtungymkvlb.space^
 ||lbgbaswimupfs.online^
 ||lekkarlalamort.cyou^
 ||lsmvynokmpnio.online^
 ||mindfulbodily.qpon^
 ||nitreswatt.cyou^
+||opqnqewbgrjv.com^
 ||p2kuq8kjo5qoufx3fqbc179ntvx.rest^
 ||pagmkummap.in^
+||rdduxznjoytvg.online^
+||rwqovmoblraaq.top^
 ||shrcjieoyjjxn.online^
 ||sinkersabacus.qpon^
 ||sooreyngranum.cfd^
 ||sunny-measurement.pro^
+||susxjdzecysfv.online^
 ||tretsparica.qpon^
 ||uncdkhptiktno.site^
 ||uneatedlibitum.com^
 ||usqzhrkdqdggr.online^
+||vbaahplfcushf.site^
+||vdxsgutkrsyts.space^
 ||vnrezxxyxrsvm.online^
 ||weaponarratel.cfd^
 ||xbutrrnvmpsnu.online^
 ||xctoaoiwgd.com^
+||ylediftrvcae.com^
 ||bucksmein.com^
 ||byethost41.net^
 ||gmmads.com^
@@ -218390,6 +218409,7 @@ dlsdk.appsflyer.com^
 ||crdefault2.com^
 ||crlcw.link^
 ||grtyv.com^
+||gcvns12jp.com^
 ||1024wanzhai.
 ||22588888.com^
 ||2481e.com^
@@ -222449,20 +222469,6 @@ dlsdk.appsflyer.com^
 ||torvind.com^
 ||a4.overclockers.ua^
 ||novunu.football-plyus.net^
-||aqauxyubsvtwg.space^
-||dgrtccqbovu.com^
-||dvfcrgxzbqexm.online^
-||eahxyvlt.com^
-||espartocourtin.com^
-||hottiecopygjedost.cfd^
-||isfnapooafrxs.online^
-||jgchbqqejehmo.site^
-||opqnqewbgrjv.com^
-||rdduxznjoytvg.online^
-||rwqovmoblraaq.top^
-||vbaahplfcushf.site^
-||vdxsgutkrsyts.space^
-||gcvns12jp.com^
 /killcovid2021\.com/\d\.mp4/$mp4
 ||thepiratebay.org/sw.js
 ||jianshu.com/asimov/pdd_ads^

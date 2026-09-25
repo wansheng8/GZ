@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 546615
+# Total Rules: 546621
 # Part 1/2
 DOMAIN-SUFFIX,0--4.com,REJECT
 DOMAIN-SUFFIX,0--d.com,REJECT
@@ -55762,6 +55762,7 @@ DOMAIN-SUFFIX,app.bushnell.org,REJECT
 DOMAIN-SUFFIX,app.business.westernunion.com,REJECT
 DOMAIN-SUFFIX,app.butterflymx.com,REJECT
 DOMAIN-SUFFIX,app.bws.com.au,REJECT
+DOMAIN-SUFFIX,app.bxapi.de,REJECT
 DOMAIN-SUFFIX,app.byjus.com,REJECT
 DOMAIN-SUFFIX,app.byutickets.com,REJECT
 DOMAIN-SUFFIX,app.c.bloomberg.com,REJECT
@@ -115049,6 +115050,7 @@ DOMAIN-SUFFIX,crooked.click,REJECT
 DOMAIN-SUFFIX,crookedchange.com,REJECT
 DOMAIN-SUFFIX,crookedcreature.com,REJECT
 DOMAIN-SUFFIX,crookedsingle.pro,REJECT
+DOMAIN-SUFFIX,crooklesagunlax.qpon,REJECT
 DOMAIN-SUFFIX,crookniiecks.info,REJECT
 DOMAIN-SUFFIX,crooks-taylor.com,REJECT
 DOMAIN-SUFFIX,croomaingly.com,REJECT
@@ -226760,6 +226762,7 @@ DOMAIN-SUFFIX,jhvzpcfg.biz,REJECT
 DOMAIN-SUFFIX,jhwap.cn,REJECT
 DOMAIN-SUFFIX,jhwdpdnwej.net,REJECT
 DOMAIN-SUFFIX,jhwj88.com,REJECT
+DOMAIN-SUFFIX,jhwtungymkvlb.space,REJECT
 DOMAIN-SUFFIX,jhwwtm.idmarket.com,REJECT
 DOMAIN-SUFFIX,jhzfwl.cn,REJECT
 DOMAIN-SUFFIX,jhzwle.ryuryumall.jp,REJECT
@@ -281117,6 +281120,7 @@ DOMAIN-SUFFIX,metrics.lexusofwatertown.com,REJECT
 DOMAIN-SUFFIX,metrics.lexusofwayzata.com,REJECT
 DOMAIN-SUFFIX,metrics.lexussantamonicamobile.com,REJECT
 DOMAIN-SUFFIX,metrics.lhj.com,REJECT
+DOMAIN-SUFFIX,metrics.li,REJECT
 DOMAIN-SUFFIX,metrics.liberotech.fr,REJECT
 DOMAIN-SUFFIX,metrics.liberotech.it,REJECT
 DOMAIN-SUFFIX,metrics.lichthallemaag.ch,REJECT
@@ -441546,6 +441550,7 @@ DOMAIN-SUFFIX,sustinea.org,REJECT
 DOMAIN-SUFFIX,sustoordougn.net,REJECT
 DOMAIN-SUFFIX,susumufrits.com,REJECT
 DOMAIN-SUFFIX,susuvip.shop,REJECT
+DOMAIN-SUFFIX,susxjdzecysfv.online,REJECT
 DOMAIN-SUFFIX,suszarkawlosy.com,REJECT
 DOMAIN-SUFFIX,suszhi.com,REJECT
 DOMAIN-SUFFIX,sut.dailyfx.com,REJECT
@@ -457147,7 +457152,3 @@ DOMAIN-SUFFIX,thpthuynhthuckhang.edu.vn,REJECT
 DOMAIN-SUFFIX,thpvrn.icu,REJECT
 DOMAIN-SUFFIX,thq.com.au,REJECT
 DOMAIN-SUFFIX,thq.drdiegoschitini.com.br,REJECT
-DOMAIN-SUFFIX,thqcrrmvtcnxx.online,REJECT
-DOMAIN-SUFFIX,thqvlqht.com,REJECT
-DOMAIN-SUFFIX,thr.hochzeitsrausch.com,REJECT
-DOMAIN-SUFFIX,thr.hotel-roduna.com,REJECT

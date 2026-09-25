@@ -1,6 +1,6 @@
 # Adblock Rule Collection (connection-layer ruleset)
 # rule-providers: { type: http, behavior: domain, format: yaml }
-# Total Domains: 546615
+# Total Domains: 546621
 payload:
   - '+.0--4.com'
   - '+.0--d.com'
@@ -55763,6 +55763,7 @@ payload:
   - '+.app.business.westernunion.com'
   - '+.app.butterflymx.com'
   - '+.app.bws.com.au'
+  - '+.app.bxapi.de'
   - '+.app.byjus.com'
   - '+.app.byutickets.com'
   - '+.app.c.bloomberg.com'
@@ -115050,6 +115051,7 @@ payload:
   - '+.crookedchange.com'
   - '+.crookedcreature.com'
   - '+.crookedsingle.pro'
+  - '+.crooklesagunlax.qpon'
   - '+.crookniiecks.info'
   - '+.crooks-taylor.com'
   - '+.croomaingly.com'
@@ -226761,6 +226763,7 @@ payload:
   - '+.jhwap.cn'
   - '+.jhwdpdnwej.net'
   - '+.jhwj88.com'
+  - '+.jhwtungymkvlb.space'
   - '+.jhwwtm.idmarket.com'
   - '+.jhzfwl.cn'
   - '+.jhzwle.ryuryumall.jp'
@@ -281118,6 +281121,7 @@ payload:
   - '+.metrics.lexusofwayzata.com'
   - '+.metrics.lexussantamonicamobile.com'
   - '+.metrics.lhj.com'
+  - '+.metrics.li'
   - '+.metrics.liberotech.fr'
   - '+.metrics.liberotech.it'
   - '+.metrics.lichthallemaag.ch'
@@ -441547,6 +441551,7 @@ payload:
   - '+.sustoordougn.net'
   - '+.susumufrits.com'
   - '+.susuvip.shop'
+  - '+.susxjdzecysfv.online'
   - '+.suszarkawlosy.com'
   - '+.suszhi.com'
   - '+.sut.dailyfx.com'
@@ -517511,6 +517516,7 @@ payload:
   - '+.yldr.io'
   - '+.yldxtcgvchrck.site'
   - '+.yle-recommender-front.api.yle.fi'
+  - '+.ylediftrvcae.com'
   - '+.yleqglofwg6ifb2tft92mn8.rest'
   - '+.ylesomur.pro'
   - '+.ylfhok.com'

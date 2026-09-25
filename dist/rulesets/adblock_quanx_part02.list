@@ -1,6 +1,10 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 546615
+# Total Rules: 546621
 # Part 2/2
+host-suffix, thqcrrmvtcnxx.online, reject
+host-suffix, thqvlqht.com, reject
+host-suffix, thr.hochzeitsrausch.com, reject
+host-suffix, thr.hotel-roduna.com, reject
 host-suffix, thrad-ad-server-alb-893608254.us-east-1.elb.amazonaws.com, reject
 host-suffix, thragmoth.com, reject
 host-suffix, thraittidz.com, reject
@@ -60360,6 +60364,7 @@ host-suffix, yldmgrimg.net, reject
 host-suffix, yldr.io, reject
 host-suffix, yldxtcgvchrck.site, reject
 host-suffix, yle-recommender-front.api.yle.fi, reject
+host-suffix, ylediftrvcae.com, reject
 host-suffix, yleqglofwg6ifb2tft92mn8.rest, reject
 host-suffix, ylesomur.pro, reject
 host-suffix, ylfhok.com, reject

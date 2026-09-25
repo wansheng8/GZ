@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 546615
+# Total Rules: 546621
 # Part 1/2
 host-suffix, 0--4.com, reject
 host-suffix, 0--d.com, reject
@@ -55762,6 +55762,7 @@ host-suffix, app.bushnell.org, reject
 host-suffix, app.business.westernunion.com, reject
 host-suffix, app.butterflymx.com, reject
 host-suffix, app.bws.com.au, reject
+host-suffix, app.bxapi.de, reject
 host-suffix, app.byjus.com, reject
 host-suffix, app.byutickets.com, reject
 host-suffix, app.c.bloomberg.com, reject
@@ -115049,6 +115050,7 @@ host-suffix, crooked.click, reject
 host-suffix, crookedchange.com, reject
 host-suffix, crookedcreature.com, reject
 host-suffix, crookedsingle.pro, reject
+host-suffix, crooklesagunlax.qpon, reject
 host-suffix, crookniiecks.info, reject
 host-suffix, crooks-taylor.com, reject
 host-suffix, croomaingly.com, reject
@@ -226760,6 +226762,7 @@ host-suffix, jhvzpcfg.biz, reject
 host-suffix, jhwap.cn, reject
 host-suffix, jhwdpdnwej.net, reject
 host-suffix, jhwj88.com, reject
+host-suffix, jhwtungymkvlb.space, reject
 host-suffix, jhwwtm.idmarket.com, reject
 host-suffix, jhzfwl.cn, reject
 host-suffix, jhzwle.ryuryumall.jp, reject
@@ -281117,6 +281120,7 @@ host-suffix, metrics.lexusofwatertown.com, reject
 host-suffix, metrics.lexusofwayzata.com, reject
 host-suffix, metrics.lexussantamonicamobile.com, reject
 host-suffix, metrics.lhj.com, reject
+host-suffix, metrics.li, reject
 host-suffix, metrics.liberotech.fr, reject
 host-suffix, metrics.liberotech.it, reject
 host-suffix, metrics.lichthallemaag.ch, reject
@@ -441546,6 +441550,7 @@ host-suffix, sustinea.org, reject
 host-suffix, sustoordougn.net, reject
 host-suffix, susumufrits.com, reject
 host-suffix, susuvip.shop, reject
+host-suffix, susxjdzecysfv.online, reject
 host-suffix, suszarkawlosy.com, reject
 host-suffix, suszhi.com, reject
 host-suffix, sut.dailyfx.com, reject
@@ -457147,7 +457152,3 @@ host-suffix, thpthuynhthuckhang.edu.vn, reject
 host-suffix, thpvrn.icu, reject
 host-suffix, thq.com.au, reject
 host-suffix, thq.drdiegoschitini.com.br, reject
-host-suffix, thqcrrmvtcnxx.online, reject
-host-suffix, thqvlqht.com, reject
-host-suffix, thr.hochzeitsrausch.com, reject
-host-suffix, thr.hotel-roduna.com, reject
