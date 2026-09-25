@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55589
+! Total Rules: 55584
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -48670,24 +48670,24 @@ $removeparam=tracking_source
 ||www.tracking.nudgepay.in^
 ||ymtracking.com^
 ||zantracker.com^
-23.33.44.133                   hugeota.d.miui.com
-23.44.131.154                  hugeota.d.miui.com
-2600:141b:1c00:2a00::17d2:49e4 hugeota.d.miui.com
-2600:141b:1c00:2a04::17d2:4958 hugeota.d.miui.com
+23.211.177.198                 hugeota.d.miui.com
+23.211.177.234                 hugeota.d.miui.com
+2600:1406:4e00:600::17d3:b1ea  hugeota.d.miui.com
+2600:1406:4e00:601::17d3:b1c6  hugeota.d.miui.com
 208.54.110.9                   crl.geo.t-mobile.com
-208.54.2.99                    epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
-52.45.14.115                   eulatracking-public-service-prod06.ol.epicgames.com
-100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
+208.54.5.195                   epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
 44.217.73.103                  eulatracking-public-service-prod06.ol.epicgames.com
+100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
+52.45.14.115                   eulatracking-public-service-prod06.ol.epicgames.com
 104.26.3.214                   ip2location.com
 104.26.2.214                   ip2location.com
 172.67.71.137                  ip2location.com
-2606:4700:20::681a:2d6         ip2location.com
 2606:4700:20::681a:3d6         ip2location.com
 2606:4700:20::ac43:4789        ip2location.com
-100.63.121.43                  tracking.epicgames.com
-34.206.47.1                    tracking.epicgames.com
+2606:4700:20::681a:2d6         ip2location.com
 44.212.252.47                  tracking.epicgames.com
+34.206.47.1                    tracking.epicgames.com
+100.63.121.43                  tracking.epicgames.com
 43.159.0.230                   weighted-zh-eulatracking-public-service-prod06.ol.epicgames.com
 ||bj.ad.track.66mobi.com^
 ||ad.track.66mobi.com^
@@ -49673,6 +49673,7 @@ $removeparam=tracking_source
 ||tracking.realtor.com^
 ||tracking.shoptogether.buy.com^
 ||tracking.ustream.tv^
+||p3ter.fr/modules/statistics/
 ||guide-rank.com/guiderank-tracking^
 ||api.blibili.com/x/pd-proxy/tracker
 /track.gif^
@@ -51720,7 +51721,6 @@ fb_servpub-a.akamaihd.net
 ||b74364238-d49c-4f21-a234-d47e9697ee92-dpowf5bnj9al.edgeone.dev^
 ||baggageontime.com^
 ||beltrack.shop^
-||benedgeor.shop^
 ||bestprivacycloud.com^
 ||beyondthebeatentrack.com^
 ||biggeorge.com^
@@ -51966,7 +51966,6 @@ fb_servpub-a.akamaihd.net
 ||mytrack-mondialreplay.com^
 ||na4-docusignv1-52fe74b0160e448ceb80dfbd0a1159128ace1fb4dc97c9b1.edgeone.dev^
 ||nice-gray-rmhnvluy.edgeone.dev^
-||njftrack.com^
 ||no2body7-dpyijatuyl2q.edgeone.dev^
 ||now-track-receivecom.com^
 ||officedeskego-dp8bsedoxuio.edgeone.dev^
@@ -52088,18 +52087,15 @@ fb_servpub-a.akamaihd.net
 ||track-ty-45.zt6pl.com^
 ||track.aajewelry.de^
 ||track.bpchost.info^
-||track.careweigh.com^
 ||track.free-h.net^
 ||track.luxservices.info^
 ||track.niceacademy.info^
 ||track.rbfcu.org^
-||track.thebookofhepatitisc.info^
 ||track.totaladblock.com^
 ||track01.top^
 ||track100akpro.com^
 ||track100akpro.shop^
 ||track654.com^
-||trackable.icu^
 ||trackakpro100.shop^
 ||trackallnotifrewa.com^
 ||trackao.com^
@@ -52155,7 +52151,6 @@ fb_servpub-a.akamaihd.net
 ||umbrtrack.site^
 ||uniswap-track-online.pages.dev^
 ||uniswap-track.web.app^
-||untracking.icu^
 ||upgrade-dp2c1xqj8ejo.edgeone.dev^
 ||uvirttrack.site^
 ||valibotrack.site^

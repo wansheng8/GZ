@@ -5,8 +5,8 @@
 <br/>
 
 [![Build](https://github.com/wansheng8/GZ/actions/workflows/build.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/build.yml)
-[![Rules](https://img.shields.io/badge/Total_Rules-801%2C455-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
-[![DNS](https://img.shields.io/badge/DNS_Domains-547%2C614-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
+[![Rules](https://img.shields.io/badge/Total_Rules-800%2C364-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
+[![DNS](https://img.shields.io/badge/DNS_Domains-546%2C615-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
 [![Sources](https://img.shields.io/badge/Upstream-60_sources-9d00ff?style=for-the-badge&labelColor=0d0d0d)](config/sources.yaml)
 [![License](https://img.shields.io/badge/License-MIT-39ff14?style=for-the-badge&labelColor=0d0d0d)](LICENSE)
 [![Update](https://img.shields.io/badge/Update-Daily-ff9c39?style=for-the-badge&labelColor=0d0d0d)]()
@@ -218,7 +218,7 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 <div align="center">
 
-<img src="assets/stats.svg" width="100%" alt="801,455 rules · 547,614 domains · 60 sources · 33.8万+ deduplicated"/>
+<img src="assets/stats.svg" width="100%" alt="800,364 rules · 546,615 domains · 60 sources · 33.8万+ deduplicated"/>
 
 </div>
 
@@ -227,12 +227,12 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 <!-- kind-stats:start -->
 | 类型 | 数量 | 归属层 |
 | :--- | ---: | :--- |
-| network | 637,288 | 网络拦截（DNS 从中提取纯域名） |
-| css | 146,148 | 元素隐藏 |
-| scriptlet | 17,510 | 元素隐藏 |
+| network | 636,195 | 网络拦截（DNS 从中提取纯域名） |
+| css | 146,147 | 元素隐藏 |
+| scriptlet | 17,513 | 元素隐藏 |
 | html | 508 | 元素隐藏 |
 | js | 1 | 元素隐藏 |
-| **合计** | 801,455 | — |
+| **合计** | 800,364 | — |
 <!-- kind-stats:end -->
 
 ### 按类别订阅

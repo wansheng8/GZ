@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 143241
+! Total Rules: 143239
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -97505,8 +97505,8 @@ blog.dynasage.com,dotycat.com,phone-updates.com##.ckWrap
 ruijie.com##.cke2022fr
 computercity.com##.cky-box-top-right
 anyclip.com,ignitedfitness.com##.cky-consent-bar
-adresowo.pl,app.fanfix.io,becleverwithyourcash.com,betplay.com.co,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,edhardyoriginals.com,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,sidequestvr.com,soundshine.co.il,staples.ca,techcentral.ie,thehawksmoor.com,vertaa.fi##.cky-consent-container
-adresowo.pl,becleverwithyourcash.com,betplay.com.co,bluebird.hu,bluebirdinternational.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,staples.ca,thehawksmoor.com,vertaa.fi##.cky-overlay
+adresowo.pl,app.fanfix.io,becleverwithyourcash.com,betplay.com.co,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,edhardyoriginals.com,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,sidequestvr.com,soundshine.co.il,staples.ca,techcentral.ie,thehawksmoor.com,vertaa.fi##.cky-consent-container
+adresowo.pl,becleverwithyourcash.com,betplay.com.co,bluebird.hu,bluebirdinternational.com,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,staples.ca,thehawksmoor.com,vertaa.fi##.cky-overlay
 jackjones.com##.cky-overlay-custom
 clineva.com##.clineva-cookies-info
 oipc.bc.ca##.clsPopupContainer
@@ -110573,8 +110573,6 @@ beacons.ai##body,html:style(overflow: auto !important; position: initial !import
 5kporn.com##body,html:style(overflow: auto !important; position: initial !important;)
 royalunibrew.dk##div[class^="age-gate_component_"]
 royalunibrew.dk##body,html:style(overflow: auto !important; position: initial !important;)
-adresowo.pl,app.fanfix.io,becleverwithyourcash.com,betplay.com.co,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,edhardyoriginals.com,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,sidequestvr.com,soundshine.co.il,staples.ca,techcentral.ie,thehawksmoor.com,vertaa.fi##.cky-consent-container
-adresowo.pl,becleverwithyourcash.com,betplay.com.co,bluebird.hu,bluebirdinternational.com,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,staples.ca,thehawksmoor.com,vertaa.fi##.cky-overlay
 youtube.com##.ytlr-horizontal-list-renderer__items > .yt-virtual-list__container > .yt-virtual-list__item--visible.yt-virtual-list__item--selected.yt-virtual-list__item:has-text(Ad)
 funnyand.com##.ad-unit-desktop
 beforeitsnews.com##[src*="/banner"]
@@ -117484,8 +117482,8 @@ igorslab.de##.entry-content > #skio-article-bar ~ div[id][class]:not([class*="ig
 igorslab.de##img[src^="blob:http"]
 igorslab.de##.herald-above-footer
 igorslab.de##a[href^="/"][rel][target]
-igorslab.de##a[rel][target]:not([target$="blank"])
-igorslab.de##a[href^="https://www.igorslab.de"][href*="?"][rel]
+igorslab.de##a[rel][target]:not([target="blank"],[target="_blank"])
+igorslab.de##a[href^="https://www.igorslab.de"][rel="noopener external"][target]
 igorslab.de##span[aria-label][role="img"][style*="data:image"]
 igorslab.de##span[style]:has(svg path)
 igorslab.de##span[aria-label][role="img"][style*="data:image"] + a
@@ -117500,10 +117498,13 @@ igorslab.de##.ilgha-scale-frame:has-text(/Similar products|Ähnliche Artikel|相
 igorslab.de##div[style*="max-width:980px;"]
 igorslab.de##div[style="height: 90 px; text-align: left;"]
 igorslab.de##div[style^="display:block;position:relative;max-width:"]
-igorslab.de##div[class]:matches-attr("/^(?!data|aria).+$/"="/^[0-9A-Z_a-z-]+~/")
-igorslab.de###extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-widget:others()
+igorslab.de##div[id]:matches-attr("/trackid$/")
+igorslab.de###extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-tabbed:first-of-type:others()
 igorslab.de##[style*="!important"]
 igorslab.de##[style*="aspect-ratio"]
+igorslab.de##[style*="/"]
+igorslab.de##[style*="background-image:url"]
+igorslab.de##[style*="min("]
 igorslab.de##div[style*="blob:http"]:style(background: none !important;)
 orange.fr###o_carrepub:style(height: 1px; margin: 0; min-height: auto; visibility: hidden; width: 1px;)
 cyclingnews.com##.global-banner
@@ -123929,6 +123930,7 @@ hentai-id.tv###floatLayer2
 animecorner.me,zarabiajprzez24.pl,watchhentai.xxx,app-how-to-use-it.com,linuxcapable.com,designcorral.com,thecustomrom.com,digitalthinkerhelp.com,browserhow.com,sqlserveregitimleri.com,udemycourses.me,eckovation.com##.ai_widget
 pawastreams.*,nflbite.to,footybite.to,sportschamp.fun,afly.pro,topsporter.net,soccerstreams.football,mysocceraustralia.com,rayinfosports.com,hesgoals.top,sequencecard.xyz,totalsportek.soccer,metaporky.site,nbabite.to,cyfostreams.com,gamerarcades.com,bestreamsports.org,footy.to,mcrypto.club,greaterkashmir.com###id-custom_banner
 pawastreams.*,groundedtechs.com,rayinfosports.com,sequencecard.xyz,matchtime.co,sportspellz.com,bestreamsports.org,silverspoon.site###dismiss-btn
+minecraft-heads.com##body [id^="ad-"]
 nrl.com##.ladder__item--sportsbet-cell
 xcandid.vip,xcandid.top##.g1-row:has(#g1-secondary-nav)
 tradingref.com##div.sidebar:has(> div.ad-unit)
@@ -136884,9 +136886,6 @@ seirsanduk.com###fbox-background
 digital.bg##.banner-holder
 kliuki.bg##img[width="960"][height="90"]
 kliuki.bg###container > div[style="float:left;"] > div[style]
-mothership.sg###block-imu2
-mothership.sg###block-outstream2
-mothership.sg###block-outstream3
 cyberchef.org###workspace-wrapper > [id][style*="height"]:style(height: 100% !important)
 justjared.com##.banner-spacer-top:style(max-height: 50px !important;)
 justjared.com##[role="banner"]:style(top:0 !important)
@@ -137098,7 +137097,6 @@ w3schools.com###tryitLeaderboard ~ #container:style(top:48px;)
 w3schools.com##.trytopnav:style(top:0;)
 wunderground.com##.content-wrap #inner-wrap:style(height:100vh;)
 yourdictionary.com##.header:style(top:0;)
-xnostars.com##.promo
 4wank.com##.video-holder > center > :contains(/^Advertisement$/)
 freeuseporn.com##section > div > div:has(h2:contains(Friends))
 hdpornpics.net##.money:has(.century:contains(ADS))

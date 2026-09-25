@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 1948
+! Total Rules: 1945
 ! ------------------------------------------
 /wp-content/plugins/automatic-social-locker/*
 ||18cc51d1fb.com^
@@ -458,10 +458,10 @@ fastshare.cloud/top*?utm_source=*&utm_medium=*&utm_campaign=$domain=warforum.xyz
 ||www.sociallypublish.com^
 ||www2.shareswiss.de^
 ||xvid.social-previews.top^
-18.165.83.85                   epic-social-social-modules-prod.ol.epicgames.com
-18.165.83.30                   epic-social-social-modules-prod.ol.epicgames.com
-18.165.83.38                   epic-social-social-modules-prod.ol.epicgames.com
-18.165.83.84                   epic-social-social-modules-prod.ol.epicgames.com
+54.239.180.31                  epic-social-social-modules-prod.ol.epicgames.com
+54.239.180.45                  epic-social-social-modules-prod.ol.epicgames.com
+54.239.180.107                 epic-social-social-modules-prod.ol.epicgames.com
+54.239.180.96                  epic-social-social-modules-prod.ol.epicgames.com
 ||1-free-share-buttons.com^
 ||ads.socialreach.com^
 ||adshare.toutiao.com^
@@ -1459,7 +1459,6 @@ _social_footer_
 ||awek-twitter-viral-hot.tme-viral.com^
 ||beesocial.me^
 ||bestfb.de^
-||booshare.net^
 ||burnshare.net^
 ||business-facebook-covid19.com^
 ||business-resource-facebook-covid-19.com^
@@ -1477,7 +1476,6 @@ _social_footer_
 ||contact-instagram.com^
 ||continue-to-notification-facebook.com.maleeltd.com^
 ||copy.social^
-||copyright-videofb.net^
 ||cosocialsecurityguru.com^
 ||covidsocialets.com^
 ||covidsocialsecurity.com^
@@ -1762,7 +1760,6 @@ _social_footer_
 ||social-evidence-566515.framer.app^
 ||social-marketplaces-217808.framer.app^
 ||social-need-439234.framer.app^
-||social-prime.fr^
 ||social-rights.com^
 ||social.agrodistribution.fr^
 ||social.eleveur-laitier.fr^
@@ -1800,7 +1797,6 @@ _social_footer_
 ||someshare.appspot.com^
 ||stoneville.bfb.asn.au^
 ||storage-e13.sharepoint-e13.workers.dev^
-||sxryfb.com^
 ||tame-share-631844.framer.app^
 ||tbqvmmfb.shop^
 ||techmshare.com^
@@ -1932,6 +1928,7 @@ $script,3p,denyallow=facebook.net|fbcdn.net,domain=javsek.net
 ||pagead2.googlesyndication.com/pagead/js/adsbygoogle.js$script,redirect=noop.js,domain=sharelinkgamepc.blogspot.com
 ||storage.fshare.vn/support/*-300x600-
 ||storage.fshare.vn/images/congtruongit.com_960x128.gif
+$xhr,3p,denyallow=mega.co.nz|mega.nz|libs.baidu.com|ilfcdn.li|bytecdntp.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|linkvertise.com|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|shrink.pe|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|cackle.me|googleoptimize.com|vuukle.com|chatango.com|twimg.com|google-analytics.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|imgsmail.ru|cloudflare.net|rabbitstream.net|x.com|pp.ua|discord.com,_,domain=everia.club|projectfreetv.cyou|skidrowreloaded.com|kickassanime.*|dlhd.*|nxbrew.net|ziperto.com|lilymanga.net|bentomanga.top|bigcomics.bid|brmangas.top|cmoa1.top|janime.top|jpraw.xyz|kakuyomu.in|kkraw.com|komiku.win|lectormanga.top|lermanga.top|manga1000.top|manga1001.win|manga1001.xyz|mangajp.top|mangakl.su|mangaraw.bid|mangavy.com|mangaz.win|scanita.top|shinigami-id.top|sushiscan.top|worldsports.me|poscitechs.xyz|harimanga.com|movieshubweb.com|animeflv.net|techcabal.net|nextgencloudtools.com|soap2day.day|flixrave.me|audioz.download|playdede.link|canna-power.to|canna.to|filecrypt.cc|dlhd.dad|3isk.icu|3isk.info|animesrbija.com|yts.lt|totalsportek.*|totalsportek.army|ext.to|eztvx.to|bypass.city|fileditchfiles.me|furry34.com|filecrypt.co|yts.*|yts.gg|yts.bz|streamtape.net|kaliscan.com
 $subdocument,3p,denyallow=disqus.com,domain=love4u.net
 ||cache.sgvafs.top/base/aHR0cHM6Ly9pY28uZGFnZS50b3Avc3RvcmFnZS91cGxvYWQvMjAyNTEwMTQvNjhlZDg3NWU2NTM2Zi53ZWJw.cache$image,domain=missav81.top|mj859.com|avx21.com|qmtrd.com|blog.cdsnb.com|frivk.com|formosafresh.com|artlabaichi.com|zhenbole.com|air886.com
 $script,3p,denyallow=googlvideo.com|doodcdn.io|intensedebate.com|vixcloud.co|cdn.plyr.io|rsc.cdn77.org|fastly.net|statically.io|sharecast.ws|b-cdn.net|bunnycdn.ru|bootstrapcdn.com|cdn.ampproject.org|cloudflare.com|cdn.staticfile.org|disqus.com|disquscdn.com|dmca.com|ebacdn.com|facebook.net|fastlylb.net|fbcdn.net|fluidplayer.com|fontawesome.com|github.io|google.com|googleapis.com|googletagmanager.com|gstatic.com|jquery.com|jsdelivr.net|jwpcdn.com|jwplatform.com|recaptcha.net|twitter.com|ulogin.ru|unpkg.com|userapi.com|vidazoo.com|vk.com|yastatic.net|ytimg.com|zencdn.net|youtube.com|googleoptimize.com|vuukle.com|chatango.com|twimg.com|hcaptcha.com|media-imdb.com|blogger.com|hwcdn.net|instagram.com|wp.com|fastcomments.com|plyr.io|cloudflare.net|rabbitstream.net|x.com|ssl.p.jwpcdn.com,_,domain=aniwave.se

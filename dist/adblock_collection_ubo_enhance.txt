@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31874
+! Total Rules: 31877
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -25457,9 +25457,9 @@ igorslab.de##img:remove-attr(/data-.+/)
 igorslab.de/community/#@#img:remove-attr(/data-.+/)
 igorslab.de##+js(no-fetch-if, %22vt%22)
 igorslab.de##.ilgha-scale-frame:has-text(/Similar products|Ähnliche Artikel|相似产品/)
-igorslab.de##div[class]:matches-attr("/^(?!data|aria).+$/"="/^[0-9A-Z_a-z-]+~/")
-igorslab.de###extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-widget:others()
-igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-widget:others()
+igorslab.de##div[id]:matches-attr("/trackid$/")
+igorslab.de###extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-tabbed:first-of-type:others()
+igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-tabbed:first-of-type:others()
 igorslab.de##div[style*="blob:http"]:style(background: none !important;)
 wolt.com#@#div:has(> div > div > div > div > div > div > p:has-text(Sponsored))
 wolt.com#@#div:has(> div > div > div > div > div > p:has-text(Sponsored))
@@ -27224,6 +27224,8 @@ linkneverdie.com###adsqca:style(height: 20px!important; position: absolute!impor
 linkneverdie.com###adquangcao:style(position: absolute!important; left: -3000px!important;)
 ||linkneverdie.com/Ads/Micro/?size=$redirect=noop.txt,important,domain=linkneverdie.com,image,media,subdocument,stylesheet,script,xhr,other
 linkneverdie.com###wrapper:style(display: block!important;)
+kaliscan.com,moviesapi.to,watchluna.to,kagane.to,vidnest.fun,kora-sia.com,animeidhentai.com,nhplayer.com,tk2dl.com,miruro.tv,goplay.ml,goplay.su,animepahe.*,dopebox.to,flickystream.net,hivecomic.com,9xplayer.com,tempatwisata.pro,kuyhaa-me.site,igg-games.com,urlbluemedia.shop,kuyhaa.me,cosmic1.co,lodynet.link,pelismax.one,stbturbo.xyz,y2mate.*,gogoanimes.fi,vdbtm.shop,hdfilme.plus,get-to.link,zoro.se,moviekhhd.biz,drivemoe.com,watchsomuch.to,faselhd-embed.scdns.io,nxbrew.net,toonily.me,limetorrents.lol,pelisflix2.green,185.217.95.44,moviesjoyhd.to,faselhd.*,5.45.95.74,kissasian.*,opensubtitles.org,1337xx.to,lookmovie2.to,1l1l.to,file-upload.org,meetdownload.com,hentaiasmr.moe,witanime.org,yugenanime.tv,kissanimefree.cc,animeyt.es,anichin.top,monoschinos2.com,ssrmovies.singles,tuktukcinema.*,rule34hentai.net,animepahe.ru,vidsrc.*,123movies-hd.online,dramacool.*,123movies.*,jujmanga.com,srsone.top,phimgiz.net,holymanga.net,strims.*,kissanime.*,xmovies8.pw,moviesjoy.*,1337x.*,0gomovies.*,vipbox.lc,semawur.com,tamilblasters.unblockit.dev,shingekinokyojinepisodes.com,ekinomaniak.net,rexdlfile.com,downloadhub.ink,cuturl.in,123movie.date,hblinks.pro,akwams.*,desiupload.co,leechall.com,allcalidad.la,disasterscans.com,masteranime.es,savesubs.com,gdtot.*,mkvcinemas.*,akwam.*,mirrored.to,desustream.me,brbushare.com##+js(json-prune, *, pop_type)
+kaliscan.com,moviesapi.to,watchluna.to,kagane.to,vidnest.fun,kora-sia.com,animeidhentai.com,nhplayer.com,tk2dl.com,miruro.tv,goplay.ml,goplay.su,animepahe.*,dopebox.to,flickystream.net,hivecomic.com,9xplayer.com,tempatwisata.pro,kuyhaa-me.site,igg-games.com,urlbluemedia.shop,kuyhaa.me,cosmic1.co,lodynet.link,pelismax.one,stbturbo.xyz,y2mate.*,gogoanimes.fi,vdbtm.shop,hdfilme.plus,get-to.link,zoro.se,moviekhhd.biz,drivemoe.com,watchsomuch.to,faselhd-embed.scdns.io,nxbrew.net,toonily.me,limetorrents.lol,pelisflix2.green,185.217.95.44,moviesjoyhd.to,faselhd.*,5.45.95.74,kissasian.*,opensubtitles.org,1337xx.to,lookmovie2.to,1l1l.to,file-upload.org,meetdownload.com,hentaiasmr.moe,witanime.org,yugenanime.tv,kissanimefree.cc,animeyt.es,anichin.top,monoschinos2.com,ssrmovies.singles,tuktukcinema.*,rule34hentai.net,animepahe.ru,vidsrc.*,123movies-hd.online,dramacool.*,123movies.*,jujmanga.com,otakufr.co,srsone.top,phimgiz.net,holymanga.net,strims.*,kissanime.*,xmovies8.pw,moviesjoy.*,1337x.*,0gomovies.*,vipbox.lc,semawur.com,tamilblasters.unblockit.dev,shingekinokyojinepisodes.com,ekinomaniak.net,rexdlfile.com,downloadhub.ink,cuturl.in,123movie.date,hblinks.pro,akwams.*,desiupload.co,leechall.com,allcalidad.la,disasterscans.com,masteranime.es,savesubs.com,gdtot.*,mkvcinemas.*,akwam.*,mirrored.to##+js(json-prune, *, rot_url)
 tech8s.net,carbikenation.com,game5s.com,linkss.rcccn.in##[id^="droplink-step-"]:style(display: none !important;)
 tech8s.net,carbikenation.com,game5s.com,linkss.rcccn.in##.submitBtn#go_d[onclick="show()"]:style(display: none !important;)
 tech8s.net,carbikenation.com,game5s.com,linkss.rcccn.in##.submitBtn#go_d2:style(display: inline-block !important;)
@@ -27818,6 +27820,7 @@ scrolller.com##body > div.index-module-scss-module__SGgCpa__container:style(heig
 myhentaigallery.com##.featured-comic:style(min-height: auto !important;)
 myhentaigallery.com##.pagination-image:style(min-height: auto !important;)
 porndig.com##.main_menu > li.main_menu_item:has(> span.obfs > span.main_menu_txt:contains(/Local MILFs|AI Jerkoff/i))
+slashdot.org##+js(prevent-fetch, /sourceforge\.net\/about\/(?:(?:top|floating)_sitewide|sitewide_?(?:top|float))/, emptyStr)
 japan-whores.com###list_videos_related_videos > div[style]:contains(A d v e r t i s e m e n t)
 my.club##a[href^="https://lovescape.com/"]:style(display: none !important;)
 my.club###app > .page-wrapper > .page:style(padding-top: 0 !important;)

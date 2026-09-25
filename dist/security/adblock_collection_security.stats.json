@@ -1,26 +1,26 @@
 {
   "name": "adblock_collection_security",
-  "total": 47167,
+  "total": 47369,
   "by_category": {
-    "phishing": 37273,
-    "malware": 9658,
-    "mining": 236
+    "phishing": 37477,
+    "malware": 9657,
+    "mining": 235
   },
   "by_kind": {
-    "network": 47167
+    "network": 47369
   },
   "by_source": {
-    "Phishing URL Blocklist": 37106,
+    "Phishing URL Blocklist": 37302,
     "Online Malicious URL Blocklist": 8058,
     "uBO filters – Badware risks": 1362,
-    "oisd": 298,
+    "oisd": 296,
     "Hagezi DNS Pro Plus": 86,
     "ADrules DNS": 69,
     "217heidai adblockdns": 51,
     "ADrules anti-AD": 35,
     "ADrules EasyPrivacy": 28,
     "ADrules Easylist": 27,
-    "ScamBlocklist (adguard)": 10,
+    "ScamBlocklist (adguard)": 18,
     "AdGuard – Ads": 9,
     "ADrules AdRules": 7,
     "AdGuardSDNSFilter": 6,

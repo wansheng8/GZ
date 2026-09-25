@@ -2,14 +2,14 @@
   "policy_level": "safe",
   "min_confidence": 0.8,
   "allow_modifier": true,
-  "dns_eligible_network_rules": 10517,
+  "dns_eligible_network_rules": 10721,
   "dns_rejected_network_rules": 26756,
   "by_eligibility": {
-    "SAFE": 10517,
+    "SAFE": 10721,
     "REJECT": 26756
   },
   "by_reason": {
-    "pure_domain": 10516,
+    "pure_domain": 10720,
     "path_rule": 26711,
     "scoped_modifier": 2,
     "untranslatable": 41,

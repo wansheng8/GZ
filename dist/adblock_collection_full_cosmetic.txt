@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 164167
+! Total Rules: 164169
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -104640,8 +104640,8 @@ blog.dynasage.com,dotycat.com,phone-updates.com##.ckWrap
 ruijie.com##.cke2022fr
 computercity.com##.cky-box-top-right
 anyclip.com,ignitedfitness.com##.cky-consent-bar
-adresowo.pl,app.fanfix.io,becleverwithyourcash.com,betplay.com.co,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,edhardyoriginals.com,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,sidequestvr.com,soundshine.co.il,staples.ca,techcentral.ie,thehawksmoor.com,vertaa.fi##.cky-consent-container
-adresowo.pl,becleverwithyourcash.com,betplay.com.co,bluebird.hu,bluebirdinternational.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,staples.ca,thehawksmoor.com,vertaa.fi##.cky-overlay
+adresowo.pl,app.fanfix.io,becleverwithyourcash.com,betplay.com.co,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,edhardyoriginals.com,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,sidequestvr.com,soundshine.co.il,staples.ca,techcentral.ie,thehawksmoor.com,vertaa.fi##.cky-consent-container
+adresowo.pl,becleverwithyourcash.com,betplay.com.co,bluebird.hu,bluebirdinternational.com,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,staples.ca,thehawksmoor.com,vertaa.fi##.cky-overlay
 jackjones.com##.cky-overlay-custom
 clineva.com##.clineva-cookies-info
 oipc.bc.ca##.clsPopupContainer
@@ -120734,8 +120734,6 @@ beacons.ai##body,html:style(overflow: auto !important; position: initial !import
 royalunibrew.dk##div[class^="age-gate_component_"]
 royalunibrew.dk##body,html:style(overflow: auto !important; position: initial !important;)
 lighterusa.com#@##shopify-section-age-gate
-adresowo.pl,app.fanfix.io,becleverwithyourcash.com,betplay.com.co,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,edhardyoriginals.com,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,sidequestvr.com,soundshine.co.il,staples.ca,techcentral.ie,thehawksmoor.com,vertaa.fi##.cky-consent-container
-adresowo.pl,becleverwithyourcash.com,betplay.com.co,bluebird.hu,bluebirdinternational.com,cactusclubcafe.com,careline.co.uk,click2pharmacy.co.uk,controlup.com,delfi.ee,etfstream.com,extra.ie,johnryanbydesign.co.uk,kadencewp.com,kingtaps.com,newfoodmagazine.com,oiq.qc.ca,parisbaguette.com,publitas.com,qcs.co.uk,rendeljkinait.hu,scuffers.com,staples.ca,thehawksmoor.com,vertaa.fi##.cky-overlay
 tv.youtube.com##+js(trusted-replace-xhr-response, '"adPlacements"', '"no_ads"', /playlist\?list=|\/player(?:\?.+)?$|watch\?[tv]=/)
 m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.playerAds, undefined)
 m.youtube.com,music.youtube.com,tv.youtube.com,www.youtube.com,youtubekids.com,youtube-nocookie.com##+js(set, ytInitialPlayerResponse.adPlacements, undefined)
@@ -137831,8 +137829,8 @@ igorslab.de##img[src^="blob:http"]
 igorslab.de##.herald-above-footer
 igorslab.de##a[href^="/"][rel][target]
 igorslab.de/community/#@#a[href^="/"][rel][target]
-igorslab.de##a[rel][target]:not([target$="blank"])
-igorslab.de##a[href^="https://www.igorslab.de"][href*="?"][rel]
+igorslab.de##a[rel][target]:not([target="blank"],[target="_blank"])
+igorslab.de##a[href^="https://www.igorslab.de"][rel="noopener external"][target]
 igorslab.de##span[aria-label][role="img"][style*="data:image"]
 igorslab.de##span[style]:has(svg path)
 igorslab.de##span[aria-label][role="img"][style*="data:image"] + a
@@ -137849,11 +137847,14 @@ igorslab.de##.ilgha-scale-frame:has-text(/Similar products|Ähnliche Artikel|相
 igorslab.de##div[style*="max-width:980px;"]
 igorslab.de##div[style="height: 90 px; text-align: left;"]
 igorslab.de##div[style^="display:block;position:relative;max-width:"]
-igorslab.de##div[class]:matches-attr("/^(?!data|aria).+$/"="/^[0-9A-Z_a-z-]+~/")
-igorslab.de###extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-widget:others()
-igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-widget:others()
+igorslab.de##div[id]:matches-attr("/trackid$/")
+igorslab.de###extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-tabbed:first-of-type:others()
+igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-tabbed:first-of-type:others()
 igorslab.de##[style*="!important"]
 igorslab.de##[style*="aspect-ratio"]
+igorslab.de##[style*="/"]
+igorslab.de##[style*="background-image:url"]
+igorslab.de##[style*="min("]
 igorslab.de##div[style*="blob:http"]:style(background: none !important;)
 wolt.com#@#div:has(> div > div > div > div > div > div > p:has-text(Sponsored))
 wolt.com#@#div:has(> div > div > div > div > div > p:has-text(Sponsored))
@@ -138673,6 +138674,7 @@ trshow.info##iframe[name]:not([class]):not([id]):not([src])[style^="display:"]:r
 ru-clip.com###morev:style(position: absolute !important; left: -3000px !important;)
 ru-clip.com###morev
 ##.ad-top-728:not([style="width: 10px; height: 10px;"])
+minecraft-heads.com#@#.ad-placeholder:not(#filter_ads_by_classname):not(#detect_ad_empire):not(#detect):not(.adsbox)
 genelify.com###adblock-detector-wrapper
 satvoy.com##.adbCard
 satvoy.com##body > div[style^="position: fixed; inset: 0px;"][style*="backdrop-filter: blur"]
@@ -144154,6 +144156,8 @@ truyenqqhot.com##div[id^="ads_"]
 ##.top-r-ads
 ##.topbannerad
 ##.widget-sidebar-right-banner
+kaliscan.com,moviesapi.to,watchluna.to,kagane.to,vidnest.fun,kora-sia.com,animeidhentai.com,nhplayer.com,tk2dl.com,miruro.tv,goplay.ml,goplay.su,animepahe.*,dopebox.to,flickystream.net,hivecomic.com,9xplayer.com,tempatwisata.pro,kuyhaa-me.site,igg-games.com,urlbluemedia.shop,kuyhaa.me,cosmic1.co,lodynet.link,pelismax.one,stbturbo.xyz,y2mate.*,gogoanimes.fi,vdbtm.shop,hdfilme.plus,get-to.link,zoro.se,moviekhhd.biz,drivemoe.com,watchsomuch.to,faselhd-embed.scdns.io,nxbrew.net,toonily.me,limetorrents.lol,pelisflix2.green,185.217.95.44,moviesjoyhd.to,faselhd.*,5.45.95.74,kissasian.*,opensubtitles.org,1337xx.to,lookmovie2.to,1l1l.to,file-upload.org,meetdownload.com,hentaiasmr.moe,witanime.org,yugenanime.tv,kissanimefree.cc,animeyt.es,anichin.top,monoschinos2.com,ssrmovies.singles,tuktukcinema.*,rule34hentai.net,animepahe.ru,vidsrc.*,123movies-hd.online,dramacool.*,123movies.*,jujmanga.com,srsone.top,phimgiz.net,holymanga.net,strims.*,kissanime.*,xmovies8.pw,moviesjoy.*,1337x.*,0gomovies.*,vipbox.lc,semawur.com,tamilblasters.unblockit.dev,shingekinokyojinepisodes.com,ekinomaniak.net,rexdlfile.com,downloadhub.ink,cuturl.in,123movie.date,hblinks.pro,akwams.*,desiupload.co,leechall.com,allcalidad.la,disasterscans.com,masteranime.es,savesubs.com,gdtot.*,mkvcinemas.*,akwam.*,mirrored.to,desustream.me,brbushare.com##+js(json-prune, *, pop_type)
+kaliscan.com,moviesapi.to,watchluna.to,kagane.to,vidnest.fun,kora-sia.com,animeidhentai.com,nhplayer.com,tk2dl.com,miruro.tv,goplay.ml,goplay.su,animepahe.*,dopebox.to,flickystream.net,hivecomic.com,9xplayer.com,tempatwisata.pro,kuyhaa-me.site,igg-games.com,urlbluemedia.shop,kuyhaa.me,cosmic1.co,lodynet.link,pelismax.one,stbturbo.xyz,y2mate.*,gogoanimes.fi,vdbtm.shop,hdfilme.plus,get-to.link,zoro.se,moviekhhd.biz,drivemoe.com,watchsomuch.to,faselhd-embed.scdns.io,nxbrew.net,toonily.me,limetorrents.lol,pelisflix2.green,185.217.95.44,moviesjoyhd.to,faselhd.*,5.45.95.74,kissasian.*,opensubtitles.org,1337xx.to,lookmovie2.to,1l1l.to,file-upload.org,meetdownload.com,hentaiasmr.moe,witanime.org,yugenanime.tv,kissanimefree.cc,animeyt.es,anichin.top,monoschinos2.com,ssrmovies.singles,tuktukcinema.*,rule34hentai.net,animepahe.ru,vidsrc.*,123movies-hd.online,dramacool.*,123movies.*,jujmanga.com,otakufr.co,srsone.top,phimgiz.net,holymanga.net,strims.*,kissanime.*,xmovies8.pw,moviesjoy.*,1337x.*,0gomovies.*,vipbox.lc,semawur.com,tamilblasters.unblockit.dev,shingekinokyojinepisodes.com,ekinomaniak.net,rexdlfile.com,downloadhub.ink,cuturl.in,123movie.date,hblinks.pro,akwams.*,desiupload.co,leechall.com,allcalidad.la,disasterscans.com,masteranime.es,savesubs.com,gdtot.*,mkvcinemas.*,akwam.*,mirrored.to##+js(json-prune, *, rot_url)
 tech8s.net,carbikenation.com,game5s.com,linkss.rcccn.in##[id^="droplink-step-"]:style(display: none !important;)
 tech8s.net,carbikenation.com,game5s.com,linkss.rcccn.in##.submitBtn#go_d[onclick="show()"]:style(display: none !important;)
 tech8s.net,carbikenation.com,game5s.com,linkss.rcccn.in##.submitBtn#go_d2:style(display: inline-block !important;)
@@ -144717,6 +144721,7 @@ hentai-id.tv###floatLayer2
 animecorner.me,zarabiajprzez24.pl,watchhentai.xxx,app-how-to-use-it.com,linuxcapable.com,designcorral.com,thecustomrom.com,digitalthinkerhelp.com,browserhow.com,sqlserveregitimleri.com,udemycourses.me,eckovation.com##.ai_widget
 pawastreams.*,nflbite.to,footybite.to,sportschamp.fun,afly.pro,topsporter.net,soccerstreams.football,mysocceraustralia.com,rayinfosports.com,hesgoals.top,sequencecard.xyz,totalsportek.soccer,metaporky.site,nbabite.to,cyfostreams.com,gamerarcades.com,bestreamsports.org,footy.to,mcrypto.club,greaterkashmir.com###id-custom_banner
 pawastreams.*,groundedtechs.com,rayinfosports.com,sequencecard.xyz,matchtime.co,sportspellz.com,bestreamsports.org,silverspoon.site###dismiss-btn
+minecraft-heads.com##body [id^="ad-"]
 nrl.com##.ladder__item--sportsbet-cell
 xcandid.vip,xcandid.top##.g1-row:has(#g1-secondary-nav)
 tradingref.com##div.sidebar:has(> div.ad-unit)
@@ -145489,6 +145494,7 @@ sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> .row > .input-
 sourceforge.net##[id][data-nosnippet]:not(#style_important):has(> button:is([class*="-close"], [id*="close"]) + div[class*="sticky"])
 sourceforge.net##[id*="-coding-bar"]
 sourceforge.net##body [id^="vibe-main-row"]:not(#style_important)
+slashdot.org##+js(prevent-fetch, /sourceforge\.net\/about\/(?:(?:top|floating)_sitewide|sitewide_?(?:top|float))/, emptyStr)
 engadget.com##.items-start.flex > div.ml-0 > .flex-wrap > li.box-border:has(> div[data-test="streamad"])
 nelomanga.net##.js-banner-ai-home
 natomanga.com,nelomanga.net,mangakakalove.com,mangabats.com,manganato.gg##.ads-contain-v2
@@ -157672,9 +157678,6 @@ seirsanduk.com###fbox-background
 digital.bg##.banner-holder
 kliuki.bg##img[width="960"][height="90"]
 kliuki.bg###container > div[style="float:left;"] > div[style]
-mothership.sg###block-imu2
-mothership.sg###block-outstream2
-mothership.sg###block-outstream3
 cyberchef.org###workspace-wrapper > [id][style*="height"]:style(height: 100% !important)
 justjared.com##.banner-spacer-top:style(max-height: 50px !important;)
 justjared.com##[role="banner"]:style(top:0 !important)
@@ -157886,7 +157889,6 @@ w3schools.com###tryitLeaderboard ~ #container:style(top:48px;)
 w3schools.com##.trytopnav:style(top:0;)
 wunderground.com##.content-wrap #inner-wrap:style(height:100vh;)
 yourdictionary.com##.header:style(top:0;)
-xnostars.com##.promo
 4wank.com##.video-holder > center > :contains(/^Advertisement$/)
 freeuseporn.com##section > div > div:has(h2:contains(Friends))
 hdpornpics.net##.money:has(.century:contains(ADS))

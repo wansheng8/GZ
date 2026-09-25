@@ -1,19 +1,19 @@
 {
   "name": "adblock_collection_full_whitelist",
-  "total": 14856,
+  "total": 14858,
   "by_category": {
-    "whitelist": 14856
+    "whitelist": 14858
   },
   "by_kind": {
-    "network": 11898,
-    "css": 2907,
+    "network": 11899,
+    "css": 2908,
     "scriptlet": 48,
     "html": 3
   },
   "by_source": {
     "ADrules AdRules": 4590,
     "uBO filters – Ads": 1913,
-    "AdGuard – Ads": 1850,
+    "AdGuard – Ads": 1851,
     "uBO filters – Unbreak": 1383,
     "ADrules EasyListChina": 1158,
     "ADrules Easylist": 1084,
@@ -26,7 +26,7 @@
     "banbendalao ADgk": 166,
     "ADrules anti-AD": 110,
     "AdGuard/uBO – URL Tracking Protection": 78,
-    "uBO filters – Quick fixes": 51,
+    "uBO filters – Quick fixes": 52,
     "ADrules ChengFeng": 26,
     "uBO lan-block (Block Outsider Intrusion into LAN)": 22,
     "ADrules HalfLife": 18,
