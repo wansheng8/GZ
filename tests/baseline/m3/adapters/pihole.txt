@@ -1,0 +1,5 @@
+# Adblock Rule Collection — Pi-hole 适配（adlists）
+# 用法：把下面一行追加到 adlists.list（或用 Web 界面 Adlists 添加）。
+#
+# 主页：https://github.com/wansheng8/GZ
+https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt

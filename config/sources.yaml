@@ -19,6 +19,13 @@ security_policy:
   categories: [malware, phishing, mining]
   # 安全源允许的单源骤降阈值（比普通源更宽松，避免安全源临时失效阻断整条发行）
   source_drop_percent: 80
+# 客户端适配产物的发布基址来源。仓库/分支变更时只需改这里，dist/adapters/ 内 URL 随之更新。
+publish:
+  repository: wansheng8/GZ
+  branch: main
+  # 可选覆盖；留空则按 repository/branch 派生 raw 与 jsDelivr 两套基址
+  raw_base: ""
+  mirror_base: ""
 sources:
   # ----------------- tickmao/ADrules 综合列表 -----------------
   - name: ADrules Easylist

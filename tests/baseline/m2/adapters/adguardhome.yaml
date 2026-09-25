@@ -1,0 +1,10 @@
+# Adblock Rule Collection — AdGuard Home 适配
+# 用法：把下面 filters 片段合并进 AdGuardHome.yaml 的 filters 段后重启。
+# 本片段只含拦截列表，不含放行规则；如需放行，请另行按需导入。
+#
+# 主页：https://github.com/wansheng8/GZ
+
+filters:
+  - enabled: true
+    url: https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt
+    name: Adblock Collection (DNS domains)

@@ -143,6 +143,7 @@ echo "exit=$?"
 - 新增「加速类 hosts 源」会破坏访问，禁止（历史教训：加速 hosts 源导致站点无法打开）。
 - 已知持续失败的源（GOODBYEADS / HalfLife ad）可容忍，不阻断。
 - **不要**随意改构建参数覆盖 dist（本地构建须与 CI 同款：`--split-by-category`，四项增强默认开启），否则 dist 与 CI 不一致（历史教训）。
+- 仓库迁移/改分支：改顶层 `publish` 段（`repository`/`branch`），`dist/adapters/` 内引用 URL 随之更新，无需改代码；产物语法见 `docs/GENERATED_RULES.md` 第 5 节。
 
 **完成判定**：门禁通过、回归 0 违规、dist 产物正确，提交 `config/sources.yaml` + dist。
 

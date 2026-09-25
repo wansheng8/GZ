@@ -53,6 +53,7 @@
 | **AdGuard Home · Pi-hole · dnsmasq · 路由器** | **[DNS 规则](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt)** · [jsDelivr](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt) |
 | **uBlock Origin · AdGuard（浏览器扩展）** | **[浏览器全量](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt)** · [jsDelivr](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_jsdelivr.txt) |
 | **mihomo · sing-box · Surge · Quantumult X** | **代理规则集**（拦 App 内广告，订阅链接与用法见下方「连接层规则集用法」） |
+| **各客户端一键适配配置** | **[适配产物](https://github.com/wansheng8/GZ/tree/main/dist/adapters)**（粘贴/导入即用，见下方「客户端适配产物」） |
 | **只想要安全拦截（低误杀）** | **[安全专项](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/security/adblock_collection_security.txt)** · [jsDelivr](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/security/adblock_collection_security.txt) |
 
 > [!IMPORTANT]
@@ -189,6 +190,26 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 </details>
 
+<a name="adapters"></a>
+
+### 客户端适配产物
+
+为每个客户端提供一对一适配文件（`dist/adapters/`），已按各客户端最佳形态写好，复制或导入即可，无需研究配置语法。适配文件只引用现有规范规则集，不新增拦截判定。
+
+| 客户端 | 适配文件 | 用法 |
+| :--- | :--- | :--- |
+| mihomo / Clash Meta | `mihomo.yaml` | 合并 `rule-providers` 与 `rules` 两段进 `config.yaml` |
+| sing-box | `singbox.json` | 合并 `route.rule_set` / `route.rules`（`format: source`，需 1.11+，免编译） |
+| Surge | `surge.conf` | 把 `DOMAIN-SET` 行加入 `[Rule]` |
+| Quantumult X | `quanx.conf` | 把 `filter_remote` 行加入 `[filter_remote]` |
+| AdGuard Home | `adguardhome.yaml` | 合并 `filters` 片段进 `AdGuardHome.yaml`（不含放行） |
+| Pi-hole | `pihole.txt` | 追加到 `adlists.list` |
+| dnsmasq | `dnsmasq.conf` | 使用 `addn-hosts` 引用本地已下载的 hosts 文件 |
+| 系统 hosts | `hosts.md` | 各系统 hosts 路径与写入命令指引 |
+| 浏览器扩展 | `browsers.md` | uBO / AdGuard / ABP 订阅地址与导入步骤 |
+
+访问方式：`https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adapters/<文件名>`（jsDelivr：`https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adapters/<文件名>`）。各文件的逐字语法说明见 当前工作区 内的 `/docs/GENERATED_RULES.md`。
+
 <img src="assets/divider.svg" width="100%" alt=""/>
 
 <a name="layers"></a>
@@ -317,6 +338,8 @@ python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 ```
 
 构建选项：`--no-dns` · `--offline` · `--no-cache` · `--dns-policy safe` · `--no-alias-normalize` / `--no-resolve-conflicts` / `--no-per-rule-classify` / `--no-domain-fold`。缓存位于 `.cache/sources/` 与 `.cache/parsed/`，首次下载后离线可重建。
+
+每个产物的行语法与用法（adblock / hosts / domains / rulesets / manifest 等）见 `docs/GENERATED_RULES.md`。
 
 ### 防误杀体系
 

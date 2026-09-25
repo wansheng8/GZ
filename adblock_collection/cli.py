@@ -20,6 +20,7 @@ import sys
 import time
 from pathlib import Path
 
+from .adapters import load_publish_config, write_adapters
 from .aliases import normalize_aliases
 from .arbitrate import arbitrate
 from .baseline import compare_baseline
@@ -533,6 +534,14 @@ def emit_outputs(rules, ctx, output_dir=None) -> tuple[list, dict]:
             ctx.dns_policy,
             domains=blocked,
             exact_domains=split_exact,
+        )
+    if gen_dns:
+        # 客户端适配产物：只引用规范规则集，不新增拦截判定；连接层适配依赖 rulesets/。
+        write_adapters(
+            target,
+            load_publish_config(ctx.config_path),
+            manifest,
+            rulesets_dir=(target / "rulesets") if ctx.flags.gen_rulesets else None,
         )
     if ctx.flags.split_by_category:
         _emit_by_category(
@@ -1123,7 +1132,12 @@ def stats_cmd(args: argparse.Namespace) -> int:
         for entry in entries:
             fname = entry["file"]
             f = output_dir / fname
-            if fname.endswith(".txt") and not fname.endswith(".stats.txt") and f.exists():
+            if (
+                fname.endswith(".txt")
+                and not fname.endswith(".stats.txt")
+                and not fname.startswith("adapters/")
+                and f.exists()
+            ):
                 entry["rules"] = count_txt_rules(f)
                 refreshed += 1
         manifest = entries

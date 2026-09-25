@@ -1,0 +1,17 @@
+# Adblock Rule Collection — mihomo / Clash Meta 适配
+# 用法：把 rule-providers 与 rules 两段合并进你的 config.yaml。
+#
+# 规范基址：https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_clash.yaml
+# 镜像基址：https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_clash.yaml
+# 主页：https://github.com/wansheng8/GZ
+
+rule-providers:
+  adblock:
+    type: http
+    behavior: domain
+    format: yaml
+    url: "https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_clash.yaml"
+    path: ./ruleset/adblock.yaml
+    interval: 86400
+rules:
+  - RULE-SET,adblock,REJECT

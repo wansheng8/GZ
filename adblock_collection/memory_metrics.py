@@ -73,7 +73,9 @@ def build_row(out_dir: Path, now: datetime | None = None, sha: str = "-") -> str
     manifest_path = out_dir / "manifest.json"
     if manifest_path.exists():
         manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-        counts = {x["file"]: x["rules"] for x in manifest.get("generated_files", [])}
+        counts = {
+            x["file"]: x.get("rules", 0) for x in manifest.get("generated_files", [])
+        }
     now = now or datetime.now(timezone.utc)
     cells = [
         now.strftime("%Y-%m-%d %H:%M"),

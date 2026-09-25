@@ -43,7 +43,7 @@ _KIND_LAYERS = {
 def load_counts(out_dir: Path) -> tuple[int, int, int]:
     """返回 (完整版规则数, DNS 域名数, 上游源数)。"""
     manifest = json.loads((out_dir / "manifest.json").read_text(encoding="utf-8"))
-    counts = {x["file"]: x["rules"] for x in manifest["generated_files"]}
+    counts = {x["file"]: x.get("rules", 0) for x in manifest["generated_files"]}
     status = json.loads((out_dir / "sources_status.json").read_text(encoding="utf-8"))
     return counts[FULL], counts[DNS], int(status.get("total_sources", 0))
 

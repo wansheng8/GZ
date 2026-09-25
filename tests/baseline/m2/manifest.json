@@ -116,6 +116,78 @@
       "sha256": "c88a6076a1c4c6c8831a1c5ae50120aec5d37e7265ef6ff942c006287f975415"
     },
     {
+      "name": "adapter_mihomo",
+      "file": "adapters/mihomo.yaml",
+      "format": "adapter",
+      "target": "mihomo",
+      "bytes": 642,
+      "sha256": "f7fe3e4e0b0796d45bc1c4b0465672f6f02ac218c9c74113af351338098bd7b9"
+    },
+    {
+      "name": "adapter_singbox",
+      "file": "adapters/singbox.json",
+      "format": "adapter",
+      "target": "singbox",
+      "bytes": 849,
+      "sha256": "680a3e3525395b716012d72c53786e084254629b1b3b2cd76d41af93c6d9bb31"
+    },
+    {
+      "name": "adapter_surge",
+      "file": "adapters/surge.conf",
+      "format": "adapter",
+      "target": "surge",
+      "bytes": 434,
+      "sha256": "eed19f71a4bf55eb1a6058be900dd8239db7dd800f4fa7daa062417909c5676a"
+    },
+    {
+      "name": "adapter_quanx",
+      "file": "adapters/quanx.conf",
+      "format": "adapter",
+      "target": "quanx",
+      "bytes": 537,
+      "sha256": "088c614d0e9a87d7e082f7d5abaf496c55293cc378b48831a6226b90b1f0aa2a"
+    },
+    {
+      "name": "adapter_adguardhome",
+      "file": "adapters/adguardhome.yaml",
+      "format": "adapter",
+      "target": "adguardhome",
+      "bytes": 451,
+      "sha256": "68e400b9d0c54e25e26d597645a520d794eee23bbf1f886fd40bc7b4bb13a4cd"
+    },
+    {
+      "name": "adapter_pihole",
+      "file": "adapters/pihole.txt",
+      "format": "adapter",
+      "target": "pihole",
+      "bytes": 282,
+      "sha256": "91947d61b8680ef4e7026a86ac9f1a80bf868a3fb923a8debfb6f5e8c167f5b4"
+    },
+    {
+      "name": "adapter_dnsmasq",
+      "file": "adapters/dnsmasq.conf",
+      "format": "adapter",
+      "target": "dnsmasq",
+      "bytes": 433,
+      "sha256": "bf02ebcadfdaf08986dfeb2fa1d5f6117c22a98432c4b87a666f45b7f451b9ec"
+    },
+    {
+      "name": "adapter_hosts",
+      "file": "adapters/hosts.md",
+      "format": "adapter",
+      "target": "hosts",
+      "bytes": 1294,
+      "sha256": "a03d02bcb7de2c0111ae927ee2e09aed345f08a9c4358bd0df182288d8954be5"
+    },
+    {
+      "name": "adapter_browsers",
+      "file": "adapters/browsers.md",
+      "format": "adapter",
+      "target": "browsers",
+      "bytes": 1190,
+      "sha256": "6412ea645d8d5c8bc802cd27a77fc6d20f4d4e7d69eb49754cb9303bcefe6305"
+    },
+    {
       "name": "adblock_collection_full_ads",
       "file": "adblock_collection_full_ads.txt",
       "format": "adblock",
@@ -220,11 +292,11 @@
     "normalizer": "1.4.0",
     "classifier": "1.13.0"
   },
-  "generated_at": "2026-09-25T16:56:43Z",
+  "generated_at": "2026-09-25T23:49:52Z",
   "sources_status": {
     "total_sources": 2,
     "failed_sources": [],
     "complete": true,
-    "generated_at": "2026-09-25T16:56:43Z"
+    "generated_at": "2026-09-25T23:49:52Z"
   }
 }

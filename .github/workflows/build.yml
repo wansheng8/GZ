@@ -79,7 +79,7 @@ jobs:
           python - <<'PY'
           import json, sys
           m = json.load(open("dist/manifest.json"))
-          entries = {x["file"]: x["rules"] for x in m["generated_files"]}
+          entries = {x["file"]: x.get("rules", 0) for x in m["generated_files"]}
           total = entries.get("adblock_collection_full.txt", 0)
           status = json.load(open("dist/sources_status.json"))
           failed = status.get("failed_sources", [])
