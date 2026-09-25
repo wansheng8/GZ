@@ -46,7 +46,7 @@
 
 实施后版本：`PARSER_VERSION=1.9.0`（A3 不实施）、`NORMALIZER_VERSION=1.4.0`、`CLASSIFIER_VERSION=1.10.0`。
 
-> 后续 C/U 轮（`docs/BLOCKING_AUDIT.md`）继续推进至 `PARSER_VERSION=1.9.1`（C8 行内注释剥离）、`CLASSIFIER_VERSION=1.12.0`（C1 + C7），`NORMALIZER_VERSION` 不变。自本文件 §0.1 起，版本以该节行末与 `docs/BLOCKING_AUDIT.md` §6 为准。
+> 后续 C/U 轮（`docs/BLOCKING_AUDIT.md`）继续推进至 `PARSER_VERSION=1.9.1`（C8 行内注释剥离）、`CLASSIFIER_VERSION=1.13.0`（C1 + C7 + U1 明细及 `unknown_modifier`/`untranslatable` 归口修正），`NORMALIZER_VERSION` 不变。自本文件 §0.1 起，版本以该节行末与 `docs/BLOCKING_AUDIT.md` §6 为准。
 
 补充完善（同一轮）：
 
@@ -927,12 +927,12 @@ CI：推送后约 7–9 分钟完成，成功后 bot 自动提交 `dist`（`[ski
 | U6 Python 版本边界 | 构建 / 环境 | `ruff.toml`、`README.md`、`.github/workflows/build.yml` | 无 | 无 | 是 |
 | U7 上游新修饰符跟进（持续） | 规则 / 分类 | `dns_policy.py` 的 `WHOLE_DOMAIN_MODIFIERS` / `SCOPED_MODIFIERS` 等 | `CLASSIFIER_VERSION` | 域名集合可能变化 | 每次单独提交 |
 
-> 实施状态（2026-09-25）：**U1–U6 已全部实施**（`unknown_modifiers` 明细 + CI 只读告警 + lint 门禁 + README 类别表自动同步 + manifest `sha256` + Python 3.10 边界），详见 `docs/BLOCKING_AUDIT.md` §6。U1 只新增可观测字段、不改变 DNS 判定，故未递增 `CLASSIFIER_VERSION`。**U7 为持续项**，由上游新修饰符触发。
+> 实施状态（2026-09-25）：**U1–U6 已全部实施**（`unknown_modifiers` 明细 + CI 只读告警 + lint 门禁 + README 类别表自动同步 + manifest `sha256` + Python 3.10 边界），详见 `docs/BLOCKING_AUDIT.md` §6。U1 首版只新增可观测字段、不改变 DNS 判定；据 CI 产物复核后（`document`/`popup`/`all` 被误记、719 条无域名 URL/正则规则被记 `unknown_modifier`）追加同轴修正：明细则只保留未识别 token，选项全已知者归入 `untranslatable`，`CLASSIFIER_VERSION` → 1.13.0（`dns_eligible`/`dns_rejected` 不变，仅 `by_reason` 归口变化）。**U7 为持续项**，由上游新修饰符触发。
 
 ### 6.3 每个单元的实施要点
 
 **U1（未知修饰符可见性）**
-`classify_dns` 的 `unknown_modifier` 分支返回时带出 `sem` 集合（`DnsVerdict.unknown_modifiers`）；`write_dns_safety_report` 聚合为 `unknown_modifiers: {token: count}`（按次数降序、名称升序）。只新增字段、不改判定结果，分类缓存与基线判定不变。
+`classify_dns` 的 `unknown_modifier` 分支返回时带出 `sem` 中扣除已知修饰符后的集合（`DnsVerdict.unknown_modifiers`）；`write_dns_safety_report` 聚合为 `unknown_modifiers: {token: count}`（按次数降序、名称升序）。当 `sem` 全部为已知修饰符却不构成可翻译域名规则时（典型为无域名的 URL/正则模式），返回 `untranslatable` 而非 `unknown_modifier`。DNS 判定结果（eligible/rejected 与产物集合）不变，仅 `by_reason` 归口与明细变化，故按分类轴递增 `CLASSIFIER_VERSION` 至 1.13.0。
 
 **U2（未知修饰符门禁）**
 在 `build.yml` 的「Check build health」之后读取 `dist/adblock_collection_full.dns_safety.json`，对单一 token 超过阈值（50）以 `::warning::` annotation 提示，只告警不阻断。

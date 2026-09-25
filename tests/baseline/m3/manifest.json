@@ -384,13 +384,13 @@
   "versions": {
     "parser": "1.9.1",
     "normalizer": "1.4.0",
-    "classifier": "1.12.0"
+    "classifier": "1.13.0"
   },
-  "generated_at": "2026-09-25T09:04:50Z",
+  "generated_at": "2026-09-25T16:56:43Z",
   "sources_status": {
     "total_sources": 2,
     "failed_sources": [],
     "complete": true,
-    "generated_at": "2026-09-25T09:04:50Z"
+    "generated_at": "2026-09-25T16:56:43Z"
   }
 }

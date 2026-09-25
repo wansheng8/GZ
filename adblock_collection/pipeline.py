@@ -48,13 +48,16 @@ LOG = logging.getLogger("adblock_collection")
 #   $removeparam/$csp…）与导航 `$popup` 例外不再抵消同名整域阻断，修复漏拦。
 # classifier 1.12.0：`$important` 整域阻断仅被带 `$important` 的整域全局例外抵消，
 #   普通整域例外不再压过 `$important` 阻断，对齐 uBO 优先级语义。
+# classifier 1.13.0：`unknown_modifier` 只在确有未识别 token 时才给出，明细只含未识别
+#   token；选项全已知但无域名的 URL/正则规则（如 `.com/x/$document`）归入
+#   `untranslatable`，不再污染未识别修饰符统计（DNS 拒绝结果不变）。
 # normalizer 1.4.0：修正选项别名语义——`elemhide`/`ehide` 不再折叠为 `generichide`
 #   （前者关闭全部外观过滤，语义不同），并补齐 `shide`/`css`/`strict-first-party`
 #   等别名；别名归一化产物随语义变化。
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
 PARSER_VERSION = "1.9.1"
 NORMALIZER_VERSION = "1.4.0"
-CLASSIFIER_VERSION = "1.12.0"
+CLASSIFIER_VERSION = "1.13.0"
 
 STAGE_DIR = Path(".cache/parsed")
 

@@ -346,12 +346,13 @@ def classify_dns(rule: Rule) -> DnsVerdict:
     # 限定类型/作用域/动作（如 $top、$stealth、$strict-first-party…），DNS 无法
     # 表达，升级成整域拦截会导致误杀。宁可漏收，也不因遗漏新修饰符而误拦截。
     if sem:
-        return DnsVerdict(
-            DNS_REJECT,
-            CONF_REJECT,
-            "unknown_modifier",
-            frozenset(sem - _KNOWN_MODIFIERS),
-        )
+        unknown = frozenset(sem - _KNOWN_MODIFIERS)
+        if unknown:
+            return DnsVerdict(DNS_REJECT, CONF_REJECT, "unknown_modifier", unknown)
+        # 选项全部已知但仍无法翻译（典型为无域名的 URL / 正则模式，如
+        # `.com/smartpop/$document`、`/r.php?u=$document`）：归入 untranslatable，
+        # 避免把已知修饰符记成「未识别」而污染 U1/U2 的上游修饰符信号。
+        return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
 
     return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
 

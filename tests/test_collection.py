@@ -753,6 +753,16 @@ def test_unknown_detail_excludes_known_cooccurring_modifiers():
     assert v2.unknown_modifiers == frozenset({"other-unknown"})
 
 
+def test_domainless_url_rule_with_known_modifier_is_untranslatable():
+    # 选项全已知但无域名的 URL/正则规则不应记为 unknown_modifier
+    v = classify_dns(parse_line(".com/smartpop/$document"))
+    assert v.reason == "untranslatable"
+    assert v.unknown_modifiers == frozenset()
+    v2 = classify_dns(parse_line("/r.php?u=https$document"))
+    assert v2.reason == "untranslatable"
+    assert v2.unknown_modifiers == frozenset()
+
+
 def test_dns_safety_report_lists_unknown_modifiers(tmp_path):
     from adblock_collection.writer import write_dns_safety_report
 

@@ -72,18 +72,19 @@ PY
 
 | 拒绝原因 | 条数 | 是否属于真实网络阻断 |
 | :--- | ---: | :--- |
-| `path_rule` | 51,253 | 是（路径级） |
-| `untranslatable` | 11,913 | 部分是 |
-| `scoped_modifier` | 9,239 | 是（作用域） |
-| `resource_type_modifier` | 6,057 | 是（类型） |
-| `party_modifier` | 1,882 | 是（1p/3p） |
-| `regex_or_redirect_rule` | 1,333 | 部分是 |
-| `unknown_modifier` | 719 | 待分类 |
+| `path_rule` | 51,309 | 是（路径级） |
+| `untranslatable` | 12,651 | 部分是（含 719 条无域名的 URL/正则模式） |
+| `scoped_modifier` | 9,232 | 是（作用域） |
+| `resource_type_modifier` | 6,052 | 是（类型） |
+| `party_modifier` | 1,876 | 是（1p/3p） |
+| `regex_or_redirect_rule` | 1,332 | 部分是 |
 | `match_method_modifier` | 29 | 是 |
-| `non_blocking_modifier` | 5,364 | 否（不阻断） |
-| `css_rule` / `script_rule` | 163,660 | 否（非网络层） |
+| `non_blocking_modifier` | 5,361 | 否（不阻断） |
+| `css_rule` / `script_rule` | 163,646 | 否（非网络层） |
 
-即约 **82,425 条会阻断请求的网络规则不进 DNS 及连接层产物**，DNS 侧覆盖约 87%。
+即约 **82,481 条会阻断请求的网络规则不进 DNS 及连接层产物**，DNS 侧覆盖约 87%。
+
+> 说明：`unknown_modifier` 自 `CLASSIFIER_VERSION=1.13.0` 起仅在规则确含未识别修饰符时才会出现，且 `unknown_modifiers` 明细只保留未识别 token。CI 实测该值为 0——原先记入此类的 719 条实为选项全已知、却无可表达域名的 URL/正则规则（如 `.com/smartpop/$document`、`/r.php?u=https$document`），现归入 `untranslatable`，DNS 拒绝结果不变。
 
 **方案 A（文档与可见性，低风险）**：在 README、`docs/OPS.md` 与 `manifest.json` 标注每个产物的「拦截覆盖面」，并给出 `by_reason` 的人类可读解释，避免用户把 DNS 清单当成全量清单。
 
@@ -195,7 +196,7 @@ CI 通过标准沿用 `docs/UPGRADE_PROPOSAL.md` §5 末尾流程；C1 落地后
 | C6-3 `block_missing` 可配置阻断 | 已实施 | `regression.load_regression_options` 读 `regression.block_missing_strict`（默认 False，只告警） |
 | C7 `$important` 优先级对齐 | 已实施 | `arbitrate` 中 `$important` 整域阻断仅被 `$important` 整域例外抵消；`CLASSIFIER_VERSION` → 1.12.0；`tests/test_arbitrate.py` 覆盖 |
 | C8 行内注释剥离 | 已实施 | `rules` 剥离选项段行内注释；`PARSER_VERSION` → 1.9.1；`tests/test_collection.py` 增 2 例 |
-| U1 未知修饰符可见性 | 已实施 | `DnsVerdict.unknown_modifiers` + `dns_safety.json` 的 `unknown_modifiers` 明细；不改判定 |
+| U1 未知修饰符可见性 | 已实施 | `DnsVerdict.unknown_modifiers` + `dns_safety.json` 的 `unknown_modifiers` 明细；`CLASSIFIER_VERSION` → 1.13.0 起明细只含未识别 token，选项全已知的无域名 URL/正则规则改归 `untranslatable`（原 719 条误标清零，拒绝结果不变） |
 | U2 未知修饰符门禁告警 | 已实施 | `build.yml` 只读告警步骤（单 token ≥50，`::warning::`），不阻断 |
 | U3 本地名单 lint 门禁 | 已实施 | `build.yml` 在测试后运行 `python -m adblock_collection lint`（只读） |
 | U4 README 类别订阅表自动同步 | 已实施 | `stats_badge` 增 `category-stats` 标记区与 `sync_category_table`，README 按 `by_category` 自动生成 |
@@ -203,6 +204,6 @@ CI 通过标准沿用 `docs/UPGRADE_PROPOSAL.md` §5 末尾流程；C1 落地后
 | U6 Python 版本边界 | 已实施 | 统一为 3.10：`ruff.toml` `target-version="py310"`、README 徽章 `Python-3.10+`，并修复由此暴露的 `B905`/`F821`/`FURB188` |
 | U7 上游新修饰符跟进 | 持续 | CI U2 告警触发时，将新 token 归入 `dns_policy` 对应集合，递增 `CLASSIFIER_VERSION` 后单独提交 |
 
-版本现状（工作区）：`PARSER_VERSION=1.9.1`、`NORMALIZER_VERSION=1.4.0`、`CLASSIFIER_VERSION=1.12.0`。
+版本现状（工作区）：`PARSER_VERSION=1.9.1`、`NORMALIZER_VERSION=1.4.0`、`CLASSIFIER_VERSION=1.13.0`。
 
 C1–U6 未提交前 `dist/` 仍是旧产物（`parser=1.9.0`、`classifier=1.10.0`、33 个阻断被误删、无 `unknown_modifiers`/`sources_status`/`sha256` 字段）；推送后由 CI 重建并自动提交 dist。
