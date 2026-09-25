@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 14832
+! Total Rules: 14856
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -828,6 +828,7 @@ browsershots.org#@#.advert_area
 @@||cdnqq.net/ad/api/popunder.js$script
 @@||centro.co.il^$generichide
 @@||coinmarketcap.com/static/addetect/$script,~third-party
+@@||cuttty.com^$generichide
 @@||dlh.net^$script,subdocument,domain=dlh.net
 @@||dragontea.ink^$generichide
 @@||exponential.com^*/tags.js$domain=yellowbridge.com
@@ -1174,6 +1175,7 @@ browsershots.org#@#.advert_area
 @@||cdc.gov/jscript/metrics/adobe/launch/$script,~third-party
 @@||cdn-net.com/cc.js
 @@||cdn.deviceinf.com^$domain=etail.market
+@@||cdn.engagement.coremedia.cloud^$domain=flytap.com
 @@||cdn.evgnet.com/beacon/homedepotofcainc/engage/scripts/evergage.min.js$script,domain=homedepot.ca
 @@||cdn.facil-iti.app/tags/faciliti-tag.min.js$script,domain=apec.fr|kyoto.travel
 @@||cdn.getblueshift.com/blueshift.js$script,domain=rentcafe.com
@@ -3999,7 +4001,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||clksite.com/static/advertisement.js
 @@||cloud.google.com^$~3p
 @@||cloud.mail.ru^$image,~3p
-@@||cloudfam.io/*/pixel.gif
 @@||cloudfam.io^$generichide
 @@||cloudflare.com/cdn-cgi/trace$domain=net.ljxnet.cn
 @@||cloudtime.to/banner.php$script
@@ -4654,7 +4655,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=linetv.tw
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=mako.co.il
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=manoramamax.com
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=mariogames.be
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=matchtv.ru|sportbox.ru
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=medyaradar.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=mirror.co.uk
@@ -4705,7 +4705,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=video.ufreegames.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=videonuz.ensonhaber.com
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=vidyome.com
-@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=vivo.sx
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=vizita.si
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=voicetv.co.th
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=vvvvid.it
@@ -5588,7 +5587,6 @@ fqsousou.com,kengso.com#@#.user-share
 @@||s-nbcnews.com/*/FreeWheelAdManagerLoader.swf$domain=today.com
 @@||s-pt.ppstatic.pl/o/js/pp-ads/ads.js
 @@||s.206ads.com/core.js$domain=androidauthority.com
-@@||s.206ads.com/helper.js$domain=androidauthority.com
 @@||s.jacquieetmichelelite.com/assets/popunder.js
 @@||s.jsrdn.com/s/1.js$domain=lcpdfr.com
 @@||s.nitropay.com/ads-437.js$domain=wago.io
@@ -6081,6 +6079,7 @@ fqsousou.com,kengso.com#@#.user-share
 @@||vstrim.pl/js/ads.js$script,domain=vstrim.pl
 @@||vvvvid.it/img/ad/advertisement.xml$xhr
 @@||waccoe.com^$generichide
+@@||walftech.com^$generichide
 @@||walla.co.il^$csp
 @@||wallpaper-house.com^$generichide
 @@||wallpapermania.eu/assets/js/ads.js$xhr
@@ -7699,7 +7698,6 @@ voxfm.pl,se.pl,urzadzamy.pl,muratordom.pl#@#.sponsored-article
 vtvgiaitri.vn#@##adblock
 waipian1.com,waipian2.com,waipian3.com,waipian4.com,waipian5.com,waipian7.com,waipian8.com,waipian10.com,waipian11.com,waipian12.com,waipian13.com,waipian14.com,waipian15.com,waipian16.com,waipian17.com,waipian18.com,waipian19.com,waipian20.com,waipian21.com,waipian22.com,waipian23.com,waipian24.com,waipian25.com,waipian26.com,waipian27.com,waipian28.com,waipian29.com,waipian30.com,waipian31.com,waipian32.com,waipian33.com,waipian34.com,waipian35.com,waipian36.com,waipian37.com,waipian38.com,waipian39.com,waipian40.com#@#.player-rm > a[target="_blank"]
 waipian1.com,waipian2.com,waipian3.com,waipian4.com,waipian5.com,waipian7.com,waipian8.com,waipian10.com,waipian11.com,waipian12.com,waipian13.com,waipian14.com,waipian15.com,waipian16.com,waipian17.com,waipian18.com,waipian19.com,waipian20.com,waipian21.com,waipian22.com,waipian23.com,waipian24.com,waipian25.com,waipian26.com,waipian27.com,waipian28.com,waipian29.com,waipian30.com,waipian31.com,waipian32.com,waipian33.com,waipian34.com,waipian35.com,waipian36.com,waipian37.com,waipian38.com,waipian39.com,waipian40.com#@#a[href*=".umtrack.com/"]
-walla.co.il#@#+js(aopr, googletag.cmd)
 wallpaperaccess.com#@#.ads1
 wallstreetcn.com#@#.banner
 waploaded.com#@#.ad-slot
@@ -10460,7 +10458,7 @@ meetdownload.com#@#.ad-slot:not(.adsbox):not(.adsbygoogle)
 musmus.main.jp,streetinsider.com#@##ad_space:not([style^="position: absolute; left: -5000px"])
 freehostbox.net,hatenablog.com,puzzle-ch.com#@##adframe:not(frameset):not([style^="position: absolute; left: -5000px"])
 #@#.google-ad
-mmiyue.com#@#.google-ad:not(.testAd)
+genshin-soku.com,monhan-soku.com,xn--gckdevd5myivf.site,yamiisoku.com,mmiyue.com#@#.google-ad:not(.testAd)
 @@/js/prebid-ads.js$script,1p
 #@#.adslot
 #@#.adslot_1
@@ -11130,6 +11128,7 @@ sextb.*#@#.ad-placeholder:not(#detect, #detect_ad_empire, #filter_ads_by_classna
 @@||la7.it^$generichide
 @@||fundingchoicesmessages.google.com/i/pub-$domain=kojodan.jp
 @@||cinehax.com^$generichide
+@@||infomatricula.pt^$generichide
 @@||idlixku.com^$generichide
 best-hit.tv#@##gStickyAd
 majorgeeks.com#@#.navigation-light
@@ -11259,7 +11258,8 @@ intercelestial.com#@#+js(adjust-setTimeout, '', *, 0.1)
 @@||expertvn.com^$generichide
 @@*$generichide,domain=aztravels.net|downfile.site
 @@*$generichide,domain=indiamaja.com|techautomobile.in|tech4auto.in|mahitimanch.in|jnvharidwar.org
-@@*$generichide,1p,domain=devuploads.com
+@@*$generichide,domain=devuploads.com|smartfeecalculator.com
+@@*$script,xhr,image,subdocument,1p,from=devuploads.com|smartfeecalculator.com
 @@*$generichide,domain=dropgalaxy.*|financemonk.net
 @@||ampproject.org^$script,domain=dropgalaxy.*|financemonk.net
 @@||cdn.jsdelivr.net/gh/prebid/*$script,domain=dropgalaxy.*|financemonk.net
@@ -11311,9 +11311,28 @@ tek.no,e24.no,minmote.no,vg.no#@#div[id^="sp_message_container_"]
 cmp.tek.no,cmp.e24.no,minmote.no,cmp.vg.no#@#+js(trusted-click-element, .message-row > button[title="Avvis alle"], , 2000)
 akirabox.com,akirabox.to,bowfile.com,buzzheavier.com,bzzhr.co,bzzhr.to,datavaults.co,fuckingfast.*,multiup.io,rootz.so,usersdrive.com,vik1ngfile.site,zpaste.net#@#+js(set, Document.prototype.createElement.call, noopFunc)
 flipkart.com#@#div[data-id][style]:has([width][height][fill])
+@@/^https:\/\/www\.igorslab\.de\/wp-content\/themes\/igor\/js\/jquery-\d\.\d{1,2}\.\d{1,2}\.min\.js\?ver=/$script,1p,match-case
+@@||www.igorslab.de/community/$script,xhr,1p
+@@||www.igorslab.de/cdn-cgi/scripts/*/cloudflare-static/rocket-loader.min.js
+@@||www.igorslab.de/wp-content/plugins/XFWP/assets/js/xfwp-admin.js
+@@||www.igorslab.de/wp-content/plugins/ba-plus-before-after-image-slider/assets/s201-bai.js
+@@||www.igorslab.de/wp-content/plugins/igorslab-ai-seo-performance-suite/assets/js/consent.js
+@@||www.igorslab.de/wp-content/plugins/igorslab-geizhals-auto/assets/ilgha-frontend.js
+@@||www.igorslab.de/wp-content/plugins/igorslab-youtube-latest-shortcode/assets/frontend.js
+@@||www.igorslab.de/wp-content/plugins/meks-flexible-shortcodes/js/main.js
+@@||www.igorslab.de/wp-content/plugins/wonderplugin-gridgallery/engine/wonderplugingridgallery.js
+@@||www.igorslab.de/wp-content/plugins/wonderplugin-gridgallery/engine/wonderplugingridlightbox.js
+@@||www.igorslab.de/wp-content/plugins/wonderplugin-gallery/engine/wonderplugingallery.js
+@@||www.igorslab.de/wp-content/plugins/wonderplugin-slider/engine/wonderpluginslider.js
+@@||www.igorslab.de/wp-content/plugins/wonderplugin-slider/engine/wonderpluginsliderskins.js
+@@||www.igorslab.de/wp-content/plugins/wp-google-search/assets/js/google_cse_v2.js
+@@||www.igorslab.de/wp-content/themes/herald/assets/js/min.js
+@@||www.igorslab.de/wp-includes/js/utils.min.js
+@@||www.igorslab.de/wp-includes/js/imagesloaded.min.js
+@@||www.igorslab.de/wp-admin/admin-ajax.php$xhr
 igorslab.de/community/#@#a[href^="/"][rel][target]
 igorslab.de/community/#@#img:remove-attr(/data-.+/)
-igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .widget:others()
+igorslab.de/community/#@##extras, #ilab-consent-banner, #ilab-consent-reopen-wrap, .entry-header, .footer-bottom, .herald-entry-content, .herald-header-wraper, .herald-main-content, .herald-module, .xfwp-widget:others()
 wolt.com#@#div:has(> div > div > div > div > div > div > p:has-text(Sponsored))
 wolt.com#@#div:has(> div > div > div > div > div > p:has-text(Sponsored))
 sulpanaro.net#@#div[class^="sulpa-"]
@@ -12751,6 +12770,7 @@ alltransistors.com#@##reklama
 @@||cloudfam.io/assets/ads/gpt-publisher.js
 @@||cloudfam.io/assets/ads/adnetwork-sync.js
 @@||cloudfam.io/assets/ads/prebid.js
+@@||cloudfam.io/*/pixel.gif
 @@||aigenda.ru^$generichide
 @@||adsco.re/p$script,domain=fc-lc.xyz
 @@||static.doubleclick.net/instream/ad_status.js$xhr,domain=softinfo.ro
@@ -13067,6 +13087,7 @@ alltransistors.com#@##reklama
 @@||fux.com/adblockchecker.js
 @@||soup.io/ads.js
 @@/ad.js$~3p,domain=giveaway.su
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=vivo.sx
 @@|/wp-content/plugins/*/assets/fuckadblock.js
 @@||thefastlaneforum.com/community/js/*/adblocker-leader.js
 @@||gogodl.com/*/js/advertisement.js
@@ -13931,6 +13952,7 @@ alltransistors.com#@##reklama
 @@||m.thepiratebay.org/js/prototype-min.js
 @@||m.thepiratebay.org/comments.php
 @@||chaturbate.com/*embed^$domain=chatterbate.org|uuu.cam
+@@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=mariogames.be
 @@||fwlive.crackle.com/ad/g/1$domain=crackle.com
 @@||crackle.com/vendor/AdManager.js
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=storyfire.com
@@ -14197,6 +14219,7 @@ alltransistors.com#@##reklama
 @@||imasdk.googleapis.com/js/sdkloader/ima3.js$domain=watch.nba.com
 @@||securepubads.g.doubleclick.net/gpt/pubads_impl_$domain=history.com
 @@||s.206ads.com/prebid.js$domain=androidauthority.com
+@@||s.206ads.com/helper.js$domain=androidauthority.com
 @@||s.206ads.com/js/data/androidauthority.com.js$domain=androidauthority.com
 @@||pagead2.googlesyndication.com/pub-config/ca-pub-$script,domain=onlinemschool.com
 @@||pagead2.googlesyndication.com/pagead/js/*/show_ads_impl.js$domain=onlinemschool.com
@@ -14603,6 +14626,7 @@ westseattleblog.com#@#.header-ad
 @@||api.bufferapp.com/*/profiles.json
 @@||api.bufferapp.com/*/service/
 @@||api.bufferapp.com/*/user
+@@||anymind360.com/js/*/ats.js$domain=hotosena.com
 ismedia.jp#@#.ad-billboard
 plus.fm-p.jp#@#.ad_overlay #footer_prelogin:style(margin-top: 100px !important;)
 ettoday.net#@#.amp-unresolved

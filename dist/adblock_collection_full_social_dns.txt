@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (social)
-# Format: hosts (0.0.0.0 domain), total 1243
+# Format: hosts (0.0.0.0 domain), total 1244
 0.0.0.0 01.sharedsource.org
 0.0.0.0 01free-share.com
 0.0.0.0 03.sharedsource.org
@@ -111,7 +111,6 @@
 0.0.0.0 analytics.onlyshare.io
 0.0.0.0 analytics.sharecare.com
 0.0.0.0 analytics.social.unity.com
-0.0.0.0 analytics.socialbakers.com
 0.0.0.0 analytics.socialbeat.io
 0.0.0.0 analytics.socialde.pt
 0.0.0.0 analytics.socialized.at
@@ -257,6 +256,7 @@
 0.0.0.0 dohxgyjobgzfb.website
 0.0.0.0 download-shares.com
 0.0.0.0 download.cdn.sharelive.net
+0.0.0.0 dramashare.org
 0.0.0.0 dts.ushareit.com
 0.0.0.0 earnshare.net
 0.0.0.0 earthshare.myportfolio.com
@@ -317,6 +317,7 @@
 0.0.0.0 facebook-support-team-980.pages.med.br
 0.0.0.0 facebook-support-team.com
 0.0.0.0 facebook-suspend-account.com
+0.0.0.0 facebook-trial.vercel.app
 0.0.0.0 facebook-verification-badge.com
 0.0.0.0 facebook-verified-center.com
 0.0.0.0 facebook-verify-business.com
@@ -364,6 +365,7 @@
 0.0.0.0 facebookcenter1001982749871.firebaseapp.com
 0.0.0.0 facebookcenter1001982749871.web.app
 0.0.0.0 facebookcolors24.blogspot.com
+0.0.0.0 facebookcustomer-service.com
 0.0.0.0 facebookfanpage.com
 0.0.0.0 facebookfansigned.comlu.com
 0.0.0.0 facebookhack.pl
@@ -515,13 +517,11 @@
 0.0.0.0 insh-nl-pixel-cynolytics.outshared.services
 0.0.0.0 instagram-account-verification.monikariecke.de
 0.0.0.0 instagram-cam.vercel.app
-0.0.0.0 instagram-clone-psi-one.vercel.app
 0.0.0.0 instagram-cutequeen57.netlify.app
 0.0.0.0 instagram-login-support.vercel.app
 0.0.0.0 instagram-login123.blogspot.com
 0.0.0.0 instagram-nameservers.com
 0.0.0.0 instagram-nepal.github.io
-0.0.0.0 instagram-new-version.vercel.app
 0.0.0.0 instagram-nextjs-three.vercel.app
 0.0.0.0 instagram-online.mcdir.ru.mcpre.ru
 0.0.0.0 instagram-password-recovery.vercel.app
@@ -592,7 +592,6 @@
 0.0.0.0 links.services.disqus.com
 0.0.0.0 linkshare.com
 0.0.0.0 linkshare.ne.jp
-0.0.0.0 littleheartscare-com.eolani.shared.1984.is
 0.0.0.0 ljnzqwfujzvk.com
 0.0.0.0 lmsukdmymagqfb.com
 0.0.0.0 lmufb.theswellscore.com
@@ -658,7 +657,6 @@
 0.0.0.0 meta-ads-manager-facebook-support-business-id100019655719.vercel.app
 0.0.0.0 meta-ads-manager-facebook-support-business-id200056679982.vercel.app
 0.0.0.0 metrics.inshared.nl
-0.0.0.0 metrics.np.project-edfb.cbae.dev.use1a.on.epicgames.com
 0.0.0.0 metrics.semanadpesocial.com.br
 0.0.0.0 metrics.socialcatfish.com
 0.0.0.0 metrics.timeshares.com
@@ -690,7 +688,6 @@
 0.0.0.0 nbkxkthwjeefb.site
 0.0.0.0 new-sh-3.newshared-access.workers.dev
 0.0.0.0 newsharecounts.com
-0.0.0.0 newsharecounts.s3-us-west-2.amazonaws.com
 0.0.0.0 newshared.com
 0.0.0.0 nftjgafb.com
 0.0.0.0 njgxjzvgsrzfb.website
@@ -700,10 +697,12 @@
 0.0.0.0 noreplybusinessfacebook.com
 0.0.0.0 noreplybussinesfacebook.com
 0.0.0.0 northcountrysocial.com
+0.0.0.0 note-base-zz43.p-9m7daefb.workers.dev
 0.0.0.0 notificationbyfacebook.firebaseapp.com
 0.0.0.0 notificationbyfacebook.web.app
 0.0.0.0 nulledshare.com
 0.0.0.0 nurseryinflectedshare.com
+0.0.0.0 obnkeafb.com
 0.0.0.0 ofcgcdcvk.com
 0.0.0.0 offb.info
 0.0.0.0 officechoiceau-my.sharepoint.com
@@ -741,6 +740,7 @@
 0.0.0.0 pixel.social-media-system.com
 0.0.0.0 pixels.livingsocial.com
 0.0.0.0 pkwhsweefrsfb.space
+0.0.0.0 pl-oferta74928-share.cfd
 0.0.0.0 plaguealacritytwitter.com
 0.0.0.0 platform.wondershare.com
 0.0.0.0 plausible.coracle.social
@@ -922,6 +922,7 @@
 0.0.0.0 sharemefiles.ru
 0.0.0.0 sharementor.org
 0.0.0.0 sharempeg.com
+0.0.0.0 sharemyads.com
 0.0.0.0 sharenice.org
 0.0.0.0 shareno1wish.net
 0.0.0.0 sharepenknife.com
@@ -974,6 +975,7 @@
 0.0.0.0 smetrics.timeshares.com
 0.0.0.0 smetrics.vonagesocials.com
 0.0.0.0 social--social-8b962.us-central1.hosted.app
+0.0.0.0 social-cheats.com
 0.0.0.0 social-discovery.io
 0.0.0.0 social-evidence-566515.framer.app
 0.0.0.0 social-marketplaces-217808.framer.app
@@ -984,6 +986,7 @@
 0.0.0.0 social-runner.net
 0.0.0.0 social-sb.com
 0.0.0.0 social-sentry-website.pages.dev
+0.0.0.0 social-sentry.en.softonic.com
 0.0.0.0 social-touch.com
 0.0.0.0 social.agrodistribution.fr
 0.0.0.0 social.biv.sony.tv
@@ -1024,7 +1027,6 @@
 0.0.0.0 socialmedia-careers-office.com
 0.0.0.0 socialmediahackers.com
 0.0.0.0 socialmediakanzlei.com
-0.0.0.0 socialmediasamachar.com
 0.0.0.0 socialnettraffic.com
 0.0.0.0 socialnetworkllc.com
 0.0.0.0 socialnetworkstore.com
@@ -1148,8 +1150,8 @@
 0.0.0.0 twitter20.com
 0.0.0.0 twitterchest.com
 0.0.0.0 twittercounter.com
-0.0.0.0 twitterfav.com
 0.0.0.0 twitterfollowers.site
+0.0.0.0 twitterforweb.com
 0.0.0.0 twittermoms.s3.amazonaws.com
 0.0.0.0 twitteroverload.com
 0.0.0.0 twitterr.com
@@ -1186,7 +1188,6 @@
 0.0.0.0 vifacebook.com
 0.0.0.0 viiyxefb.com
 0.0.0.0 vkjsnvk.com
-0.0.0.0 vkvvvk.com
 0.0.0.0 vmkcgpjvhfifb.space
 0.0.0.0 vnfb.com
 0.0.0.0 vs-api.wshareit.com

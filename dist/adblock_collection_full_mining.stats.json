@@ -1,18 +1,18 @@
 {
   "name": "adblock_collection_full_mining",
-  "total": 235,
+  "total": 236,
   "by_category": {
-    "mining": 235
+    "mining": 236
   },
   "by_kind": {
-    "network": 235
+    "network": 236
   },
   "by_source": {
     "oisd": 62,
-    "Hagezi DNS Pro Plus": 40,
+    "Hagezi DNS Pro Plus": 38,
     "ADrules DNS": 33,
     "ADrules anti-AD": 30,
-    "217heidai adblockdns": 21,
+    "217heidai adblockdns": 24,
     "ADrules EasyPrivacy": 15,
     "Online Malicious URL Blocklist": 11,
     "AdGuard – Ads": 7,

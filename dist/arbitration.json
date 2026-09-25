@@ -112,22 +112,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "ads.console.aliyun.com",
-    "winner": "@@||ads.console.aliyun.com^",
-    "losers": [
-      "||ads.console.aliyun.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
-    "target": "ads.cs.washington.edu",
-    "winner": "@@||ads.cs.washington.edu^$popup",
-    "losers": [
-      "||ads.cs.washington.edu^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "ads.google.com",
     "winner": "@@||ads.google.com^$popup",
     "losers": [
@@ -272,22 +256,6 @@
     "reason": "整域全局例外优先于整域阻断"
   },
   {
-    "target": "analytics.amplitude.com",
-    "winner": "@@||analytics.amplitude.com^$~third-party",
-    "losers": [
-      "||analytics.amplitude.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
-    "target": "analytics.itunes.apple.com",
-    "winner": "@@||analytics.itunes.apple.com^$~third-party",
-    "losers": [
-      "||analytics.itunes.apple.com^"
-    ],
-    "reason": "整域全局例外优先于整域阻断"
-  },
-  {
     "target": "api.ads.tvb.com",
     "winner": "@@||api.ads.tvb.com^",
     "losers": [
@@ -356,6 +324,14 @@
     "winner": "@@||belgium.wolterskluwer.com^",
     "losers": [
       "||belgium.wolterskluwer.com^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "bestlistofporn.com",
+    "winner": "@@||bestlistofporn.com^$generichide",
+    "losers": [
+      "||bestlistofporn.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },
@@ -748,6 +724,14 @@
     "winner": "@@||px.a8.net^",
     "losers": [
       "||px.a8.net^"
+    ],
+    "reason": "整域全局例外优先于整域阻断"
+  },
+  {
+    "target": "readmng.com",
+    "winner": "@@||readmng.com^$csp=script-src 'self' * 'unsafe-inline'",
+    "losers": [
+      "||readmng.com^"
     ],
     "reason": "整域全局例外优先于整域阻断"
   },

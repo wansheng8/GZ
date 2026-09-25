@@ -5,498 +5,612 @@
       "name": "adblock_collection_full",
       "file": "adblock_collection_full.txt",
       "format": "adblock",
-      "rules": 800813
+      "rules": 801455,
+      "bytes": 26378003
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_jsdelivr.txt",
       "format": "adblock_include",
-      "rules": 800813,
+      "rules": 801455,
       "parts": [
         "adblock_collection_full_jsdelivr_part01.txt",
         "adblock_collection_full_jsdelivr_part02.txt"
-      ]
+      ],
+      "bytes": 445
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_dns.txt",
       "format": "hosts",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 15468008
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 12729948
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_domains.txt",
       "format": "domains",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 11087122
     },
     {
       "name": "adblock_collection_full_browser_network",
       "file": "adblock_collection_full_browser_network.txt",
       "format": "adblock",
-      "rules": 636690
+      "rules": 637288,
+      "bytes": 17610729
     },
     {
       "name": "adblock_collection_full_cosmetic",
       "file": "adblock_collection_full_cosmetic.txt",
       "format": "adblock",
-      "rules": 164123
+      "rules": 164167,
+      "bytes": 8767610
     },
     {
       "name": "adblock_collection_full_dns_abp",
       "file": "adblock_collection_full_dns_abp.txt",
       "format": "adblock_domains",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 12730195
     },
     {
       "name": "adblock_collection_ubo_enhance",
       "file": "adblock_collection_ubo_enhance.txt",
       "format": "adblock_ubo",
-      "rules": 30734
+      "rules": 31874,
+      "bytes": 3279339
     },
     {
       "name": "dns_allow",
       "file": "dns_allow.txt",
       "format": "dns_allow",
       "source": "custom_allowlist",
-      "rules": 0
+      "rules": 0,
+      "bytes": 100,
+      "empty": true
     },
     {
       "name": "ruleset_clash",
       "file": "rulesets/adblock_clash.yaml",
       "format": "clash_ruleset",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 15429521
     },
     {
       "name": "ruleset_singbox",
       "file": "rulesets/adblock_singbox.json",
       "format": "singbox_ruleset",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 12729918
     },
     {
       "name": "ruleset_surge",
       "file": "rulesets/adblock_surge.list",
       "format": "surge_ruleset",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 22452032
+    },
+    {
+      "name": "ruleset_surge_domain_set",
+      "file": "rulesets/adblock_surge_domain_set.txt",
+      "format": "surge_domain_set",
+      "rules": 547614,
+      "bytes": 11615491
     },
     {
       "name": "ruleset_quanx",
       "file": "rulesets/adblock_quanx.list",
       "format": "quanx_ruleset",
-      "rules": 547046
+      "rules": 547614,
+      "bytes": 22452032
     },
     {
       "name": "ruleset_surge_part",
       "file": "rulesets/adblock_surge_part01.list",
       "format": "surge_ruleset_part",
-      "rules": 457038
+      "rules": 457164,
+      "bytes": 18874296
     },
     {
       "name": "ruleset_surge_part",
       "file": "rulesets/adblock_surge_part02.list",
       "format": "surge_ruleset_part",
-      "rules": 90008
+      "rules": 90450,
+      "bytes": 3577833
     },
     {
       "name": "ruleset_quanx_part",
       "file": "rulesets/adblock_quanx_part01.list",
       "format": "quanx_ruleset_part",
-      "rules": 457038
+      "rules": 457164,
+      "bytes": 18874296
     },
     {
       "name": "ruleset_quanx_part",
       "file": "rulesets/adblock_quanx_part02.list",
       "format": "quanx_ruleset_part",
-      "rules": 90008
+      "rules": 90450,
+      "bytes": 3577833
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance.txt",
       "format": "adblock",
-      "rules": 3702
+      "rules": 3709,
+      "bytes": 124791
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance_dns.txt",
       "format": "hosts",
-      "rules": 1001
+      "rules": 1006,
+      "bytes": 27187
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 1001
+      "rules": 1006,
+      "bytes": 22167
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance_domains.txt",
       "format": "domains",
-      "rules": 1001
+      "rules": 1006,
+      "bytes": 19165
     },
     {
       "name": "adblock_collection_full_cookie",
       "file": "adblock_collection_full_cookie.txt",
       "format": "adblock",
-      "rules": 1682
+      "rules": 1682,
+      "bytes": 60718
     },
     {
       "name": "adblock_collection_full_cookie",
       "file": "adblock_collection_full_cookie_dns.txt",
       "format": "hosts",
-      "rules": 372
+      "rules": 372,
+      "bytes": 11360
     },
     {
       "name": "adblock_collection_full_cookie",
       "file": "adblock_collection_full_cookie_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 372
+      "rules": 372,
+      "bytes": 9510
     },
     {
       "name": "adblock_collection_full_cookie",
       "file": "adblock_collection_full_cookie_domains.txt",
       "format": "domains",
-      "rules": 372
+      "rules": 372,
+      "bytes": 8410
     },
     {
       "name": "adblock_collection_full_css",
       "file": "adblock_collection_full_css.txt",
       "format": "adblock",
-      "rules": 143196
+      "rules": 143241,
+      "bytes": 6800656
     },
     {
       "name": "adblock_collection_full_css",
       "file": "adblock_collection_full_css_dns.txt",
       "format": "hosts",
-      "rules": 0
+      "rules": 0,
+      "bytes": 81,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_css",
       "file": "adblock_collection_full_css_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 0
+      "rules": 0,
+      "bytes": 91,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_css",
       "file": "adblock_collection_full_css_domains.txt",
       "format": "domains",
-      "rules": 0
+      "rules": 0,
+      "bytes": 107,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_html",
       "file": "adblock_collection_full_html.txt",
       "format": "adblock",
-      "rules": 505
+      "rules": 505,
+      "bytes": 78913
     },
     {
       "name": "adblock_collection_full_html",
       "file": "adblock_collection_full_html_dns.txt",
       "format": "hosts",
-      "rules": 0
+      "rules": 0,
+      "bytes": 82,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_html",
       "file": "adblock_collection_full_html_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 0
+      "rules": 0,
+      "bytes": 92,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_html",
       "file": "adblock_collection_full_html_domains.txt",
       "format": "domains",
-      "rules": 0
+      "rules": 0,
+      "bytes": 108,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_js",
       "file": "adblock_collection_full_js.txt",
       "format": "adblock",
-      "rules": 1
+      "rules": 1,
+      "bytes": 288
     },
     {
       "name": "adblock_collection_full_js",
       "file": "adblock_collection_full_js_dns.txt",
       "format": "hosts",
-      "rules": 0
+      "rules": 0,
+      "bytes": 80,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_js",
       "file": "adblock_collection_full_js_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 0
+      "rules": 0,
+      "bytes": 90,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_js",
       "file": "adblock_collection_full_js_domains.txt",
       "format": "domains",
-      "rules": 0
+      "rules": 0,
+      "bytes": 106,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware.txt",
       "format": "adblock",
-      "rules": 9707
+      "rules": 9658,
+      "bytes": 816474
     },
     {
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware_dns.txt",
       "format": "hosts",
-      "rules": 379
+      "rules": 386,
+      "bytes": 11394
     },
     {
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 379
+      "rules": 386,
+      "bytes": 9474
     },
     {
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware_domains.txt",
       "format": "domains",
-      "rules": 379
+      "rules": 386,
+      "bytes": 8332
     },
     {
       "name": "adblock_collection_full_mining",
       "file": "adblock_collection_full_mining.txt",
       "format": "adblock",
-      "rules": 235
+      "rules": 236,
+      "bytes": 20262
     },
     {
       "name": "adblock_collection_full_mining",
       "file": "adblock_collection_full_mining_dns.txt",
       "format": "hosts",
-      "rules": 204
+      "rules": 205,
+      "bytes": 5840
     },
     {
       "name": "adblock_collection_full_mining",
       "file": "adblock_collection_full_mining_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 204
+      "rules": 205,
+      "bytes": 4825
     },
     {
       "name": "adblock_collection_full_mining",
       "file": "adblock_collection_full_mining_domains.txt",
       "format": "domains",
-      "rules": 204
+      "rules": 205,
+      "bytes": 4226
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network.txt",
       "format": "adblock",
-      "rules": 487394
+      "rules": 488065,
+      "bytes": 11463471
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_dns.txt",
       "format": "hosts",
-      "rules": 466928
+      "rules": 467517,
+      "bytes": 13008218
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 466928
+      "rules": 467517,
+      "bytes": 10670643
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_domains.txt",
       "format": "domains",
-      "rules": 466928
+      "rules": 467517,
+      "bytes": 9268108
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing.txt",
       "format": "adblock",
-      "rules": 37220
+      "rules": 37273,
+      "bytes": 1987055
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing_dns.txt",
       "format": "hosts",
-      "rules": 10446
+      "rules": 10517,
+      "bytes": 334544
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 10446
+      "rules": 10517,
+      "bytes": 281969
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing_domains.txt",
       "format": "domains",
-      "rules": 10446
+      "rules": 10517,
+      "bytes": 250434
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy.txt",
       "format": "adblock",
-      "rules": 55591
+      "rules": 55589,
+      "bytes": 1478364
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy_dns.txt",
       "format": "hosts",
-      "rules": 44689
+      "rules": 44687,
+      "bytes": 1347592
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 44689
+      "rules": 44687,
+      "bytes": 1124167
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy_domains.txt",
       "format": "domains",
-      "rules": 44689
+      "rules": 44687,
+      "bytes": 990122
     },
     {
       "name": "adblock_collection_full_redirect",
       "file": "adblock_collection_full_redirect.txt",
       "format": "adblock",
-      "rules": 871
+      "rules": 870,
+      "bytes": 60034
     },
     {
       "name": "adblock_collection_full_redirect",
       "file": "adblock_collection_full_redirect_dns.txt",
       "format": "hosts",
-      "rules": 0
+      "rules": 0,
+      "bytes": 86,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_redirect",
       "file": "adblock_collection_full_redirect_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 0
+      "rules": 0,
+      "bytes": 96,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_redirect",
       "file": "adblock_collection_full_redirect_domains.txt",
       "format": "domains",
-      "rules": 0
+      "rules": 0,
+      "bytes": 112,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_scriptlet",
       "file": "adblock_collection_full_scriptlet.txt",
       "format": "adblock",
-      "rules": 17462
+      "rules": 17462,
+      "bytes": 1738347
     },
     {
       "name": "adblock_collection_full_scriptlet",
       "file": "adblock_collection_full_scriptlet_dns.txt",
       "format": "hosts",
-      "rules": 0
+      "rules": 0,
+      "bytes": 87,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_scriptlet",
       "file": "adblock_collection_full_scriptlet_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 0
+      "rules": 0,
+      "bytes": 97,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_scriptlet",
       "file": "adblock_collection_full_scriptlet_domains.txt",
       "format": "domains",
-      "rules": 0
+      "rules": 0,
+      "bytes": 113,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social.txt",
       "format": "adblock",
-      "rules": 1947
+      "rules": 1948,
+      "bytes": 92782
     },
     {
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social_dns.txt",
       "format": "hosts",
-      "rules": 1243
+      "rules": 1244,
+      "bytes": 38877
     },
     {
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 1243
+      "rules": 1244,
+      "bytes": 32667
     },
     {
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social_domains.txt",
       "format": "domains",
-      "rules": 1243
+      "rules": 1244,
+      "bytes": 28951
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url.txt",
       "format": "adblock",
-      "rules": 26468
+      "rules": 26360,
+      "bytes": 785524
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url_dns.txt",
       "format": "hosts",
-      "rules": 21789
+      "rules": 21685,
+      "bytes": 683815
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 21789
+      "rules": 21685,
+      "bytes": 575400
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url_domains.txt",
       "format": "domains",
-      "rules": 21789
+      "rules": 21685,
+      "bytes": 510361
     },
     {
       "name": "adblock_collection_full_whitelist",
       "file": "adblock_collection_full_whitelist.txt",
       "format": "adblock",
-      "rules": 14832
+      "rules": 14856,
+      "bytes": 873760
     },
     {
       "name": "adblock_collection_full_whitelist",
       "file": "adblock_collection_full_whitelist_dns.txt",
       "format": "hosts",
-      "rules": 0
+      "rules": 0,
+      "bytes": 87,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_whitelist",
       "file": "adblock_collection_full_whitelist_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 0
+      "rules": 0,
+      "bytes": 97,
+      "empty": true
     },
     {
       "name": "adblock_collection_full_whitelist",
       "file": "adblock_collection_full_whitelist_domains.txt",
       "format": "domains",
-      "rules": 0
+      "rules": 0,
+      "bytes": 113,
+      "empty": true
     },
     {
       "name": "adblock_collection_security",
-      "file": "adblock_collection_security.txt",
+      "file": "security/adblock_collection_security.txt",
       "format": "adblock",
-      "rules": 47162
+      "rules": 47167,
+      "bytes": 2823317
     },
     {
       "name": "adblock_collection_security",
-      "file": "adblock_collection_security_dns.txt",
+      "file": "security/adblock_collection_security_dns.txt",
       "format": "hosts",
-      "rules": 11027
+      "rules": 11106,
+      "bytes": 351556
     },
     {
       "name": "adblock_collection_security",
-      "file": "adblock_collection_security_dns_ipv6.txt",
+      "file": "security/adblock_collection_security_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 11027
+      "rules": 11106,
+      "bytes": 296036
     },
     {
       "name": "adblock_collection_security",
-      "file": "adblock_collection_security_domains.txt",
+      "file": "security/adblock_collection_security_domains.txt",
       "format": "domains",
-      "rules": 11027
+      "rules": 11106,
+      "bytes": 262734
     }
-  ]
+  ],
+  "versions": {
+    "parser": "1.9.0",
+    "normalizer": "1.4.0",
+    "classifier": "1.10.0"
+  },
+  "generated_at": "2026-09-25T03:18:37Z"
 }

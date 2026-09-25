@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (url)
-# Format: one domain per line (AdGuard DNS / AdGuard Home), total 21789
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 21685
 00466628383.click
 0099866g8g.click
 0123movies.click
@@ -140,6 +140,7 @@
 24log.com
 24log.de
 24log.es
+24log.fr
 24log.it
 24log.ru
 24shorta7.click
@@ -194,6 +195,7 @@
 46.red-88-30-26.staticip.rima-tde.net
 460bet.click
 4738833.click
+47881421.click
 48.red-88-7-112.staticip.rima-tde.net
 487990152.click
 4928579285-pl.click
@@ -320,6 +322,7 @@ abcstats.com
 abdominach.click
 abeacon.cn
 abeacon.com
+abriotanasteamworkspace.myclickfunnels.com
 abs-static.org
 absolog.ch
 absolstats.co.za
@@ -383,7 +386,6 @@ ad.playstation.net
 ad.smartclick.ru
 ad.unique1static.jp
 ad0.click
-ad2217.hatenablog.com
 ad67.artstation.com
 adanalytics.xyz
 adaraanalytics.com
@@ -412,6 +414,7 @@ addfreestats.com
 addlog.thuvienphapluat.vn
 address.counters.click
 adenofrin.click
+adfair-analytics.woman.mynavi.jp
 adfree-stat.p3g.hu
 adfs-sdstate-site.webflow.io
 adfstat.yandex.ru
@@ -569,7 +572,6 @@ afsanalytics.com
 afterclick.co
 afterdark0725.click
 agencyanalytics.app
-agent-analytics-prototype.vercel.app
 agent-analytics.asif.dev
 agent-bridge-git-codex-vercel-web-analytics-jonnycsprs-projects.vercel.app
 agentanalytics.com
@@ -762,6 +764,7 @@ allegrolokalnie.pl-7382196.click
 allegrolokalnie.pl-746483745.click
 allegrolokalnie.pl-firmowe-28491.click
 allegrolokalnie.pl-ld8382929.click
+allegrolokalnie.pl-odbior-platnosci-7321.click
 allegrolokalnie.pl-oferta-lokalna5894398543.click
 allegrolokalnie.pl-oferta-prywatna738483629.click
 allegrolokalnie.pl-oferta-prywatna7584634.click
@@ -805,6 +808,7 @@ allegrolokalnie.pl-oferta6380009.click
 allegrolokalnie.pl-oferta6384825292.click
 allegrolokalnie.pl-oferta68902840231235.click
 allegrolokalnie.pl-oferta721543.click
+allegrolokalnie.pl-oferta7238439.click
 allegrolokalnie.pl-oferta73654223.click
 allegrolokalnie.pl-oferta7492631.click
 allegrolokalnie.pl-oferta7573649.click
@@ -912,7 +916,6 @@ amundi06.click
 analog.cell.phone.service.sms13.de
 analog.sms13.de
 analoganalytics.com
-analylife.click
 analytic.nalog.gov.ru
 analytic.nalog.ru
 analytic.thekapslog.com
@@ -930,14 +933,10 @@ analytics-238644427841.europe-west2.run.app
 analytics-3.b-cdn.net
 analytics-3.myjungly.com
 analytics-347932751562.us-central1.run.app
-analytics-39cchtddk-vercel-analytics.vercel.app
 analytics-455007615.collector.yahoo.net
 analytics-5900.kxcdn.com
 analytics-59909522358.europe-west1.run.app
-analytics-61qahf306-vercel-analytics.vercel.app
-analytics-7xczzsbsj-vercel-analytics.vercel.app
 analytics-8a3908f1d3-mystudio.apps.ir-central1.arvancaas.ir
-analytics-9juxaox6s-vercel-analytics.vercel.app
 analytics-a-1.statuspage.io
 analytics-a2zinc-net.hostmap.a2zinc.io
 analytics-acc.eliagroup.eu
@@ -949,7 +948,6 @@ analytics-alb-1319867483.eu-west-1.elb.amazonaws.com
 analytics-alb-269776019.us-east-1.elb.amazonaws.com
 analytics-altengroup.omniacloud.net
 analytics-alv.google.com
-analytics-and-intelligence.connpass.com
 analytics-api-01.buzzebees.com
 analytics-api-01.smzdm.com
 analytics-api-02.buzzebees.com
@@ -957,7 +955,6 @@ analytics-api-external-alb-222534322.cn-north-1.elb.amazonaws.com.cn
 analytics-api-prod.st.prod.pfxcloud.com
 analytics-api-prod.twixlmedia.com
 analytics-api-production.adse.jagex.com
-analytics-api-sample.appspot.com
 analytics-api-samples.googlecode.com
 analytics-api-v2.gooddog.com
 analytics-api.3destate.cloud
@@ -983,7 +980,6 @@ analytics-api.benandfrank.com
 analytics-api.byub.org
 analytics-api.cloudinary.com
 analytics-api.comiccrusher.com
-analytics-api.commandcentral.com
 analytics-api.confluent.io
 analytics-api.crowncoinscasino.com
 analytics-api.dek.cz
@@ -998,7 +994,6 @@ analytics-api.fresha.com
 analytics-api.fsastore.com
 analytics-api.gear4music.de
 analytics-api.gear4music.se
-analytics-api.gem.com
 analytics-api.gettr.com
 analytics-api.goziohealth.com
 analytics-api.grizly.cz
@@ -1084,7 +1079,6 @@ analytics-attribution-va.tiktok.com.edgekey.net
 analytics-attribution.tiktok.com
 analytics-au.clickdimensions.com
 analytics-au1.nice-incontact.com
-analytics-augs.adobe.com
 analytics-aw.technologydomain.org
 analytics-balancer.integra-games.com
 analytics-bbc.doreldigital.io
@@ -1184,8 +1178,6 @@ analytics-dataprocess-eu.anker.com
 analytics-dataprocess-us.anker.com
 analytics-debugger.com
 analytics-debugger.gallerycdn.vsassets.io
-analytics-demo.netlify.app
-analytics-detroitmi.hub.arcgis.com
 analytics-dev-api.test.samsunghealth.com
 analytics-dev-lleap-events.servicebus.windows.net
 analytics-dev-simpad-events.servicebus.windows.net
@@ -1198,10 +1190,10 @@ analytics-docs.piano.io
 analytics-domainverify.clever.com
 analytics-dot-hpe-recommendation-ai.appspot.com
 analytics-e1.settrade.com
+analytics-ebb-del.yinzcam.com
 analytics-egain.com
 analytics-engine.com
 analytics-env.eba-tg2scb2d.us-east-1.elasticbeanstalk.com
-analytics-es.googleblog.com
 analytics-esp.quinyx.com
 analytics-eu-central.searchstax.com
 analytics-eu-west.searchstax.com
@@ -1249,7 +1241,6 @@ analytics-fe.digital-cloud-uk.medallia.eu
 analytics-fe.digital-cloud-us-main.medallia.com
 analytics-fe.digital-cloud-west.medallia.com
 analytics-fe.digital-cloud.medallia.eu
-analytics-files.gbif.org
 analytics-floating.frp2.ovp.kaltura.com
 analytics-fn.pricetweakers.net
 analytics-frame.sendsafely.com
@@ -1265,7 +1256,6 @@ analytics-gtm.alutech.ru
 analytics-gtm.redbubble.com
 analytics-gtm.royalcanin.com
 analytics-gvgjgjd0b6bjekfj.z01.azurefd.net
-analytics-h9ubhgdi6-vercel-analytics.vercel.app
 analytics-helper.com
 analytics-i1.settrade.com
 analytics-i18n.tiktok.com
@@ -1306,8 +1296,6 @@ analytics-integrations-sdint-prd.glb.fgns.info
 analytics-iot.api.rusklimat.ru
 analytics-ipv6.tiktokw.us.edgesuite.net
 analytics-iq.com
-analytics-ja.blogspot.jp
-analytics-ja.googleblog.com
 analytics-jobboard.uva.nl
 analytics-jp.edna.yahoo.net
 analytics-js-cdn.liferay.com
@@ -1393,9 +1381,9 @@ analytics-ru.tiktok.com
 analytics-ru.tiktok.com.ttdns2.com
 analytics-s4.com
 analytics-s6kcy.b-cdn.net
-analytics-sample.heartcoding.de
 analytics-santander-co-uk-378667789.eu-west-1.elb.amazonaws.com
 analytics-save-it.dmb.kontornewmedia.com
+analytics-save-it.kontornewmedia.com
 analytics-script.opshq.tools
 analytics-sdk-production.c3.yle.fi
 analytics-sdk.pages.dev
@@ -1462,9 +1450,7 @@ analytics-up.uxzw.club
 analytics-us.data.visenze.com
 analytics-us.junglemail365.com
 analytics-us.searchstax.com
-analytics-useast01-01.na.cs.xcal.tv
 analytics-useast2a.tiktok.com
-analytics-uswest02-01.na.cs.xcal.tv
 analytics-v1.pagefly.io
 analytics-v2.eip.telegraph.co.uk
 analytics-v2.gotolstoy.com
@@ -1490,7 +1476,6 @@ analytics-www.wrike.com
 analytics-xg.sws-server.de
 analytics-xno0jeg-beta.brizy.io
 analytics-xpress.jabra.com
-analytics-zama.vercel.app
 analytics-zg-api.test.zillow.net
 analytics-zoo.readthedocs.io
 analytics.004gmbh.de
@@ -1505,6 +1490,7 @@ analytics.123tapronto.com
 analytics.126.com
 analytics.126.net
 analytics.14.ru
+analytics.143farm.com
 analytics.17-solutions.net
 analytics.1789.fr
 analytics.1881.digital
@@ -1617,7 +1603,6 @@ analytics.active-bremen.de
 analytics.aculix.online
 analytics.aculix.xyz
 analytics.acurast.com
-analytics.ad.ly
 analytics.adalo.com
 analytics.aday.fr
 analytics.addigitech.com
@@ -1679,7 +1664,6 @@ analytics.aggh.net
 analytics.agma-mmc.de
 analytics.agma-mmc.mllrsohnapps.com
 analytics.agmedia.at
-analytics.agorapulse.com
 analytics.agoshop.de
 analytics.agraris.cloud
 analytics.agrarticker.de
@@ -1693,6 +1677,7 @@ analytics.ahef.xyz
 analytics.ahmetcetinkaya.me
 analytics.ahrefs.com.dvaitas.lt
 analytics.ahwoo.com
+analytics.ai-detector.com
 analytics.ai-signed.com
 analytics.ai.jp.net
 analytics.aicelebs.club
@@ -1771,6 +1756,7 @@ analytics.alihsan.org.au
 analytics.alihsan.us
 analytics.alko-garden.at
 analytics.alko-garden.de
+analytics.alko-garden.pl
 analytics.alko.fi
 analytics.all-for-one.com
 analytics.allabouthumandesign.de
@@ -1915,6 +1901,7 @@ analytics.api.gist.build
 analytics.api.gupy.io
 analytics.api.hlag.cloud
 analytics.api.jasino.com
+analytics.api.justeattakeaway.com.leonetz.net
 analytics.api.mitel.io
 analytics.api.myqnapcloud.cn
 analytics.api.myqnapcloud.com
@@ -1941,7 +1928,6 @@ analytics.app.haus-des-engagements.de
 analytics.app.holistiplan.com
 analytics.app.marq.com
 analytics.app.warp.dev
-analytics.appa.pe
 analytics.appack.de
 analytics.appb.in
 analytics.appcore.ai
@@ -2023,7 +2009,6 @@ analytics.asfinag.at
 analytics.asiatech.ir
 analytics.askreach.eu
 analytics.asksia.ai
-analytics.asmantiz.com
 analytics.asmb.it
 analytics.asmr.biz
 analytics.asortiz.com
@@ -2101,6 +2086,7 @@ analytics.autogo.ai
 analytics.autoize.com
 analytics.automatedcommerce.ai
 analytics.automation-berlin.com
+analytics.automotive-sa.com
 analytics.autoodb.com
 analytics.autopreneur.de
 analytics.autoseo.pl
@@ -2125,7 +2111,6 @@ analytics.avv-augsburg.de
 analytics.aw48b.xyz
 analytics.awakening.wiki
 analytics.awsmcafeeccs.mcafee.com
-analytics.awspartner.com
 analytics.axa.es
 analytics.axonvibelabs.com
 analytics.axtro.xyz
@@ -2199,7 +2184,6 @@ analytics.bayrol.de
 analytics.bayut.com
 analytics.bbcollective.co
 analytics.bbn.so
-analytics.bc.edu
 analytics.bcf.ch
 analytics.bchic.de
 analytics.bcubix.com
@@ -2231,7 +2215,6 @@ analytics.belnet.be
 analytics.belowthefold.nl
 analytics.bemeapps.com
 analytics.bemejewelry.co.uk
-analytics.benevity.org
 analytics.benroe.de
 analytics.bensgastro.com
 analytics.benson.coffee
@@ -2287,6 +2270,7 @@ analytics.biggeek.ru
 analytics.bildhuus.com
 analytics.bilendi.com
 analytics.billionverify.com
+analytics.billygraham.org
 analytics.bilyoner.com
 analytics.binaryfortress.com
 analytics.bingepluslive.com
@@ -2312,7 +2296,9 @@ analytics.bitcoin.fr
 analytics.bitcoinwisdom.io
 analytics.bite.lt
 analytics.bite.lv
+analytics.bitfufu.com
 analytics.bithaus.tech
+analytics.bitmax.ir
 analytics.bitpin.ir
 analytics.bitptr.com
 analytics.bitsighttech.com
@@ -2352,20 +2338,11 @@ analytics.blisslabs.org
 analytics.blixtvakt.com
 analytics.blizzard-tecnica.com
 analytics.blocksite.co
-analytics.blogspot.ca
 analytics.blogspot.co.il
 analytics.blogspot.co.uk
 analytics.blogspot.com.au
 analytics.blogspot.com.br
 analytics.blogspot.com.es
-analytics.blogspot.de
-analytics.blogspot.fr
-analytics.blogspot.hu
-analytics.blogspot.ie
-analytics.blogspot.in
-analytics.blogspot.jp
-analytics.blogspot.ru
-analytics.blogspot.se
 analytics.bloomberg.com
 analytics.blueblue.nl
 analytics.bluebox-world.net
@@ -2390,7 +2367,6 @@ analytics.bonbori.shop
 analytics.bondia.ad
 analytics.bonfire.com
 analytics.bong.com
-analytics.bontty.com
 analytics.bonvito.net
 analytics.boohoo.com
 analytics.boohooman.com
@@ -2424,6 +2400,7 @@ analytics.boyens-medien.de
 analytics.bp.com
 analytics.bpm-power.com
 analytics.braceyourselfgames.com
+analytics.bracketapp.nl
 analytics.bradsearch.com
 analytics.brain-scc.de
 analytics.braindinx.de
@@ -2447,6 +2424,7 @@ analytics.brettterpstra.com
 analytics.brew.sh
 analytics.breyer.eu
 analytics.bricks.plus
+analytics.bridge.arrowhealth.io
 analytics.bridgesplit.com
 analytics.brightidiots.net
 analytics.brightmindly.net
@@ -2455,6 +2433,7 @@ analytics.brightside.com
 analytics.brinkhoff.biz
 analytics.brizy.io
 analytics.brkrm.io
+analytics.brkshr.com
 analytics.broadbandnow.com
 analytics.brodbeck-online.de
 analytics.brokula.hr
@@ -2529,6 +2508,7 @@ analytics.buznik.net
 analytics.buzzrx.com
 analytics.bw-clinics.com
 analytics.byd-sw.de
+analytics.bydaniwp.dev
 analytics.byeternify.com
 analytics.byggmax.dk
 analytics.byggmax.fi
@@ -2571,6 +2551,7 @@ analytics.canarymail.io
 analytics.candidat.permisdeconduire.gouv.fr
 analytics.candylabs.net
 analytics.canibringto.com
+analytics.canisversum.de
 analytics.canvoo.com
 analytics.cap-net.cz
 analytics.capacities.io
@@ -2650,7 +2631,6 @@ analytics.chamaeleonberlin.com
 analytics.chamonix.com
 analytics.chaotichypno.com
 analytics.chappa.nl
-analytics.chards.co.uk
 analytics.charisma.ir
 analytics.charlottetilbury.com
 analytics.chartonline.com
@@ -2791,6 +2771,7 @@ analytics.cn.ru
 analytics.cnerds.de
 analytics.cnpereading.com
 analytics.cnss.ma
+analytics.co.uk
 analytics.coachy.net
 analytics.coasterpedia.net
 analytics.coasterserver.de
@@ -2905,7 +2886,6 @@ analytics.cosmicstack.org
 analytics.cosmodiff.com
 analytics.cosmopolitanmag.com.tr
 analytics.cosmosnauten.cloud
-analytics.cosun.xyz
 analytics.couponharbor.net
 analytics.courdecassation.beta.gouv.fr
 analytics.coutodudaimoveis.com.br
@@ -2937,6 +2917,7 @@ analytics.crosstrade.io
 analytics.crowneplaza.com
 analytics.cruiseamerica.com
 analytics.cruisebound.com
+analytics.crutchfield.com
 analytics.cruz.com
 analytics.crx-media.de
 analytics.cryptocosmicapp.com
@@ -2996,6 +2977,7 @@ analytics.danielkarlkvist.se
 analytics.dannb.org
 analytics.dap-networks.de
 analytics.dapplooker.com
+analytics.darkdynasty.cloud
 analytics.darlink.ai
 analytics.dartn.de
 analytics.das-innovations.de
@@ -3101,6 +3083,7 @@ analytics.deutsche-boerse.com
 analytics.dev.borisovai.tech
 analytics.dev.devloed.com
 analytics.dev.exovia.de
+analytics.dev.halm-haus.de
 analytics.dev.testrespo001.pl
 analytics.dev.viljasolutions.com
 analytics.devalltech.com.br
@@ -3132,6 +3115,7 @@ analytics.dialpad.com
 analytics.diamondforge.me
 analytics.diaper.porn
 analytics.diaridegirona.cat
+analytics.diarioboe.es
 analytics.diariocordoba.com
 analytics.diariodeibiza.es
 analytics.diariodemallorca.es
@@ -3378,7 +3362,6 @@ analytics.efa.michigan.gov.cdn.cloudflare.net
 analytics.effectory.com
 analytics.efficy.cloud
 analytics.efortuna.pl
-analytics.efsa.europa.eu
 analytics.efset.org
 analytics.egdev.id
 analytics.eghamat24.com
@@ -3492,6 +3475,7 @@ analytics.enovation.io
 analytics.enst.fr
 analytics.entryevent.se
 analytics.entsorgen-versorgen.de
+analytics.envolva.org
 analytics.enym.com
 analytics.eon.cz
 analytics.eost.unistra.fr
@@ -3687,6 +3671,7 @@ analytics.fichtelapp.de
 analytics.fiege.com
 analytics.fieldbee.com
 analytics.fieldguide.io
+analytics.fiken.no
 analytics.fileconv.online
 analytics.filefactory.com
 analytics.filemail.com
@@ -3751,7 +3736,6 @@ analytics.flintverse.bsscommerce.com
 analytics.flir.com
 analytics.float-in.pt
 analytics.flocksafety.com
-analytics.flodesk.com
 analytics.flohmarktheld.de
 analytics.flole.de
 analytics.flonnect.com
@@ -3786,7 +3770,6 @@ analytics.fogpiercer.com
 analytics.fojin.app
 analytics.foleon.com
 analytics.folkatlas.net
-analytics.followthehashtag.com
 analytics.folloze.com
 analytics.fomr.io
 analytics.fontanka.ru
@@ -3938,7 +3921,6 @@ analytics.garage-services-online.co.uk
 analytics.gasteig.de
 analytics.gastronoma-shop.nl
 analytics.gate1travel.com
-analytics.gatech.edu
 analytics.gathre.com
 analytics.gay.it
 analytics.gaydemon.com
@@ -4062,7 +4044,6 @@ analytics.gonzaga.edu
 analytics.goodrx.com
 analytics.goodyear.design
 analytics.googleapis.com
-analytics.googleblog.com
 analytics.googlie.vip
 analytics.goonus.io
 analytics.goosed.ie
@@ -4070,7 +4051,6 @@ analytics.gopa.de
 analytics.gordonramsayrestaurants.com
 analytics.gorillacoffee.pl
 analytics.gotdigital.es
-analytics.gothamsports.com
 analytics.goto-funds.com
 analytics.gotowebinar.com
 analytics.gotrip.ge
@@ -4085,7 +4065,6 @@ analytics.gpslive.app
 analytics.gpthub.gg
 analytics.grabogarden.com
 analytics.grafikdepom.com
-analytics.grammatip.com
 analytics.granado.com.br
 analytics.granddongshan.com
 analytics.grandturkishbazaar.com
@@ -4095,6 +4074,7 @@ analytics.gravelrepublic.cc
 analytics.gravgrav.cc
 analytics.gravitywiz.com
 analytics.grayrecord.com
+analytics.great-short.com
 analytics.greeff.co.za
 analytics.greenmatters.com
 analytics.greenpulseinsight.com
@@ -4222,7 +4202,6 @@ analytics.headerbiddr.net
 analytics.headon.pro
 analytics.headspin.no
 analytics.health-and-beauty.com
-analytics.healthcaretechoutlook.com
 analytics.healtheintent.com
 analytics.healthifyme.com
 analytics.healthypethospital.me
@@ -4317,6 +4296,7 @@ analytics.holgersindbaek.com
 analytics.holidayclubresorts.com
 analytics.hollandfestival.nl
 analytics.holopmv.com
+analytics.holy-code.de
 analytics.holzweileroslo.com
 analytics.homagames.com
 analytics.homann.de
@@ -4419,7 +4399,6 @@ analytics.icabanken.se
 analytics.icaforsakring.se
 analytics.icagruppen.se
 analytics.icelab.info
-analytics.icer.org
 analytics.ichijoutranslations.com
 analytics.ichoosr.com
 analytics.icodesign.gr
@@ -4501,7 +4480,6 @@ analytics.incredibox.com
 analytics.incremio.com
 analytics.indaplay.hu
 analytics.indelicato-fight-gym.de
-analytics.index.pe
 analytics.indexmasterclass.com
 analytics.indiecomputing.com
 analytics.indieforge.pro
@@ -4521,7 +4499,6 @@ analytics.infomaniak.com
 analytics.inform.com
 analytics.informacion.es
 analytics.informaten.com
-analytics.informationweek.com
 analytics.informator.ua
 analytics.informedk12.com
 analytics.infos-grancanaria.com
@@ -4677,6 +4654,7 @@ analytics.jbravo.co
 analytics.jbrixcloud.com
 analytics.jdgwf.com
 analytics.jdsoftwarellc.com
+analytics.jdsports.co.uk
 analytics.jeanlain.com
 analytics.jeanpaulgaultier.com
 analytics.jeldnews.com
@@ -4686,8 +4664,6 @@ analytics.jfo.click
 analytics.jibecdn.com
 analytics.jilesh.com
 analytics.jimms.fi
-analytics.jiscinvolve.org
-analytics.jiuzhilan.com
 analytics.jivx.com
 analytics.jjfootwear.com
 analytics.jjkellersafegear.com
@@ -4958,7 +4934,6 @@ analytics.laineywilson.com
 analytics.lalafo.com
 analytics.lallnatural.com.br
 analytics.lamag.com
-analytics.lambdatest.com
 analytics.lampadadiretta.it
 analytics.lampdirect.be
 analytics.lampdirect.nl
@@ -5093,6 +5068,7 @@ analytics.lidopad.live.revoluterra.ru
 analytics.lienz.kunde.me
 analytics.lifebible.com
 analytics.liferadio.at
+analytics.lifeway.com
 analytics.lifewithallah.com
 analytics.lifo.gr
 analytics.lightdash.com
@@ -5222,6 +5198,7 @@ analytics.lukeliasi.com
 analytics.luminastack.ai
 analytics.luminenza.com
 analytics.lumiproxy.com
+analytics.lumiqlearn.com
 analytics.lumo.steamtalmark.nl
 analytics.lumoslabs.app
 analytics.lunarclientprod.com
@@ -5327,6 +5304,7 @@ analytics.marduklabs.com
 analytics.mariahilf.de
 analytics.marianne-reiss-immobilien.de
 analytics.marimekko.com
+analytics.markeplay.com
 analytics.markertcloud.de
 analytics.marketbyte.com
 analytics.marketcat.net
@@ -5443,7 +5421,6 @@ analytics.mekkafood.com
 analytics.melio.com
 analytics.melissa-online.nl
 analytics.meliva.de
-analytics.memcachier.com
 analytics.memoka.cloud
 analytics.menactra.com
 analytics.menswearhouse.com
@@ -5543,6 +5520,7 @@ analytics.mindjolt.com
 analytics.mindmapwizard.com
 analytics.mindorbittest.com
 analytics.mindvalley.com
+analytics.mineenchants.com
 analytics.minirodini.com
 analytics.minixo.org
 analytics.minopia.de
@@ -5618,7 +5596,6 @@ analytics.morsdorf-it.de
 analytics.mosaiqo.com
 analytics.motabare.ir
 analytics.motherhood.se
-analytics.motion.com
 analytics.motion.dev
 analytics.motoemotostore.it
 analytics.motofocus.pl
@@ -5734,6 +5711,7 @@ analytics.nafezly.com
 analytics.nafgold.com
 analytics.naga.com
 analytics.nahtamatudloomad.ee
+analytics.nailsmade.store
 analytics.naitreetgrandir.com
 analytics.naked.net
 analytics.nameplay.org
@@ -5763,7 +5741,6 @@ analytics.nazemi.cz
 analytics.nbsp.de
 analytics.nca.by
 analytics.nccommerce.com
-analytics.ncsu.edu
 analytics.ndevs.eu
 analytics.nearapy.com
 analytics.nebily.com
@@ -5824,7 +5801,6 @@ analytics.newgrodno.by
 analytics.newhome.ch
 analytics.neworleanssaints.com
 analytics.news-global.cloud
-analytics.news-sap.com
 analytics.newsbeep.net
 analytics.newsvine.com
 analytics.newtonoffices.com
@@ -5920,7 +5896,6 @@ analytics.notify.elsevier.com
 analytics.notify.elsevier.com.cdn.cloudflare.net
 analytics.notonthehighstreet.com
 analytics.notonthehighstreet.com.cdn.cloudflare.net
-analytics.nottingham.ac.uk
 analytics.notube.cc
 analytics.notube.io
 analytics.notube.link
@@ -5940,7 +5915,6 @@ analytics.novindiyar.com
 analytics.nowazarowka.pl
 analytics.nrw.de
 analytics.ns1.ff.avast.com
-analytics.nsdcc.go.ke
 analytics.nsw.gov.au
 analytics.nsystems.ro
 analytics.ntlc.com.vn
@@ -6045,7 +6019,7 @@ analytics.onesearch.id
 analytics.onestate.info
 analytics.onestate.space
 analytics.onesystems.ch
-analytics.onevision.ai
+analytics.onezoneapps.com
 analytics.onflix.vip
 analytics.onionmail.org
 analytics.onionsearchengine.com
@@ -6111,6 +6085,8 @@ analytics.ordbogen.com
 analytics.orderediting.com
 analytics.oreca-store.com
 analytics.org.es
+analytics.org.il
+analytics.org.nz
 analytics.orgasuite.de
 analytics.orghipaa.coveo.com
 analytics.originality.ai
@@ -6203,7 +6179,6 @@ analytics.pathozoom.com
 analytics.patin-a.de
 analytics.patrimonionacional.es
 analytics.patriot-defender.com
-analytics.patsnap.com
 analytics.pauta.ai
 analytics.paxenta.de
 analytics.paxful.com
@@ -6254,6 +6229,7 @@ analytics.peterge.de
 analytics.petracarestore.com
 analytics.petronella.ai
 analytics.peweo.com
+analytics.pexon.com
 analytics.pextra.cloud
 analytics.pfaeffle1948.de
 analytics.pfandhaus-schumachers.de
@@ -6404,7 +6380,6 @@ analytics.polyfloyd.net
 analytics.polymarkt.de
 analytics.pometon.com
 analytics.pontogay.com
-analytics.ponyfoo.com
 analytics.poollogicsd.com
 analytics.poolshool.com
 analytics.poorvika.com
@@ -6418,6 +6393,7 @@ analytics.poredda.digital
 analytics.porkrind.org
 analytics.pornfaceid.com
 analytics.pornhwadb.com
+analytics.pornify.cc
 analytics.pornrip.cc
 analytics.porsche.com
 analytics.portal.gov.bd
@@ -6578,7 +6554,6 @@ analytics.qualitasauto.com
 analytics.qualtir.com
 analytics.quan.cat
 analytics.quantalys.com
-analytics.quantilope.com
 analytics.quantumworkplace.com
 analytics.quasar-store.com
 analytics.quasarcervia.it
@@ -6593,6 +6568,7 @@ analytics.quendoo.com
 analytics.query.yahoo.com
 analytics.qui.gg
 analytics.quick-garden.co.uk
+analytics.quizizz.com
 analytics.quizjoyzone.com
 analytics.qumucloud.com
 analytics.qumucloud.com.cdn.cloudflare.net
@@ -7053,6 +7029,7 @@ analytics.serverschmiede.com
 analytics.serverwueste.de
 analytics.serverzaak.nl
 analytics.servettefc.ch
+analytics.service.gov.wales
 analytics.service.silvenga.com
 analytics.servicebund.de
 analytics.services.1brd.com
@@ -7187,6 +7164,7 @@ analytics.skorlife.com
 analytics.skrepka.top
 analytics.skriba.cloud
 analytics.skribble.com
+analytics.skriuwer.com
 analytics.skuola.net
 analytics.sky.com
 analytics.skyeng.ru
@@ -7285,7 +7263,6 @@ analytics.spachis.net
 analytics.span.im
 analytics.spankbang.com
 analytics.spanked.to
-analytics.sparkadvocacy.ca
 analytics.sparklingsociety.net
 analytics.spd.de
 analytics.specialistas69.com
@@ -7328,7 +7305,6 @@ analytics.spy.de
 analytics.squeaker.net
 analytics.squidcode.com
 analytics.srchy.ai
-analytics.sre.gob.mx
 analytics.srvnw.com
 analytics.ssense.com
 analytics.ssmas.com
@@ -7432,6 +7408,7 @@ analytics.student.be
 analytics.studentapp.space
 analytics.studenten-umzugshilfe.com
 analytics.studentenwerke.de
+analytics.studentkickoff.be
 analytics.studio.az
 analytics.studio2021.de
 analytics.studioalloy.nl
@@ -7588,6 +7565,7 @@ analytics.tebilisim.com
 analytics.tecart.de
 analytics.tech-review.de
 analytics.tech-vikings.com
+analytics.tech4learning.com
 analytics.techcompare.app
 analytics.techcompenso.com
 analytics.techdevnotes.com
@@ -7633,7 +7611,6 @@ analytics.tenorcreative.com
 analytics.tenson.com
 analytics.tensor.trade
 analytics.tepesoft.com
-analytics.tepper.cmu.edu
 analytics.teqstars.com
 analytics.teranas.de
 analytics.terun.digital
@@ -7652,7 +7629,6 @@ analytics.theagiclock.com
 analytics.theairadars.top
 analytics.thebeatles.com
 analytics.theblockbrain.ai
-analytics.theconversation.com
 analytics.thecorehosting.net
 analytics.thecybersky.com
 analytics.thedailycampus.com
@@ -7703,6 +7679,7 @@ analytics.thingdle.app
 analytics.think-devzone.co.uk
 analytics.think-ing.de
 analytics.thinkcrate.net
+analytics.thinkingcloud.net
 analytics.thirstyx.com
 analytics.thisismy.cloud
 analytics.thisvidscat.net
@@ -7720,6 +7697,7 @@ analytics.threeg.app
 analytics.thryve.health
 analytics.thulo.com
 analytics.thumpnews.com
+analytics.thun.com
 analytics.thunderbike.de
 analytics.thymuskin.de
 analytics.thynk.media
@@ -7821,7 +7799,6 @@ analytics.topdrinks.fr
 analytics.topdrinks.nl
 analytics.tophalfcontent.com
 analytics.topicle.com
-analytics.topledger.xyz
 analytics.topnewshub.net
 analytics.topocentras.lt
 analytics.topten.eu
@@ -7889,6 +7866,7 @@ analytics.trint.com
 analytics.trio-lighting.com
 analytics.trionic.com
 analytics.triotech.fr
+analytics.triplemagicapp.xyz
 analytics.tripoto.com
 analytics.tripster.ru
 analytics.triviar.de
@@ -7964,11 +7942,9 @@ analytics.ueberland-camping.de
 analytics.uechi.io
 analytics.ufcalendar.com
 analytics.ufomedia.xyz
-analytics.uhero.hawaii.edu
 analytics.uhrzeit.org
 analytics.uicomet.com
 analytics.uk.com
-analytics.ukhc.org
 analytics.ullrich-sport.de
 analytics.ultralinxnetwork.com
 analytics.um5.ee
@@ -8053,6 +8029,7 @@ analytics.uv.uni-kiel.de
 analytics.uva.de
 analytics.uvpn.me
 analytics.uwa.edu.au
+analytics.uwboeking.com
 analytics.ux.quickbase.com
 analytics.uzeli.com
 analytics.v-speed.eu
@@ -8200,6 +8177,7 @@ analytics.vizify.ai
 analytics.vk.ru
 analytics.vkdoc.net
 analytics.vlp-lup.de
+analytics.vmerci.lu
 analytics.vmn-diy.de
 analytics.vnchich.com
 analytics.vnclub.org
@@ -8314,6 +8292,7 @@ analytics.wedeho.tech
 analytics.wedmegood.com
 analytics.wedobroadcast.live
 analytics.wedoframes.shop
+analytics.weigand.in
 analytics.weinjobs.eu
 analytics.weinor.de
 analytics.weinor.netzlabor.org
@@ -8394,6 +8373,7 @@ analytics.withub.it
 analytics.wittsy.co
 analytics.wiwide.com
 analytics.wizdeo.com
+analytics.wizebot.tv
 analytics.wizedesign.com
 analytics.wm-co.de
 analytics.wmt.digital
@@ -8729,6 +8709,7 @@ analytics66.techsmith.com
 analytics67.techsmith.com
 analytics68.techsmith.com
 analytics6866.wixsite.com
+analytics8.com.au
 analytics8.successfactors.com
 analyticsadmin.googleapis.com
 analyticsapi.bsbportal.com
@@ -8762,6 +8743,7 @@ analyticsnew.overwolf.com
 analyticsnorth.weber.com
 analyticson.com
 analyticsoverzicht.com
+analyticsperf-analytics.dyn.indeed.com
 analyticspixel.microsoft.com
 analyticsplus.classlink.com
 analyticspodium.com
@@ -8785,7 +8767,6 @@ analyticsvideo.gjirafa.com
 analyticsweb.net
 analyticswizard.com
 analyticswritenew.xerevo.com
-analyzer2.dtiblog.com
 ananas-analytics.slack.com
 anapixel.elmundo.es
 anapixel.marca.com
@@ -8798,7 +8779,6 @@ android-stat.acestream.net
 android-tv-beacons.xumo.com
 androidlog.shouji.baofeng.com
 androidlog.ws.pho.to
-angel-analytics.webflow.io
 angeldonationblog.com
 angelfishstats.com
 annegpermi.click
@@ -9078,9 +9058,7 @@ attemptsstately.com
 attestationmonk.com
 audaceinviora.click
 audiobook-analytics.app-niche-finder.workers.dev
-audiosdroid-store-analytics.vercel.app
 aueb-analytics.wixsite.com
-augmenter-analytics-production.up.railway.app
 aurix.click
 auronixpro-click.pages.dev
 auronixpro.click
@@ -9145,13 +9123,11 @@ bajnl.espclicks.appsflyer.com
 balancedmglobal.click
 baluarterendecto.click
 bankaccountopening.click
-banner.alfredstate.edu
 banner.click-tt.de
 bannerclick.lll1.ir
 bannerlog.speedbank.co.kr
 barc-valnorton.click
 barchamvalnorham.click
-barom.blog.shinobi.jp
 basic-stat.evrikagames.com
 basicstat.com
 battsrealestategroup.com
@@ -9223,6 +9199,7 @@ beacon.better.sg
 beacon.beyondpricing.com
 beacon.bioware.com
 beacon.buffbuff.com
+beacon.bz.it
 beacon.carfax.com
 beacon.cdn.mile.cloud
 beacon.cdn.qq.com.cdn.dnsv1.com
@@ -9231,6 +9208,7 @@ beacon.chiadochain.net
 beacon.cimb.com.my
 beacon.circles.asia
 beacon.clcert.cl
+beacon.co.in
 beacon.co.tt
 beacon.co.za
 beacon.com
@@ -9243,6 +9221,7 @@ beacon.digitalwerksautomation.com
 beacon.divi-layouts-pro.com
 beacon.dradis.netflix.com
 beacon.edesignspace.com
+beacon.edu.sg
 beacon.ehow.com
 beacon.elairaspirit.com
 beacon.eleos.co.uk
@@ -9250,7 +9229,6 @@ beacon.en.uptodown.com
 beacon.engr.scu.edu
 beacon.ent.sirsidynix.net
 beacon.etfflows.com
-beacon.etherscan.io
 beacon.everskies.com
 beacon.fairground.tv
 beacon.fanfare.io
@@ -9278,7 +9256,6 @@ beacon.hq.oddware.net
 beacon.ichkoche.at
 beacon.imperialsupplies.com
 beacon.indieclicktv.com
-beacon.inmetro.gov.br
 beacon.itmedia.jp
 beacon.jk.cn
 beacon.justsearch4you.com
@@ -9365,7 +9342,6 @@ beacon.tlvnet.net
 beacon.toyota.co.jp
 beacon.tp-eye.com
 beacon.trademe.co.nz
-beacon.trekmedics.org
 beacon.tunecore.com
 beacon.tws.toyota.jp
 beacon.txfund.com
@@ -9376,9 +9352,9 @@ beacon.us-west-2.internal.dradis.netflix.com
 beacon.vertebrae-axis.com
 beacon.walmart.ca
 beacon.walmart.com.akadns.net
+beacon.web.id
 beacon.whitemarbleconsulting.com
 beacon.whitewall.com
-beacon.works
 beacon.www.bodegaaurrera.com.mx
 beacon.www.lider.cl
 beacon.www.sams.com.mx
@@ -9389,12 +9365,14 @@ beacon.ztgame.com.cdn.dnsv1.com
 beacon.ztgame.ztinfoga.com
 beacon01.alma.exlibrisgroup.com
 beacon05.lovable.app
+beacon360.com
 beacon360.content.online
 beacon8.fnfis.com
 beaconadnetwork.com
 beaconads.com
 beaconforms.com
 beaconfyldra-engine.com
+beaconhealthsystem.qualtrics.com
 beaconhygiene.com
 beaconimages-prod.dradis.netflix.com
 beaconimages.netflix.net
@@ -9550,7 +9528,6 @@ blog-stat.com
 blog-webkatalog.de
 blog.aghires.com
 blog.aidhoo.com
-blog.aiia.eu
 blog.alivedoors.com
 blog.alphacarehub.com
 blog.americaupdates.com
@@ -9573,9 +9550,7 @@ blog.fastcommerz.com
 blog.firstminutejournal.com
 blog.fluenceenergy.com
 blog.fontanka.ru
-blog.goodlord.co
 blog.grassw.com
-blog.greenlight.guru
 blog.independentupdates.com
 blog.indianmedicalsupply.in
 blog.institutenyjournal.com
@@ -9591,14 +9566,12 @@ blog.koorsen.com
 blog.kovida.in
 blog.lc
 blog.livedooor.info
-blog.loop.homes
 blog.luncheonette.de
 blog.marshi.cz
 blog.moodocity.com
 blog.myheritage.de
 blog.mynewsjournal.com
 blog.nationreportjournal.com
-blog.nativehope.org
 blog.ndstudio.xyz
 blog.newportricheyelks.org
 blog.orientalmotor.com
@@ -9655,6 +9628,7 @@ books-analytics-events.news.apple-dns.net
 boostmarkstatic.com
 bootsstation-reiherhals.de
 bordeamos.click
+borderclick.com
 borsektron-click.pages.dev
 borsektron.click
 boticinal.analytics.digitecpharma.fr
@@ -9714,6 +9688,9 @@ brennstoffemokstat.shop
 brentonvaletrust.click
 brentop.click
 briamdoniasteamworkspace.myclickfunnels.com
+briefdeskflash.click
+briefhojejornal.click
+briefhoynews.click
 brieflivedaily.click
 brightonclick.com
 brightshade.click
@@ -9838,6 +9815,7 @@ ca-prestationssante.fr
 caanalytics.com
 caanalyticsdobs.com
 caclick.baidu.com
+cadqtzf5-analytics.convkit.com
 cafe-log.myshoplus.com
 cafe.pixelcreativearts.com.br
 calameo-beacon.global.ssl.fastly.net
@@ -9851,7 +9829,6 @@ cam-analytics-service-435433079.us-west-2.elb.amazonaws.com
 cam-analytics.nzxt.com
 camstaterep.com
 can2025.click
-canadastatistics.info
 canalstat.com
 canary-moodhood-analytics.livedigital.space
 canewsbeacon.com
@@ -9861,7 +9838,6 @@ canjearlpuntos.click
 canjearppuntos.click
 canopy-analytics-staging.webflow.io
 canorivex.click
-canvas-analytics.netlify.app
 capdividaval.click
 capi-pixel.adfixus.com
 capi.clicktocartbd.com
@@ -10039,6 +10015,7 @@ click-ecom.com
 click-eu-v4.ecxclk.com
 click-eu-v4.exoclkneu.com
 click-for-preview.com
+click-fr.com
 click-it-now.online
 click-nativclick-com.cdn.ampproject.org
 click-new-download.com
@@ -10141,6 +10118,7 @@ click.hunantv.com
 click.i.southwesternrailway.com
 click.iciba.com
 click.infoblox.com
+click.interactivebrands.com
 click.jr.jd.com
 click.justwatch.com
 click.jve.net
@@ -10212,6 +10190,7 @@ click2bit.net
 click2buy.com
 click2chat.org
 click2freemoney.com
+click2go.me
 click2paid.com
 click2sell.eu
 click360.fr
@@ -10236,6 +10215,7 @@ clickadu.com
 clickadu.net
 clickaduads.com
 clickadz.com
+clickafiliados.com.br
 clickagents.com
 clickagy.com
 clickaider.com
@@ -10335,6 +10315,7 @@ clickguardian.co.uk
 clickhere.ru
 clickhereforcellphones.com
 clickherenew.xyz
+clickheretofind.com
 clickhosted.com
 clickhouse-collector.sovsport.prod.plat.agency
 clickhouse-error-analyti-ndhz56ux-observe-clickhouse-us-ea1-ts8.shopifycloud.com
@@ -10440,7 +10421,6 @@ clicks.rtad.io
 clicks.stackoverflow.email
 clicks.toteme.com
 clicks.traffictrader.net
-clicks.virtuaguyhd.com
 clicks.walla.co.il
 clicks.wawlabs.com
 clicks2.traffictrader.net
@@ -10483,6 +10463,7 @@ clicktale.net
 clicktale.net.edgekey.net
 clickterra.net
 clickthroo.com
+clickthru.com
 clickthru.lefbc.com
 clickthru.net
 clickthrucash.com
@@ -10649,7 +10630,6 @@ conduit-beacon-usw2.mtvnservices.com
 conduit-beacon-usw2.mtvnservices.com.edgekey.net
 conduit-beacon.mtvnservices.com
 conf.stat.foreign.nearme.com.cn
-confirmation-error-status-card.webflow.io
 conjured.click
 connect-analytics-prod-eu.superservice.com
 connect-analytics.maklare.vitec.net
@@ -10705,13 +10685,11 @@ covid19statlab.com
 covidblog.com
 cp-analytics.recman.io
 cpaclickoffer.com
-cpaclicks.com
 cpaclickz.com
 cpm-analytics.cpm.org
 cpro.baidustatic.com
 cran.stat.auckland.ac.nz
 crash-stats.allizom.org
-crash-stats.azurewebsites.net
 crash-stats.mozilla.com
 crash-stats.mozilla.org
 crash-stats.thunderbird.net
@@ -10754,7 +10732,9 @@ csmads.gameclick.vn
 csr110112201eur.click
 csr110112203eur.click
 csr110112204eur.click
+csstatic.com
 cstat.nextel.com.ua
+cstaticdun.126.net
 ctrwow-prod-analytics-socketserver.azurewebsites.net
 cubarsbarr.click
 currantcapt.click
@@ -10788,8 +10768,8 @@ d158.webanalytics.safetyhandler.com
 d453.webanalytics.safetyhandler.com
 da-stats.sladewatkins.net
 daftaraja.click
-dagala-analytics.vercel.app
 dailog.de
+dailybriefdesk.click
 dailyjornal.click
 dailylog.storm.baofeng.com
 dailyupdate.click
@@ -10810,10 +10790,8 @@ data-1fbcf6d7f5.cannstatter-zeitung.de
 data-367bcf5bd6.german-retail-blog.com
 data-367bcf5bd6.lz-blog.de
 data-8a13e13409.werkstatt-betrieb.de
-data-analytics-idobata.connpass.com
 data-analytics-live.coriniumintelligence.com
 data-analytics.cioreview.com
-data-analytics.co-op.group
 data-analytics.farmatodo.com.co
 data-analytics.farmatodo.com.ve
 data-analytics.hatenablog.jp
@@ -10872,6 +10850,7 @@ deeprootanalytics.com
 degussa-goldhandel.click
 deidrerealestate.com
 dej92kbc9.click
+deliverypayment.click
 delog.nestads.com
 delog.sooplive.com
 delta-static.shop
@@ -10887,6 +10866,9 @@ depterowax.click
 derytc.click
 designerpump.click
 deskflashtoday.click
+desknowflash.click
+desknowtoday.click
+desktodayflash.click
 desktop-station.wixstudio.com
 desolaron-k-mipixelum-conovaon.org
 desqutrich.click
@@ -10914,6 +10896,7 @@ dgstatic.jd.com
 di82avol92.click
 dialog.pt
 dialog.wob.ag
+diariobriefnow.click
 didis-werkstatt.de
 digianalytics.fr
 digistats.de
@@ -10949,7 +10932,6 @@ disorderstatus.ru
 distatrais.rest
 disvemegal.click
 divisemos.click
-divorcestatistics.info
 diwop-we-prod-appservice-mymiele-analytics.azurewebsites.net
 diwpqhzya.click
 djupfondstad.click
@@ -11059,6 +11041,7 @@ dt-apigateway-log.dt-pn1.com
 dtlog.szy.cn
 dtm-client-analytics-prod.cs.xcal.tv
 dtm-client-analytics.na.cs.xcal.tv
+dtp-analytics.airmap.com
 dts-log.anker.com
 du832kil.click
 duclick.baidu.com
@@ -11087,11 +11070,9 @@ e-stat.huya.com
 e-stat.online-k1.com
 e.stat.ykimg.com
 ea344b8df8d3f7bf708723a349a088e0.ap-northeast-1.resend-clicks-a.com
-eaglestats.com
 earlstouts.click
 easter-analytics.com
 eastinvestwick.click
-easy-google-analytics-4.myshopify.com
 easy-web-stats.com
 easysearch.click
 easystat.de
@@ -11137,11 +11118,9 @@ ekclickei.ekclickei.com
 ekkanicommu.click
 elaine.analytics.rausgegangen.de
 elanfinance.click
-elasticsearch-benchmark-analytics.elastic.co
 electriclicking.com
 electricshadow.click
 electroclearance.click
-electrooutlet.click
 electrosale.click
 eleve-vextera.click
 elmasistatistik.com.tr
@@ -11180,7 +11159,6 @@ epicclicks.net
 epiclexiprolab.click
 epiclotemaxhex.click
 epistatehealth.com
-epistemic-analytics.gitlab.io
 equatorial-statement.pro
 erayv.click
 erestature.com
@@ -11252,6 +11230,7 @@ euros4click.de
 eusaleonline.click
 eustatics.ezvizlife.com
 eustatsunative.com
+ev-analytics-js.s3.eu-west-1.amazonaws.com
 eva-ad.24hstatic.com
 eval.privateapi.click
 evbeacon.networksolutions.com
@@ -11263,6 +11242,7 @@ eventcom.api.np.km.playstation.net
 eventlog.gryphline.com
 eventlog.hd.baofeng.com
 eventlog.netcentrum.cz
+eventlog.setka.ru
 events-analytics.apple.com
 events-analytics.hotstar.com
 events.analytics.dhbbtv.fi
@@ -11304,6 +11284,7 @@ ezanalytics.xyz
 ezebra.click
 ezlonk.click
 ezoicanalytics.com
+ezstatic.com
 f-log.grammarly.io
 f.qstatic.com
 fa.micstatic.com
@@ -11414,6 +11395,8 @@ flaeryx-ai.click
 flaeryxai.click
 flare-analytics-sdk.vercel.app
 flare-analytics.com
+flashbriefnow.click
+flashhoylive.click
 flashnowwire.click
 fleet-portal-csp.applog.bolt.eu
 fletaq.click
@@ -11495,6 +11478,7 @@ freedombroker.click
 freeflix.click
 freepixelworldgems.weebly.com
 freesoftwarestation.com
+freestat.pl
 freestat.ws
 freestateadvocacy.com
 freestats.com
@@ -11679,7 +11663,6 @@ goodotisnop.click
 goodstatorone.com
 googlanalytics.ws
 google-0-analytics-com-p.surfly.com
-google-analytics-data-api-ga4.bubbleapps.io
 google-analytics-suite.ozon.ru
 google-analytics.bi.owox.com
 google-analytics.com
@@ -11804,7 +11787,6 @@ halykastral.click
 handler.rgstats.com
 handwerker-katalog.net
 handwerkstatt-der-holzgestaltung.de
-happy-couple-analytics.herokuapp.com
 happymoose.sk-webanalytics.de
 har-beacon.har.com
 hariharaestates.com
@@ -11813,6 +11795,7 @@ hasidagamian.click
 hastatiformer.shop
 havalandirmakanaliimalati.click
 havenclick.com
+hawkanalytics.com
 hawkcredpeak.click
 haymarketstat.de
 hb-analytics.hotstar.com
@@ -11864,7 +11847,6 @@ hitslog.com
 hitstation.nl
 hitstatus.com
 hk6vdj4z.click
-hljreasf.click
 hlog.bclugu.com
 hlog.bigda.com
 hlstatus.com
@@ -11897,14 +11879,16 @@ hotrochatluongchuyennghieptoanquoc.click
 hour.757realestatesearch.com
 houston-analytics.com
 hoydesknews.click
+hoyflashbrief.click
+hoyflashnews.click
 hoynews.click
 hoytodaynews.click
 hp-beacon.dimitriusergiu.workers.dev
 hp.mapachfeminin.click
 hpanalytics.net
 hqsblog.com
-hr-analytics.geekbrains.ru
 hrenvam.click
+hs-analytics.com
 hss-analytics.telekom.de
 htgtc.altardstate.com
 html-static.shop
@@ -11944,7 +11928,6 @@ ibeat-analytics.com
 ibeat-analytics.com.edgekey.net
 ibelowh.click
 ibervantacapital.click
-ibm-analytics.slack.com
 icable-ads-video-static.i-cable.com
 iccestate.com
 icelandion.click
@@ -12087,7 +12070,6 @@ ingest-sdk-stat-bj.skyengine.com.cn
 ingest.analytics.nation.dev
 ingester-pixel.yourtoken.io
 injectshrslinkblog.com
-innereafter.click
 innlog.fr
 inpolst.2j1ka2d.click
 inpolst.kln3h2.click
@@ -12196,7 +12178,6 @@ jiaostately.qpon
 jillsclickcorner.com
 jitterystation.com
 jobinuk.click
-jobs-search-analytics.prod.use1.radancy.net
 jodelkdi.click
 jojoyfun.click
 jolkea.click
@@ -12245,7 +12226,6 @@ kaptrovenez.click
 karrot-pixel.business.daangn.com
 karvynmarkholm.click
 kastamonupsikolog.com
-katana-analytics.roninchain.com
 katayu.click
 katjimej.blog.fc2.com
 kaytiesblog.com
@@ -12254,7 +12234,6 @@ kbox-analytics-backup.s3-accelerate.amazonaws.com
 kbox-analytics-backup.s3.amazonaws.com
 kbox-analytics-prod.s3-accelerate.amazonaws.com
 kbox-analytics-prod.s3.amazonaws.com
-kcoas.click
 kcp-analytics-api-alb-291674519.us-west-2.elb.amazonaws.com
 keandefwoeoopewuy98sndansdn90e0p21212.click
 keitcontinental.click
@@ -12358,6 +12337,7 @@ l.sapolog.com
 labelleadresse-analytics.labelleadresse.com
 laceassumestatic.com
 ladyclicks.ru
+lamarrealestate.co.za
 lampoinvestecto.click
 lamporendecto.click
 lan-dochodura.click
@@ -12416,6 +12396,7 @@ letreingert.click
 letsgetrealestatepodcast.com
 lettucewnow.click
 lever-analytics.com
+lexplore-analytics.co.uk
 leztruvine.click
 lf-headquarters-speed.yhgfb-cn-static.com
 lf-headquarters-speed.yhgfb-cn-static.com.1046296236066394.queniubg.com
@@ -12471,7 +12452,6 @@ lilytailsblog.blogspot.com
 linblog.info
 line1-log.biligame.net
 linen-static.online
-linepalur.click
 linestats.casa
 linexora.click
 link-analytics.argyle.com
@@ -12627,6 +12607,7 @@ log.100modapk.com
 log.100workingmod.com
 log.111percent.net
 log.120ask.com
+log.123apkbaixar.com
 log.123apkdescargar.com
 log.123apkdownload.com
 log.16888.com
@@ -12637,7 +12618,6 @@ log.17zuoye.net
 log.1clickobbapk.com
 log.1spbgmu.com
 log.1vn.app
-log.2-d.jp
 log.247post.vn
 log.321moviesfree.com
 log.360modapk.com
@@ -12646,7 +12626,6 @@ log.360moddownload.com
 log.3irobotics.net
 log.3u.com
 log.4399data.com
-log.43z.one
 log.48play.com
 log.4mktg.com
 log.51changdu.com
@@ -12679,7 +12658,6 @@ log.aispeech.com
 log.ajunews.com
 log.aktiv.com
 log.al-hiwar.com
-log.alets.ch
 log.allarchivecenter.live
 log.alldocumentexplor.pro
 log.alldocumentguide.com
@@ -12688,10 +12666,7 @@ log.alldocumentplus.pro
 log.allfilesproof.live
 log.amemv.com
 log.amhib.com
-log.amitshah.net
 log.ampilitude.com
-log.andie.se
-log.andvari.net
 log.anninhthudo.vn
 log.api-maps.yandex.ru
 log.api.zaloapp.com
@@ -12710,7 +12685,6 @@ log.appbundledownload.com
 log.appeggs.com
 log.appstore3.huan.tv
 log.ato.santander.co.uk
-log.aufkante.de
 log.avlyun.com
 log.avlyun.com.host
 log.avlyun.sec.intl.miui.com
@@ -12739,7 +12713,6 @@ log.beamgrid.site
 log.bedhosting.com.br
 log.beecost.com
 log.beecost.vn
-log.beshr.com
 log.beslist.nl
 log.best61.com
 log.best82.com
@@ -12756,31 +12729,27 @@ log.bloodpressurebp.com
 log.bloodpressureplanonline.live
 log.bloodpressurestudio.com
 log.bloodsugars.live
-log.bokoro.com
 log.boomplaymusic.com
 log.booster.gearupportal.com
 log.bossnote.ru
 log.botrift.com
+log.bowmastersmod.com
 log.bpminecraft.com
 log.bstage.in
 log.btcc.com
 log.btopenworld.com
 log.buenovela.com
-log.bullet.so
 log.bunjang.co.kr
 log.byteoversea.com
 log.byteoversea.com.bytewlb.akadns.net
 log.byteoversea.com.edgekey.net
 log.byteoversea.com.ttdns2.com
 log.byteoversea.net
-log.c3o.org
-log.c5t.org
 log.calgary.ca
 log.calomeal.com
 log.cand.vn
 log.captioncall.com
 log.careamiga.com
-log.cau.ac.kr
 log.cc.netease.com
 log.cdedb.com
 log.cece.com
@@ -12810,22 +12779,19 @@ log.cloud.sbs.co.kr
 log.cloudx2.com
 log.cmbchina.com
 log.cmpassport.com
-log.cnrs.fr
-log.company015.it
 log.compentum.de
 log.congluan.vn
 log.connect.dirac.com
 log.conseno.com
 log.core.cloud.vewd.com
+log.cpbc.co.kr
 log.crazyfox.vip
 log.cribnotes.jp
 log.cs.pp.cn
-log.csswg.org
 log.dagen.no
 log.daibieunhandan.vn
 log.daidoanket.vn
 log.dailyweather.pro
-log.dakarrallyraid.com
 log.dantocmiennui.vn
 log.daqi.com
 log.darc.de
@@ -12836,12 +12802,8 @@ log.datarecoveryradical.live
 log.dav.edu.vn
 log.dc.cn.happyelements.com
 log.ddns.net
-log.deconcepter.jp
-log.deep-exp.com
 log.deepcleanelites.com
 log.deepreader.live
-log.deliciousrhythms.com
-log.denwa.dev
 log.deutschegrammophon.com
 log.dev.pixelmotiondemo.com
 log.dfg.de
@@ -12853,13 +12815,11 @@ log.dmmbpnyy.com
 log.doanhnhan.vn
 log.documentmanagerpdfdocxlssale.live
 log.documentreaderapp.com
-log.does-not-exist.org
 log.doji.fun
 log.doji.game
 log.dojigaming.com
 log.dokichat.club
 log.dokploy.massive.ru
-log.dot-co.co.jp
 log.doubao.com
 log.down31.com
 log.down61.com
@@ -12892,16 +12852,13 @@ log.eufylife.com
 log.event.cnool.net
 log.event.hunantv.com
 log.eventstag.com
-log.executive-vacationer.com
 log.expertrec.com
 log.explainfast.live
 log.extaddon.site
 log.extensopro.com
-log.ezura.asia
 log.ezvizlife.com
 log.fablecdn.net
 log.fail5.com
-log.fakewhale.xyz
 log.fangtv.vn
 log.fapder.com
 log.felo.ai
@@ -12942,7 +12899,6 @@ log.gamehorror.com
 log.garenafreefiremod.com
 log.gastecnologia.com.br
 log.gauthai-us.com
-log.gcpn.jp
 log.gd121.cn
 log.geetest.com
 log.geniee-search.net
@@ -12956,7 +12912,6 @@ log.giaoducthoidai.vn
 log.gigz.fr
 log.gilanproduct.ir
 log.git99.com
-log.gitlab.net
 log.gizmohub.com
 log.gleetap.com
 log.gobankingrates.com
@@ -12966,7 +12921,7 @@ log.goodjourney.io
 log.goodnovel.com
 log.goodreels.com
 log.goodt.tech
-log.gprd.gitlab.net
+log.googlebuffer.com
 log.grm.gsretail.com
 log.gtkbmytr.com
 log.gv-bayern.de
@@ -13000,21 +12955,16 @@ log.himodapk.com
 log.homestyler.com
 log.hotweathers.live
 log.hug999.com
-log.hugoschotman.com
 log.hunantv.com
 log.huncngame.com
 log.hungrysharkmod.com
 log.hvapi.com
-log.hyuki.com
 log.ibk.co.kr
 log.iflytek.com
 log.ifood.tv
-log.ifor.dev
 log.igamecj.com
 log.ihuman.com
-log.ileamare.ru
 log.immergo.tv
-log.impactcherub.com
 log.impyxygg.com
 log.indiamart.com
 log.info.polostrategiconazionale.it
@@ -13027,13 +12977,11 @@ log.iranketab.ir
 log.ireader.com
 log.irkfmvsolutions.com
 log.istarbucks.co.kr
-log.istique.net
 log.isugar.xyz
 log.iteldrive.com
 log.iypkb6.com
 log.iyunmai.com
 log.jackpotmasterslots.com
-log.jcabi.com
 log.jd.com
 log.jellybusgo.com
 log.jhgfuytrgroup.com
@@ -13051,7 +12999,6 @@ log.kaching.eu.com
 log.kaka.me
 log.kbod4m1goyh9j6nb.xyz
 log.keenswh.com
-log.keso.cn
 log.kgmobi.com
 log.kienthuc.net.vn
 log.kill3.com
@@ -13064,7 +13011,6 @@ log.klynf.com
 log.kmplayer.com
 log.knuspermagier.de
 log.koe-koe.com
-log.koehr.in
 log.koepferl.de
 log.kookapp.cn
 log.kroffle.net
@@ -13074,7 +13020,6 @@ log.kuwo.cn
 log.kwaratskhelia.top
 log.kyread.cn
 log.kzvepo.com
-log.lachstock.com.au
 log.lambapp.com
 log.lc-stakelogic.com
 log.lead.searchwrite.jp
@@ -13083,12 +13028,10 @@ log.lex.sale
 log.lichviet.org
 log.liepin.com
 log.lilysilk.com
-log.liminastudio.com
 log.literiess.com
 log.liusha.info
 log.livirobo.com
 log.lnk.events
-log.logcluster.org
 log.lovense-api.com
 log.lovense.com
 log.loxone.com
@@ -13098,15 +13041,11 @@ log.lxjjkj.com
 log.lxyswl.com
 log.lxzswl.com
 log.macarong.net
-log.maglab.jp
 log.mailsturbo.com
 log.make50.com
 log.makemydeal.com
-log.malacology.net
 log.mangaina.com
-log.maniacalrage.net
 log.mappy.net
-log.martinatkins.me
 log.mate33.com
 log.matomo.jp
 log.matrixclone.mobi
@@ -13116,12 +13055,11 @@ log.melon.com
 log.meowconnect.com
 log.mergerestyle.com
 log.mgidkndq.com
+log.mile.so
 log.mileinfo.cc
 log.mincju.com
-log.miraoto.com
 log.miwifi.com
 log.mkj.lt
-log.mkuriki.com
 log.mobilelegendsmod.com
 log.modapkdescargar.com
 log.modapkdown.com
@@ -13136,7 +13074,6 @@ log.mp3.zing.vn
 log.ms-csnv.ru
 log.mtime.cn
 log.mukeai.app
-log.munichmakerlab.de
 log.music.baidu.com
 log.musical.ly
 log.mvpplant.com
@@ -13145,7 +13082,6 @@ log.myasdfzcxv.com
 log.mygreatweather.live
 log.neocraftstudio.com
 log.nesine.com
-log.netbib.de
 log.news.zing.vn
 log.newsvine.com
 log.newyay.com
@@ -13155,11 +13091,7 @@ log.ngsm.nexon.com
 log.nguoimuanha.vn
 log.nhandan.vn
 log.nhipcaudautu.vn
-log.niccol.li
-log.nissuk.info
 log.node.minigame.qq.com
-log.noid11.com
-log.noiretaya.com
 log.noreadapp.com.1dot1dot1dot1.cloudflare-dns.com
 log.note55.com
 log.noxiaohao.com
@@ -13178,7 +13110,6 @@ log.onmas.kt.com
 log.opgaming888.net
 log.optimistic.co
 log.optimizely.com
-log.or.cz
 log.orbwebsys.com
 log.oto.com.vn
 log.owello.nl
@@ -13187,11 +13118,8 @@ log.ozgur.works
 log.p2p.hunantv.com
 log.p2wee.com
 log.pacer.cc
-log.pacificwhale.org
-log.pardus.de
 log.parselys.org
 log.particlenews.com
-log.paulbetts.org
 log.paybyrd.com
 log.pdfbookeditor.live
 log.pdfcreatorpro.com
@@ -13205,19 +13133,19 @@ log.pdfviewerscannerstore.live
 log.peliculaplay.com
 log.people.cn
 log.perfecttitspics.com
-log.perl.org
 log.phonebookrecoveries.live
 log.phonecleansentry.com
 log.phonecleantools.com
 log.phonefreshfix.live
 log.phonegoodfinder.live
 log.phonestorageclean.com
+log.photorecoverandbackup.com
 log.photorecovercenter.com
+log.photorecoveryfilerestorer.com
 log.photorecoverypicturerecovery.com
 log.photorecoverytools.com
 log.pick5g.com
 log.pico.vn
-log.picu.dev
 log.pinduoduo.com
 log.pixelwealthy.com
 log.plantsvszombiesmod.com
@@ -13227,7 +13155,6 @@ log.play61.com
 log.play63.com
 log.playusdev.com
 log.plo.vn
-log.plucore.jp
 log.pngindir.com
 log.podbbang.com
 log.pokemon-go-mod.com
@@ -13249,6 +13176,7 @@ log.pvpbardescargar.com
 log.pvpbardl.com
 log.pvpbardown.com
 log.pvpbardownload.com
+log.pvpbares.com
 log.pvpbargame.com
 log.pvpbariphone.com
 log.pvpbaronline.com
@@ -13274,14 +13202,11 @@ log.qrscannerplusonline.live
 log.quickcleanplus.com
 log.quora.com.cdn.cloudflare.net
 log.qweasdzxcshop.com
-log.r-hub.io
 log.rabobank.nl.edgekey.net
 log.rada.vn
-log.radiantdispatch.com
 log.radiko.jp
 log.realelements.live
 log.realone.com
-log.red54.com
 log.redtgb.com
 log.releware.net
 log.rexmoddl.com
@@ -13292,21 +13217,16 @@ log.rlsbb.ru
 log.rlsbb.to
 log.rmp.rakuten.co.jp
 log.rmtdnqkx.com
-log.rockerest.com
-log.rocketshipapps.com
 log.romogame.com
-log.rosecurify.com
 log.s.sm.cn
 log.saas.zeasn.tv
 log.safesearchinc.com
 log.saigondautu.com.vn
 log.samsunghrm.com
 log.scanqrcodedesign.live
-log.schemescape.com
 log.schoolyear.app
 log.seel.com
 log.sepdatabridge.site
-log.serverjs.org
 log.sfanytime.com
 log.sg.adnext.mobi
 log.sggp.org.vn
@@ -13315,7 +13235,6 @@ log.shackspace.de
 log.shalougame.com
 log.shopfully.cloud
 log.shopfully.tech
-log.shopxo.net
 log.shortbread.aws.dev
 log.showmax.com
 log.shrtyu.com
@@ -13325,7 +13244,6 @@ log.shuidichou.com
 log.silenarial.org
 log.sites-analytics.com
 log.sktswe.net
-log.skut.in
 log.skylum.com
 log.skyroam.com.cn
 log.sl8.org
@@ -13367,7 +13285,6 @@ log.taggstar.com
 log.tailtales.xyz
 log.talkie-ai.com
 log.tallink.com
-log.tanwan.com
 log.tapatalk.com
 log.tapchimattran.vn
 log.tapchitaichinh.vn
@@ -13376,8 +13293,6 @@ log.tappetinionline.it
 log.tapplus.com
 log.tbs.qq.com
 log.tec73.com
-log.tenseforms.com
-log.texttheater.de
 log.tf.co.kr
 log.tgbbet.com
 log.thanhnien.vn
@@ -13398,13 +13313,11 @@ log.tinxe.vn
 log.tippie.de
 log.tmtreader.com
 log.tocalifeworldmod.com
-log.toeoda.com
 log.tokopedia.net
 log.topultragame.com
 log.topzxcv.com
 log.tosspayments.com
 log.tpns.gz2.tencent.com
-log.tr-influencer.jp
 log.traineratwot.site
 log.trend.rankify.best
 log.trikx.dev
@@ -13412,7 +13325,6 @@ log.trueshields.com
 log.ttpab.com
 log.ttpaf.com
 log.ttplus.cn
-log.tuananh.ws
 log.tubegg.com
 log.tunezilla.com
 log.tutuapp.com
@@ -13427,7 +13339,6 @@ log.ua.iegcom.com
 log.ubianet.com
 log.ultimatecleaner.pro
 log.uninow.com
-log.univ-littoral.fr
 log.us-east-2.taggstar.com
 log.us.adnext.mobi
 log.us.tiktokv.com
@@ -13437,7 +13348,6 @@ log.uu.163.com
 log.v-videoapp.com
 log.v-videoapp.com.cdn.cloudflare.net
 log.vagdoing.com
-log.valhallaisland.com
 log.valka.cz
 log.vava.com
 log.vbncllc.com
@@ -13447,24 +13357,21 @@ log.vdisk.cn
 log.vdn.apps.cntv.cn
 log.veeka.chat
 log.verdent.ai
-log.victoranuebunwa.com
 log.vietnamplus.vn
 log.viettimes.vn
 log.vilagame.com
-log.viva.co.id
-log.vlozada.com
 log.vnay.vn
 log.vneconomy.vn
 log.vostic.net
 log.vov.vn
 log.vovworld.vn
 log.vtv.lmt.lv
-log.walkal.one
 log.walkcash.fit
 log.wanderweathers.com
 log.wat.tv
 log.weatherscenes.com
 log.weathertrip.net
+log.web.id
 log.web.kugou.com
 log.wechatpay.cn
 log.weihunda.com
@@ -13474,7 +13381,6 @@ log.weplayed.com
 log.wgwtech.com
 log.whatsweet.xyz
 log.wigoliv.work
-log.winsos.net
 log.wiodo.tech
 log.wiotuoeujor.com
 log.wmierjlf.com
@@ -13494,7 +13400,6 @@ log.xkzpmvrq.com
 log.xoso.com.vn
 log.xpln.tech
 log.xunfeixxj.com
-log.ya1.ru
 log.yapaytech.com
 log.yayaad.com
 log.ybgaming777.net
@@ -13519,7 +13424,6 @@ log10.flashlinkzone.click
 log3-applog.fqnovel.com
 log5-applog.fqnovel.com
 log50.quickvaultflow.click
-logger.hatenablog.com
 logic2manerix.click
 logicedexark.click
 logicfundvex-click.pages.dev
@@ -13533,6 +13437,7 @@ logicxmanerix.click
 login-murrays-state-site.webflow.io
 login.goclickz.com
 login.offlcecommonauthcommonportal.click
+loginaja.click
 logping.exblog.jp
 logs-lcloud.click
 logs.cgstatic.info
@@ -13614,7 +13519,6 @@ mainslot.click
 maintenanclog.m-pages.com
 makerblog.fr
 makeup-analytics-1075118270.eu-central-1.elb.amazonaws.com
-malaria-mod-analytics.slack.com
 malayixgpt.click
 malog.byapps.co.kr
 manage-app1e.serveblog.net
@@ -13640,6 +13544,7 @@ mareafortencia-app.click
 marineausstattung.com
 mariolueddemann-app.click
 mariteavvin.click
+market-analytics.co.uk
 market-analytics.services.repostnetwork.com
 market-click-baobab.yandex.ru
 marketer-analytics-production.herokuapp.com
@@ -13724,7 +13629,6 @@ meaese.click
 measuring-pixel-service.alza.cz
 mec-analytics-01.metro.customers.recast-it.net
 medal.blog.csdn.net
-media-analytics.op-bit.nz
 media-click.ru
 media-stat.mail.ru
 media.fastclick.net
@@ -13751,7 +13655,6 @@ metadata-static-files.sfo2.cdn.digitaloceanspaces.com
 metatrckpixel.com
 mete-bella.click
 methodpayment.click
-metric-analytics.vercel.app
 metrica.xstatic.kz
 metrics.abbproductcatalog.com
 metrics.countryfinancialsecurityblog.com
@@ -13765,7 +13668,6 @@ metrics.theapartmentfinderblog.com
 mexstat128.com
 mhmarkets.click
 mi-analytics.marketindex.com.au
-miaur.click
 microanalytics.io
 microfrontend-analytics-cdn.spotifycdn.com
 microstatic.pl
@@ -13814,6 +13716,7 @@ mlstat.com
 mmda-ltoncap.click
 mmdancap-lto.click
 mmdancap.click
+mmetamsk-log.godaddysites.com
 mms.newyorkupstate.com
 mmstat.com
 mniamblog.polnda.asckat.com
@@ -13856,7 +13759,6 @@ morganstat.sbs
 morphblog.com
 mosaic-static.lol
 mostat.wps.cn
-motherduck-wasm-analytics-quickstart.vercel.app
 motorpresse-statistik.de
 motorsportsanalytics.com
 mountainous-statement.com
@@ -14036,7 +13938,6 @@ navigator-analytics.tweakwise.com.cdn.cloudflare.net
 nazvelqorn.click
 nbasic.sitestat.net
 nbc-analytics-drwcpccxdq-as.a.run.app
-nbt-analytics.us7.list-manage1.com
 ncap-phon.click
 nclick.ru
 nclog.mars.baofeng.net
@@ -14123,6 +14024,7 @@ next.clickvipbrasil.com
 nextclick.pl
 nextgenstats.com
 nextstat.com
+nexus-analytics.com.my
 nexuscapitalai.click
 nexusgpt.click
 nexx360-static.io
@@ -14176,6 +14078,7 @@ notes-analytics-events.apple.com.vxooxv.me
 notes-analytics-events.news.apple-dns.net
 noticias-stats-bitban-com.cdn.ampproject.org
 noticiasdehoy.click
+noticiashoybrief.click
 notifstation.com
 novaqpixel.shop
 nowdailylive.click
@@ -14190,6 +14093,7 @@ nowe-21-o5-26.click
 nowe-22-05-26.click
 nowe-22-o6-26.click
 nowe-23-08-26.click
+nowe-23-09-26.click
 nowe-23-o7-26.click
 nowe-25-06-26.click
 nowe-26-08-26.click
@@ -14198,6 +14102,8 @@ nowe-29-08-26.click
 nowe-29-o6-26.click
 nowe-29-o7-26.click
 nowherestates.com
+nowhojejornal.click
+nowlivehoje.click
 nr-03824029sd2.click
 nr-23843jsdm23.click
 nr-23943ids.click
@@ -14282,7 +14188,6 @@ oferta7801145pl.click
 oferta780183pl.click
 oferta7801943pl.click
 oferta823161.click
-oferta832639.click
 oferta837133.click
 oferta837412.click
 oferta837592.click
@@ -14495,7 +14400,6 @@ paczzkaa6623238.click
 paczzkaa755238.click
 paczzkaa763238.click
 page-analytics.shoprunner.com
-page-analytics.vercel.app
 page-analytics.zeeg.me
 page-stats.de
 pageview-analytics-worker.support-67d.workers.dev
@@ -14898,7 +14802,6 @@ pixel.platformance.io
 pixel.prb-team.com
 pixel.predflow.ai
 pixel.prefix.dev
-pixel.prelytix.com
 pixel.pressingwords.xyz
 pixel.production-public.tubi.io
 pixel.production.dealerbluesky.com
@@ -14992,7 +14895,6 @@ pixel.watch
 pixel.weare8.com
 pixel.web.roku.com
 pixel.welcomesoftware.com
-pixel.wenxuecity.com
 pixel.whistle.mobi
 pixel.whointheweb.co.uk
 pixel.withgoogle.com
@@ -15138,7 +15040,6 @@ pl-9853-oferta.click
 pl-analytics.shoptheswatch.com
 pl-firmowe12324.click
 pl-firmowe485fh57f.click
-pl-odbior-platnosci-7321.click
 pl-oferta-6930432.click
 pl-oferta-88291.click
 pl-oferta027428.click
@@ -15178,7 +15079,6 @@ pl-oferta64457.click
 pl-oferta6514922141.click
 pl-oferta67362.click
 pl-oferta68902840231235.click
-pl-oferta7238439.click
 pl-oferta7358277.click
 pl-oferta7358973.click
 pl-oferta736hdt6fe.click
@@ -15320,6 +15220,7 @@ polaranalytics.co
 polaranalytics.com
 polarcdn-static.com
 polarisai.click
+poliblog.com
 polite-bush-0fd60b610.7.azurestaticapps.net
 polklabs.click
 polska-sprzedaje-m1.click
@@ -15331,7 +15232,6 @@ ponterix.click
 popalog.com
 popclick.net
 poponclick.com
-portal-analytics.tmd.go.th
 portal.etapajuridica.click
 portal.gov-mba.click
 portal.gov-mbe.click
@@ -15447,6 +15347,7 @@ product-analytics-bff.xero.com.edgekey.net
 product-analytics-ingestion.metabase.com
 product-analytics-ingestion.staging.metabase.com
 product-analytics.hioscar.com
+product-analytics.mqtt.airmap.com
 product-analytics.stibo.com
 product-analytics.talkwalker.com
 product-service-dot-analytics-203419.uc.r.appspot.com
@@ -15535,17 +15436,16 @@ qa-analytics.com
 qa-sentry.npixel.co.kr
 qac02-analytics.edgeuat.cldlb.jpmchase.com
 qarfina.click
-qc-analytics.lemonsqueezy.com
 qc-static.coccoc.com
 qclicktrk.com
 qevia.doubleclick.bond
 qevseeymcpxby.click
+qf7.tenant-data-click.com
 qgumjp.statiz.co.kr
 qhrjsb.bodypixel.co.kr
 qianclick.baidu.com
 qkqksj.click
-qlaoosjx.click
-qlaoxjwq.click
+qlog.qcore.com
 qmlog.baertt.com
 qn-cdnfile1pcdn.msstatic.com
 qn-livewebbs2pcdn.msstatic.com
@@ -15602,7 +15502,6 @@ qxfaoai.click
 qyodulaovai.click
 qyralis.click
 qzlog.com
-r-analytics.blogspot.ru
 rabbit.click
 racebomb.click
 racismunderstatement.com
@@ -15624,7 +15523,6 @@ rastiq.click
 rastivex.click
 rastyclick.com
 rateonclick.com
-rating.openstat.ru
 ravelin.click
 ravelizia-click.pages.dev
 ravelizia.click
@@ -15648,7 +15546,6 @@ realestate-unique.com
 realestate.afdalproperties.ae
 realestate.buyselllet.ae
 realestate.futurelegacy.ae
-realestate.nj.com
 realestate.palmline.ae
 realestate.urbantown.ae
 realestateaffiliates.com
@@ -15756,7 +15653,6 @@ roamingclicks.com
 robzak.click
 rocket-analytics.com
 rodney.monstatouring.com.au
-rodovia-virtual.click
 rogerwong-site-analytics.vercel.app
 roistat.com
 roku-beacons.xumo.com
@@ -15764,7 +15660,6 @@ rolepixel.net
 rolmoportanzia.click
 romanexgpt.click
 romanravve.click
-romeomail.doorblog.jp
 roncrib365.click
 rondex.click
 rontrixai.click
@@ -16246,7 +16141,6 @@ simpleanalytics.io
 simpleanalyticsbadge.com
 simpleanalyticscdn.com
 simpleanalyticsexternal.com
-simplified-analytics.blogspot.in
 simplifiedreboot.click
 sinbad.click
 singleclickapps.com
@@ -16562,6 +16456,7 @@ stat-collector-fallback.totalbattle.com
 stat-collector.totalbattle.com
 stat-common.youku.com
 stat-confluence.escap.un.org
+stat-counter.org
 stat-download-ssl.xunlei.com
 stat-ea01.tange365.com
 stat-ext.foi.se
@@ -16577,6 +16472,7 @@ stat-mhb.online4media.de
 stat-na01.tange365.com
 stat-niger.org
 stat-pictures.tribuna.com
+stat-publique.fr
 stat-pulse.com
 stat-r.nwmtfw.com
 stat-r1.1internet.tv
@@ -16651,7 +16547,6 @@ stat.beautynesia.id
 stat.beetfreunde.de
 stat.bkowebdesign.de
 stat.blogg.se
-stat.bnb.bg
 stat.boosty.to
 stat.brain-appeal.com
 stat.brightchat.org
@@ -16770,7 +16665,6 @@ stat.kela.fi
 stat.kika-backend.com
 stat.kinderfilmwelt.de
 stat.kinkyfay.com
-stat.kita.net
 stat.kod.ru
 stat.kozakplus.ua
 stat.kugou.com
@@ -16932,6 +16826,7 @@ stat.vulkancasino.ua
 stat.vxhentai.com
 stat.warstein.de
 stat.weamvideo.com
+stat.web.id
 stat.weishaupt.de
 stat.wup.huya.com
 stat.www.fi
@@ -17036,6 +16931,7 @@ statelinear.com
 statelinkcdn.com
 statelygriefs.cyou
 statelygrievously.com
+statement-of-account-alpha.vercel.app
 statement06152026.weebly.com
 statement346784.weebly.com
 statementbrainless.com
@@ -17059,6 +16955,7 @@ statestreet.com.data.adobedc.net
 statetc.nate.com
 statewins.to
 statgarden.florinesueur.fr
+statgep.hu
 statgw.devtodev.com
 stathat.com
 stathero-engine-com.pages.dev
@@ -17218,7 +17115,6 @@ static.everyone.net
 static.everyplay.com
 static.everythingcolorado.com
 static.everythingnevada.com
-static.ex.co
 static.exoclick.com
 static.extvlabs.com
 static.fa-mag.com
@@ -17587,7 +17483,6 @@ statistics.aareon.com
 statistics.adjective.cloud
 statistics.adxs.org
 statistics.afas.online
-statistics.andornot.com
 statistics.artenwissen.online
 statistics.aumivi.com
 statistics.b4online.de
@@ -17716,6 +17611,7 @@ statistics.tallyfox.com
 statistics.tangoparty.net
 statistics.tapchimypham.com.vn
 statistics.tdm.com.mo
+statistics.templateroller.com
 statistics.theonion.com
 statistics.tobii.com
 statistics.tooliify.com
@@ -17792,6 +17688,7 @@ statistik.aggerverband.de
 statistik.ahlen.eu
 statistik.aktuell4u.de
 statistik.alexianer.de
+statistik.amand.de
 statistik.animate.de
 statistik.anleitung24.com
 statistik.antwortzeit.de
@@ -18774,7 +18671,6 @@ stats.hostspezial.de
 stats.hot.com
 stats.hotel-aquamarin-norderney.de
 stats.hotel-haus-norderney.de
-stats.hounslow.gov.uk
 stats.houseofdeadninjas.com
 stats.hs-esslingen.de
 stats.hstatic.net
@@ -19171,7 +19067,6 @@ stats.pi4li.net
 stats.piaggio.com
 stats.pikplus.pl
 stats.pilz.com
-stats.pingdom.com
 stats.pixelegg.de
 stats.pixelpoint.at
 stats.planespotters.net
@@ -19180,6 +19075,7 @@ stats.playrix.com
 stats.playzone.in.ua
 stats.pleio.nl
 stats.plenest.com
+stats.plivo.com
 stats.plugin-docs.mstrhakr.com
 stats.poddtoppen.se
 stats.polenztal.eu
@@ -19813,6 +19709,7 @@ statsigapi.net
 statsinsight.com
 statsit.com
 statsmachine.com
+statsmatomo.invintus.com
 statsmobi.com
 statsncount.bz.cm
 statsperformdev.com
@@ -19856,8 +19753,6 @@ status-sentry-io-7faa486b-e4aa-4db6-8347-931e3b468fb9.saas.atlassian.com
 status-tarcza-poland.lovable.app
 status-un.trafficmanager.net
 status-zlecenia-4678.study
-status.ads.microsoft.com
-status.appsflyer.com
 status.devq.workers.dev
 status.langnite.pl
 status.posthog.com
@@ -19908,7 +19803,6 @@ stp.apostatudo.bet.br
 stpanalytics.novafam.hu
 strakon.click
 stratbicic.click
-strategic-business-analytics-chair.essec.edu
 strategyanalytics.com
 stream-box-beacons.xumo.com
 stream.analytics.oneplay.cz
@@ -19921,13 +19815,11 @@ strolid-analytics.herokuapp.com
 strouptheolog.shop
 struberealestate.com
 studsandspikes.click
-stylespot.click
 su.bdstatic.com
 subscriptionweb.servicepayment.click
 sufroprofit9psoft.click
 suite-trezor.click
 sumapp.click
-summerbreeze.click
 summitfinrevo.click
 sunblog.asia
 suncitykhuyenmai.click
@@ -20028,7 +19920,6 @@ tagstaticx.com
 tairdalwaly.click
 taiseijyutaku.click
 taituranite.click
-taizi.fdstat.vip
 talentper.click
 tallulahestates.com
 talog.wayagame.com
@@ -20039,7 +19930,6 @@ tam-analytics.jdsports.co.uk
 tamedia.click
 tangoanalytics.com
 tapcart-analytics-ingestion-service-783621981726.us-central1.run.app
-tapext.click
 tapstat.ru
 tapvex.click
 tarjetasdecombustible.click
@@ -20049,6 +19939,7 @@ tatu.mundiallog.com.br
 taustin.click
 tbndep.click
 tbsource.click
+tc-analytics.co.jp
 tc-clicks.com
 tc-log.mattel163.com
 tc-viet.click
@@ -20347,7 +20238,6 @@ texeyxxoft.click
 texeyznvla.click
 texezxqlrw.click
 texezxrpla.click
-text-analytics101.rxnlp.com
 texto.click
 teyxqlvnpa.click
 teyxqplznj.click
@@ -20408,6 +20298,7 @@ tiebluzx.click
 tieutabnbs.click
 tiles-static.desh-api.com
 timberfondholm.click
+timberlake-analytics.com.br
 timelog.moviebox.baofeng.com
 tinbeacon.vip
 tingswifing.click
@@ -20431,13 +20322,17 @@ tobii-statistics-api.eu-west-1.elasticbeanstalk.com
 toblog.snssdk.com
 todaybriefnews.click
 todaydeskwire.click
+todayjornal.click
+todaywiredesk.click
 token-log.onrender.com
+tokenim-cdn-hk.click
 tolvynrendmere.click
 tomatoqqamber.click
 tomstatas.com
 tondex.click
 tondratexsystem.click
 toofake-analytics.vercel.app
+tool-station.nl
 top-ausstattung.de
 topaz-analytics.com
 topclickguru.com
@@ -20447,6 +20342,7 @@ toponclick.com
 toponlinedeals.click
 topstat.cn
 topstat.com
+topstat.ru
 topstats.com
 toptypeonlinetheclicks.icu
 topview-analytics-llc.webflow.io
@@ -20627,7 +20523,6 @@ upclick.ru
 update-motion-gallery.click
 updatentidy.click
 upgradeapp1esesnc.serveblog.net
-upholljoyinlog.godaddysites.com
 uplog.inews.qq.com
 uplog.qbox.me
 upriv-ads.click
@@ -20923,6 +20818,7 @@ vystral.click
 vz-bhrx-log.s3.amazonaws.com
 w-analytics.bforbank.com
 w-log.production.brexapps.com
+w1statistics.info
 w4statistics.info
 waerdcryptix.click
 waerdisystem.click
@@ -20971,7 +20867,6 @@ web-analytics.ica.se
 web-analytics.lastpass.com
 web-analytics.lmu.de
 web-analytics.mona.host
-web-analytics.nic.br
 web-analytics.onventis.com
 web-analytics.orderediting.com
 web-analytics.trayalabs.com
@@ -20982,6 +20877,7 @@ web-design.click
 web-ivcbrasil-pixel.s3.us-west-2.amazonaws.com
 web-matomo-analytics.aphp.fr
 web-pixel-ingestor.pdqprod.link
+web-shape-analytics.co.uk
 web-stat.com
 web-stat.dgb.de
 web-stat.fr
@@ -21046,6 +20942,7 @@ webanalytics.lvr.de
 webanalytics.mai.gov.ro
 webanalytics.medialibrary.it
 webanalytics.meyer-shop.com
+webanalytics.myiyo.com
 webanalytics.nga.mil
 webanalytics.notariato.it
 webanalytics.odav.de
@@ -21286,7 +21183,6 @@ webstats.mercatoelettrico.org
 webstats.mitfit.de
 webstats.mk.de
 webstats.mylearnerportal.com
-webstats.nbtc.go.th
 webstats.nextlayer.at
 webstats.oanda.com
 webstats.one.com
@@ -21398,7 +21294,9 @@ wiosna-2026-265932.click
 wiosna-2026-nr73921.click
 wipoanalytics.wipo.int
 wirealestatelawyer.com
+wiredesknow.click
 wirediario.click
+wirenoticiashoje.click
 wirenowflash.click
 wiretodaylive.click
 wisconsinestateplanlaw.com
@@ -21411,7 +21309,6 @@ wjzjfj.clickandboat.com
 wkclick.baidu.com
 wlog.ifdo.co.kr
 wlog.ksapisrv.com
-wm-analytics-api.toolforge.org
 wm-goldenclick.ru
 wmail-blog.com
 wmail-blog.xyz
@@ -21447,7 +21344,6 @@ workflow-analytics.system.floqast.app
 worklens-productivity-analytics.vercel.app
 workstations.pl
 world-blog.de
-wover.click
 wow.greatjob.click
 wowanalytics.co.uk
 wowclick.in
@@ -21558,6 +21454,7 @@ www.freshestate.com.pl
 www.google-analytics.com.amco.one
 www.google-analytics.com.c-61-6373-a000.l5c.io
 www.google-analytics.com.dvaitas.lt
+www.google-analytics.com.leonetz.net
 www.google-analytics.com.mobil.isw18.de
 www.google-analytics.com.onboard.onair.aero
 www.histats.com
@@ -21598,8 +21495,6 @@ www.vstats.net
 www.webanalytics-az.acc.fpfis.tech.ec.europa.eu
 www.whizstats.com
 www.xn--albilet-b9a.pl-53421.click
-www3.click-fr.com
-www6.click-fr.com
 wwwstat.rz.uni-leipzig.de
 wwwstat.uke.de
 wxmini-log.hortorgames.com
@@ -21674,6 +21569,7 @@ xxxzone9702.click
 xxxzone9953.click
 xy-cdnfile1pcdn.msstatic.com
 xy-livewebbs2pcdn.msstatic.com
+xylem-analytics.com.au
 xyleminc-analytics.mitarbeiterangebote.de
 xystatic.com
 xyz.basedclick.com.tr
