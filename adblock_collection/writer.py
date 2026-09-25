@@ -13,6 +13,7 @@
 from __future__ import annotations
 
 import json
+import logging
 from collections import defaultdict
 from collections.abc import Iterable
 from pathlib import Path
@@ -28,11 +29,16 @@ from .dns_policy import (
 )
 from .rules import _HOSTS_RESERVED, _PURE_DOMAIN_RE, Rule, _option_start
 
+LOG = logging.getLogger("adblock_collection")
+
 HOMEPAGE = "https://github.com/wansheng8/GZ"
 
 # jsDelivr 对单个 gh 文件有 20MB 上限，超过会返回 403，订阅者将拿不到任何规则。
 # 留出约 2MiB 安全余量：超过 18MiB 的 adblock 列表自动拆分为 !#include 主链。
 JSDELIVR_MAX_BYTES = 18 * 1024 * 1024
+
+# Surge DOMAIN-SET 单集域名上限（官方文档 1,000,000 条）。
+SURGE_DOMAIN_SET_MAX = 1_000_000
 
 # 文本规则集分片时为每片的 ``# Part i/N`` 指示行预留的字节预算。
 _SPLIT_PART_RESERVE = 64
@@ -397,17 +403,24 @@ def write_surge_domain_set(
     """
     suffix = sorted(domains)
     exact = sorted(exact_domains or ())
+    total = len(suffix) + len(exact)
+    if total > SURGE_DOMAIN_SET_MAX:
+        LOG.warning(
+            "Surge DOMAIN-SET 域名数 %d 超过单集上限 %d，客户端可能拒绝加载该规则集",
+            total,
+            SURGE_DOMAIN_SET_MAX,
+        )
     with path.open("w", encoding="utf-8") as fh:
         fh.write(f"# {title}\n")
         fh.write(
             "# Format: Surge DOMAIN-SET (.domain = domain + subdomains, "
-            f"bare = exact), total {len(suffix) + len(exact)}\n"
+            f"bare = exact), total {total}\n"
         )
         for d in suffix:
             fh.write(f".{d}\n")
         for d in exact:
             fh.write(f"{d}\n")
-    return len(suffix) + len(exact)
+    return total
 
 
 def write_quanx_ruleset(

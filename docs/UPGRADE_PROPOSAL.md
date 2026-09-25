@@ -46,6 +46,12 @@
 
 实施后版本：`PARSER_VERSION=1.9.0`（A3 不实施）、`NORMALIZER_VERSION=1.4.0`、`CLASSIFIER_VERSION=1.10.0`。
 
+补充完善（同一轮）：
+
+- **README 规则类型表自动同步**：`stats_badge.sync_kind_table` 依据 `dist/adblock_collection_full.stats.json` 的 `by_kind` 重写 README 中 `kind-stats` 标记区间，表格数字不再随上游变化而漂移；移除 README 中写死的「约 24MB」。
+- **CI 产物完整性门禁**：`build.yml` 健康检查新增 manifest `bytes` 自洽、`versions` 存在、Surge `DOMAIN-SET` 存在且 ≤ 1,000,000 且与 DNS 域名数一致。
+- **DOMAIN-SET 上限告警**：`writer.write_surge_domain_set` 超过 `SURGE_DOMAIN_SET_MAX` 时记录 warning，便于本地构建提前发现。
+
 ## 1. 现状基线
 
 ### 1.1 关键模块职责
@@ -59,8 +65,9 @@
 | `adblock_collection/writer.py` | 所有产物写出、manifest、分片 | B1、B2、B4 |
 | `adblock_collection/cli.py` | 构建编排、不变量、manifest 刷新 | B1、B5、B6 |
 | `adblock_collection/baseline.py` | 字节基线比对（时间戳剔除） | B1 影响 |
+| `adblock_collection/stats_badge.py` | README 徽章 / 规则类型表 / `stats.svg` 同步 | 本轮增强 |
 | `tests/baseline/m2,m3/` | 字节基线 golden | B1 需重生成 |
-| `.github/workflows/build.yml` | CI：ruff → pytest → build → 门禁 → 提交 dist | 全部 |
+| `.github/workflows/build.yml` | CI：ruff → pytest → build → 门禁 → 提交 dist | 全部 + 产物完整性门禁 |
 
 ### 1.2 DNS 分级与 fail-closed 现状
 
@@ -79,7 +86,7 @@
 
 结论：**未知修饰符 fail-closed，无安全缺口**。A1 只影响 REJECT 的 reason 归类与 lint 提示，不改变可升级集合。
 
-### 1.3 产物清单（`dist/manifest.json`，82 条；唯一 file 82 个）
+### 1.3 产物清单（`dist/manifest.json`，B2 后为 83 条；唯一 file 83 个）
 
 | 产物 | 文件 | 大小 | 说明 |
 | :--- | :--- | ---: | :--- |
@@ -95,6 +102,7 @@
 | mihomo | `rulesets/adblock_clash.yaml` | 14.67 MiB | `behavior: domain` |
 | sing-box | `rulesets/adblock_singbox.json` | 12.11 MiB | `version: 3` |
 | Surge | `rulesets/adblock_surge.list` | 21.34 MiB | + `_part01/_part02` |
+| Surge DOMAIN-SET | `rulesets/adblock_surge_domain_set.txt` | 11.08 MiB | 前导点含子域；裸域名精确（B2 新增） |
 | Quantumult X | `rulesets/adblock_quanx.list` | 21.34 MiB | + `_part01/_part02` |
 | 类别拆分 | `adblock_collection_full_<cat>.{txt,_dns.txt,_domains.txt,_dns_ipv6.txt}` | — | 20 类 |
 | 安全专项 | `security/` | — | malware/phishing/mining |

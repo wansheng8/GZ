@@ -125,7 +125,7 @@ https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01
 https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02.list
 ```
 
-> 浏览器全量单文件约 24MB，超 jsDelivr 单文件 20MB 上限，故 jsDelivr 用 `!#include` 分片主链（扩展会自动跟随分片），GitHub 则是完整单文件。
+> 浏览器全量单文件超 jsDelivr 单文件 20MB 上限，故 jsDelivr 用 `!#include` 分片主链（扩展会自动跟随分片），GitHub 则是完整单文件。
 > Surge 推荐 `DOMAIN-SET` 单文件（无需分片）；逐行 `RULE-SET` 版本超 20MB，jsDelivr 拆为 `_part01` / `_part02`。Quantumult X 规则集超 20MB，jsDelivr 拆为 `_part01` / `_part02`，需把两份都加入；GitHub 上是完整单文件。
 
 </details>
@@ -224,12 +224,16 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 ### 规则类型构成
 
+<!-- kind-stats:start -->
 | 类型 | 数量 | 归属层 |
 | :--- | ---: | :--- |
-| network | 626,227 | 网络拦截（DNS 从中提取纯域名） |
-| css | 141,193 | 元素隐藏 |
-| scriptlet | 10,802 | 元素隐藏 |
-| html / js | 188 | 元素隐藏 |
+| network | 637,288 | 网络拦截（DNS 从中提取纯域名） |
+| css | 146,148 | 元素隐藏 |
+| scriptlet | 17,510 | 元素隐藏 |
+| html | 508 | 元素隐藏 |
+| js | 1 | 元素隐藏 |
+| **合计** | 801,455 | — |
+<!-- kind-stats:end -->
 
 ### 按类别订阅
 

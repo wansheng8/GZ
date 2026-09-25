@@ -182,3 +182,17 @@ def test_write_rulesets_splits_oversized_text_lists(tmp_path, monkeypatch):
     assert list(rdir.glob("adblock_quanx_part*.list"))
     assert not list(rdir.glob("adblock_clash_part*"))
     assert not list(rdir.glob("adblock_singbox_part*"))
+
+
+def test_write_surge_domain_set_warns_over_limit(tmp_path, monkeypatch, caplog):
+    import logging
+
+    monkeypatch.setattr(writer, "SURGE_DOMAIN_SET_MAX", 2)
+    with caplog.at_level(logging.WARNING, logger="adblock_collection"):
+        writer.write_surge_domain_set(
+            {"a.example", "b.example", "c.example"},
+            tmp_path / "domain_set.txt",
+            "T",
+        )
+    assert any("超过单集上限" in rec.message for rec in caplog.records)
+    assert "total 3" in (tmp_path / "domain_set.txt").read_text(encoding="utf-8")

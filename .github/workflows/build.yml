@@ -105,6 +105,30 @@ jobs:
           if not allow:
               print("WARNING: DNS 白名单为空（dns_allow.txt），若自定义白名单无整域全局例外则属正常")
 
+          # B1：manifest 自洽——条目必须能定位到实际文件，且 bytes 与磁盘大小一致
+          import os
+          bad_bytes = [
+              e["file"]
+              for e in m["generated_files"]
+              if not os.path.exists(os.path.join("dist", e["file"]))
+              or e.get("bytes") != os.path.getsize(os.path.join("dist", e["file"]))
+          ]
+          if bad_bytes:
+              errors.append(f"manifest 条目缺失或 bytes 不符: {bad_bytes[:5]}")
+          if not m.get("versions"):
+              errors.append("manifest 缺少 versions 溯源字段")
+
+          # B2：Surge DOMAIN-SET 必须存在、非空、不超过单集上限，并与 DNS 域名数一致
+          domain_set = entries.get("rulesets/adblock_surge_domain_set.txt", 0)
+          dns_domains = entries.get("adblock_collection_full_dns.txt", 0)
+          print(f"Surge DOMAIN-SET 域名数: {domain_set}")
+          if not domain_set:
+              errors.append("Surge DOMAIN-SET 产物缺失或为空")
+          elif domain_set > 1000000:
+              errors.append(f"Surge DOMAIN-SET 超过单集上限: {domain_set}")
+          elif dns_domains and domain_set != dns_domains:
+              errors.append(f"DOMAIN-SET {domain_set} 与 DNS 域名数 {dns_domains} 不一致")
+
           if errors:
               for e in errors:
                   print(f"ERROR: {e}")
