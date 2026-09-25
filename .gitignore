@@ -19,6 +19,8 @@ dist/relation_graph.json
 dist/provenance.json
 # 本地/连续构建的逐条规则差异（依赖上一批指纹，CI 全新 checkout 无此文件）
 dist/build_diff.txt
+# 新出现整域阻断复核清单（同样依赖上一批指纹，仅本地/连续构建生成）
+dist/new_domain_review.json
 # 基线夹具重生成时的本地差异文件（非基线内容，比对时已忽略）
 tests/baseline/*/build_diff.txt
 # 规则过期跟踪报告（需 --history，CI 不生成）

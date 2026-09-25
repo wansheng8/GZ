@@ -1,3 +1,4 @@
+import json
 import sys
 from pathlib import Path
 
@@ -13,14 +14,14 @@ GOLDEN_DEFAULT = Path(__file__).parent / "baseline" / "m3"
 
 def test_fixture_build_matches_golden(tmp_path):
     out = build_fixture(tmp_path)
-    diff = compare_baseline(GOLDEN, out, extra_ignores=["build_diff.txt"])
+    diff = compare_baseline(GOLDEN, out, extra_ignores=["build_diff.txt", "new_domain_review.json"])
     assert diff.passed, [f.to_dict() for f in diff.mismatches]
 
 
 def test_default_build_matches_golden(tmp_path):
     """M3：四项增强默认开启时的产物字节基线。"""
     out = build_default_fixture(tmp_path)
-    diff = compare_baseline(GOLDEN_DEFAULT, out, extra_ignores=["build_diff.txt"])
+    diff = compare_baseline(GOLDEN_DEFAULT, out, extra_ignores=["build_diff.txt", "new_domain_review.json"])
     assert diff.passed, [f.to_dict() for f in diff.mismatches]
 
 
@@ -48,6 +49,39 @@ def test_generated_at_is_ignored(tmp_path):
         encoding="utf-8",
     )
     assert compare_baseline(old, new).passed
+
+
+def test_manifest_derived_fields_ignored(tmp_path):
+    """manifest 内嵌 sources_status 时间戳与逐文件 sha256 不应造成基线抖动。"""
+
+    def _manifest(ts: str, sha: str) -> str:
+        return json.dumps(
+            {
+                "generated_at": ts,
+                "sources_status": {"complete": True, "generated_at": ts},
+                "generated_files": [{"file": "a.txt", "bytes": 3, "sha256": sha}],
+            }
+        )
+
+    old = tmp_path / "old"
+    new = tmp_path / "new"
+    old.mkdir()
+    new.mkdir()
+    (old / "manifest.json").write_text(_manifest("2026-01-01T00:00:00Z", "aa"), encoding="utf-8")
+    (new / "manifest.json").write_text(_manifest("2026-02-02T00:00:00Z", "bb"), encoding="utf-8")
+    assert compare_baseline(old, new).passed
+
+
+def test_manifest_content_change_detected(tmp_path):
+    old = tmp_path / "old"
+    new = tmp_path / "new"
+    old.mkdir()
+    new.mkdir()
+    old_payload = {"generated_files": [{"file": "a.txt", "bytes": 4, "sha256": "aa"}]}
+    new_payload = {"generated_files": [{"file": "a.txt", "bytes": 3, "sha256": "bb"}]}
+    (old / "manifest.json").write_text(json.dumps(old_payload), encoding="utf-8")
+    (new / "manifest.json").write_text(json.dumps(new_payload), encoding="utf-8")
+    assert not compare_baseline(old, new).passed
 
 
 def test_missing_file_detected(tmp_path):

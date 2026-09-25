@@ -53,11 +53,46 @@ DNS_REJECT = "REJECT"
 
 # 策略等级 -> 参数
 DNS_LEVELS = {
-    "all": {"min_confidence": 0.0, "allow_modifier": False},
-    "safe": {"min_confidence": 0.8, "allow_modifier": True},
-    "strict-safe": {"min_confidence": 0.9, "allow_modifier": False},
+    "all": {
+        "min_confidence": 0.0,
+        "allow_modifier": False,
+        "include_navigation_domains": True,
+    },
+    "safe": {
+        "min_confidence": 0.8,
+        "allow_modifier": True,
+        "include_navigation_domains": True,
+    },
+    "strict-safe": {
+        "min_confidence": 0.9,
+        "allow_modifier": False,
+        "include_navigation_domains": True,
+    },
 }
 DEFAULT_LEVEL = "all"
+
+# C5：导航修饰（$popup/$document）在 DNS 层被放大为整域拦截，属降置信度策略。
+# 默认保持现状（纳入），用户可显式关闭以仅保留纯域名/整域语义规则。
+DEFAULT_INCLUDE_NAVIGATION_DOMAINS = True
+
+# C2A：dns_safety.json 的 by_reason 人类可读解释，便于订阅者理解「为什么某些规则不进 DNS」。
+REASON_DESCRIPTIONS = {
+    "pure_domain": "纯域名规则，整域拦截语义等价（confidence=1.0）",
+    "pure_domain_modifier": "仅带整域语义修饰（$all/$important/$match-case）的纯域名规则",
+    "navigation_domain_modifier": "仅带导航修饰（$popup/$doc/$document）的整域放大约束（confidence=0.8）",
+    "path_rule": "含路径的网络规则，DNS 只能看到域名，整域拦截会误伤",
+    "scoped_modifier": "含作用域限定（$domain/$from/$to/$top/$denyallow/$ipaddress/$method/$app/$dnstype/$network/$client/$ctag），DNS 无法表达",
+    "resource_type_modifier": "含资源类型限定（$script/$image/$websocket/$fetch…），DNS 无法区分请求类型",
+    "party_modifier": "含第一/第三方限定，DNS 无法区分请求来源关系",
+    "match_method_modifier": "含 $cname 匹配方式限定，与整域拦截语义不等价",
+    "unknown_modifier": "含未识别修饰符，fail-closed 拒绝，避免误升级为整域拦截",
+    "non_blocking_modifier": "非阻断型动作修饰（$removeparam/$csp/$generichide…），不阻断域名",
+    "regex_or_redirect_rule": "正则/重定向规则，无法翻译为域名语义",
+    "css_rule": "CSS 元素隐藏规则，非网络层",
+    "script_rule": "脚本注入规则，非网络层",
+    "non_network_rule": "非网络层规则",
+    "untranslatable": "无法翻译为整域拦截的网络规则",
+}
 
 # 非阻断型「动作/修饰」选项：带这些选项的规则不拦截域名，只改写请求或响应内容
 # （如 $removeparam 去参、$csp 注入响应头、$replace 改写响应体）。它们即使写成
@@ -118,6 +153,15 @@ NAVIGATION_DOMAIN_MODIFIERS = frozenset(
 # 可整域表达的修饰符白名单：整域语义 + 导航语义的并集。规则只带这些选项时按整域
 # 拦截输出；其余任何选项（作用域/类型/动作/未知）都 fail-closed 拒绝。
 DNS_TRANSLATABLE_MODIFIERS = WHOLE_DOMAIN_MODIFIERS | NAVIGATION_DOMAIN_MODIFIERS
+
+# 整域「全局放行」语义修饰：例外规则（@@）仅带这些选项（或空选项）时，才表示对整个
+# 域名的放行，可用于抵消同名整域阻断。与 WHOLE_DOMAIN_MODIFIERS 的差异：
+# - 不含 $popup/$popunder：只放行弹窗，不是整站放行；
+# - 不含 NON_BLOCKING_MODIFIERS（$generichide/$elemhide/$removeparam/$csp…）：
+#   这些只关外观过滤或改写请求，不改变网络放行语义；
+# - 不含作用域/类型/1p-3p/未知修饰符。
+# 收紧判定可防止 `@@||ads.example^$generichide` 之类误删同域整域阻断（漏拦）。
+DOMAIN_ALLOW_MODIFIERS = frozenset({"all", "document", "doc", "important", "match-case"})
 
 _OPTION_RE = re.compile(r"\$([^$]*)$")
 
@@ -210,6 +254,9 @@ class DnsVerdict:
     eligibility: str
     confidence: float
     reason: str
+    # 当 reason == "unknown_modifier" 时，记录触发拒绝的未识别修饰符名（去 `~`、小写），
+    # 供 dns_safety 报告聚合，便于发现上游新增/遗漏修饰符并评估是否需纳入白名单。
+    unknown_modifiers: frozenset[str] = frozenset()
 
     @property
     def eligible(self) -> bool:
@@ -286,7 +333,9 @@ def classify_dns(rule: Rule) -> DnsVerdict:
     # 限定类型/作用域/动作（如 $top、$stealth、$strict-first-party…），DNS 无法
     # 表达，升级成整域拦截会导致误杀。宁可漏收，也不因遗漏新修饰符而误拦截。
     if sem:
-        return DnsVerdict(DNS_REJECT, CONF_REJECT, "unknown_modifier")
+        return DnsVerdict(
+            DNS_REJECT, CONF_REJECT, "unknown_modifier", frozenset(sem)
+        )
 
     return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
 
@@ -304,6 +353,10 @@ def resolve_policy(policy: dict | None) -> dict:
         base["min_confidence"] = float(policy["min_confidence"])
     if "allow_modifier" in policy:
         base["allow_modifier"] = bool(policy["allow_modifier"])
+    if "include_navigation_domains" in policy:
+        base["include_navigation_domains"] = bool(
+            policy["include_navigation_domains"]
+        )
     return base
 
 
@@ -311,13 +364,20 @@ def is_dns_eligible(rule: Rule, policy: dict | None = None) -> bool:
     """阻塞型规则是否应进入 DNS/Hosts/Domains 输出。
 
     未知修饰符已在 classify_dns 阶段按 fail-closed 归入 REJECT，因此这里只需判断
-    置信度是否达到策略阈值。``allow_modifier`` 字段仍保留在策略字典中以兼容既有
-    配置与审计报告，但不再影响分级。
+    置信度是否达到策略阈值，以及是否允许导航修饰的整域放大。``allow_modifier`` 字段
+    仍保留在策略字典中以兼容既有配置与审计报告，但不再影响分级。
     """
     verdict = classify_dns(rule)
     if not verdict.eligible:
         return False
     policy = resolve_policy(policy)
+    if (
+        verdict.reason == "navigation_domain_modifier"
+        and not policy.get(
+            "include_navigation_domains", DEFAULT_INCLUDE_NAVIGATION_DOMAINS
+        )
+    ):
+        return False
     return verdict.confidence >= policy.get("min_confidence", 0.0)
 
 
@@ -337,4 +397,6 @@ def load_dns_policy(config_path: Path) -> dict:
         spec["min_confidence"] = float(raw["min_confidence"])
     if "allow_modifier" in raw:
         spec["allow_modifier"] = bool(raw["allow_modifier"])
+    if "include_navigation_domains" in raw:
+        spec["include_navigation_domains"] = bool(raw["include_navigation_domains"])
     return spec

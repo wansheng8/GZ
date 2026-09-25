@@ -46,6 +46,8 @@
 
 实施后版本：`PARSER_VERSION=1.9.0`（A3 不实施）、`NORMALIZER_VERSION=1.4.0`、`CLASSIFIER_VERSION=1.10.0`。
 
+> 后续 C/U 轮（`docs/BLOCKING_AUDIT.md`）继续推进至 `PARSER_VERSION=1.9.1`（C8 行内注释剥离）、`CLASSIFIER_VERSION=1.12.0`（C1 + C7），`NORMALIZER_VERSION` 不变。自本文件 §0.1 起，版本以该节行末与 `docs/BLOCKING_AUDIT.md` §6 为准。
+
 补充完善（同一轮）：
 
 - **README 规则类型表自动同步**：`stats_badge.sync_kind_table` 依据 `dist/adblock_collection_full.stats.json` 的 `by_kind` 重写 README 中 `kind-stats` 标记区间，表格数字不再随上游变化而漂移；移除 README 中写死的「约 24MB」。
@@ -898,3 +900,67 @@ python3 -m pytest -q          # 期望 293+ passed
 ```
 
 CI：推送后约 7–9 分钟完成，成功后 bot 自动提交 `dist`（`[skip ci]`）。校验用 `git fetch origin && git log --oneline -2 origin/main`，构建健康看 `dist/build_report.json` 的 `passed` 与 `metrics`。
+
+## 6. 后续升级拆分（独立发布单元）
+
+第 5 节是已落地内容的顺序；本节把后续建议拆成**可独立提交、独立回滚**的升级单元。核心约束：一个单元只触碰**一条版本轴**，产物层 / 门禁层 / 文档层不改版本轴；触碰规则集合的单元必须单独提交，避免与其它单元混提后无法归因。
+
+### 6.1 三层版本轴与职责
+
+`adblock_collection/pipeline.py` 的三个常量分别对应三层，语义变化时才递增：
+
+| 版本常量 | 归属层 | 递增时机 | 副作用 |
+| :--- | :--- | :--- | :--- |
+| `PARSER_VERSION` | 规则 / 语法解析、`!#` 预处理 | 规则文本解析结果变化（如 A2 的 `:contains()`） | `.cache/parsed` 失效重建 |
+| `NORMALIZER_VERSION` | 处理 / 规范化、去重、别名、合并 | 规范化或去重结果变化（域名集合改变） | 产物规则集合变化 |
+| `CLASSIFIER_VERSION` | 分类 / DNS 判定 / lint 语义 | 分类或 DNS 分级结果变化（如 A1） | 分类缓存失效 |
+
+### 6.2 独立升级单元
+
+| 单元 | 层 | 主要文件 | 版本轴 | 产物变化 | 可独立发布 |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| U1 未知修饰符可见性 | 分类 + 处理 | `dns_policy.py`、`writer.py`、`docs/SYNTAX.md` | 无（只增可观测字段） | `*.dns_safety.json` 增 `unknown_modifiers` | 是 |
+| U2 未知修饰符门禁告警 | CI / 门禁 | `.github/workflows/build.yml` | 无 | 无（只读报告） | 依赖 U1 |
+| U3 本地名单 lint 门禁 | CI / 门禁 | `.github/workflows/build.yml` | 无 | 无 | 是 |
+| U4 README 类别订阅表自动同步 | 统计 / 展示 | `stats_badge.py`、`README.md`、`tests/test_stats_badge.py` | 无 | 仅 `README.md` | 是 |
+| U5 manifest `sha256` | 产物 + 基线 | `writer.py`、`tests/baseline/{m2,m3}/manifest.json`、`docs/OPS.md` | 无（不改规则集合） | `manifest.json` 每条目增 `sha256` | 是 |
+| U6 Python 版本边界 | 构建 / 环境 | `ruff.toml`、`README.md`、`.github/workflows/build.yml` | 无 | 无 | 是 |
+| U7 上游新修饰符跟进（持续） | 规则 / 分类 | `dns_policy.py` 的 `WHOLE_DOMAIN_MODIFIERS` / `SCOPED_MODIFIERS` 等 | `CLASSIFIER_VERSION` | 域名集合可能变化 | 每次单独提交 |
+
+> 实施状态（2026-09-25）：**U1–U6 已全部实施**（`unknown_modifiers` 明细 + CI 只读告警 + lint 门禁 + README 类别表自动同步 + manifest `sha256` + Python 3.10 边界），详见 `docs/BLOCKING_AUDIT.md` §6。U1 只新增可观测字段、不改变 DNS 判定，故未递增 `CLASSIFIER_VERSION`。**U7 为持续项**，由上游新修饰符触发。
+
+### 6.3 每个单元的实施要点
+
+**U1（未知修饰符可见性）**
+`classify_dns` 的 `unknown_modifier` 分支返回时带出 `sem` 集合（`DnsVerdict.unknown_modifiers`）；`write_dns_safety_report` 聚合为 `unknown_modifiers: {token: count}`（按次数降序、名称升序）。只新增字段、不改判定结果，分类缓存与基线判定不变。
+
+**U2（未知修饰符门禁）**
+在 `build.yml` 的「Check build health」之后读取 `dist/adblock_collection_full.dns_safety.json`，对单一 token 超过阈值（50）以 `::warning::` annotation 提示，只告警不阻断。
+
+**U3（本地名单 lint 门禁）**
+`build.yml` 增加一步对 `config/lists/{blocklist,allowlist}.txt` 运行 lint 子命令。只读，秒级，完全独立。
+
+**U4（README 类别表）**
+复用 `stats_badge` 已有的 `kind-stats` 标记区与 `sync_kind_table` 模式，按分类计数生成完整类别表，替换 README 中写死的 8 类。
+
+**U5（manifest sha256）**
+对每个产物条目计算 SHA-256 写入 manifest；因 manifest 进入 `tests/baseline/{m2,m3}` 夹具，需在本单元内一并重生成基线。不影响 `PARSER/NORMALIZER/CLASSIFIER` 版本。
+
+**U6（Python 版本边界）**
+二选一：CI 加 3.8 矩阵验证，或把下限提到 3.10 并同步 `ruff.toml`、README。二选一即可，不要同时声称 3.8 与 3.10。
+
+### 6.4 发布顺序与统一验收
+
+1. **U1 → U2** 串行（U2 依赖 U1 的字段）。
+2. **U3 / U4 / U6** 互相独立，可任意穿插。
+3. **U5** 单独提交（触碰基线夹具，混提会导致 baseline 归因困难）。
+4. **U7** 由上游变化触发，不与上述单元合并。
+
+```bash
+python3 -m ruff check .
+python3 -m pytest -q
+```
+
+推送与 CI 校验沿用第 5 节末尾流程。
+
+> 广告拦截正确性（漏拦/误拦）专项审计与 `C*` 修复单元见 `docs/BLOCKING_AUDIT.md`，与本节 `U*` 单元互补。

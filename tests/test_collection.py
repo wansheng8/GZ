@@ -36,7 +36,12 @@ from adblock_collection.quality_gate import (
     load_thresholds,
     save_previous,
 )
-from adblock_collection.regression import check_allow, check_block, load_false_positives
+from adblock_collection.regression import (
+    check_allow,
+    check_block,
+    load_false_positives,
+    load_regression_options,
+)
 from adblock_collection.rules import Rule, parse_line, parse_lines, parse_options
 
 SAFE_POLICY = {"level": "safe"}
@@ -169,6 +174,23 @@ def test_options_locates_dollar_inside_value():
     assert r is not None
     assert set(r.options) == {"uritransform", "to"}
     assert r.options["uritransform"] == "/#E=[\\d]{10}$//"
+
+
+def test_parse_strips_inline_option_comment():
+    # 上游把来源注释接在规则尾部：`$generichide! url: …`
+    r = parse_line(
+        "@@||milfzr.com^$generichide! url: https://example.invalid/list.txt"
+    )
+    assert r is not None
+    assert r.raw == "@@||milfzr.com^$generichide"
+    assert set(r.options) == {"generichide"}
+
+
+def test_parse_keeps_bang_inside_regex_or_quoted_value():
+    # 引号 / 正则字面量内的 `!` 不是注释，必须保留
+    assert parse_options("replace=/foo!bar/") == {"replace": "/foo!bar/"}
+    assert parse_options("removeparam=/a!b/") == {"removeparam": "/a!b/"}
+    assert parse_options("header=x:'a!b'") == {"header": "x:'a!b'"}
 
 
 def test_dedupe():
@@ -712,7 +734,30 @@ def test_classify_unknown_modifier_rule_is_reject():
     v = classify_dns(parse_line("||example.com^$some-unknown-opt"))
     assert v.eligibility == DNS_REJECT
     assert v.reason == "unknown_modifier"
+    assert v.unknown_modifiers == frozenset({"some-unknown-opt"})
     assert is_dns_eligible(parse_line("||example.com^$some-unknown-opt"), SAFE_POLICY) is False
+
+
+def test_known_modifier_has_no_unknown_detail():
+    # 已知的拒绝原因不产生 unknown_modifiers 明细
+    assert classify_dns(parse_line("||example.com^$script")).unknown_modifiers == frozenset()
+    assert classify_dns(parse_line("||example.com^")).unknown_modifiers == frozenset()
+
+
+def test_dns_safety_report_lists_unknown_modifiers(tmp_path):
+    from adblock_collection.writer import write_dns_safety_report
+
+    rules = [
+        parse_line("||a.example^$some-unknown-opt", source="Test"),
+        parse_line("||b.example^$some-unknown-opt", source="Test"),
+        parse_line("||c.example^$other-unknown", source="Test"),
+        parse_line("||ok.example^", source="Test"),
+    ]
+    summary = write_dns_safety_report(rules, tmp_path, "full", None)
+    assert summary["unknown_modifiers"] == {
+        "some-unknown-opt": 2,
+        "other-unknown": 1,
+    }
 
 
 def test_classify_newly_known_scoped_and_type_modifiers_are_reject():
@@ -822,6 +867,48 @@ def test_classify_navigation_modifier_scope_still_rejected():
         classify_dns(parse_line("||ads.example.com^$document,subdocument")).reason
         == "resource_type_modifier"
     )
+
+
+def test_classify_navigation_domains_can_be_disabled():
+    # C5：默认纳入导航放大的整域拦截；显式关闭后仅保留纯域名/整域语义规则
+    nav = parse_line("||ads.example.com^$popup")
+    pure = parse_line("||ads.example.com^")
+    assert (
+        is_dns_eligible(nav, {"level": "safe", "include_navigation_domains": False})
+        is False
+    )
+    assert (
+        is_dns_eligible(pure, {"level": "safe", "include_navigation_domains": False})
+        is True
+    )
+    # 默认（未配置）保持纳入
+    assert is_dns_eligible(nav, {"level": "safe"}) is True
+
+
+def test_dns_safety_report_reason_labels_and_navigation_count(tmp_path):
+    from adblock_collection.writer import write_dns_safety_report
+
+    rules = [
+        parse_line("||pure.example^", source="Test"),
+        parse_line("||nav.example^$popup", source="Test"),
+        parse_line("||path.example/ads^", source="Test"),
+    ]
+    summary = write_dns_safety_report(
+        rules, tmp_path, "full", {"level": "safe", "include_navigation_domains": True}
+    )
+    assert summary["navigation_eligible_rules"] == 1
+    assert summary["include_navigation_domains"] is True
+    # C2A：每个实际出现的原因都有可读解释
+    for reason in summary["by_reason"]:
+        assert reason in summary["by_reason_labels"], reason
+    assert summary["by_reason_labels"]["pure_domain"]
+
+    # 关闭导航放大后，导航规则计入 rejected，navigation_eligible_rules 归零
+    off = write_dns_safety_report(
+        rules, tmp_path, "full_off", {"level": "safe", "include_navigation_domains": False}
+    )
+    assert off["navigation_eligible_rules"] == 0
+    assert off["dns_rejected_network_rules"] == summary["dns_rejected_network_rules"] + 1
 
 
 def test_classify_app_scoped_rule_is_reject():
@@ -1010,6 +1097,22 @@ def test_load_false_positives_default(tmp_path):
     fps = load_false_positives(cfg)
     assert fps["allow"] == ["google.com"]
     assert fps["block"] == ["doubleclick.net"]
+
+
+def test_load_regression_options_default_and_override(tmp_path):
+    # C6-3：block 缺失默认只告警；regression.block_missing_strict=true 才阻断
+    cfg = tmp_path / "sources.yaml"
+    cfg.write_text("name: x\nsources: []\n", encoding="utf-8")
+    assert load_regression_options(cfg) == {"block_missing_strict": False}
+    cfg.write_text(
+        "name: x\nregression:\n  block_missing_strict: true\nsources: []\n",
+        encoding="utf-8",
+    )
+    assert load_regression_options(cfg) == {"block_missing_strict": True}
+    # 配置不存在时回退默认
+    assert load_regression_options(tmp_path / "nope.yaml") == {
+        "block_missing_strict": False
+    }
 
 
 def test_regression_end_to_end_via_cli(tmp_path):
@@ -1751,6 +1854,7 @@ def test_validate_local_rules_blocks_extended_separator_wildcards(tmp_path):
 
 
 def test_write_manifest_records_bytes_versions_and_time(tmp_path):
+    import hashlib
     import json
 
     from adblock_collection import writer
@@ -1761,14 +1865,20 @@ def test_write_manifest_records_bytes_versions_and_time(tmp_path):
         tmp_path,
         versions={"parser": "9.9.9"},
         generated_at="2026-01-01T00:00:00Z",
+        sources_status={"complete": True, "failed_sources": []},
     )
     payload = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
     assert payload["versions"] == {"parser": "9.9.9"}
     assert payload["generated_at"] == "2026-01-01T00:00:00Z"
+    # C3：manifest 顶层内嵌上游健康状态，订阅端可据此判断数据完整性
+    assert payload["sources_status"] == {"complete": True, "failed_sources": []}
     by_file = {e["file"]: e for e in payload["generated_files"]}
     assert by_file["a.txt"]["bytes"] == 3
-    # 文件不存在时不写入 bytes，避免伪造体积
+    # U5：逐文件 sha256 与内容一致
+    assert by_file["a.txt"]["sha256"] == hashlib.sha256(b"abc").hexdigest()
+    # 文件不存在时不写入 bytes/sha256，避免伪造体积
     assert "bytes" not in by_file["missing.txt"]
+    assert "sha256" not in by_file["missing.txt"]
 
 
 def test_write_manifest_marks_empty_entries(tmp_path):

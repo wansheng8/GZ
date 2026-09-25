@@ -1,7 +1,13 @@
 """产物字节级基线比对。
 
 用于骨架重构阶段锁定输出：增强开关关闭时，新流程产物应与基线逐字节一致。
-``sources_status.json`` 与 ``manifest.json`` 的 ``generated_at`` 是时间戳字段，比对时单独剔除。
+
+比对前会剔除构建时间戳等不可复现字段，避免每次构建的抖动造成假失败：
+
+- ``sources_status.json`` / ``manifest.json`` 顶层 ``generated_at``；
+- ``manifest.json`` 内嵌 ``sources_status.generated_at``（C3 溯源字段）；
+- ``manifest.json`` 各条目的 ``sha256``（U5 内容校验值，其对应的文件本身已逐字节比对，
+  且含时间戳的文件哈希每次都不同）。
 """
 
 from __future__ import annotations
@@ -67,6 +73,13 @@ def _canonical(path: Path, name: str) -> str:
     if isinstance(data, dict):
         for key in keys:
             data.pop(key, None)
+        # 剔除不可复现的派生字段：内嵌上游状态时间戳与逐文件内容哈希。
+        sources_status = data.get("sources_status")
+        if isinstance(sources_status, dict):
+            sources_status.pop("generated_at", None)
+        for entry in data.get("generated_files", []):
+            if isinstance(entry, dict):
+                entry.pop("sha256", None)
     return json.dumps(data, ensure_ascii=False, sort_keys=True, indent=2)
 
 
@@ -99,7 +112,7 @@ def compare_baseline(
         new_lines = _canonical(new_file, name).splitlines()
         first_diff = None
         diff_lines = abs(len(old_lines) - len(new_lines))
-        for idx, (a, b) in enumerate(zip(old_lines, new_lines), 1):
+        for idx, (a, b) in enumerate(zip(old_lines, new_lines, strict=False), 1):
             if a != b:
                 diff_lines += 1
                 if first_diff is None:

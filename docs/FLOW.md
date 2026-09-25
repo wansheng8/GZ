@@ -54,11 +54,11 @@ python3 -m adblock_collection build --out dist --split-by-category
 | 7 多格式输出 | 中间产物派生规则 | `cli.emit_outputs` | 三层并集 == 完整版；类别并集 == 完整版；adblock 与四种 DNS 产物往返一致（`roundtrip.check_roundtrip`） | `dist/*.txt` / `*_browser_network.txt` / `*_cosmetic.txt` / `*_dns_abp.txt` / `*_dns.txt` / `*_dns_ipv6.txt` / `*_domains.txt` / `dns_allow.txt` / `rulesets/*` / `*_ubo_enhance.txt` / `*.stats.*` / `*.dns_safety.json` | 不变量或往返校验破坏 → 返回 3 |
 | 7b 维护跟踪（可选） | 去重后规则 | `cli.build` 调 `maintenance.update_history` | 末见日期、保留期清理 | `.cache/build/rule_history.tsv`、`maintenance_report.json` | 仅记录，不阻断（需 `--history`） |
 | 8 血缘/关系图 | 全量规则 | `provenance.build_provenance` / `build_relation_graph` | 跨源重复、例外冲突计数 | `provenance.json` / `relation_graph.json` | 容忍（仅日志） |
-| 9 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单 | `sources_status.json` | 仅记录 |
-| 10 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0` | `regression_report.json` | 有误杀 → 返回 1 阻断 |
+| 9 上游健康报告 | 失败源列表 | `cli` 写入 | 源数量、失败清单、`complete` 标记 | `sources_status.json`（并内嵌进 `manifest.json`） | 仅记录 |
+| 10 误杀回归 | `config/false_positives.yaml` | `regression.run_regression` | `allow_violations == 0`；`block_missing` 默认仅告警（`regression.block_missing_strict` 可改为阻断） | `regression_report.json` | 有误杀（或 strict 下的漏拦）→ 返回 1 阻断 |
 | 11 质量门禁 | 本批 vs 上批 metrics | `quality_gate.evaluate` | 增长率在阈值内；`build_report.json#diff.sources` 记录逐源变化 | `build_report.json` / `previous_metrics.json` | 超阈值 → 返回 1 阻断 |
-| 11b 构建差异 | 本批 vs 上批规则指纹 | `build_diff.diff_fingerprint` | 有上批指纹时输出逐条新增/移除 | `dist/build_diff.txt`（不入库；CI 首次构建跳过） | 仅记录 |
-| 12 字节基线（可选） | `--baseline DIR` | `baseline.compare_baseline` | 逐字节一致（忽略 `generated_at`） | 差异日志 | 有差异 → 返回 3 |
+| 11b 构建差异 | 本批 vs 上批规则指纹 | `build_diff.diff_fingerprint` / `review_new_domains` | 有上批指纹时输出逐条新增/移除与新整域阻断复核 | `dist/build_diff.txt`、`dist/new_domain_review.json`（不入库；CI 首次构建跳过） | 仅记录（命中 allow 记 warning） |
+| 12 字节基线（可选） | `--baseline DIR` | `baseline.compare_baseline` | 逐字节一致（忽略 `generated_at`、manifest 内嵌时间戳与 `sha256` 派生字段） | 差异日志 | 有差异 → 返回 3 |
 
 ---
 

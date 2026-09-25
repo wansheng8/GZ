@@ -50,6 +50,10 @@ jobs:
         run: ruff check .
       - name: Run tests
         run: python -m pytest -q
+      - name: Lint local lists
+        # U3：本地增强规则与自定义黑/白名单的语法/冲突门禁（默认校验这三份文件）。
+        # 只读、秒级；存在 error 时退出码 2，阻断后续构建与 dist 推送。
+        run: python -m adblock_collection lint
       - name: Clean stale dist
         run: |
           # 保留上一批门禁基线，供本次质量门禁与构建差异报告使用
@@ -133,6 +137,32 @@ jobs:
               for e in errors:
                   print(f"ERROR: {e}")
               sys.exit(1)
+          PY
+      - name: Audit unknown filter modifiers
+        run: |
+          python - <<'PY'
+          import json
+
+          # U2：未知修饰符明细（dns_safety.json 的 unknown_modifiers）是「漏拦/误拦」的
+          # 先行指标——上游新增修饰符若未及时纳入白名单，就会被 fail-closed 拒绝而降覆盖。
+          # 这里只告警不阻断，把可疑项以 GitHub annotation 形式浮到 run 摘要供人工评估。
+          threshold = 50
+          data = json.load(open("dist/adblock_collection_full.dns_safety.json"))
+          unknown = data.get("unknown_modifiers", {})
+          total = sum(unknown.values())
+          print(f"未知修饰符被拒绝的网络规则总数: {total}（共 {len(unknown)} 种）")
+          flagged = sorted(
+              (kv for kv in unknown.items() if kv[1] >= threshold),
+              key=lambda kv: -kv[1],
+          )
+          for name, count in flagged:
+              print(
+                  "::warning file=dist/adblock_collection_full.dns_safety.json::"
+                  f"未识别修饰符 ${name} 被 fail-closed 拒绝 {count} 次，"
+                  "请评估是否需纳入类型/作用域/非阻断清单"
+              )
+          if not flagged:
+              print(f"没有出现次数 >= {threshold} 的未知修饰符")
           PY
       - name: Verify default enhancement reports
         run: |

@@ -2,12 +2,32 @@
   "policy_level": "all",
   "min_confidence": 0.0,
   "allow_modifier": false,
+  "include_navigation_domains": true,
   "dns_eligible_network_rules": 2,
   "dns_rejected_network_rules": 0,
+  "navigation_eligible_rules": 0,
   "by_eligibility": {
     "SAFE": 2
   },
   "by_reason": {
     "pure_domain": 2
-  }
+  },
+  "by_reason_labels": {
+    "pure_domain": "纯域名规则，整域拦截语义等价（confidence=1.0）",
+    "pure_domain_modifier": "仅带整域语义修饰（$all/$important/$match-case）的纯域名规则",
+    "navigation_domain_modifier": "仅带导航修饰（$popup/$doc/$document）的整域放大约束（confidence=0.8）",
+    "path_rule": "含路径的网络规则，DNS 只能看到域名，整域拦截会误伤",
+    "scoped_modifier": "含作用域限定（$domain/$from/$to/$top/$denyallow/$ipaddress/$method/$app/$dnstype/$network/$client/$ctag），DNS 无法表达",
+    "resource_type_modifier": "含资源类型限定（$script/$image/$websocket/$fetch…），DNS 无法区分请求类型",
+    "party_modifier": "含第一/第三方限定，DNS 无法区分请求来源关系",
+    "match_method_modifier": "含 $cname 匹配方式限定，与整域拦截语义不等价",
+    "unknown_modifier": "含未识别修饰符，fail-closed 拒绝，避免误升级为整域拦截",
+    "non_blocking_modifier": "非阻断型动作修饰（$removeparam/$csp/$generichide…），不阻断域名",
+    "regex_or_redirect_rule": "正则/重定向规则，无法翻译为域名语义",
+    "css_rule": "CSS 元素隐藏规则，非网络层",
+    "script_rule": "脚本注入规则，非网络层",
+    "non_network_rule": "非网络层规则",
+    "untranslatable": "无法翻译为整域拦截的网络规则"
+  },
+  "unknown_modifiers": {}
 }

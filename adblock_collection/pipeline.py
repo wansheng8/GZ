@@ -33,6 +33,8 @@ LOG = logging.getLogger("adblock_collection")
 #   按目标环境求值 `!#if/!#else/!#endif`，生效行集合变化，旧解析缓存自动失效。
 # parser 1.9.0：区分精确域名语义——hosts 行/domains-only 行（仅匹配域名本体）与
 #   `||domain^`（含子域）分别打标 `Rule.exact`，连接层规则集据此选择算子。
+# parser 1.9.1：剥离网络规则选项段内的行内注释（`! …` 起至行尾），修复
+#   `$generichide! url: …` 被并入选项键、规则误判为未知修饰符而漏拦的问题。
 # normalizer 1.3.0：去重键仅对网络规则重排 `$` 选项；元素/脚本规则里的 `$` 属选择器
 #   或脚本参数，不再参与选项归一，避免不同规则折叠碰撞。
 # classifier 1.8.0：DNS 分级识别取反类型/作用域（`$~script`/`$~third-party`）与
@@ -41,13 +43,18 @@ LOG = logging.getLogger("adblock_collection")
 #   并补齐 `$top`/`$extension`/`$hls`/`$mp4`/`$stealth`/`$strict-first-party` 等
 #   作用域/类型/动作修饰符，从根上杜绝遗漏修饰符导致 DNS 误杀。
 # classifier 1.10.0：过程式伪类补 `:contains(`，含它的元素规则改归 uBO 增强层。
+# classifier 1.11.0：收紧「整域全局例外」——仅 `$all`/`$document`/`$doc`/`$important`/
+#   `$match-case`（或空选项）才视为整域放行；非阻断型（$generichide/$elemhide/
+#   $removeparam/$csp…）与导航 `$popup` 例外不再抵消同名整域阻断，修复漏拦。
+# classifier 1.12.0：`$important` 整域阻断仅被带 `$important` 的整域全局例外抵消，
+#   普通整域例外不再压过 `$important` 阻断，对齐 uBO 优先级语义。
 # normalizer 1.4.0：修正选项别名语义——`elemhide`/`ehide` 不再折叠为 `generichide`
 #   （前者关闭全部外观过滤，语义不同），并补齐 `shide`/`css`/`strict-first-party`
 #   等别名；别名归一化产物随语义变化。
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
-PARSER_VERSION = "1.9.0"
+PARSER_VERSION = "1.9.1"
 NORMALIZER_VERSION = "1.4.0"
-CLASSIFIER_VERSION = "1.10.0"
+CLASSIFIER_VERSION = "1.12.0"
 
 STAGE_DIR = Path(".cache/parsed")
 

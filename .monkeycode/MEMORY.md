@@ -93,6 +93,16 @@ Entries discovered by the Agent during task execution should follow this format:
   - 文件末尾由 `build-metrics` HTML 注释标记包围的「构建指标快照」区块由 CI 自动维护：`build.yml` 在构建后运行 `python -m adblock_collection.memory_metrics`，把总规则数/DNS 域名/各层条数写入该区块（最新置顶、保留最近 10 次，`KEEP` 在 `adblock_collection/memory_metrics.py`），并随 dist 一起自动提交。
   - 手工编辑 MEMORY.md 时只在标记区块之外增删记忆条目，不要改动区块内容；否则下次构建会被覆盖。
 
+[Project Knowledge Summary]
+- Date: 2026-09-25
+- Context: Discovered by Agent while performing C/U 单元落地与字节基线重生成
+- Category: Build Methods
+- Instructions:
+  - 本环境无 `python`，只有 `python3`（3.11）。
+  - 字节基线夹具重生成：调用 `tests/_baseline_fixture.py` 的 `build_fixture`（m2，增强全关）与 `build_default_fixture`（m3，增强全开）构建到临时目录，再把有变化的 `*.dns_safety.json` / `manifest.json` / `sources_status.json`（m3 含 `security/`）复制回 `tests/baseline/{m2,m3}`；`build_diff.txt`、`new_domain_review.json` 已 gitignore，且在 `tests/test_baseline.py` 的 `extra_ignores` 中。
+  - `baseline._canonical` 会剔除不可复现字段：顶层 `generated_at`、manifest 内嵌 `sources_status.generated_at` 与逐条目 `sha256`；新增时间戳/哈希字段无需再改基线忽略列表。
+  - 解析/分类/规范化版本常量在 `adblock_collection/pipeline.py`；一轮单元中每条版本轴最多递增一次，触碰基线的单元（域名集合、`$important` 语义等）单独提交。
+
 <!-- build-metrics:start -->
 ## 构建指标快照（CI 自动生成）
 

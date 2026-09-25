@@ -23,7 +23,7 @@
 [![Pi-hole](https://img.shields.io/badge/Pi--hole-f60d1a?style=for-the-badge&labelColor=0d0d0d)]()
 [![dnsmasq](https://img.shields.io/badge/dnsmasq-00f0ff?style=for-the-badge&labelColor=0d0d0d)]()
 [![hosts](https://img.shields.io/badge/hosts-9d00ff?style=for-the-badge&labelColor=0d0d0d)]()
-[![Python](https://img.shields.io/badge/Python-3.8+-3776ab?style=for-the-badge&logo=python&logoColor=white&labelColor=0d0d0d)]()
+[![Python](https://img.shields.io/badge/Python-3.10+-3776ab?style=for-the-badge&logo=python&logoColor=white&labelColor=0d0d0d)]()
 
 <br/>
 
@@ -237,18 +237,28 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 ### 按类别订阅
 
-按类别拆分（`dist/adblock_collection_full_<类别>.txt`，均附 `_dns.txt` / `_domains.txt` 版本）：
+按类别拆分（`dist/adblock_collection_full_<类别>.txt`，均附 `_dns.txt` / `_domains.txt` 版本）。下表按构建产物自动同步：
 
-| 类别 | 订阅 |
-| :--- | :--- |
-| network | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_network.txt) |
-| privacy | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_privacy.txt) |
-| phishing | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_phishing.txt) |
-| annoyance | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_annoyance.txt) |
-| cookie | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_cookie.txt) |
-| social | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_social.txt) |
-| malware | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt) |
-| whitelist | 例外规则（仅供审计） |
+<!-- category-stats:start -->
+| 类别 | 数量 | 订阅 |
+| :--- | ---: | :--- |
+| network | 486,796 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_network.txt) |
+| css | 143,239 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_css.txt) |
+| privacy | 55,584 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_privacy.txt) |
+| phishing | 37,477 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_phishing.txt) |
+| url | 26,342 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_url.txt) |
+| scriptlet | 17,465 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_scriptlet.txt) |
+| whitelist | 14,858 | 例外规则（仅供审计） |
+| malware | 9,657 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt) |
+| annoyance | 3,708 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_annoyance.txt) |
+| social | 1,945 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_social.txt) |
+| cookie | 1,682 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_cookie.txt) |
+| redirect | 870 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_redirect.txt) |
+| html | 505 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_html.txt) |
+| mining | 235 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_mining.txt) |
+| js | 1 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_js.txt) |
+| **合计** | 800,364 | — |
+<!-- category-stats:end -->
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 
@@ -311,7 +321,8 @@ python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 ### 防误杀体系
 
 - **DNS 安全分级**：`all`（默认，中风险）/ `safe`（低）/ `strict-safe`（最低）。资源类型、第一 / 第三方与作用域限定在 DNS 层无法表达，一律拒绝升级为整域拦截。
-- **误杀回归库**：`config/false_positives.yaml` 覆盖主流站点（Google、百度、微信、支付宝、GitHub、银行电商），命中即 **构建失败（exit 1）**。
+- **导航放大可退出**：`$popup` / `$document` 等导航修饰在 DNS 层默认被放大为整域拦截（confidence=0.8）。如需只保留纯域名 / 整域语义规则，构建时加 `--no-navigation-domains`，或在 `dns_policy` 下设 `include_navigation_domains: false`；该部分条数见 `*.dns_safety.json` 的 `navigation_eligible_rules`。
+- **误杀回归库**：`config/false_positives.yaml` 覆盖主流站点（Google、百度、微信、支付宝、GitHub、银行电商），命中即 **构建失败（exit 1）**；`block` 清单断言应保持整域阻断的域名（默认只告警）。
 - **质量门禁**：对比上一轮 `previous_metrics.json`，单源规则骤降 `>50%`、总量骤增 `>20%`、DNS 域名骤增 `>15%` 直接失败；报告写入 `dist/build_report.json`。
 - **来源血缘**：`provenance.json` 记录每条规则来源与置信度，`relation_graph.json` 识别父子域冗余 / 跨源重复 / 阻断与例外冲突。
 - `dns_allow.txt` 只收录 `config/lists/allowlist.txt` 的整域全局例外，白名单内容完全由维护者掌控。

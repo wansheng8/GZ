@@ -77,7 +77,7 @@ def _canonicalize(rule: Rule, report: AliasReport) -> Rule:
     canonical = [_canonical_option(p) for p in parts]
     if canonical == parts:
         return rule
-    for before, after in zip(parts, canonical):
+    for before, after in zip(parts, canonical, strict=False):
         if before != after:
             name = before.lstrip("~").split("=", 1)[0].strip().lower()
             report.by_alias[name] = report.by_alias.get(name, 0) + 1

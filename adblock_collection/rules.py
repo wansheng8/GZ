@@ -166,9 +166,59 @@ def _option_start(raw: str) -> int | None:
         if idx < 0:
             return None
         head = re.split(r"[=,]", raw[idx + 1 :], maxsplit=1)[0].strip()
+        # 容忍行内注释污染：`$generichide! url: …` 的选项头应取 `generichide`
+        head = head.split("!", 1)[0].strip()
         if _OPTION_HEAD_RE.fullmatch(head):
             return idx
         start = idx + 1
+
+
+def _strip_option_inline_comment(option_str: str) -> str:
+    """剥离选项段中的行内注释：首个未被引号/正则包裹的 `!`（其后为空白或行尾）起至行尾。
+
+    上游列表存在把来源注释接在规则尾部的写法，例如
+    ``@@||milfzr.com^$generichide! url: https://…``。若不剥离，``! url: …`` 会被
+    并入选项键，使规则被判为 ``unknown_modifier`` 而拒绝，同时污染去重键与输出文本。
+    引号 / 正则字面量内的 ``!``（如 ``$replace=/a!b/``）不受影响。
+    """
+    quote = ""
+    in_regex = False
+    i = 0
+    n = len(option_str)
+    while i < n:
+        ch = option_str[i]
+        if quote:
+            if ch == "\\" and i + 1 < n:
+                i += 2
+                continue
+            if ch == quote:
+                quote = ""
+        elif in_regex:
+            if ch == "\\" and i + 1 < n:
+                i += 2
+                continue
+            if ch == "/":
+                in_regex = False
+        elif ch in ("'", '"'):
+            quote = ch
+        elif ch == "/" and (i == 0 or option_str[i - 1] in "=:"):
+            in_regex = True
+        elif ch == "!" and (i + 1 == n or option_str[i + 1].isspace()):
+            return option_str[:i].rstrip()
+        i += 1
+    return option_str
+
+
+def _clean_network_inline_comment(line: str) -> str:
+    """剥离网络规则选项段内的行内注释；无选项段或无可剥离注释时原样返回。"""
+    idx = _option_start(line)
+    if idx is None:
+        return line
+    tail = line[idx + 1 :]
+    cleaned = _strip_option_inline_comment(tail)
+    if cleaned == tail:
+        return line
+    return line[: idx + 1] + cleaned
 
 
 def _split_options(option_str: str) -> list[str]:
@@ -186,6 +236,7 @@ def _split_options(option_str: str) -> list[str]:
     in_regex = False
     has_eq = False
     opt_name = ""
+    option_str = _strip_option_inline_comment(option_str)
     i = 0
     n = len(option_str)
     while i < n:
@@ -629,6 +680,9 @@ def _parse_adblock_line(
         return None
 
     kind = _detect_kind(stripped)
+    if kind == "network":
+        # 行内注释（如 `$generichide! url: …`）在解析前去尾，避免污染选项键与去重键
+        stripped = _clean_network_inline_comment(stripped)
     norm = _normalize(stripped, kind)
     if not norm:
         return None

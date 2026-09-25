@@ -183,6 +183,15 @@ PY
 
 **完成判定**：回归 `allow_violations=0`，且 allow 域名本体不被整封、子域广告规则仍在。
 
+**`block` 清单（防漏拦回归）**：向 `config/false_positives.yaml` 的 `block` 追加域名，可断言这些域名应保持整域阻断，防止 C1/C7 之类例外收紧后出现回退（CI 首次纳入时已补齐 33 个非阻断型例外域与 108 个导航放大域）。`block_missing` **默认只告警**，不计入失败；如需在缺失时阻断构建，在 `config/sources.yaml` 增加：
+
+```yaml
+regression:
+  block_missing_strict: true
+```
+
+回归结果见 `dist/regression_report.json` 的 `block_missing` 与 `block_missing_strict` 字段。
+
 ---
 
 ## 5. 质量门禁失败处置
@@ -330,8 +339,13 @@ git push
 
 **manifest.json 字段**（`file` 是唯一键，`name` 仅为逻辑分组，同一 `name` 可对应多份产物）：
 
-- 每条目：`file`（唯一，相对 manifest 的路径，含 `rulesets/`、`security/` 等目录前缀）、`name`（分组名，非唯一）、`format`、`rules`、`source`（本地名单来源，仅 build 生成）、`parts`（分片）、`bytes`（实际文件大小）、`empty`（`rules == 0` 时标注，表示该类无可进 DNS 的规则）。
-- 顶层：`generator`、`generated_files`、`versions`（parser / normalizer / classifier）、`generated_at`（UTC，基线比对时忽略）。
+- 每条目：`file`（唯一，相对 manifest 的路径，含 `rulesets/`、`security/` 等目录前缀）、`name`（分组名，非唯一）、`format`、`rules`、`source`（本地名单来源，仅 build 生成）、`parts`（分片）、`bytes`（实际文件大小）、`sha256`（文件内容哈希，供订阅端校验）、`empty`（`rules == 0` 时标注，表示该类无可进 DNS 的规则）。
+- 顶层：`generator`、`generated_files`、`versions`（parser / normalizer / classifier）、`generated_at`（UTC，基线比对时忽略）、`sources_status`（本次上游健康状态，含 `complete` / `failed_sources` / `total_sources`，便于订阅端判断数据完整性）。
+
+**构建差异与误拦复核**（依赖上一批规则指纹，CI 全新 checkout 无此文件）：
+
+- `dist/build_diff.txt`：本批 vs 上批的逐条新增/移除（`MAX_LINES_PER_SIDE` 截断）。
+- `dist/new_domain_review.json`：本批**新出现的整域阻断**复核清单（C6-2），`risk` 分 `critical`（命中 `false_positives.yaml` 的 `allow`）/`high`（可注册域本体）/`low`（子域）；命中 allow 时构建日志 `warning`，不阻断。
 
 **自检**：
 

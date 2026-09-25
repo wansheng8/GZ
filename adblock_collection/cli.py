@@ -27,6 +27,7 @@ from .build_diff import (
     DIFF_NAME,
     diff_fingerprint,
     load_previous_fingerprint,
+    review_new_domains,
     save_fingerprint,
     write_build_diff,
 )
@@ -73,7 +74,7 @@ from .quality_gate import (
     save_previous,
     write_build_report,
 )
-from .regression import load_false_positives, run_regression
+from .regression import load_false_positives, load_regression_options, run_regression
 from .roundtrip import check_roundtrip
 from .rules import classify_per_rule, is_ubo_enhanced
 from .rules_jsonl import DEFAULT_JSONL_PATH, dump_rules_jsonl, safe_load_rules_jsonl
@@ -653,6 +654,10 @@ def build(args: argparse.Namespace) -> int:
         if args.dns_policy in DNS_LEVELS:
             dns_policy = dict(DNS_LEVELS[args.dns_policy])
             dns_policy["level"] = args.dns_policy
+    # C5：导航修饰（$popup/$document）整域放大默认纳入；显式关闭后仅保留纯域名/整域语义规则。
+    if not getattr(args, "navigation_domains", True):
+        dns_policy = dict(dns_policy)
+        dns_policy["include_navigation_domains"] = False
     security_policy = load_security_policy(config_path)
     # 安全类源名单：门禁对其使用更宽松的 security_policy.source_drop_percent，
     # 与 _emit_security 的独立发行策略保持一致。
@@ -899,24 +904,32 @@ def build(args: argparse.Namespace) -> int:
             diff_summary["removed"],
             DIFF_NAME,
         )
+        # C6-2：对逐条新增里「新出现的整域阻断」输出待人工确认清单
+        review_new_domains(
+            output_dir, added, load_false_positives(config_path).get("allow", [])
+        )
     else:
         LOG.info("无上一批规则指纹，跳过逐条构建差异（首次构建）")
 
     # 写入上游健康报告（供订阅者判断数据完整性）
     status_path = output_dir / "sources_status.json"
+    failed_sources = ctx.artifacts.get("failed_sources", [])
+    sources_status_payload = {
+        "total_sources": len(load_sources(config_path)),
+        "failed_sources": failed_sources,
+        # C3：数据完整性显式标注，供订阅端程序化判断本次产物是否缺少上游源
+        "complete": not failed_sources,
+        "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    }
     status_path.write_text(
-        json.dumps(
-            {
-                "total_sources": len(load_sources(config_path)),
-                "failed_sources": ctx.artifacts.get("failed_sources", []),
-                "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            },
-            ensure_ascii=False,
-            indent=2,
-        ),
+        json.dumps(sources_status_payload, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    LOG.info("上游健康报告已写入: %s", status_path.name)
+    LOG.info(
+        "上游健康报告已写入: %s（失败 %d 个）",
+        status_path.name,
+        len(failed_sources),
+    )
 
     # 误杀回归校验：把大站被整域误封拦在发生前
     regression_failed = _run_regression(deduped, config_path, dns_policy, output_dir)
@@ -942,6 +955,7 @@ def build(args: argparse.Namespace) -> int:
             "classifier": CLASSIFIER_VERSION,
         },
         generated_at=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+        sources_status=sources_status_payload,
     )
 
     # 字节级基线比对（骨架迁移阶段门禁；迁移完成后为诊断工具）
@@ -1033,12 +1047,15 @@ def _run_regression(rules, config_path, dns_policy, output_dir) -> bool:
     if not fps.get("allow") and not fps.get("block"):
         LOG.info("未配置误杀回归清单，跳过回归校验")
         return False
+    options = load_regression_options(config_path)
+    strict = options["block_missing_strict"]
     result = run_regression(rules, fps, dns_policy)
     allow_v = result["allow_violations"]
     block_m = result["block_missing"]
     report = {
         "allow_violations": allow_v,
         "block_missing": block_m,
+        "block_missing_strict": strict,
     }
     (output_dir / "regression_report.json").write_text(
         json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8"
@@ -1048,10 +1065,16 @@ def _run_regression(rules, config_path, dns_policy, output_dir) -> bool:
         for v in allow_v:
             LOG.error("  误杀 %s (被 %s 阻断)", v["domain"], v["blocked_by"])
     if block_m:
-        LOG.warning("漏拦提示：%d 个预期域名未被整域阻断", len(block_m))
+        level = LOG.error if strict else LOG.warning
+        level(
+            "%s：%d 个预期域名未被整域阻断%s",
+            "漏拦回归失败" if strict else "漏拦提示",
+            len(block_m),
+            "（block_missing_strict=true，构建中止）" if strict else "",
+        )
         for m in block_m:
-            LOG.warning("  未拦截 %s", m["domain"])
-    return bool(allow_v)
+            level("  未拦截 %s", m["domain"])
+    return bool(allow_v) or (strict and bool(block_m))
 
 
 def stats_cmd(args: argparse.Namespace) -> int:
@@ -1087,10 +1110,11 @@ def stats_cmd(args: argparse.Namespace) -> int:
 
     manifest_path = output_dir / "manifest.json"
     entries: list[dict] = []
+    existing_payload: dict = {}
     if manifest_path.exists():
         try:
-            payload = json.loads(manifest_path.read_text(encoding="utf-8"))
-            entries = list(payload.get("generated_files", []))
+            existing_payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+            entries = list(existing_payload.get("generated_files", []))
         except (ValueError, OSError) as exc:
             LOG.warning("无法读取既有 manifest，回退为按 *.txt 重建: %s", exc)
             entries = []
@@ -1122,7 +1146,14 @@ def stats_cmd(args: argparse.Namespace) -> int:
                 }
             )
         LOG.info("manifest 已重建: %d 个文件", len(manifest))
-    write_manifest(manifest, output_dir)
+    # 保留既有顶层溯源字段，避免 stats 把 build 生成的富 manifest 降级
+    write_manifest(
+        manifest,
+        output_dir,
+        versions=existing_payload.get("versions"),
+        generated_at=existing_payload.get("generated_at"),
+        sources_status=existing_payload.get("sources_status"),
+    )
     return 0
 
 
@@ -1346,6 +1377,19 @@ def _build_parser() -> argparse.ArgumentParser:
         default=None,
         choices=["all", "safe", "strict-safe"],
         help="DNS 安全分级策略（覆盖 config 中的 dns_policy.level）",
+    )
+    p_build.add_argument(
+        "--navigation-domains",
+        action="store_true",
+        default=True,
+        help="[默认开启] 允许 $popup/$document 等导航修饰放大为整域拦截（confidence=0.8）",
+    )
+    p_build.add_argument(
+        "--no-navigation-domains",
+        dest="navigation_domains",
+        action="store_false",
+        default=argparse.SUPPRESS,
+        help="关闭导航修饰的整域放大，仅保留纯域名/整域语义规则",
     )
     p_build.add_argument(
         "--dry-run",

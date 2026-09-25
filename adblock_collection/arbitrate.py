@@ -4,6 +4,10 @@
 「整域全局例外 > ``$important`` 整域阻断 > 普通整域阻断」产出唯一结果，避免
 订阅端出现「先拦截再放行」的无效堆叠。
 
+``$important`` 语义（uBO 对齐，C7）：``$important`` 整域阻断只能被同样带
+``$important`` 的整域全局例外抵消；普通整域例外不足以取消 ``$important`` 阻断。
+未带 ``$important`` 的整域例外仍会取消普通整域阻断。
+
 安全边界（与 ``writer._is_global_domain_exception`` 一致）：作用域例外
 （``$domain`` / ``$from`` / ``$to`` / ``$denyallow`` / ``$ipaddress`` / ``$method``）
 与路径例外无法在整域层面表达，本模块保持其原文输出，且不使用它们抵消整域阻断，
@@ -90,6 +94,9 @@ def arbitrate(rules: Iterable[Rule]) -> tuple[list[Rule], list[ArbitrationRecord
         ]
         custom_blocks = [i for i in indices if _is_custom_block(rules[i])]
         exceptions = [i for i in indices if _is_global_domain_exception(rules[i])]
+        important_exceptions = [
+            i for i in exceptions if rules[i].is_important
+        ]
         important = [
             i
             for i in indices
@@ -133,16 +140,33 @@ def arbitrate(rules: Iterable[Rule]) -> tuple[list[Rule], list[ArbitrationRecord
                 )
             )
         elif exceptions and (important or normal):
-            losers = important + normal
-            dropped.update(losers)
-            records.append(
-                ArbitrationRecord(
-                    target=domain,
-                    winner=rules[exceptions[0]].norm,
-                    losers=[rules[i].norm for i in losers],
-                    reason="整域全局例外优先于整域阻断",
+            if important and not important_exceptions:
+                # C7：$important 整域阻断不被普通整域例外抵消（uBO 语义），仅普通阻断被抵消
+                losers = normal
+                winner = important[0]
+                reason = "$important 阻断优先于普通整域例外"
+            elif important_exceptions:
+                losers = [
+                    i
+                    for i in important + normal
+                    if i not in important_exceptions
+                ]
+                winner = important_exceptions[0]
+                reason = "$important 整域例外优先于整域阻断"
+            else:
+                losers = important + normal
+                winner = exceptions[0]
+                reason = "整域全局例外优先于整域阻断"
+            if losers:
+                dropped.update(losers)
+                records.append(
+                    ArbitrationRecord(
+                        target=domain,
+                        winner=rules[winner].norm,
+                        losers=[rules[i].norm for i in losers],
+                        reason=reason,
+                    )
                 )
-            )
         elif important and normal:
             dropped.update(normal)
             records.append(

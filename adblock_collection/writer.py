@@ -12,6 +12,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import logging
 from collections import defaultdict
@@ -20,9 +21,9 @@ from pathlib import Path
 
 from .dns_policy import (
     DNS_REJECT,
-    PARTY_MODIFIERS,
-    RESOURCE_TYPE_MODIFIERS,
-    SCOPED_MODIFIERS,
+    DOMAIN_ALLOW_MODIFIERS,
+    METADATA_OPTIONS,
+    REASON_DESCRIPTIONS,
     classify_dns,
     is_dns_eligible,
     resolve_policy,
@@ -42,6 +43,15 @@ SURGE_DOMAIN_SET_MAX = 1_000_000
 
 # 文本规则集分片时为每片的 ``# Part i/N`` 指示行预留的字节预算。
 _SPLIT_PART_RESERVE = 64
+
+
+def _file_sha256(path: Path) -> str:
+    """分块计算文件 SHA-256，避免把超大产物整体读入内存。"""
+    digest = hashlib.sha256()
+    with path.open("rb") as fh:
+        for chunk in iter(lambda: fh.read(1 << 20), b""):
+            digest.update(chunk)
+    return digest.hexdigest()
 
 
 def _adblock_header(title: str, desc: str, total: int) -> list[str]:
@@ -135,22 +145,33 @@ def write_adblock_split(
 
 
 def _is_global_domain_exception(rule: Rule) -> bool:
-    """单域名例外是否「整域且全局」放行，可用于在 DNS 层抵消同名整域阻断。
+    """单域名例外是否「整域且全局」放行，可用于抵消同名整域阻断。
 
     仅当例外同时满足：
 
     - 网络规则、单域名，且模式为纯域名（``@@||a.com^`` / ``@@||a.com``，无路径/通配）；
-    - 不含作用域修饰符（``$domain`` / ``$from`` / ``$to`` / ``$denyallow`` /
-      ``$ipaddress`` / ``$method``），也不含资源类型（``$script`` / ``$websocket`` …）
-      与第一/第三方限定（``$third-party``）。
+    - 去掉 ``$reason=`` 注解后，其余选项全部落在 ``DOMAIN_ALLOW_MODIFIERS``
+      （``$all`` / ``$document`` / ``$doc`` / ``$important`` / ``$match-case``）内，
+      或没有任何选项。
 
-    这样 ``@@||a.com^$domain=x.com`` 这类站点作用域例外、``@@||a.com^$script`` 这类
-    资源类型例外、以及 ``@@||a.com^*/path`` 这类路径例外都不会把 a.com 从整域阻断
-    集合中移除，避免「某站点的局部放行导致整个广告域名在全球范围被放行」。
+    这样以下例外都不会把 a.com 从整域阻断集合中移除：
+
+    - 作用域例外 ``@@||a.com^$domain=x.com``、资源类型 ``@@||a.com^$script``、
+      第一/第三方 ``@@||a.com^$third-party``、路径例外 ``@@||a.com^*/path``；
+    - 导航例外 ``@@||a.com^$popup``（只放行弹窗，非整站放行）；
+    - 非阻断型例外 ``@@||a.com^$generichide`` / ``$elemhide`` / ``$removeparam=…`` /
+      ``$csp=…``（只关外观过滤或改写请求，不改变网络放行语义）。
+
+    避免「某站点的局部放行或外观豁免导致整个广告域名在全球范围被放行」。
     """
     if not (rule.kind == "network" and rule.is_exception and len(rule.domains) == 1):
         return False
-    if set(rule.options) & (SCOPED_MODIFIERS | RESOURCE_TYPE_MODIFIERS | PARTY_MODIFIERS):
+    names = {
+        key.lstrip("~").lower()
+        for key in rule.options
+        if key.lstrip("~").lower() not in METADATA_OPTIONS
+    }
+    if names - DOMAIN_ALLOW_MODIFIERS:
         return False
     idx = _option_start(rule.raw)
     pattern = rule.raw if idx is None else rule.raw[:idx]
@@ -532,16 +553,19 @@ def write_manifest(
     *,
     versions: dict | None = None,
     generated_at: str | None = None,
+    sources_status: dict | None = None,
 ) -> None:
     """写入 dist/manifest.json，列出所有生成的输出文件，便于订阅者程序化读取。
 
-    每个条目补 ``bytes``（实际文件大小，用于订阅端预校验/缓存判断）；
-    可选顶层 ``versions``（解析/分类版本）与 ``generated_at``（UTC 时间戳）用于构建溯源。
+    每个条目补 ``bytes``（实际文件大小，用于订阅端预校验/缓存判断）与 ``sha256``
+    （内容校验）；可选顶层 ``versions``（解析/分类版本）、``generated_at``（UTC
+    时间戳）与 ``sources_status``（上游失败源与数据完整性）用于构建溯源。
     """
     for entry in entries:
         path = output_dir / entry["file"]
         if path.exists():
             entry["bytes"] = path.stat().st_size
+            entry["sha256"] = _file_sha256(path)
         # 空产物（rules == 0）显式标注，避免订阅端把「该类无 DNS 可表达规则」误当缺漏。
         if entry.get("rules") == 0:
             entry["empty"] = True
@@ -553,6 +577,8 @@ def write_manifest(
         payload["versions"] = versions
     if generated_at:
         payload["generated_at"] = generated_at
+    if sources_status:
+        payload["sources_status"] = sources_status
     path = output_dir / "manifest.json"
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 
@@ -598,17 +624,27 @@ def write_dns_safety_report(
     policy = resolve_policy(policy)
     counts: dict[str, int] = defaultdict(int)
     reason_counts: dict[str, int] = defaultdict(int)
+    unknown_counts: dict[str, int] = defaultdict(int)
     eligible = 0
     rejected = 0
+    navigation_eligible = 0
+    include_nav = policy.get("include_navigation_domains", True)
     for r in rules:
         verdict = classify_dns(r)
         counts[verdict.eligibility] += 1
         reason_counts[verdict.reason] += 1
+        for opt in verdict.unknown_modifiers:
+            unknown_counts[opt] += 1
         if verdict.eligibility == DNS_REJECT:
+            rejected += 1
+            continue
+        if verdict.reason == "navigation_domain_modifier" and not include_nav:
             rejected += 1
             continue
         if verdict.confidence >= policy.get("min_confidence", 0.0):
             eligible += 1
+            if verdict.reason == "navigation_domain_modifier":
+                navigation_eligible += 1
         else:
             rejected += 1
 
@@ -616,10 +652,20 @@ def write_dns_safety_report(
         "policy_level": policy.get("level", "all"),
         "min_confidence": policy.get("min_confidence", 0.0),
         "allow_modifier": policy.get("allow_modifier", False),
+        "include_navigation_domains": include_nav,
         "dns_eligible_network_rules": eligible,
         "dns_rejected_network_rules": rejected,
+        "navigation_eligible_rules": navigation_eligible,
         "by_eligibility": dict(counts),
         "by_reason": dict(reason_counts),
+        # C2A：人类可读的拒绝/接受原因解释，避免订阅者误把 DNS 清单当全量清单。
+        "by_reason_labels": dict(REASON_DESCRIPTIONS),
+    }
+    # U1：未知修饰符明细（按出现次数降序，再按名称升序），无则为空 dict。
+    # 让上游新增/遗漏修饰符可见，配合 CI 告警评估是否需纳入白名单。
+    summary["unknown_modifiers"] = {
+        opt: cnt
+        for opt, cnt in sorted(unknown_counts.items(), key=lambda kv: (-kv[1], kv[0]))
     }
     path = output_dir / f"{name}.dns_safety.json"
     path.write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")

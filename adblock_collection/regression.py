@@ -85,3 +85,25 @@ def run_regression(
         "allow_violations": check_allow(rules, fps.get("allow", []), policy),
         "block_missing": check_block(rules, fps.get("block", []), policy),
     }
+
+
+# block 缺失默认只告警；置 True 后与 allow 误杀一样阻断构建。
+DEFAULT_BLOCK_MISSING_STRICT = False
+
+
+def load_regression_options(config_path: Path) -> dict:
+    """读取 ``config/sources.yaml`` 的 ``regression`` 段。
+
+    支持 ``block_missing_strict``（默认 False）：block 清单域名全部缺失时是否阻断构建。
+    """
+    path = Path(config_path)
+    if not path.exists():
+        return {"block_missing_strict": DEFAULT_BLOCK_MISSING_STRICT}
+    with path.open("r", encoding="utf-8") as fh:
+        data = yaml.safe_load(fh) or {}
+    raw = data.get("regression", {}) or {}
+    return {
+        "block_missing_strict": bool(
+            raw.get("block_missing_strict", DEFAULT_BLOCK_MISSING_STRICT)
+        )
+    }

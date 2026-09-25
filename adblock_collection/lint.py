@@ -200,7 +200,7 @@ def _conflict_issues(
         if _has_badfilter(rule, rule.raw):
             badfilter_keys.append((lineno, text, _badfilter_base(rule, rule.raw)))
             continue
-        key = rule.raw[2:] if rule.raw.startswith("@@") else rule.raw
+        key = rule.raw.removeprefix("@@")
         if rule.is_exception:
             exception_keys[(key, lineno)] = lineno
         else:

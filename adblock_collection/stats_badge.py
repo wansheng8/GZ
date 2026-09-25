@@ -19,6 +19,16 @@ KIND_STATS = "adblock_collection_full.stats.json"
 _KIND_START = "<!-- kind-stats:start -->"
 _KIND_END = "<!-- kind-stats:end -->"
 
+# README 按类别订阅表的自动同步区间。
+_CATEGORY_START = "<!-- category-stats:start -->"
+_CATEGORY_END = "<!-- category-stats:end -->"
+
+# 类别订阅文件的 raw 地址模板（与 README 订阅中心保持一致）。
+_CATEGORY_URL = (
+    "https://raw.githubusercontent.com/wansheng8/GZ/main/dist/"
+    "adblock_collection_full_{cat}.txt"
+)
+
 # 已知规则的固定展示顺序与归属层；未知类型追加在末尾，归属层留空。
 _KIND_ORDER = ("network", "css", "scriptlet", "html", "js")
 _KIND_LAYERS = {
@@ -45,6 +55,19 @@ def load_kinds(out_dir: Path) -> dict[str, int]:
         return {}
     data = json.loads(path.read_text(encoding="utf-8"))
     return {str(k): int(v) for k, v in data.get("by_kind", {}).items()}
+
+
+def load_categories(out_dir: Path) -> dict[str, int]:
+    """读取完整版的类别分布；stats 缺失时返回空字典（不触碰 README）。"""
+    path = out_dir / KIND_STATS
+    if not path.exists():
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    return {
+        str(k): int(v)
+        for k, v in (data.get("by_category") or {}).items()
+        if int(v) > 0
+    }
 
 
 
@@ -115,11 +138,42 @@ def sync_kind_table(path: Path, kinds: dict[str, int]) -> None:
     path.write_text(text, encoding="utf-8")
 
 
+def _render_category_table(categories: dict[str, int]) -> str:
+    order = sorted(categories, key=lambda c: (-categories[c], c))
+    lines = ["| 类别 | 数量 | 订阅 |", "| :--- | ---: | :--- |"]
+    for cat in order:
+        count = categories[cat]
+        if cat == "whitelist":
+            lines.append(f"| whitelist | {count:,} | 例外规则（仅供审计） |")
+        else:
+            lines.append(
+                f"| {cat} | {count:,} | [订阅]({_CATEGORY_URL.format(cat=cat)}) |"
+            )
+    lines.append(f"| **合计** | {sum(categories.values()):,} | — |")
+    return "\n".join(lines)
+
+
+def sync_category_table(path: Path, categories: dict[str, int]) -> None:
+    """重写 README 中 ``category-stats`` 标记区间的按类别订阅表；无标记或无数据时跳过。"""
+    if not categories:
+        return
+    text = path.read_text(encoding="utf-8")
+    start = text.find(_CATEGORY_START)
+    end = text.find(_CATEGORY_END)
+    if start == -1 or end == -1 or end < start:
+        return
+    block = f"{_CATEGORY_START}\n{_render_category_table(categories)}\n{_CATEGORY_END}"
+    text = text[:start] + block + text[end + len(_CATEGORY_END) :]
+    path.write_text(text, encoding="utf-8")
+
+
 def sync(root: Path) -> None:
     total, dns, sources = load_counts(root / "dist")
     kinds = load_kinds(root / "dist")
+    categories = load_categories(root / "dist")
     sync_readme(root / "README.md", total, dns, sources)
     sync_kind_table(root / "README.md", kinds)
+    sync_category_table(root / "README.md", categories)
     sync_svg(root / "assets" / "stats.svg", total, dns, sources)
 
 
