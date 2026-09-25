@@ -1,0 +1,10 @@
+# Adblock Rule Collection (connection-layer ruleset)
+# Format: Surge DOMAIN-SET (.domain = domain + subdomains, bare = exact), total 8
+.ads.example
+.analytics.example
+.badmalware.example
+.bare.example
+.evil-phish.example
+.shared.example
+.tracker.example
+hosts.example

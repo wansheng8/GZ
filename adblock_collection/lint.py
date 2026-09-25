@@ -15,6 +15,7 @@ from __future__ import annotations
 from dataclasses import dataclass, field
 
 from .dns_policy import (
+    METADATA_OPTIONS,
     NAVIGATION_DOMAIN_MODIFIERS,
     NON_BLOCKING_MODIFIERS,
     PARTY_MODIFIERS,
@@ -42,17 +43,14 @@ KNOWN_NETWORK_OPTIONS = frozenset(
     | set(RESOURCE_TYPE_MODIFIERS)
     | set(PARTY_MODIFIERS)
     | set(UBO_ENHANCED_MODIFIERS)
+    # 注解类选项（$reason= 等）只在分类时忽略，仍是合法选项名，不能报未知
+    | set(METADATA_OPTIONS)
     | {
         "badfilter",
         "cname",
         "extension",
         "empty",
         "mp4",
-        "noopjs",
-        "noopcss",
-        "noopframe",
-        "noopmp4",
-        "noopimage",
         "important",
         "match-case",
         "genericblock",

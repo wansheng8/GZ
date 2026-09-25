@@ -1,7 +1,7 @@
 """产物字节级基线比对。
 
 用于骨架重构阶段锁定输出：增强开关关闭时，新流程产物应与基线逐字节一致。
-``sources_status.json`` 的 ``generated_at`` 是唯一的时间戳字段，比对时单独剔除。
+``sources_status.json`` 与 ``manifest.json`` 的 ``generated_at`` 是时间戳字段，比对时单独剔除。
 """
 
 from __future__ import annotations
@@ -14,6 +14,7 @@ from pathlib import Path
 # 需要剔除时间戳后再比较的产物
 _TIMESTAMP_KEYS: dict[str, tuple[str, ...]] = {
     "sources_status.json": ("generated_at",),
+    "manifest.json": ("generated_at",),
 }
 
 

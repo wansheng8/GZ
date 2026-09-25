@@ -114,3 +114,27 @@ def test_preprocess_condition_applies_to_included_content():
         resolve_include=resolver,
     )
     assert out == ["generic"]
+
+
+def test_preprocess_safari_cb_affinity_keeps_body():
+    # !#safari_cb_affinity(...) 仅给 Safari 内容拦截器标注亲和性，块内仍是正常规则，
+    # 必须保留（丢弃会导致漏拦/漏放行），仅指令行本身按注释剔除。
+    lines = [
+        "keep-before",
+        "!#safari_cb_affinity(general)",
+        "example.org#@#.adBanner",
+        "!#safari_cb_affinity",
+        "keep-after",
+    ]
+    assert preprocess(lines) == [
+        "keep-before",
+        "example.org#@#.adBanner",
+        "keep-after",
+    ]
+
+
+def test_preprocess_unknown_directive_keeps_body():
+    # 未知 !# 指令按注释丢弃，但不改变生效状态，其后规则仍保留（避免误伤未知语义）
+    lines = ["!#some_unknown_thing", "kept"]
+    assert preprocess(lines) == ["kept"]
+

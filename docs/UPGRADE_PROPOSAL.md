@@ -29,6 +29,23 @@
 | B6 | P2 | `stats` 命令重写 manifest 会降级 | 代码 | 是（manifest） |
 | — | 不建议 | sing-box 版本追到 4/5；生成 mrs/srs 二进制 | 维持现状 | 否 |
 
+### 0.1 实施状态（2026-09-25 全部落地）
+
+| 编号 | 状态 | 落地要点 |
+| :--- | :--- | :--- |
+| A1 | 已实施 | `dns_policy` 登记 `network`/`client`/`ctag`（作用域）与 `dnsrewrite`（非阻断）；`lint` 并入 `METADATA_OPTIONS`；`writer._is_global_domain_exception` 同步收紧（作用域例外不再当全局例外） |
+| A2 | 已实施 | `PROCEDURAL_PSEUDOS` 补 `:contains(`；`CLASSIFIER_VERSION` → 1.10.0 |
+| A3 | 不实施 | 复核 AdGuard 官方语法后确认：`!#safari_cb_affinity(<content_blockers>)` … `!#safari_cb_affinity` 只是给 Safari 内容拦截器标注亲和性分组，**块内是正常规则**（如 `@@\|\|example.org^`），排除块体会漏掉真实放行/拦截规则。维持现状：指令行按注释剔除，块内规则保留。补测试 `test_preprocess_safari_cb_affinity_keeps_body` 锁定该语义；`PARSER_VERSION` 保持 1.9.0 |
+| A4 | 已实施 | 移除 `KNOWN_NETWORK_OPTIONS` 中永不匹配的 `noop*` 死条目 |
+| B1 | 已实施 | `write_manifest` 增每文件 `bytes`、顶层 `versions`/`generated_at`；`baseline` 忽略 `manifest.json` 的 `generated_at`；重生成 m2/m3 基线。附带修复：`security/` 独立发行的 manifest 条目此前只写裸文件名（缺 `security/` 前缀），导致 `bytes` 无法解析，现按相对 manifest 的路径写入 |
+| B2 | 已实施 | 新增 `adblock_surge_domain_set.txt` 与 manifest 条目；README / OPS 增各内核接入片段 |
+| B3 | 已实施 | README / OPS 明确 `file` 唯一、`name` 仅为逻辑分组 |
+| B4 | 已实施 | `split_text_list` 分片头追加 `# Part i/N`，并为指示行预留字节预算 |
+| B5 | 已实施 | manifest 条目对 `rules == 0` 标注 `empty: true` |
+| B6 | 已实施 | `stats_cmd` 按既有 manifest 的 `file` 合并，仅重算 `.txt` 的 `rules`，保留规则集条目与其它字段 |
+
+实施后版本：`PARSER_VERSION=1.9.0`（A3 不实施）、`NORMALIZER_VERSION=1.4.0`、`CLASSIFIER_VERSION=1.10.0`。
+
 ## 1. 现状基线
 
 ### 1.1 关键模块职责

@@ -40,13 +40,14 @@ LOG = logging.getLogger("adblock_collection")
 # classifier 1.9.0：未知修饰符改为 fail-closed 一律 REJECT（不再回退 CONDITIONAL），
 #   并补齐 `$top`/`$extension`/`$hls`/`$mp4`/`$stealth`/`$strict-first-party` 等
 #   作用域/类型/动作修饰符，从根上杜绝遗漏修饰符导致 DNS 误杀。
+# classifier 1.10.0：过程式伪类补 `:contains(`，含它的元素规则改归 uBO 增强层。
 # normalizer 1.4.0：修正选项别名语义——`elemhide`/`ehide` 不再折叠为 `generichide`
 #   （前者关闭全部外观过滤，语义不同），并补齐 `shide`/`css`/`strict-first-party`
 #   等别名；别名归一化产物随语义变化。
 # 1.1.0：新增选项别名归一化（--alias-normalize），归一化语义变化。
 PARSER_VERSION = "1.9.0"
 NORMALIZER_VERSION = "1.4.0"
-CLASSIFIER_VERSION = "1.9.0"
+CLASSIFIER_VERSION = "1.10.0"
 
 STAGE_DIR = Path(".cache/parsed")
 

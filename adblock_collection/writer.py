@@ -34,6 +34,9 @@ HOMEPAGE = "https://github.com/wansheng8/GZ"
 # 留出约 2MiB 安全余量：超过 18MiB 的 adblock 列表自动拆分为 !#include 主链。
 JSDELIVR_MAX_BYTES = 18 * 1024 * 1024
 
+# 文本规则集分片时为每片的 ``# Part i/N`` 指示行预留的字节预算。
+_SPLIT_PART_RESERVE = 64
+
 
 def _adblock_header(title: str, desc: str, total: int) -> list[str]:
     """标准 adblock 列表头。
@@ -308,6 +311,7 @@ def write_domain_rules(
 RULESET_CLASH = "adblock_clash.yaml"
 RULESET_SINGBOX = "adblock_singbox.json"
 RULESET_SURGE = "adblock_surge.list"
+RULESET_SURGE_DOMAIN_SET = "adblock_surge_domain_set.txt"
 RULESET_QUANX = "adblock_quanx.list"
 RULESET_DIRNAME = "rulesets"
 
@@ -379,6 +383,33 @@ def write_surge_ruleset(
     return len(suffix) + len(exact)
 
 
+def write_surge_domain_set(
+    domains: Iterable[str],
+    path: Path,
+    title: str,
+    exact_domains: Iterable[str] | None = None,
+) -> int:
+    """Surge ``DOMAIN-SET`` 域名集（前导点=本体+子域，裸域名=精确）。
+
+    ``DOMAIN-SET`` 由 Surge 预建索引，单集上限 1,000,000 条，比逐行 ``RULE-SET``
+    体积更小、匹配更快；用 ``DOMAIN-SET,<url>,REJECT`` 引用。语义与其它规则集一致：
+    含子域来源写 ``.domain``，精确来源（hosts / domains-only）写裸 ``domain``。
+    """
+    suffix = sorted(domains)
+    exact = sorted(exact_domains or ())
+    with path.open("w", encoding="utf-8") as fh:
+        fh.write(f"# {title}\n")
+        fh.write(
+            "# Format: Surge DOMAIN-SET (.domain = domain + subdomains, "
+            f"bare = exact), total {len(suffix) + len(exact)}\n"
+        )
+        for d in suffix:
+            fh.write(f".{d}\n")
+        for d in exact:
+            fh.write(f"{d}\n")
+    return len(suffix) + len(exact)
+
+
 def write_quanx_ruleset(
     domains: Iterable[str],
     path: Path,
@@ -403,7 +434,8 @@ def split_text_list(path: Path, max_bytes: int = JSDELIVR_MAX_BYTES) -> list[str
 
     仅用于 Surge / Quantumult X 这类「一行一条、无 include 机制」的规则集：
     jsDelivr 单文件有 20MB 上限，超限返回 403；拆分后订阅者把各分片全部加入即可。
-    ``#`` 开头的注释头会复制到每个分片。未超限时返回空列表。
+    ``#`` 开头的注释头会复制到每个分片，并追加 ``# Part i/N`` 指示分片序号；
+    为指示行预留固定字节预算，保证加入指示后仍不超上限。未超限时返回空列表。
     """
     if path.stat().st_size <= max_bytes:
         return []
@@ -411,12 +443,15 @@ def split_text_list(path: Path, max_bytes: int = JSDELIVR_MAX_BYTES) -> list[str
     header = [ln for ln in lines if ln.startswith("#")]
     body = [ln for ln in lines if not ln.startswith("#")]
     header_bytes = sum(len(ln.encode("utf-8")) + 1 for ln in header)
+    # 为每片的 ``# Part i/N`` 指示行预留预算（文件名长度有限，固定预留足够）。
+    reserve = min(_SPLIT_PART_RESERVE, max_bytes // 4)
+    budget = max_bytes - reserve
     chunks: list[list[str]] = []
     current: list[str] = []
     size = header_bytes
     for ln in body:
         line_bytes = len(ln.encode("utf-8")) + 1
-        if current and size + line_bytes > max_bytes:
+        if current and size + line_bytes > budget:
             chunks.append(current)
             current = []
             size = header_bytes
@@ -430,6 +465,7 @@ def split_text_list(path: Path, max_bytes: int = JSDELIVR_MAX_BYTES) -> list[str
         with path.with_name(name).open("w", encoding="utf-8") as fh:
             for ln in header:
                 fh.write(ln + "\n")
+            fh.write(f"# Part {index}/{len(chunks)}\n")
             for ln in chunk:
                 fh.write(ln + "\n")
         names.append(name)
@@ -467,6 +503,9 @@ def write_rulesets(
             suffix, target / RULESET_SINGBOX, title, exact
         ),
         "surge": write_surge_ruleset(suffix, target / RULESET_SURGE, title, exact),
+        "surge_domain_set": write_surge_domain_set(
+            suffix, target / RULESET_SURGE_DOMAIN_SET, title, exact
+        ),
         "quanx": write_quanx_ruleset(suffix, target / RULESET_QUANX, title, exact),
     }
     for fname in (RULESET_SURGE, RULESET_QUANX):
@@ -474,12 +513,33 @@ def write_rulesets(
     return counts
 
 
-def write_manifest(entries: list[dict], output_dir: Path) -> None:
-    """写入 dist/manifest.json，列出所有生成的输出文件，便于订阅者程序化读取。"""
-    payload = {
+def write_manifest(
+    entries: list[dict],
+    output_dir: Path,
+    *,
+    versions: dict | None = None,
+    generated_at: str | None = None,
+) -> None:
+    """写入 dist/manifest.json，列出所有生成的输出文件，便于订阅者程序化读取。
+
+    每个条目补 ``bytes``（实际文件大小，用于订阅端预校验/缓存判断）；
+    可选顶层 ``versions``（解析/分类版本）与 ``generated_at``（UTC 时间戳）用于构建溯源。
+    """
+    for entry in entries:
+        path = output_dir / entry["file"]
+        if path.exists():
+            entry["bytes"] = path.stat().st_size
+        # 空产物（rules == 0）显式标注，避免订阅端把「该类无 DNS 可表达规则」误当缺漏。
+        if entry.get("rules") == 0:
+            entry["empty"] = True
+    payload: dict = {
         "generator": "adblock-rule-collection",
         "generated_files": entries,
     }
+    if versions:
+        payload["versions"] = versions
+    if generated_at:
+        payload["generated_at"] = generated_at
     path = output_dir / "manifest.json"
     path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
 

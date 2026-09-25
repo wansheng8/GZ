@@ -371,6 +371,7 @@ PROCEDURAL_PSEUDOS = (
     ":remove-attr(",
     ":remove-class(",
     ":has-text(",
+    ":contains(",
     ":matches-css(",
     ":matches-css-after(",
     ":matches-css-before(",

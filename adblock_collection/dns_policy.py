@@ -91,6 +91,8 @@ NON_BLOCKING_MODIFIERS = frozenset(
         "xmlprune",
         "referrerpolicy",
         "urlblock",
+        # AdGuard DNS 改写：重写响应而非阻断请求，DNS 层无法表达，硬拒绝
+        "dnsrewrite",
         # uBO 旧名：$queryprune 等价于 $removeparam
         "queryprune",
         # uBO/AdGuard 短别名，等价于上面的非阻断选项
@@ -142,6 +144,10 @@ SCOPED_MODIFIERS = frozenset(
         "method",
         "app",
         "dnstype",
+        # AdGuard 作用域限定：按网络/客户端/客户端标签限定生效范围，DNS 无法区分
+        "network",
+        "client",
+        "ctag",
     }
 )
 

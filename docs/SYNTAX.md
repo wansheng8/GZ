@@ -94,8 +94,9 @@ AdGuard / uBO 的三种基础写法语义不同，尤其是**子域是否命中*
 | `$jsinject` | AdGuard | 关闭该站点的 JS 注入 |
 | `$jsonprune` / `$xmlprune` | AdGuard | 删除响应 JSON/XML 中的节点 |
 | `$referrerpolicy` | AdGuard | 改写 Referrer-Policy |
+| `$dnsrewrite` | AdGuard | 改写 DNS 响应（不构成整域拦截） |
 
-作用域型（限定规则在哪些来源站点 / 目标 / 请求类型下生效）：`$domain`、`$from`、`$to`、`$top`、`$denyallow`、`$ipaddress`、`$method`、`$app`（App 限定）、`$dnstype`（DNS 记录类型限定）、`$network`（按 IP 匹配）。
+作用域型（限定规则在哪些来源站点 / 目标 / 请求类型下生效）：`$domain`、`$from`、`$to`、`$top`、`$denyallow`、`$ipaddress`、`$method`、`$app`（App 限定）、`$dnstype`（DNS 记录类型限定）、`$network`（按 IP/网络环境匹配）、`$client`（按客户端匹配）、`$ctag`（按分类标签匹配）。
 
 注解型：`$reason=...` 只是规则来源/原因注解，不改变匹配与拦截语义，分类与去重时忽略。
 

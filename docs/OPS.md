@@ -314,6 +314,42 @@ git push
 
 ---
 
+## 10. 连接层规则集与 manifest 字段
+
+**产物**（`dist/rulesets/`，与 DNS 域名集合同源，均尊重 `config/lists/allowlist.txt`）：
+
+| 文件 | 格式 | 算子语义 |
+|------|------|----------|
+| `adblock_clash.yaml` | mihomo `behavior: domain` | `+.domain` 含子域；裸域名精确 |
+| `adblock_singbox.json` | sing-box 源规则集（version 3） | `domain_suffix` / `domain` |
+| `adblock_surge.list` | Surge 逐行 | `DOMAIN-SUFFIX` / `DOMAIN`；超 jsDelivr 上限拆 `_partNN` |
+| `adblock_surge_domain_set.txt` | Surge `DOMAIN-SET` | 前导点含子域；裸域名精确（单文件，体积更小） |
+| `adblock_quanx.list` | Quantumult X | `host-suffix` / `host`；超限拆 `_partNN` |
+
+**接入片段**：见 README「连接层规则集用法」。Surge 推荐 `DOMAIN-SET,<url>,REJECT` 单文件。
+
+**manifest.json 字段**（`file` 是唯一键，`name` 仅为逻辑分组，同一 `name` 可对应多份产物）：
+
+- 每条目：`file`（唯一，相对 manifest 的路径，含 `rulesets/`、`security/` 等目录前缀）、`name`（分组名，非唯一）、`format`、`rules`、`source`（本地名单来源，仅 build 生成）、`parts`（分片）、`bytes`（实际文件大小）、`empty`（`rules == 0` 时标注，表示该类无可进 DNS 的规则）。
+- 顶层：`generator`、`generated_files`、`versions`（parser / normalizer / classifier）、`generated_at`（UTC，基线比对时忽略）。
+
+**自检**：
+
+```bash
+python3 - <<'PY'
+import json
+d = json.load(open("dist/manifest.json"))
+print("versions:", d["versions"])
+print("empty 条目:", [e["file"] for e in d["generated_files"] if e.get("empty")])
+print("唯一 file:", len({e["file"] for e in d["generated_files"]}), "条目:", len(d["generated_files"]))
+PY
+test -s dist/rulesets/adblock_surge_domain_set.txt && echo "DOMAIN-SET OK"
+```
+
+**注意**：`stats` 命令按既有 manifest 的 `file` 合并，仅重算 `.txt` 的 `rules`，保留规则集条目与 `source`/`format`/`parts`；manifest 缺失时回退为按 `*.txt` 重建，此路径无法恢复 `source`。
+
+---
+
 ## 快速索引
 
 | 想做什么 | 看哪节 |
@@ -327,3 +363,4 @@ git push
 | 补一条直播广告规则 | 第 7 节 |
 | 自定义黑/白名单、覆盖上游 | 第 8 节 |
 | push 被拒 / rebase 冲突 | 第 9 节 |
+| 连接层规则集 / manifest 字段 | 第 10 节 |

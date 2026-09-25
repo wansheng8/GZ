@@ -47,6 +47,20 @@ def test_unknown_option_is_warning():
     assert report.errors == []
 
 
+def test_known_metadata_and_action_options_are_not_unknown():
+    # $reason 注解、$dnsrewrite 动作、$network/$client/$ctag 作用域均为已知选项，
+    # 不得报「未知选项名」造成 lint 误报。
+    for raw in (
+        "||ads.example.com^$all,reason=malicious",
+        "||ads.example.com^$dnsrewrite=NOERROR;A;1.2.3.4",
+        "||ads.example.com^$network=wifi",
+        "||ads.example.com^$client=android",
+        "||ads.example.com^$ctag=ta",
+    ):
+        report = lint_lines([raw])
+        assert not any("未知选项名" in i.message for i in report.warnings), raw
+
+
 def test_dangling_badfilter_is_warning():
     report = lint_lines(["||ads.example.com^$badfilter"])
     assert any("badfilter" in i.message for i in report.warnings)

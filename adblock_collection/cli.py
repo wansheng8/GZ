@@ -57,6 +57,7 @@ from .merge import (
     validate_custom_lists,
     validate_local_rules,
 )
+from .pipeline import CLASSIFIER_VERSION, NORMALIZER_VERSION, PARSER_VERSION
 from .provenance import (
     build_provenance,
     build_relation_graph,
@@ -117,14 +118,23 @@ DEFAULT_HEADERS = {
 
 
 def _emit_adblock_file(
-    rules, output_dir, prefix, title, desc, manifest
+    rules, output_dir, prefix, title, desc, manifest, rel_prefix=""
 ) -> tuple[Path, int]:
-    """写一个 adblock 列表文件；超过 jsDelivr 单文件上限时自动生成分片主链。"""
+    """写一个 adblock 列表文件；超过 jsDelivr 单文件上限时自动生成分片主链。
+
+    ``rel_prefix`` 为 ``dist`` 内的相对目录前缀（如 ``security/``），写入 manifest 的
+    ``file`` 因此始终可相对 manifest 定位。
+    """
     rules = list(rules)
     path = output_dir / f"{prefix}.txt"
     n = write_adblock(rules, path, title, desc)
     manifest.append(
-        {"name": prefix, "file": f"{prefix}.txt", "format": "adblock", "rules": n}
+        {
+            "name": prefix,
+            "file": f"{rel_prefix}{prefix}.txt",
+            "format": "adblock",
+            "rules": n,
+        }
     )
     if path.stat().st_size > JSDELIVR_MAX_BYTES:
         split = write_adblock_split(
@@ -142,7 +152,7 @@ def _emit_adblock_file(
             manifest.append(
                 {
                     "name": prefix,
-                    "file": master,
+                    "file": f"{rel_prefix}{master}",
                     "format": "adblock_include",
                     "rules": total,
                     "parts": parts,
@@ -162,10 +172,13 @@ def _emit(
     manifest,
     policy,
     domains=None,
+    rel_prefix="",
 ):
     rules = list(rules)
     results = {}
-    ap, n = _emit_adblock_file(rules, output_dir, prefix, title, desc, manifest)
+    ap, n = _emit_adblock_file(
+        rules, output_dir, prefix, title, desc, manifest, rel_prefix
+    )
     results["adblock"] = (ap, n)
     src_counts = source_stats(rules) if source_counts is None else source_counts
     write_summary(category_stats(rules), output_dir, prefix)
@@ -187,7 +200,7 @@ def _emit(
         manifest.append(
             {
                 "name": prefix,
-                "file": f"{prefix}_dns.txt",
+                "file": f"{rel_prefix}{prefix}_dns.txt",
                 "format": "hosts",
                 "rules": nh,
             }
@@ -198,7 +211,7 @@ def _emit(
         manifest.append(
             {
                 "name": prefix,
-                "file": f"{prefix}_dns_ipv6.txt",
+                "file": f"{rel_prefix}{prefix}_dns_ipv6.txt",
                 "format": "hosts_ipv6",
                 "rules": n6,
             }
@@ -209,7 +222,7 @@ def _emit(
         manifest.append(
             {
                 "name": prefix,
-                "file": f"{prefix}_domains.txt",
+                "file": f"{rel_prefix}{prefix}_domains.txt",
                 "format": "domains",
                 "rules": nd,
             }
@@ -357,17 +370,18 @@ def _emit_rulesets(
         domains=domains,
         exact_domains=exact_domains,
     )
-    for fmt, fname in (
-        ("clash", "adblock_clash.yaml"),
-        ("singbox", "adblock_singbox.json"),
-        ("surge", "adblock_surge.list"),
-        ("quanx", "adblock_quanx.list"),
+    for fmt, fname, fmt_name in (
+        ("clash", "adblock_clash.yaml", "clash_ruleset"),
+        ("singbox", "adblock_singbox.json", "singbox_ruleset"),
+        ("surge", "adblock_surge.list", "surge_ruleset"),
+        ("surge_domain_set", "adblock_surge_domain_set.txt", "surge_domain_set"),
+        ("quanx", "adblock_quanx.list", "quanx_ruleset"),
     ):
         manifest.append(
             {
                 "name": f"ruleset_{fmt}",
                 "file": f"rulesets/{fname}",
-                "format": f"{fmt}_ruleset",
+                "format": fmt_name,
                 "rules": counts[fmt],
             }
         )
@@ -416,6 +430,7 @@ def _emit_security(rules, output_dir, security_policy, manifest, gen_dns, dns_po
         source_counts=None,
         manifest=manifest,
         policy=dns_policy,
+        rel_prefix="security/",
     )
     LOG.info("安全类独立发行: %d 条 -> security/", len(sec_rules))
 
@@ -918,7 +933,16 @@ def build(args: argparse.Namespace) -> int:
         security_sources=security_sources,
     )
 
-    write_manifest(manifest, output_dir)
+    write_manifest(
+        manifest,
+        output_dir,
+        versions={
+            "parser": PARSER_VERSION,
+            "normalizer": NORMALIZER_VERSION,
+            "classifier": CLASSIFIER_VERSION,
+        },
+        generated_at=time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+    )
 
     # 字节级基线比对（骨架迁移阶段门禁；迁移完成后为诊断工具）
     baseline_dir = getattr(args, "baseline", None)
@@ -1036,6 +1060,10 @@ def stats_cmd(args: argparse.Namespace) -> int:
     注意：本命令仅刷新 manifest.json 的 rules 字段，不重写 *stats.txt / *stats.json，
     因为重新解析会丢失每条规则的原始来源（source）与 yaml 主分类（category_hint），
     导致分类与来源统计失真。精确的分类/来源统计由 build 命令生成。
+
+    若目录内已有 manifest.json，则按 ``file`` 合并——保留 ``name``/``format``/
+    ``source``/``parts`` 与连接层规则集条目，仅对 ``.txt`` 重算 rules，避免把 build
+    生成的富 manifest 降级为只含 ``*.txt``、``format`` 全为 ``auto`` 的残缺版本。
     """
     output_dir = Path(args.out)
     if not output_dir.exists():
@@ -1043,10 +1071,7 @@ def stats_cmd(args: argparse.Namespace) -> int:
         return 1
     from .rules import parse_line
 
-    manifest = []
-    for txt in sorted(output_dir.glob("*.txt")):
-        if txt.name.endswith((".stats.txt", "manifest.json")):
-            continue
+    def count_txt_rules(txt: Path) -> int:
         rule_count = 0
         for line in txt.read_text(encoding="utf-8", errors="replace").splitlines():
             if line.startswith(("!", "#")):
@@ -1058,11 +1083,46 @@ def stats_cmd(args: argparse.Namespace) -> int:
                 r = parse_line(line, source="reload")
                 if r is not None:
                     rule_count += 1
-        manifest.append(
-            {"name": txt.stem, "file": txt.name, "format": "auto", "rules": rule_count}
+        return rule_count
+
+    manifest_path = output_dir / "manifest.json"
+    entries: list[dict] = []
+    if manifest_path.exists():
+        try:
+            payload = json.loads(manifest_path.read_text(encoding="utf-8"))
+            entries = list(payload.get("generated_files", []))
+        except (ValueError, OSError) as exc:
+            LOG.warning("无法读取既有 manifest，回退为按 *.txt 重建: %s", exc)
+            entries = []
+    if entries:
+        refreshed = 0
+        for entry in entries:
+            fname = entry["file"]
+            f = output_dir / fname
+            if fname.endswith(".txt") and not fname.endswith(".stats.txt") and f.exists():
+                entry["rules"] = count_txt_rules(f)
+                refreshed += 1
+        manifest = entries
+        LOG.info(
+            "manifest 已按既有条目刷新: %d 个文件（%d 个 .txt 重算）",
+            len(manifest),
+            refreshed,
         )
+    else:
+        manifest = []
+        for txt in sorted(output_dir.glob("*.txt")):
+            if txt.name.endswith((".stats.txt", "manifest.json")):
+                continue
+            manifest.append(
+                {
+                    "name": txt.stem,
+                    "file": txt.name,
+                    "format": "auto",
+                    "rules": count_txt_rules(txt),
+                }
+            )
+        LOG.info("manifest 已重建: %d 个文件", len(manifest))
     write_manifest(manifest, output_dir)
-    LOG.info("manifest 已刷新: %d 个文件", len(manifest))
     return 0
 
 

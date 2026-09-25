@@ -411,6 +411,8 @@ def test_ubo_enhanced_includes_ubo_only_cosmetic():
     assert is_ubo_enhanced(parse_line("example.com#?#.promo:has-text(Ad)"))
     assert is_ubo_enhanced(parse_line("example.com##.ad:remove()"))
     assert is_ubo_enhanced(parse_line("example.com##.ad:remove-attr(hidden)"))
+    # AdGuard 旧扩展选择器 :contains() 仅 uBO/AdGuard 支持（ABP 用 :-abp-contains()）
+    assert is_ubo_enhanced(parse_line("example.com##.ad:contains(Sponsored)"))
     assert is_ubo_enhanced(parse_line("example.com##^script:has-text(ad)"))
     assert is_ubo_enhanced(parse_line("example.com#$#.ad{display:none}"))
     assert is_ubo_enhanced(parse_line("example.com#%#window.x=1"))
@@ -717,6 +719,9 @@ def test_classify_newly_known_scoped_and_type_modifiers_are_reject():
     # 补齐的修饰符必须归入正确的拒绝原因，不得因未识别而 fail-open 进 DNS
     cases = {
         "||ads.example.com^$top=example.com": "scoped_modifier",
+        "||ads.example.com^$network=wifi": "scoped_modifier",
+        "||ads.example.com^$client=android": "scoped_modifier",
+        "||ads.example.com^$ctag=ta": "scoped_modifier",
         "||ads.example.com^$extension": "resource_type_modifier",
         "||ads.example.com^$hls": "resource_type_modifier",
         "||ads.example.com^$mp4": "resource_type_modifier",
@@ -727,6 +732,7 @@ def test_classify_newly_known_scoped_and_type_modifiers_are_reject():
         "||ads.example.com^$jsinject": "non_blocking_modifier",
         "||ads.example.com^$urlblock": "non_blocking_modifier",
         "||ads.example.com^$referrerpolicy=no-referrer": "non_blocking_modifier",
+        "||ads.example.com^$dnsrewrite=NOERROR;A;1.2.3.4": "non_blocking_modifier",
     }
     for raw, reason in cases.items():
         v = classify_dns(parse_line(raw))
@@ -1445,6 +1451,26 @@ def test_security_independent_release(tmp_path, monkeypatch):
     assert "ads.example.com" not in content
     assert "malware.example.com" in content
 
+    # manifest 条目须写相对 manifest 的路径（含 security/ 前缀），否则 bytes 无法解析
+    files = {e["file"] for e in manifest}
+    assert files == {
+        "security/adblock_collection_security.txt",
+        "security/adblock_collection_security_dns.txt",
+        "security/adblock_collection_security_dns_ipv6.txt",
+        "security/adblock_collection_security_domains.txt",
+    }
+    for entry in manifest:
+        path = tmp_path / entry["file"]
+        assert path.exists(), entry["file"]
+
+    # bytes 由 write_manifest 在 build 收尾时补齐，须能按相对路径解析
+    from adblock_collection import writer as _writer
+
+    _writer.write_manifest(manifest, tmp_path)
+    for entry in manifest:
+        path = tmp_path / entry["file"]
+        assert entry["bytes"] == path.stat().st_size, entry["file"]
+
 
 # ---------------- 本地增强规则校验 ----------------
 
@@ -1719,3 +1745,93 @@ def test_validate_local_rules_blocks_extended_separator_wildcards(tmp_path):
     assert len(v) == 2
     assert any("#?#*" in x for x in v)
     assert any("$$*" in x for x in v)
+
+
+# ---------------- manifest 体积与构建溯源字段 ----------------
+
+
+def test_write_manifest_records_bytes_versions_and_time(tmp_path):
+    import json
+
+    from adblock_collection import writer
+
+    (tmp_path / "a.txt").write_text("abc", encoding="utf-8")
+    writer.write_manifest(
+        [{"file": "a.txt", "rules": 1}, {"file": "missing.txt", "rules": 0}],
+        tmp_path,
+        versions={"parser": "9.9.9"},
+        generated_at="2026-01-01T00:00:00Z",
+    )
+    payload = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
+    assert payload["versions"] == {"parser": "9.9.9"}
+    assert payload["generated_at"] == "2026-01-01T00:00:00Z"
+    by_file = {e["file"]: e for e in payload["generated_files"]}
+    assert by_file["a.txt"]["bytes"] == 3
+    # 文件不存在时不写入 bytes，避免伪造体积
+    assert "bytes" not in by_file["missing.txt"]
+
+
+def test_write_manifest_marks_empty_entries(tmp_path):
+    import json
+
+    from adblock_collection import writer
+
+    (tmp_path / "e.txt").write_text("# header\n", encoding="utf-8")
+    writer.write_manifest(
+        [
+            {"file": "e.txt", "format": "domains", "rules": 0},
+            {"file": "e.txt", "format": "hosts", "rules": 5},
+        ],
+        tmp_path,
+    )
+    payload = json.loads((tmp_path / "manifest.json").read_text(encoding="utf-8"))
+    empty_entry, nonempty_entry = payload["generated_files"]
+    assert empty_entry["empty"] is True
+    assert "empty" not in nonempty_entry
+
+
+def test_stats_cmd_preserves_ruleset_entries(tmp_path):
+    """B6：stats 刷新不得把 build 的富 manifest 降级为只含 *.txt。"""
+    import json
+
+    from adblock_collection import cli
+
+    dist = tmp_path / "dist"
+    (dist / "rulesets").mkdir(parents=True)
+    (dist / "a.txt").write_text("||ads.example.com^\n", encoding="utf-8")
+    (dist / "rulesets" / "adblock_clash.yaml").write_text(
+        "# T\npayload:\n  - '+.ads.example.com'\n", encoding="utf-8"
+    )
+    (dist / "manifest.json").write_text(
+        json.dumps(
+            {
+                "generator": "adblock-rule-collection",
+                "generated_files": [
+                    {
+                        "name": "a",
+                        "file": "a.txt",
+                        "format": "adblock",
+                        "rules": 999,
+                        "source": "upstream",
+                    },
+                    {
+                        "name": "ruleset_clash",
+                        "file": "rulesets/adblock_clash.yaml",
+                        "format": "clash_ruleset",
+                        "rules": 1,
+                    },
+                ],
+            }
+        ),
+        encoding="utf-8",
+    )
+    args = cli._build_parser().parse_args(["stats", "--out", str(dist)])
+    assert cli.stats_cmd(args) == 0
+    payload = json.loads((dist / "manifest.json").read_text(encoding="utf-8"))
+    by_file = {e["file"]: e for e in payload["generated_files"]}
+    assert set(by_file) == {"a.txt", "rulesets/adblock_clash.yaml"}
+    assert by_file["a.txt"]["rules"] == 1
+    assert by_file["a.txt"]["source"] == "upstream"
+    assert by_file["rulesets/adblock_clash.yaml"]["format"] == "clash_ruleset"
+
+
