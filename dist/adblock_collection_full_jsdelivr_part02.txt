@@ -1,4 +1,7 @@
 ! Adblock Rule Collection (Full) (jsDelivr part 02)
+||tavrenik-pl.com^
+||tavrenik.com^
+||tavrenik.net^
 ||tavrenikai.com^
 ||tavrenoxview.top^
 ||tavsanevi.com^
@@ -42105,6 +42108,7 @@ mfw09.org##+js(nowoif)
 mfw09.org##body > div[style*="2147483647"]
 xboxdynasty.de##+js(rmnt, script, /adblock/i)
 bhoomtv.org##+js(rmnt, script, /adblock/i)
+mangatrend.org##+js(rmnt, script, shown_at)
 @@*$generichide,domain=gplinks.*|qrixpe.com|powergam.online|sanadegreecollege.in
 sanadegreecollege.in,powergam.online,qrixpe.com##center, .main-content, .myTimerDiv, .myTimer, .SmileyBanner, .myWaitingDiv:others()
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(set, document.hidden, false)

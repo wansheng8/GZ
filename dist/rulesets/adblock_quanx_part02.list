@@ -1,6 +1,9 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539765
+# Total Rules: 539768
 # Part 2/2
+host-suffix, track.sendo.vn, reject
+host-suffix, track.services.vektfri.no, reject
+host-suffix, track.sexcamchats.com, reject
 host-suffix, track.sfdermato.org, reject
 host-suffix, track.shagen.com.tr, reject
 host-suffix, track.shahriarbabul.com, reject

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 17467
+! Total Rules: 17468
 ! ------------------------------------------
 accuweather.com,acmemarkets.com,aiskillsnavigator.microsoft.com,boston.com,capezio.com,chime.com,costco.com,crunchyroll.com,deezer.com,delta.com,dnb.co.uk,dnb.com,dollargeneral.com,engadget.com,espn.com,eventbrite.com,filson.com,flyfrontier.com,formula1.com,geizhals.de,gladiatorgarageworks.com,harborfreight.com,hopwtr.com,jdsports.com,kkrt.com,lenscrafters.com,livewithkellyandmark.com,madewell.com,mail.yahoo.com,mazdausa.com,michaels.com,milesplit.live,monsterenergy.com,newyorker.com,norton.com,pandora.com,payment.nba.com,porsche.com,qobuz.com,rivals.com,soundcloud.com,spotify.com,subway.com,techcrunch.com,ticketmaster.*,tidal.com,tirerack.com,twitter.com,uber.com,ubereats.com,usaa.com,vimeo.com,visible.com,weather.com,wunderground.com,www.yahoo.com,x.com##+js(set, Navigator.prototype.globalPrivacyControl, false)
 accuweather.com,acmemarkets.com,aiskillsnavigator.microsoft.com,boston.com,capezio.com,chime.com,costco.com,crunchyroll.com,deezer.com,delta.com,dnb.co.uk,dnb.com,dollargeneral.com,engadget.com,espn.com,eventbrite.com,filson.com,flyfrontier.com,formula1.com,geizhals.de,gladiatorgarageworks.com,harborfreight.com,hopwtr.com,jdsports.com,kkrt.com,lenscrafters.com,livewithkellyandmark.com,madewell.com,mail.yahoo.com,mazdausa.com,michaels.com,milesplit.live,monsterenergy.com,newyorker.com,norton.com,pandora.com,payment.nba.com,porsche.com,qobuz.com,rivals.com,soundcloud.com,spotify.com,subway.com,techcrunch.com,ticketmaster.*,tidal.com,tirerack.com,twitter.com,uber.com,ubereats.com,usaa.com,vimeo.com,visible.com,weather.com,wunderground.com,www.yahoo.com,x.com##+js(set, navigator.globalPrivacyControl, false)
@@ -15979,6 +15979,7 @@ theherta.com##+js(set, HTMLScriptElement.prototype.onerror, undefined)
 mfw09.org##+js(nowoif)
 xboxdynasty.de##+js(rmnt, script, /adblock/i)
 bhoomtv.org##+js(rmnt, script, /adblock/i)
+mangatrend.org##+js(rmnt, script, shown_at)
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(set, document.hidden, false)
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(aopw, AdBDetected)
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(set, navigator.brave, undefined)

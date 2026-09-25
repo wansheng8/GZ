@@ -1,6 +1,9 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539765
+# Total Rules: 539768
 # Part 2/2
+DOMAIN-SUFFIX,track.sendo.vn,REJECT
+DOMAIN-SUFFIX,track.services.vektfri.no,REJECT
+DOMAIN-SUFFIX,track.sexcamchats.com,REJECT
 DOMAIN-SUFFIX,track.sfdermato.org,REJECT
 DOMAIN-SUFFIX,track.shagen.com.tr,REJECT
 DOMAIN-SUFFIX,track.shahriarbabul.com,REJECT

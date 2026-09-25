@@ -1,6 +1,6 @@
 {
-  "total_rules": 793575,
-  "dns_domains": 539765,
+  "total_rules": 793579,
+  "dns_domains": 539768,
   "source_counts": {
     "Hagezi DNS Pro Plus": 249395,
     "oisd": 243992,
@@ -16,8 +16,8 @@
     "ADrules anti-AD": 95301,
     "Anti-AD Easylist": 95301,
     "Anti-AD (easylist)": 95301,
-    "EasyList (ABP)": 84127,
-    "EasyList (easylist.to)": 84127,
+    "EasyList (ABP)": 84130,
+    "EasyList (easylist.to)": 84130,
     "ADrules Easylist": 84122,
     "StevenBlack Hosts": 76522,
     "Phishing URL Blocklist": 68152,
@@ -30,7 +30,7 @@
     "KADhosts": 42864,
     "Fanboy CookieMonster": 28056,
     "ADrules I-Dont-Care-About-Cookies": 24319,
-    "uBO filters – Ads": 23023,
+    "uBO filters – Ads": 23024,
     "AdGuard – Chinese": 22063,
     "ADrules HalfLife": 21903,
     "HalfLife list (jsdelivr)": 21903,
@@ -65,12 +65,12 @@
     "LocalRules": 10
   },
   "category_counts": {
-    "network": 480120,
+    "network": 480123,
     "css": 143222,
     "privacy": 55595,
     "phishing": 37309,
     "url": 26390,
-    "scriptlet": 17467,
+    "scriptlet": 17468,
     "whitelist": 14856,
     "malware": 9675,
     "annoyance": 3706,
@@ -81,7 +81,7 @@
     "mining": 235,
     "js": 1
   },
-  "root_domain_blocks": 322123,
+  "root_domain_blocks": 322126,
   "local_blocklist_rules": 0,
   "local_allowlist_rules": 0
 }

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 31872
+! Total Rules: 31873
 ! ------------------------------------------
 ||googlevideo.com/videoplayback?$rewrite=abp-resource:blank-mp4,domain=laurelberninteriors.com|safeframe.googlesyndication.com
 ||cdn.miohentai.com/partners/$rewrite=abp-resource:blank-mp4,domain=miohentai.com
@@ -23665,6 +23665,7 @@ theherta.com##+js(set, HTMLScriptElement.prototype.onerror, undefined)
 mfw09.org##+js(nowoif)
 xboxdynasty.de##+js(rmnt, script, /adblock/i)
 bhoomtv.org##+js(rmnt, script, /adblock/i)
+mangatrend.org##+js(rmnt, script, shown_at)
 sanadegreecollege.in,powergam.online,qrixpe.com##center, .main-content, .myTimerDiv, .myTimer, .SmileyBanner, .myWaitingDiv:others()
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(set, document.hidden, false)
 sanadegreecollege.in,powergam.online,qrixpe.com##+js(aopw, AdBDetected)

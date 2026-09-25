@@ -13,12 +13,11 @@
   "by_reason": {
     "pure_domain": 10972,
     "path_rule": 33795,
-    "untranslatable": 84,
+    "untranslatable": 535,
     "party_modifier": 6,
     "scoped_modifier": 305,
     "regex_or_redirect_rule": 3,
     "resource_type_modifier": 54,
-    "unknown_modifier": 451,
     "pure_domain_modifier": 1501,
     "navigation_domain_modifier": 46,
     "non_blocking_modifier": 2
