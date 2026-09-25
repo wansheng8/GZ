@@ -744,6 +744,15 @@ def test_known_modifier_has_no_unknown_detail():
     assert classify_dns(parse_line("||example.com^")).unknown_modifiers == frozenset()
 
 
+def test_unknown_detail_excludes_known_cooccurring_modifiers():
+    # 与已知修饰符同现时，明细只应包含真正未识别的 token，不能把 $document/$popup/$all 误报
+    v = classify_dns(parse_line("||example.com^$document,some-unknown-opt"))
+    assert v.reason == "unknown_modifier"
+    assert v.unknown_modifiers == frozenset({"some-unknown-opt"})
+    v2 = classify_dns(parse_line("||example.com^$popup,all,other-unknown"))
+    assert v2.unknown_modifiers == frozenset({"other-unknown"})
+
+
 def test_dns_safety_report_lists_unknown_modifiers(tmp_path):
     from adblock_collection.writer import write_dns_safety_report
 

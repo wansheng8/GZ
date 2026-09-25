@@ -248,6 +248,19 @@ PARTY_MODIFIERS = frozenset(
     }
 )
 
+# 所有已知的、能被显式归类（整域/导航/作用域/类型/第一方/匹配方式/非阻断/正则）的修饰符。
+# `unknown_modifier` 判定只会发生在这些集合之外的 token 上；报告 `unknown_modifiers` 时须
+# 扣除已知 token，避免 `$document,<unknown>` 之类组合把 `document` 也误报成未识别。
+_KNOWN_MODIFIERS = (
+    DNS_TRANSLATABLE_MODIFIERS
+    | NON_BLOCKING_MODIFIERS
+    | _REGEX_REDIRECT_MODIFIERS
+    | SCOPED_MODIFIERS
+    | MATCH_METHOD_MODIFIERS
+    | RESOURCE_TYPE_MODIFIERS
+    | PARTY_MODIFIERS
+)
+
 
 @dataclass
 class DnsVerdict:
@@ -334,7 +347,10 @@ def classify_dns(rule: Rule) -> DnsVerdict:
     # 表达，升级成整域拦截会导致误杀。宁可漏收，也不因遗漏新修饰符而误拦截。
     if sem:
         return DnsVerdict(
-            DNS_REJECT, CONF_REJECT, "unknown_modifier", frozenset(sem)
+            DNS_REJECT,
+            CONF_REJECT,
+            "unknown_modifier",
+            frozenset(sem - _KNOWN_MODIFIERS),
         )
 
     return DnsVerdict(DNS_REJECT, CONF_REJECT, "untranslatable")
