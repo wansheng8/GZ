@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 143220
+! Total Rules: 143222
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -116295,6 +116295,8 @@ answers.com##.aunit
 laser-pics.com##a[id^="download-btn"]:style(display: block !important;)
 indianporngirl10.com###preroll_placeholder
 immoweb.be##[id^="adims_"]
+fsicomics.com##[href^="https://www.e6ui8pc.com/"]
+fsicomics.com##[href="https://theporndude.com/"]
 uexpress.com##.aditude-ad-placeholder
 uexpress.com##[class^="Header_adContainer"]
 uexpress.com##[class*="AdvertisingWrapper"]

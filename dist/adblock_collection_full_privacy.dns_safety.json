@@ -38,8 +38,5 @@
     "non_network_rule": "非网络层规则",
     "untranslatable": "无法翻译为整域拦截的网络规则"
   },
-  "unknown_modifiers": {
-    "popup": 3,
-    "document": 2
-  }
+  "unknown_modifiers": {}
 }

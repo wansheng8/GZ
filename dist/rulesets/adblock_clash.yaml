@@ -1,6 +1,6 @@
 # Adblock Rule Collection (connection-layer ruleset)
 # rule-providers: { type: http, behavior: domain, format: yaml }
-# Total Domains: 539764
+# Total Domains: 539765
 payload:
   - '+.0--4.com'
   - '+.0--d.com'
@@ -481953,6 +481953,7 @@ payload:
   - '+.vhdgz.homage.com'
   - '+.vhdoxakztfwdp.website'
   - '+.vhdvjc.com'
+  - '+.vhdypcfgjiisu.online'
   - '+.vhec.jhjhyn.cn'
   - '+.vhefmfbhgunedf.com'
   - '+.vhesnshk.zasadzivot.cz'

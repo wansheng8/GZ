@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 480101,
+  "total": 480120,
   "by_category": {
-    "network": 480101
+    "network": 480120
   },
   "by_kind": {
-    "network": 480101
+    "network": 480120
   },
   "by_source": {
     "oisd": 130687,
@@ -24,7 +24,7 @@
     "Hagezi DNS Light": 2123,
     "uBO filters – Ads": 2106,
     "banbendalao ADgk": 1878,
-    "Accelerate-Hosts": 1654,
+    "Accelerate-Hosts": 1672,
     "ADrules ChengFeng": 767,
     "Disconnect Simple Ad": 405,
     "AdGuard – Mobile Ads": 217,
@@ -39,7 +39,7 @@
     "Anti-AD Domains": 14,
     "AdAway Hosts": 11,
     "Peter Lowe's Blocklist": 5,
-    "EasyList (ABP)": 1,
+    "EasyList (ABP)": 2,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
   }

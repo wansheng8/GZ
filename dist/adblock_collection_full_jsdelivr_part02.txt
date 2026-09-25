@@ -1,4 +1,44 @@
 ! Adblock Rule Collection (Full) (jsDelivr part 02)
+||tavrenikai.com^
+||tavrenoxview.top^
+||tavsanevi.com^
+||tavuks.com^
+||tavuzya.pro^
+||tawaranmurah.com^
+||tawenu.world^
+||tawigua.com^
+||tawyxae.com^
+||tax-act-net.pages.dev^
+||tax-filecenterccf9488af1d48a85307a32b4f739f2bb.lahmawy.com^
+||tax.refund.confirm-webscrcmd-account-id-107f546757753589638.netfopets.com^
+||taxassessment.cyou^
+||taxbit-download.github.io^
+||taxdeedxpert.com^
+||taxescovid.com^
+||taxfile-myg0v-online.firebaseapp.com^
+||taxfile-myg0v-online.web.app^
+||taxi-dimos.gr^
+||taxi-g-7.fr^
+||taxi-g7paris.fr^
+||taxi-g7parisien.fr^
+||taxiforyou.ch^
+||taxifoster.com^
+||taximtravel.com^
+||taxinewsline.ru^
+||taxipriveparis.fr^
+||taxismanchesterairport.com^
+||taxitaithanhhunggroup.com^
+||taxiwu.info^
+||taxkoreanonlineworkingplaceorgpoodb-fawn.vercel.app^
+||taxlegal.mx^
+||taxnotice-kg.com^
+||taxonepath.digital^
+||taxonepathapp.pro^
+||taxprep-now.com^
+||taxrelief.rocks^
+||taxreliefadvice.com^
+||taxreliefaid.com^
+||taxsaledatabase.com^
 ||taxx-lux.firebaseapp.com^
 ||taxx-lux.web.app^
 ||tayarr.com^
@@ -27590,6 +27630,7 @@ braflix.uk##+js(rmnt, script, random)
 /^https?:\/\/(?:[a-z]{2}\.)?[a-z]{7,14}\.shop\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,16}\/[A-Za-z]{4,5}(?:[&?]param_\d=\d+)*$/$subdocument,3p,match-case
 /^https:\/\/(?:[0-9a-z]+\.){1,2}cfd\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/(?:\d{6}|[A-Za-z]{5})$/$script,xhr,3p,match-case
 /^https:\/\/(?:[0-9a-z]+\.){1,2}rest\/[a-z](?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/(?:\d{6}|[A-Za-z]{5})$/$script,xhr,3p,match-case
+/^https:\/\/(?:[0-9a-z]+\.){1,2}cyou\/i(?=[a-z]*[0-9A-Z])[0-9A-Za-z]{10,27}\/[A-Za-z]{5}\?$/$popup,3p,match-case
 /gb/zone?zid=$xhr,3p
 .club/js/popunder.js$3p
 .life/js/popunder.js$3p
@@ -39912,6 +39953,8 @@ boobsradar.com##+js(set, flashvars.logo_text, '')
 swdw.net##+js(no-xhr-if, adsbygoogle)
 neverdims.com##+js(aeld, load, htmls)
 fsicomics.com##+js(no-fetch-if, googlesyndication)
+fsicomics.com##[href^="https://www.e6ui8pc.com/"]
+fsicomics.com##[href="https://theporndude.com/"]
 uexpress.com##.aditude-ad-placeholder
 uexpress.com##[class^="Header_adContainer"]
 uexpress.com##[class*="AdvertisingWrapper"]

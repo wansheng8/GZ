@@ -3,22 +3,22 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "include_navigation_domains": true,
-  "dns_eligible_network_rules": 541577,
-  "dns_rejected_network_rules": 251976,
+  "dns_eligible_network_rules": 541578,
+  "dns_rejected_network_rules": 251997,
   "navigation_eligible_rules": 235,
   "by_eligibility": {
-    "REJECT": 251976,
-    "SAFE": 541577
+    "REJECT": 251997,
+    "SAFE": 541578
   },
   "by_reason": {
-    "css_rule": 146129,
-    "party_modifier": 1875,
+    "css_rule": 146131,
+    "party_modifier": 1876,
     "resource_type_modifier": 6052,
     "scoped_modifier": 9232,
-    "untranslatable": 11914,
+    "untranslatable": 11932,
     "path_rule": 51309,
     "unknown_modifier": 719,
-    "pure_domain": 539816,
+    "pure_domain": 539817,
     "navigation_domain_modifier": 235,
     "regex_or_redirect_rule": 1332,
     "non_blocking_modifier": 5361,
@@ -44,11 +44,5 @@
     "non_network_rule": "非网络层规则",
     "untranslatable": "无法翻译为整域拦截的网络规则"
   },
-  "unknown_modifiers": {
-    "document": 455,
-    "popup": 140,
-    "all": 136,
-    "match-case": 7,
-    "important": 2
-  }
+  "unknown_modifiers": {}
 }

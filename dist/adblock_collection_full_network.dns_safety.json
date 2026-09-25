@@ -3,21 +3,21 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "include_navigation_domains": true,
-  "dns_eligible_network_rules": 459904,
-  "dns_rejected_network_rules": 20197,
+  "dns_eligible_network_rules": 459905,
+  "dns_rejected_network_rules": 20215,
   "navigation_eligible_rules": 2,
   "by_eligibility": {
-    "REJECT": 20197,
-    "SAFE": 459904
+    "REJECT": 20215,
+    "SAFE": 459905
   },
   "by_reason": {
     "party_modifier": 811,
     "resource_type_modifier": 2412,
     "scoped_modifier": 2344,
-    "untranslatable": 4956,
+    "untranslatable": 4974,
     "path_rule": 8762,
     "unknown_modifier": 75,
-    "pure_domain": 459881,
+    "pure_domain": 459882,
     "navigation_domain_modifier": 2,
     "non_blocking_modifier": 837,
     "pure_domain_modifier": 21
@@ -39,10 +39,5 @@
     "non_network_rule": "非网络层规则",
     "untranslatable": "无法翻译为整域拦截的网络规则"
   },
-  "unknown_modifiers": {
-    "all": 43,
-    "document": 30,
-    "important": 2,
-    "match-case": 1
-  }
+  "unknown_modifiers": {}
 }
