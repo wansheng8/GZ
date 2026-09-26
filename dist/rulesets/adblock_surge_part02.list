@@ -1,6 +1,8 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539657
+# Total Rules: 539660
 # Part 2/2
+DOMAIN-SUFFIX,track.perfiltrace.site,REJECT
+DOMAIN-SUFFIX,track.perfomancetracker.de,REJECT
 DOMAIN-SUFFIX,track.performancegolf.com,REJECT
 DOMAIN-SUFFIX,track.ph-connect.de,REJECT
 DOMAIN-SUFFIX,track.phorest.com,REJECT
@@ -52582,6 +52584,7 @@ DOMAIN-SUFFIX,ymumjbgixpvws.site,REJECT
 DOMAIN-SUFFIX,ymumsj-iham-5gsx-2nmy-3i0.pages.dev,REJECT
 DOMAIN-SUFFIX,ymuoawrphgaqm.site,REJECT
 DOMAIN-SUFFIX,ymuoyc.capriche.es,REJECT
+DOMAIN-SUFFIX,ymuqohcxibqit.site,REJECT
 DOMAIN-SUFFIX,ymuzuvrb.com,REJECT
 DOMAIN-SUFFIX,ymvikp.estadao.com.br,REJECT
 DOMAIN-SUFFIX,ymviwl.just4camper.de,REJECT

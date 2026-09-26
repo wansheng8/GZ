@@ -1,6 +1,8 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539657
+# Total Rules: 539660
 # Part 2/2
+host-suffix, track.perfiltrace.site, reject
+host-suffix, track.perfomancetracker.de, reject
 host-suffix, track.performancegolf.com, reject
 host-suffix, track.ph-connect.de, reject
 host-suffix, track.phorest.com, reject
@@ -52582,6 +52584,7 @@ host-suffix, ymumjbgixpvws.site, reject
 host-suffix, ymumsj-iham-5gsx-2nmy-3i0.pages.dev, reject
 host-suffix, ymuoawrphgaqm.site, reject
 host-suffix, ymuoyc.capriche.es, reject
+host-suffix, ymuqohcxibqit.site, reject
 host-suffix, ymuzuvrb.com, reject
 host-suffix, ymvikp.estadao.com.br, reject
 host-suffix, ymviwl.just4camper.de, reject

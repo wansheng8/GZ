@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539657
+# Total Rules: 539660
 # Part 1/2
 DOMAIN-SUFFIX,0--4.com,REJECT
 DOMAIN-SUFFIX,0--d.com,REJECT
@@ -367433,6 +367433,7 @@ DOMAIN-SUFFIX,salda-capiton.tech,REJECT
 DOMAIN-SUFFIX,saldacapiton.net,REJECT
 DOMAIN-SUFFIX,saldanha.top,REJECT
 DOMAIN-SUFFIX,saldatitolvaletrade.com,REJECT
+DOMAIN-SUFFIX,saldfnivenpgl.site,REJECT
 DOMAIN-SUFFIX,saldiora.com,REJECT
 DOMAIN-SUFFIX,saldo-kapitore.live,REJECT
 DOMAIN-SUFFIX,saldo.beneficiariostotal.co,REJECT
@@ -433987,6 +433988,7 @@ DOMAIN-SUFFIX,supanetwebmailservices.weebly.com,REJECT
 DOMAIN-SUFFIX,supanews.digital,REJECT
 DOMAIN-SUFFIX,supapush.net,REJECT
 DOMAIN-SUFFIX,supararc.net,REJECT
+DOMAIN-SUFFIX,supariairily.cyou,REJECT
 DOMAIN-SUFFIX,supavero.com,REJECT
 DOMAIN-SUFFIX,supchange.top,REJECT
 DOMAIN-SUFFIX,supcon.today,REJECT
@@ -458585,5 +458587,3 @@ DOMAIN-SUFFIX,track.peavoidud.com,REJECT
 DOMAIN-SUFFIX,track.pegasuscaoachery.com.br,REJECT
 DOMAIN-SUFFIX,track.pegasusselect.com.br,REJECT
 DOMAIN-SUFFIX,track.perfectwatchbd.com,REJECT
-DOMAIN-SUFFIX,track.perfiltrace.site,REJECT
-DOMAIN-SUFFIX,track.perfomancetracker.de,REJECT

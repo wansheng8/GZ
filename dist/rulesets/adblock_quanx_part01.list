@@ -1,5 +1,5 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539657
+# Total Rules: 539660
 # Part 1/2
 host-suffix, 0--4.com, reject
 host-suffix, 0--d.com, reject
@@ -367433,6 +367433,7 @@ host-suffix, salda-capiton.tech, reject
 host-suffix, saldacapiton.net, reject
 host-suffix, saldanha.top, reject
 host-suffix, saldatitolvaletrade.com, reject
+host-suffix, saldfnivenpgl.site, reject
 host-suffix, saldiora.com, reject
 host-suffix, saldo-kapitore.live, reject
 host-suffix, saldo.beneficiariostotal.co, reject
@@ -433987,6 +433988,7 @@ host-suffix, supanetwebmailservices.weebly.com, reject
 host-suffix, supanews.digital, reject
 host-suffix, supapush.net, reject
 host-suffix, supararc.net, reject
+host-suffix, supariairily.cyou, reject
 host-suffix, supavero.com, reject
 host-suffix, supchange.top, reject
 host-suffix, supcon.today, reject
@@ -458585,5 +458587,3 @@ host-suffix, track.peavoidud.com, reject
 host-suffix, track.pegasuscaoachery.com.br, reject
 host-suffix, track.pegasusselect.com.br, reject
 host-suffix, track.perfectwatchbd.com, reject
-host-suffix, track.perfiltrace.site, reject
-host-suffix, track.perfomancetracker.de, reject

@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 164148
+! Total Rules: 164147
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -157658,7 +157658,6 @@ digital.bg##.banner-holder
 kliuki.bg##img[width="960"][height="90"]
 kliuki.bg###container > div[style="float:left;"] > div[style]
 cyberchef.org###workspace-wrapper > [id][style*="height"]:style(height: 100% !important)
-kcra.com,kmbc.com,koat.com,koco.com,ksbw.com,mynbc5.com,wapt.com,wbaltv.com,wdsu.com,wgal.com,wlwt.com,wmtw.com,wmur.com,wtae.com,wvtm13.com,wxii12.com,wyff4.com##.ad-track
 justjared.com##.banner-spacer-top:style(max-height: 50px !important;)
 justjared.com##[role="banner"]:style(top:0 !important)
 deliveroo.*##a[role="button"]:has(p:contains(Sponsored))

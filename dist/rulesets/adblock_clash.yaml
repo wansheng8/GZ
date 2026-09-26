@@ -1,6 +1,6 @@
 # Adblock Rule Collection (connection-layer ruleset)
 # rule-providers: { type: http, behavior: domain, format: yaml }
-# Total Domains: 539657
+# Total Domains: 539660
 payload:
   - '+.0--4.com'
   - '+.0--d.com'
@@ -367434,6 +367434,7 @@ payload:
   - '+.saldacapiton.net'
   - '+.saldanha.top'
   - '+.saldatitolvaletrade.com'
+  - '+.saldfnivenpgl.site'
   - '+.saldiora.com'
   - '+.saldo-kapitore.live'
   - '+.saldo.beneficiariostotal.co'
@@ -433988,6 +433989,7 @@ payload:
   - '+.supanews.digital'
   - '+.supapush.net'
   - '+.supararc.net'
+  - '+.supariairily.cyou'
   - '+.supavero.com'
   - '+.supchange.top'
   - '+.supcon.today'
@@ -511169,6 +511171,7 @@ payload:
   - '+.ymumsj-iham-5gsx-2nmy-3i0.pages.dev'
   - '+.ymuoawrphgaqm.site'
   - '+.ymuoyc.capriche.es'
+  - '+.ymuqohcxibqit.site'
   - '+.ymuzuvrb.com'
   - '+.ymvikp.estadao.com.br'
   - '+.ymviwl.just4camper.de'

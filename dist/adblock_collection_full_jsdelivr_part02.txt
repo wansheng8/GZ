@@ -1,4 +1,6 @@
 ! Adblock Rule Collection (Full) (jsDelivr part 02)
+||synergeiokatharismou-thessaloniki.gr^
+||synergiecapital-it.com^
 ||synergiecapital.pro^
 ||synergiecapitaltrade.com^
 ||synergiequantique-ai.live^
@@ -75415,7 +75417,6 @@ $3p,xhr,domain=mega4upload.net
 ||tsmodelstube.com/fun/$image,~3p
 ||youjizz.com/KWIKY*.mp4$redirect=noop-1s.mp4,domain=youjizz.com,media
 cyberchef.org###workspace-wrapper > [id][style*="height"]:style(height: 100% !important)
-kcra.com,kmbc.com,koat.com,koco.com,ksbw.com,mynbc5.com,wapt.com,wbaltv.com,wdsu.com,wgal.com,wlwt.com,wmtw.com,wmur.com,wtae.com,wvtm13.com,wxii12.com,wyff4.com##.ad-track
 justjared.com##.banner-spacer-top:style(max-height: 50px !important;)
 justjared.com##[role="banner"]:style(top:0 !important)
 deliveroo.*##a[role="button"]:has(p:contains(Sponsored))
