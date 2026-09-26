@@ -5,77 +5,77 @@
       "name": "adblock_collection_full",
       "file": "adblock_collection_full.txt",
       "format": "adblock",
-      "rules": 793579,
-      "bytes": 26174841,
-      "sha256": "cee0c0f9ff9f7c3e52fe4006499d469064f4c5f24d5c2eff7190f68da16ba4e2"
+      "rules": 793292,
+      "bytes": 26164051,
+      "sha256": "bece7b6b749e1b3e22e5e3d1f2e80efe89c305b21b5bbcc49c2df5ef32fc87fb"
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_jsdelivr.txt",
       "format": "adblock_include",
-      "rules": 793579,
+      "rules": 793292,
       "parts": [
         "adblock_collection_full_jsdelivr_part01.txt",
         "adblock_collection_full_jsdelivr_part02.txt"
       ],
       "bytes": 445,
-      "sha256": "756aad0ffdcd4068c29c6083274e6a0bc649ff2508d7bb181a5cc4b85fe3a90f"
+      "sha256": "986596956defec155644c15c34e8f9177bf0b8274bdec44823b9ceccb5b293d1"
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_dns.txt",
       "format": "hosts",
-      "rules": 539768,
-      "bytes": 15198018,
-      "sha256": "88d2c64803c3c7551b2613e8d2e437b3518ff9051a55846cfbd3ac6c42ae9008"
+      "rules": 539422,
+      "bytes": 15187644,
+      "sha256": "c694f3ef42db97acbd6d3a15b86b350fb2eee19053cd74ca35c38ea0c5612d92"
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 539768,
-      "bytes": 12499188,
-      "sha256": "d5b1d9e7bfe9a1b7e604b88a6c8d5e8aab24d91fadac8d5f896c2fa08c6f463d"
+      "rules": 539422,
+      "bytes": 12490544,
+      "sha256": "748ef67796eeccd4995862f815801c3e09cf600f9ff1ff100bd56464a9fa692f"
     },
     {
       "name": "adblock_collection_full",
       "file": "adblock_collection_full_domains.txt",
       "format": "domains",
-      "rules": 539768,
-      "bytes": 10879900,
-      "sha256": "260fdbbab8595b2dc091e6fda03cd915daa55429a2d5f676ae969d4d9bc9b4be"
+      "rules": 539422,
+      "bytes": 10872294,
+      "sha256": "fd6e21fcdd69fae7ddd7ee28be7f823ad3d9b1d58a6360ce5bb64039e8df2117"
     },
     {
       "name": "adblock_collection_full_browser_network",
       "file": "adblock_collection_full_browser_network.txt",
       "format": "adblock",
-      "rules": 629423,
-      "bytes": 17376135,
-      "sha256": "390df128c044f81faac6fc5d313c90367abb5b0be21fead7ba0fb6bcfec0164d"
+      "rules": 629152,
+      "bytes": 17374498,
+      "sha256": "ffa679653c465878abaf0ff7f5feb7b24b1be0b3b3d6885afbaa8e4b33a11b06"
     },
     {
       "name": "adblock_collection_full_cosmetic",
       "file": "adblock_collection_full_cosmetic.txt",
       "format": "adblock",
-      "rules": 164156,
-      "bytes": 8799042,
-      "sha256": "d5fdf1970cc4e103e4c11afca88878aaf52c0ae57d5c325b66196e46aa9ac04d"
+      "rules": 164140,
+      "bytes": 8789889,
+      "sha256": "776629cb72621669152353da62a0781ed47094d60f4e9fad88c67e95636d95c7"
     },
     {
       "name": "adblock_collection_full_dns_abp",
       "file": "adblock_collection_full_dns_abp.txt",
       "format": "adblock_domains",
-      "rules": 539768,
-      "bytes": 12499435,
-      "sha256": "54a26e0347d4ecdaf560a770f6d287292e424116be06bc3419d2e909e1e2f596"
+      "rules": 539422,
+      "bytes": 12490791,
+      "sha256": "36d5c86add39ec1e5107ce578d4c6381e89eeb7d0638ceea7dc6783e1be9c9fb"
     },
     {
       "name": "adblock_collection_ubo_enhance",
       "file": "adblock_collection_ubo_enhance.txt",
       "format": "adblock_ubo",
-      "rules": 31873,
-      "bytes": 3285748,
-      "sha256": "14447ab0e4c733bd05014e0ac982582d6556c0c555a354be001b20f82d07c53f"
+      "rules": 31867,
+      "bytes": 3278210,
+      "sha256": "7c84caaa9a2761e766663fed88f331006befc7cb2bfbde69c2adc504de2edf1b"
     },
     {
       "name": "dns_allow",
@@ -91,105 +91,177 @@
       "name": "ruleset_clash",
       "file": "rulesets/adblock_clash.yaml",
       "format": "clash_ruleset",
-      "rules": 539768,
-      "bytes": 15157817,
-      "sha256": "98aa834121b327f76420f08b4d7e375462b3abf0beab787b184b2f7a36c4a7b9"
+      "rules": 539422,
+      "bytes": 15148231,
+      "sha256": "5887b826a837f91946eaa5192700f192425db5410a00fdacb0a37c207a4926ef"
     },
     {
       "name": "ruleset_singbox",
       "file": "rulesets/adblock_singbox.json",
       "format": "singbox_ruleset",
-      "rules": 539768,
-      "bytes": 12499158,
-      "sha256": "e65e9572692a5fc64afbba5e320a540b74acbf28d656fc9736073d00ac9278e7"
+      "rules": 539422,
+      "bytes": 12490514,
+      "sha256": "77b46fa3522d700c58465b7ab5da3d9ec5c540ca304b1ee89d90985bd742b9a1"
     },
     {
       "name": "ruleset_surge",
       "file": "rulesets/adblock_surge.list",
       "format": "surge_ruleset",
-      "rules": 539768,
-      "bytes": 22074045,
-      "sha256": "876772312874060e6597224fd444ea5e4cc4def089996f5a8da6d0dd884098a7"
+      "rules": 539422,
+      "bytes": 22061931,
+      "sha256": "41fc1d3c29748196d54c9785de14819196728fd1fd82acedd616cbf17acdc475"
     },
     {
       "name": "ruleset_surge_domain_set",
       "file": "rulesets/adblock_surge_domain_set.txt",
       "format": "surge_domain_set",
-      "rules": 539768,
-      "bytes": 11399566,
-      "sha256": "583c3839d918107e082c8e8957cc7c4cac51e4c7e3ec2d2a9e08e60bbd537d79"
+      "rules": 539422,
+      "bytes": 11392008,
+      "sha256": "40bd8f3ec7b2a4695eb2365d3521fe76e35b72ca8330de92928481fe8f0c4239"
     },
     {
       "name": "ruleset_quanx",
       "file": "rulesets/adblock_quanx.list",
       "format": "quanx_ruleset",
-      "rules": 539768,
-      "bytes": 22074045,
-      "sha256": "9bf05decfd5e2de3da504f693c3b87a4994454f1db12aa3ada374055ab279837"
+      "rules": 539422,
+      "bytes": 22061931,
+      "sha256": "0f25d9083cea00e12971d7d8617205bcdba1256647f1f2c966b3430822eed57f"
     },
     {
       "name": "ruleset_surge_part",
       "file": "rulesets/adblock_surge_part01.list",
       "format": "surge_ruleset_part",
-      "rules": 458578,
-      "bytes": 18874296,
-      "sha256": "c034607d2dd4dd557cb8203999203e5ca69c677240a657ea42a77db422a7c422"
+      "rules": 458582,
+      "bytes": 18874283,
+      "sha256": "dc68bb1ed6276c98e5e260336f595e328f13e0b1cb429f13f530b6cb6203db10"
     },
     {
       "name": "ruleset_surge_part",
       "file": "rulesets/adblock_surge_part02.list",
       "format": "surge_ruleset_part",
-      "rules": 81190,
-      "bytes": 3199846,
-      "sha256": "be876ed3959edb48f320f2d2c2a95dadfc82b9e1b0414ffc56164f87ac738e11"
+      "rules": 80840,
+      "bytes": 3187745,
+      "sha256": "a32650722d2a50da4a805d9975fecee876e9b2c28695503ba0d51254eaef9be5"
     },
     {
       "name": "ruleset_quanx_part",
       "file": "rulesets/adblock_quanx_part01.list",
       "format": "quanx_ruleset_part",
-      "rules": 458578,
-      "bytes": 18874296,
-      "sha256": "b32ab4b92b0646868d77c02d69519907cf0a526be2bd45a0c5653ffaf4939389"
+      "rules": 458582,
+      "bytes": 18874283,
+      "sha256": "481bf9d2f353c0685823da738bd6b795d7e47f8465ffca2630a1e6349114189b"
     },
     {
       "name": "ruleset_quanx_part",
       "file": "rulesets/adblock_quanx_part02.list",
       "format": "quanx_ruleset_part",
-      "rules": 81190,
-      "bytes": 3199846,
-      "sha256": "46e178384591fc754a9093ac119e55c9f628073f65236e55b0c752f246427cfd"
+      "rules": 80840,
+      "bytes": 3187745,
+      "sha256": "6f5dac2faf53f510abe525cebff997d8be1a2acf24d506efa79a431bb89f454e"
+    },
+    {
+      "name": "adapter_mihomo",
+      "file": "adapters/mihomo.yaml",
+      "format": "adapter",
+      "target": "mihomo",
+      "bytes": 642,
+      "sha256": "f7fe3e4e0b0796d45bc1c4b0465672f6f02ac218c9c74113af351338098bd7b9"
+    },
+    {
+      "name": "adapter_singbox",
+      "file": "adapters/singbox.json",
+      "format": "adapter",
+      "target": "singbox",
+      "bytes": 849,
+      "sha256": "680a3e3525395b716012d72c53786e084254629b1b3b2cd76d41af93c6d9bb31"
+    },
+    {
+      "name": "adapter_surge",
+      "file": "adapters/surge.conf",
+      "format": "adapter",
+      "target": "surge",
+      "bytes": 434,
+      "sha256": "eed19f71a4bf55eb1a6058be900dd8239db7dd800f4fa7daa062417909c5676a"
+    },
+    {
+      "name": "adapter_quanx",
+      "file": "adapters/quanx.conf",
+      "format": "adapter",
+      "target": "quanx",
+      "bytes": 817,
+      "sha256": "2813865e664768d62aaa82baaccbc828afa2b959c9dabed6f64ed7746826396b"
+    },
+    {
+      "name": "adapter_adguardhome",
+      "file": "adapters/adguardhome.yaml",
+      "format": "adapter",
+      "target": "adguardhome",
+      "bytes": 451,
+      "sha256": "68e400b9d0c54e25e26d597645a520d794eee23bbf1f886fd40bc7b4bb13a4cd"
+    },
+    {
+      "name": "adapter_pihole",
+      "file": "adapters/pihole.txt",
+      "format": "adapter",
+      "target": "pihole",
+      "bytes": 282,
+      "sha256": "91947d61b8680ef4e7026a86ac9f1a80bf868a3fb923a8debfb6f5e8c167f5b4"
+    },
+    {
+      "name": "adapter_dnsmasq",
+      "file": "adapters/dnsmasq.conf",
+      "format": "adapter",
+      "target": "dnsmasq",
+      "bytes": 433,
+      "sha256": "bf02ebcadfdaf08986dfeb2fa1d5f6117c22a98432c4b87a666f45b7f451b9ec"
+    },
+    {
+      "name": "adapter_hosts",
+      "file": "adapters/hosts.md",
+      "format": "adapter",
+      "target": "hosts",
+      "bytes": 1294,
+      "sha256": "a03d02bcb7de2c0111ae927ee2e09aed345f08a9c4358bd0df182288d8954be5"
+    },
+    {
+      "name": "adapter_browsers",
+      "file": "adapters/browsers.md",
+      "format": "adapter",
+      "target": "browsers",
+      "bytes": 1190,
+      "sha256": "6412ea645d8d5c8bc802cd27a77fc6d20f4d4e7d69eb49754cb9303bcefe6305"
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance.txt",
       "format": "adblock",
-      "rules": 3706,
-      "bytes": 124797,
-      "sha256": "f0a78e60a3f3894bf173424f51f2990ccd22f787c8c8f016a952b21ba6c81e08"
+      "rules": 3707,
+      "bytes": 124825,
+      "sha256": "c3e5454e7bd1ec930d825f6be06f80ec9ae21cf692cca484153b4021cbb91ee0"
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance_dns.txt",
       "format": "hosts",
-      "rules": 1001,
-      "bytes": 27048,
-      "sha256": "33fead695f913c70316485af9b8be249f3056951622e98c2fb0f218df1a72348"
+      "rules": 1002,
+      "bytes": 27075,
+      "sha256": "3efef97b66119bd94d68ce44f0d3b28d426b24fafb2a0ad8b0bffdaeb795b909"
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 1001,
-      "bytes": 22053,
-      "sha256": "770565cd16a77e226ce83a25aafd6b42773e8097a54b03a60d42d3293a263fd4"
+      "rules": 1002,
+      "bytes": 22075,
+      "sha256": "a0053a607c16464a151fd30fa64baa3e2322704b8400484b36c9133e915a0594"
     },
     {
       "name": "adblock_collection_full_annoyance",
       "file": "adblock_collection_full_annoyance_domains.txt",
       "format": "domains",
-      "rules": 1001,
-      "bytes": 19066,
-      "sha256": "8ba66f51047cf68b0a38ab5e419e51f7b774bfeacdfa84e350b11a0e0e3146ea"
+      "rules": 1002,
+      "bytes": 19085,
+      "sha256": "d090bbb3036fd53b4ab18f174de8b9aa3befd5e1745bc24e0176132e485661ca"
     },
     {
       "name": "adblock_collection_full_cookie",
@@ -227,9 +299,9 @@
       "name": "adblock_collection_full_css",
       "file": "adblock_collection_full_css.txt",
       "format": "adblock",
-      "rules": 143222,
-      "bytes": 6827053,
-      "sha256": "035f77ad9c9a931ec92475694883ddd3c698ac2298c94bc1413989283aac206c"
+      "rules": 143211,
+      "bytes": 6823195,
+      "sha256": "e565fda5a7561c95dda0abd4f56b06f28e0b284251920bbe93349903e384f05a"
     },
     {
       "name": "adblock_collection_full_css",
@@ -332,33 +404,33 @@
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware.txt",
       "format": "adblock",
-      "rules": 9675,
-      "bytes": 817814,
-      "sha256": "7b3254fd1abcf58c077ae24b02b61c73471ba5a19ae31fb205ce0c3611f72e53"
+      "rules": 9674,
+      "bytes": 817774,
+      "sha256": "1702fa79a24cbcc2731af89ebea71a065a96531ba721999bd2bcd2d612d26cba"
     },
     {
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware_dns.txt",
       "format": "hosts",
-      "rules": 380,
-      "bytes": 11243,
-      "sha256": "0e2f3f9b5b827ee4e71ffc9990dd9df58ca93cd38b3d96db1078e4d452c3d20d"
+      "rules": 379,
+      "bytes": 11202,
+      "sha256": "cd35ce8f5f0ef53d31b14f9b241aa6ce8a9bd2288bcea4dcf9badf1c7b8351b4"
     },
     {
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 380,
-      "bytes": 9353,
-      "sha256": "c1cb5ed606d772f49be103319f7bc0e650dd26a807e3755c5422e3a484925cd7"
+      "rules": 379,
+      "bytes": 9317,
+      "sha256": "fc6b59fff94ed3ef76677030b63bb87724784931e97e701f285b008f77c82472"
     },
     {
       "name": "adblock_collection_full_malware",
       "file": "adblock_collection_full_malware_domains.txt",
       "format": "domains",
-      "rules": 380,
-      "bytes": 8229,
-      "sha256": "90ccb4526314f364666653a5a4883c8d77e00d48089a236d87e18269270bd666"
+      "rules": 379,
+      "bytes": 8196,
+      "sha256": "b39c4e2f641270913ccfee365367ff1643318b56e63769ed50e38b928f7fa744"
     },
     {
       "name": "adblock_collection_full_mining",
@@ -396,97 +468,97 @@
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network.txt",
       "format": "adblock",
-      "rules": 480123,
-      "bytes": 11230179,
-      "sha256": "25318250e13a237975c4f1b9c2a4571e1cbd06be9ec34e4f09b9d20837f7f60b"
+      "rules": 479807,
+      "bytes": 11223268,
+      "sha256": "87a9034b83739e7f9994361ef6cc381e9f655d40745fc065d28991db30f93490"
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_dns.txt",
       "format": "hosts",
-      "rules": 459649,
-      "bytes": 12737866,
-      "sha256": "6c52db229c81eb3757e336054e2a122fdd867b95c0416f55fef0dbeaec0d7054"
+      "rules": 459260,
+      "bytes": 12726132,
+      "sha256": "818221836f01fa37ae0426939310874ee638f248361d8de73850e2f2b57d3112"
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 459649,
-      "bytes": 10439631,
-      "sha256": "6b7a28a910b11778effa9ea0306b716fcc74e95cde1695af202992ae086bfaa0"
+      "rules": 459260,
+      "bytes": 10429842,
+      "sha256": "a14811a892cc57cfc646f4bd29745eb95aa4dce3942f7dd5715e915d0ab22b23"
     },
     {
       "name": "adblock_collection_full_network",
       "file": "adblock_collection_full_network_domains.txt",
       "format": "domains",
-      "rules": 459649,
-      "bytes": 9060700,
-      "sha256": "8afd8b2cc977245fb6574a8efa813d5043164e969d74b713b35f125c4d18c038"
+      "rules": 459260,
+      "bytes": 9052078,
+      "sha256": "29921c3078444e9064da28a5e457a70876cd129209c69cac5f4d145bc5917a74"
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing.txt",
       "format": "adblock",
-      "rules": 37309,
-      "bytes": 1983563,
-      "sha256": "7d2cd510a74f65a3080a7e7d237c94a053c50ec1f2384703f5d7513b490c6456"
+      "rules": 37357,
+      "bytes": 1984959,
+      "sha256": "3d0e79021c9edcf8b47f25de8516c4884ff12082406b2cf7a1bb81f926ab7e02"
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing_dns.txt",
       "format": "hosts",
-      "rules": 10510,
-      "bytes": 333381,
-      "sha256": "e5e9ffcd7f85cf217d6c13e945c10aaaad9b1225ac9aaf726f0026ec2b1f77a5"
+      "rules": 10558,
+      "bytes": 335017,
+      "sha256": "b969e9dcd8f237629e32ef38df8121fe437731b094d06cc7ee5b628f540c9a5b"
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 10510,
-      "bytes": 280841,
-      "sha256": "fd57814e2b462875442b15d0fb943bc3988c6069244b08342af7be682e8455fa"
+      "rules": 10558,
+      "bytes": 282237,
+      "sha256": "e3c0a4b5071b75e5d4851015faa84edbad174153cd67d67906202ac0384a321e"
     },
     {
       "name": "adblock_collection_full_phishing",
       "file": "adblock_collection_full_phishing_domains.txt",
       "format": "domains",
-      "rules": 10510,
-      "bytes": 249327,
-      "sha256": "d6433ca2d94dc3856d136bc4f3b2060e1415663ec981f0aaf7583105716dc27a"
+      "rules": 10558,
+      "bytes": 250579,
+      "sha256": "42c77e121a84a12d04f1b19463b32ed1f976a5049bcf52e832b49551b2fa6409"
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy.txt",
       "format": "adblock",
-      "rules": 55595,
-      "bytes": 1478607,
-      "sha256": "54e94e9cdbfe8ab763bcdc8f34d56aaa6a6815a25ed9b8eae905f6d51852327c"
+      "rules": 55599,
+      "bytes": 1478697,
+      "sha256": "02aa36b5a29b5462a4eb99b7f70df6be369894e756f05181253129060b2e3678"
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy_dns.txt",
       "format": "hosts",
-      "rules": 44697,
-      "bytes": 1348031,
-      "sha256": "cec4bfb55c85d476f7faeb79d6a4b94815cb6c41e19cd3be051cfc57478aacf9"
+      "rules": 44698,
+      "bytes": 1348050,
+      "sha256": "4d49465235e9413ce59ee0b832cc2ecdda933f3e1321941d345dbe0c5b6109f4"
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 44697,
-      "bytes": 1124556,
-      "sha256": "286425c549184f8fcbc3e592cd55ca03f47bcf7a444fd21a67b9f6f3eef6be96"
+      "rules": 44698,
+      "bytes": 1124570,
+      "sha256": "f3b119ba34a2d21a69af91fded9c646e4bccd40247975c520356376f33591086"
     },
     {
       "name": "adblock_collection_full_privacy",
       "file": "adblock_collection_full_privacy_domains.txt",
       "format": "domains",
-      "rules": 44697,
-      "bytes": 990481,
-      "sha256": "33614cec5ceea8d1dbbe8c98f9b0d72f843c17cef56fae66e76d9ceae878f237"
+      "rules": 44698,
+      "bytes": 990492,
+      "sha256": "15f802b23c5299e9ad5bdf2d30580c7a651ecf2106d220ce780c77216b6af5ec"
     },
     {
       "name": "adblock_collection_full_redirect",
@@ -528,8 +600,8 @@
       "file": "adblock_collection_full_scriptlet.txt",
       "format": "adblock",
       "rules": 17468,
-      "bytes": 1743214,
-      "sha256": "77c970561d8b5aca51354540ad4d5adb205618bb18f65170aefb0969c2e0509e"
+      "bytes": 1738590,
+      "sha256": "362912538b01e0a2f1686626d42a72a2e3ce22cd784d0172c8a4cdd04f5fdb78"
     },
     {
       "name": "adblock_collection_full_scriptlet",
@@ -562,73 +634,73 @@
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social.txt",
       "format": "adblock",
-      "rules": 1943,
-      "bytes": 92696,
-      "sha256": "9888142839048e0016a3b0d1de62ca873921caf17f64f757639e93fbdc2528a6"
+      "rules": 1942,
+      "bytes": 96791,
+      "sha256": "7d882d9867a16312dd6264f0f6b097d43231dd070a9999115ed039d6351ff6d9"
     },
     {
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social_dns.txt",
       "format": "hosts",
-      "rules": 1239,
-      "bytes": 38755,
-      "sha256": "5a07547a818b6a54cfca0bb233e2c583f0756f960de7f37256a0965ac5701f4e"
+      "rules": 1237,
+      "bytes": 38639,
+      "sha256": "7854fa00796fd596321400e6c2bb3a87fbb11fb1ea686cb9d8270507dd936caa"
     },
     {
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 1239,
-      "bytes": 32570,
-      "sha256": "a8b1f508729d40bb85c23b32b15c22d27ec6cf689e52faea8fd2dcc27cdb9d04"
+      "rules": 1237,
+      "bytes": 32464,
+      "sha256": "2dfa696e169a3d27323e04db2f8f8f5ca346757dbe0d65dcfea7f0ecb5c199e1"
     },
     {
       "name": "adblock_collection_full_social",
       "file": "adblock_collection_full_social_domains.txt",
       "format": "domains",
-      "rules": 1239,
-      "bytes": 28869,
-      "sha256": "c99081adf43890d066edf948538e32de579526f0954f92bc60e8d5fb2f75e3db"
+      "rules": 1237,
+      "bytes": 28769,
+      "sha256": "db6e6aab98abbd4e24204aafe41abf56aa902c0ec3f68fc3668844fc5d042537"
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url.txt",
       "format": "adblock",
-      "rules": 26390,
-      "bytes": 786595,
-      "sha256": "386fc9f4d65f0ec1bafa17131662cdc82c63c7cdfd4a44d9445c999823372a82"
+      "rules": 26385,
+      "bytes": 786358,
+      "sha256": "cbcc01686c414293cd60e025da84b050bd9898792693f1e62396c3510d95c2a2"
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url_dns.txt",
       "format": "hosts",
-      "rules": 21721,
-      "bytes": 685338,
-      "sha256": "38bbbe27776a420e6eea4a911380841721bd216177e23394f50e3f8f15f6ff96"
+      "rules": 21717,
+      "bytes": 685173,
+      "sha256": "2165ad45ecf1be87bd89b0b598072728873caa6e93c4eabbe486baa468648b7c"
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 21721,
-      "bytes": 576743,
-      "sha256": "7f4576f77873ba047f855fa96cee52993a83dcaa5508d2231929421320f7458b"
+      "rules": 21717,
+      "bytes": 576598,
+      "sha256": "bccbb92274c6fd7a3b085f7ce4f49ce766622b26fb8d131684374beaf941b39f"
     },
     {
       "name": "adblock_collection_full_url",
       "file": "adblock_collection_full_url_domains.txt",
       "format": "domains",
-      "rules": 21721,
-      "bytes": 511596,
-      "sha256": "48fae337bebb7b6b7fe241c1566bd9a2731ef75adeb4d97aeaa3a5d95adf1f53"
+      "rules": 21717,
+      "bytes": 511463,
+      "sha256": "77b608303c90ab6ce1cccfdcbff5d8812af1fa91607a78eddff062c94a4e7ae3"
     },
     {
       "name": "adblock_collection_full_whitelist",
       "file": "adblock_collection_full_whitelist.txt",
       "format": "adblock",
-      "rules": 14856,
-      "bytes": 873630,
-      "sha256": "2dbd393913025663948a33afb9e90652d51b8ebe660f0c30ded17b9a9b6d0488"
+      "rules": 14850,
+      "bytes": 872901,
+      "sha256": "bf9c1c49a35b55a16abc32e08df5a863a27dea44f91946842179c45cff4cb592"
     },
     {
       "name": "adblock_collection_full_whitelist",
@@ -661,33 +733,33 @@
       "name": "adblock_collection_security",
       "file": "security/adblock_collection_security.txt",
       "format": "adblock",
-      "rules": 47219,
-      "bytes": 2821145,
-      "sha256": "a1858e1010f5e392fbca56c35185e09e534858f5b1225cb75120eb96827239f5"
+      "rules": 47266,
+      "bytes": 2822501,
+      "sha256": "8a9f12176d9f1f2b35e5e9aec9c50bd31e560889d74a17e948edf61cc240c17c"
     },
     {
       "name": "adblock_collection_security",
       "file": "security/adblock_collection_security_dns.txt",
       "format": "hosts",
-      "rules": 11092,
-      "bytes": 350217,
-      "sha256": "6acc85f6bf57ea3d01fa8c4a65ffd3fd507311ec8a4b2174fb9af48738364b83"
+      "rules": 11139,
+      "bytes": 351812,
+      "sha256": "08b506eeb0456855bcef2b9971585dcf745452225250681a5fd38843a5594df1"
     },
     {
       "name": "adblock_collection_security",
       "file": "security/adblock_collection_security_dns_ipv6.txt",
       "format": "hosts_ipv6",
-      "rules": 11092,
-      "bytes": 294767,
-      "sha256": "7425f55348776c25f2276885dd0e7b82db03d21d2df4ca1765442e07482859a1"
+      "rules": 11139,
+      "bytes": 296127,
+      "sha256": "e033c347d154a10bb854d60a3cfcd635876e7543dddcf73d52069b5de400052a"
     },
     {
       "name": "adblock_collection_security",
       "file": "security/adblock_collection_security_domains.txt",
       "format": "domains",
-      "rules": 11092,
-      "bytes": 261507,
-      "sha256": "0f030e3659bdec3134aab682f9407423de8cb6dc7aee8224ebc3ec863d311332"
+      "rules": 11139,
+      "bytes": 262726,
+      "sha256": "d6169eac7daefc0f76f782783a8906e29e9f3da4cccb2dd096e6b70871bf0d8a"
     }
   ],
   "versions": {
@@ -695,11 +767,11 @@
     "normalizer": "1.4.0",
     "classifier": "1.13.0"
   },
-  "generated_at": "2026-09-25T17:03:32Z",
+  "generated_at": "2026-09-26T00:00:28Z",
   "sources_status": {
     "total_sources": 60,
     "failed_sources": [],
     "complete": true,
-    "generated_at": "2026-09-25T17:03:27Z"
+    "generated_at": "2026-09-26T00:00:23Z"
   }
 }

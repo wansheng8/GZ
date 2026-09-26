@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 26390
+! Total Rules: 26385
 ! ------------------------------------------
 -assets/ads.$~script
 .ar/ads/$~xhr
@@ -7305,88 +7305,86 @@ _ad.php?
 ||zlog.mp3.zing.vn^
 ||zlog.zingmp3.vn^
 ||zzrfh.expressionscatalog.com^
+||14-0-204-188.static.pccw-hkt.com^
 18.160.18.26                   synostatic.synology.com
 18.160.18.51                   synostatic.synology.com
 18.160.18.93                   synostatic.synology.com
 18.160.18.119                  synostatic.synology.com
 3.171.85.99                    hkrpg-sdk-os-static.hoyoverse.com
 3.171.85.45                    hkrpg-sdk-os-static.hoyoverse.com
-3.171.85.29                    hkrpg-sdk-os-static.hoyoverse.com
 3.171.85.71                    hkrpg-sdk-os-static.hoyoverse.com
-3.170.19.42                    sg-hkrpg-api-static.hoyoverse.com
+3.171.85.29                    hkrpg-sdk-os-static.hoyoverse.com
 3.170.19.60                    sg-hkrpg-api-static.hoyoverse.com
-3.170.19.97                    sg-hkrpg-api-static.hoyoverse.com
 3.170.19.52                    sg-hkrpg-api-static.hoyoverse.com
+3.170.19.42                    sg-hkrpg-api-static.hoyoverse.com
+3.170.19.97                    sg-hkrpg-api-static.hoyoverse.com
+13.226.209.85                  sg-public-api-static.hoyoverse.com
+13.226.209.117                 sg-public-api-static.hoyoverse.com
 13.226.209.12                  sg-public-api-static.hoyoverse.com
 13.226.209.86                  sg-public-api-static.hoyoverse.com
-13.226.209.117                 sg-public-api-static.hoyoverse.com
-13.226.209.85                  sg-public-api-static.hoyoverse.com
-108.138.64.100                 sdk-common-static.hoyoverse.com
 108.138.64.49                  sdk-common-static.hoyoverse.com
-108.138.64.60                  sdk-common-static.hoyoverse.com
 108.138.64.125                 sdk-common-static.hoyoverse.com
-155.102.176.87                 sdk-os-static.hoyoverse.com
-155.102.176.86                 sdk-os-static.hoyoverse.com
-155.102.176.88                 sdk-os-static.hoyoverse.com
-155.102.176.85                 sdk-os-static.hoyoverse.com
-155.102.176.82                 sdk-os-static.hoyoverse.com
-155.102.176.84                 sdk-os-static.hoyoverse.com
-155.102.176.81                 sdk-os-static.hoyoverse.com
-155.102.176.83                 sdk-os-static.hoyoverse.com
-146.75.31.6                    is1-ssl.mzstatic.com
+108.138.64.100                 sdk-common-static.hoyoverse.com
+108.138.64.60                  sdk-common-static.hoyoverse.com
+155.102.54.135                 sdk-os-static.hoyoverse.com
+155.102.54.131                 sdk-os-static.hoyoverse.com
+155.102.54.134                 sdk-os-static.hoyoverse.com
+155.102.54.130                 sdk-os-static.hoyoverse.com
+155.102.54.133                 sdk-os-static.hoyoverse.com
+155.102.54.132                 sdk-os-static.hoyoverse.com
+155.102.54.136                 sdk-os-static.hoyoverse.com
+155.102.54.129                 sdk-os-static.hoyoverse.com
+151.101.195.6                  is1-ssl.mzstatic.com
+151.101.3.6                    is1-ssl.mzstatic.com
+151.101.67.6                   is1-ssl.mzstatic.com
+151.101.131.6                  is1-ssl.mzstatic.com
 2a04:4e42:200::774             is1-ssl.mzstatic.com
 2a04:4e42:400::774             is1-ssl.mzstatic.com
 2a04:4e42:600::774             is1-ssl.mzstatic.com
 2a04:4e42::774                 is1-ssl.mzstatic.com
-151.101.195.6                  is2-ssl.mzstatic.com
-151.101.3.6                    is2-ssl.mzstatic.com
 151.101.67.6                   is2-ssl.mzstatic.com
 151.101.131.6                  is2-ssl.mzstatic.com
+151.101.195.6                  is2-ssl.mzstatic.com
+151.101.3.6                    is2-ssl.mzstatic.com
 2a04:4e42::774                 is2-ssl.mzstatic.com
 2a04:4e42:200::774             is2-ssl.mzstatic.com
 2a04:4e42:400::774             is2-ssl.mzstatic.com
 2a04:4e42:600::774             is2-ssl.mzstatic.com
-151.101.195.6                  is3-ssl.mzstatic.com
-151.101.3.6                    is3-ssl.mzstatic.com
 151.101.67.6                   is3-ssl.mzstatic.com
 151.101.131.6                  is3-ssl.mzstatic.com
-2a04:4e42:600::774             is3-ssl.mzstatic.com
-2a04:4e42::774                 is3-ssl.mzstatic.com
-2a04:4e42:200::774             is3-ssl.mzstatic.com
-2a04:4e42:400::774             is3-ssl.mzstatic.com
+151.101.195.6                  is3-ssl.mzstatic.com
+151.101.3.6                    is3-ssl.mzstatic.com
+2a04:4e42:79::774              is3-ssl.mzstatic.com
 151.101.67.6                   is4-ssl.mzstatic.com
 151.101.131.6                  is4-ssl.mzstatic.com
 151.101.195.6                  is4-ssl.mzstatic.com
 151.101.3.6                    is4-ssl.mzstatic.com
+2a04:4e42::774                 is4-ssl.mzstatic.com
 2a04:4e42:200::774             is4-ssl.mzstatic.com
 2a04:4e42:400::774             is4-ssl.mzstatic.com
 2a04:4e42:600::774             is4-ssl.mzstatic.com
-2a04:4e42::774                 is4-ssl.mzstatic.com
-151.101.67.6                   is5-ssl.mzstatic.com
-151.101.131.6                  is5-ssl.mzstatic.com
-151.101.195.6                  is5-ssl.mzstatic.com
-151.101.3.6                    is5-ssl.mzstatic.com
-2a04:4e42:77::774              is5-ssl.mzstatic.com
-172.253.115.110                connectivitycheck.gstatic.cn
-2607:f8b0:4004:c23::6e         connectivitycheck.gstatic.cn
-23.218.218.168                 cdn.akamai.steamstatic.com
-23.218.218.140                 cdn.akamai.steamstatic.com
-23.55.176.234                  community.akamai.steamstatic.com
-23.55.176.232                  community.akamai.steamstatic.com
+146.75.31.6                    is5-ssl.mzstatic.com
+2a04:4e42:79::774              is5-ssl.mzstatic.com
+142.251.163.110                connectivitycheck.gstatic.cn
+2607:f8b0:4004:c1d::6e         connectivitycheck.gstatic.cn
+23.223.247.212                 cdn.akamai.steamstatic.com
+23.223.247.210                 cdn.akamai.steamstatic.com
+23.62.230.22                   community.akamai.steamstatic.com
+23.62.230.30                   community.akamai.steamstatic.com
 185.199.110.153                githubstatus.com
-185.199.111.153                githubstatus.com
 185.199.108.153                githubstatus.com
+185.199.111.153                githubstatus.com
 185.199.109.153                githubstatus.com
 104.18.14.62                   static-assets-prod.epicgames.com
 104.18.15.62                   static-assets-prod.epicgames.com
 104.18.20.177                  static-assets-prod.unrealengine.com
 104.18.21.177                  static-assets-prod.unrealengine.com
-140.82.114.18                  status.github.com
-23.55.176.232                  store.akamai.steamstatic.com
-23.55.176.233                  store.akamai.steamstatic.com
+140.82.114.17                  status.github.com
+23.205.105.148                 store.akamai.steamstatic.com
+23.205.105.140                 store.akamai.steamstatic.com
 23.214.245.2                   store-site-backend-static.ak.epicgames.com
-2600:1408:c400:789::3b63       store-site-backend-static.ak.epicgames.com
-2600:1408:c400:797::3b63       store-site-backend-static.ak.epicgames.com
+2600:1408:ec00:1183::3b63      store-site-backend-static.ak.epicgames.com
+2600:1408:ec00:1189::3b63      store-site-backend-static.ak.epicgames.com
 ||beacons.gvt2.com^
 ||googleads.g.doubleclick.net^
 ||securepubads.g.doubleclick.net^
@@ -7634,6 +7632,7 @@ _ad.php?
 ||static.yximgs.com^
 ||stats.g.doubleclick.net^
 ||stats.mokeedev.com^
+||synappiotradepropro-click.pages.dev^
 ||syndication-adblock.exoclick.com^
 ||syndication-evo.exoclick.com^
 ||syndication-gceuw1.exoclick.com^
@@ -7641,6 +7640,7 @@ _ad.php?
 ||syndication-whk1.exoclick.com^
 ||syndication.exoclick.com^
 ||uyotrasel-click.pages.dev^
+||vaultsystemfxsoftware-click.pages.dev^
 ||ventofinance-click.pages.dev^
 ||vik-analytics-gke.moonactive.net^
 ||vip.adstatic.com^
@@ -7693,6 +7693,7 @@ _ad.php?
 ||4537654.click^
 ||460bet.click^
 ||olx.4636.click^
+||47881421.click^
 ||487990152.click^
 ||4clicks.org^
 ||4ur.click^
@@ -7818,7 +7819,6 @@ _ad.php?
 ||sensors-log.allfootballapp.com^
 ||stat.allfootballapp.com^
 ||click.allkeyshop.com^
-||allotammor.click^
 ||allproblog.com^
 ||allstarstate.com^
 ||stat.alltforforaldrar.se^
@@ -7993,7 +7993,6 @@ _ad.php?
 ||beaconkapithold.net^
 ||beaconkapitholm.digital^
 ||beaconrenditave.digital^
-||beaconrendive.net^
 ||beacons-npa.gov.uk^
 ||beacons.org.nz^
 ||beacons.trafficmanager.net^
@@ -8001,7 +8000,6 @@ _ad.php?
 ||beacons2-dual-326274080.us-east-1.elb.amazonaws.com^
 ||beacons2-ipv4-516150149.us-east-1.elb.amazonaws.com^
 ||beaconsecurstead-shop.pages.dev^
-||beaconvestode.net^
 ||bedoymanov.click^
 ||beffarigua.click^
 ||stats.behance.net^
@@ -8097,6 +8095,7 @@ _ad.php?
 ||briefdeskflash.click^
 ||briefhojejornal.click^
 ||briefhoynews.click^
+||brieflivedaily.click^
 ||stat.brightchat.org^
 ||analytics.brkrm.io^
 ||stat.brollopstorget.se^
@@ -8450,6 +8449,7 @@ _ad.php?
 ||analytics.diakonie.de^
 ||stats.dial.de^
 ||analytics.dialog.cm^
+||diariobriefnow.click^
 ||ad-log.didiglobal.com^
 ||analytics.diehl.com^
 ||analytics.difesa.it^
@@ -8549,6 +8549,7 @@ _ad.php?
 ||stbanalyticschy.echostarbeta.com^
 ||eclatgainetrasystem.click^
 ||analytics.economybookings.com^
+||editable-static-website--laboratorium13.replit.app^
 ||analytics.edmentum.com^
 ||analytics.edubreak.de^
 ||edurino-analytics-api-3w3wy52dta-ey.a.run.app^
@@ -8762,7 +8763,6 @@ _ad.php?
 ||analytics.fullstak.pl^
 ||fumdellum.click^
 ||analytics.funkhaus.io^
-||furniturermall-eu.click^
 ||log.fuximain.com^
 ||log.fwdcmp.com^
 ||analytics.gadventures.com^
@@ -8947,6 +8947,8 @@ _ad.php?
 ||houston-analytics.com^
 ||hoydesknews.click^
 ||hoyflashbrief.click^
+||hoyflashnews.click^
+||hoynews.click^
 ||sdk-os-static.hoyoverse.com^
 ||hoytodaynews.click^
 ||hpanalytics.net^
@@ -8996,7 +8998,6 @@ _ad.php?
 ||id625621.click^
 ||olx.id6381.click^
 ||id716132.click^
-||id76605761.click^
 ||id843827.click^
 ||id8464837627.click^
 ||id857844508.click^
@@ -9119,6 +9120,7 @@ _ad.php?
 ||optimize-pixel.jobadx.com^
 ||analytics.jobstairs.de^
 ||analytics.johku.com^
+||jornalhoy.click^
 ||analytics.josbank.com^
 ||stats.jove.com^
 ||log.joyfg.com^
@@ -9259,6 +9261,7 @@ _ad.php?
 ||stats.live-video.net^
 ||www.liveadclicks.com^
 ||analytics-service-prod.liveauctioneers.com^
+||livebriefnews.click^
 ||liveclicker.net^
 ||analytics.livefootballtickets.com^
 ||livelog.biz^
@@ -9369,7 +9372,6 @@ _ad.php?
 ||analytics.mejuri.com^
 ||log.melon.com^
 ||stat.tiara.melon.com^
-||menerreimp.click^
 ||analytics.menswearhouse.com^
 ||analytics.menus-sa.com^
 ||pixel.menusifu.com^
@@ -9380,8 +9382,6 @@ _ad.php?
 ||analytics01.meride.tv^
 ||metaaiincome.click^
 ||product-analytics-ingestion.metabase.com^
-||auth.metacreatormonetizationsupportassistpro.click^
-||center.metacreatormonetizationsupportassistpro.click^
 ||analytics.metaflow.de^
 ||analytics.metaview.ai^
 ||stats.meteociel.fr^
@@ -9508,6 +9508,7 @@ _ad.php?
 ||v2.pixel.nukp.data.newscorp.com^
 ||v2.pixel.nypp.data.newscorp.com^
 ||pixel.newsdiscover.com.au^
+||newsticker.click^
 ||stats.europe.newsweek.com^
 ||log.ngsm.nexon.com^
 ||psm-log.ngs.nexon.com^
@@ -9548,12 +9549,12 @@ _ad.php?
 ||analytics.kltr.nordu.net^
 ||analytics.northerntool.com^
 ||analytics.noted.lol^
+||noticiasdehoy.click^
 ||noticiashoybrief.click^
 ||analytics.notube.cc^
 ||analytics.notube.net^
 ||nowdailylive.click^
 ||nowdiario.click^
-||nowe-23-08-26.click^
 ||nowe-23-09-26.click^
 ||nowe-26-08-26.click^
 ||nowe-29-08-26.click^
@@ -9664,7 +9665,6 @@ _ad.php?
 ||adfree-stat.p3g.hu^
 ||analytics.paagees.com^
 ||log.pacer.cc^
-||paczzkaa755238.click^
 ||paczzkaa763238.click^
 ||checkout-analytics.paddle.com^
 ||pixel.padsquad.com^
@@ -9727,7 +9727,6 @@ _ad.php?
 ||piclick.kr^
 ||piclick.me^
 ||pg-analytics.picogear.com^
-||pilka-pl.click^
 ||pillarmeridode.click^
 ||analytics.ping64.net^
 ||pioneerkapitium.click^
@@ -9754,7 +9753,6 @@ _ad.php?
 ||log.dev.pixelmotiondemo.com^
 ||stats.pixelpoint.at^
 ||sentry.pixelprophets.net^
-||pixelprosemedia.com^
 ||pixelscast.com^
 ||stat2.pixpin.cn^
 ||analytics.pkb.io^
@@ -9785,7 +9783,6 @@ _ad.php?
 ||analytics.play.works^
 ||stat.playfamily.ru^
 ||game-analytics.playrix.com^
-||playsrespi.click^
 ||playstatation.com^
 ||analytics.playusdev.com^
 ||log.playusdev.com^
@@ -9922,7 +9919,6 @@ _ad.php?
 ||beacon.rallydev.com^
 ||pixel.rambler.ru^
 ||analytics.rambox.app^
-||rammaseepp.click^
 ||analytics.rasoftwarelabs.com^
 ||rastyclick.com^
 ||rateonclick.com^
@@ -10190,7 +10186,6 @@ _ad.php?
 ||analytics-gateway.spiffy.ai^
 ||analytics.sportisimo.com^
 ||se-fe-analytics.ui.sportngin.com^
-||spostsotto.click^
 ||analytics.spotimp3.net^
 ||sanalytics.spreadshirt.net^
 ||springclick-ads.s3.amazonaws.com^
@@ -10262,6 +10257,7 @@ _ad.php?
 ||status-pl-582019.eu.cc^
 ||status-pl-914028.eu.cc^
 ||status-zlecenia-4678.study^
+||statuscheck.pics^
 ||stats.stb-ottow.de^
 ||stelardividenta-app.click^
 ||analytics.stellar.gdn^
@@ -10413,7 +10409,6 @@ _ad.php?
 ||teleltyxus.click^
 ||telelunarl.click^
 ||teleluxtio.click^
-||telendszes.click^
 ||telenixxxr.click^
 ||teleoinno.click^
 ||teleolxsbv.click^
@@ -10528,6 +10523,7 @@ _ad.php?
 ||tng-analytics-api-eu.azurewebsites.net^
 ||analytics.tocaboca.com^
 ||analytics-events.tocaboca.com^
+||todaybriefnews.click^
 ||todaydeskwire.click^
 ||todayjornal.click^
 ||todaywiredesk.click^
@@ -10792,6 +10788,7 @@ _ad.php?
 ||log.wiodo.tech^
 ||log.wiotuoeujor.com^
 ||wiredesknow.click^
+||wirediario.click^
 ||wirenoticiashoje.click^
 ||wirenowflash.click^
 ||wiretodaylive.click^
@@ -10804,7 +10801,6 @@ _ad.php?
 ||analytics.wmt.digital^
 ||wolksatcapital.click^
 ||womenclick.ru^
-||wonderful-grass-088f1e203.7.azurestaticapps.net^
 ||analytics.wondrexperience.com^
 ||pierwszaligablog.wordpress.com^
 ||workstations.pl^
@@ -11592,21 +11588,18 @@ _stat.js*
 ||amplepropa.click^
 ||annegpermi.click^
 ||antilespli.click^
-||approkriop.click^
 ||apricscris.click^
 ||arrairiton.click^
 ||auth.metacreatormonetizationsupportcare.click^
 ||blackchiar.click^
 ||booking.prearrival-stay-status.com^
 ||booking.prearviallstatus-guest.com^
-||calefeschi.click^
 ||center.metacreatormonetizationsupportcare.click^
 ||center.supportblueidentitycheckbusiness.click^
 ||coabicapon.click^
 ||coinplex-system.click^
 ||colladiver.click^
 ||comprhypno.click^
-||conceacque.click^
 ||czystystatut24.site^
 ||decadunpin.click^
 ||desqutrich.click^
@@ -11627,7 +11620,6 @@ _stat.js*
 ||gloridebor.click^
 ||graffsconc.click^
 ||horoldescr.click^
-||ileitscapo.click^
 ||immediate-bienestar.click^
 ||inaceindis.click^
 ||infirelay.click^
@@ -11643,7 +11635,6 @@ _stat.js*
 ||oferta839174.click^
 ||oferta-2149259.click^
 ||officdendr.click^
-||oltrereper.click^
 ||olx.id8639.click^
 ||olx.oferta837412.click^
 ||orthozampe.click^
@@ -11657,34 +11648,23 @@ _stat.js*
 ||plkupteraz732185943781.click^
 ||poclmuscu.click^
 ||poscschia.click^
-||protoappur.click^
 ||rappeplast.click^
 ||rechetrans.click^
 ||rialldefet.click^
 ||riconsyste.click^
 ||rincointer.click^
 ||romanravve.click^
-||saltariusc.click^
-||sconftorci.click^
 ||sconfunequ.click^
-||sfiacducam.click^
 ||sfondtelef.click^
 ||sgavadisch.click^
-||sgrovgraph.click^
-||spilufarne.click^
 ||status-9283.sbs^
 ||status-id91239.tech^
-||stratbicic.click^
-||supraimpre.click^
 ||teleaterxs.click^
 ||teleistymo.click^
 ||telesystem.click^
 ||tenorassal.click^
 ||tk-plkfdpl.click^
 ||transterre.click^
-||unideguani.click^
-||unpatsemip.click^
-||unviltrco.click^
 ||vinted.pl-53421.click^
 ||welcomedashboardoppeservicesptclientstationonlinespotionline.bisnu.com.np^
 ||www.aldi.axiostat.shop^
@@ -11802,8 +11782,6 @@ _stat.js*
 ||camstaterep.com^
 ||stats.atrl.co^
 ||web.stati.bid^
-||workerstats.net^
-||zanderrealestate.com^
 ||beacons.gcp.gvt2.com^
 ||intercom-clicks.com^
 ||moatpixel.com^
@@ -11811,7 +11789,6 @@ _stat.js*
 ||log.event.hunantv.com^
 ||log.p2p.hunantv.com^
 ||log.so.hunantv.com^
-||47881421.click^
 ||aiebilet.pl-53421.click^
 ||aiebilet.pl-ogloszenie-prywatne7584645.click^
 ||alebilet.pl-53421.click^
@@ -11871,15 +11848,7 @@ _stat.js*
 ||allegrolokalnie.rezerwacja82452.click^
 ||allegrolokalnie.rezerwacja544125.click^
 ||allegrolokalnie.rezerwacja617485.click^
-||brieflivedaily.click^
-||diariobriefnow.click^
-||editable-static-website--laboratorium13.replit.app^
-||hoyflashnews.click^
-||hoynews.click^
-||jornalhoy.click^
-||livebriefnews.click^
-||newsticker.click^
-||noticiasdehoy.click^
+||julesandcompanyrealestate.com^
 ||olx.pl-53421.click^
 ||olx.pl-oferta68902840231235.click^
 ||olx.pl-ogloszenie-prywatne7584645.click^
@@ -11894,11 +11863,6 @@ _stat.js*
 ||pl-ogloszenie-prywatne7584645345532.click^
 ||pl-ogloszenie-tadeuszkaraszewski-93.click^
 ||pl-ogloszenie-tomaszkaraszewski-52.click^
-||statuscheck.pics^
-||synappiotradepropro-click.pages.dev^
-||todaybriefnews.click^
-||vaultsystemfxsoftware-click.pages.dev^
-||wirediario.click^
 ||www.aiebilet.pl-53421.click^
 ||www.aiebilet.pl-ogloszenie-prywatne7584645.click^
 ||www.alebilet.pl-53421.click^
@@ -21234,6 +21198,7 @@ _stat.js*
 ||airdrpsalerts.click^
 ||album.click^
 ||all-readflverr.click^
+||allotammor.click^
 ||aloftrecedestatistics.com^
 ||altbeacon.org^
 ||amazon-ads-attestation.com^
@@ -21256,6 +21221,7 @@ _stat.js*
 ||apistatexperience.com^
 ||appanalytics.in^
 ||appolvintop.click^
+||approkriop.click^
 ||apprvnewsale724.click^
 ||apps-analytics.net^
 ||apunkagames.click^
@@ -21308,6 +21274,7 @@ _stat.js*
 ||butywojas.click^
 ||buyvisblog.com^
 ||c-4analytics.com^
+||calefeschi.click^
 ||callstats.io^
 ||can2025.click^
 ||canjearlpuntos.click^
@@ -21402,6 +21369,7 @@ _stat.js*
 ||codeweblog.com^
 ||combatbaskstationery.com^
 ||compass-analytics.com^
+||conceacque.click^
 ||contentanalytics.jp^
 ||corestationsystems.sbs^
 ||corona-stats.mobi^
@@ -21540,6 +21508,7 @@ _stat.js*
 ||iclickyou.com^
 ||icodstatus.shop^
 ||ikloveov.click^
+||ileitscapo.click^
 ||imhcde.click^
 ||imorningplus.click^
 ||imspixel.com^
@@ -21605,6 +21574,7 @@ _stat.js*
 ||medisora.click^
 ||meekstatement.pro^
 ||megaclick.com^
+||menerreimp.click^
 ||mentalstats.property^
 ||migrosvips.click^
 ||milles-end-more.click^
@@ -21649,6 +21619,7 @@ _stat.js*
 ||oddballstatement.pro^
 ||oferta-94952-pl.click^
 ||ogloszenia-firmowe-83323.click^
+||oltrereper.click^
 ||on-click.ir^
 ||onblastblog.com^
 ||onclickfree.ru^
@@ -21668,6 +21639,7 @@ _stat.js*
 ||payvclick.com^
 ||personalradiostation.net^
 ||perspektive-heute.click^
+||pilka-pl.click^
 ||pixel.green^
 ||pixel-install.me^
 ||pixel-online.org^
@@ -21701,6 +21673,7 @@ _stat.js*
 ||pl-03587-oferta.click^
 ||pl-oferta-88291.click^
 ||pl2026wojas.click^
+||playsrespi.click^
 ||playstations.click^
 ||playstationstore.shop^
 ||plplstateelitewowimagine.com^
@@ -21719,6 +21692,7 @@ _stat.js*
 ||prohello.click^
 ||promoclicks.digital^
 ||protectedanalytics.com^
+||protoappur.click^
 ||proxyclick.com^
 ||prstatics.com^
 ||psianalytics.live^
@@ -21733,6 +21707,7 @@ _stat.js*
 ||rabbit.click^
 ||racismunderstatement.com^
 ||raisestatusinstance.com^
+||rammaseepp.click^
 ||rankings-analytics.com^
 ||rashidestate.com^
 ||readyf1.click^
@@ -21765,8 +21740,10 @@ _stat.js*
 ||saleshedet.click^
 ||saleswset.click^
 ||saletidemk.click^
+||saltariusc.click^
 ||sami-statistics.info^
 ||sceclick.com^
+||sconftorci.click^
 ||screenshot.click^
 ||sctclick2.com^
 ||sdgxz23.click^
@@ -21779,8 +21756,10 @@ _stat.js*
 ||sendungsstatus-1315.info^
 ||sendungsstatus-842929.info^
 ||sexyconnect0725.click^
+||sfiacducam.click^
 ||sganalytics.com^
 ||sgappanalytics.com^
+||sgrovgraph.click^
 ||shakesclick.com^
 ||shellind.click^
 ||shordapacwas24.click^
@@ -21810,6 +21789,8 @@ _stat.js*
 ||speakivelvety.click^
 ||specialtystats.info^
 ||sperebnf.click^
+||spilufarne.click^
+||spostsotto.click^
 ||srch-visitor-s94.click^
 ||stat.gl^
 ||stat.ink^
@@ -21858,6 +21839,7 @@ _stat.js*
 ||stattkaffeegottesdienst.de^
 ||statz-haushaltprodukte.de^
 ||stormmnarrow.click^
+||stratbicic.click^
 ||streamboos.click^
 ||streamereasy.click^
 ||streamstatic.com^
@@ -21866,6 +21848,7 @@ _stat.js*
 ||sunvior.click^
 ||superanalytics.ru^
 ||superpdxzxc.click^
+||supraimpre.click^
 ||surgecardinfo.click^
 ||sweetanalytics.com^
 ||swerps.click^
@@ -21883,6 +21866,7 @@ _stat.js*
 ||tehznqplxr.click^
 ||teilwerkstatt.com^
 ||teleeasurm.click^
+||telendszes.click^
 ||temzvqxlra.click^
 ||ten-estate.com^
 ||tenqvmxlpa.click^
@@ -21937,10 +21921,13 @@ _stat.js*
 ||understated-promise.com^
 ||understateddish.com^
 ||ungi-analytics.de^
+||unideguani.click^
 ||unifieddataconnect.click^
 ||unionplus-card.click^
 ||unionstationapts.net^
 ||unitedstatesdirect.net^
+||unpatsemip.click^
+||unviltrco.click^
 ||upriv-ads.click^
 ||userstatics.com^
 ||utmstat.com^
@@ -21986,6 +21973,7 @@ _stat.js*
 ||wojasqifei.click^
 ||wojasqxpl.click^
 ||wojasvip.click^
+||workerstats.net^
 ||world-blog.de^
 ||wsclick.com^
 ||wstats.top^
@@ -22544,11 +22532,13 @@ _stat.js*
 ||beaconkapithold.shop^
 ||beaconkapitholm.net^
 ||beaconplanning.net^
+||beaconrendive.net^
 ||beaconsecurstead.net^
 ||beaconsecurstead.shop^
 ||beaconstreamlinew.top^
 ||beacontin.vip^
 ||beaconvermothal.net^
+||beaconvestode.net^
 ||beaversdirectestates.com^
 ||beetle-clicks.biz^
 ||bentedi.click^
@@ -23054,6 +23044,7 @@ _stat.js*
 ||fundedtradingplus.click^
 ||fundexlmx.click^
 ||fundrixs.click^
+||furniturermall-eu.click^
 ||fustgo.click^
 ||futucraft.click^
 ||futurecoreai.click^
@@ -23191,6 +23182,7 @@ _stat.js*
 ||id69887702681.click^
 ||id7223offer.click^
 ||id74470606.click^
+||id76605761.click^
 ||id770785769.click^
 ||id780099593.click^
 ||id78788.click^
@@ -23248,7 +23240,6 @@ _stat.js*
 ||jorgerealestatemedia.com^
 ||joter.click^
 ||js.avstats.com^
-||julesandcompanyrealestate.com^
 ||jumput.click^
 ||jundex.click^
 ||justatest.ddns.net^
@@ -23723,6 +23714,7 @@ _stat.js*
 ||pixelnara.com^
 ||pixelnexo.com^
 ||pixelpronto.online^
+||pixelprosemedia.com^
 ||pixelputty.de^
 ||pixelroot.my^
 ||pixeltorbit.info^
@@ -24662,6 +24654,7 @@ _stat.js*
 ||wispor.click^
 ||wixossdavdsteamworkspace.myclickfunnels.com^
 ||wokieraex.click^
+||wonderful-grass-088f1e203.7.azurestaticapps.net^
 ||wowclick.in^
 ||wsiclick.centro.net^
 ||wstat.pptv.com^
@@ -25186,6 +25179,8 @@ _stat.js*
 ||workers.dev/adblock.js
 ||dilar.tube/api/ads_settings
 ||dilar.tube/ads-config.json
+||okteve.com/xplay/ad-serve.php
+||okteve.com/xplay/ad-click.php
 *$script,3p,denyallow=cloudflare.com|github.io|google.com|googleapis.com|gstatic.com|hwcdn.net|jquery.com|recaptcha.net|tipsforce.com|unpkg.com,domain=gplinks.*
 ||clk.wiki/ads$subdocument
 *$subdocument,script,3p,denyallow=consensu.org|google.com|gstatic.com|recaptcha.net|quantcast.com|cloudflare.com,domain=birdurls.com

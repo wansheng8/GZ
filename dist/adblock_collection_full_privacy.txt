@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55595
+! Total Rules: 55599
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -4286,6 +4286,7 @@ omni.soundestlink.com$image
 ||aromamirror.com^
 ||arrivegrowth.com^
 ||artbranch.net^
+||artcat.net^
 ||artfulsavage.com^
 ||articledemon.com^
 ||arubahello.com^
@@ -48672,20 +48673,21 @@ $removeparam=tracking_source
 ||www.tracking.nudgepay.in^
 ||ymtracking.com^
 ||zantracker.com^
-23.53.11.37                    hugeota.d.miui.com
-23.54.127.207                  hugeota.d.miui.com
-2600:1408:ec00:1404::1735:b25  hugeota.d.miui.com
-2600:1408:ec00:140a::1736:7fcf hugeota.d.miui.com
+||shipminttracking.net^
+2.18.67.12                     hugeota.d.miui.com
+23.15.3.205                    hugeota.d.miui.com
+2600:1408:a:202::170f:3cd      hugeota.d.miui.com
+2600:1408:a:201::212:430c      hugeota.d.miui.com
 208.54.140.1                   crl.geo.t-mobile.com
-208.54.37.195                  epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
-100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
+208.54.35.163                  epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
 44.217.73.103                  eulatracking-public-service-prod06.ol.epicgames.com
 52.45.14.115                   eulatracking-public-service-prod06.ol.epicgames.com
+100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
+104.26.2.214                   ip2location.com
 172.67.71.137                  ip2location.com
 104.26.3.214                   ip2location.com
-104.26.2.214                   ip2location.com
-2606:4700:20::ac43:4789        ip2location.com
 2606:4700:20::681a:3d6         ip2location.com
+2606:4700:20::ac43:4789        ip2location.com
 2606:4700:20::681a:2d6         ip2location.com
 34.206.47.1                    tracking.epicgames.com
 100.63.121.43                  tracking.epicgames.com
@@ -48727,6 +48729,7 @@ $removeparam=tracking_source
 ||tracker.24xtra.hu^
 ||telemetryk.api.2kcoretech.online^
 ||telemetryk.prod1-telemetry-prod.2kct.onl^
+||vinted-verify.71track.com^
 ||781081410579-uspro-s3-telemetry-overflow.s3.us-east-1.amazonaws.com^
 ||telemetry.cell-0.ap-southeast-2.prod.tangerinebox.console.aws.a2z.com^
 ||telemetry.cell-0.eu-central-1.prod.tangerinebox.console.aws.a2z.com^
@@ -48966,19 +48969,17 @@ $removeparam=tracking_source
 ||expensive-teal-oljdkw3m.edgeone.dev^
 ||explicit-amaranth-qng8tdbe.edgeone.dev^
 ||gennewggffyjhsad.edgeone.dev^
-||hjmdbcvvukhjhk-dpjrblo0l584.edgeone.dev^
 ||horrible-coral-ugrwxhbj.edgeone.dev^
 ||inland-brown-8x0ej8me.edgeone.dev^
 ||kerenare54-dpwekmulre85.edgeone.dev^
-||loginsecurde4-dpqom26teqv9.edgeone.dev^
 ||mailwilling-dp9gqao71lzl.edgeone.dev^
 ||newgooglgecheckoutroundwebmailer-dpzcf6efmgzv.edgeone.dev^
 ||officialgmailveirifcationtunnel-dpfk8fse6v5v.edgeone.dev^
+||ofornaogu-dpzv6dife1hh.edgeone.dev^
 ||ordinary-silver-rkbwyw06.edgeone.dev^
-||prior-jade-yjoyvniu.edgeone.dev^
 ||profitable-pink-0y9btnew-dpk6vqe6eheo.edgeone.dev^
 ||webmaprocessinh-dpbehei5spwx.edgeone.dev^
-||whyte11chase-dpkso5utb08y.edgeone.dev^
+||wwwww-dpe7gpnooou7.edgeone.dev^
 ||edgrmtracking.com^
 ||statictrack.educatrack.com^
 ||track.educatrack.com^
@@ -49313,7 +49314,6 @@ $removeparam=tracking_source
 ||telemetry.plena.mobi^
 ||rtb-tracking.pontiac.media^
 ||tracking.pornhd.com^
-||portrackinteriors.co.uk^
 ||portrackmot.com^
 ||telemetry.portswigger.net^
 ||prd-dvc-pod3-telemetry-alb-podlb-2098002532.us-east-1.elb.amazonaws.com^
@@ -49391,7 +49391,6 @@ $removeparam=tracking_source
 ||tracker.shafa.ua^
 ||telemetry.api.shapr3d.com^
 ||telemetry.sharegate.com^
-||shipminttracking.net^
 ||tracking.shopcider.com^
 ||tracking.shopee.co.id^
 ||tracking.shopee.co.th^
@@ -49701,6 +49700,7 @@ $removeparam=tracking_source
 ||tracking.realtor.com^
 ||tracking.shoptogether.buy.com^
 ||tracking.ustream.tv^
+||u.tetas.pt/script.js
 ||guide-rank.com/guiderank-tracking^
 ||api.blibili.com/x/pd-proxy/tracker
 /track.gif^
@@ -49833,9 +49833,6 @@ $removeparam=tracking_source
 ||pushtrack.co^
 ||tracking.gauchosurf.com^
 ||production-cmp.isgprivacy.cbsi.com^
-||ofornaogu-dpzv6dife1hh.edgeone.dev^
-||vinted-verify.71track.com^
-||wwwww-dpe7gpnooou7.edgeone.dev^
 ||pocztatrackntrace.blogspot.com^
 fb_servpub-a.akamaihd.net
 ||ads.nationalgeographic.com^
@@ -51891,6 +51888,7 @@ fb_servpub-a.akamaihd.net
 ||hdggdhjdhjdgdjjjgcjggjgj-dpt5xisw7bfs.edgeone.dev^
 ||helpful-teal-wemfvl3j.edgeone.dev^
 ||highbrow-pedestrian.task-tracker.live^
+||hjmdbcvvukhjhk-dpjrblo0l584.edgeone.dev^
 ||hodl-tracking.web.app^
 ||htmlbddhjghtnkcgjjhhjdhtml-dpptwqylzrhe.edgeone.dev^
 ||hummertrackining.firebaseapp.com^
@@ -51946,6 +51944,7 @@ fb_servpub-a.akamaihd.net
 ||login-user-bonus-allocation-assets-4041-main-s3-ap-southeast-2.imgnaly.com^
 ||login-user-bonus-allocation-assets-4041-main-s3-ap-southeast-2.naturatv.com^
 ||loginpages0000-dpf0869el7ik.edgeone.dev^
+||loginsecurde4-dpqom26teqv9.edgeone.dev^
 ||logistical-dhl-tracking.weebly.com^
 ||loquacious-misogynist.task-tracker.live^
 ||lucatrack.com^
@@ -52005,10 +52004,12 @@ fb_servpub-a.akamaihd.net
 ||phonetracking.net^
 ||porntracker.com^
 ||portalportalportalportalportal.edgeone.dev^
+||portrackinteriors.co.uk^
 ||prestigeoutlet.fr^
 ||pretty-white-ziekneey.edgeone.dev^
 ||prime-scarlet-zt8k0aqr.edgeone.dev^
 ||prior-beige-yhzm8kq0.edgeone.dev^
+||prior-jade-yjoyvniu.edgeone.dev^
 ||privacy.plus^
 ||privacyconnectonline.com^
 ||privacycontrol.com^
@@ -52192,6 +52193,7 @@ fb_servpub-a.akamaihd.net
 ||weight-tracking.com^
 ||welcome-ivory-mla3tpma-dpgbipy9x8sc.edgeone.dev^
 ||well-aquamarine-psata8ej.edgeone.dev^
+||whyte11chase-dpkso5utb08y.edgeone.dev^
 ||wrh-track.click^
 ||xminesserversaqwq.edgeone.dev^
 ||xpertrack.site^
@@ -53310,6 +53312,8 @@ $uritransform=/#Echobox=[\d]{10}$//,to=iltalehti.fi|hs.fi
 ||firestream.to/api/videos/*/view
 ||igorslab.de/?ilgha_jump=$urlskip=/\?ilgha_jump=(ey[^.]+)\..+/ -base64 /"u":"(https?:[^"]+)"/
 ||cinefreak.net/generate.php?id=$urlskip=?id -base64
+||okteve.com/xplay/embed-beacon.php
+||okteve.com/p/e
 /edgemesh.*.js$script,domain=~edgemesh.com|~edgeno.de
 /adsensebase.js$script
 ://api.*/lib/native.wasm$3p

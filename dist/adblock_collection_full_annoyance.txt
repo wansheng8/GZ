@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 3706
+! Total Rules: 3707
 ! ------------------------------------------
 .club/js/popunder.js$script
 /ane-popup-1/ane-popup.js$script
@@ -244,6 +244,7 @@
 ||opera.com^*admaven$popup
 ||opera.com^*PWNgames$popup
 ||oulsools.com^$popup
+||pactioneastlin.com^$popup
 ||rewardtk.com^$popup
 ||s.id^$popup
 ||shuffle.com/*&clickID=$popup

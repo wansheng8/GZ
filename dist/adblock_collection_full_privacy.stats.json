@@ -1,20 +1,20 @@
 {
   "name": "adblock_collection_full_privacy",
-  "total": 55595,
+  "total": 55599,
   "by_category": {
-    "privacy": 55595
+    "privacy": 55599
   },
   "by_kind": {
-    "network": 55595
+    "network": 55599
   },
   "by_source": {
-    "ADrules EasyPrivacy": 45423,
+    "ADrules EasyPrivacy": 45424,
     "ADrules DNS": 2716,
     "AdGuard/uBO – URL Tracking Protection": 2190,
     "Hagezi DNS Pro Plus": 1839,
-    "uBO filters – Privacy": 1123,
-    "217heidai adblockdns": 921,
-    "oisd": 515,
+    "uBO filters – Privacy": 1125,
+    "217heidai adblockdns": 918,
+    "oisd": 520,
     "ADrules anti-AD": 314,
     "ADrules Easylist": 163,
     "StevenBlack Hosts": 81,
@@ -29,13 +29,15 @@
     "ADrules EasyListChina": 10,
     "banbendalao ADgk": 9,
     "Disconnect Simple Tracking": 6,
-    "KADhosts": 4,
     "ADrules HalfLife": 3,
     "ADrules ChengFeng": 2,
     "Disconnect Simple Ad": 2,
+    "Anti-AD Easylist": 1,
     "AWAvenue-Ads-Rule": 1,
+    "EasyPrivacy (ABP)": 1,
     "Peter Lowe's Blocklist": 1,
     "AdAway Hosts": 1,
+    "KADhosts": 1,
     "Firebog Easyprivacy Hosts": 1
   }
 }

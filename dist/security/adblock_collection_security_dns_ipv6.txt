@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Security)
-# Format: hosts (:: domain, IPv6 NXDOMAIN), total 11092
+# Format: hosts (:: domain, IPv6 NXDOMAIN), total 11139
 :: 0-1-x.16215785.xyz
 :: 0-1-x.26215785.xyz
 :: 0-lix-a8sbqnxt.d1cdej.top
@@ -47,7 +47,6 @@
 :: 128-251-13-23.cprapid.com
 :: 12gyt3.ink
 :: 135-125-245-221.cprapid.com
-:: 14-0-204-188.static.pccw-hkt.com
 :: 1420zra.top
 :: 1480wqm.hair
 :: 1492lka.top
@@ -66,6 +65,7 @@
 :: 18409237.xyz
 :: 185-217-0-181.ip.obe.net
 :: 1850mvp.top
+:: 186463.xyz
 :: 1875mvp.top
 :: 19283047.xyz
 :: 196.44.167.72.host.secureserver.net
@@ -1328,12 +1328,15 @@
 :: allegro.lokalna-3887012.sbs
 :: allegro.lokalna-473921.sbs
 :: allegro.lokalna-49382.sbs
+:: allegro.lokalna-532424.sbs
 :: allegro.lokalna-535424.sbs
+:: allegro.lokalna-638424.sbs
 :: allegro.lokalna-73992132.sbs
 :: allegro.lokalna-849641.sbs
 :: allegro.lokalna-884456.sbs
 :: allegro.lokalna-93882713232.sbs
 :: allegro.lokalna-940248.sbs
+:: allegro.lokalna-948271.sbs
 :: allegro.lokalna-ofera00536233467.shop
 :: allegro.lokalna-ofera467433268.lol
 :: allegro.lokalna-ofera572456434.shop
@@ -1363,9 +1366,12 @@
 :: allegro.lokalna-oferta94291.cfd
 :: allegro.lokalna-oferta9494283.sbs
 :: allegro.lokalna-ofeta0290105043.cfd
+:: allegro.lokalna-ofeta064623324.lol
+:: allegro.lokalna-ofeta0675421323.lol
 :: allegro.lokalna-ofeta328873200321.cfd
 :: allegro.lokalna-ofeta9567556623.lol
 :: allegro.lokalna0340-902.shop
+:: allegro.lokalna1291292.lol
 :: allegro.lokalne-4333452.sbs
 :: allegro.lokalne-oferty20260.shop
 :: allegro.lokalne-oferty7902.sbs
@@ -1643,6 +1649,8 @@
 :: allegro.pl8724rezerwacja6859.sbs
 :: allegro.pl92838282.shop
 :: allegro.pl94324.sbs
+:: allegro.ploferta23189192.rest
+:: allegro.ploferta3217832819.sbs
 :: allegro.po83920-3.lat
 :: allegro.po8439812048.lol
 :: allegro.poifei7282-f2.lat
@@ -1663,6 +1671,7 @@
 :: allegro.prywatne483291.baby
 :: allegro.prywatne8329.lol
 :: allegro.r0943871.lat
+:: allegro.r230f203f023.casa
 :: allegro.r3882f923g023.sbs
 :: allegro.sma4837h3422.shop
 :: allegro.sma9218732g934.cfd
@@ -1864,6 +1873,7 @@
 :: allegrolokalne.oaikcj823012-340.lat
 :: allegrolokalne.ofeer2r39831.xyz
 :: allegrolokalne.ofert54034938h5h5.shop
+:: allegrolokalne.oferta-id01932847654.online
 :: allegrolokalne.oferta64174146.shop
 :: allegrolokalne.oferta81480578.click
 :: allegrolokalne.oferta862145.shop
@@ -2246,6 +2256,7 @@
 :: allegrolokalnie.alleprodukt58932.sbs
 :: allegrolokalnie.appalleprodukt.sbs
 :: allegrolokalnie.aui74391230857j54.shop
+:: allegrolokalnie.aukcja-6211532.cfd
 :: allegrolokalnie.aukcja2119658.cfd
 :: allegrolokalnie.aukcja216402.cfd
 :: allegrolokalnie.aukcja328716.cfd
@@ -2415,12 +2426,14 @@
 :: allegrolokalnie.lokalna-49285.sbs
 :: allegrolokalnie.lokalna-49382.sbs
 :: allegrolokalnie.lokalna-49572.sbs
+:: allegrolokalnie.lokalna-532424.sbs
 :: allegrolokalnie.lokalna-535424.sbs
 :: allegrolokalnie.lokalna-53821.sbs
 :: allegrolokalnie.lokalna-55829.sbs
 :: allegrolokalnie.lokalna-589.sbs
 :: allegrolokalnie.lokalna-5988.sbs
 :: allegrolokalnie.lokalna-63282.sbs
+:: allegrolokalnie.lokalna-638424.sbs
 :: allegrolokalnie.lokalna-666.sbs
 :: allegrolokalnie.lokalna-667.sbs
 :: allegrolokalnie.lokalna-668.sbs
@@ -2444,6 +2457,7 @@
 :: allegrolokalnie.lokalna-93827.sbs
 :: allegrolokalnie.lokalna-93882713232.sbs
 :: allegrolokalnie.lokalna-940248.sbs
+:: allegrolokalnie.lokalna-948271.sbs
 :: allegrolokalnie.lokalna-9841.sbs
 :: allegrolokalnie.lokalna-98948.sbs
 :: allegrolokalnie.lokalna-9984.sbs
@@ -2521,6 +2535,8 @@
 :: allegrolokalnie.lokalna-ofeta0189.sbs
 :: allegrolokalnie.lokalna-ofeta0290105043.cfd
 :: allegrolokalnie.lokalna-ofeta0299.sbs
+:: allegrolokalnie.lokalna-ofeta064623324.lol
+:: allegrolokalnie.lokalna-ofeta0675421323.lol
 :: allegrolokalnie.lokalna-ofeta08586312.sbs
 :: allegrolokalnie.lokalna-ofeta0955.sbs
 :: allegrolokalnie.lokalna-ofeta1023xz3y2j002.icu
@@ -2573,6 +2589,7 @@
 :: allegrolokalnie.lokalna-ofeta9663.sbs
 :: allegrolokalnie.lokalna-ofeta9832843.shop
 :: allegrolokalnie.lokalna0340-902.shop
+:: allegrolokalnie.lokalna1291292.lol
 :: allegrolokalnie.lokalna412955.cfd
 :: allegrolokalnie.lokalna429081.xyz
 :: allegrolokalnie.lokalna7809429.sbs
@@ -2649,15 +2666,18 @@
 :: allegrolokalnie.oferta-2451784.cfd
 :: allegrolokalnie.oferta-247157.cfd
 :: allegrolokalnie.oferta-285749.cfd
+:: allegrolokalnie.oferta-287451.cfd
 :: allegrolokalnie.oferta-37484-pl.shop
 :: allegrolokalnie.oferta-38433-pl.shop
 :: allegrolokalnie.oferta-422362.cfd
 :: allegrolokalnie.oferta-423486.cfd
+:: allegrolokalnie.oferta-471852.cfd
 :: allegrolokalnie.oferta-478221.sbs
 :: allegrolokalnie.oferta-5384913.cfd
 :: allegrolokalnie.oferta-735161-sprzedam-nowy-iphone-air-256.cfd
 :: allegrolokalnie.oferta-737376462647.shop
 :: allegrolokalnie.oferta-8472623-pl.sbs
+:: allegrolokalnie.oferta-875461.cfd
 :: allegrolokalnie.oferta-dnia-3i22090i423.sbs
 :: allegrolokalnie.oferta-id3829691052.shop
 :: allegrolokalnie.oferta-lokalana2849354363.shop
@@ -3446,6 +3466,8 @@
 :: allegrolokalnie.pln642.lol
 :: allegrolokalnie.pln738.lol
 :: allegrolokalnie.ploferta-telefon-pixel-10-pro-512gb-gwarancja.sbs
+:: allegrolokalnie.ploferta23189192.rest
+:: allegrolokalnie.ploferta3217832819.sbs
 :: allegrolokalnie.pls3lfjffecr21xk.sbs
 :: allegrolokalnie.pls3lfkhgrnf21xk.sbs
 :: allegrolokalnie.pls3lrelrerm98xk.sbs
@@ -4413,6 +4435,7 @@
 :: ca.wxzsdce.cyou
 :: ca.zdfbjml.cyou
 :: cafescampfires.com
+:: caifuxingyuan.com
 :: caisse-epargne.mdps.fr
 :: caixadlrecta.cfd
 :: cajasarequipa.pe
@@ -6037,6 +6060,7 @@
 :: galciasservicios.blog
 :: galicia-brief-abm.pages.dev
 :: galvarez.do
+:: game-smilies-pool-mac.trycloudflare.com
 :: gamechallange.com
 :: gamermode.world
 :: gameschallanger.com
@@ -6114,6 +6138,7 @@
 :: glabmspark.shop
 :: glavy.bdll55113248.pro
 :: glazedclients.com
+:: glmaroc.com
 :: glmf.shop
 :: globa98.eu.cc
 :: globalmininghub.com
@@ -6170,6 +6195,7 @@
 :: google-chrrome-zh.hl.cn
 :: google-services.com.devland.cl
 :: google-zhcn-chrome.com.cn
+:: google.documentpartage.com
 :: googlecoronavirus.net
 :: googleidmen.dynv6.net
 :: goooooogk.cfd
@@ -6434,6 +6460,7 @@
 :: guinness-ar-demo.pages.dev
 :: gunaigute.com
 :: gunind.com
+:: guohaohotel.vip
 :: guoqv.com
 :: gv0al9.info
 :: gvdr.jdevcloud.com
@@ -6476,6 +6503,7 @@
 :: hatefulcumbersomerepositories--five-nine.repl.co
 :: hbqianshunda.com
 :: hbqmwh.com
+:: he1rmr.casa
 :: heaterlumberexploit.com
 :: heatherdiane.com
 :: hecarabu.com
@@ -6518,6 +6546,7 @@
 :: hlfwa.koeller-it-consulting.com
 :: hm.revenue-declarations.com
 :: hm.ru
+:: hnhcjf.com
 :: hnnn.eu.cc
 :: hnxhzsw.com
 :: holdremove.click
@@ -6758,6 +6787,7 @@
 :: ingrdfarmro.com
 :: iniciarcuentaitescam.weebly.com
 :: inicio.bolsos.skin
+:: inkiescambric.cyou
 :: inmetroexodus.com
 :: innodom53.com
 :: inposta.click
@@ -7156,6 +7186,7 @@
 :: kycoq.com
 :: kyrellos.a2hosted.com
 :: kyrelune.net
+:: kz7dsq.top
 :: kztevcnx.top
 :: l0g.mojpdtk.com
 :: l6angk.top
@@ -7757,6 +7788,7 @@
 :: mbqinyz.info
 :: mbsmartsolutions.com
 :: mbwayseguranca.com
+:: mbxi-106.ernakliyat.info
 :: mchajyd.us.cc
 :: mchiajsi.us.cc
 :: mcsjxi.us.cc
@@ -7809,6 +7841,7 @@
 :: metamask.app.link
 :: metaminer.vip
 :: metamorphicpetrology.cfd
+:: metapay.checkout-point.shop
 :: metrics.opuscamper.com.au
 :: metrics.phishop.com
 :: mettlysexbonk.xyz
@@ -8005,6 +8038,7 @@
 :: msaxlseo.uk.cc
 :: mschallenger.com
 :: msdjxy.us.cc
+:: msgn9372.pro
 :: msgs.today
 :: msjdsys.us.cc
 :: msjihasx.us.cc
@@ -8012,6 +8046,7 @@
 :: msjuxis.us.cc
 :: mslaxi.uk.cc
 :: msoiaxsk.us.cc
+:: mstteam.com
 :: msxlkjis.us.cc
 :: mt.govgfrt.autos
 :: mt.govjhyu.autos
@@ -8287,6 +8322,7 @@
 :: nowchange.cyou
 :: nowe-06-07-26.click
 :: nowe-21-06-26.click
+:: nowe-23-08-26.click
 :: nowe-27-o5-26.click
 :: nox-intl.ro
 :: npmjs.help
@@ -8554,6 +8590,7 @@
 :: paczkanr7254.shop
 :: paczkapost.florencawitam2873.cfd
 :: paczzka8473648.sbs
+:: paczzkaa755238.click
 :: pafetik.com
 :: pagamenti.dietcarereviews.com
 :: pagamento-pedagio.dynv6.net
@@ -8852,6 +8889,7 @@
 :: pipeswipe.net
 :: pixel-miner.com
 :: pixelthugs-inv.com
+:: pixiv.id8564266.cfd
 :: pj-atualizacao.online
 :: pj3tou.cfd
 :: pjchatativacao.digital
@@ -8878,6 +8916,7 @@
 :: plk3892.pro
 :: ploymentsruti.com
 :: plugins.soclminer.com.br
+:: pmgscc.net
 :: pntfp.top
 :: pochtarefund-xf9abc.6t7vm54.xyz
 :: poczta-pl.aggebtn.icu
@@ -8989,6 +9028,7 @@
 :: prime-video.app
 :: prime.gerermonespacech.com
 :: prime.hub5723511.pro
+:: prime.support-acc.com
 :: prime.support-pl.com
 :: primeamz010.top
 :: primeamzabo003.pro
@@ -9035,6 +9075,7 @@
 :: production-videostore.com
 :: profile-1passvvord.com
 :: profile-flverr.click
+:: profile.newtranscripts.online
 :: profitseekerpro.com
 :: profrance-service.fr
 :: profuserealisticplanes--five-nine.repl.co
@@ -9381,6 +9422,7 @@
 :: rzqqq.top
 :: rzttt.top
 :: s-ceert.de
+:: s-portal.038292.info
 :: s-portal.0927261.info
 :: s-portal.2145789.info
 :: s.aktivierungsnetz.de
@@ -9689,6 +9731,7 @@
 :: skr.rs
 :: sky-photos.com
 :: skyrestaurante.com
+:: sl83684.pro
 :: slanketips-online.com
 :: slotbanksinarmas.pages.dev
 :: slxjd.com
@@ -9935,6 +9978,7 @@
 :: swiftmining.win
 :: swiftqorp.com
 :: swiftsecurebnk.com
+:: swiss.ampeliteltd.com
 :: swisschpass.org
 :: swissvice.icu
 :: swwww.eu.cc
@@ -10158,6 +10202,7 @@
 :: train26-promo.com
 :: tranbearers.club
 :: transcript.bnktothefuturepolicyreview.com
+:: transcript.strongholpayreviewpolicy.co
 :: transfer-wisea.app.link
 :: transfer.sapo.pt
 :: translanebrokerage.com
@@ -10205,6 +10250,7 @@
 :: tvmnx.top
 :: tvrjxmak.xyz
 :: tvwj.top
+:: tw0jkurierc.cam
 :: twb4g.app.link
 :: twint.kundenbereich-1821.info
 :: twohandsathome.com
@@ -11070,6 +11116,7 @@
 :: zjsyjoydesign.com
 :: zjzkzh.com
 :: zkantonl.com
+:: zlknxzy.skin
 :: zminer.zaloapp.com
 :: znbiz.com
 :: zngtpna.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click
