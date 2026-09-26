@@ -466,7 +466,7 @@ python -m adblock_collection build --out dist --split-by-category
 | 文档 | 内容 |
 | :--- | :--- |
 | `README.md` | 订阅地址、三层防护、常见问题、连接层配置 |
-| `docs/SYNTAX.md` | 过滤规则语法知识库（`||`、`$` 修饰符、元素隐藏、优先级、自定义黑名单） |
+| `docs/SYNTAX.md` | 自定义过滤规则语法大全（ABP/uBO/AdGuard 通用与扩展语法、网络/内容/例外/行为修饰符、元素隐藏、HTML 过滤、DNS 子集、Pi-hole 正则、兼容性差异、优先级、自定义黑名单） |
 | `docs/CLIENT_SYNTAX.md` | 各客户端原生拦截语法与命中范围（ABP/hosts/dnsmasq/Pi-hole/AdGuard Home/mihomo/sing-box/Surge/Quantumult X） |
 | `docs/OPS.md` | 构建、配置源、白名单、门禁与源失效处置 |
 | `docs/FLOW.md` | 构建流水线各阶段 |
