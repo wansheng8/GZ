@@ -355,7 +355,7 @@ python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 
 构建选项：`--no-dns` · `--offline` · `--no-cache` · `--dns-policy safe` · `--no-alias-normalize` / `--no-resolve-conflicts` / `--no-per-rule-classify` / `--no-domain-fold`。缓存位于 `.cache/sources/` 与 `.cache/parsed/`，首次下载后离线可重建。
 
-每个产物的行语法与用法（adblock / hosts / domains / rulesets / manifest 等）见 `docs/GENERATED_RULES.md`。各客户端原生拦截语法与命中范围见 `docs/CLIENT_SYNTAX.md`。
+每个产物的行语法与用法（adblock / hosts / domains / rulesets / manifest 等）见 `docs/GENERATED_RULES.md`。各客户端原生拦截语法与命中范围见 `docs/CLIENT_SYNTAX.md`。过滤规则本身的语法语义（修饰符、元素隐藏、HTML 过滤、DNS 子集、优先级）见 `docs/SYNTAX.md`。
 
 ### 防误杀体系
 

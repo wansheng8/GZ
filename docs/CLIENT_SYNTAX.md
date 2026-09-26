@@ -4,7 +4,7 @@
 
 相关文档分工：
 
-- 过滤规则本身的语义（`||`、`^`、`$` 修饰符、`##` 元素隐藏、优先级）：见 `docs/SYNTAX.md`。
+- 过滤规则本身的语法语义（`||`、`^`、`$` 修饰符、元素隐藏、HTML 过滤、DNS 子集、优先级等）：见 `docs/SYNTAX.md`。
 - 本项目每个产物的逐字语法与用法：见 `docs/GENERATED_RULES.md`。
 - 客户端原生语法与算子差异（本文）。
 
@@ -455,7 +455,7 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 | 文档 | 内容 |
 | :--- | :--- |
-| `docs/SYNTAX.md` | 过滤规则语法知识库（`\|\|`、`$` 修饰符、元素隐藏、优先级、自定义黑名单） |
+| `docs/SYNTAX.md` | 自定义过滤规则语法大全（ABP/uBO/AdGuard 通用与扩展语法、网络/内容/例外/行为修饰符、元素隐藏、HTML 过滤、DNS 子集、Pi-hole 正则、兼容性差异、优先级、自定义黑名单） |
 | `docs/GENERATED_RULES.md` | 本项目生成产物的逐字语法与用法（含 `adapters/` 与订阅地址清单） |
 | `docs/OPS.md` | 构建、配置源、白名单、门禁与源失效处置 |
 | `docs/FLOW.md` | 构建流水线各阶段 |
