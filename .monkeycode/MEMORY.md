@@ -104,6 +104,12 @@ Entries discovered by the Agent during task execution should follow this format:
   - 解析/分类/规范化版本常量在 `adblock_collection/pipeline.py`；一轮单元中每条版本轴最多递增一次，触碰基线的单元（域名集合、`$important` 语义等）单独提交。
   - manifest 消费点对 `rules` 键的处理：新增不含 `rules` 字段的产物条目（如 `adapters/*`，`format=adapter`）时，所有 `{x["file"]: x["rules"]}` 形式必须改为 `x.get("rules", 0)`，覆盖 `stats_badge.load_counts`、`memory_metrics` 与 CI `build.yml` 健康检查；`cli.stats_cmd` 亦需跳过 `adapters/` 路径，避免把 URL 行当规则计数或给适配条目补 `rules/empty`。
 
+[User Instruction Summary]
+- Date: 2026-09-26
+- Context: 用户在客户端适配产物任务收尾时明确要求
+- Instructions:
+  - 所有回复、思考过程与面向用户的说明一律使用中文（Simplified Chinese），包括总结、进度说明与提问。
+
 <!-- build-metrics:start -->
 ## 构建指标快照（CI 自动生成）
 
