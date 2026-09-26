@@ -1,6 +1,7 @@
 // Adblock Rule Collection — sing-box 适配
 // 用法：把 route.rule_set 与 route.rules 合并进你的 config.json。
 // 采用远端源格式规则集（format: source），需要 sing-box 1.11+，无需手动编译。
+// 远端规则集缓存依赖 experimental.cache_file.enabled=true（未开启则每次启动重新下载）。
 // 规范基址：https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_singbox.json
 // 镜像基址：https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_singbox.json
 // 主页：https://github.com/wansheng8/GZ

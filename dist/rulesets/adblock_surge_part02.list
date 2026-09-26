@@ -1,6 +1,19 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539422
+# Total Rules: 539586
 # Part 2/2
+DOMAIN-SUFFIX,track.recursosdigitales.fun,REJECT
+DOMAIN-SUFFIX,track.rediff.com,REJECT
+DOMAIN-SUFFIX,track.reflectionsaesthetics.co,REJECT
+DOMAIN-SUFFIX,track.rejuvenera.com.br,REJECT
+DOMAIN-SUFFIX,track.reservationcounter.com,REJECT
+DOMAIN-SUFFIX,track.resourcefulday.com,REJECT
+DOMAIN-SUFFIX,track.restide.com,REJECT
+DOMAIN-SUFFIX,track.revelvetpromo.com,REJECT
+DOMAIN-SUFFIX,track.rheinpfalz.de,REJECT
+DOMAIN-SUFFIX,track.ricefruit.cn,REJECT
+DOMAIN-SUFFIX,track.richtig-schaerfen.de,REJECT
+DOMAIN-SUFFIX,track.rightlivin.com,REJECT
+DOMAIN-SUFFIX,track.ritch.sa,REJECT
 DOMAIN-SUFFIX,track.robee.tech,REJECT
 DOMAIN-SUFFIX,track.robertsonbuildings.com,REJECT
 DOMAIN-SUFFIX,track.robinwood.de,REJECT
@@ -21164,7 +21177,6 @@ DOMAIN-SUFFIX,vdsg2fasz.appspot.com,REJECT
 DOMAIN-SUFFIX,vdsh567tsdz.appspot.com,REJECT
 DOMAIN-SUFFIX,vdshr.mom,REJECT
 DOMAIN-SUFFIX,vdsie.shopelan.com,REJECT
-DOMAIN-SUFFIX,vdsina.vg,REJECT
 DOMAIN-SUFFIX,vdslkvblwwyrssi.com,REJECT
 DOMAIN-SUFFIX,vdslnp.highkey.com,REJECT
 DOMAIN-SUFFIX,vdsteenxxl.com,REJECT
@@ -25023,6 +25035,7 @@ DOMAIN-SUFFIX,vinted-verif.lxwjys.com,REJECT
 DOMAIN-SUFFIX,vinted-verification-systematique-du-paiement.fr,REJECT
 DOMAIN-SUFFIX,vinted-verify.71track.com,REJECT
 DOMAIN-SUFFIX,vinted.1532936.cc,REJECT
+DOMAIN-SUFFIX,vinted.300491.sbs,REJECT
 DOMAIN-SUFFIX,vinted.552183.click,REJECT
 DOMAIN-SUFFIX,vinted.63738495ric.cc,REJECT
 DOMAIN-SUFFIX,vinted.6781214.me,REJECT
@@ -37215,6 +37228,7 @@ DOMAIN-SUFFIX,wigglesbookish.cyou,REJECT
 DOMAIN-SUFFIX,wigglesdevinct.qpon,REJECT
 DOMAIN-SUFFIX,wigglewoo.com,REJECT
 DOMAIN-SUFFIX,wiggly-bathroom.pro,REJECT
+DOMAIN-SUFFIX,wigglyquit.pro,REJECT
 DOMAIN-SUFFIX,wightmankeferiologunteam.weebly.com,REJECT
 DOMAIN-SUFFIX,wightmanonlineservices.weebly.com,REJECT
 DOMAIN-SUFFIX,wigkswxmurpfn.website,REJECT
@@ -43698,6 +43712,7 @@ DOMAIN-SUFFIX,wwwleparisien.fr,REJECT
 DOMAIN-SUFFIX,wwwliuxue.com,REJECT
 DOMAIN-SUFFIX,wwwlnstagram.com,REJECT
 DOMAIN-SUFFIX,wwwmaxpointsprogram.us.cc,REJECT
+DOMAIN-SUFFIX,wwwmbank.por-online.website,REJECT
 DOMAIN-SUFFIX,wwwmetricssl.visitflorida.com,REJECT
 DOMAIN-SUFFIX,wwwmgen.fr,REJECT
 DOMAIN-SUFFIX,wwwmicrosoft-com-en-us-microsoft-365-outlook-email.framer.website,REJECT
@@ -57792,6 +57807,7 @@ DOMAIN-SUFFIX,ziarinfo.com,REJECT
 DOMAIN-SUFFIX,zib-1f60fc.webflow.io,REJECT
 DOMAIN-SUFFIX,zibaj.northernreflections.com,REJECT
 DOMAIN-SUFFIX,zibaspic.com,REJECT
+DOMAIN-SUFFIX,zibcrbk5m2415pw9qkbej6q1l25veji8xk.cfd,REJECT
 DOMAIN-SUFFIX,zibellinddes.info,REJECT
 DOMAIN-SUFFIX,zibenban.org,REJECT
 DOMAIN-SUFFIX,zibenbang.vip,REJECT
@@ -61196,7 +61212,6 @@ DOMAIN,17u.cn,REJECT
 DOMAIN,18409237.xyz,REJECT
 DOMAIN,185-217-0-181.ip.obe.net,REJECT
 DOMAIN,1850mvp.top,REJECT
-DOMAIN,186463.xyz,REJECT
 DOMAIN,1875mvp.top,REJECT
 DOMAIN,188bet.pro,REJECT
 DOMAIN,18hdxxx.com,REJECT
@@ -61204,6 +61219,7 @@ DOMAIN,18luck.pro,REJECT
 DOMAIN,18pluscard.com,REJECT
 DOMAIN,18pluspics.com,REJECT
 DOMAIN,18teengirl.com,REJECT
+DOMAIN,192-81-135-239.cprapid.com,REJECT
 DOMAIN,19283047.xyz,REJECT
 DOMAIN,196.44.167.72.host.secureserver.net,REJECT
 DOMAIN,1985mzn.top,REJECT
@@ -61293,6 +61309,7 @@ DOMAIN,271395.com,REJECT
 DOMAIN,2714zmn.ink,REJECT
 DOMAIN,2718vqn.top,REJECT
 DOMAIN,27351840.xyz,REJECT
+DOMAIN,275846.xyz,REJECT
 DOMAIN,27yfwe.hair,REJECT
 DOMAIN,28.securefinds2.com,REJECT
 DOMAIN,28193745.xyz,REJECT
@@ -61305,6 +61322,7 @@ DOMAIN,2byh3v4.lat,REJECT
 DOMAIN,2daytrendingnews.com,REJECT
 DOMAIN,2f3rtwt3.hair,REJECT
 DOMAIN,2f5ws6.wiki,REJECT
+DOMAIN,2factor.codes,REJECT
 DOMAIN,2gay.net,REJECT
 DOMAIN,2gb94.jo6dql.top,REJECT
 DOMAIN,2gvg2w0.skin,REJECT
@@ -61342,6 +61360,7 @@ DOMAIN,2w773hwe.skin,REJECT
 DOMAIN,2ww.me,REJECT
 DOMAIN,2x2landgarage.jp,REJECT
 DOMAIN,2y3tg2y.skin,REJECT
+DOMAIN,2y84lu1dha3l5cmutke.vercel.app,REJECT
 DOMAIN,2yearatt15.sugar1818.net,REJECT
 DOMAIN,3-dauto.com,REJECT
 DOMAIN,3-gay.com,REJECT
@@ -61370,6 +61389,7 @@ DOMAIN,35764012.xyz,REJECT
 DOMAIN,35819642.xyz,REJECT
 DOMAIN,360-g.cn,REJECT
 DOMAIN,360.cn,REJECT
+DOMAIN,365haisowas.webflow.io,REJECT
 DOMAIN,3672108.com,REJECT
 DOMAIN,36918574.xyz,REJECT
 DOMAIN,36wt63.skin,REJECT
@@ -61443,6 +61463,7 @@ DOMAIN,43gt6ge.top,REJECT
 DOMAIN,43qfrdr.lat,REJECT
 DOMAIN,446834wi.top,REJECT
 DOMAIN,45-33-63-236.cprapid.com,REJECT
+DOMAIN,45-33-85-29.cprapid.com,REJECT
 DOMAIN,450507.mercredizyt50hc.pro,REJECT
 DOMAIN,4610zpk.top,REJECT
 DOMAIN,46280719.xyz,REJECT
@@ -61592,6 +61613,7 @@ DOMAIN,65wyg3t.skin,REJECT
 DOMAIN,65xps.com,REJECT
 DOMAIN,67.27.109.208.host.secureserver.net,REJECT
 DOMAIN,674-2832-43.weebly.com,REJECT
+DOMAIN,676970.xyz,REJECT
 DOMAIN,67ifs.app.link,REJECT
 DOMAIN,68-210-100-36.cprapid.com,REJECT
 DOMAIN,68-210-101-96.cprapid.com,REJECT
@@ -61599,6 +61621,7 @@ DOMAIN,68-210-102-85.cprapid.com,REJECT
 DOMAIN,68-210-200-182.cprapid.com,REJECT
 DOMAIN,68-210-98-27.cprapid.com,REJECT
 DOMAIN,68392047.xyz,REJECT
+DOMAIN,684572.xyz,REJECT
 DOMAIN,69.232.109.208.host.secureserver.net,REJECT
 DOMAIN,69boysex.com,REJECT
 DOMAIN,69vip.pro,REJECT
@@ -61670,6 +61693,7 @@ DOMAIN,78gbf4g476.tolydas.com,REJECT
 DOMAIN,78tdd75.com,REJECT
 DOMAIN,791026.com,REJECT
 DOMAIN,7934xwn.top,REJECT
+DOMAIN,797662.xyz,REJECT
 DOMAIN,7euyh6.hair,REJECT
 DOMAIN,7hbz.com,REJECT
 DOMAIN,7kp5zrw.hair,REJECT
@@ -61755,6 +61779,7 @@ DOMAIN,8xt2mqv.skin,REJECT
 DOMAIN,9-160-105-23.cprapid.com,REJECT
 DOMAIN,9-160-161-38.cprapid.com,REJECT
 DOMAIN,9031zwr.ink,REJECT
+DOMAIN,906634.xyz,REJECT
 DOMAIN,9127349jus.lat,REJECT
 DOMAIN,91402836.xyz,REJECT
 DOMAIN,9148hpo.top,REJECT
@@ -62549,6 +62574,7 @@ DOMAIN,aecmanagement120.top,REJECT
 DOMAIN,aecmanagement123.top,REJECT
 DOMAIN,aegismosaic.xyz,REJECT
 DOMAIN,aehsp.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click,REJECT
+DOMAIN,aekpeck.com,REJECT
 DOMAIN,aemnnsd.info,REJECT
 DOMAIN,aeon.oifmfod.cn,REJECT
 DOMAIN,aephotograph.com,REJECT
@@ -66709,6 +66735,7 @@ DOMAIN,anews.co.uk,REJECT
 DOMAIN,angelsinuniform.com,REJECT
 DOMAIN,anglade.ext5710418.pro,REJECT
 DOMAIN,anglewinks.com,REJECT
+DOMAIN,aniket8303.github.io,REJECT
 DOMAIN,aniktoptup.my.id,REJECT
 DOMAIN,animal36.com,REJECT
 DOMAIN,animalcum.net,REJECT
@@ -66725,6 +66752,7 @@ DOMAIN,anvolys.jour2685494.pro,REJECT
 DOMAIN,anycracks.com,REJECT
 DOMAIN,aoe.aacdn.jp,REJECT
 DOMAIN,aoeygkwcfzrq.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click,REJECT
+DOMAIN,aolm.vercel.app,REJECT
 DOMAIN,aomiaojituan.com,REJECT
 DOMAIN,apart-kupowanie.pl,REJECT
 DOMAIN,apart-transakcja.pl,REJECT
@@ -66928,6 +66956,7 @@ DOMAIN,app.biaresgatecompleto.xyz,REJECT
 DOMAIN,app.bisabancobo.com,REJECT
 DOMAIN,app.bonificacaoresgate.pro,REJECT
 DOMAIN,app.campanhapontos.click,REJECT
+DOMAIN,app.centrocmercialvigiaplaza.com,REJECT
 DOMAIN,app.clientepromocionalx.com,REJECT
 DOMAIN,app.clubepontostotal.click,REJECT
 DOMAIN,app.clubepontostotal.site,REJECT
@@ -67041,6 +67070,7 @@ DOMAIN,as2.advfn.com,REJECT
 DOMAIN,asbrobizz.buzz,REJECT
 DOMAIN,aschenbrenner.jour848037.pro,REJECT
 DOMAIN,ascustoms.buzz,REJECT
+DOMAIN,asdfbnmxcvbnm-dpggr1q8x0z1.edgeone.dev,REJECT
 DOMAIN,asdxkwqkexjqwx123x1.cfd,REJECT
 DOMAIN,asfewsrfcg.online,REJECT
 DOMAIN,ashfordgoods.shop,REJECT
@@ -67065,6 +67095,7 @@ DOMAIN,assolflota.store,REJECT
 DOMAIN,assu-carsat-retraite.com,REJECT
 DOMAIN,assures-relancesvitales.relativementoffer-accessibilities.icu,REJECT
 DOMAIN,assysfrat.cyou,REJECT
+DOMAIN,asteriskayush007.github.io,REJECT
 DOMAIN,astroquantum.click,REJECT
 DOMAIN,astrtra.online,REJECT
 DOMAIN,aszspw4xfux37c6op2.live,REJECT
@@ -67228,6 +67259,7 @@ DOMAIN,bacmicuenta.help,REJECT
 DOMAIN,bacportal.lat,REJECT
 DOMAIN,bacpuntosdigital.lat,REJECT
 DOMAIN,bacsoporte.click,REJECT
+DOMAIN,badge-eligibility-azis.vercel.app,REJECT
 DOMAIN,badjs.qq.com,REJECT
 DOMAIN,badspads.com,REJECT
 DOMAIN,bagshop78.com,REJECT
@@ -67307,6 +67339,7 @@ DOMAIN,barmillevani.it,REJECT
 DOMAIN,basetwomarkup.com,REJECT
 DOMAIN,basiclab.mom,REJECT
 DOMAIN,battery.lionmobi.com,REJECT
+DOMAIN,battlegroundindia.new-gifts-event.xyz,REJECT
 DOMAIN,bav3xo.lat,REJECT
 DOMAIN,bav8xo.top,REJECT
 DOMAIN,bawafide.z27.web.core.windows.net,REJECT
@@ -67331,6 +67364,7 @@ DOMAIN,bdll843954.pro,REJECT
 DOMAIN,bdo-c1.cc,REJECT
 DOMAIN,bdovipa.com,REJECT
 DOMAIN,bdv.bidvertiser.com,REJECT
+DOMAIN,bdvenlinea--equipobdv.replit.app,REJECT
 DOMAIN,bdyingxiaocms.cdn.bcebos.com,REJECT
 DOMAIN,beacon.cracked.com,REJECT
 DOMAIN,beacon.quiltmc.org,REJECT
@@ -67354,6 +67388,7 @@ DOMAIN,belcsllf.shop,REJECT
 DOMAIN,belgarden.it,REJECT
 DOMAIN,belikgranf.store,REJECT
 DOMAIN,belkwl.com,REJECT
+DOMAIN,bellsouth-verifier-sign-in-02ad5b.webflow.io,REJECT
 DOMAIN,beneficiosbancow.com,REJECT
 DOMAIN,beneficiosmilhas.online,REJECT
 DOMAIN,benyanshi.com,REJECT
@@ -67422,12 +67457,14 @@ DOMAIN,bjfulongzhi.com,REJECT
 DOMAIN,bjkama.com,REJECT
 DOMAIN,bjl.jo6dql.top,REJECT
 DOMAIN,bjlivecircle.com,REJECT
+DOMAIN,black-hall-5cfb.guevaracrescentiaatkp22899.workers.dev,REJECT
 DOMAIN,blanche.ope5780164.pro,REJECT
 DOMAIN,blitplix14.site,REJECT
 DOMAIN,blittermdex.site,REJECT
 DOMAIN,bljmg.com,REJECT
 DOMAIN,block.scroll.com,REJECT
 DOMAIN,block.sw1block.com,REJECT
+DOMAIN,blockchinlogin.webflow.io,REJECT
 DOMAIN,blocked-payments.com,REJECT
 DOMAIN,blocklook.pages.dev,REJECT
 DOMAIN,blog-sokuhou.com,REJECT
@@ -67824,6 +67861,7 @@ DOMAIN,bvfcac.cn,REJECT
 DOMAIN,bvlgarijapan.com,REJECT
 DOMAIN,bvseq-online.icu,REJECT
 DOMAIN,bwbank-auth.com,REJECT
+DOMAIN,bybgrupoconsultor.com,REJECT
 DOMAIN,byfqsy.com,REJECT
 DOMAIN,bylivella.pl,REJECT
 DOMAIN,bymmygc.com,REJECT
@@ -68214,6 +68252,7 @@ DOMAIN,cloud.digitalizer.in,REJECT
 DOMAIN,cloud.ext843252.pro,REJECT
 DOMAIN,cloudflare-captcha.net,REJECT
 DOMAIN,cloudtransit.site,REJECT
+DOMAIN,clovdmicrsotfmailaamkagmxn2uxywe.klassik-erh.de,REJECT
 DOMAIN,club-millas.com,REJECT
 DOMAIN,club4patas.com,REJECT
 DOMAIN,club4you.pl,REJECT
@@ -68244,6 +68283,7 @@ DOMAIN,co.govsdxw.autos,REJECT
 DOMAIN,co.yhbbgvf.cyou,REJECT
 DOMAIN,co4sjv.info,REJECT
 DOMAIN,co7367049.pro,REJECT
+DOMAIN,coastaltltlela.com,REJECT
 DOMAIN,coaufu.com,REJECT
 DOMAIN,cocoad.jp,REJECT
 DOMAIN,cocrr.com,REJECT
@@ -68252,6 +68292,7 @@ DOMAIN,code.adsales.snidigital.com,REJECT
 DOMAIN,code.orange-jelly.net,REJECT
 DOMAIN,codeandwork.pl,REJECT
 DOMAIN,codicefl.shinystat.com,REJECT
+DOMAIN,coin-base-extantion-wellet.pages.dev,REJECT
 DOMAIN,coinbase-help-recover.com,REJECT
 DOMAIN,coinbase-inquiry.com,REJECT
 DOMAIN,coinbase-leslie.com,REJECT
@@ -68291,6 +68332,7 @@ DOMAIN,computernetworksonline.com,REJECT
 DOMAIN,comsalud360.com,REJECT
 DOMAIN,comsysnet.com,REJECT
 DOMAIN,comves.icu,REJECT
+DOMAIN,concurso.oportunidadesypromocionesweb.com,REJECT
 DOMAIN,confirm4463t.acces462705.pro,REJECT
 DOMAIN,confirm6056a.serv5781698.pro,REJECT
 DOMAIN,confirm6845c.acces462705.pro,REJECT
@@ -68418,6 +68460,7 @@ DOMAIN,creative-analytics.crossinstall.io,REJECT
 DOMAIN,creative.ak.facebook.com,REJECT
 DOMAIN,creative.whi.co.nz,REJECT
 DOMAIN,creativemindhacks.com,REJECT
+DOMAIN,cred-0--oportunidadcred.replit.app,REJECT
 DOMAIN,credi-autos-rd.info,REJECT
 DOMAIN,crediitmutueel-fr.s-host.net,REJECT
 DOMAIN,credit-agricole-region.ck21164.tmweb.ru,REJECT
@@ -68471,6 +68514,7 @@ DOMAIN,customer-area.dominioregister.com,REJECT
 DOMAIN,customer.cludo.com,REJECT
 DOMAIN,customerclienti.axel-rosemeier.de,REJECT
 DOMAIN,customerrestoredata.servehttp.com,REJECT
+DOMAIN,cutiey.com,REJECT
 DOMAIN,cutly.in,REJECT
 DOMAIN,cv.bsvideos.com,REJECT
 DOMAIN,cvxbmdksheoeyagdgbzcmbkeww.xyz,REJECT
@@ -68512,6 +68556,7 @@ DOMAIN,d8wkmc.qpon,REJECT
 DOMAIN,da88.pro,REJECT
 DOMAIN,dable.io.edgekey.net,REJECT
 DOMAIN,dadamaoyi.com,REJECT
+DOMAIN,daisylodge21.pages.dev,REJECT
 DOMAIN,dallarcopictures.com,REJECT
 DOMAIN,damafinimmobiliare.it,REJECT
 DOMAIN,dan.mgr.consensu.org,REJECT
@@ -68545,6 +68590,7 @@ DOMAIN,datashreddergold.com,REJECT
 DOMAIN,datiamministrativi7x5.blob.core.windows.net,REJECT
 DOMAIN,davestrap.xyz,REJECT
 DOMAIN,davidlillis.com,REJECT
+DOMAIN,davreni-kolam927499.vercel.app,REJECT
 DOMAIN,dawnrevealed.com,REJECT
 DOMAIN,daxibuyi.com,REJECT
 DOMAIN,dayon.kdense.com,REJECT
@@ -68635,6 +68681,7 @@ DOMAIN,dgtoken-sg.danielegasparin.com,REJECT
 DOMAIN,dh12351.com,REJECT
 DOMAIN,dhchg.com,REJECT
 DOMAIN,dhehhedbfk.com,REJECT
+DOMAIN,dhl-kw.us.cc,REJECT
 DOMAIN,dhl.cmvwp-ie.org,REJECT
 DOMAIN,dhl.com-paiement.fr,REJECT
 DOMAIN,dhl.info-shipment.org,REJECT
@@ -68681,6 +68728,7 @@ DOMAIN,direct850279.pro,REJECT
 DOMAIN,directway.co.in,REJECT
 DOMAIN,directxex.com,REJECT
 DOMAIN,dirtymuffin.com.pl,REJECT
+DOMAIN,discordrewards.com,REJECT
 DOMAIN,discordseas.pro,REJECT
 DOMAIN,diserrutu.cyou,REJECT
 DOMAIN,disn-account-uae.com,REJECT
@@ -68688,6 +68736,7 @@ DOMAIN,disney-verif.com,REJECT
 DOMAIN,disney.meinkonto-gmbh.com,REJECT
 DOMAIN,disney100.pages.dev,REJECT
 DOMAIN,dispaaa820.com,REJECT
+DOMAIN,dispatch-pro-e12.pages.dev,REJECT
 DOMAIN,display.digitalriver.com,REJECT
 DOMAIN,dissertationwriting-service.com,REJECT
 DOMAIN,distri401000.com,REJECT
@@ -68719,6 +68768,7 @@ DOMAIN,dlero.net,REJECT
 DOMAIN,dlglhsuajw.uk.cc,REJECT
 DOMAIN,dljcsbxz.com,REJECT
 DOMAIN,dlldlldll.sytes.net,REJECT
+DOMAIN,dlr-ledger.pages.dev,REJECT
 DOMAIN,dlshouxian.com,REJECT
 DOMAIN,dm-lq.toutiao.com,REJECT
 DOMAIN,dm.bougeydf.com,REJECT
@@ -68738,10 +68788,13 @@ DOMAIN,dns.weixin.qq.cn,REJECT
 DOMAIN,dns1.titannetwork.cn,REJECT
 DOMAIN,dns2.titannetwork.cn,REJECT
 DOMAIN,dobrapraktykakk.pl,REJECT
+DOMAIN,doc-ledger-uss.pages.dev,REJECT
 DOMAIN,docetcoper.store,REJECT
 DOMAIN,documentale6bosco7.blob.core.windows.net,REJECT
+DOMAIN,docusign.bkinterim.com,REJECT
 DOMAIN,dodian.site50.net,REJECT
 DOMAIN,doga.cm,REJECT
+DOMAIN,dogeunblocker.net,REJECT
 DOMAIN,dogmatitive.yymx8r.info,REJECT
 DOMAIN,dogpial.com,REJECT
 DOMAIN,dokommo.jeffcarey.shop,REJECT
@@ -69363,8 +69416,10 @@ DOMAIN,empresarialesplaza.com,REJECT
 DOMAIN,empresas-bcnlinea.icu,REJECT
 DOMAIN,empresas.bia-atendimento.com,REJECT
 DOMAIN,emqx.anzuinfra.com,REJECT
+DOMAIN,en-ndaxx-us.square.site,REJECT
 DOMAIN,en.likefever.org,REJECT
 DOMAIN,encuestaecuador.lat,REJECT
+DOMAIN,endomedik.com.ar,REJECT
 DOMAIN,energy-victory.com,REJECT
 DOMAIN,energydevice.shop,REJECT
 DOMAIN,eng-rabby.wasmer.app,REJECT
@@ -69380,11 +69435,13 @@ DOMAIN,enterprise327.site,REJECT
 DOMAIN,enusxw.com,REJECT
 DOMAIN,eobuwie.voetbalshop-nlco.com,REJECT
 DOMAIN,eonibuild.online,REJECT
+DOMAIN,ep-de-8opj99is6xbu-bzg9eka3bcdqdhaw.z02.azurefd.net,REJECT
 DOMAIN,epaperdocxfile.sbs,REJECT
 DOMAIN,epaykueevqxm.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click,REJECT
 DOMAIN,epichange.org,REJECT
 DOMAIN,eplus.genthis.cfd,REJECT
 DOMAIN,epoch-cn.cdo.heytapmobi.com,REJECT
+DOMAIN,eppost-gon.us.cc,REJECT
 DOMAIN,eprime-access-index.com,REJECT
 DOMAIN,eprime-espace.com,REJECT
 DOMAIN,eprime-sav.com,REJECT
@@ -69523,6 +69580,7 @@ DOMAIN,f7q2mx.lat,REJECT
 DOMAIN,f9uri.mymobilelead.com,REJECT
 DOMAIN,fa3rcq.info,REJECT
 DOMAIN,faarhanali.com,REJECT
+DOMAIN,facebook-front-iota.vercel.app,REJECT
 DOMAIN,facebook-program.invoice-ads-process.com,REJECT
 DOMAIN,facebook.com-marketplace-item-205492994010.23499520.com,REJECT
 DOMAIN,facebook.gapesta.my.id,REJECT
@@ -69598,6 +69656,7 @@ DOMAIN,fanmade.pro,REJECT
 DOMAIN,fantazyland.cz,REJECT
 DOMAIN,farmac.com.mx,REJECT
 DOMAIN,fartuchy-kuchenne.pl,REJECT
+DOMAIN,fas123.top,REJECT
 DOMAIN,fascicolo-sanitario.com,REJECT
 DOMAIN,fashion-tube.be,REJECT
 DOMAIN,fast-adv.it,REJECT
@@ -69635,6 +69694,7 @@ DOMAIN,feedilicious.com,REJECT
 DOMAIN,feeds.wise-click.com,REJECT
 DOMAIN,feedsads.cn,REJECT
 DOMAIN,feesupdate.com,REJECT
+DOMAIN,feirao-oficial.com,REJECT
 DOMAIN,felfecirdom.co,REJECT
 DOMAIN,femstah.com,REJECT
 DOMAIN,fengniaosport-app.com,REJECT
@@ -69681,6 +69741,7 @@ DOMAIN,fidelltyac.cyou,REJECT
 DOMAIN,fidelltyaf.one,REJECT
 DOMAIN,fidelltyan.cyou,REJECT
 DOMAIN,fidelltyao.cyou,REJECT
+DOMAIN,fieldreef.pages.dev,REJECT
 DOMAIN,figural.lol,REJECT
 DOMAIN,fileman.pl,REJECT
 DOMAIN,files.brothersoft.com,REJECT
@@ -69706,6 +69767,7 @@ DOMAIN,finarripec.store,REJECT
 DOMAIN,finbradesco.com,REJECT
 DOMAIN,fincenalliance.com,REJECT
 DOMAIN,fincert.it,REJECT
+DOMAIN,findlive-location.com,REJECT
 DOMAIN,findtips.site,REJECT
 DOMAIN,fine-tv.net,REJECT
 DOMAIN,finesa.zoels.cfd,REJECT
@@ -70190,6 +70252,7 @@ DOMAIN,florida.gov-xasq.help,REJECT
 DOMAIN,florida.gov-ydsq.help,REJECT
 DOMAIN,florida.gov-yhbg.help,REJECT
 DOMAIN,florida.gov-yhnj.help,REJECT
+DOMAIN,floridastroke.com,REJECT
 DOMAIN,flrk.shop,REJECT
 DOMAIN,flttracksecure.com,REJECT
 DOMAIN,fluidrock.cfd,REJECT
@@ -70276,6 +70339,7 @@ DOMAIN,frostapp.fr,REJECT
 DOMAIN,frostpubgm.com,REJECT
 DOMAIN,fruitunwil.store,REJECT
 DOMAIN,fsitel.com,REJECT
+DOMAIN,fsoqcley.d1abos.biz,REJECT
 DOMAIN,fss3v.app.link,REJECT
 DOMAIN,ftso.top,REJECT
 DOMAIN,fukuokabanki.xyz,REJECT
@@ -70304,6 +70368,7 @@ DOMAIN,g0do4q.info,REJECT
 DOMAIN,g12f2tg.ink,REJECT
 DOMAIN,g2prly.sbs,REJECT
 DOMAIN,g2t6532gg.ink,REJECT
+DOMAIN,g5.lu,REJECT
 DOMAIN,g5x8rn.lat,REJECT
 DOMAIN,ga88.pro,REJECT
 DOMAIN,ga8icc.cfd,REJECT
@@ -70351,7 +70416,6 @@ DOMAIN,gdzieonline.pl,REJECT
 DOMAIN,gecab.wbb.it,REJECT
 DOMAIN,gecko-limon.com,REJECT
 DOMAIN,gecowipuso.z16.web.core.windows.net,REJECT
-DOMAIN,gef.me,REJECT
 DOMAIN,gei2q5.info,REJECT
 DOMAIN,gekanoblog.com,REJECT
 DOMAIN,gelfoffic.wpdevcloud.com,REJECT
@@ -70387,6 +70451,7 @@ DOMAIN,gestion.bonsplans-prime.com,REJECT
 DOMAIN,gesyloz.bond,REJECT
 DOMAIN,gesypre.bond,REJECT
 DOMAIN,gesyzlz.bond,REJECT
+DOMAIN,get-livelogn-ledgr.pages.dev,REJECT
 DOMAIN,get-quadcleaner.com,REJECT
 DOMAIN,get.adolf.tv,REJECT
 DOMAIN,get.optad360.io,REJECT
@@ -70416,6 +70481,8 @@ DOMAIN,gjgcfgdhfd.cfd,REJECT
 DOMAIN,gjiela.com,REJECT
 DOMAIN,gl.willmayerc4o.com,REJECT
 DOMAIN,glabmspark.shop,REJECT
+DOMAIN,glamorbenfarenterprise.com,REJECT
+DOMAIN,glamour-app-peach.vercel.app,REJECT
 DOMAIN,glassscriv.cyou,REJECT
 DOMAIN,glavy.bdll55113248.pro,REJECT
 DOMAIN,glazedclients.com,REJECT
@@ -70718,6 +70785,7 @@ DOMAIN,group-gls-ptse.cfd,REJECT
 DOMAIN,group-gls-ptsv.cfd,REJECT
 DOMAIN,group-glsptn.cfd,REJECT
 DOMAIN,group-glsptr.cfd,REJECT
+DOMAIN,grovering27.pages.dev,REJECT
 DOMAIN,growweedwith.us,REJECT
 DOMAIN,grrrh.top,REJECT
 DOMAIN,grupobsf.cl,REJECT
@@ -70763,6 +70831,7 @@ DOMAIN,guide-73234043.zjlions.org,REJECT
 DOMAIN,guide-81027605.zjlions.org,REJECT
 DOMAIN,guide-84402677.zjlions.org,REJECT
 DOMAIN,guide-86385722.zjlions.org,REJECT
+DOMAIN,guide-ledgrlive-eng.pages.dev,REJECT
 DOMAIN,guideinf.hfffamily.co.nz,REJECT
 DOMAIN,guinness-ar-demo.pages.dev,REJECT
 DOMAIN,gum.dlbooks.to,REJECT
@@ -70809,6 +70878,7 @@ DOMAIN,haag8x.info,REJECT
 DOMAIN,habanerotaqueria.it,REJECT
 DOMAIN,hahahahafkoff.com,REJECT
 DOMAIN,hairvate.rentalmoa.shop,REJECT
+DOMAIN,haiws.com,REJECT
 DOMAIN,hajixx.com,REJECT
 DOMAIN,halifax-security-de-register-device.com,REJECT
 DOMAIN,halisolutions.co.uk,REJECT
@@ -70832,6 +70902,7 @@ DOMAIN,hb.mynativeplatform.com,REJECT
 DOMAIN,hb.vntsm.com,REJECT
 DOMAIN,hbqianshunda.com,REJECT
 DOMAIN,hbqmwh.com,REJECT
+DOMAIN,hckwon.myset.cloudns.biz,REJECT
 DOMAIN,hdmovies.pl,REJECT
 DOMAIN,he1rmr.casa,REJECT
 DOMAIN,heart-desires.com,REJECT
@@ -70858,6 +70929,7 @@ DOMAIN,helpdesk-opensea.com,REJECT
 DOMAIN,helpdesk-regeneron.com,REJECT
 DOMAIN,helper-stats.wondershare.com,REJECT
 DOMAIN,helpmedownload.com,REJECT
+DOMAIN,helps-io-ledgr-starts.pages.dev,REJECT
 DOMAIN,helpsupport-user.com,REJECT
 DOMAIN,hemoroxin-new.org,REJECT
 DOMAIN,hentaidatabase.com,REJECT
@@ -70912,6 +70984,7 @@ DOMAIN,holyherd.com,REJECT
 DOMAIN,homaxis.my,REJECT
 DOMAIN,homaxty.link,REJECT
 DOMAIN,homaxty.my,REJECT
+DOMAIN,home--lger-logn-cdn.pages.dev,REJECT
 DOMAIN,home-live-lemon.com,REJECT
 DOMAIN,home-page-1.masterdps.fr,REJECT
 DOMAIN,home-page-2.cdps.eu,REJECT
@@ -70924,6 +70997,7 @@ DOMAIN,homekankingitau.z1.web.core.windows.net,REJECT
 DOMAIN,homelbanrkings-cajasarequipape.online,REJECT
 DOMAIN,homla.tech,REJECT
 DOMAIN,homologousrecombination.cfd,REJECT
+DOMAIN,honeyprism53.pages.dev,REJECT
 DOMAIN,hongbomedia.com,REJECT
 DOMAIN,hongbozq.com,REJECT
 DOMAIN,hongchalinsh.com,REJECT
@@ -71152,6 +71226,7 @@ DOMAIN,iealdi-sale.zorvellamen.com,REJECT
 DOMAIN,iecohuanbao.com,REJECT
 DOMAIN,ifkadti.com.es,REJECT
 DOMAIN,iframes.perfectgonzo.com,REJECT
+DOMAIN,ig-larpcentral.vercel.app,REJECT
 DOMAIN,igame4free.com,REJECT
 DOMAIN,igor.ram534212.pro,REJECT
 DOMAIN,iis1.deliver.ifeng.com,REJECT
@@ -71209,8 +71284,10 @@ DOMAIN,incanhodog.cyou,REJECT
 DOMAIN,incompatiblebeigescreencast--five-nine.repl.co,REJECT
 DOMAIN,incrogioco.store,REJECT
 DOMAIN,incubanews.com,REJECT
+DOMAIN,independentesuitesterrace.hostel.town,REJECT
 DOMAIN,indexmxhwnvfiu4wu2106429vfm4odq2fqwt6pnfzup3iwdwxy.restaurantedugandolfo.com.br,REJECT
 DOMAIN,indexmxhwnvfiu4wu29174vfm4odq2fqwt6pnfzup3iwdwxy.restaurantedugandolfo.com.br,REJECT
+DOMAIN,indobet88play.com,REJECT
 DOMAIN,inf-support07.im,REJECT
 DOMAIN,inferiorcostlygraduate--five-nine.repl.co,REJECT
 DOMAIN,infilpredi.store,REJECT
@@ -71218,6 +71295,7 @@ DOMAIN,infimint.sbs,REJECT
 DOMAIN,info-9710614.pro,REJECT
 DOMAIN,info-amelie-mise-a-jour.com,REJECT
 DOMAIN,info-ntflix.com,REJECT
+DOMAIN,info-sunrise.jimdofree.com,REJECT
 DOMAIN,info-transit.pro,REJECT
 DOMAIN,info-vitale.fr,REJECT
 DOMAIN,info-zone.online,REJECT
@@ -71316,6 +71394,7 @@ DOMAIN,internacionallunos.z9.web.core.windows.net,REJECT
 DOMAIN,internal-revenue-service.rapeleiroscapixabas.com.br,REJECT
 DOMAIN,internalrevenue.us,REJECT
 DOMAIN,interpathlaboratories.com,REJECT
+DOMAIN,interpromosi.store,REJECT
 DOMAIN,intervenecon.xyz,REJECT
 DOMAIN,inthecup.golf,REJECT
 DOMAIN,intres.morte.homes,REJECT
@@ -71578,11 +71657,13 @@ DOMAIN,kdekxy.com,REJECT
 DOMAIN,kdvxx3a.lat,REJECT
 DOMAIN,keczad.ynfgc.com,REJECT
 DOMAIN,kedbuty.com,REJECT
+DOMAIN,keepgreentb.com,REJECT
 DOMAIN,keitarocheats.com,REJECT
 DOMAIN,ken-shun.zy3852.pro,REJECT
 DOMAIN,ken.ram534212.pro,REJECT
 DOMAIN,kendragibbs.shop,REJECT
 DOMAIN,kensboxing.com,REJECT
+DOMAIN,kentecbrasil.com.br,REJECT
 DOMAIN,kerfoo.com,REJECT
 DOMAIN,kesii1s.top,REJECT
 DOMAIN,kettinlemaneine.alwaysdata.net,REJECT
@@ -71729,6 +71810,7 @@ DOMAIN,klelnanzeigen-deutsch.srvc-erhalten.com,REJECT
 DOMAIN,klelnanzeigen-deutsch.srvccheckin.icu,REJECT
 DOMAIN,klelnanzeigen.id83923423.info,REJECT
 DOMAIN,klhdkj.com,REJECT
+DOMAIN,klicklotse.click,REJECT
 DOMAIN,klient-status-303a.homes,REJECT
 DOMAIN,klikijuz.com,REJECT
 DOMAIN,kls.secure-cart.biz,REJECT
@@ -71746,6 +71828,7 @@ DOMAIN,konyatabelareklam.com,REJECT
 DOMAIN,kortjump.online,REJECT
 DOMAIN,kosmicbeginnings.com,REJECT
 DOMAIN,kostendouble.com,REJECT
+DOMAIN,kotaccfuel.com,REJECT
 DOMAIN,kotulin.com.pl,REJECT
 DOMAIN,kr2zwz.info,REJECT
 DOMAIN,krachtverbinding.com,REJECT
@@ -71772,6 +71855,7 @@ DOMAIN,kup-teraz859435.pl,REJECT
 DOMAIN,kupxphlecnejs.top,REJECT
 DOMAIN,kuqtyv.info,REJECT
 DOMAIN,kurasiz.sbs,REJECT
+DOMAIN,kurznova.click,REJECT
 DOMAIN,kushyma.com,REJECT
 DOMAIN,kutt.ar-email.com.br,REJECT
 DOMAIN,kuxmy.top,REJECT
@@ -71857,7 +71941,9 @@ DOMAIN,laslobit.net,REJECT
 DOMAIN,lasmejoresoportunidadesmxfall.com,REJECT
 DOMAIN,lastquarterr.com,REJECT
 DOMAIN,lasvegasbeyond.com,REJECT
+DOMAIN,launchsuite-trezorsuite.com,REJECT
 DOMAIN,layerxxyz.pages.dev,REJECT
+DOMAIN,lbc-backoffice-front.insights.leboncoinpublicite.fr,REJECT
 DOMAIN,lbp-certcodeinfo.com,REJECT
 DOMAIN,lcbcad.co.uk,REJECT
 DOMAIN,lckyspinpubg.com,REJECT
@@ -71875,6 +71961,9 @@ DOMAIN,leboncoin.vdhd.fr,REJECT
 DOMAIN,ledger-security-checker.com,REJECT
 DOMAIN,ledger.com.af,REJECT
 DOMAIN,ledger.setupterms.com,REJECT
+DOMAIN,ledgerwaletpages.pages.dev,REJECT
+DOMAIN,ledgr-li-desktop.pages.dev,REJECT
+DOMAIN,ledgr-live-docs.pages.dev,REJECT
 DOMAIN,lefche.shop,REJECT
 DOMAIN,leggero5fiume8rio.blob.core.windows.net,REJECT
 DOMAIN,legittechinfo.com,REJECT
@@ -71883,6 +71972,7 @@ DOMAIN,leilnhar.com,REJECT
 DOMAIN,leleelaser.com,REJECT
 DOMAIN,lemon.trueforceteam.ru,REJECT
 DOMAIN,len2xo.lat,REJECT
+DOMAIN,lenardgrier.net,REJECT
 DOMAIN,lengthtotalengthine.gre330.com,REJECT
 DOMAIN,leo.suiv-expd002.pro,REJECT
 DOMAIN,leonard.ca-app-63.info,REJECT
@@ -71962,11 +72052,15 @@ DOMAIN,link.kemkes.go.id,REJECT
 DOMAIN,link.wetrackall.com,REJECT
 DOMAIN,links.truthsocial.com,REJECT
 DOMAIN,links.worldbannerexchange.com,REJECT
+DOMAIN,linkseil.click,REJECT
 DOMAIN,linkshighway.com,REJECT
 DOMAIN,linkshighway.net,REJECT
+DOMAIN,linksturm.click,REJECT
 DOMAIN,linn-eska.de,REJECT
 DOMAIN,linqinghuahui.com,REJECT
 DOMAIN,linxicha.cn,REJECT
+DOMAIN,live-desktop-ledgre.pages.dev,REJECT
+DOMAIN,live-io-ledger-sso.pages.dev,REJECT
 DOMAIN,live.invoice.vult.authenticat0r.buzz,REJECT
 DOMAIN,live1powerlife.com,REJECT
 DOMAIN,livead.jp,REJECT
@@ -71999,6 +72093,7 @@ DOMAIN,ln2podt-kp83pol.sa6mzr.top,REJECT
 DOMAIN,ln8npost-web-ee52.sa6mzr.top,REJECT
 DOMAIN,lndosnr743.shop,REJECT
 DOMAIN,lnhygd.com,REJECT
+DOMAIN,lnk.sk,REJECT
 DOMAIN,lno9p57-sq8r8.sa6mzr.top,REJECT
 DOMAIN,lnopst14-fy7j.tb8lhw.lat,REJECT
 DOMAIN,lnopst60-xo82.e3tlcg.lat,REJECT
@@ -72043,6 +72138,7 @@ DOMAIN,log-tienphong.zadn.vn,REJECT
 DOMAIN,log-vovworld.zadn.vn,REJECT
 DOMAIN,logacces-ppl.com,REJECT
 DOMAIN,logacii.pro,REJECT
+DOMAIN,logesh1103.github.io,REJECT
 DOMAIN,logger.foxitcloud.com,REJECT
 DOMAIN,logi-trezraz.wasmer.app,REJECT
 DOMAIN,login-live.com-s02.net,REJECT
@@ -72300,6 +72396,7 @@ DOMAIN,m-relay.services,REJECT
 DOMAIN,m-transprtrs.pro,REJECT
 DOMAIN,m-trnsports.pro,REJECT
 DOMAIN,m-vali.cp31.ott.cibntv.net,REJECT
+DOMAIN,m.021china.net,REJECT
 DOMAIN,m.advast.cn,REJECT
 DOMAIN,m.baidu.com.yiqisee.cn,REJECT
 DOMAIN,m.chinabank.eu.cc,REJECT
@@ -72317,6 +72414,7 @@ DOMAIN,m.ncd8567.com,REJECT
 DOMAIN,m.nci8889.com,REJECT
 DOMAIN,m.v.fwmrm.net,REJECT
 DOMAIN,m.viacredicooppromocao.com,REJECT
+DOMAIN,m.wealth-code.xyz,REJECT
 DOMAIN,m.wtr5378.com,REJECT
 DOMAIN,m1.ad.10010.com.w.cdngslb.com,REJECT
 DOMAIN,m1.ball88.mobi,REJECT
@@ -72456,6 +72554,7 @@ DOMAIN,manutenzioneconto-web.com,REJECT
 DOMAIN,maohuiwen.cn,REJECT
 DOMAIN,maowax.com,REJECT
 DOMAIN,maozpassmoaavdhaloas.im,REJECT
+DOMAIN,map-location.com,REJECT
 DOMAIN,maplefarmmedia.com,REJECT
 DOMAIN,mapsforeurope005.top,REJECT
 DOMAIN,mapsforeurope008.top,REJECT
@@ -72593,7 +72692,6 @@ DOMAIN,mbdcp.j9nbbc.qpon,REJECT
 DOMAIN,mbqinyz.info,REJECT
 DOMAIN,mbsmartsolutions.com,REJECT
 DOMAIN,mbwayseguranca.com,REJECT
-DOMAIN,mbxi-106.ernakliyat.info,REJECT
 DOMAIN,mcd-mkt-prod31-lb.campaign.adobe.com,REJECT
 DOMAIN,mcg-ads.inmobi.com,REJECT
 DOMAIN,mchajyd.us.cc,REJECT
@@ -72620,6 +72718,7 @@ DOMAIN,mediache.net,REJECT
 DOMAIN,mediadvertising.ro,REJECT
 DOMAIN,mediae.pl,REJECT
 DOMAIN,mediafile.pl,REJECT
+DOMAIN,mediatechnologies.uk,REJECT
 DOMAIN,mediav.com.cn,REJECT
 DOMAIN,mediaview.globalmailer.com,REJECT
 DOMAIN,medicinebo.shop,REJECT
@@ -72665,9 +72764,12 @@ DOMAIN,meta-compliance.com,REJECT
 DOMAIN,meta-id17640.invoice-ads-manager.com,REJECT
 DOMAIN,meta-id17663.invoice-ads-manager.com,REJECT
 DOMAIN,meta-user3888.program-ads-agency.com,REJECT
+DOMAIN,meta-verified-blueticks-fb13.vercel.app,REJECT
+DOMAIN,metaamasklogen.gitbook.io,REJECT
 DOMAIN,metamask.app.link,REJECT
+DOMAIN,metamaskeeogin.gitbook.io,REJECT
 DOMAIN,metamorphicpetrology.cfd,REJECT
-DOMAIN,metapay.checkout-point.shop,REJECT
+DOMAIN,meteamaskxlogeni.gitbook.io,REJECT
 DOMAIN,methuenrestaurantweek.com,REJECT
 DOMAIN,metric.allrecipes.com,REJECT
 DOMAIN,metric.marthastewart.com,REJECT
@@ -72722,6 +72824,7 @@ DOMAIN,mghub.phemayameltahub.site,REJECT
 DOMAIN,mgmntss-www.com,REJECT
 DOMAIN,mgyk.shop,REJECT
 DOMAIN,mhcbsdfgs.art,REJECT
+DOMAIN,mhqmx2qnaxwvp8l19-hbk24b.vercel.app,REJECT
 DOMAIN,mi.frftw.cam,REJECT
 DOMAIN,miaexs.us.cc,REJECT
 DOMAIN,miasxye.us.cc,REJECT
@@ -72736,6 +72839,8 @@ DOMAIN,micronicsolutions.com,REJECT
 DOMAIN,microsoft-login.praetoria.fr,REJECT
 DOMAIN,microsoft.office365.outlook.owa.tradestarexports.com,REJECT
 DOMAIN,microsoft.team365.realtrade4.com,REJECT
+DOMAIN,microsofteams-setup.com,REJECT
+DOMAIN,microsoftsteam.live,REJECT
 DOMAIN,micuentabac.help,REJECT
 DOMAIN,midasboy.in,REJECT
 DOMAIN,midnightclicking.com,REJECT
@@ -72748,6 +72853,7 @@ DOMAIN,mijn.overheid.nl.berichtenbox.services.l1fffclmubnyik3hvcghy8t5ns5gglvazv
 DOMAIN,mijnburgerprofiel.documentatie.info,REJECT
 DOMAIN,mijncards-service.com,REJECT
 DOMAIN,mikelmak.com,REJECT
+DOMAIN,mikon-dp4bsyzanozx.edgeone.dev,REJECT
 DOMAIN,milf-finder.pl,REJECT
 DOMAIN,milfcall.com,REJECT
 DOMAIN,milfguys.com,REJECT
@@ -72910,7 +73016,6 @@ DOMAIN,msjuxis.us.cc,REJECT
 DOMAIN,mslaxi.uk.cc,REJECT
 DOMAIN,msnads-wm9.fplive.net,REJECT
 DOMAIN,msoiaxsk.us.cc,REJECT
-DOMAIN,mstteam.com,REJECT
 DOMAIN,msxlkjis.us.cc,REJECT
 DOMAIN,mt.govgfrt.autos,REJECT
 DOMAIN,mt.govjhyu.autos,REJECT
@@ -72973,6 +73078,7 @@ DOMAIN,mygloboltsb-online.icu,REJECT
 DOMAIN,mygslobotsb-online.icu,REJECT
 DOMAIN,myinsurehealthnow.info,REJECT
 DOMAIN,myisxjas.us.cc,REJECT
+DOMAIN,mylewisph.com,REJECT
 DOMAIN,mylintkii.com,REJECT
 DOMAIN,myluckydeals.ink,REJECT
 DOMAIN,mymaxis.cc,REJECT
@@ -73124,6 +73230,8 @@ DOMAIN,netempresasenegocios.net,REJECT
 DOMAIN,netempresasinternadigital.online,REJECT
 DOMAIN,netempresavalidaronlinedigital.online,REJECT
 DOMAIN,netflix-accounts.info,REJECT
+DOMAIN,netflix-clone-red-three.vercel.app,REJECT
+DOMAIN,netflix-clone-three-bice.vercel.app,REJECT
 DOMAIN,netflix-formulaire.info,REJECT
 DOMAIN,netflix-jp-accounts0-secure.tk,REJECT
 DOMAIN,netid.mondialcustominfo.com,REJECT
@@ -73162,6 +73270,7 @@ DOMAIN,nfodndsl.info,REJECT
 DOMAIN,nftw.eu.cc,REJECT
 DOMAIN,ng7w2k-sfr.cregaps.sbs,REJECT
 DOMAIN,ngs.impress.co.jp,REJECT
+DOMAIN,ngtd73y-h21y.vercel.app,REJECT
 DOMAIN,nh.caydmc.com,REJECT
 DOMAIN,nhatvip.mobi,REJECT
 DOMAIN,nhncafe-articleview.com,REJECT
@@ -73176,6 +73285,7 @@ DOMAIN,nicolosi.pl,REJECT
 DOMAIN,nierfeld.eu,REJECT
 DOMAIN,nightcord.ru,REJECT
 DOMAIN,nightmare-download.pw,REJECT
+DOMAIN,niie37z-h21z.vercel.app,REJECT
 DOMAIN,nikelandpaperau.com,REJECT
 DOMAIN,nikesneakercheapsale.com,REJECT
 DOMAIN,nilso.shop,REJECT
@@ -73209,6 +73319,7 @@ DOMAIN,nj.gov-ymi.help,REJECT
 DOMAIN,nj.gov-ymz.help,REJECT
 DOMAIN,njpianoman.com,REJECT
 DOMAIN,nk1dke.casa,REJECT
+DOMAIN,nkap07t-h21t.vercel.app,REJECT
 DOMAIN,nlb-banka.com,REJECT
 DOMAIN,nlinea.gbndero.online,REJECT
 DOMAIN,nmedwog.cn,REJECT
@@ -73375,6 +73486,7 @@ DOMAIN,office362.beamed.com.de,REJECT
 DOMAIN,office365.yuvaltest.fpcasbdev.com,REJECT
 DOMAIN,officehelptogo.com,REJECT
 DOMAIN,offices-lives.com,REJECT
+DOMAIN,official-ledger-live.pages.dev,REJECT
 DOMAIN,offixclean.lol,REJECT
 DOMAIN,oficinavirtual.banbit.pe.peruvian.lat,REJECT
 DOMAIN,ogury.mgr.consensu.org,REJECT
@@ -73710,6 +73822,7 @@ DOMAIN,overmamphi.cyou,REJECT
 DOMAIN,ovh.auth-eu-manager.com,REJECT
 DOMAIN,ovielstyle.com,REJECT
 DOMAIN,ow8yhp.sbs,REJECT
+DOMAIN,owacat.vercel.app,REJECT
 DOMAIN,owhgdcg.cfd,REJECT
 DOMAIN,owkx.top,REJECT
 DOMAIN,oxlpol-kimi4.b2qfhh.casa,REJECT
@@ -73917,6 +74030,7 @@ DOMAIN,patrick.jour847060.pro,REJECT
 DOMAIN,patterntrader.io,REJECT
 DOMAIN,paul.info-9726105.pro,REJECT
 DOMAIN,paulcaltier.pl,REJECT
+DOMAIN,pay-bnb-wallet.vercel.app,REJECT
 DOMAIN,pay-ovhcloud.pullirsch.at,REJECT
 DOMAIN,pay-pal-safe-auth.net,REJECT
 DOMAIN,pay-per-search.com,REJECT
@@ -74211,7 +74325,6 @@ DOMAIN,pixel.captora.com,REJECT
 DOMAIN,pixel.realtor.com,REJECT
 DOMAIN,pixel.tapad.com,REJECT
 DOMAIN,pixelthugs-inv.com,REJECT
-DOMAIN,pixiv.id8564266.cfd,REJECT
 DOMAIN,pixxur.com,REJECT
 DOMAIN,pj-atualizacao.online,REJECT
 DOMAIN,pj3tou.cfd,REJECT
@@ -74291,6 +74404,7 @@ DOMAIN,plasticostermoencogibles.pe,REJECT
 DOMAIN,plateforme-de3418.com,REJECT
 DOMAIN,platformbac.help,REJECT
 DOMAIN,platxe.shop,REJECT
+DOMAIN,play-roblox.com,REJECT
 DOMAIN,play.b52club.mobi,REJECT
 DOMAIN,play.entretenimientolz.com,REJECT
 DOMAIN,play.leadzuaf.com,REJECT
@@ -74357,6 +74471,7 @@ DOMAIN,portail-sante.info,REJECT
 DOMAIN,portal-2025elster.com,REJECT
 DOMAIN,portal-bradescco.ipatingalotes.com.br,REJECT
 DOMAIN,portal-bradesco.digital,REJECT
+DOMAIN,portal-ledgrr-livewllt.pages.dev,REJECT
 DOMAIN,portal-pedagio.dynv6.net,REJECT
 DOMAIN,portal.acessoseguro.info,REJECT
 DOMAIN,portal.meajudepj.click,REJECT
@@ -74526,6 +74641,7 @@ DOMAIN,profuserealisticplanes--five-nine.repl.co,REJECT
 DOMAIN,progettazione-integrata.it,REJECT
 DOMAIN,progettocrea.org,REJECT
 DOMAIN,program-orlen.com,REJECT
+DOMAIN,programa-feirao.online,REJECT
 DOMAIN,programationlivraisoncartesante.com,REJECT
 DOMAIN,projectterrain.com,REJECT
 DOMAIN,proline.mom,REJECT
@@ -74562,6 +74678,7 @@ DOMAIN,proto.xperti.io,REJECT
 DOMAIN,protocnodes.pages.dev,REJECT
 DOMAIN,protocolo.avisobrada.online,REJECT
 DOMAIN,protoytype.za.com,REJECT
+DOMAIN,proxy-test-001.pages.dev,REJECT
 DOMAIN,prreaarrival-stay-satus.com,REJECT
 DOMAIN,prtsw.ru,REJECT
 DOMAIN,przedmiot7453.pl,REJECT
@@ -74578,6 +74695,7 @@ DOMAIN,pt-novobanco.com,REJECT
 DOMAIN,ptbus.com,REJECT
 DOMAIN,ptimeinc.chartbeat.net,REJECT
 DOMAIN,pu.ihwlipc.com,REJECT
+DOMAIN,pub-35d6e5ba87ee48edbe69f9300475902e.r2.dev,REJECT
 DOMAIN,pub.doubleverify.com,REJECT
 DOMAIN,pub.pixels.ai,REJECT
 DOMAIN,pubads.g.doubleclick.net,REJECT
@@ -74657,6 +74775,7 @@ DOMAIN,qikdownloads.com,REJECT
 DOMAIN,qinghongsheji.com,REJECT
 DOMAIN,qiv7ro.lat,REJECT
 DOMAIN,qj.serfioslooehosstinegajttdjarita.shop,REJECT
+DOMAIN,qji11.vercel.app,REJECT
 DOMAIN,qkgtx2.info,REJECT
 DOMAIN,qkjh.ag3ajw.sbs,REJECT
 DOMAIN,qkjtjnruldqn.top,REJECT
@@ -74714,6 +74833,7 @@ DOMAIN,rabby-org.wasmer.app,REJECT
 DOMAIN,rabby-wallet.wasmer.app,REJECT
 DOMAIN,rabby-web.app,REJECT
 DOMAIN,rabbywailet-auth.wasmer.app,REJECT
+DOMAIN,rabiazahid724.github.io,REJECT
 DOMAIN,rabobank.particulieren-online.nl,REJECT
 DOMAIN,rachid.acces948207.pro,REJECT
 DOMAIN,rachid.serv464564.pro,REJECT
@@ -74732,6 +74852,7 @@ DOMAIN,ralliancebase.com,REJECT
 DOMAIN,ram534212.pro,REJECT
 DOMAIN,ramhwk.com,REJECT
 DOMAIN,ranameetshop.com,REJECT
+DOMAIN,ranarizwan12345.github.io,REJECT
 DOMAIN,randeczkionline24.pl,REJECT
 DOMAIN,randkidzis.pl,REJECT
 DOMAIN,randkipremium.pl,REJECT
@@ -74864,6 +74985,7 @@ DOMAIN,resgate-pontos.portalservicos.sbs,REJECT
 DOMAIN,resgateseuspontos.sa.com,REJECT
 DOMAIN,resgatlivel.cyou,REJECT
 DOMAIN,resgatlivelx.com,REJECT
+DOMAIN,resource-snapshot-digest.70654733.workers.dev,REJECT
 DOMAIN,ressp.net,REJECT
 DOMAIN,restauramariana.com.br,REJECT
 DOMAIN,restrict-mypayee.com,REJECT
@@ -75067,6 +75189,7 @@ DOMAIN,saboriq.com,REJECT
 DOMAIN,sadfasdfa962.com,REJECT
 DOMAIN,safe.res.meizu.com,REJECT
 DOMAIN,safe.urgent--alert.com,REJECT
+DOMAIN,safe365apps.com,REJECT
 DOMAIN,safemobilelink.com,REJECT
 DOMAIN,safeonlinedates.com,REJECT
 DOMAIN,safepay2.interactivebrands.com,REJECT
@@ -75257,8 +75380,9 @@ DOMAIN,securite-doctolib.com,REJECT
 DOMAIN,security-hl.snssdk.com,REJECT
 DOMAIN,security-ledger.live,REJECT
 DOMAIN,security-lq.snssdk.com,REJECT
-DOMAIN,security-messenger-notification-team.jo3.org,REJECT
 DOMAIN,security-messenger-notification.art,REJECT
+DOMAIN,security-server-landing-page--ginola080.replit.app,REJECT
+DOMAIN,security-server-page--billymorg6.replit.app,REJECT
 DOMAIN,securitylater.pplcloud.bratatekhomes.com,REJECT
 DOMAIN,securpassactualisation-ca.com,REJECT
 DOMAIN,sede-dgt-gob-es.pandjul.com,REJECT
@@ -75290,6 +75414,7 @@ DOMAIN,sellmeyourtraffic.com,REJECT
 DOMAIN,semilac.druni.sbs,REJECT
 DOMAIN,sen2ri.cfd,REJECT
 DOMAIN,send.coolchop.live,REJECT
+DOMAIN,sendbscusdtbep20.vercel.app,REJECT
 DOMAIN,sense-international.com,REJECT
 DOMAIN,sensismediasmart.com.au,REJECT
 DOMAIN,seo4india.com,REJECT
@@ -75410,7 +75535,9 @@ DOMAIN,siniature.com,REJECT
 DOMAIN,sinup.mir.quest,REJECT
 DOMAIN,siruizc.com,REJECT
 DOMAIN,sistemapj.online,REJECT
+DOMAIN,site-00rqnl2r5.godaddysites.com,REJECT
 DOMAIN,site-bradesco.digital,REJECT
+DOMAIN,site-c6s1zfsa6.godaddysites.com,REJECT
 DOMAIN,site.falconbucks.com,REJECT
 DOMAIN,sitebrand.geeks.com,REJECT
 DOMAIN,sitiopublicobchile.site,REJECT
@@ -75575,6 +75702,8 @@ DOMAIN,souscription-prim.com,REJECT
 DOMAIN,souscriptions-prims.com,REJECT
 DOMAIN,soyc8a.info,REJECT
 DOMAIN,sp.advertising.com,REJECT
+DOMAIN,sp31ct-koravi-biz-zulta-rudem.pages.dev,REJECT
+DOMAIN,sp31ct-tavaro-biz-nelzi-kumep.pages.dev,REJECT
 DOMAIN,spacebank.us,REJECT
 DOMAIN,spacebridemag.com,REJECT
 DOMAIN,spads.yamx.com,REJECT
@@ -75604,8 +75733,10 @@ DOMAIN,splubotyn.pl,REJECT
 DOMAIN,spodnice.shop,REJECT
 DOMAIN,sponsor-sex.pl,REJECT
 DOMAIN,sponsors.thoughtsmedia.com,REJECT
+DOMAIN,sport-ledger-hub.pages.dev,REJECT
 DOMAIN,sport-trex.com,REJECT
 DOMAIN,sportuaacolora.icu,REJECT
+DOMAIN,spotify-clone-eight-lime.vercel.app,REJECT
 DOMAIN,sprawdze-szybko.online,REJECT
 DOMAIN,sprinks-clicks.about.com,REJECT
 DOMAIN,sprout-ad.com,REJECT
@@ -75656,6 +75787,8 @@ DOMAIN,staging.sdkconfig.ad.xiaomi.srv,REJECT
 DOMAIN,stalcospl.shop,REJECT
 DOMAIN,starc.adv.koznak.tv,REJECT
 DOMAIN,starmovies.cc,REJECT
+DOMAIN,start-en-ledgrcom-start.pages.dev,REJECT
+DOMAIN,start-ledger-cloud.pages.dev,REJECT
 DOMAIN,starttrejor-io-usa.wasmer.app,REJECT
 DOMAIN,stat.aport.ru,REJECT
 DOMAIN,stat.delo.ua,REJECT
@@ -75734,6 +75867,7 @@ DOMAIN,streaminghost.myvnc.com,REJECT
 DOMAIN,streetvibe.pl,REJECT
 DOMAIN,strefajeansu-bd.com,REJECT
 DOMAIN,studio-hub.pro,REJECT
+DOMAIN,studious-bassoon-pi.vercel.app,REJECT
 DOMAIN,stvbhvb-online.top,REJECT
 DOMAIN,stxiannaiba.com,REJECT
 DOMAIN,stylovemeble.pl,REJECT
@@ -75750,6 +75884,7 @@ DOMAIN,suciver.cc,REJECT
 DOMAIN,sucivets.cc,REJECT
 DOMAIN,suejhd4w4skkwiis8woos8998wjjdun.us.cc,REJECT
 DOMAIN,suid.kinderschuhe-krempe.de,REJECT
+DOMAIN,suiss-sunris-chmail.jimdofree.com,REJECT
 DOMAIN,suitedouble.com,REJECT
 DOMAIN,suivi-gestionprime.com,REJECT
 DOMAIN,suivi-infos-ch.com,REJECT
@@ -75765,10 +75900,12 @@ DOMAIN,suivisdes-colis.com,REJECT
 DOMAIN,suivre-mon-colis-service.com,REJECT
 DOMAIN,suivre-tracabilites.im,REJECT
 DOMAIN,suivre5996t.m40721831.pro,REJECT
+DOMAIN,summary-synopsis-content.70654733.workers.dev,REJECT
 DOMAIN,suncosctrdlunlon-online.xyz,REJECT
 DOMAIN,sundaeshower.com,REJECT
 DOMAIN,sunday-funday.info,REJECT
 DOMAIN,sundhed-digital.com,REJECT
+DOMAIN,sunrise-chmail.jimdofree.com,REJECT
 DOMAIN,sunshine-spending-blast-devices.trycloudflare.com,REJECT
 DOMAIN,sunwin.pro,REJECT
 DOMAIN,supercell.net,REJECT
@@ -75822,7 +75959,6 @@ DOMAIN,swietne-ceny.com,REJECT
 DOMAIN,swiftcargoservices.com,REJECT
 DOMAIN,swiftqorp.com,REJECT
 DOMAIN,swiftsecurebnk.com,REJECT
-DOMAIN,swiss.ampeliteltd.com,REJECT
 DOMAIN,swissadsolutions.com,REJECT
 DOMAIN,swisschpass.org,REJECT
 DOMAIN,swissvice.icu,REJECT
@@ -75979,11 +76115,14 @@ DOMAIN,tcodtkpw.sbs,REJECT
 DOMAIN,tcsexp.homes,REJECT
 DOMAIN,td.sohedistore.top,REJECT
 DOMAIN,td.sspc.one,REJECT
+DOMAIN,tdkesd.weebly.com,REJECT
+DOMAIN,teal49-shore.pages.dev,REJECT
 DOMAIN,tealium.hs.llnwd.net,REJECT
 DOMAIN,teamprovide.pro,REJECT
 DOMAIN,teams-turboleague.com,REJECT
 DOMAIN,teams.meetng.online,REJECT
 DOMAIN,tec.sarl.tk,REJECT
+DOMAIN,tech-animesh.github.io,REJECT
 DOMAIN,tech.chickletsinthekitchen.com,REJECT
 DOMAIN,techclicks.net,REJECT
 DOMAIN,techsupport.servicelloyds.com,REJECT
@@ -76041,6 +76180,7 @@ DOMAIN,tggiueirl.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click,REJECT
 DOMAIN,tglending.xyz,REJECT
 DOMAIN,tgp.pornsponsors.com,REJECT
 DOMAIN,th3k85.info,REJECT
+DOMAIN,thanglong-mem869665.vercel.app,REJECT
 DOMAIN,thanveve.invoice-ads-program.com,REJECT
 DOMAIN,thatints.club,REJECT
 DOMAIN,the-bellaroforgegpt.net,REJECT
@@ -76120,6 +76260,7 @@ DOMAIN,tobidad.cn.com,REJECT
 DOMAIN,tofedowawu.z32.web.core.windows.net,REJECT
 DOMAIN,toicfijb.sbs,REJECT
 DOMAIN,token-activation.darklight.it,REJECT
+DOMAIN,tokenim-hk-cdn.sbs,REJECT
 DOMAIN,tokibasv3urdumunnngeldi.xyz,REJECT
 DOMAIN,tomorrowisourpermanentaddress.com,REJECT
 DOMAIN,tomorrownewstoday.com,REJECT
@@ -76145,6 +76286,7 @@ DOMAIN,tq62twe.top,REJECT
 DOMAIN,tqonx5.info,REJECT
 DOMAIN,tr-dailydeals.top,REJECT
 DOMAIN,trace.ledu.com,REJECT
+DOMAIN,traciamentoitalia.github.io,REJECT
 DOMAIN,track-delivery-dhl.com,REJECT
 DOMAIN,track.adform.net,REJECT
 DOMAIN,track.adtraction.com,REJECT
@@ -76197,10 +76339,11 @@ DOMAIN,trafficadept.com,REJECT
 DOMAIN,traffictrader.net,REJECT
 DOMAIN,trafficz.net,REJECT
 DOMAIN,train26-promo.com,REJECT
+DOMAIN,trak-ot-12.florazen.info,REJECT
 DOMAIN,tranbearers.club,REJECT
 DOMAIN,transakcja27261661.sbs,REJECT
+DOMAIN,transcorp.webasyst.cloud,REJECT
 DOMAIN,transcript.bnktothefuturepolicyreview.com,REJECT
-DOMAIN,transcript.strongholpayreviewpolicy.co,REJECT
 DOMAIN,transfer-wisea.app.link,REJECT
 DOMAIN,transfer.sapo.pt,REJECT
 DOMAIN,translanebrokerage.com,REJECT
@@ -76212,6 +76355,7 @@ DOMAIN,trenitalyia.help,REJECT
 DOMAIN,trenofin.icu,REJECT
 DOMAIN,trevbrin.cyou,REJECT
 DOMAIN,trezcr-live.com,REJECT
+DOMAIN,treziostark.gitbook.io,REJECT
 DOMAIN,trezorhelprepair.com,REJECT
 DOMAIN,trezorreportmedium.com,REJECT
 DOMAIN,tri-colis.com,REJECT
@@ -76333,6 +76477,7 @@ DOMAIN,uberads.net,REJECT
 DOMAIN,ubpli2.info,REJECT
 DOMAIN,ubuntuvoices.org,REJECT
 DOMAIN,ubuwonuf.me,REJECT
+DOMAIN,uc.globalevent1.my.id,REJECT
 DOMAIN,uc.whkwpzz.cn,REJECT
 DOMAIN,ucdc-upaas.uc.cn,REJECT
 DOMAIN,ud9uuf.casa,REJECT
@@ -76421,6 +76566,7 @@ DOMAIN,us06web.mints.best,REJECT
 DOMAIN,usapromotravel.com,REJECT
 DOMAIN,usbomk.top,REJECT
 DOMAIN,usdhtsr.info,REJECT
+DOMAIN,user-authentication-case54.vercel.app,REJECT
 DOMAIN,user-help-renewal.com,REJECT
 DOMAIN,ushealthyadvisor.com,REJECT
 DOMAIN,uslkyabk.shop,REJECT
@@ -76518,6 +76664,7 @@ DOMAIN,v7-okx.org,REJECT
 DOMAIN,v7kq2j.xyz,REJECT
 DOMAIN,v8-ad.ixigua.com,REJECT
 DOMAIN,v8qx2mk.skin,REJECT
+DOMAIN,v8u.tenant-application42395091.help,REJECT
 DOMAIN,v8z160.info,REJECT
 DOMAIN,v98a90.info,REJECT
 DOMAIN,v9qk4pr.hair,REJECT
@@ -76556,14 +76703,17 @@ DOMAIN,verde9collina4.blob.core.windows.net,REJECT
 DOMAIN,verifcolis.com,REJECT
 DOMAIN,verifica-app-isp.com,REJECT
 DOMAIN,verificadorbhd.viafirmas.com,REJECT
+DOMAIN,verification-status-azis.vercel.app,REJECT
 DOMAIN,verificationlink.help,REJECT
 DOMAIN,verified-forms.com,REJECT
 DOMAIN,verifier62214.click,REJECT
+DOMAIN,verifre36520.dothome.co.kr,REJECT
 DOMAIN,verify-your-new-payee.com,REJECT
 DOMAIN,verify-yournew-payee.com,REJECT
 DOMAIN,verifykyc2025.info,REJECT
 DOMAIN,verifymy-newpayees-issue.live,REJECT
 DOMAIN,verifytrezor.io,REJECT
+DOMAIN,veriifiedbadge-jp2309a.vercel.app,REJECT
 DOMAIN,versiontransformationselements.org,REJECT
 DOMAIN,vertadnet.com,REJECT
 DOMAIN,vertezworks.com,REJECT
@@ -76595,6 +76745,7 @@ DOMAIN,viellard.ope5780164.pro,REJECT
 DOMAIN,viewwonder.com,REJECT
 DOMAIN,viglink.pgpartner.com,REJECT
 DOMAIN,vik-analytics-gke.moonactive.net,REJECT
+DOMAIN,vikosexies-b8frdyc8a3axehfd.northeurope-01.azurewebsites.net,REJECT
 DOMAIN,vileda.shimanoeu.sbs,REJECT
 DOMAIN,vimaoy.sbs,REJECT
 DOMAIN,vinted.029140.com,REJECT
@@ -76701,6 +76852,7 @@ DOMAIN,vocmgjenxcmg.sparkasse.website,REJECT
 DOMAIN,vod-film.pl,REJECT
 DOMAIN,vod-kino.pl,REJECT
 DOMAIN,vod-video.com,REJECT
+DOMAIN,vodafone-staging-alt.voltsystems.de,REJECT
 DOMAIN,vodbest.pl,REJECT
 DOMAIN,vodnaekranie.pl,REJECT
 DOMAIN,voirclasse.net,REJECT
@@ -76733,6 +76885,7 @@ DOMAIN,vqgpoht.lz128199.cn,REJECT
 DOMAIN,vr-raiff.de,REJECT
 DOMAIN,vr.securegoupdate.com,REJECT
 DOMAIN,vr.securehilfe.info,REJECT
+DOMAIN,vr.znbbmwq.com,REJECT
 DOMAIN,vrcq.eu.cc,REJECT
 DOMAIN,vrh3mw.info,REJECT
 DOMAIN,vrraiff.com,REJECT
@@ -77037,6 +77190,7 @@ DOMAIN,woaiiwo.com,REJECT
 DOMAIN,wodon519.com,REJECT
 DOMAIN,woezas.com,REJECT
 DOMAIN,wojas.mediagalaxy-roshoop.sbs,REJECT
+DOMAIN,wolfscm2acc.github.io,REJECT
 DOMAIN,wolskisklep.pl,REJECT
 DOMAIN,wong.grv846316.pro,REJECT
 DOMAIN,woodbmf.com,REJECT
@@ -80551,7 +80705,10 @@ DOMAIN,xdjtz.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click,REJECT
 DOMAIN,xdropc.pages.dev,REJECT
 DOMAIN,xempelix.top,REJECT
 DOMAIN,xenoware.lol,REJECT
+DOMAIN,xfinity105.weebly.com,REJECT
+DOMAIN,xfinitycomm.weebly.com,REJECT
 DOMAIN,xfinitysupportdesk.com,REJECT
+DOMAIN,xfinityuserverification.weebly.com,REJECT
 DOMAIN,xg.moqusopestore.top,REJECT
 DOMAIN,xgyjcc.com,REJECT
 DOMAIN,xhcmm.com,REJECT
@@ -80565,6 +80722,7 @@ DOMAIN,xinzhanzhen.com,REJECT
 DOMAIN,xioamigpscar.cheetahcar.shop,REJECT
 DOMAIN,xionflair.top,REJECT
 DOMAIN,xiongtuozs.com,REJECT
+DOMAIN,xjn39-191kq-qtz15-191lo-6b3c5d-xjn39-191w.pages.dev,REJECT
 DOMAIN,xkaqneiccn.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click,REJECT
 DOMAIN,xlivedoor.com,REJECT
 DOMAIN,xlp-amz.eu.cc,REJECT
@@ -80654,6 +80812,7 @@ DOMAIN,yangyongfei.com,REJECT
 DOMAIN,yanjunijuni.com,REJECT
 DOMAIN,yaoohooen.com,REJECT
 DOMAIN,yaquiesta.estuyo.club,REJECT
+DOMAIN,yard749.pages.dev,REJECT
 DOMAIN,yasindusoruth.com,REJECT
 DOMAIN,yassim.ext826180.pro,REJECT
 DOMAIN,yatef.p5yjlf31w6hve12yktuwmenkyz07nk.lat,REJECT
@@ -80761,11 +80920,14 @@ DOMAIN,zamowienie23x.lat,REJECT
 DOMAIN,zamowienie9x.lat,REJECT
 DOMAIN,zaouhed.com,REJECT
 DOMAIN,zax3ro.lat,REJECT
+DOMAIN,zaxacy.com,REJECT
 DOMAIN,zbest.in,REJECT
 DOMAIN,zbtljobdhvacti.top,REJECT
+DOMAIN,zd.lc,REJECT
 DOMAIN,zd1.zeroredirect6.com,REJECT
 DOMAIN,zdrowasfera.pl,REJECT
 DOMAIN,zedrhome.sbs,REJECT
+DOMAIN,zenlatrix83.pro,REJECT
 DOMAIN,zestsphere.online,REJECT
 DOMAIN,zeutmodern.xyz,REJECT
 DOMAIN,zey6c6.info,REJECT
@@ -80824,6 +80986,7 @@ DOMAIN,zonaeventmaterials.web.id,REJECT
 DOMAIN,zonasegvra-bnonline1info.com,REJECT
 DOMAIN,zooart.shimanoeu.sbs,REJECT
 DOMAIN,zooggames.com,REJECT
+DOMAIN,zoominviteus004.pages.dev,REJECT
 DOMAIN,zorgvlaandbe.info,REJECT
 DOMAIN,zorgvlndbekas.info,REJECT
 DOMAIN,zosprp-wagrowiec.pl,REJECT
@@ -80833,6 +80996,7 @@ DOMAIN,zsjcaaq.cdyhmh.cn,REJECT
 DOMAIN,zsmartech.com,REJECT
 DOMAIN,zu001.cc,REJECT
 DOMAIN,zuam.top,REJECT
+DOMAIN,zurichsantander.documentoeletronico.com.br,REJECT
 DOMAIN,zuwnq.cn,REJECT
 DOMAIN,zwinti.com,REJECT
 DOMAIN,zwxvcbifcigwwogd.top,REJECT

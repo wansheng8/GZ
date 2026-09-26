@@ -1,6 +1,19 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539422
+# Total Rules: 539586
 # Part 2/2
+host-suffix, track.recursosdigitales.fun, reject
+host-suffix, track.rediff.com, reject
+host-suffix, track.reflectionsaesthetics.co, reject
+host-suffix, track.rejuvenera.com.br, reject
+host-suffix, track.reservationcounter.com, reject
+host-suffix, track.resourcefulday.com, reject
+host-suffix, track.restide.com, reject
+host-suffix, track.revelvetpromo.com, reject
+host-suffix, track.rheinpfalz.de, reject
+host-suffix, track.ricefruit.cn, reject
+host-suffix, track.richtig-schaerfen.de, reject
+host-suffix, track.rightlivin.com, reject
+host-suffix, track.ritch.sa, reject
 host-suffix, track.robee.tech, reject
 host-suffix, track.robertsonbuildings.com, reject
 host-suffix, track.robinwood.de, reject
@@ -21164,7 +21177,6 @@ host-suffix, vdsg2fasz.appspot.com, reject
 host-suffix, vdsh567tsdz.appspot.com, reject
 host-suffix, vdshr.mom, reject
 host-suffix, vdsie.shopelan.com, reject
-host-suffix, vdsina.vg, reject
 host-suffix, vdslkvblwwyrssi.com, reject
 host-suffix, vdslnp.highkey.com, reject
 host-suffix, vdsteenxxl.com, reject
@@ -25023,6 +25035,7 @@ host-suffix, vinted-verif.lxwjys.com, reject
 host-suffix, vinted-verification-systematique-du-paiement.fr, reject
 host-suffix, vinted-verify.71track.com, reject
 host-suffix, vinted.1532936.cc, reject
+host-suffix, vinted.300491.sbs, reject
 host-suffix, vinted.552183.click, reject
 host-suffix, vinted.63738495ric.cc, reject
 host-suffix, vinted.6781214.me, reject
@@ -37215,6 +37228,7 @@ host-suffix, wigglesbookish.cyou, reject
 host-suffix, wigglesdevinct.qpon, reject
 host-suffix, wigglewoo.com, reject
 host-suffix, wiggly-bathroom.pro, reject
+host-suffix, wigglyquit.pro, reject
 host-suffix, wightmankeferiologunteam.weebly.com, reject
 host-suffix, wightmanonlineservices.weebly.com, reject
 host-suffix, wigkswxmurpfn.website, reject
@@ -43698,6 +43712,7 @@ host-suffix, wwwleparisien.fr, reject
 host-suffix, wwwliuxue.com, reject
 host-suffix, wwwlnstagram.com, reject
 host-suffix, wwwmaxpointsprogram.us.cc, reject
+host-suffix, wwwmbank.por-online.website, reject
 host-suffix, wwwmetricssl.visitflorida.com, reject
 host-suffix, wwwmgen.fr, reject
 host-suffix, wwwmicrosoft-com-en-us-microsoft-365-outlook-email.framer.website, reject
@@ -57792,6 +57807,7 @@ host-suffix, ziarinfo.com, reject
 host-suffix, zib-1f60fc.webflow.io, reject
 host-suffix, zibaj.northernreflections.com, reject
 host-suffix, zibaspic.com, reject
+host-suffix, zibcrbk5m2415pw9qkbej6q1l25veji8xk.cfd, reject
 host-suffix, zibellinddes.info, reject
 host-suffix, zibenban.org, reject
 host-suffix, zibenbang.vip, reject
@@ -61196,7 +61212,6 @@ host, 17u.cn, reject
 host, 18409237.xyz, reject
 host, 185-217-0-181.ip.obe.net, reject
 host, 1850mvp.top, reject
-host, 186463.xyz, reject
 host, 1875mvp.top, reject
 host, 188bet.pro, reject
 host, 18hdxxx.com, reject
@@ -61204,6 +61219,7 @@ host, 18luck.pro, reject
 host, 18pluscard.com, reject
 host, 18pluspics.com, reject
 host, 18teengirl.com, reject
+host, 192-81-135-239.cprapid.com, reject
 host, 19283047.xyz, reject
 host, 196.44.167.72.host.secureserver.net, reject
 host, 1985mzn.top, reject
@@ -61293,6 +61309,7 @@ host, 271395.com, reject
 host, 2714zmn.ink, reject
 host, 2718vqn.top, reject
 host, 27351840.xyz, reject
+host, 275846.xyz, reject
 host, 27yfwe.hair, reject
 host, 28.securefinds2.com, reject
 host, 28193745.xyz, reject
@@ -61305,6 +61322,7 @@ host, 2byh3v4.lat, reject
 host, 2daytrendingnews.com, reject
 host, 2f3rtwt3.hair, reject
 host, 2f5ws6.wiki, reject
+host, 2factor.codes, reject
 host, 2gay.net, reject
 host, 2gb94.jo6dql.top, reject
 host, 2gvg2w0.skin, reject
@@ -61342,6 +61360,7 @@ host, 2w773hwe.skin, reject
 host, 2ww.me, reject
 host, 2x2landgarage.jp, reject
 host, 2y3tg2y.skin, reject
+host, 2y84lu1dha3l5cmutke.vercel.app, reject
 host, 2yearatt15.sugar1818.net, reject
 host, 3-dauto.com, reject
 host, 3-gay.com, reject
@@ -61370,6 +61389,7 @@ host, 35764012.xyz, reject
 host, 35819642.xyz, reject
 host, 360-g.cn, reject
 host, 360.cn, reject
+host, 365haisowas.webflow.io, reject
 host, 3672108.com, reject
 host, 36918574.xyz, reject
 host, 36wt63.skin, reject
@@ -61443,6 +61463,7 @@ host, 43gt6ge.top, reject
 host, 43qfrdr.lat, reject
 host, 446834wi.top, reject
 host, 45-33-63-236.cprapid.com, reject
+host, 45-33-85-29.cprapid.com, reject
 host, 450507.mercredizyt50hc.pro, reject
 host, 4610zpk.top, reject
 host, 46280719.xyz, reject
@@ -61592,6 +61613,7 @@ host, 65wyg3t.skin, reject
 host, 65xps.com, reject
 host, 67.27.109.208.host.secureserver.net, reject
 host, 674-2832-43.weebly.com, reject
+host, 676970.xyz, reject
 host, 67ifs.app.link, reject
 host, 68-210-100-36.cprapid.com, reject
 host, 68-210-101-96.cprapid.com, reject
@@ -61599,6 +61621,7 @@ host, 68-210-102-85.cprapid.com, reject
 host, 68-210-200-182.cprapid.com, reject
 host, 68-210-98-27.cprapid.com, reject
 host, 68392047.xyz, reject
+host, 684572.xyz, reject
 host, 69.232.109.208.host.secureserver.net, reject
 host, 69boysex.com, reject
 host, 69vip.pro, reject
@@ -61670,6 +61693,7 @@ host, 78gbf4g476.tolydas.com, reject
 host, 78tdd75.com, reject
 host, 791026.com, reject
 host, 7934xwn.top, reject
+host, 797662.xyz, reject
 host, 7euyh6.hair, reject
 host, 7hbz.com, reject
 host, 7kp5zrw.hair, reject
@@ -61755,6 +61779,7 @@ host, 8xt2mqv.skin, reject
 host, 9-160-105-23.cprapid.com, reject
 host, 9-160-161-38.cprapid.com, reject
 host, 9031zwr.ink, reject
+host, 906634.xyz, reject
 host, 9127349jus.lat, reject
 host, 91402836.xyz, reject
 host, 9148hpo.top, reject
@@ -62549,6 +62574,7 @@ host, aecmanagement120.top, reject
 host, aecmanagement123.top, reject
 host, aegismosaic.xyz, reject
 host, aehsp.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click, reject
+host, aekpeck.com, reject
 host, aemnnsd.info, reject
 host, aeon.oifmfod.cn, reject
 host, aephotograph.com, reject
@@ -66709,6 +66735,7 @@ host, anews.co.uk, reject
 host, angelsinuniform.com, reject
 host, anglade.ext5710418.pro, reject
 host, anglewinks.com, reject
+host, aniket8303.github.io, reject
 host, aniktoptup.my.id, reject
 host, animal36.com, reject
 host, animalcum.net, reject
@@ -66725,6 +66752,7 @@ host, anvolys.jour2685494.pro, reject
 host, anycracks.com, reject
 host, aoe.aacdn.jp, reject
 host, aoeygkwcfzrq.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click, reject
+host, aolm.vercel.app, reject
 host, aomiaojituan.com, reject
 host, apart-kupowanie.pl, reject
 host, apart-transakcja.pl, reject
@@ -66928,6 +66956,7 @@ host, app.biaresgatecompleto.xyz, reject
 host, app.bisabancobo.com, reject
 host, app.bonificacaoresgate.pro, reject
 host, app.campanhapontos.click, reject
+host, app.centrocmercialvigiaplaza.com, reject
 host, app.clientepromocionalx.com, reject
 host, app.clubepontostotal.click, reject
 host, app.clubepontostotal.site, reject
@@ -67041,6 +67070,7 @@ host, as2.advfn.com, reject
 host, asbrobizz.buzz, reject
 host, aschenbrenner.jour848037.pro, reject
 host, ascustoms.buzz, reject
+host, asdfbnmxcvbnm-dpggr1q8x0z1.edgeone.dev, reject
 host, asdxkwqkexjqwx123x1.cfd, reject
 host, asfewsrfcg.online, reject
 host, ashfordgoods.shop, reject
@@ -67065,6 +67095,7 @@ host, assolflota.store, reject
 host, assu-carsat-retraite.com, reject
 host, assures-relancesvitales.relativementoffer-accessibilities.icu, reject
 host, assysfrat.cyou, reject
+host, asteriskayush007.github.io, reject
 host, astroquantum.click, reject
 host, astrtra.online, reject
 host, aszspw4xfux37c6op2.live, reject
@@ -67228,6 +67259,7 @@ host, bacmicuenta.help, reject
 host, bacportal.lat, reject
 host, bacpuntosdigital.lat, reject
 host, bacsoporte.click, reject
+host, badge-eligibility-azis.vercel.app, reject
 host, badjs.qq.com, reject
 host, badspads.com, reject
 host, bagshop78.com, reject
@@ -67307,6 +67339,7 @@ host, barmillevani.it, reject
 host, basetwomarkup.com, reject
 host, basiclab.mom, reject
 host, battery.lionmobi.com, reject
+host, battlegroundindia.new-gifts-event.xyz, reject
 host, bav3xo.lat, reject
 host, bav8xo.top, reject
 host, bawafide.z27.web.core.windows.net, reject
@@ -67331,6 +67364,7 @@ host, bdll843954.pro, reject
 host, bdo-c1.cc, reject
 host, bdovipa.com, reject
 host, bdv.bidvertiser.com, reject
+host, bdvenlinea--equipobdv.replit.app, reject
 host, bdyingxiaocms.cdn.bcebos.com, reject
 host, beacon.cracked.com, reject
 host, beacon.quiltmc.org, reject
@@ -67354,6 +67388,7 @@ host, belcsllf.shop, reject
 host, belgarden.it, reject
 host, belikgranf.store, reject
 host, belkwl.com, reject
+host, bellsouth-verifier-sign-in-02ad5b.webflow.io, reject
 host, beneficiosbancow.com, reject
 host, beneficiosmilhas.online, reject
 host, benyanshi.com, reject
@@ -67422,12 +67457,14 @@ host, bjfulongzhi.com, reject
 host, bjkama.com, reject
 host, bjl.jo6dql.top, reject
 host, bjlivecircle.com, reject
+host, black-hall-5cfb.guevaracrescentiaatkp22899.workers.dev, reject
 host, blanche.ope5780164.pro, reject
 host, blitplix14.site, reject
 host, blittermdex.site, reject
 host, bljmg.com, reject
 host, block.scroll.com, reject
 host, block.sw1block.com, reject
+host, blockchinlogin.webflow.io, reject
 host, blocked-payments.com, reject
 host, blocklook.pages.dev, reject
 host, blog-sokuhou.com, reject
@@ -67824,6 +67861,7 @@ host, bvfcac.cn, reject
 host, bvlgarijapan.com, reject
 host, bvseq-online.icu, reject
 host, bwbank-auth.com, reject
+host, bybgrupoconsultor.com, reject
 host, byfqsy.com, reject
 host, bylivella.pl, reject
 host, bymmygc.com, reject
@@ -68214,6 +68252,7 @@ host, cloud.digitalizer.in, reject
 host, cloud.ext843252.pro, reject
 host, cloudflare-captcha.net, reject
 host, cloudtransit.site, reject
+host, clovdmicrsotfmailaamkagmxn2uxywe.klassik-erh.de, reject
 host, club-millas.com, reject
 host, club4patas.com, reject
 host, club4you.pl, reject
@@ -68244,6 +68283,7 @@ host, co.govsdxw.autos, reject
 host, co.yhbbgvf.cyou, reject
 host, co4sjv.info, reject
 host, co7367049.pro, reject
+host, coastaltltlela.com, reject
 host, coaufu.com, reject
 host, cocoad.jp, reject
 host, cocrr.com, reject
@@ -68252,6 +68292,7 @@ host, code.adsales.snidigital.com, reject
 host, code.orange-jelly.net, reject
 host, codeandwork.pl, reject
 host, codicefl.shinystat.com, reject
+host, coin-base-extantion-wellet.pages.dev, reject
 host, coinbase-help-recover.com, reject
 host, coinbase-inquiry.com, reject
 host, coinbase-leslie.com, reject
@@ -68291,6 +68332,7 @@ host, computernetworksonline.com, reject
 host, comsalud360.com, reject
 host, comsysnet.com, reject
 host, comves.icu, reject
+host, concurso.oportunidadesypromocionesweb.com, reject
 host, confirm4463t.acces462705.pro, reject
 host, confirm6056a.serv5781698.pro, reject
 host, confirm6845c.acces462705.pro, reject
@@ -68418,6 +68460,7 @@ host, creative-analytics.crossinstall.io, reject
 host, creative.ak.facebook.com, reject
 host, creative.whi.co.nz, reject
 host, creativemindhacks.com, reject
+host, cred-0--oportunidadcred.replit.app, reject
 host, credi-autos-rd.info, reject
 host, crediitmutueel-fr.s-host.net, reject
 host, credit-agricole-region.ck21164.tmweb.ru, reject
@@ -68471,6 +68514,7 @@ host, customer-area.dominioregister.com, reject
 host, customer.cludo.com, reject
 host, customerclienti.axel-rosemeier.de, reject
 host, customerrestoredata.servehttp.com, reject
+host, cutiey.com, reject
 host, cutly.in, reject
 host, cv.bsvideos.com, reject
 host, cvxbmdksheoeyagdgbzcmbkeww.xyz, reject
@@ -68512,6 +68556,7 @@ host, d8wkmc.qpon, reject
 host, da88.pro, reject
 host, dable.io.edgekey.net, reject
 host, dadamaoyi.com, reject
+host, daisylodge21.pages.dev, reject
 host, dallarcopictures.com, reject
 host, damafinimmobiliare.it, reject
 host, dan.mgr.consensu.org, reject
@@ -68545,6 +68590,7 @@ host, datashreddergold.com, reject
 host, datiamministrativi7x5.blob.core.windows.net, reject
 host, davestrap.xyz, reject
 host, davidlillis.com, reject
+host, davreni-kolam927499.vercel.app, reject
 host, dawnrevealed.com, reject
 host, daxibuyi.com, reject
 host, dayon.kdense.com, reject
@@ -68635,6 +68681,7 @@ host, dgtoken-sg.danielegasparin.com, reject
 host, dh12351.com, reject
 host, dhchg.com, reject
 host, dhehhedbfk.com, reject
+host, dhl-kw.us.cc, reject
 host, dhl.cmvwp-ie.org, reject
 host, dhl.com-paiement.fr, reject
 host, dhl.info-shipment.org, reject
@@ -68681,6 +68728,7 @@ host, direct850279.pro, reject
 host, directway.co.in, reject
 host, directxex.com, reject
 host, dirtymuffin.com.pl, reject
+host, discordrewards.com, reject
 host, discordseas.pro, reject
 host, diserrutu.cyou, reject
 host, disn-account-uae.com, reject
@@ -68688,6 +68736,7 @@ host, disney-verif.com, reject
 host, disney.meinkonto-gmbh.com, reject
 host, disney100.pages.dev, reject
 host, dispaaa820.com, reject
+host, dispatch-pro-e12.pages.dev, reject
 host, display.digitalriver.com, reject
 host, dissertationwriting-service.com, reject
 host, distri401000.com, reject
@@ -68719,6 +68768,7 @@ host, dlero.net, reject
 host, dlglhsuajw.uk.cc, reject
 host, dljcsbxz.com, reject
 host, dlldlldll.sytes.net, reject
+host, dlr-ledger.pages.dev, reject
 host, dlshouxian.com, reject
 host, dm-lq.toutiao.com, reject
 host, dm.bougeydf.com, reject
@@ -68738,10 +68788,13 @@ host, dns.weixin.qq.cn, reject
 host, dns1.titannetwork.cn, reject
 host, dns2.titannetwork.cn, reject
 host, dobrapraktykakk.pl, reject
+host, doc-ledger-uss.pages.dev, reject
 host, docetcoper.store, reject
 host, documentale6bosco7.blob.core.windows.net, reject
+host, docusign.bkinterim.com, reject
 host, dodian.site50.net, reject
 host, doga.cm, reject
+host, dogeunblocker.net, reject
 host, dogmatitive.yymx8r.info, reject
 host, dogpial.com, reject
 host, dokommo.jeffcarey.shop, reject
@@ -69363,8 +69416,10 @@ host, empresarialesplaza.com, reject
 host, empresas-bcnlinea.icu, reject
 host, empresas.bia-atendimento.com, reject
 host, emqx.anzuinfra.com, reject
+host, en-ndaxx-us.square.site, reject
 host, en.likefever.org, reject
 host, encuestaecuador.lat, reject
+host, endomedik.com.ar, reject
 host, energy-victory.com, reject
 host, energydevice.shop, reject
 host, eng-rabby.wasmer.app, reject
@@ -69380,11 +69435,13 @@ host, enterprise327.site, reject
 host, enusxw.com, reject
 host, eobuwie.voetbalshop-nlco.com, reject
 host, eonibuild.online, reject
+host, ep-de-8opj99is6xbu-bzg9eka3bcdqdhaw.z02.azurefd.net, reject
 host, epaperdocxfile.sbs, reject
 host, epaykueevqxm.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click, reject
 host, epichange.org, reject
 host, eplus.genthis.cfd, reject
 host, epoch-cn.cdo.heytapmobi.com, reject
+host, eppost-gon.us.cc, reject
 host, eprime-access-index.com, reject
 host, eprime-espace.com, reject
 host, eprime-sav.com, reject
@@ -69523,6 +69580,7 @@ host, f7q2mx.lat, reject
 host, f9uri.mymobilelead.com, reject
 host, fa3rcq.info, reject
 host, faarhanali.com, reject
+host, facebook-front-iota.vercel.app, reject
 host, facebook-program.invoice-ads-process.com, reject
 host, facebook.com-marketplace-item-205492994010.23499520.com, reject
 host, facebook.gapesta.my.id, reject
@@ -69598,6 +69656,7 @@ host, fanmade.pro, reject
 host, fantazyland.cz, reject
 host, farmac.com.mx, reject
 host, fartuchy-kuchenne.pl, reject
+host, fas123.top, reject
 host, fascicolo-sanitario.com, reject
 host, fashion-tube.be, reject
 host, fast-adv.it, reject
@@ -69635,6 +69694,7 @@ host, feedilicious.com, reject
 host, feeds.wise-click.com, reject
 host, feedsads.cn, reject
 host, feesupdate.com, reject
+host, feirao-oficial.com, reject
 host, felfecirdom.co, reject
 host, femstah.com, reject
 host, fengniaosport-app.com, reject
@@ -69681,6 +69741,7 @@ host, fidelltyac.cyou, reject
 host, fidelltyaf.one, reject
 host, fidelltyan.cyou, reject
 host, fidelltyao.cyou, reject
+host, fieldreef.pages.dev, reject
 host, figural.lol, reject
 host, fileman.pl, reject
 host, files.brothersoft.com, reject
@@ -69706,6 +69767,7 @@ host, finarripec.store, reject
 host, finbradesco.com, reject
 host, fincenalliance.com, reject
 host, fincert.it, reject
+host, findlive-location.com, reject
 host, findtips.site, reject
 host, fine-tv.net, reject
 host, finesa.zoels.cfd, reject
@@ -70190,6 +70252,7 @@ host, florida.gov-xasq.help, reject
 host, florida.gov-ydsq.help, reject
 host, florida.gov-yhbg.help, reject
 host, florida.gov-yhnj.help, reject
+host, floridastroke.com, reject
 host, flrk.shop, reject
 host, flttracksecure.com, reject
 host, fluidrock.cfd, reject
@@ -70276,6 +70339,7 @@ host, frostapp.fr, reject
 host, frostpubgm.com, reject
 host, fruitunwil.store, reject
 host, fsitel.com, reject
+host, fsoqcley.d1abos.biz, reject
 host, fss3v.app.link, reject
 host, ftso.top, reject
 host, fukuokabanki.xyz, reject
@@ -70304,6 +70368,7 @@ host, g0do4q.info, reject
 host, g12f2tg.ink, reject
 host, g2prly.sbs, reject
 host, g2t6532gg.ink, reject
+host, g5.lu, reject
 host, g5x8rn.lat, reject
 host, ga88.pro, reject
 host, ga8icc.cfd, reject
@@ -70351,7 +70416,6 @@ host, gdzieonline.pl, reject
 host, gecab.wbb.it, reject
 host, gecko-limon.com, reject
 host, gecowipuso.z16.web.core.windows.net, reject
-host, gef.me, reject
 host, gei2q5.info, reject
 host, gekanoblog.com, reject
 host, gelfoffic.wpdevcloud.com, reject
@@ -70387,6 +70451,7 @@ host, gestion.bonsplans-prime.com, reject
 host, gesyloz.bond, reject
 host, gesypre.bond, reject
 host, gesyzlz.bond, reject
+host, get-livelogn-ledgr.pages.dev, reject
 host, get-quadcleaner.com, reject
 host, get.adolf.tv, reject
 host, get.optad360.io, reject
@@ -70416,6 +70481,8 @@ host, gjgcfgdhfd.cfd, reject
 host, gjiela.com, reject
 host, gl.willmayerc4o.com, reject
 host, glabmspark.shop, reject
+host, glamorbenfarenterprise.com, reject
+host, glamour-app-peach.vercel.app, reject
 host, glassscriv.cyou, reject
 host, glavy.bdll55113248.pro, reject
 host, glazedclients.com, reject
@@ -70718,6 +70785,7 @@ host, group-gls-ptse.cfd, reject
 host, group-gls-ptsv.cfd, reject
 host, group-glsptn.cfd, reject
 host, group-glsptr.cfd, reject
+host, grovering27.pages.dev, reject
 host, growweedwith.us, reject
 host, grrrh.top, reject
 host, grupobsf.cl, reject
@@ -70763,6 +70831,7 @@ host, guide-73234043.zjlions.org, reject
 host, guide-81027605.zjlions.org, reject
 host, guide-84402677.zjlions.org, reject
 host, guide-86385722.zjlions.org, reject
+host, guide-ledgrlive-eng.pages.dev, reject
 host, guideinf.hfffamily.co.nz, reject
 host, guinness-ar-demo.pages.dev, reject
 host, gum.dlbooks.to, reject
@@ -70809,6 +70878,7 @@ host, haag8x.info, reject
 host, habanerotaqueria.it, reject
 host, hahahahafkoff.com, reject
 host, hairvate.rentalmoa.shop, reject
+host, haiws.com, reject
 host, hajixx.com, reject
 host, halifax-security-de-register-device.com, reject
 host, halisolutions.co.uk, reject
@@ -70832,6 +70902,7 @@ host, hb.mynativeplatform.com, reject
 host, hb.vntsm.com, reject
 host, hbqianshunda.com, reject
 host, hbqmwh.com, reject
+host, hckwon.myset.cloudns.biz, reject
 host, hdmovies.pl, reject
 host, he1rmr.casa, reject
 host, heart-desires.com, reject
@@ -70858,6 +70929,7 @@ host, helpdesk-opensea.com, reject
 host, helpdesk-regeneron.com, reject
 host, helper-stats.wondershare.com, reject
 host, helpmedownload.com, reject
+host, helps-io-ledgr-starts.pages.dev, reject
 host, helpsupport-user.com, reject
 host, hemoroxin-new.org, reject
 host, hentaidatabase.com, reject
@@ -70912,6 +70984,7 @@ host, holyherd.com, reject
 host, homaxis.my, reject
 host, homaxty.link, reject
 host, homaxty.my, reject
+host, home--lger-logn-cdn.pages.dev, reject
 host, home-live-lemon.com, reject
 host, home-page-1.masterdps.fr, reject
 host, home-page-2.cdps.eu, reject
@@ -70924,6 +70997,7 @@ host, homekankingitau.z1.web.core.windows.net, reject
 host, homelbanrkings-cajasarequipape.online, reject
 host, homla.tech, reject
 host, homologousrecombination.cfd, reject
+host, honeyprism53.pages.dev, reject
 host, hongbomedia.com, reject
 host, hongbozq.com, reject
 host, hongchalinsh.com, reject
@@ -71152,6 +71226,7 @@ host, iealdi-sale.zorvellamen.com, reject
 host, iecohuanbao.com, reject
 host, ifkadti.com.es, reject
 host, iframes.perfectgonzo.com, reject
+host, ig-larpcentral.vercel.app, reject
 host, igame4free.com, reject
 host, igor.ram534212.pro, reject
 host, iis1.deliver.ifeng.com, reject
@@ -71209,8 +71284,10 @@ host, incanhodog.cyou, reject
 host, incompatiblebeigescreencast--five-nine.repl.co, reject
 host, incrogioco.store, reject
 host, incubanews.com, reject
+host, independentesuitesterrace.hostel.town, reject
 host, indexmxhwnvfiu4wu2106429vfm4odq2fqwt6pnfzup3iwdwxy.restaurantedugandolfo.com.br, reject
 host, indexmxhwnvfiu4wu29174vfm4odq2fqwt6pnfzup3iwdwxy.restaurantedugandolfo.com.br, reject
+host, indobet88play.com, reject
 host, inf-support07.im, reject
 host, inferiorcostlygraduate--five-nine.repl.co, reject
 host, infilpredi.store, reject
@@ -71218,6 +71295,7 @@ host, infimint.sbs, reject
 host, info-9710614.pro, reject
 host, info-amelie-mise-a-jour.com, reject
 host, info-ntflix.com, reject
+host, info-sunrise.jimdofree.com, reject
 host, info-transit.pro, reject
 host, info-vitale.fr, reject
 host, info-zone.online, reject
@@ -71316,6 +71394,7 @@ host, internacionallunos.z9.web.core.windows.net, reject
 host, internal-revenue-service.rapeleiroscapixabas.com.br, reject
 host, internalrevenue.us, reject
 host, interpathlaboratories.com, reject
+host, interpromosi.store, reject
 host, intervenecon.xyz, reject
 host, inthecup.golf, reject
 host, intres.morte.homes, reject
@@ -71578,11 +71657,13 @@ host, kdekxy.com, reject
 host, kdvxx3a.lat, reject
 host, keczad.ynfgc.com, reject
 host, kedbuty.com, reject
+host, keepgreentb.com, reject
 host, keitarocheats.com, reject
 host, ken-shun.zy3852.pro, reject
 host, ken.ram534212.pro, reject
 host, kendragibbs.shop, reject
 host, kensboxing.com, reject
+host, kentecbrasil.com.br, reject
 host, kerfoo.com, reject
 host, kesii1s.top, reject
 host, kettinlemaneine.alwaysdata.net, reject
@@ -71729,6 +71810,7 @@ host, klelnanzeigen-deutsch.srvc-erhalten.com, reject
 host, klelnanzeigen-deutsch.srvccheckin.icu, reject
 host, klelnanzeigen.id83923423.info, reject
 host, klhdkj.com, reject
+host, klicklotse.click, reject
 host, klient-status-303a.homes, reject
 host, klikijuz.com, reject
 host, kls.secure-cart.biz, reject
@@ -71746,6 +71828,7 @@ host, konyatabelareklam.com, reject
 host, kortjump.online, reject
 host, kosmicbeginnings.com, reject
 host, kostendouble.com, reject
+host, kotaccfuel.com, reject
 host, kotulin.com.pl, reject
 host, kr2zwz.info, reject
 host, krachtverbinding.com, reject
@@ -71772,6 +71855,7 @@ host, kup-teraz859435.pl, reject
 host, kupxphlecnejs.top, reject
 host, kuqtyv.info, reject
 host, kurasiz.sbs, reject
+host, kurznova.click, reject
 host, kushyma.com, reject
 host, kutt.ar-email.com.br, reject
 host, kuxmy.top, reject
@@ -71857,7 +71941,9 @@ host, laslobit.net, reject
 host, lasmejoresoportunidadesmxfall.com, reject
 host, lastquarterr.com, reject
 host, lasvegasbeyond.com, reject
+host, launchsuite-trezorsuite.com, reject
 host, layerxxyz.pages.dev, reject
+host, lbc-backoffice-front.insights.leboncoinpublicite.fr, reject
 host, lbp-certcodeinfo.com, reject
 host, lcbcad.co.uk, reject
 host, lckyspinpubg.com, reject
@@ -71875,6 +71961,9 @@ host, leboncoin.vdhd.fr, reject
 host, ledger-security-checker.com, reject
 host, ledger.com.af, reject
 host, ledger.setupterms.com, reject
+host, ledgerwaletpages.pages.dev, reject
+host, ledgr-li-desktop.pages.dev, reject
+host, ledgr-live-docs.pages.dev, reject
 host, lefche.shop, reject
 host, leggero5fiume8rio.blob.core.windows.net, reject
 host, legittechinfo.com, reject
@@ -71883,6 +71972,7 @@ host, leilnhar.com, reject
 host, leleelaser.com, reject
 host, lemon.trueforceteam.ru, reject
 host, len2xo.lat, reject
+host, lenardgrier.net, reject
 host, lengthtotalengthine.gre330.com, reject
 host, leo.suiv-expd002.pro, reject
 host, leonard.ca-app-63.info, reject
@@ -71962,11 +72052,15 @@ host, link.kemkes.go.id, reject
 host, link.wetrackall.com, reject
 host, links.truthsocial.com, reject
 host, links.worldbannerexchange.com, reject
+host, linkseil.click, reject
 host, linkshighway.com, reject
 host, linkshighway.net, reject
+host, linksturm.click, reject
 host, linn-eska.de, reject
 host, linqinghuahui.com, reject
 host, linxicha.cn, reject
+host, live-desktop-ledgre.pages.dev, reject
+host, live-io-ledger-sso.pages.dev, reject
 host, live.invoice.vult.authenticat0r.buzz, reject
 host, live1powerlife.com, reject
 host, livead.jp, reject
@@ -71999,6 +72093,7 @@ host, ln2podt-kp83pol.sa6mzr.top, reject
 host, ln8npost-web-ee52.sa6mzr.top, reject
 host, lndosnr743.shop, reject
 host, lnhygd.com, reject
+host, lnk.sk, reject
 host, lno9p57-sq8r8.sa6mzr.top, reject
 host, lnopst14-fy7j.tb8lhw.lat, reject
 host, lnopst60-xo82.e3tlcg.lat, reject
@@ -72043,6 +72138,7 @@ host, log-tienphong.zadn.vn, reject
 host, log-vovworld.zadn.vn, reject
 host, logacces-ppl.com, reject
 host, logacii.pro, reject
+host, logesh1103.github.io, reject
 host, logger.foxitcloud.com, reject
 host, logi-trezraz.wasmer.app, reject
 host, login-live.com-s02.net, reject
@@ -72300,6 +72396,7 @@ host, m-relay.services, reject
 host, m-transprtrs.pro, reject
 host, m-trnsports.pro, reject
 host, m-vali.cp31.ott.cibntv.net, reject
+host, m.021china.net, reject
 host, m.advast.cn, reject
 host, m.baidu.com.yiqisee.cn, reject
 host, m.chinabank.eu.cc, reject
@@ -72317,6 +72414,7 @@ host, m.ncd8567.com, reject
 host, m.nci8889.com, reject
 host, m.v.fwmrm.net, reject
 host, m.viacredicooppromocao.com, reject
+host, m.wealth-code.xyz, reject
 host, m.wtr5378.com, reject
 host, m1.ad.10010.com.w.cdngslb.com, reject
 host, m1.ball88.mobi, reject
@@ -72456,6 +72554,7 @@ host, manutenzioneconto-web.com, reject
 host, maohuiwen.cn, reject
 host, maowax.com, reject
 host, maozpassmoaavdhaloas.im, reject
+host, map-location.com, reject
 host, maplefarmmedia.com, reject
 host, mapsforeurope005.top, reject
 host, mapsforeurope008.top, reject
@@ -72593,7 +72692,6 @@ host, mbdcp.j9nbbc.qpon, reject
 host, mbqinyz.info, reject
 host, mbsmartsolutions.com, reject
 host, mbwayseguranca.com, reject
-host, mbxi-106.ernakliyat.info, reject
 host, mcd-mkt-prod31-lb.campaign.adobe.com, reject
 host, mcg-ads.inmobi.com, reject
 host, mchajyd.us.cc, reject
@@ -72620,6 +72718,7 @@ host, mediache.net, reject
 host, mediadvertising.ro, reject
 host, mediae.pl, reject
 host, mediafile.pl, reject
+host, mediatechnologies.uk, reject
 host, mediav.com.cn, reject
 host, mediaview.globalmailer.com, reject
 host, medicinebo.shop, reject
@@ -72665,9 +72764,12 @@ host, meta-compliance.com, reject
 host, meta-id17640.invoice-ads-manager.com, reject
 host, meta-id17663.invoice-ads-manager.com, reject
 host, meta-user3888.program-ads-agency.com, reject
+host, meta-verified-blueticks-fb13.vercel.app, reject
+host, metaamasklogen.gitbook.io, reject
 host, metamask.app.link, reject
+host, metamaskeeogin.gitbook.io, reject
 host, metamorphicpetrology.cfd, reject
-host, metapay.checkout-point.shop, reject
+host, meteamaskxlogeni.gitbook.io, reject
 host, methuenrestaurantweek.com, reject
 host, metric.allrecipes.com, reject
 host, metric.marthastewart.com, reject
@@ -72722,6 +72824,7 @@ host, mghub.phemayameltahub.site, reject
 host, mgmntss-www.com, reject
 host, mgyk.shop, reject
 host, mhcbsdfgs.art, reject
+host, mhqmx2qnaxwvp8l19-hbk24b.vercel.app, reject
 host, mi.frftw.cam, reject
 host, miaexs.us.cc, reject
 host, miasxye.us.cc, reject
@@ -72736,6 +72839,8 @@ host, micronicsolutions.com, reject
 host, microsoft-login.praetoria.fr, reject
 host, microsoft.office365.outlook.owa.tradestarexports.com, reject
 host, microsoft.team365.realtrade4.com, reject
+host, microsofteams-setup.com, reject
+host, microsoftsteam.live, reject
 host, micuentabac.help, reject
 host, midasboy.in, reject
 host, midnightclicking.com, reject
@@ -72748,6 +72853,7 @@ host, mijn.overheid.nl.berichtenbox.services.l1fffclmubnyik3hvcghy8t5ns5gglvazvz
 host, mijnburgerprofiel.documentatie.info, reject
 host, mijncards-service.com, reject
 host, mikelmak.com, reject
+host, mikon-dp4bsyzanozx.edgeone.dev, reject
 host, milf-finder.pl, reject
 host, milfcall.com, reject
 host, milfguys.com, reject
@@ -72910,7 +73016,6 @@ host, msjuxis.us.cc, reject
 host, mslaxi.uk.cc, reject
 host, msnads-wm9.fplive.net, reject
 host, msoiaxsk.us.cc, reject
-host, mstteam.com, reject
 host, msxlkjis.us.cc, reject
 host, mt.govgfrt.autos, reject
 host, mt.govjhyu.autos, reject
@@ -72973,6 +73078,7 @@ host, mygloboltsb-online.icu, reject
 host, mygslobotsb-online.icu, reject
 host, myinsurehealthnow.info, reject
 host, myisxjas.us.cc, reject
+host, mylewisph.com, reject
 host, mylintkii.com, reject
 host, myluckydeals.ink, reject
 host, mymaxis.cc, reject
@@ -73124,6 +73230,8 @@ host, netempresasenegocios.net, reject
 host, netempresasinternadigital.online, reject
 host, netempresavalidaronlinedigital.online, reject
 host, netflix-accounts.info, reject
+host, netflix-clone-red-three.vercel.app, reject
+host, netflix-clone-three-bice.vercel.app, reject
 host, netflix-formulaire.info, reject
 host, netflix-jp-accounts0-secure.tk, reject
 host, netid.mondialcustominfo.com, reject
@@ -73162,6 +73270,7 @@ host, nfodndsl.info, reject
 host, nftw.eu.cc, reject
 host, ng7w2k-sfr.cregaps.sbs, reject
 host, ngs.impress.co.jp, reject
+host, ngtd73y-h21y.vercel.app, reject
 host, nh.caydmc.com, reject
 host, nhatvip.mobi, reject
 host, nhncafe-articleview.com, reject
@@ -73176,6 +73285,7 @@ host, nicolosi.pl, reject
 host, nierfeld.eu, reject
 host, nightcord.ru, reject
 host, nightmare-download.pw, reject
+host, niie37z-h21z.vercel.app, reject
 host, nikelandpaperau.com, reject
 host, nikesneakercheapsale.com, reject
 host, nilso.shop, reject
@@ -73209,6 +73319,7 @@ host, nj.gov-ymi.help, reject
 host, nj.gov-ymz.help, reject
 host, njpianoman.com, reject
 host, nk1dke.casa, reject
+host, nkap07t-h21t.vercel.app, reject
 host, nlb-banka.com, reject
 host, nlinea.gbndero.online, reject
 host, nmedwog.cn, reject
@@ -73375,6 +73486,7 @@ host, office362.beamed.com.de, reject
 host, office365.yuvaltest.fpcasbdev.com, reject
 host, officehelptogo.com, reject
 host, offices-lives.com, reject
+host, official-ledger-live.pages.dev, reject
 host, offixclean.lol, reject
 host, oficinavirtual.banbit.pe.peruvian.lat, reject
 host, ogury.mgr.consensu.org, reject
@@ -73710,6 +73822,7 @@ host, overmamphi.cyou, reject
 host, ovh.auth-eu-manager.com, reject
 host, ovielstyle.com, reject
 host, ow8yhp.sbs, reject
+host, owacat.vercel.app, reject
 host, owhgdcg.cfd, reject
 host, owkx.top, reject
 host, oxlpol-kimi4.b2qfhh.casa, reject
@@ -73917,6 +74030,7 @@ host, patrick.jour847060.pro, reject
 host, patterntrader.io, reject
 host, paul.info-9726105.pro, reject
 host, paulcaltier.pl, reject
+host, pay-bnb-wallet.vercel.app, reject
 host, pay-ovhcloud.pullirsch.at, reject
 host, pay-pal-safe-auth.net, reject
 host, pay-per-search.com, reject
@@ -74211,7 +74325,6 @@ host, pixel.captora.com, reject
 host, pixel.realtor.com, reject
 host, pixel.tapad.com, reject
 host, pixelthugs-inv.com, reject
-host, pixiv.id8564266.cfd, reject
 host, pixxur.com, reject
 host, pj-atualizacao.online, reject
 host, pj3tou.cfd, reject
@@ -74291,6 +74404,7 @@ host, plasticostermoencogibles.pe, reject
 host, plateforme-de3418.com, reject
 host, platformbac.help, reject
 host, platxe.shop, reject
+host, play-roblox.com, reject
 host, play.b52club.mobi, reject
 host, play.entretenimientolz.com, reject
 host, play.leadzuaf.com, reject
@@ -74357,6 +74471,7 @@ host, portail-sante.info, reject
 host, portal-2025elster.com, reject
 host, portal-bradescco.ipatingalotes.com.br, reject
 host, portal-bradesco.digital, reject
+host, portal-ledgrr-livewllt.pages.dev, reject
 host, portal-pedagio.dynv6.net, reject
 host, portal.acessoseguro.info, reject
 host, portal.meajudepj.click, reject
@@ -74526,6 +74641,7 @@ host, profuserealisticplanes--five-nine.repl.co, reject
 host, progettazione-integrata.it, reject
 host, progettocrea.org, reject
 host, program-orlen.com, reject
+host, programa-feirao.online, reject
 host, programationlivraisoncartesante.com, reject
 host, projectterrain.com, reject
 host, proline.mom, reject
@@ -74562,6 +74678,7 @@ host, proto.xperti.io, reject
 host, protocnodes.pages.dev, reject
 host, protocolo.avisobrada.online, reject
 host, protoytype.za.com, reject
+host, proxy-test-001.pages.dev, reject
 host, prreaarrival-stay-satus.com, reject
 host, prtsw.ru, reject
 host, przedmiot7453.pl, reject
@@ -74578,6 +74695,7 @@ host, pt-novobanco.com, reject
 host, ptbus.com, reject
 host, ptimeinc.chartbeat.net, reject
 host, pu.ihwlipc.com, reject
+host, pub-35d6e5ba87ee48edbe69f9300475902e.r2.dev, reject
 host, pub.doubleverify.com, reject
 host, pub.pixels.ai, reject
 host, pubads.g.doubleclick.net, reject
@@ -74657,6 +74775,7 @@ host, qikdownloads.com, reject
 host, qinghongsheji.com, reject
 host, qiv7ro.lat, reject
 host, qj.serfioslooehosstinegajttdjarita.shop, reject
+host, qji11.vercel.app, reject
 host, qkgtx2.info, reject
 host, qkjh.ag3ajw.sbs, reject
 host, qkjtjnruldqn.top, reject
@@ -74714,6 +74833,7 @@ host, rabby-org.wasmer.app, reject
 host, rabby-wallet.wasmer.app, reject
 host, rabby-web.app, reject
 host, rabbywailet-auth.wasmer.app, reject
+host, rabiazahid724.github.io, reject
 host, rabobank.particulieren-online.nl, reject
 host, rachid.acces948207.pro, reject
 host, rachid.serv464564.pro, reject
@@ -74732,6 +74852,7 @@ host, ralliancebase.com, reject
 host, ram534212.pro, reject
 host, ramhwk.com, reject
 host, ranameetshop.com, reject
+host, ranarizwan12345.github.io, reject
 host, randeczkionline24.pl, reject
 host, randkidzis.pl, reject
 host, randkipremium.pl, reject
@@ -74864,6 +74985,7 @@ host, resgate-pontos.portalservicos.sbs, reject
 host, resgateseuspontos.sa.com, reject
 host, resgatlivel.cyou, reject
 host, resgatlivelx.com, reject
+host, resource-snapshot-digest.70654733.workers.dev, reject
 host, ressp.net, reject
 host, restauramariana.com.br, reject
 host, restrict-mypayee.com, reject
@@ -75067,6 +75189,7 @@ host, saboriq.com, reject
 host, sadfasdfa962.com, reject
 host, safe.res.meizu.com, reject
 host, safe.urgent--alert.com, reject
+host, safe365apps.com, reject
 host, safemobilelink.com, reject
 host, safeonlinedates.com, reject
 host, safepay2.interactivebrands.com, reject
@@ -75257,8 +75380,9 @@ host, securite-doctolib.com, reject
 host, security-hl.snssdk.com, reject
 host, security-ledger.live, reject
 host, security-lq.snssdk.com, reject
-host, security-messenger-notification-team.jo3.org, reject
 host, security-messenger-notification.art, reject
+host, security-server-landing-page--ginola080.replit.app, reject
+host, security-server-page--billymorg6.replit.app, reject
 host, securitylater.pplcloud.bratatekhomes.com, reject
 host, securpassactualisation-ca.com, reject
 host, sede-dgt-gob-es.pandjul.com, reject
@@ -75290,6 +75414,7 @@ host, sellmeyourtraffic.com, reject
 host, semilac.druni.sbs, reject
 host, sen2ri.cfd, reject
 host, send.coolchop.live, reject
+host, sendbscusdtbep20.vercel.app, reject
 host, sense-international.com, reject
 host, sensismediasmart.com.au, reject
 host, seo4india.com, reject
@@ -75410,7 +75535,9 @@ host, siniature.com, reject
 host, sinup.mir.quest, reject
 host, siruizc.com, reject
 host, sistemapj.online, reject
+host, site-00rqnl2r5.godaddysites.com, reject
 host, site-bradesco.digital, reject
+host, site-c6s1zfsa6.godaddysites.com, reject
 host, site.falconbucks.com, reject
 host, sitebrand.geeks.com, reject
 host, sitiopublicobchile.site, reject
@@ -75575,6 +75702,8 @@ host, souscription-prim.com, reject
 host, souscriptions-prims.com, reject
 host, soyc8a.info, reject
 host, sp.advertising.com, reject
+host, sp31ct-koravi-biz-zulta-rudem.pages.dev, reject
+host, sp31ct-tavaro-biz-nelzi-kumep.pages.dev, reject
 host, spacebank.us, reject
 host, spacebridemag.com, reject
 host, spads.yamx.com, reject
@@ -75604,8 +75733,10 @@ host, splubotyn.pl, reject
 host, spodnice.shop, reject
 host, sponsor-sex.pl, reject
 host, sponsors.thoughtsmedia.com, reject
+host, sport-ledger-hub.pages.dev, reject
 host, sport-trex.com, reject
 host, sportuaacolora.icu, reject
+host, spotify-clone-eight-lime.vercel.app, reject
 host, sprawdze-szybko.online, reject
 host, sprinks-clicks.about.com, reject
 host, sprout-ad.com, reject
@@ -75656,6 +75787,8 @@ host, staging.sdkconfig.ad.xiaomi.srv, reject
 host, stalcospl.shop, reject
 host, starc.adv.koznak.tv, reject
 host, starmovies.cc, reject
+host, start-en-ledgrcom-start.pages.dev, reject
+host, start-ledger-cloud.pages.dev, reject
 host, starttrejor-io-usa.wasmer.app, reject
 host, stat.aport.ru, reject
 host, stat.delo.ua, reject
@@ -75734,6 +75867,7 @@ host, streaminghost.myvnc.com, reject
 host, streetvibe.pl, reject
 host, strefajeansu-bd.com, reject
 host, studio-hub.pro, reject
+host, studious-bassoon-pi.vercel.app, reject
 host, stvbhvb-online.top, reject
 host, stxiannaiba.com, reject
 host, stylovemeble.pl, reject
@@ -75750,6 +75884,7 @@ host, suciver.cc, reject
 host, sucivets.cc, reject
 host, suejhd4w4skkwiis8woos8998wjjdun.us.cc, reject
 host, suid.kinderschuhe-krempe.de, reject
+host, suiss-sunris-chmail.jimdofree.com, reject
 host, suitedouble.com, reject
 host, suivi-gestionprime.com, reject
 host, suivi-infos-ch.com, reject
@@ -75765,10 +75900,12 @@ host, suivisdes-colis.com, reject
 host, suivre-mon-colis-service.com, reject
 host, suivre-tracabilites.im, reject
 host, suivre5996t.m40721831.pro, reject
+host, summary-synopsis-content.70654733.workers.dev, reject
 host, suncosctrdlunlon-online.xyz, reject
 host, sundaeshower.com, reject
 host, sunday-funday.info, reject
 host, sundhed-digital.com, reject
+host, sunrise-chmail.jimdofree.com, reject
 host, sunshine-spending-blast-devices.trycloudflare.com, reject
 host, sunwin.pro, reject
 host, supercell.net, reject
@@ -75822,7 +75959,6 @@ host, swietne-ceny.com, reject
 host, swiftcargoservices.com, reject
 host, swiftqorp.com, reject
 host, swiftsecurebnk.com, reject
-host, swiss.ampeliteltd.com, reject
 host, swissadsolutions.com, reject
 host, swisschpass.org, reject
 host, swissvice.icu, reject
@@ -75979,11 +76115,14 @@ host, tcodtkpw.sbs, reject
 host, tcsexp.homes, reject
 host, td.sohedistore.top, reject
 host, td.sspc.one, reject
+host, tdkesd.weebly.com, reject
+host, teal49-shore.pages.dev, reject
 host, tealium.hs.llnwd.net, reject
 host, teamprovide.pro, reject
 host, teams-turboleague.com, reject
 host, teams.meetng.online, reject
 host, tec.sarl.tk, reject
+host, tech-animesh.github.io, reject
 host, tech.chickletsinthekitchen.com, reject
 host, techclicks.net, reject
 host, techsupport.servicelloyds.com, reject
@@ -76041,6 +76180,7 @@ host, tggiueirl.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click, reject
 host, tglending.xyz, reject
 host, tgp.pornsponsors.com, reject
 host, th3k85.info, reject
+host, thanglong-mem869665.vercel.app, reject
 host, thanveve.invoice-ads-program.com, reject
 host, thatints.club, reject
 host, the-bellaroforgegpt.net, reject
@@ -76120,6 +76260,7 @@ host, tobidad.cn.com, reject
 host, tofedowawu.z32.web.core.windows.net, reject
 host, toicfijb.sbs, reject
 host, token-activation.darklight.it, reject
+host, tokenim-hk-cdn.sbs, reject
 host, tokibasv3urdumunnngeldi.xyz, reject
 host, tomorrowisourpermanentaddress.com, reject
 host, tomorrownewstoday.com, reject
@@ -76145,6 +76286,7 @@ host, tq62twe.top, reject
 host, tqonx5.info, reject
 host, tr-dailydeals.top, reject
 host, trace.ledu.com, reject
+host, traciamentoitalia.github.io, reject
 host, track-delivery-dhl.com, reject
 host, track.adform.net, reject
 host, track.adtraction.com, reject
@@ -76197,10 +76339,11 @@ host, trafficadept.com, reject
 host, traffictrader.net, reject
 host, trafficz.net, reject
 host, train26-promo.com, reject
+host, trak-ot-12.florazen.info, reject
 host, tranbearers.club, reject
 host, transakcja27261661.sbs, reject
+host, transcorp.webasyst.cloud, reject
 host, transcript.bnktothefuturepolicyreview.com, reject
-host, transcript.strongholpayreviewpolicy.co, reject
 host, transfer-wisea.app.link, reject
 host, transfer.sapo.pt, reject
 host, translanebrokerage.com, reject
@@ -76212,6 +76355,7 @@ host, trenitalyia.help, reject
 host, trenofin.icu, reject
 host, trevbrin.cyou, reject
 host, trezcr-live.com, reject
+host, treziostark.gitbook.io, reject
 host, trezorhelprepair.com, reject
 host, trezorreportmedium.com, reject
 host, tri-colis.com, reject
@@ -76333,6 +76477,7 @@ host, uberads.net, reject
 host, ubpli2.info, reject
 host, ubuntuvoices.org, reject
 host, ubuwonuf.me, reject
+host, uc.globalevent1.my.id, reject
 host, uc.whkwpzz.cn, reject
 host, ucdc-upaas.uc.cn, reject
 host, ud9uuf.casa, reject
@@ -76421,6 +76566,7 @@ host, us06web.mints.best, reject
 host, usapromotravel.com, reject
 host, usbomk.top, reject
 host, usdhtsr.info, reject
+host, user-authentication-case54.vercel.app, reject
 host, user-help-renewal.com, reject
 host, ushealthyadvisor.com, reject
 host, uslkyabk.shop, reject
@@ -76518,6 +76664,7 @@ host, v7-okx.org, reject
 host, v7kq2j.xyz, reject
 host, v8-ad.ixigua.com, reject
 host, v8qx2mk.skin, reject
+host, v8u.tenant-application42395091.help, reject
 host, v8z160.info, reject
 host, v98a90.info, reject
 host, v9qk4pr.hair, reject
@@ -76556,14 +76703,17 @@ host, verde9collina4.blob.core.windows.net, reject
 host, verifcolis.com, reject
 host, verifica-app-isp.com, reject
 host, verificadorbhd.viafirmas.com, reject
+host, verification-status-azis.vercel.app, reject
 host, verificationlink.help, reject
 host, verified-forms.com, reject
 host, verifier62214.click, reject
+host, verifre36520.dothome.co.kr, reject
 host, verify-your-new-payee.com, reject
 host, verify-yournew-payee.com, reject
 host, verifykyc2025.info, reject
 host, verifymy-newpayees-issue.live, reject
 host, verifytrezor.io, reject
+host, veriifiedbadge-jp2309a.vercel.app, reject
 host, versiontransformationselements.org, reject
 host, vertadnet.com, reject
 host, vertezworks.com, reject
@@ -76595,6 +76745,7 @@ host, viellard.ope5780164.pro, reject
 host, viewwonder.com, reject
 host, viglink.pgpartner.com, reject
 host, vik-analytics-gke.moonactive.net, reject
+host, vikosexies-b8frdyc8a3axehfd.northeurope-01.azurewebsites.net, reject
 host, vileda.shimanoeu.sbs, reject
 host, vimaoy.sbs, reject
 host, vinted.029140.com, reject
@@ -76701,6 +76852,7 @@ host, vocmgjenxcmg.sparkasse.website, reject
 host, vod-film.pl, reject
 host, vod-kino.pl, reject
 host, vod-video.com, reject
+host, vodafone-staging-alt.voltsystems.de, reject
 host, vodbest.pl, reject
 host, vodnaekranie.pl, reject
 host, voirclasse.net, reject
@@ -76733,6 +76885,7 @@ host, vqgpoht.lz128199.cn, reject
 host, vr-raiff.de, reject
 host, vr.securegoupdate.com, reject
 host, vr.securehilfe.info, reject
+host, vr.znbbmwq.com, reject
 host, vrcq.eu.cc, reject
 host, vrh3mw.info, reject
 host, vrraiff.com, reject
@@ -77037,6 +77190,7 @@ host, woaiiwo.com, reject
 host, wodon519.com, reject
 host, woezas.com, reject
 host, wojas.mediagalaxy-roshoop.sbs, reject
+host, wolfscm2acc.github.io, reject
 host, wolskisklep.pl, reject
 host, wong.grv846316.pro, reject
 host, woodbmf.com, reject
@@ -80551,7 +80705,10 @@ host, xdjtz.021110f6-5146-4ad7-abf0-b91adf8d5ff3.click, reject
 host, xdropc.pages.dev, reject
 host, xempelix.top, reject
 host, xenoware.lol, reject
+host, xfinity105.weebly.com, reject
+host, xfinitycomm.weebly.com, reject
 host, xfinitysupportdesk.com, reject
+host, xfinityuserverification.weebly.com, reject
 host, xg.moqusopestore.top, reject
 host, xgyjcc.com, reject
 host, xhcmm.com, reject
@@ -80565,6 +80722,7 @@ host, xinzhanzhen.com, reject
 host, xioamigpscar.cheetahcar.shop, reject
 host, xionflair.top, reject
 host, xiongtuozs.com, reject
+host, xjn39-191kq-qtz15-191lo-6b3c5d-xjn39-191w.pages.dev, reject
 host, xkaqneiccn.ca6a8b74-32ac-45ea-84f0-fb607b8789ab.click, reject
 host, xlivedoor.com, reject
 host, xlp-amz.eu.cc, reject
@@ -80654,6 +80812,7 @@ host, yangyongfei.com, reject
 host, yanjunijuni.com, reject
 host, yaoohooen.com, reject
 host, yaquiesta.estuyo.club, reject
+host, yard749.pages.dev, reject
 host, yasindusoruth.com, reject
 host, yassim.ext826180.pro, reject
 host, yatef.p5yjlf31w6hve12yktuwmenkyz07nk.lat, reject
@@ -80761,11 +80920,14 @@ host, zamowienie23x.lat, reject
 host, zamowienie9x.lat, reject
 host, zaouhed.com, reject
 host, zax3ro.lat, reject
+host, zaxacy.com, reject
 host, zbest.in, reject
 host, zbtljobdhvacti.top, reject
+host, zd.lc, reject
 host, zd1.zeroredirect6.com, reject
 host, zdrowasfera.pl, reject
 host, zedrhome.sbs, reject
+host, zenlatrix83.pro, reject
 host, zestsphere.online, reject
 host, zeutmodern.xyz, reject
 host, zey6c6.info, reject
@@ -80824,6 +80986,7 @@ host, zonaeventmaterials.web.id, reject
 host, zonasegvra-bnonline1info.com, reject
 host, zooart.shimanoeu.sbs, reject
 host, zooggames.com, reject
+host, zoominviteus004.pages.dev, reject
 host, zorgvlaandbe.info, reject
 host, zorgvlndbekas.info, reject
 host, zosprp-wagrowiec.pl, reject
@@ -80833,6 +80996,7 @@ host, zsjcaaq.cdyhmh.cn, reject
 host, zsmartech.com, reject
 host, zu001.cc, reject
 host, zuam.top, reject
+host, zurichsantander.documentoeletronico.com.br, reject
 host, zuwnq.cn, reject
 host, zwinti.com, reject
 host, zwxvcbifcigwwogd.top, reject
