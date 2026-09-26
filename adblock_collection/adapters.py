@@ -143,6 +143,7 @@ def _adapter_singbox(p: PublishConfig) -> str:
             "// Adblock Rule Collection — sing-box 适配",
             "// 用法：把 route.rule_set 与 route.rules 合并进你的 config.json。",
             "// 采用远端源格式规则集（format: source），需要 sing-box 1.11+，无需手动编译。",
+            "// 远端规则集缓存依赖 experimental.cache_file.enabled=true（未开启则每次启动重新下载）。",
             f"// 规范基址：{raw}",
             f"// 镜像基址：{mirror}",
             f"// 主页：{HOMEPAGE}",
@@ -159,11 +160,12 @@ def _adapter_surge(p: PublishConfig) -> str:
         [
             "# Adblock Rule Collection — Surge 适配",
             "# 用法：把下面一行加入配置文件的 [Rule] 段。",
+            "# DOMAIN-SET 默认 86400 秒重新下载一次，这里显式写出 update-interval。",
             "#",
             f"# 规范基址：{raw}",
             f"# 镜像基址：{mirror}",
             "#",
-            f"DOMAIN-SET,{mirror},REJECT",
+            f"DOMAIN-SET,{mirror},REJECT,update-interval=86400",
             "",
         ]
     )
@@ -175,20 +177,29 @@ def _adapter_quanx(p: PublishConfig, rulesets_dir: Path | None) -> str:
     lines = [
         "# Adblock Rule Collection — Quantumult X 适配",
         "# 用法：把下列 filter_remote 行加入配置文件的 [filter_remote] 段。",
-        "#   force-remote-filter=1 表示由 Quantumult X 解析远端规则。",
+        "#   force-policy=reject 让 Quantumult X 忽略远端规则内的策略，统一按 reject 处理。",
         "#",
-        f"# 规范基址：{_join(p.raw_base, base_rel)}",
-        f"# 镜像基址：{_join(p.mirror_base, base_rel)}",
+        f"# 规范源（raw）完整文件：{_join(p.raw_base, base_rel)}",
+        f"# 镜像基址：{p.mirror_base}",
         "#",
     ]
-    lines.append(
-        f"filter_remote = {_join(p.mirror_base, base_rel)}, tag=Adblock, force-remote-filter=1"
-    )
-    for part in parts:
-        number = part.stem.rsplit("part", 1)[-1].lstrip("0") or "1"
+    if parts:
+        # 完整规则集超出 jsDelivr 单文件 20MB 上限，镜像只用分片：完整文件的镜像 URL
+        # 会返回 403，且 Quantumult X 无 include 机制，订阅方必须逐条加入全部分片。
+        lines += [
+            "# 完整规则集超出 jsDelivr 单文件上限，镜像须使用下列分片，请全部加入；",
+            "# 可直连 GitHub raw 时，也可只引用上面的完整文件。",
+        ]
+        for part in parts:
+            number = part.stem.rsplit("part", 1)[-1].lstrip("0") or "1"
+            lines.append(
+                f"filter_remote = {_join(p.mirror_base, 'rulesets/' + part.name)}, "
+                f"tag=Adblock-{number}, force-policy=reject, enabled=true"
+            )
+    else:
         lines.append(
-            f"filter_remote = {_join(p.mirror_base, 'rulesets/' + part.name)}, "
-            f"tag=Adblock-{number}, force-remote-filter=1"
+            f"filter_remote = {_join(p.mirror_base, base_rel)}, "
+            "tag=Adblock, force-policy=reject, enabled=true"
         )
     return "\n".join(lines) + "\n"
 

@@ -252,24 +252,24 @@ JSONC（`//` 注释由 sing-box 支持）。使用远端源格式规则集，需
 }
 ```
 
-把 `route.rule_set` 与 `route.rules` 并入 `config.json`。
+把 `route.rule_set` 与 `route.rules` 并入 `config.json`。远端规则集缓存依赖 `experimental.cache_file.enabled=true`；未开启时每次启动都会重新下载（仍可用，仅无本地缓存）。
 
 ### 5.3 `surge.conf`
 
 ```ini
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_domain_set.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_domain_set.txt,REJECT,update-interval=86400
 ```
 
-加入 `[Rule]` 段。`DOMAIN-SET` 单文件无需分片，是 Surge 推荐形态。
+加入 `[Rule]` 段。`DOMAIN-SET` 单文件无需分片，是 Surge 推荐形态；`update-interval=<秒>` 为官方可选参数（默认 86400 秒，负值关闭自动更新），此处显式写出。
 
 ### 5.4 `quanx.conf`
 
 ```ini
-filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx.list, tag=Adblock, force-remote-filter=1
-filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01.list, tag=Adblock-1, force-remote-filter=1
+filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01.list, tag=Adblock-1, force-policy=reject, enabled=true
+filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02.list, tag=Adblock-2, force-policy=reject, enabled=true
 ```
 
-加入 `[filter_remote]` 段。规则集超 jsDelivr 上限时逐行追加 `_partNN` 分片，全部加入。
+加入 `[filter_remote]` 段。`force-policy=reject` 是 Quantumult X 官方参数（可选 `tag` / `force-policy` / `enabled`），使远端规则统一按 `reject` 处理；不存在 `force-remote-filter` 参数。规则集超 jsDelivr 上限（20MB）时必须逐行加入 `_partNN` 分片——完整文件的镜像 URL 会返回 403，只有 GitHub raw 的完整单文件可直连引用，且二者不要同时加入以免重复匹配。
 
 ### 5.5 `adguardhome.yaml`
 
@@ -311,6 +311,22 @@ publish:
 ```
 
 `raw_base` = `https://raw.githubusercontent.com/{repository}/{branch}/dist/`，`mirror_base` = `https://cdn.jsdelivr.net/gh/{repository}@{branch}/dist/`；仓库迁移或改分支只需改这里。
+
+### 5.10 各客户端订阅地址清单
+
+按客户端汇总「填进软件里」的引用地址（`raw` = 规范源，`jsDelivr` = 镜像；同一设备二选一）。适配文件本身在 `adapters/` 下，见 5.1–5.8；完整可复制清单见 `README.md`「各客户端订阅地址清单」。
+
+| 客户端 | 引用的规范产物 | 适配文件 |
+| :--- | :--- | :--- |
+| mihomo / Clash Meta | `rulesets/adblock_clash.yaml` | `adapters/mihomo.yaml` |
+| sing-box | `rulesets/adblock_singbox.json` | `adapters/singbox.json` |
+| Surge | `rulesets/adblock_surge_domain_set.txt` | `adapters/surge.conf` |
+| Quantumult X | `rulesets/adblock_quanx_partNN.list`（镜像）或 `rulesets/adblock_quanx.list`（raw） | `adapters/quanx.conf` |
+| AdGuard Home | `adblock_collection_full_domains.txt` | `adapters/adguardhome.yaml` |
+| Pi-hole | `adblock_collection_full_dns.txt` | `adapters/pihole.txt` |
+| dnsmasq | 本地 `adblock_collection_full_dns.txt`（不能远程订阅） | `adapters/dnsmasq.conf` |
+| 系统 hosts | `adblock_collection_full_dns.txt` / `_dns_ipv6.txt` | `adapters/hosts.md` |
+| 浏览器扩展 | `adblock_collection_full.txt` / `_jsdelivr.txt` / `ubo_enhance.txt` | `adapters/browsers.md` |
 
 ## 6. 统计与审计产物
 

@@ -114,6 +114,8 @@ def test_singbox_is_valid_jsonc_with_source_format(tmp_path):
     assert payload["route"]["rules"] == [
         {"rule_set": "adblock", "action": "reject"}
     ]
+    # 远端规则集缓存需显式开启 experimental.cache_file.enabled，首部注释给出提示
+    assert "experimental.cache_file.enabled" in text
 
 
 def test_mihomo_and_adguardhome_are_valid_yaml(tmp_path):
@@ -140,9 +142,33 @@ def test_quanx_lists_parts(tmp_path):
     rdir = _seed_rulesets(tmp_path, parts=True)
     write_adapters(tmp_path, PUBLISH, [], rulesets_dir=rdir)
     text = (tmp_path / "adapters" / "quanx.conf").read_text(encoding="utf-8")
-    assert "adblock_quanx.list, tag=Adblock," in text
-    assert "adblock_quanx_part01.list, tag=Adblock-1," in text
-    assert "adblock_quanx_part02.list, tag=Adblock-2," in text
+    # 完整文件超 jsDelivr 上限时，镜像只列分片，不再引用会 403 的完整文件
+    assert "adblock_quanx_part01.list, tag=Adblock-1, force-policy=reject" in text
+    assert "adblock_quanx_part02.list, tag=Adblock-2, force-policy=reject" in text
+    assert "adblock_quanx.list," not in text
+    assert "force-remote-filter" not in text
+
+
+def test_quanx_single_file_without_parts(tmp_path):
+    rdir = _seed_rulesets(tmp_path)
+    write_adapters(tmp_path, PUBLISH, [], rulesets_dir=rdir)
+    text = (tmp_path / "adapters" / "quanx.conf").read_text(encoding="utf-8")
+    assert (
+        "filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/"
+        "rulesets/adblock_quanx.list, tag=Adblock, force-policy=reject, enabled=true"
+        in text
+    )
+    assert "force-remote-filter" not in text
+
+
+def test_surge_domain_set_has_update_interval(tmp_path):
+    rdir = _seed_rulesets(tmp_path)
+    write_adapters(tmp_path, PUBLISH, [], rulesets_dir=rdir)
+    text = (tmp_path / "adapters" / "surge.conf").read_text(encoding="utf-8")
+    assert (
+        "DOMAIN-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/"
+        "rulesets/adblock_surge_domain_set.txt,REJECT,update-interval=86400" in text
+    )
 
 
 def test_skips_connection_layer_without_rulesets(tmp_path):

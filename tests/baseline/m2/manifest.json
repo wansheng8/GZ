@@ -128,24 +128,24 @@
       "file": "adapters/singbox.json",
       "format": "adapter",
       "target": "singbox",
-      "bytes": 849,
-      "sha256": "680a3e3525395b716012d72c53786e084254629b1b3b2cd76d41af93c6d9bb31"
+      "bytes": 962,
+      "sha256": "706caa509e5299986fafd4ec608b1f4b526a74a4bf3fc4e22cf2b067c615366f"
     },
     {
       "name": "adapter_surge",
       "file": "adapters/surge.conf",
       "format": "adapter",
       "target": "surge",
-      "bytes": 434,
-      "sha256": "eed19f71a4bf55eb1a6058be900dd8239db7dd800f4fa7daa062417909c5676a"
+      "bytes": 544,
+      "sha256": "6ed880cb75027a601d637a4263e49ebfe973a918268123a3c2f2e1ad4907d334"
     },
     {
       "name": "adapter_quanx",
       "file": "adapters/quanx.conf",
       "format": "adapter",
       "target": "quanx",
-      "bytes": 537,
-      "sha256": "088c614d0e9a87d7e082f7d5abaf496c55293cc378b48831a6226b90b1f0aa2a"
+      "bytes": 570,
+      "sha256": "5f0fc2064980adfa6633aba28a23367204f2e70d23eb472a19141f9cb07f36a2"
     },
     {
       "name": "adapter_adguardhome",
@@ -292,11 +292,11 @@
     "normalizer": "1.4.0",
     "classifier": "1.13.0"
   },
-  "generated_at": "2026-09-25T23:49:52Z",
+  "generated_at": "2026-09-26T00:27:24Z",
   "sources_status": {
     "total_sources": 2,
     "failed_sources": [],
     "complete": true,
-    "generated_at": "2026-09-25T23:49:52Z"
+    "generated_at": "2026-09-26T00:27:24Z"
   }
 }

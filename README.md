@@ -171,7 +171,7 @@ sing-box rule-set compile adblock_singbox.json -o adblock.srs
 **Surge**（推荐 `DOMAIN-SET` 单文件，无需分片）
 
 ```ini
-DOMAIN-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_domain_set.txt,REJECT
+DOMAIN-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_domain_set.txt,REJECT,update-interval=86400
 ```
 
 逐行规则包 `RULE-SET` 亦可（jsDelivr 分片需两条）：
@@ -184,8 +184,8 @@ RULE-SET,https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_sur
 **Quantumult X**（jsDelivr 分片需两条）
 
 ```ini
-filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01.list, tag=Adblock-1, force-remote-filter=1
-filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02.list, tag=Adblock-2, force-remote-filter=1
+filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01.list, tag=Adblock-1, force-policy=reject, enabled=true
+filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02.list, tag=Adblock-2, force-policy=reject, enabled=true
 ```
 
 </details>
@@ -208,7 +208,23 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 | 系统 hosts | `hosts.md` | 各系统 hosts 路径与写入命令指引 |
 | 浏览器扩展 | `browsers.md` | uBO / AdGuard / ABP 订阅地址与导入步骤 |
 
-访问方式：`https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adapters/<文件名>`（jsDelivr：`https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adapters/<文件名>`）。各文件的逐字语法说明见 当前工作区 内的 `/docs/GENERATED_RULES.md`。
+访问方式：`https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adapters/<文件名>`（jsDelivr：`https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adapters/<文件名>`）。各文件的逐字语法说明见 当前工作区 内的 `/docs/GENERATED_RULES.md` 第 5 节。sing-box 远端规则集缓存需在配置中开启 `experimental.cache_file.enabled`。
+
+### 各客户端订阅地址清单
+
+按客户端汇总「直接填进软件里」的引用地址。**规范** = GitHub raw，**镜像** = jsDelivr；同一设备二选一即可。适配文件见上表，语法与字段含义见 当前工作区 内的 `/docs/GENERATED_RULES.md` 第 5 节。
+
+| 客户端 | 引用产物 | 规范（raw） | 镜像（jsDelivr） |
+| :--- | :--- | :--- | :--- |
+| mihomo / Clash Meta | `rulesets/adblock_clash.yaml` | [raw](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_clash.yaml) | [镜像](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_clash.yaml) |
+| sing-box | `rulesets/adblock_singbox.json` | [raw](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_singbox.json) | [镜像](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_singbox.json) |
+| Surge | `rulesets/adblock_surge_domain_set.txt` | [raw](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_surge_domain_set.txt) | [镜像](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_surge_domain_set.txt) |
+| Quantumult X | 完整集 >20MB，镜像用分片 | [完整](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/rulesets/adblock_quanx.list) | [分片1](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part01.list) · [分片2](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adblock_quanx_part02.list) |
+| AdGuard Home | `adblock_collection_full_domains.txt` | [raw](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_domains.txt) | [镜像](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_domains.txt) |
+| Pi-hole | `adblock_collection_full_dns.txt` | [raw](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt) | [镜像](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt) |
+| dnsmasq | 本地 `adblock_collection_full_dns.txt`（不能远程订阅） | [raw](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt) | [镜像](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt) |
+| 系统 hosts | `adblock_collection_full_dns.txt` · `_dns_ipv6.txt` | [IPv4](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns.txt) · [IPv6](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_dns_ipv6.txt) | [IPv4](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns.txt) · [IPv6](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_dns_ipv6.txt) |
+| 浏览器扩展 | `adblock_collection_full.txt` · `ubo_enhance.txt` | [全量](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full.txt) · [增强](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_ubo_enhance.txt) | [全量](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_full_jsdelivr.txt) · [增强](https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adblock_collection_ubo_enhance.txt) |
 
 <img src="assets/divider.svg" width="100%" alt=""/>
 

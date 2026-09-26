@@ -169,7 +169,7 @@ rules:
 # Adblock Rule Collection — Surge 适配
 # 用法：把下面一行加入配置文件的 [Rule] 段。
 # 规范基址：{raw_base}rulesets/adblock_surge_domain_set.txt
-DOMAIN-SET,{mirror_base}rulesets/adblock_surge_domain_set.txt,REJECT
+DOMAIN-SET,{mirror_base}rulesets/adblock_surge_domain_set.txt,REJECT,update-interval=86400
 ```
 
 ### Quantumult X `quanx.conf`
@@ -177,10 +177,10 @@ DOMAIN-SET,{mirror_base}rulesets/adblock_surge_domain_set.txt,REJECT
 ```ini
 # Adblock Rule Collection — Quantumult X 适配
 # 用法：把下列 filter_remote 行加入配置文件。
-filter_remote = {mirror_base}rulesets/adblock_quanx.list, tag=Adblock, force-remote-filter=1
+filter_remote = {mirror_base}rulesets/adblock_quanx.list, tag=Adblock, force-policy=reject, enabled=true
 ```
 
-当 `rulesets/adblock_quanx_partNN.list` 存在时，逐行追加对应 `filter_remote`（`tag=Adblock-N`），`N` 由分片名尾部序号决定。
+当 `rulesets/adblock_quanx_partNN.list` 存在时，镜像改用分片（完整文件镜像 URL 超 jsDelivr 20MB 上限会 403），逐行输出对应 `filter_remote`（`tag=Adblock-N`），`N` 由分片名尾部序号决定，且不再输出完整文件行；参数 `force-policy` / `enabled` 为 Quantumult X 官方可选参数。
 
 ### AdGuard Home `adguardhome.yaml`
 
