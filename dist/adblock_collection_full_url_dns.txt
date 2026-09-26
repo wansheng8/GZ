@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (url)
-# Format: hosts (0.0.0.0 domain), total 21717
+# Format: hosts (0.0.0.0 domain), total 21722
 0.0.0.0 00466628383.click
 0.0.0.0 0099866g8g.click
 0.0.0.0 0123movies.click
@@ -10624,10 +10624,12 @@
 0.0.0.0 collect.liweestate.se
 0.0.0.0 collecting.click
 0.0.0.0 collector-analytics.efigence.com
+0.0.0.0 collector-de.fitanalytics.com
 0.0.0.0 collector-statistics.nhn-commerce.com
 0.0.0.0 collector.a197.click
 0.0.0.0 collector.ba5a.click
 0.0.0.0 collector.d6e1.click
+0.0.0.0 collector.fitanalytics.com
 0.0.0.0 collector.flora.statsd.io
 0.0.0.0 collector.intellumanalytics.com
 0.0.0.0 collector.iran-analytics.ir
@@ -11411,7 +11413,6 @@
 0.0.0.0 firstcsblog.weebly.com
 0.0.0.0 firstwren.click
 0.0.0.0 fishtownanalytics-collector-1340672531.us-east-1.elb.amazonaws.com
-0.0.0.0 fitanalytics.com
 0.0.0.0 fitnexa-analytics-prod-aye3c3bagadthvgx.z01.azurefd.net
 0.0.0.0 fixelpixel.net
 0.0.0.0 fixmypixel.com
@@ -12123,6 +12124,8 @@
 0.0.0.0 instasexyblog.com
 0.0.0.0 instatedopa.cfd
 0.0.0.0 intake-analytics.wikimedia.org.leonetz.net
+0.0.0.0 integrations-staging1.fitanalytics.com
+0.0.0.0 integrations.fitanalytics.com
 0.0.0.0 intelligentpixel.modernimpact.com
 0.0.0.0 interact-analytics.com
 0.0.0.0 intercalce.click
@@ -13689,10 +13692,13 @@
 0.0.0.0 mete-bella.click
 0.0.0.0 methodpayment.click
 0.0.0.0 metrica.xstatic.kz
+0.0.0.0 metrics-nl.fitanalytics.com
+0.0.0.0 metrics-sandbox-orig.fitanalytics.com
 0.0.0.0 metrics.abbproductcatalog.com
 0.0.0.0 metrics.countryfinancialsecurityblog.com
 0.0.0.0 metrics.dinpsykolog.se
 0.0.0.0 metrics.faststats.dev
+0.0.0.0 metrics.fitanalytics.com
 0.0.0.0 metrics.homestatehealth.com
 0.0.0.0 metrics.network-traffic-analytics.com
 0.0.0.0 metrics.realestate.com.au
@@ -17055,7 +17061,6 @@
 0.0.0.0 static-xl9-ssl.xunlei.com
 0.0.0.0 static.189works.com
 0.0.0.0 static.1j1j.com
-0.0.0.0 static.3001.net
 0.0.0.0 static.365inews.com
 0.0.0.0 static.5411.com
 0.0.0.0 static.accesstrade.vn

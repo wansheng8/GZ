@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 55599
+! Total Rules: 55600
 ! ------------------------------------------
 /adsTracking.$script
 /adtrack.$domain=~adtrack.ca|~adtrack.yacast.fr
@@ -7580,6 +7580,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||fingerprinter-production.herokuapp.com^
 ||firebaselogging-pa.googleapis.com^
 ||firecrux.com/track/$xhr
+||fitanalytics.com/metrics/
 ||fkrkkmxsqeb5bj9r.s3.amazonaws.com^
 ||flashstats.libsyn.com^
 ||flipp.com/beacons
@@ -8785,6 +8786,7 @@ $third-party,xhr,domain=opensubtitles.org
 ||trygravity.ai/ack?
 ||turnto.com/event
 ||typeform.com/*/insights/events^
+||u.tetas.pt/script.js
 ||uaas.yandex.ru^
 ||ubm.docu.info^
 ||uc.cn/collect?
@@ -45831,6 +45833,7 @@ $csp=child-src 'none'; frame-src *; worker-src 'none',domain=thepiratebay.org|vi
 ||tracking.sembox.it^
 ||geobanner.sexfinder.com^
 ||sextracker.com^
+||shipminttracking.net^
 ||trackserver.shuxinyc.com^
 ||sitetracker.com^
 ||privacy-cdn.sixfifty.com^
@@ -48673,13 +48676,12 @@ $removeparam=tracking_source
 ||www.tracking.nudgepay.in^
 ||ymtracking.com^
 ||zantracker.com^
-||shipminttracking.net^
-2.18.67.12                     hugeota.d.miui.com
-23.15.3.205                    hugeota.d.miui.com
-2600:1408:a:202::170f:3cd      hugeota.d.miui.com
-2600:1408:a:201::212:430c      hugeota.d.miui.com
-208.54.140.1                   crl.geo.t-mobile.com
-208.54.35.163                  epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
+23.192.223.235                 hugeota.d.miui.com
+23.192.223.240                 hugeota.d.miui.com
+2600:1406:2e00:62::172e:d893   hugeota.d.miui.com
+2600:1406:2e00:62::172e:d89c   hugeota.d.miui.com
+208.54.110.9                   crl.geo.t-mobile.com
+208.54.2.163                   epdg.epc.geo.mnc260.mcc310.pub.3gppnetwork.org
 44.217.73.103                  eulatracking-public-service-prod06.ol.epicgames.com
 52.45.14.115                   eulatracking-public-service-prod06.ol.epicgames.com
 100.63.249.189                 eulatracking-public-service-prod06.ol.epicgames.com
@@ -48689,9 +48691,9 @@ $removeparam=tracking_source
 2606:4700:20::681a:3d6         ip2location.com
 2606:4700:20::ac43:4789        ip2location.com
 2606:4700:20::681a:2d6         ip2location.com
-34.206.47.1                    tracking.epicgames.com
 100.63.121.43                  tracking.epicgames.com
 44.212.252.47                  tracking.epicgames.com
+34.206.47.1                    tracking.epicgames.com
 43.159.0.230                   weighted-zh-eulatracking-public-service-prod06.ol.epicgames.com
 ||bj.ad.track.66mobi.com^
 ||ad.track.66mobi.com^
@@ -49700,7 +49702,6 @@ $removeparam=tracking_source
 ||tracking.realtor.com^
 ||tracking.shoptogether.buy.com^
 ||tracking.ustream.tv^
-||u.tetas.pt/script.js
 ||guide-rank.com/guiderank-tracking^
 ||api.blibili.com/x/pd-proxy/tracker
 /track.gif^

@@ -3,15 +3,15 @@
   "min_confidence": 0.8,
   "allow_modifier": true,
   "include_navigation_domains": true,
-  "dns_eligible_network_rules": 10706,
+  "dns_eligible_network_rules": 10712,
   "dns_rejected_network_rules": 26815,
   "navigation_eligible_rules": 0,
   "by_eligibility": {
-    "SAFE": 10706,
+    "SAFE": 10712,
     "REJECT": 26815
   },
   "by_reason": {
-    "pure_domain": 10705,
+    "pure_domain": 10711,
     "path_rule": 26770,
     "scoped_modifier": 2,
     "untranslatable": 43,

@@ -1,19 +1,19 @@
 {
   "name": "adblock_collection_full_css",
-  "total": 143215,
+  "total": 143221,
   "by_category": {
-    "css": 143215
+    "css": 143221
   },
   "by_kind": {
-    "css": 143215
+    "css": 143221
   },
   "by_source": {
-    "Fanboy Annoyance": 26047,
+    "Fanboy Annoyance": 26048,
     "ADrules Easylist": 24271,
     "ADrules I-Dont-Care-About-Cookies": 22893,
-    "AdGuard – Ads": 19419,
-    "ADrules AdRules": 14069,
-    "Fanboy Social": 13062,
+    "AdGuard – Ads": 19416,
+    "ADrules AdRules": 14075,
+    "Fanboy Social": 13063,
     "uBO filters – Ads": 6730,
     "ADrules EasyListChina": 6696,
     "AdGuard – Mobile Ads": 6140,
@@ -27,7 +27,7 @@
     "LocalRules": 10,
     "ADrules EasyPrivacy": 6,
     "StevenBlack Hosts": 6,
-    "EasyList (ABP)": 1,
+    "EasyList (ABP)": 2,
     "AdGuard/uBO – URL Tracking Protection": 1
   }
 }

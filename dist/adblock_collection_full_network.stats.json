@@ -1,30 +1,30 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 479829,
+  "total": 479820,
   "by_category": {
-    "network": 479829
+    "network": 479820
   },
   "by_kind": {
-    "network": 479829
+    "network": 479820
   },
   "by_source": {
-    "oisd": 131041,
-    "Hagezi DNS Pro Plus": 106460,
-    "ADrules DNS": 85147,
-    "ADrules Easylist": 51823,
-    "217heidai adblockdns": 39850,
-    "ADrules anti-AD": 15905,
-    "ADrules EasyListChina": 9537,
-    "ADrules AdRules": 9487,
+    "oisd": 131060,
+    "Hagezi DNS Pro Plus": 106461,
+    "ADrules DNS": 85154,
+    "ADrules Easylist": 51900,
+    "217heidai adblockdns": 39870,
+    "ADrules anti-AD": 15922,
+    "ADrules EasyListChina": 9541,
+    "ADrules AdRules": 9486,
     "StevenBlack Hosts": 7589,
-    "AdGuardSDNSFilter": 5034,
+    "AdGuardSDNSFilter": 4989,
     "AdGuard – Ads": 3295,
     "10007_auto reward": 2663,
     "Hagezi DNS Light": 2123,
     "uBO filters – Ads": 2102,
     "KADhosts": 2043,
     "banbendalao ADgk": 1878,
-    "Accelerate-Hosts": 1750,
+    "Accelerate-Hosts": 1688,
     "ADrules ChengFeng": 767,
     "Disconnect Simple Ad": 405,
     "AdGuard – Mobile Ads": 217,
@@ -33,14 +33,13 @@
     "uBO filters – Unbreak": 79,
     "uBO lan-block (Block Outsider Intrusion into LAN)": 72,
     "Anti-AD (adguard)": 69,
-    "Anti-AD Easylist": 49,
     "BlueSkyXN skyrules": 47,
     "uBO filters – Quick fixes": 40,
     "AWAvenue-Ads-Rule": 31,
     "Anti-AD Domains": 14,
     "AdAway Hosts": 11,
     "Peter Lowe's Blocklist": 5,
-    "EasyList (ABP)": 1,
+    "EasyList (ABP)": 4,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
   }

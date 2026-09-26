@@ -4,10 +4,10 @@
   "allow_modifier": true,
   "include_navigation_domains": true,
   "dns_eligible_network_rules": 44708,
-  "dns_rejected_network_rules": 10891,
+  "dns_rejected_network_rules": 10892,
   "navigation_eligible_rules": 0,
   "by_eligibility": {
-    "REJECT": 10891,
+    "REJECT": 10892,
     "SAFE": 44708
   },
   "by_reason": {
@@ -15,7 +15,7 @@
     "scoped_modifier": 224,
     "untranslatable": 3169,
     "pure_domain": 44708,
-    "path_rule": 3768,
+    "path_rule": 3769,
     "party_modifier": 148,
     "non_blocking_modifier": 2549,
     "regex_or_redirect_rule": 49

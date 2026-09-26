@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 47414
+! Total Rules: 47421
 ! ------------------------------------------
 ||acidoiddefraudfloody.qpon^
 ||adscampaign.net^
@@ -18,6 +18,7 @@
 ||fraudulentquarter.com^
 ||freelygreatestscammer.com^
 ||heaterlumberexploit.com^
+||inkiescambric.cyou^
 ||leisurelyexploit.com^
 ||mineryalanins.cfd^
 ||miningdeveloping.com^
@@ -229,13 +230,18 @@
 ||virussweep.sa.com^
 ||score.zeroclickfraud.com^
 ||fraudmetrix.cn^
-||inkiescambric.cyou^
 ||angminer.net^
 ||donghothongminh-mienphiship.online^
 ||miner-linkperfectmoney.com^
 ||relxmining.net^
 ||irancloudmining.com^
 ||minero-proxy-*now.sh
+||ahundredphotos.com^
+||aldi-life.vip^
+||drakternorge.com^
+||iceao.shop^
+||robuxmenu.vip^
+||skipped.vip^
 ||avito.avito.avito.
 .com-id*.info^
 .com-id*.com^
@@ -3404,6 +3410,7 @@ $document,ipaddress=185.216.143.121
 ||98.36.141.73^$all
 ||98.70.13.131^$all
 ||99.118.215.24^$all
+||static.3001.net^$all
 ||acusense.ae/umbrella/^$all
 ||cd.textfiles.com/hmatrix/data/hack0832.zip^$all
 ||cd.textfiles.com/hmatrix/data/hack1226.exe^$all

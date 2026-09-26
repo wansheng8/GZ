@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 26385
+! Total Rules: 26387
 ! ------------------------------------------
 -assets/ads.$~script
 .ar/ads/$~xhr
@@ -1923,7 +1923,6 @@ $domain=googleads.g.doubleclick.net
 ||stat.v.17173.com^
 ||static.1j1j.com^
 ||2xclick.ru^
-||static.3001.net^
 ||stat.m.360.cn^
 ||stat.360safe.com^
 ||statics.3987.com^
@@ -2215,7 +2214,6 @@ $domain=googleads.g.doubleclick.net
 ||hugelog.fcbox.com^
 ||stat.fengniao.com^
 ||fireworkanalytics.com^
-||fitanalytics.com^
 ||catalog.fjwhcbsh.com^
 ||flare-analytics.com^
 ||fouanalytics.com^
@@ -2436,6 +2434,7 @@ $domain=googleads.g.doubleclick.net
 ||pageview.click^
 ||panger-top.click^
 ||static.parsely.com^
+||14-0-204-188.static.pccw-hkt.com^
 ||stat.pchome.net^
 ||persianstat.com^
 ||persianstat.ir^
@@ -7305,86 +7304,82 @@ _ad.php?
 ||zlog.mp3.zing.vn^
 ||zlog.zingmp3.vn^
 ||zzrfh.expressionscatalog.com^
-||14-0-204-188.static.pccw-hkt.com^
-18.160.18.26                   synostatic.synology.com
-18.160.18.51                   synostatic.synology.com
-18.160.18.93                   synostatic.synology.com
-18.160.18.119                  synostatic.synology.com
-3.171.85.99                    hkrpg-sdk-os-static.hoyoverse.com
-3.171.85.45                    hkrpg-sdk-os-static.hoyoverse.com
-3.171.85.71                    hkrpg-sdk-os-static.hoyoverse.com
-3.171.85.29                    hkrpg-sdk-os-static.hoyoverse.com
-3.170.19.60                    sg-hkrpg-api-static.hoyoverse.com
-3.170.19.52                    sg-hkrpg-api-static.hoyoverse.com
-3.170.19.42                    sg-hkrpg-api-static.hoyoverse.com
-3.170.19.97                    sg-hkrpg-api-static.hoyoverse.com
-13.226.209.85                  sg-public-api-static.hoyoverse.com
-13.226.209.117                 sg-public-api-static.hoyoverse.com
-13.226.209.12                  sg-public-api-static.hoyoverse.com
-13.226.209.86                  sg-public-api-static.hoyoverse.com
-108.138.64.49                  sdk-common-static.hoyoverse.com
-108.138.64.125                 sdk-common-static.hoyoverse.com
-108.138.64.100                 sdk-common-static.hoyoverse.com
-108.138.64.60                  sdk-common-static.hoyoverse.com
+65.8.180.118                   synostatic.synology.com
+65.8.180.106                   synostatic.synology.com
+65.8.180.115                   synostatic.synology.com
+65.8.180.38                    synostatic.synology.com
+18.173.121.97                  hkrpg-sdk-os-static.hoyoverse.com
+18.173.121.100                 hkrpg-sdk-os-static.hoyoverse.com
+18.173.121.34                  hkrpg-sdk-os-static.hoyoverse.com
+18.173.121.37                  hkrpg-sdk-os-static.hoyoverse.com
+18.244.214.27                  sg-hkrpg-api-static.hoyoverse.com
+18.244.214.97                  sg-hkrpg-api-static.hoyoverse.com
+18.244.214.122                 sg-hkrpg-api-static.hoyoverse.com
+18.244.214.58                  sg-hkrpg-api-static.hoyoverse.com
+108.138.246.51                 sg-public-api-static.hoyoverse.com
+108.138.246.63                 sg-public-api-static.hoyoverse.com
+108.138.246.86                 sg-public-api-static.hoyoverse.com
+108.138.246.53                 sg-public-api-static.hoyoverse.com
+18.244.214.109                 sdk-common-static.hoyoverse.com
+18.244.214.42                  sdk-common-static.hoyoverse.com
+18.244.214.119                 sdk-common-static.hoyoverse.com
+18.244.214.21                  sdk-common-static.hoyoverse.com
+155.102.54.134                 sdk-os-static.hoyoverse.com
+155.102.54.133                 sdk-os-static.hoyoverse.com
+155.102.54.129                 sdk-os-static.hoyoverse.com
 155.102.54.135                 sdk-os-static.hoyoverse.com
 155.102.54.131                 sdk-os-static.hoyoverse.com
-155.102.54.134                 sdk-os-static.hoyoverse.com
-155.102.54.130                 sdk-os-static.hoyoverse.com
-155.102.54.133                 sdk-os-static.hoyoverse.com
-155.102.54.132                 sdk-os-static.hoyoverse.com
 155.102.54.136                 sdk-os-static.hoyoverse.com
-155.102.54.129                 sdk-os-static.hoyoverse.com
-151.101.195.6                  is1-ssl.mzstatic.com
-151.101.3.6                    is1-ssl.mzstatic.com
-151.101.67.6                   is1-ssl.mzstatic.com
-151.101.131.6                  is1-ssl.mzstatic.com
-2a04:4e42:200::774             is1-ssl.mzstatic.com
-2a04:4e42:400::774             is1-ssl.mzstatic.com
-2a04:4e42:600::774             is1-ssl.mzstatic.com
-2a04:4e42::774                 is1-ssl.mzstatic.com
-151.101.67.6                   is2-ssl.mzstatic.com
-151.101.131.6                  is2-ssl.mzstatic.com
-151.101.195.6                  is2-ssl.mzstatic.com
-151.101.3.6                    is2-ssl.mzstatic.com
-2a04:4e42::774                 is2-ssl.mzstatic.com
-2a04:4e42:200::774             is2-ssl.mzstatic.com
+155.102.54.132                 sdk-os-static.hoyoverse.com
+155.102.54.130                 sdk-os-static.hoyoverse.com
+151.101.203.6                  is1-ssl.mzstatic.com
+2a04:4e42:a::774               is1-ssl.mzstatic.com
+151.101.203.6                  is2-ssl.mzstatic.com
 2a04:4e42:400::774             is2-ssl.mzstatic.com
 2a04:4e42:600::774             is2-ssl.mzstatic.com
-151.101.67.6                   is3-ssl.mzstatic.com
-151.101.131.6                  is3-ssl.mzstatic.com
+2a04:4e42::774                 is2-ssl.mzstatic.com
+2a04:4e42:200::774             is2-ssl.mzstatic.com
 151.101.195.6                  is3-ssl.mzstatic.com
 151.101.3.6                    is3-ssl.mzstatic.com
-2a04:4e42:79::774              is3-ssl.mzstatic.com
-151.101.67.6                   is4-ssl.mzstatic.com
-151.101.131.6                  is4-ssl.mzstatic.com
-151.101.195.6                  is4-ssl.mzstatic.com
-151.101.3.6                    is4-ssl.mzstatic.com
-2a04:4e42::774                 is4-ssl.mzstatic.com
+151.101.67.6                   is3-ssl.mzstatic.com
+151.101.131.6                  is3-ssl.mzstatic.com
+2a04:4e42:200::774             is3-ssl.mzstatic.com
+2a04:4e42:400::774             is3-ssl.mzstatic.com
+2a04:4e42:600::774             is3-ssl.mzstatic.com
+2a04:4e42::774                 is3-ssl.mzstatic.com
+151.101.43.6                   is4-ssl.mzstatic.com
 2a04:4e42:200::774             is4-ssl.mzstatic.com
 2a04:4e42:400::774             is4-ssl.mzstatic.com
 2a04:4e42:600::774             is4-ssl.mzstatic.com
-146.75.31.6                    is5-ssl.mzstatic.com
-2a04:4e42:79::774              is5-ssl.mzstatic.com
-142.251.163.110                connectivitycheck.gstatic.cn
-2607:f8b0:4004:c1d::6e         connectivitycheck.gstatic.cn
-23.223.247.212                 cdn.akamai.steamstatic.com
-23.223.247.210                 cdn.akamai.steamstatic.com
-23.62.230.22                   community.akamai.steamstatic.com
-23.62.230.30                   community.akamai.steamstatic.com
-185.199.110.153                githubstatus.com
-185.199.108.153                githubstatus.com
-185.199.111.153                githubstatus.com
+2a04:4e42::774                 is4-ssl.mzstatic.com
+151.101.195.6                  is5-ssl.mzstatic.com
+151.101.3.6                    is5-ssl.mzstatic.com
+151.101.67.6                   is5-ssl.mzstatic.com
+151.101.131.6                  is5-ssl.mzstatic.com
+2a04:4e42:600::774             is5-ssl.mzstatic.com
+2a04:4e42::774                 is5-ssl.mzstatic.com
+2a04:4e42:200::774             is5-ssl.mzstatic.com
+2a04:4e42:400::774             is5-ssl.mzstatic.com
+142.251.219.151                connectivitycheck.gstatic.cn
+2607:f8b0:4005:817::2017       connectivitycheck.gstatic.cn
+23.192.228.18                  cdn.akamai.steamstatic.com
+23.192.228.17                  cdn.akamai.steamstatic.com
+23.214.95.215                  community.akamai.steamstatic.com
+23.214.95.202                  community.akamai.steamstatic.com
 185.199.109.153                githubstatus.com
+185.199.110.153                githubstatus.com
+185.199.111.153                githubstatus.com
+185.199.108.153                githubstatus.com
 104.18.14.62                   static-assets-prod.epicgames.com
 104.18.15.62                   static-assets-prod.epicgames.com
-104.18.20.177                  static-assets-prod.unrealengine.com
 104.18.21.177                  static-assets-prod.unrealengine.com
-140.82.114.17                  status.github.com
-23.205.105.148                 store.akamai.steamstatic.com
-23.205.105.140                 store.akamai.steamstatic.com
-23.214.245.2                   store-site-backend-static.ak.epicgames.com
-2600:1408:ec00:1183::3b63      store-site-backend-static.ak.epicgames.com
-2600:1408:ec00:1189::3b63      store-site-backend-static.ak.epicgames.com
+104.18.20.177                  static-assets-prod.unrealengine.com
+140.82.112.17                  status.github.com
+23.67.33.136                   store.akamai.steamstatic.com
+23.67.33.145                   store.akamai.steamstatic.com
+184.25.244.237                 store-site-backend-static.ak.epicgames.com
+2600:1406:3a00:496::3b63       store-site-backend-static.ak.epicgames.com
+2600:1406:3a00:493::3b63       store-site-backend-static.ak.epicgames.com
 ||beacons.gvt2.com^
 ||googleads.g.doubleclick.net^
 ||securepubads.g.doubleclick.net^
@@ -8690,6 +8685,10 @@ _ad.php?
 ||analytics.finna.fi^
 ||analytics.firstanswer.ai^
 ||fishtownanalytics-collector-1340672531.us-east-1.elb.amazonaws.com^
+||collector.fitanalytics.com^
+||collector-de.fitanalytics.com^
+||integrations.fitanalytics.com^
+||metrics.fitanalytics.com^
 ||widget.fitanalytics.com^
 ||analytics.fitflop.com^
 ||analytics-api.fittingbox.com^
@@ -15071,6 +15070,9 @@ _stat.js*
 ||analytics.firstrade.net^
 ||analytics.fischer-wolle.ch^
 ||analytics.fischer-wolle.de^
+||integrations-staging1.fitanalytics.com^
+||metrics-nl.fitanalytics.com^
+||metrics-sandbox-orig.fitanalytics.com^
 ||wh.fittirl.click^
 ||analytics.fivemx.com^
 ||log.fixbh.com^

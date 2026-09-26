@@ -1,5 +1,5 @@
 # Adblock Rule Collection (Full) (url)
-# Format: one domain per line (AdGuard DNS / AdGuard Home), total 21717
+# Format: one domain per line (AdGuard DNS / AdGuard Home), total 21722
 00466628383.click
 0099866g8g.click
 0123movies.click
@@ -10624,10 +10624,12 @@ collect.jkcanalytics.com
 collect.liweestate.se
 collecting.click
 collector-analytics.efigence.com
+collector-de.fitanalytics.com
 collector-statistics.nhn-commerce.com
 collector.a197.click
 collector.ba5a.click
 collector.d6e1.click
+collector.fitanalytics.com
 collector.flora.statsd.io
 collector.intellumanalytics.com
 collector.iran-analytics.ir
@@ -11411,7 +11413,6 @@ firstclick.pro
 firstcsblog.weebly.com
 firstwren.click
 fishtownanalytics-collector-1340672531.us-east-1.elb.amazonaws.com
-fitanalytics.com
 fitnexa-analytics-prod-aye3c3bagadthvgx.z01.azurefd.net
 fixelpixel.net
 fixmypixel.com
@@ -12123,6 +12124,8 @@ instantamrix-3000.click
 instasexyblog.com
 instatedopa.cfd
 intake-analytics.wikimedia.org.leonetz.net
+integrations-staging1.fitanalytics.com
+integrations.fitanalytics.com
 intelligentpixel.modernimpact.com
 interact-analytics.com
 intercalce.click
@@ -13689,10 +13692,13 @@ metatrckpixel.com
 mete-bella.click
 methodpayment.click
 metrica.xstatic.kz
+metrics-nl.fitanalytics.com
+metrics-sandbox-orig.fitanalytics.com
 metrics.abbproductcatalog.com
 metrics.countryfinancialsecurityblog.com
 metrics.dinpsykolog.se
 metrics.faststats.dev
+metrics.fitanalytics.com
 metrics.homestatehealth.com
 metrics.network-traffic-analytics.com
 metrics.realestate.com.au
@@ -17055,7 +17061,6 @@ static-www.ec.popcap.com
 static-xl9-ssl.xunlei.com
 static.189works.com
 static.1j1j.com
-static.3001.net
 static.365inews.com
 static.5411.com
 static.accesstrade.vn
