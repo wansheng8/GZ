@@ -1,6 +1,10 @@
 # Adblock Rule Collection (connection-layer ruleset)
-# Total Rules: 539586
+# Total Rules: 539592
 # Part 2/2
+DOMAIN-SUFFIX,track.readdsp.com,REJECT
+DOMAIN-SUFFIX,track.reallifediy.com,REJECT
+DOMAIN-SUFFIX,track.realtimeboard.com,REJECT
+DOMAIN-SUFFIX,track.recodemand.com,REJECT
 DOMAIN-SUFFIX,track.recursosdigitales.fun,REJECT
 DOMAIN-SUFFIX,track.rediff.com,REJECT
 DOMAIN-SUFFIX,track.reflectionsaesthetics.co,REJECT
@@ -11122,6 +11126,7 @@ DOMAIN-SUFFIX,ufeonk.viravira.co,REJECT
 DOMAIN-SUFFIX,ufevkhzatjnfa.online,REJECT
 DOMAIN-SUFFIX,uff6.com,REJECT
 DOMAIN-SUFFIX,ufficalveo.store,REJECT
+DOMAIN-SUFFIX,uffubjqcdy.com,REJECT
 DOMAIN-SUFFIX,uffugim.run,REJECT
 DOMAIN-SUFFIX,ufgg55.xyz,REJECT
 DOMAIN-SUFFIX,ufgraozhpskse.site,REJECT

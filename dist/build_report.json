@@ -3,15 +3,15 @@
   "failures": [],
   "warnings": [],
   "metrics": {
-    "total_rules": 793460,
-    "dns_domains": 539586,
+    "total_rules": 793466,
+    "dns_domains": 539592,
     "source_counts": {
       "Hagezi DNS Pro Plus": 249395,
       "oisd": 243934,
       "217heidai adblockdns": 214330,
       "ADrules DNS": 202417,
       "ADrules DNS (gp mirror)": 202417,
-      "AdGuardSDNSFilter": 182993,
+      "AdGuardSDNSFilter": 183021,
       "ADrules AdRules": 138459,
       "AdGuard – Ads": 137940,
       "Anti-AD Domains": 109742,
@@ -20,8 +20,8 @@
       "Anti-AD Easylist": 95962,
       "Anti-AD (easylist)": 95962,
       "ADrules anti-AD": 95301,
-      "EasyList (easylist.to)": 84237,
-      "EasyList (ABP)": 84235,
+      "EasyList (ABP)": 84243,
+      "EasyList (easylist.to)": 84243,
       "ADrules Easylist": 84190,
       "StevenBlack Hosts": 75956,
       "Phishing URL Blocklist": 68141,
@@ -69,7 +69,7 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 479823,
+      "network": 479829,
       "css": 143215,
       "privacy": 55599,
       "phishing": 37521,
@@ -85,22 +85,22 @@
       "mining": 235,
       "js": 1
     },
-    "root_domain_blocks": 322136,
+    "root_domain_blocks": 322142,
     "local_blocklist_rules": 0,
     "local_allowlist_rules": 0
   },
   "diff": {
     "total_rules": {
-      "current": 793460,
-      "previous": 793292,
-      "delta": 168,
-      "percent": 0.02
+      "current": 793466,
+      "previous": 793460,
+      "delta": 6,
+      "percent": 0.0
     },
     "dns_domains": {
-      "current": 539586,
-      "previous": 539422,
-      "delta": 164,
-      "percent": 0.03
+      "current": 539592,
+      "previous": 539586,
+      "delta": 6,
+      "percent": 0.0
     },
     "sources": {
       "10007_auto reward": {
@@ -236,10 +236,10 @@
         "percent": 0.0
       },
       "AdGuardSDNSFilter": {
-        "current": 182993,
+        "current": 183021,
         "previous": 182993,
-        "delta": 0,
-        "percent": 0.0
+        "delta": 28,
+        "percent": 0.02
       },
       "Anti-AD (adguard)": {
         "current": 101556,
@@ -290,15 +290,15 @@
         "percent": 0.0
       },
       "EasyList (ABP)": {
-        "current": 84235,
-        "previous": 84231,
-        "delta": 4,
-        "percent": 0.0
+        "current": 84243,
+        "previous": 84235,
+        "delta": 8,
+        "percent": 0.01
       },
       "EasyList (easylist.to)": {
-        "current": 84237,
-        "previous": 84232,
-        "delta": 5,
+        "current": 84243,
+        "previous": 84237,
+        "delta": 6,
         "percent": 0.01
       },
       "EasyList China (ABP)": {
@@ -315,15 +315,15 @@
       },
       "Fanboy Annoyance": {
         "current": 57514,
-        "previous": 57510,
-        "delta": 4,
-        "percent": 0.01
+        "previous": 57514,
+        "delta": 0,
+        "percent": 0.0
       },
       "Fanboy CookieMonster": {
         "current": 28058,
-        "previous": 28056,
-        "delta": 2,
-        "percent": 0.01
+        "previous": 28058,
+        "delta": 0,
+        "percent": 0.0
       },
       "Fanboy Social": {
         "current": 13853,
@@ -375,9 +375,9 @@
       },
       "Online Malicious URL Blocklist": {
         "current": 9429,
-        "previous": 9439,
-        "delta": -10,
-        "percent": -0.11
+        "previous": 9429,
+        "delta": 0,
+        "percent": 0.0
       },
       "Peter Lowe's Blocklist": {
         "current": 3549,
@@ -387,9 +387,9 @@
       },
       "Phishing URL Blocklist": {
         "current": 68141,
-        "previous": 68152,
-        "delta": -11,
-        "percent": -0.02
+        "previous": 68141,
+        "delta": 0,
+        "percent": 0.0
       },
       "ScamBlocklist (adguard)": {
         "current": 950,
@@ -429,9 +429,9 @@
       },
       "oisd": {
         "current": 243934,
-        "previous": 243921,
-        "delta": 13,
-        "percent": 0.01
+        "previous": 243934,
+        "delta": 0,
+        "percent": 0.0
       },
       "uBO filters – Ads": {
         "current": 23024,
@@ -472,11 +472,11 @@
     }
   },
   "previous": {
-    "total_rules": 793292,
-    "dns_domains": 539422,
+    "total_rules": 793460,
+    "dns_domains": 539586,
     "source_counts": {
       "Hagezi DNS Pro Plus": 249395,
-      "oisd": 243921,
+      "oisd": 243934,
       "217heidai adblockdns": 214330,
       "ADrules DNS": 202417,
       "ADrules DNS (gp mirror)": 202417,
@@ -489,19 +489,19 @@
       "Anti-AD Easylist": 95962,
       "Anti-AD (easylist)": 95962,
       "ADrules anti-AD": 95301,
-      "EasyList (easylist.to)": 84232,
-      "EasyList (ABP)": 84231,
+      "EasyList (easylist.to)": 84237,
+      "EasyList (ABP)": 84235,
       "ADrules Easylist": 84190,
       "StevenBlack Hosts": 75956,
-      "Phishing URL Blocklist": 68152,
-      "Fanboy Annoyance": 57510,
+      "Phishing URL Blocklist": 68141,
+      "Fanboy Annoyance": 57514,
       "ADrules EasyPrivacy": 56202,
       "EasyPrivacy (ABP)": 53520,
       "Firebog Easylist Hosts": 50276,
       "Hagezi DNS Light": 44936,
       "Firebog Easyprivacy Hosts": 43129,
       "KADhosts": 42680,
-      "Fanboy CookieMonster": 28056,
+      "Fanboy CookieMonster": 28058,
       "ADrules I-Dont-Care-About-Cookies": 24319,
       "uBO filters – Ads": 23024,
       "AdGuard – Chinese": 22063,
@@ -512,7 +512,7 @@
       "Fanboy Social": 13853,
       "Dan Pollock's hosts": 13087,
       "10007_auto reward": 12551,
-      "Online Malicious URL Blocklist": 9439,
+      "Online Malicious URL Blocklist": 9429,
       "banbendalao ADgk": 9153,
       "AdGuard – Mobile Ads": 7888,
       "AdAway Hosts": 6540,
@@ -538,14 +538,14 @@
       "LocalRules": 10
     },
     "category_counts": {
-      "network": 479807,
-      "css": 143211,
+      "network": 479823,
+      "css": 143215,
       "privacy": 55599,
-      "phishing": 37357,
+      "phishing": 37521,
       "url": 26385,
       "scriptlet": 17468,
       "whitelist": 14850,
-      "malware": 9674,
+      "malware": 9658,
       "annoyance": 3707,
       "social": 1942,
       "cookie": 1682,
@@ -554,7 +554,7 @@
       "mining": 235,
       "js": 1
     },
-    "root_domain_blocks": 322079,
+    "root_domain_blocks": 322136,
     "local_blocklist_rules": 0,
     "local_allowlist_rules": 0
   },

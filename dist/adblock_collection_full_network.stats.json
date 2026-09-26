@@ -1,11 +1,11 @@
 {
   "name": "adblock_collection_full_network",
-  "total": 479823,
+  "total": 479829,
   "by_category": {
-    "network": 479823
+    "network": 479829
   },
   "by_kind": {
-    "network": 479823
+    "network": 479829
   },
   "by_source": {
     "oisd": 131041,
@@ -17,7 +17,7 @@
     "ADrules EasyListChina": 9537,
     "ADrules AdRules": 9487,
     "StevenBlack Hosts": 7589,
-    "AdGuardSDNSFilter": 5006,
+    "AdGuardSDNSFilter": 5034,
     "AdGuard – Ads": 3295,
     "10007_auto reward": 2663,
     "Hagezi DNS Light": 2123,
@@ -37,12 +37,10 @@
     "BlueSkyXN skyrules": 47,
     "uBO filters – Quick fixes": 40,
     "AWAvenue-Ads-Rule": 31,
-    "EasyList (ABP)": 17,
     "Anti-AD Domains": 14,
     "AdAway Hosts": 11,
     "Peter Lowe's Blocklist": 5,
-    "EasyList China (ABP)": 4,
-    "EasyList (easylist.to)": 2,
+    "EasyList (ABP)": 1,
     "Firebog Easylist Hosts": 1,
     "Dan Pollock's hosts": 1
   }
