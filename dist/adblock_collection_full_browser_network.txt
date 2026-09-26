@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 629325
+! Total Rules: 629373
 ! ------------------------------------------
 &rb=&uuid=$third-party
 &subaffid=%$subdocument,third-party
@@ -287431,6 +287431,7 @@ vkcdnservice.appspot.com^
 ||192.151.218.66^
 ||23.224.89.2^
 ||156.233.32.123^
+||balamutka.link^
 ||dteifi.com^
 ||thtrck.com^
 ||vvapi.org^
@@ -288008,6 +288009,7 @@ vkcdnservice.appspot.com^
 ||countly.
 ||countly-
 |piwik.
+||data-www-weaver.wanted.co.kr^
 ||e.missav.
 ||stats.dulo.
 ||faro.civitai.
@@ -288306,6 +288308,37 @@ dlsdk.appsflyer.com^
 -indo666.
 -pentaslot.
 -tototix.gif
+||2t1huezvy4ztqx4j86m.rest^
+||baconstaregnar.cfd^
+||bonnetssunfall.qpon^
+||ce6498e264.com^
+||cf30aba4e7.com^
+||elnywqptmwf.com^
+||fhdqfaqvsrnae.site^
+||fieldsgultpingle.qpon^
+||gc5ubonezfhec7kzyhmwr7qq.cfd^
+||girniewelters.cfd^
+||haeingserous.cfd^
+||icxddwjkp.com^
+||iridicspait.cyou^
+||iudxvsyncwgtv.space^
+||jackboxsheathe.cyou^
+||jimsonthous.qpon^
+||joramscooser.com^
+||millardwhens.cfd^
+||mumpingprimeur.cfd^
+||ovoutwmmrbyve.space^
+||piglingtophous.cfd^
+||qhkkpxtwoikbq.site^
+||saldfnivenpgl.site^
+||supariairily.cyou^
+||tartbyronic.cyou^
+||turnrowlips.cfd^
+||tusbpuqtobu.in^
+||uyndrsehspfpv.site^
+||vbppjoxudndohbr.com^
+||ymuqohcxibqit.site^
+||yobokprnqwhds.site^
 ||bucksmein.com^
 ||byethost41.net^
 ||gmmads.com^
@@ -292754,13 +292787,21 @@ analytics-*.aasaam.com
 @@||track.rutarget.ru^|
 @@||5471782.fls.doubleclick.net^|
 @@||omniture.walmart.com^|
-||ce6498e264.com^
-||cf30aba4e7.com^
-||icxddwjkp.com^
-||saldfnivenpgl.site^
-||supariairily.cyou^
-||ymuqohcxibqit.site^
-||yobokprnqwhds.site^
+||chambredeserts.com^
+||dqeqcsvchrnwn.site^
+||earanrheguttldl.com^
+||happygoluckyinterview.pro^
+||haycjkrscbolo.website^
+||jwpheczazpiht.site^
+||kylkmrarvmtsg.website^
+||pomhbsbptivp.com^
+||prqybxgxhehvu.site^
+||rnopankivhjyn.site^
+||rwwmbymyqvwky.top^
+||steibyybznhmv.website^
+||sudderifebridler.qpon^
+||ulldyjdmjlxwm.online^
+||ypxakykevcwg.com^
 -facebook-likeButton-
 -facebook-share.
 -facebook-widget.
@@ -448859,6 +448900,7 @@ fb_servpub-a.akamaihd.net
 ||boostaloxi2u.digital^
 ||boostbobile.com^
 ||boostbyq.com^
+||boostciproxp-digital.pages.dev^
 ||boostciproxp.digital^
 ||boostcormax.pro^
 ||boostercentral.com^
@@ -474592,6 +474634,7 @@ fb_servpub-a.akamaihd.net
 ||flia.live^
 ||flicargo.com^
 ||flicartgolf.com^
+||flick-edge-pro.pages.dev^
 ||flick-edge.pro^
 ||flick-flash.com^
 ||flick-repair.com^
@@ -488353,6 +488396,7 @@ fb_servpub-a.akamaihd.net
 ||instant820glant.net^
 ||instant9-3cryppro.com^
 ||instant91daypro-ai.com^
+||instant9bferon-pro.pages.dev^
 ||instant9bferon.pro^
 ||instantadvantageai.club^
 ||instantakpro2x.shop^
@@ -493788,6 +493832,7 @@ fb_servpub-a.akamaihd.net
 ||knehcrw.cn^
 ||kneseed.club^
 ||knew-dot-y6t78u7y.appspot.com^
+||knfgovpl.site^
 ||kngs365officiel.fr^
 ||kngvsiw.weebly.com^
 ||kniblits.com^
@@ -519474,6 +519519,7 @@ fb_servpub-a.akamaihd.net
 ||popyboo.com^
 ||poqaruc.com^
 ||poqyhei.com^
+||por-online.website^
 ||porallll.pages.dev^
 ||poranekpl.pro^
 ||poraodigital.com.br^
@@ -543678,6 +543724,7 @@ fb_servpub-a.akamaihd.net
 ||teachercoming.com^
 ||teachgust.sbs^
 ||teachhindiworld.com^
+||teachst.top^
 ||teadux.com^
 ||teakbahcemobilyasi.com^
 ||teakivo.com^
@@ -570328,6 +570375,7 @@ $script,redirect-rule=noopjs,to=~googletagmanager.com,from=boote-magazin.de
 @@*$generichide,domain=appsbull.com|diudemy.com|maqal360.com
 @@||cdn.jsdelivr.net^$script,domain=appsbull.com|diudemy.com|maqal360.com
 *$xhr,redirect-rule=nooptext,domain=intercelestial.com|teknoasian.com
+@@*$xhr,image,script,subdocument,1p,domain=intercelestial.com|teknoasian.com
 @@*$generichide,domain=intercelestial.com|teknoasian.com
 /_ac/s/*.js|$script,1p
 *$subdocument,redirect-rule=noopframe,domain=laweducationinfo.com|savemoneyinfo.com|worldaffairinfo.com|godstoryinfo.com|successstoryinfo.com|cxissuegk.com|learnmarketinfo.com|bhugolinfo.com|armypowerinfo.com|rsgamer.app|phonereviewinfo.com|makeincomeinfo.com|gknutshell.com|vichitrainfo.com|workproductivityinfo.com|dopomininfo.com|hostingdetailer.com|fitnesssguide.com|tradingfact4u.co|cryptofactss.com|softwaredetail.com|artoffocas.com|insurancesfact.com|travellingdetail.com

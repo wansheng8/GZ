@@ -4,14 +4,14 @@
   "allow_modifier": true,
   "include_navigation_domains": true,
   "dns_eligible_network_rules": 0,
-  "dns_rejected_network_rules": 14850,
+  "dns_rejected_network_rules": 14851,
   "navigation_eligible_rules": 0,
   "by_eligibility": {
-    "REJECT": 14850
+    "REJECT": 14851
   },
   "by_reason": {
     "css_rule": 2908,
-    "scoped_modifier": 5256,
+    "scoped_modifier": 5257,
     "non_blocking_modifier": 1861,
     "party_modifier": 616,
     "resource_type_modifier": 1672,

@@ -1,4 +1,48 @@
 ! Adblock Rule Collection (Full) (jsDelivr part 02)
+||syn-159-089-176-107.wifi.spectrum.com^
+||syn-162-243-229-214.wifi.spectrum.com^
+||syn-thalora.live^
+||syn-thalora.online^
+||synamedia.online^
+||synappiotradepropro.click^
+||synappiov56.net^
+||synapseaiplatform.shop^
+||synaris.com^
+||synarnedia.com^
+||synarthrodiattl.info^
+||sync-7xr.pages.dev^
+||sync-a.copy9.com^
+||sync-burst.com^
+||sync-venture.com^
+||sync-vertex.com^
+||sync.cosmoshq.com^
+||syncappauth.pages.dev^
+||syncblockrectification.pages.dev^
+||syncdesks.com^
+||syncedexapps.pages.dev^
+||syncedltd.com^
+||syncflowxz.info^
+||synchive.co^
+||synchrotone.com^
+||synckava.xyz^
+||syncmeet.online^
+||syncoiresolver.pages.dev^
+||syncronizationdapp.pages.dev^
+||syncs-guild-api.vercel.app^
+||syncsactivate.web.app^
+||syncsvallidators.netlify.app^
+||synctechresolve.pages.dev^
+||syncthing.fr^
+||syncvalidator.web.app^
+||syncwalletshubs.on.fleek.co^
+||syndication-o.twimg.com^
+||synebuzz.site^
+||synedacall.site^
+||synenet.site^
+||syneoshealthlondon.co.uk.admin-mcas.ms^
+||syneoshealthlondon.co.uk.mcas.ms^
+||syneragrisystem.firebaseapp.com^
+||syneragrisystem.web.app^
 ||synergeiokatharismou-thessaloniki.gr^
 ||synergiecapital-it.com^
 ||synergiecapital.pro^
@@ -1083,6 +1127,7 @@
 ||teachercoming.com^
 ||teachgust.sbs^
 ||teachhindiworld.com^
+||teachst.top^
 ||teadux.com^
 ||teakbahcemobilyasi.com^
 ||teakivo.com^
@@ -43485,6 +43530,7 @@ pahe.plus##footer, .text-left, #link-view > [href], .box-main > [href]
 pahe.plus##+js(set, blurred, false)
 pahe.plus##+js(no-fetch-if, mode:no-cors)
 *$xhr,redirect-rule=nooptext,domain=intercelestial.com|teknoasian.com
+@@*$xhr,image,script,subdocument,1p,domain=intercelestial.com|teknoasian.com
 @@*$generichide,domain=intercelestial.com|teknoasian.com
 intercelestial.com,teknoasian.com##.right-sidebar.penci_sidebar.container,.penci-home-popular-posts.container,p,ul,li,[href*="s0-greate"],#sidebar,.post-pagination,.single-breadcrumb.penci-breadcrumb.container,.penci-move-title-above.post-image,#footer-section, .post-related, #comments, .post-share.tags-share-box, .alignleft.wp-caption
 intercelestial.com#@#+js(adjust-setTimeout, '', *, 0.1)
@@ -59042,7 +59088,7 @@ rugbypass.com###snack-sticky
 all.rugby##.reclameHead
 speedcafe.com##div[class*="advanced_ads_"]
 soccerway.com##.boxOverContentRevive
-apk.dog##.adv_text
+apkdog.com.ua,apkdog.*,apk.dog##.adv_text
 worldsoccer.com##div[style="height:500px;margin:8px 0;"]
 amateurphotographer.com,mensfitness.co.uk,worldsoccer.com##.content-ad
 amateurphotographer.com,mensfitness.co.uk,worldsoccer.com##.pageskin-ads
@@ -59080,7 +59126,6 @@ prohoster.info###main > div[style^="width: 100%; text-align: center; margin: 0; 
 prohoster.info##.v-banner-container
 queerty.com##.flex > article ~ div.w-full
 queerty.com##.min-h-\[100px\]
-onejailbreak.com##.gtm-cls
 ||onejailbreak.com/site/templates/scripts/slots.js
 ||boomplaymusic.com/BoomPlayer/ad/
 celebmafia.com##body .featured:not(#style_important)
@@ -74218,6 +74263,7 @@ forbes.com##.moreon-ad
 /^https:\/\/cloudorchestranova\.com\/embed\/[a-f0-9]{32}\.js\?_=/$script,match-case
 /(?:com|net)\/[a-z-]{3,10}\.html$/$subdocument,~3p,domain=imgadult.com|imgdrive.net|imgtaxi.com
 /(?:com|net)\/[0-9a-f]{12}\.js$/$script,~3p,domain=imgadult.com|imgdrive.net|imgtaxi.com
+onejailbreak.com##.gtm-cls
 domainnamewire.com##.g-single
 managingmadrid.com##.duet--layout--rail > div[class^="_"]:has(div[data-concert]:only-child)
 jlwranglerforums.com##.singleBanner
@@ -76400,7 +76446,6 @@ animegratis.org###mobileStickyAd
 kstyle.com##div[class^="HomeHero_ad_"]
 1rankup.jp###surplus
 geekwire.com###category-banner-mobile
-apkdog.com.ua,apkdog.*##.adv_text
 apkdog.com.ua,apkdog.*##.adx_center
 1000mg.jp##iframe[src="https://1000mg.jp/ad_com1.php"]
 na2ka4.blog.fc2.com###container > div.my-box > div.ninreco:has(> ins.adsbygoogle)

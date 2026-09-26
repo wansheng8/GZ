@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 14850
+! Total Rules: 14851
 ! ------------------------------------------
 dez.ro#@##ad-carousel
 so-net.ne.jp#@##ad-p3
@@ -11248,6 +11248,7 @@ jameeltips.us#@#.banner-728x90
 adcrypto.net,admediaflex.com,aduzz.com,bitcrypto.info,cdrab.com,datacheap.io,hbz.us,savego.org,owsafe.com,sportweb.info#@#.adb-top
 @@*$generichide,domain=appsbull.com|diudemy.com|maqal360.com
 @@||cdn.jsdelivr.net^$script,domain=appsbull.com|diudemy.com|maqal360.com
+@@*$xhr,image,script,subdocument,1p,domain=intercelestial.com|teknoasian.com
 @@*$generichide,domain=intercelestial.com|teknoasian.com
 intercelestial.com#@#+js(adjust-setTimeout, '', *, 0.1)
 @@*$generichide,domain=laweducationinfo.com|savemoneyinfo.com|worldaffairinfo.com|godstoryinfo.com|successstoryinfo.com|cxissuegk.com|learnmarketinfo.com|bhugolinfo.com|armypowerinfo.com|rsgamer.app|phonereviewinfo.com|makeincomeinfo.com|gknutshell.com|vichitrainfo.com|workproductivityinfo.com|dopomininfo.com|hostingdetailer.com|fitnesssguide.com|tradingfact4u.co|cryptofactss.com|softwaredetail.com|artoffocas.com|insurancesfact.com|travellingdetail.com

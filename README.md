@@ -5,8 +5,8 @@
 <br/>
 
 [![Build](https://github.com/wansheng8/GZ/actions/workflows/build.yml/badge.svg)](https://github.com/wansheng8/GZ/actions/workflows/build.yml)
-[![Rules](https://img.shields.io/badge/Total_Rules-793%2C472-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
-[![DNS](https://img.shields.io/badge/DNS_Domains-539%2C660-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
+[![Rules](https://img.shields.io/badge/Total_Rules-793%2C519-ff00e5?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full.txt)
+[![DNS](https://img.shields.io/badge/DNS_Domains-539%2C707-00f0ff?style=for-the-badge&labelColor=0d0d0d)](dist/adblock_collection_full_dns.txt)
 [![Sources](https://img.shields.io/badge/Upstream-60_sources-9d00ff?style=for-the-badge&labelColor=0d0d0d)](config/sources.yaml)
 [![License](https://img.shields.io/badge/License-MIT-39ff14?style=for-the-badge&labelColor=0d0d0d)](LICENSE)
 [![Update](https://img.shields.io/badge/Update-Daily-ff9c39?style=for-the-badge&labelColor=0d0d0d)]()
@@ -255,7 +255,7 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 
 <div align="center">
 
-<img src="assets/stats.svg" width="100%" alt="793,472 rules · 539,660 domains · 60 sources · 33.8万+ deduplicated"/>
+<img src="assets/stats.svg" width="100%" alt="793,519 rules · 539,707 domains · 60 sources · 33.8万+ deduplicated"/>
 
 </div>
 
@@ -264,12 +264,12 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 <!-- kind-stats:start -->
 | 类型 | 数量 | 归属层 |
 | :--- | ---: | :--- |
-| network | 629,325 | 网络拦截（DNS 从中提取纯域名） |
-| css | 146,128 | 元素隐藏 |
+| network | 629,373 | 网络拦截（DNS 从中提取纯域名） |
+| css | 146,127 | 元素隐藏 |
 | scriptlet | 17,510 | 元素隐藏 |
 | html | 508 | 元素隐藏 |
 | js | 1 | 元素隐藏 |
-| **合计** | 793,472 | — |
+| **合计** | 793,519 | — |
 <!-- kind-stats:end -->
 
 ### 按类别订阅
@@ -279,13 +279,13 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 <!-- category-stats:start -->
 | 类别 | 数量 | 订阅 |
 | :--- | ---: | :--- |
-| network | 479,823 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_network.txt) |
-| css | 143,220 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_css.txt) |
+| network | 479,870 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_network.txt) |
+| css | 143,219 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_css.txt) |
 | privacy | 55,600 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_privacy.txt) |
 | phishing | 37,527 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_phishing.txt) |
 | url | 26,387 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_url.txt) |
 | scriptlet | 17,466 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_scriptlet.txt) |
-| whitelist | 14,850 | 例外规则（仅供审计） |
+| whitelist | 14,851 | 例外规则（仅供审计） |
 | malware | 9,659 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_malware.txt) |
 | annoyance | 3,707 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_annoyance.txt) |
 | social | 1,941 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_social.txt) |
@@ -294,7 +294,7 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 | html | 505 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_html.txt) |
 | mining | 235 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_mining.txt) |
 | js | 1 | [订阅](https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adblock_collection_full_js.txt) |
-| **合计** | 793,472 | — |
+| **合计** | 793,519 | — |
 <!-- category-stats:end -->
 
 <img src="assets/divider.svg" width="100%" alt=""/>

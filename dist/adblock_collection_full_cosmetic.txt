@@ -4,7 +4,7 @@
 ! Expires: 1 day
 ! Homepage: https://github.com/wansheng8/GZ
 ! License: MIT
-! Total Rules: 164147
+! Total Rules: 164146
 ! ------------------------------------------
 live.bilibili.com##.live-room-app .ad-deck
 live.bilibili.com##.live-room-app [class*="recommend"]
@@ -145123,7 +145123,7 @@ rugbypass.com###snack-sticky
 all.rugby##.reclameHead
 speedcafe.com##div[class*="advanced_ads_"]
 soccerway.com##.boxOverContentRevive
-apk.dog##.adv_text
+apkdog.com.ua,apkdog.*,apk.dog##.adv_text
 worldsoccer.com##div[style="height:500px;margin:8px 0;"]
 amateurphotographer.com,mensfitness.co.uk,worldsoccer.com##.content-ad
 amateurphotographer.com,mensfitness.co.uk,worldsoccer.com##.pageskin-ads
@@ -145156,7 +145156,6 @@ prohoster.info###main > div[style^="width: 100%; text-align: center; margin: 0; 
 prohoster.info##.v-banner-container
 queerty.com##.flex > article ~ div.w-full
 queerty.com##.min-h-\[100px\]
-onejailbreak.com##.gtm-cls
 celebmafia.com##body .featured:not(#style_important)
 express.co.uk##.partners-element
 maltadaily.mt##.max-w-5xl > a[href]:has(> img[alt*="Advertisement"])
@@ -157591,6 +157590,7 @@ greatist.com,medicalnewstoday.com##.css-umsscj
 greatist.com,medicalnewstoday.com##hl-adsense
 forbes.com##.adblock-unused
 forbes.com##.moreon-ad
+onejailbreak.com##.gtm-cls
 domainnamewire.com##.g-single
 managingmadrid.com##.duet--layout--rail > div[class^="_"]:has(div[data-concert]:only-child)
 jlwranglerforums.com##.singleBanner
@@ -158368,7 +158368,6 @@ animegratis.org###mobileStickyAd
 kstyle.com##div[class^="HomeHero_ad_"]
 1rankup.jp###surplus
 geekwire.com###category-banner-mobile
-apkdog.com.ua,apkdog.*##.adv_text
 apkdog.com.ua,apkdog.*##.adx_center
 1000mg.jp##iframe[src="https://1000mg.jp/ad_com1.php"]
 na2ka4.blog.fc2.com###container > div.my-box > div.ninreco:has(> ins.adsbygoogle)
