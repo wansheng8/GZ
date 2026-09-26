@@ -208,11 +208,11 @@ filter_remote = https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/rulesets/adbl
 | 系统 hosts | `hosts.md` | 各系统 hosts 路径与写入命令指引 |
 | 浏览器扩展 | `browsers.md` | uBO / AdGuard / ABP 订阅地址与导入步骤 |
 
-访问方式：`https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adapters/<文件名>`（jsDelivr：`https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adapters/<文件名>`）。各文件的逐字语法说明见 当前工作区 内的 `/docs/GENERATED_RULES.md` 第 5 节。sing-box 远端规则集缓存需在配置中开启 `experimental.cache_file.enabled`。
+访问方式：`https://raw.githubusercontent.com/wansheng8/GZ/main/dist/adapters/<文件名>`（jsDelivr：`https://cdn.jsdelivr.net/gh/wansheng8/GZ@main/dist/adapters/<文件名>`）。各文件的逐字语法说明见 当前工作区 内的 `/docs/GENERATED_RULES.md` 第 5 节，各客户端原生拦截语法与命中范围见 当前工作区 内的 `/docs/CLIENT_SYNTAX.md`。sing-box 远端规则集缓存需在配置中开启 `experimental.cache_file.enabled`。
 
 ### 各客户端订阅地址清单
 
-按客户端汇总「直接填进软件里」的引用地址。**规范** = GitHub raw，**镜像** = jsDelivr；同一设备二选一即可。适配文件见上表，语法与字段含义见 当前工作区 内的 `/docs/GENERATED_RULES.md` 第 5 节。
+按客户端汇总「直接填进软件里」的引用地址。**规范** = GitHub raw，**镜像** = jsDelivr；同一设备二选一即可。适配文件见上表，语法与字段含义见 当前工作区 内的 `/docs/GENERATED_RULES.md` 第 5 节；各客户端原生拦截语法与命中范围见 当前工作区 内的 `/docs/CLIENT_SYNTAX.md`。
 
 | 客户端 | 引用产物 | 规范（raw） | 镜像（jsDelivr） |
 | :--- | :--- | :--- | :--- |
@@ -355,7 +355,7 @@ python -m adblock_collection stats --out dist      # 仅刷新统计与 manifest
 
 构建选项：`--no-dns` · `--offline` · `--no-cache` · `--dns-policy safe` · `--no-alias-normalize` / `--no-resolve-conflicts` / `--no-per-rule-classify` / `--no-domain-fold`。缓存位于 `.cache/sources/` 与 `.cache/parsed/`，首次下载后离线可重建。
 
-每个产物的行语法与用法（adblock / hosts / domains / rulesets / manifest 等）见 `docs/GENERATED_RULES.md`。
+每个产物的行语法与用法（adblock / hosts / domains / rulesets / manifest 等）见 `docs/GENERATED_RULES.md`。各客户端原生拦截语法与命中范围见 `docs/CLIENT_SYNTAX.md`。
 
 ### 防误杀体系
 

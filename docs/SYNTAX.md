@@ -2,7 +2,7 @@
 
 本文档整理本项目产出的三类订阅（扩展网络层、扩展元素隐藏层、DNS 层）涉及的语法边界、修饰符、资源类型、优先级与常见陷阱，既是使用说明，也是贡献规则时的对照表。
 
-每个生成产物（adblock / hosts / domains / rulesets / manifest 等）的精确行语法与用法，另见 `docs/GENERATED_RULES.md`。
+每个生成产物（adblock / hosts / domains / rulesets / manifest 等）的精确行语法与用法，另见 `docs/GENERATED_RULES.md`；各客户端原生拦截语法与命中范围（精确 / 含子域算子差异），另见 `docs/CLIENT_SYNTAX.md`。
 
 ## 1. 三层防护与产物对应
 

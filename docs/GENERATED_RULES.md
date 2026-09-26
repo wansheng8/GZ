@@ -6,6 +6,7 @@
 - 客户端订阅地址与配置示例：见 `README.md`「订阅中心」。
 - 构建、配置、排障流程：见 `docs/OPS.md`；流水线阶段：见 `docs/FLOW.md`。
 - 面向单个客户端的即用配置：见第 5 节 `adapters/`；订阅与一键导入地址：见 `README.md`「客户端适配产物」。
+- 各客户端原生拦截语法与命中范围（含「精确 / 含子域」算子对照与陷阱）：见 `docs/CLIENT_SYNTAX.md`。
 
 程序把 60+ 上游列表下载、预处理、合并、去重、分类后，统一输出到 `dist/`。同一个规则集合会派生出多种载体格式；所有文件由 `dist/manifest.json` 索引。
 
@@ -466,6 +467,7 @@ python -m adblock_collection build --out dist --split-by-category
 | :--- | :--- |
 | `README.md` | 订阅地址、三层防护、常见问题、连接层配置 |
 | `docs/SYNTAX.md` | 过滤规则语法知识库（`||`、`$` 修饰符、元素隐藏、优先级、自定义黑名单） |
+| `docs/CLIENT_SYNTAX.md` | 各客户端原生拦截语法与命中范围（ABP/hosts/dnsmasq/Pi-hole/AdGuard Home/mihomo/sing-box/Surge/Quantumult X） |
 | `docs/OPS.md` | 构建、配置源、白名单、门禁与源失效处置 |
 | `docs/FLOW.md` | 构建流水线各阶段 |
 | `docs/BLOCKING_AUDIT.md` | 拦截覆盖率审计与实施状态 |
