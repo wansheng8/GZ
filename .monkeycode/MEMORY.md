@@ -102,6 +102,7 @@ Entries discovered by the Agent during task execution should follow this format:
   - 字节基线夹具重生成：调用 `tests/_baseline_fixture.py` 的 `build_fixture`（m2，增强全关）与 `build_default_fixture`（m3，增强全开）构建到临时目录，再把有变化的 `*.dns_safety.json` / `manifest.json` / `sources_status.json`（m3 含 `security/`）复制回 `tests/baseline/{m2,m3}`；`build_diff.txt`、`new_domain_review.json` 已 gitignore，且在 `tests/test_baseline.py` 的 `extra_ignores` 中。
   - `baseline._canonical` 会剔除不可复现字段：顶层 `generated_at`、manifest 内嵌 `sources_status.generated_at` 与逐条目 `sha256`；新增时间戳/哈希字段无需再改基线忽略列表。
   - 解析/分类/规范化版本常量在 `adblock_collection/pipeline.py`；一轮单元中每条版本轴最多递增一次，触碰基线的单元（域名集合、`$important` 语义等）单独提交。
+  - manifest 消费点对 `rules` 键的处理：新增不含 `rules` 字段的产物条目（如 `adapters/*`，`format=adapter`）时，所有 `{x["file"]: x["rules"]}` 形式必须改为 `x.get("rules", 0)`，覆盖 `stats_badge.load_counts`、`memory_metrics` 与 CI `build.yml` 健康检查；`cli.stats_cmd` 亦需跳过 `adapters/` 路径，避免把 URL 行当规则计数或给适配条目补 `rules/empty`。
 
 <!-- build-metrics:start -->
 ## 构建指标快照（CI 自动生成）
